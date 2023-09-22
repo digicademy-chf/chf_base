@@ -1,0 +1,48 @@
+{
+    "name": "digicademy/chf_base",
+    "type": "typo3-cms-extension",
+    "description": "Location, date, and actor classes as well as a UI library and other base services for the CHF",
+    "authors": [
+        {
+            "name": "Jonatan Jalle Steller",
+            "email": "jonatan.steller@adwmainz.de",
+            "role": "Developer",
+            "homepage": "https://www.adwmainz.de"
+        },
+        {
+            "name": "CHF Base contributors"
+        }
+    ],
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://extensions.typo3.org/extension/chf_base",
+    "support": {
+        "issues": "https://github.com/digicademy-chf/chf_base/issues",
+        "source": "https://github.com/digicademy-chf/chf_base",
+        "docs": "https://digicademy-chf.github.io/chf_base"
+    },
+    "keywords": [
+        "TYPO3",
+        "Cultural heritage",
+        "Heritage",
+        "Digital humanities",
+        "Humanities",
+        "Data",
+        "User interface",
+        "UI",
+        "Serialisations",
+        "Social"
+    ],
+    "require": {
+        "typo3/cms-core": "^12"
+    },
+    "autoload": {
+        "psr-4": {
+            "Digicademy\\CHFBase\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "chf_base"
+        }
+    }
+}

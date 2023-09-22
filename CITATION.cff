@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+title: CHF Base
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Jonatan Jalle
+    family-names: Steller
+    email: jonatan.steller@adwmainz.de
+    affiliation: Academy of Sciences and Literature Mainz
+    orcid: 'https://orcid.org/0000-0002-5101-5275'
+  - name: "CHF Base contributors"
+repository-code: >-
+  https://github.com/digicademy-chf/chf_base
+abstract: >-
+  The Cultural Heritage Framework (CHF) is a research
+  software suite that helps you build web apps to **produce
+  and publish data in the humanities**. It is designed for
+  the needs of scholarly editing, lexicography, archives,
+  GLAM institutions, and, more generally, projects
+  interested in making cultural heritage, books, media, or
+  annotated bibliographies available in their own web-based
+  research platform. All components are organised around
+  the TYPO3 extension chf_base, which provides data
+  resources used by dependent data models. The various
+  components are developed and maintained by the Digital
+  Academy, a Digital Humanities department at the Academy
+  of Sciences and Literature Mainz.
+keywords:
+  - TYPO3
+  - Cultural heritage
+  - Heritage
+  - Digital humanities
+  - Humanities
+  - Data
+  - User interface
+  - UI
+  - Serialisations
+  - Social
+license: GPL 3
+version: 0.1.0
+date-released: '2023-09-22'
