@@ -7,4 +7,4 @@ Maintenance
 ===========
 
 Maintenance of the extension may include adapting it to new TYPO3 versions or
-updating dependencies and includes. There is currently no include in use.
+updating dependencies and includes.

@@ -2,7 +2,7 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title'          => 'CHF Base',
-    'description'    => 'Location, date, and actor classes as well as a UI library and other base services for the CHF',
+    'description'    => 'Common classes as well as a UI library and other base services for the CHF',
     'category'       => 'misc',
     'author'         => 'Jonatan Jalle Steller',
     'author_email'   => 'jonatan.steller@adwmainz.de',

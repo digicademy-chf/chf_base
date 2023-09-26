@@ -1,7 +1,7 @@
 {
     "name": "digicademy/chf_base",
     "type": "typo3-cms-extension",
-    "description": "Location, date, and actor classes as well as a UI library and other base services for the CHF",
+    "description": "Common classes as well as a UI library and other base services for the CHF",
     "authors": [
         {
             "name": "Jonatan Jalle Steller",

@@ -38,29 +38,35 @@ This is a pre-release version. The following steps are required for the software
 
 - Implement TCA and model
 - Finish initial documentation
+- Include Leaflet and connect it to dependabot
 
 **Version 0.6.0**
 
-- Include Leaflet and connect it to dependabot
-- TCA and model work as expected
 - Move mdlr and mrvl into this component
+- Move social links into this component
 
 **Version 0.7.0**
 
-- Move social links into this component
+- TCA and model work as expected
+- Frontend plugin and templates?
 
 **Version 0.8.0**
 
+- Embedded metadata
 - Infrastructure for imports
-- Infrastructure for serialisations
-- Infrastructure for search configs
 
 **Version 0.9.0**
 
-- Polish
+- Infrastructure for serialisations
+- Infrastructure for search configs
+
+**Version 2.0.0**
+
+- Add API documentation
 - Try to unify mdlr and mrvl
 
-**Version 1.0.0**
+**Version 2.1.0**
 
 - Add testing
-- Finish documentation
+- Generic import
+- Additional serialisations
