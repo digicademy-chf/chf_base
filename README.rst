@@ -70,3 +70,7 @@ This is a pre-release version. The following steps are required for the software
 - Add testing
 - Generic import
 - Additional serialisations
+
+**Nice to have**
+
+- Automation to include Leaflet files upon new releases
