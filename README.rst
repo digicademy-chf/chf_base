@@ -19,11 +19,15 @@ you build web apps to **produce and publish data in the humanities**. It is
 designed for the needs of scholarly editing, lexicography, archives, GLAM
 institutions, and, more generally, projects interested in making cultural
 heritage, books, media, or annotated bibliographies available in their own
-web-based research platform. All components are organised around the TYPO3
-extension ``chf_base``, which provides data resources used by dependent data
-models. The various components are developed and maintained by the Digital
-Academy, a Digital Humanities department at the Academy of Sciences and
-Literature Mainz.
+web-based research platform. A key strength of the CHF is the ability to
+produce portals and editions that include various data types with historical
+points of reference in a single system, including editing interfaces,
+frontends, and serialisations. Specific data models are organised as
+additional components around the TYPO3 extension ``chf_base``, which provides
+central data types like ``Agent``s, ``Location``s, and ``Date``s, but also
+services like import and export routines. The various components are developed
+and maintained by the Digital Academy, a Digital Humanities department at the
+Academy of Sciences and Literature Mainz.
 
 :Repository:  https://github.com/digicademy-chf/chf_base
 :Read online: https://digicademy-chf.github.io/chf_base
