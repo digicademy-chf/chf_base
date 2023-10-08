@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="EXT:chf_base/Resources/Private/Language/locallang.xlf" date="2023-10-09T10:48:43Z" product-name="chf_base">
+        <header/>
+        <body>
+            <!-- Validator: StringOptionsValidator -->
+            <trans-unit id="validator.stringOptions.allowedStringInvalid" resname="validator.stringOptions.allowedStringInvalid">
+                <source>One of the allowed options is not a string in the StringOptionsValidator.</source>
+            </trans-unit>
+            <trans-unit id="validator.stringOptions.invalidString" resname="validator.stringOptions.invalidString">
+                <source>The given value was not a valid string.</source>
+            </trans-unit>
+            <trans-unit id="validator.stringOptions.notAllowedValue" resname="validator.stringOptions.notAllowedValue">
+                <source>The given value was not in the list of allowed values.</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
