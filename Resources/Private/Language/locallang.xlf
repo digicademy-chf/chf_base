@@ -3,6 +3,16 @@
     <file source-language="en" datatype="plaintext" original="EXT:chf_base/Resources/Private/Language/locallang.xlf" date="2023-10-09T10:48:43Z" product-name="chf_base">
         <header/>
         <body>
+            <!-- Database: SameAs -->
+            <trans-unit id="database.sameAs" resname="database.sameAs">
+                <source>Reference URI</source>
+            </trans-unit>
+            <trans-unit id="database.sameAs.uri" resname="database.sameAs.uri">
+                <source>URI</source>
+            </trans-unit>
+            <trans-unit id="database.sameAs.uri.description" resname="database.sameAs.uri.description">
+                <source>External web address to identify an entity across the web</source>
+            </trans-unit>
             <!-- Validator: StringOptionsValidator -->
             <trans-unit id="validator.stringOptions.allowedStringInvalid" resname="validator.stringOptions.allowedStringInvalid">
                 <source>One of the allowed options is not a string in the StringOptionsValidator.</source>

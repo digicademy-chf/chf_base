@@ -3,6 +3,19 @@
     <file source-language="en" target-language="de" datatype="plaintext" original="EXT:chf_base/Resources/Private/Language/locallang.xlf" date="2023-10-09T10:48:43Z" product-name="chf_base">
         <header/>
         <body>
+            <!-- Database: SameAs -->
+            <trans-unit id="database.sameAs" resname="database.sameAs" approved="yes">
+                <source>Reference URI</source>
+                <target>Referenz-URI</target>
+            </trans-unit>
+            <trans-unit id="database.sameAs.uri" resname="database.sameAs.uri" approved="yes">
+                <source>URI</source>
+                <target>URI</target>
+            </trans-unit>
+            <trans-unit id="database.sameAs.uri.description" resname="database.sameAs.uri.description" approved="yes">
+                <source>External web address to identify an entity across the web</source>
+                <target>Externe Webadresse zur Identifikation einer Entität im Internet</target>
+            </trans-unit>
             <!-- Validator: StringOptionsValidator -->
             <trans-unit id="validator.stringOptions.validator.stringOptions.allowedStringInvalid" resname="validator.stringOptions.allowedStringInvalid" approved="yes">
                 <source>One of the allowed options is not a string in the StringOptionsValidator.</source>
