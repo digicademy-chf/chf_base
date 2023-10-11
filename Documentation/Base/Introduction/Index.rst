@@ -8,7 +8,7 @@ Introduction
 
 The extension provides a number of database tables and corresponding classes
 for use in the various dependent data models in the CHF. This includes
-humanities-specific data such as ``Location``, ``Date``, and ``Actor``, but
+humanities-specific data such as ``Location``, ``Period``, and ``Actor``, but
 also more generic classes like ``SameAs``. In the same vein of being a service
 extension for other data models, ``chf_base`` also includes key third-party
 libraries like ``Leaflet``, infrastructure to import and serialise data, to

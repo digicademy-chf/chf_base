@@ -30,8 +30,8 @@ standard templates, common serialisations like TEI XML or embedded metadata,
 data import options, and search configuration. The following extensions of
 this category are available:
 
-- [chf_base](https://github.com/digicademy-chf/chf_base) (locations, dates,
-  and actors; inspired by TEI)
+- [chf_base](https://github.com/digicademy-chf/chf_base) (resources, locations,
+  periods, and actors; partly inspired by TEI)
 
 - [chf_bib](https://github.com/digicademy-chf/chf_bib) (bibliographies and
   Zotero import; based on Zotero TEI)

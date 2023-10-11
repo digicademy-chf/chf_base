@@ -10,16 +10,16 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Repository;
 
-use Digicademy\CHFBase\Domain\Model\Date;
+use Digicademy\CHFBase\Domain\Model\Period;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- * Repository for dates
+ * Repository for periods
  * 
- * @extends Repository<Date>
+ * @extends Repository<Period>
  */
-class DateRepository extends Repository
+class PeriodRepository extends Repository
 {
     protected $defaultOrderings = [
         'sorting'   => QueryInterface::ORDER_ASCENDING,

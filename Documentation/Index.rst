@@ -42,7 +42,7 @@ produce portals and editions that include various data types with historical
 points of reference in a single system, including editing interfaces,
 frontends, and serialisations. Specific data models are organised as
 additional components around the TYPO3 extension ``chf_base``, which provides
-central data types like ``Agent``s, ``Location``s, and ``Date``s, but also
+central data types like ``Agent``s, ``Location``s, and ``Period``s, but also
 services like import and export routines. The various components are developed
 and maintained by the Digital Academy, a Digital Humanities department at the
 Academy of Sciences and Literature Mainz.

@@ -28,7 +28,7 @@ abstract: >-
   and serialisations. Specific data models are organised as
   additional components around the TYPO3 extension
   chf_base, which provides central data types like Agents,
-  Locations, and Dates, but also services like import and
+  Locations, and Periods, but also services like import and
   export routines. The various components are developed and
   maintained by the Digital Academy, a Digital Humanities
   department at the Academy of Sciences and Literature
