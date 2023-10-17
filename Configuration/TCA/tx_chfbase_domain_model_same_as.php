@@ -16,7 +16,7 @@
  */
 return [
     'ctrl' => [
-        'title'                    => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:database.sameAs',
+        'title'                    => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.sameAs',
         'label'                    => 'uri',
         'tstamp'                   => 'tstamp',
         'crdate'                   => 'crdate',
@@ -39,9 +39,10 @@ return [
     ],
     'columns' => [
         'hidden' => [
-            'exclude' => true,
-            'label'   => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
-            'config'  => [
+            'exclude'     => true,
+            'label'       => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.hidden.description',
+            'config'      => [
                 'type'       => 'check',
                 'renderType' => 'checkboxToggle',
                 'items'      => [
@@ -116,8 +117,8 @@ return [
             ],
         ],
         'uri' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:database.sameAs.uri',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:database.sameAs.uri.description',
+            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.sameAs.uri',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.sameAs.uri.description',
             'config' => [
                 'type'           => 'link',
                 'allowedTypes'   => ['url'],
@@ -128,6 +129,9 @@ return [
                       ['HTTPS', 'https://'],
                       ['HTTP', 'http://'],
                    ],
+                ],
+                'behaviour'           => [
+                     'allowLanguageSynchronization' => true
                 ],
                 'required' => true,
             ],
