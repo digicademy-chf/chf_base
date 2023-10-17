@@ -3,6 +3,343 @@
     <file source-language="en" datatype="plaintext" original="EXT:chf_base/Resources/Private/Language/locallang.xlf" date="2023-10-09T10:48:43Z" product-name="chf_base">
         <header/>
         <body>
+            <!-- Database: Agent -->
+            <trans-unit id="database.agent" resname="database.agent">
+                <source>Agent</source>
+            </trans-unit>
+            <trans-unit id="database.agent.editorial" resname="database.agent.editorial">
+                <source>Editorial</source>
+            </trans-unit>
+            <trans-unit id="database.agent.content" resname="database.agent.content">
+                <source>Content</source>
+            </trans-unit>
+            <trans-unit id="database.agent.life" resname="database.agent.life">
+                <source>Life</source>
+            </trans-unit>
+            <trans-unit id="database.agent.bibliography" resname="database.agent.bibliography">
+                <source>Bibliography</source>
+            </trans-unit>
+            <trans-unit id="database.agent.original" resname="database.agent.original">
+                <source>Original</source>
+            </trans-unit>
+            <trans-unit id="database.agent.relations" resname="database.agent.relations">
+                <source>Relations</source>
+            </trans-unit>
+            <trans-unit id="database.agent.parent_id" resname="database.agent.parent_id">
+                <source>Resource</source>
+            </trans-unit>
+            <trans-unit id="database.agent.parent_id.description" resname="database.agent.parent_id.description">
+                <source>Resource that this agent is attached to</source>
+            </trans-unit>
+            <trans-unit id="database.agent.uuid" resname="database.agent.uuid">
+                <source>UUID</source>
+            </trans-unit>
+            <trans-unit id="database.agent.uuid.description" resname="database.agent.uuid.description">
+                <source>Unique identifier of the agent</source>
+            </trans-unit>
+            <trans-unit id="database.agent.type" resname="database.agent.type">
+                <source>Type</source>
+            </trans-unit>
+            <trans-unit id="database.agent.type.description" resname="database.agent.type.description">
+                <source>Specific type of agent</source>
+            </trans-unit>
+            <trans-unit id="database.agent.type.person" resname="database.agent.type.person">
+                <source>Person</source>
+            </trans-unit>
+            <trans-unit id="database.agent.type.organisation" resname="database.agent.type.organisation">
+                <source>Organisation</source>
+            </trans-unit>
+            <trans-unit id="database.agent.type.otherEntity" resname="database.agent.type.otherEntity">
+                <source>Other entity</source>
+            </trans-unit>
+            <trans-unit id="database.agent.forename" resname="database.agent.forename">
+                <source>Forename</source>
+            </trans-unit>
+            <trans-unit id="database.agent.forename.description" resname="database.agent.forename.description">
+                <source>Forename of the agent</source>
+            </trans-unit>
+            <trans-unit id="database.agent.surname" resname="database.agent.surname">
+                <source>Surname</source>
+            </trans-unit>
+            <trans-unit id="database.agent.surname.description" resname="database.agent.surname.description">
+                <source>Surname of the agent</source>
+            </trans-unit>
+            <trans-unit id="database.agent.corporateName" resname="database.agent.corporateName">
+                <source>Corporate name</source>
+            </trans-unit>
+            <trans-unit id="database.agent.corporateName.description" resname="database.agent.corporateName.description">
+                <source>Single name for the entire corporate body used instead of forename and surname</source>
+            </trans-unit>
+            <trans-unit id="database.agent.alternativeName" resname="database.agent.alternativeName">
+                <source>Alternative name</source>
+            </trans-unit>
+            <trans-unit id="database.agent.alternativeName.description" resname="database.agent.alternativeName.description">
+                <source>Common alternative name that may, for example, be useful as a search term</source>
+            </trans-unit>
+            <trans-unit id="database.agent.honorific" resname="database.agent.honorific">
+                <source>Honorific title</source>
+            </trans-unit>
+            <trans-unit id="database.agent.honorific.description" resname="database.agent.honorific.description">
+                <source>Academic or official title</source>
+            </trans-unit>
+            <trans-unit id="database.agent.occupation" resname="database.agent.occupation">
+                <source>Occupation</source>
+            </trans-unit>
+            <trans-unit id="database.agent.occupation.description" resname="database.agent.occupation.description">
+                <source>Name of job or occupation</source>
+            </trans-unit>
+            <trans-unit id="database.agent.gender" resname="database.agent.gender">
+                <source>Gender</source>
+            </trans-unit>
+            <trans-unit id="database.agent.gender.description" resname="database.agent.gender.description">
+                <source>Social gender of the entity, if available</source>
+            </trans-unit>
+            <trans-unit id="database.agent.gender.unspecified" resname="database.agent.gender.unspecified">
+                <source>unspecified</source>
+            </trans-unit>
+            <trans-unit id="database.agent.gender.female" resname="database.agent.gender.female">
+                <source>female</source>
+            </trans-unit>
+            <trans-unit id="database.agent.gender.male" resname="database.agent.gender.male">
+                <source>male</source>
+            </trans-unit>
+            <trans-unit id="database.agent.gender.nonBinary" resname="database.agent.gender.nonBinary">
+                <source>nonBinary</source>
+            </trans-unit>
+            <trans-unit id="database.agent.isContributor" resname="database.agent.isContributor">
+                <source>Agent is contributor</source>
+            </trans-unit>
+            <trans-unit id="database.agent.isContributor.description" resname="database.agent.isContributor.description">
+                <source>Makes this agent selectable as an author, an editor, a translator, or a further contributor</source>
+            </trans-unit>
+            <trans-unit id="database.agent.isHighlight" resname="database.agent.isHighlight">
+                <source>Highlight agent</source>
+            </trans-unit>
+            <trans-unit id="database.agent.isHighlight.description" resname="database.agent.isHighlight.description">
+                <source>Makes this agent available at the top of lists</source>
+            </trans-unit>
+            <trans-unit id="database.agent.label" resname="database.agent.label">
+                <source>Label</source>
+            </trans-unit>
+            <trans-unit id="database.agent.label.description" resname="database.agent.label.description">
+                <source>Label to group the agent into</source>
+            </trans-unit>
+            <trans-unit id="database.agent.sameAs" resname="database.agent.sameAs">
+                <source>Reference URI</source>
+            </trans-unit>
+            <trans-unit id="database.agent.sameAs.description" resname="database.agent.sameAs.description">
+                <source>External web address to identify the agent across the web</source>
+            </trans-unit>
+            <trans-unit id="database.agent.author" resname="database.agent.author">
+                <source>Author</source>
+            </trans-unit>
+            <trans-unit id="database.agent.author.description" resname="database.agent.author.description">
+                <source>List of authors of this record</source>
+            </trans-unit>
+            <trans-unit id="database.agent.editor" resname="database.agent.editor">
+                <source>Editor</source>
+            </trans-unit>
+            <trans-unit id="database.agent.editor.description" resname="database.agent.editor.description">
+                <source>List of editors of this record</source>
+            </trans-unit>
+            <trans-unit id="database.agent.translator" resname="database.agent.translator">
+                <source>Translator</source>
+            </trans-unit>
+            <trans-unit id="database.agent.translator.description" resname="database.agent.translator.description">
+                <source>List of translators of this record</source>
+            </trans-unit>
+            <trans-unit id="database.agent.genericContributor" resname="database.agent.genericContributor">
+                <source>Further contributor</source>
+            </trans-unit>
+            <trans-unit id="database.agent.genericContributor.description" resname="database.agent.genericContributor.description">
+                <source>List of further contributors to this record</source>
+            </trans-unit>
+            <trans-unit id="database.agent.publicationDate" resname="database.agent.publicationDate">
+                <source>Publication date</source>
+            </trans-unit>
+            <trans-unit id="database.agent.publicationDate.description" resname="database.agent.publicationDate.description">
+                <source>Date when this record was published</source>
+            </trans-unit>
+            <trans-unit id="database.agent.revisionNumber" resname="database.agent.revisionNumber">
+                <source>Revision number</source>
+            </trans-unit>
+            <trans-unit id="database.agent.revisionNumber.description" resname="database.agent.revisionNumber.description">
+                <source>Number of the current revision of this record</source>
+            </trans-unit>
+            <trans-unit id="database.agent.revisionDate" resname="database.agent.revisionDate">
+                <source>Revision date</source>
+            </trans-unit>
+            <trans-unit id="database.agent.revisionDate.description" resname="database.agent.revisionDate.description">
+                <source>Date when this record was last revised</source>
+            </trans-unit>
+            <trans-unit id="database.agent.editorialNote" resname="database.agent.editorialNote">
+                <source>Editorial note</source>
+            </trans-unit>
+            <trans-unit id="database.agent.editorialNote.description" resname="database.agent.editorialNote.description">
+                <source>Note for internal usage among the editorial team</source>
+            </trans-unit>
+            <trans-unit id="database.agent.contentElement" resname="database.agent.contentElement">
+                <source>Content element</source>
+            </trans-unit>
+            <trans-unit id="database.agent.contentElement.description" resname="database.agent.contentElement.description">
+                <source>Room for further, less structured content</source>
+            </trans-unit>
+            <trans-unit id="database.agent.image" resname="database.agent.image">
+                <source>Image</source>
+            </trans-unit>
+            <trans-unit id="database.agent.image.description" resname="database.agent.image.description">
+                <source>Images of the agent</source>
+            </trans-unit>
+            <trans-unit id="database.agent.file" resname="database.agent.file">
+                <source>File</source>
+            </trans-unit>
+            <trans-unit id="database.agent.file.description" resname="database.agent.file.description">
+                <source>Additional files for this agent</source>
+            </trans-unit>
+            <trans-unit id="database.agent.event" resname="database.agent.event">
+                <source>Event</source>
+            </trans-unit>
+            <trans-unit id="database.agent.event.description" resname="database.agent.event.description">
+                <source>Room to list biographical events</source>
+            </trans-unit>
+            <trans-unit id="database.agent.lifePeriod" resname="database.agent.lifePeriod">
+                <source>Date of birth an death</source>
+            </trans-unit>
+            <trans-unit id="database.agent.lifePeriod.description" resname="database.agent.lifePeriod.description">
+                <source>Usually features start and end date, but living agents may have an empty end date</source>
+            </trans-unit>
+            <trans-unit id="database.agent.lifeLocation" resname="database.agent.lifeLocation">
+                <source>Place of residence</source>
+            </trans-unit>
+            <trans-unit id="database.agent.lifeLocation.description" resname="database.agent.lifeLocation.description">
+                <source>Place where the agent lives or lived</source>
+            </trans-unit>
+            <trans-unit id="database.agent.activePeriod" resname="database.agent.activePeriod">
+                <source>Active period</source>
+            </trans-unit>
+            <trans-unit id="database.agent.activePeriod.description" resname="database.agent.activePeriod.description">
+                <source>Period in which the agent was active, but living agents may feature an empty end date</source>
+            </trans-unit>
+            <trans-unit id="database.agent.activeLocation" resname="database.agent.activeLocation">
+                <source>Place of activity</source>
+            </trans-unit>
+            <trans-unit id="database.agent.activeLocation.description" resname="database.agent.activeLocation.description">
+                <source>Place in which the agent was or is active</source>
+            </trans-unit>
+            <trans-unit id="database.agent.source" resname="database.agent.source">
+                <source>Source</source>
+            </trans-unit>
+            <trans-unit id="database.agent.source.description" resname="database.agent.source.description">
+                <source>List of bibliographical references for this record</source>
+            </trans-unit>
+            <trans-unit id="database.agent.importOrigin" resname="database.agent.importOrigin">
+                <source>Import origin</source>
+            </trans-unit>
+            <trans-unit id="database.agent.importOrigin.description" resname="database.agent.importOrigin.description">
+                <source>URI or other identifier of the imported original</source>
+            </trans-unit>
+            <trans-unit id="database.agent.import" resname="database.agent.import">
+                <source>Import</source>
+            </trans-unit>
+            <trans-unit id="database.agent.import.description" resname="database.agent.import.description">
+                <source>Full import code that this record is based on</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asAuthorOfResource" resname="database.agent.asAuthorOfResource">
+                <source>Author of a resource</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asAuthorOfResource.description" resname="database.agent.asAuthorOfResource.description">
+                <source>List of resources (CHF Base) with this agent as an author</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asEditorOfResource" resname="database.agent.asEditorOfResource">
+                <source>Editor of a resource</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asEditorOfResource.description" resname="database.agent.asEditorOfResource.description">
+                <source>List of resources (CHF Base) with this agent as an editor</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asTranslatorOfResource" resname="database.agent.asTranslatorOfResource">
+                <source>Translator of a resource</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asTranslatorOfResource.description" resname="database.agent.asTranslatorOfResource.description">
+                <source>List of resources (CHF Base) with this agent as a translator</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asGenericContributorOfResource" resname="database.agent.asGenericContributorOfResource">
+                <source>Further contributor of a resource</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asGenericContributorOfResource.description" resname="database.agent.asGenericContributorOfResource.description">
+                <source>List of resources (CHF Base) with this agent as a further contributor</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asAuthorOfAgent" resname="database.agent.asAuthorOfAgent">
+                <source>Author of an agent</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asAuthorOfAgent.description" resname="database.agent.asAuthorOfAgent.description">
+                <source>List of agents (CHF Base) with this agent as an author</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asEditorOfAgent" resname="database.agent.asEditorOfAgent">
+                <source>Editor of an agent</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asEditorOfAgent.description" resname="database.agent.asEditorOfAgent.description">
+                <source>List of agents (CHF Base) with this agent as an editor</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asTranslatorOfAgent" resname="database.agent.asTranslatorOfAgent">
+                <source>Translator of an agent</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asTranslatorOfAgent.description" resname="database.agent.asTranslatorOfAgent.description">
+                <source>List of agents (CHF Base) with this agent as a translator</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asGenericContributorOfAgent" resname="database.agent.asGenericContributorOfAgent">
+                <source>Further contributor of an agent</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asGenericContributorOfAgent.description" resname="database.agent.asGenericContributorOfAgent.description">
+                <source>List of agents (CHF Base) with this agent as a further contributor</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asAuthorOfPeriod" resname="database.agent.asAuthorOfPeriod">
+                <source>Author of a period</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asAuthorOfPeriod.description" resname="database.agent.asAuthorOfPeriod.description">
+                <source>List of periods (CHF Base) with this agent as an author</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asEditorOfPeriod" resname="database.agent.asEditorOfPeriod">
+                <source>Editor of a period</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asEditorOfPeriod.description" resname="database.agent.asEditorOfPeriod.description">
+                <source>List of periods (CHF Base) with this agent as an editor</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asTranslatorOfPeriod" resname="database.agent.asTranslatorOfPeriod">
+                <source>Translator of a period</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asTranslatorOfPeriod.description" resname="database.agent.asTranslatorOfPeriod.description">
+                <source>List of periods (CHF Base) with this agent as a translator</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asGenericContributorOfPeriod" resname="database.agent.asGenericContributorOfPeriod">
+                <source>Further contributor of a period</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asGenericContributorOfPeriod.description" resname="database.agent.asGenericContributorOfPeriod.description">
+                <source>List of periods (CHF Base) with this agent as a further contributor</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asAuthorOfLocation" resname="database.agent.asAuthorOfLocation">
+                <source>Author of a location</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asAuthorOfLocation.description" resname="database.agent.asAuthorOfLocation.description">
+                <source>List of locations (CHF Base) with this agent as an author</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asEditorOfLocation" resname="database.agent.asEditorOfLocation">
+                <source>Editor of a location</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asEditorOfLocation.description" resname="database.agent.asEditorOfLocation.description">
+                <source>List of locations (CHF Base) with this agent as an editor</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asTranslatorOfLocation" resname="database.agent.asTranslatorOfLocation">
+                <source>Translator of a location</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asTranslatorOfLocation.description" resname="database.agent.asTranslatorOfLocation.description">
+                <source>List of locations (CHF Base) with this agent as a translator</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asGenericContributorOfLocation" resname="database.agent.asGenericContributorOfLocation">
+                <source>Further contributor of a location</source>
+            </trans-unit>
+            <trans-unit id="database.agent.asGenericContributorOfLocation.description" resname="database.agent.asGenericContributorOfLocation.description">
+                <source>List of locations (CHF Base) with this agent as a further contributor</source>
+            </trans-unit>
             <!-- Database: SameAs -->
             <trans-unit id="database.sameAs" resname="database.sameAs">
                 <source>Reference URI</source>
@@ -14,7 +351,7 @@
                 <source>External web address to identify an entity across the web</source>
             </trans-unit>
             <!-- Validator: StringOptionsValidator -->
-            <trans-unit id="validator.stringOptions.allowedStringInvalid" resname="validator.stringOptions.allowedStringInvalid">
+            <trans-unit id="validator.stringOptions.validator.stringOptions.allowedStringInvalid" resname="validator.stringOptions.allowedStringInvalid">
                 <source>One of the allowed options is not a string in the StringOptionsValidator.</source>
             </trans-unit>
             <trans-unit id="validator.stringOptions.invalidString" resname="validator.stringOptions.invalidString">

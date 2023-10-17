@@ -23,11 +23,12 @@ class AgentRepository extends Repository
 {
     protected $defaultOrderings = [
         'sorting'         => QueryInterface::ORDER_ASCENDING,
-        'type'            => QueryInterface::ORDER_ASCENDING,
+        'isHighlight'     => QueryInterface::ORDER_ASCENDING,
         'surname'         => QueryInterface::ORDER_ASCENDING,
         'forename'        => QueryInterface::ORDER_ASCENDING,
         'corporateName'   => QueryInterface::ORDER_ASCENDING,
         'alternativeName' => QueryInterface::ORDER_ASCENDING,
+        'type'            => QueryInterface::ORDER_ASCENDING,
     ];
 }
 

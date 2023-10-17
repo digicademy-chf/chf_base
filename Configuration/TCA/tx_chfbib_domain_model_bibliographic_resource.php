@@ -196,6 +196,9 @@ return [
                 'foreign_table'       => 'tx_chfbib_domain_model_same_as',
                 'foreign_field'       => 'parent_id',
                 'foreign_table_field' => 'parent_table',
+                'behaviour'           => [
+                     'allowLanguageSynchronization' => true
+                ],
                 'appearance'          => [
                     'collapseAll'                     => true,
                     'expandSingle'                    => true,
@@ -217,6 +220,9 @@ return [
                 'foreign_field'       => 'parent_id',
                 'foreign_table_field' => 'parent_table',
                 'foreign_sortby'      => 'sorting',
+                'behaviour'           => [
+                     'allowLanguageSynchronization' => true
+                ],
                 'appearance'          => [
                     'collapseAll'                     => true,
                     'expandSingle'                    => true,
@@ -238,6 +244,9 @@ return [
                 'foreign_field'       => 'parent_id',
                 'foreign_table_field' => 'parent_table',
                 'foreign_sortby'      => 'sorting',
+                'behaviour'           => [
+                     'allowLanguageSynchronization' => true
+                ],
                 'appearance'          => [
                     'collapseAll'                     => true,
                     'expandSingle'                    => true,
@@ -259,6 +268,9 @@ return [
                 'foreign_field'       => 'parent_id',
                 'foreign_table_field' => 'parent_table',
                 'foreign_sortby'      => 'sorting',
+                'behaviour'           => [
+                     'allowLanguageSynchronization' => true
+                ],
                 'appearance'          => [
                     'collapseAll'                     => true,
                     'expandSingle'                    => true,

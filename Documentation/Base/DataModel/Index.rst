@@ -8,7 +8,7 @@ Data model
 
 This extension does not provide a fully rounded data model but a set of service
 classes. A ``Location`` may be organised hierarchically to model, for example,
-world regions, countries, regions, cities, and buildings. An ``Period`` may
+world regions, countries, regions, cities, and buildings. A ``Period`` may
 similarly be arranged in a hierarchy to model historical periods, phases, or
 dates. ``Actors``, on the other hand, may be grouped together via ``Tag``s as
 labels, but otherwise stand on their own. They may refer to organisations,
