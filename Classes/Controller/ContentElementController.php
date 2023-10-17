@@ -16,7 +16,7 @@ use Digicademy\CHFBase\Domain\Repository\ContentElementRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
- * Controller for content elements
+ * Controller for ContentElement
  */
 class ContentElementController extends ActionController
 {

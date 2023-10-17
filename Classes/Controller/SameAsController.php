@@ -16,7 +16,7 @@ use Digicademy\CHFBase\Domain\Repository\SameAsRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
- * Controller for same as
+ * Controller for SameAs
  */
 class SameAsController extends ActionController
 {

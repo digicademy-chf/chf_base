@@ -14,7 +14,7 @@ use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
- * Model for content elements
+ * Model for ContentElement
  */
 class ContentElement extends AbstractEntity
 {
@@ -47,19 +47,6 @@ class ContentElement extends AbstractEntity
         'validator' => 'String',
     ])]
     protected string $bodytext = '';
-
-    /**
-     * Construct object
-     *
-     * @param string $header
-     * @param string $bodytext
-     * @return Content
-     */
-    public function __construct(string $header, string $bodytext)
-    {
-        $this->setHeader($header);
-        $this->setBodytext($bodytext);
-    }
 
     /**
      * Get hidden

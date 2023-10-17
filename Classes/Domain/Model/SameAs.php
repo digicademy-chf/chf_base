@@ -14,7 +14,7 @@ use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
- * Model for same as
+ * Model for SameAs
  */
 class SameAs extends AbstractEntity
 {
