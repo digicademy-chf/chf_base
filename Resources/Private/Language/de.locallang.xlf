@@ -39,7 +39,7 @@
                 <target>Text</target>
             </trans-unit>
             <trans-unit id="object.footnote.text.description" resname="object.footnote.text.description" approved="yes">
-                <source>Content of the footnote</source>
+                <source>Footnote content</source>
                 <target>Inhalt der Fußnote</target>
             </trans-unit>
             <!-- Validator: StringOptionsValidator -->

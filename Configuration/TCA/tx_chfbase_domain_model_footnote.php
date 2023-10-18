@@ -116,6 +116,21 @@ return [
                 'default' => '',
             ],
         ],
+        'parentAgent' => [
+            'config' => [
+                'type' => 'passthrough',
+            ],
+        ],
+        'parentLocation' => [
+            'config' => [
+                'type' => 'passthrough',
+            ],
+        ],
+        'parentPeriod' => [
+            'config' => [
+                'type' => 'passthrough',
+            ],
+        ],
         'uuid' => [
             'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid.description',
@@ -134,7 +149,7 @@ return [
             'config'      => [
                 'type'                  => 'text',
                 'enableRichtext'        => true,
-                'richtextConfiguration' => 'chf_base_simplified',
+                'richtextConfiguration' => 'chf_base_simple',
                 'softref'               => 'typolink_tag,email[subst],url',
                 'behaviour'             => [
                      'allowLanguageSynchronization' => true
