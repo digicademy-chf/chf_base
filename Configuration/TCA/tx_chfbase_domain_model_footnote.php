@@ -38,31 +38,16 @@ return [
         ],
     ],
     'columns' => [
-        'hidden' => [
-            'exclude'     => true,
-            'label'       => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.hidden.description',
-            'config'      => [
-                'type'       => 'check',
-                'renderType' => 'checkboxToggle',
-                'items'      => [
-                    [
-                        'label' => '',
-                        'invertStateDisplay' => true,
-                    ]
-                ],
-            ]
-        ],
         'fe_group' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.fe_group',
             'config' => [
-                'type'       => 'select',
+                'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
-                'size'       => 5,
-                'maxitems'   => 20,
-                'items'      => [
+                'size' => 5,
+                'maxitems' => 20,
+                'items' => [
                     [
                         'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hide_at_login',
                         'value' => -1,
@@ -82,27 +67,27 @@ return [
         ],
         'sys_language_uid' => [
             'exclude' => true,
-            'label'   => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
-            'config'  => [
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
+            'config' => [
                 'type' => 'language',
             ],
         ],
         'l18n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'label'       => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
-            'config'      => [
-                'type'       => 'select',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+            'config' => [
+                'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items'      => [
+                'items' => [
                     [
                         'label' => '',
                         'value' => 0,
                     ],
                 ],
-                'foreign_table'       => 'tx_chfbase_domain_model_footnote',
+                'foreign_table' => 'tx_chfbase_domain_model_footnote',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_footnote}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_footnote}.{#sys_language_uid} IN (-1,0)',
-                'default'             => 0,
+                'default' => 0,
             ],
         ],
         'l10n_source' => [
@@ -112,48 +97,59 @@ return [
         ],
         'l18n_diffsource' => [
             'config' => [
-                'type'    => 'passthrough',
+                'type' => 'passthrough',
                 'default' => '',
             ],
         ],
-        'parentAgent' => [
+        'hidden' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.hidden.description',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxToggle',
+                'items' => [
+                    [
+                        'label' => '',
+                        'invertStateDisplay' => true,
+                    ]
+                ],
+            ]
+        ],
+        'parentTable' => [
             'config' => [
                 'type' => 'passthrough',
             ],
         ],
-        'parentLocation' => [
-            'config' => [
-                'type' => 'passthrough',
-            ],
-        ],
-        'parentPeriod' => [
+        'parent' => [
             'config' => [
                 'type' => 'passthrough',
             ],
         ],
         'uuid' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid.description',
-            'config'      => [
-                'type'      => 'uuid',
-                'size'      => 40,
+            'config' => [
+                'type' => 'uuid',
+                'size' => 40,
                 'behaviour' => [
                      'allowLanguageSynchronization' => true
                 ],
-                'required'  => true,
+                'required' => true,
             ],
         ],
         'text' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.footnote.text',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.footnote.text',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.footnote.text.description',
-            'config'      => [
-                'type'                  => 'text',
-                'enableRichtext'        => true,
+            'config' => [
+                'type' => 'text',
+                'enableRichtext' => true,
                 'richtextConfiguration' => 'chf_base_simple',
-                'softref'               => 'typolink_tag,email[subst],url',
-                'behaviour'             => [
+                'softref' => 'typolink_tag,email[subst],url',
+                'behaviour' => [
                      'allowLanguageSynchronization' => true
                 ],
+                'required' => true,
             ],
         ],
     ],

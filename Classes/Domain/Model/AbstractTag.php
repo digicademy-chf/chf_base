@@ -14,9 +14,9 @@ use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
- * Model for Footnote
+ * Model for AbstractTag
  */
-class Footnote extends AbstractEntity
+class AbstractTag extends AbstractEntity
 {
     /**
      * Whether the record should be visible or not
@@ -56,13 +56,11 @@ class Footnote extends AbstractEntity
      * Construct object
      *
      * @param string $uuid
-     * @param string $text
-     * @return Footnote
+     * @return AbstractTag
      */
-    public function __construct(string $uuid, string $text)
+    public function __construct(string $uuid)
     {
         $this->setUuid($uuid);
-        $this->setText($text);
     }
 
     /**
