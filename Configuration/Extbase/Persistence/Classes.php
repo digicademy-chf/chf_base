@@ -22,6 +22,15 @@ return [
     Digicademy\CHFBase\Domain\Model\ContentElemet::class => [
         'tableName' => 'tt_content',
     ],
+    Digicademy\CHFBase\Domain\Model\AbstractTag::class => [
+        'tableName' => 'tx_chfbase_domain_model_tag',
+        'recordType' => 'abstractTag',
+        'subclasses' => [
+            'labelTag'     => Digicademy\CHFBase\Domain\Model\LabelTag::class,
+            'labelTypeTag' => Digicademy\CHFBase\Domain\Model\LabelTypeTag::class,
+            'licenceTag'   => Digicademy\CHFBase\Domain\Model\LicenceTag::class,
+        ]
+    ],
 ];
 
 ?>

@@ -69,9 +69,10 @@ class LabelTag extends AbstractTag
      */
     public function __construct(string $uuid, string $code, string $text)
     {
+        parent::__construct($uuid, $code, $text);
         $this->initializeObject();
 
-        parent::__construct($uuid, 'labelTag', $code, $text);
+        $this->setType('labelTag');
     }
 
     /**

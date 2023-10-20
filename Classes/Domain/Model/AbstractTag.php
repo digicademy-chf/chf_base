@@ -121,19 +121,18 @@ class AbstractTag extends AbstractEntity
      * Construct object
      *
      * @param string $uuid
-     * @param string $type
      * @param string $code
      * @param string $text
      * @return AbstractTag
      */
-    public function __construct(string $uuid, string $type, string $code, string $text)
+    public function __construct(string $uuid, string $code, string $text)
     {
         $this->initializeObject();
 
         $this->setUuid($uuid);
-        $this->setType($type);
         $this->setCode($code);
         $this->setText($text);
+        $this->setType('abstractTag');
     }
 
     /**

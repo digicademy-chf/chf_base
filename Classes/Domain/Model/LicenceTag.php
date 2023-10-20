@@ -124,9 +124,10 @@ class LicenceTag extends AbstractTag
      */
     public function __construct(string $uuid, string $code, string $text)
     {
+        parent::__construct($uuid, $code, $text);
         $this->initializeObject();
 
-        parent::__construct($uuid, 'licenceTag', $code, $text);
+        $this->setType('licenceTag');
     }
 
     /**
