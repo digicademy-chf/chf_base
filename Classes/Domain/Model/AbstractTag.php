@@ -10,8 +10,12 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
+use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
+use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
  * Model for AbstractTag
@@ -29,38 +33,116 @@ class AbstractTag extends AbstractEntity
     protected bool $hidden = false;
 
     /**
+     * Resource that this database record is part of
+     * 
+     * @var Resource|LazyLoadingProxy
+     */
+    #[Lazy()]
+    protected Resource|LazyLoadingProxy $parentResource;
+
+    /**
      * Unique identifier of the database record
      * 
      * @var string
      */
     #[Validate([
         'validator' => 'RegularExpression',
-        'options'   => [
+        'options' => [
             'regularExpression' => '^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$',
-            'errorMessage'      => 'LLL:EXT:da_base/Resources/Private/Language/locallang.xlf:validator.regularExpression.noUuid',
+            'errorMessage' => 'LLL:EXT:da_base/Resources/Private/Language/locallang.xlf:validator.regularExpression.noUuid',
         ],
     ])]
     protected string $uuid = '';
 
     /**
-     * Content of the footnote
+     * Type of tag
      * 
      * @var string
      */
     #[Validate([
-        'validator' => 'String',
+        'validator' => 'StringLength', # Validates for string length instead of string values to allow other models to add further types
+        'options' => [
+            'maximum' => 255,
+        ],
+    ])]
+    protected string $type = '';
+
+    /**
+     * Abbreviation of the tag
+     * 
+     * @var string
+     */
+    #[Validate([
+        'validator' => 'StringLength',
+        'options' => [
+            'maximum' => 255,
+        ],
+    ])]
+    protected string $code = '';
+
+    /**
+     * Name of the tag
+     * 
+     * @var string
+     */
+    #[Validate([
+        'validator' => 'StringLength',
+        'options' => [
+            'maximum' => 255,
+        ],
     ])]
     protected string $text = '';
+
+    /**
+     * Brief information about the tag
+     * 
+     * @var string
+     */
+    #[Validate([
+        'validator' => 'StringLength',
+        'options' => [
+            'maximum' => 2000,
+        ],
+    ])]
+    protected string $description = '';
+
+    /**
+     * Reference web address to identify an entity across the web
+     * 
+     * @var ObjectStorage<SameAs>
+     */
+    #[Lazy()]
+    #[Cascade([
+        'value' => 'remove',
+    ])]
+    protected ObjectStorage $sameAs;
 
     /**
      * Construct object
      *
      * @param string $uuid
+     * @param string $type
+     * @param string $code
+     * @param string $text
      * @return AbstractTag
      */
-    public function __construct(string $uuid)
+    public function __construct(string $uuid, string $type, string $code, string $text)
     {
+        $this->initializeObject();
+
         $this->setUuid($uuid);
+        $this->setType($type);
+        $this->setCode($code);
+        $this->setText($text);
+    }
+
+    /**
+     * Initialize object
+     */
+    public function initializeObject(): void
+    {
+        $this->parentResource = new LazyLoadingProxy();
+        $this->sameAs = new ObjectStorage();
     }
 
     /**
@@ -84,6 +166,29 @@ class AbstractTag extends AbstractEntity
     }
 
     /**
+     * Get parent resource
+     * 
+     * @return Resource
+     */
+    public function getParentResource(): Resource
+    {
+        if ($this->parentResource instanceof LazyLoadingProxy) {
+            $this->parentResource->_loadRealInstance();
+        }
+        return $this->parentResource;
+    }
+
+    /**
+     * Set parent resource
+     * 
+     * @param Resource
+     */
+    public function setParentResource(Resource $parentResource): void
+    {
+        $this->parentResource = $parentResource;
+    }
+
+    /**
      * Get UUID
      *
      * @return string
@@ -104,6 +209,46 @@ class AbstractTag extends AbstractEntity
     }
 
     /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     */
+    public function setType(string $type): void
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * Get code
+     *
+     * @return string
+     */
+    public function getCode(): string
+    {
+        return $this->code;
+    }
+
+    /**
+     * Set code
+     *
+     * @param string $code
+     */
+    public function setCode(string $code): void
+    {
+        $this->code = $code;
+    }
+
+    /**
      * Get text
      *
      * @return string
@@ -121,6 +266,75 @@ class AbstractTag extends AbstractEntity
     public function setText(string $text): void
     {
         $this->text = $text;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     */
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * Get same as
+     *
+     * @return ObjectStorage<SameAs>
+     */
+    public function getSameAs(): ObjectStorage
+    {
+        return $this->sameAs;
+    }
+
+    /**
+     * Set same as
+     *
+     * @param ObjectStorage<SameAs> $sameAs
+     */
+    public function setSameAs(ObjectStorage $sameAs): void
+    {
+        $this->sameAs = $sameAs;
+    }
+
+    /**
+     * Add same as
+     *
+     * @param SameAs $sameAs
+     */
+    public function addSameAs(SameAs $sameAs): void
+    {
+        $this->sameAs->attach($sameAs);
+    }
+
+    /**
+     * Remove same as
+     *
+     * @param SameAs $sameAs
+     */
+    public function removeSameAs(SameAs $sameAs): void
+    {
+        $this->sameAs->detach($sameAs);
+    }
+
+    /**
+     * Remove all same as
+     */
+    public function removeAllSameAs(): void
+    {
+        $sameAs = clone $this->sameAs;
+        $this->sameAs->removeAll($sameAs);
     }
 }
 

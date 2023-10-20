@@ -190,7 +190,8 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectTree',
                 'foreign_table' => 'tx_chfbase_domain_model_tag',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#type}="labelTag" AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###'
+                    . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
                 'treeConfig' => [
                     'parentField' => 'parentLabelTag',
                 ],
@@ -207,7 +208,9 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'foreign_table' => 'tx_chfbase_domain_model_tag',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#type}="labelTypeTag" AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###'
+                    . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTypeTag\'',
+                'MM' => 'tx_chfbase_domain_model_tag_tag_labeltype_mm',
                 'maxitems' => 1,
                 'items' => [
                     [
@@ -370,7 +373,8 @@ return [
                 'type'                => 'select',
                 'renderType'          => 'selectMultipleSideBySide',
                 'foreign_table'       => 'tx_chfbase_domain_model_tag',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#type}="labelType" AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###'
+                    . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
                 'MM'                  => 'tx_chfbase_domain_model_tag_tag_labeltype_mm',
                 'MM_opposite_field'   => 'labelType',
                 'size'                => 5,

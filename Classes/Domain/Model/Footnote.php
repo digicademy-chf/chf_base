@@ -35,9 +35,9 @@ class Footnote extends AbstractEntity
      */
     #[Validate([
         'validator' => 'RegularExpression',
-        'options'   => [
+        'options' => [
             'regularExpression' => '^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$',
-            'errorMessage'      => 'LLL:EXT:da_base/Resources/Private/Language/locallang.xlf:validator.regularExpression.noUuid',
+            'errorMessage' => 'LLL:EXT:da_base/Resources/Private/Language/locallang.xlf:validator.regularExpression.noUuid',
         ],
     ])]
     protected string $uuid = '';
