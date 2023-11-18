@@ -10,8 +10,8 @@ Specific usage instructions are provided **in each component's documentation**
 where necessary. There are a few central concept in the CHF and the TYPO3
 world that may come in handy:
 
-- **Basic instructions** for your own sitepackage are provided in the
-  documentation for ``chf_project`` (in development).
+- **Basic instructions** for your own project and sitepackage are provided in
+  the documentation for ``chf_project``.
 
 - TYPO3 differentiates between **frontend and backend**, and editing is
   usually done in the latter.

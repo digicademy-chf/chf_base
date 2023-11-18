@@ -14,9 +14,9 @@ dates. ``Actors``, on the other hand, may be grouped together via ``Tag``s as
 labels, but otherwise stand on their own. They may refer to organisations,
 individuals, or other entities in the sense of actor-network theory.
 
-In addition, the model provides flexible ``Tag``s and ``SameAs`` classes, which
-can be used to group other classes via labels and to connect entities to
-Linked Open Data.
+In addition, the model provides flexible ``Tag``s to group other classes,
+``Relation``s to connect classes with qualifications like an ``Actor``s role,
+and ``SameAs`` classes to connect entities to authority data.
 
 ..  _graphical-overview:
 

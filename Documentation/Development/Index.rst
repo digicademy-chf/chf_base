@@ -18,7 +18,8 @@ needs to support more than one major release of the software.
 
 2. When this is done, switch to a development environment updated according
   to the TYPO3 release's changed requirements. Use the updated system's
-integrated extension testing tools to see which further changes may be needed.
+  integrated extension testing tools to see which further changes may be
+  needed.
 
 3. If you made changes that affect the database, make sure there is an
   automatic upgrade script in place.

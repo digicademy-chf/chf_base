@@ -20,14 +20,15 @@ designed for the needs of scholarly editing, lexicography, archives, GLAM
 institutions, and, more generally, projects interested in making cultural
 heritage, books, media, or annotated bibliographies available in their own
 web-based research platform. A key strength of the CHF is the ability to
-produce portals and editions that include various data types with historical
-points of reference in a single system, including editing interfaces,
-frontends, and serialisations. Specific data models are organised as
-additional components around the TYPO3 extension ``chf_base``, which provides
-central data types like ``Agent``s, ``Location``s, and ``Period``s, but also
-services like import and export routines. The various components are developed
-and maintained by the Digital Academy, a Digital Humanities department at the
-Academy of Sciences and Literature Mainz.
+produce portals and multimodal editions that include various data types with
+historical points of reference in a single system, including editing
+interfaces, frontends, and serialisations. Specific data models are organised
+as additional components around the TYPO3 extension ``chf_base``, which
+provides central data types like ``Agent``s, ``Location``s, and ``Period``s,
+but also multiple types of ``Tag``s and ``Relation``s to structure and connect
+data as well as services like import and export routines. The various
+components are developed and maintained by the Digital Academy, a Digital
+Humanities department at the Academy of Sciences and Literature Mainz.
 
 :Repository:  https://github.com/digicademy-chf/chf_base
 :Read online: https://digicademy-chf.github.io/chf_base
@@ -42,11 +43,10 @@ This is a pre-release version. The following steps are required for the software
 
 - Implement TCA and model
 - Finish initial documentation
-- Include Leaflet and connect it to dependabot
 
 **Version 0.6.0**
 
-- Move mdlr and mrvl into this component
+- Unify mdlr and mrvl in this component
 - Move social links into this component
 
 **Version 0.7.0**
@@ -67,7 +67,6 @@ This is a pre-release version. The following steps are required for the software
 **Version 2.0.0**
 
 - Add API documentation
-- Try to unify mdlr and mrvl
 
 **Version 2.1.0**
 

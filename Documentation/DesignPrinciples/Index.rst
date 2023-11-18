@@ -33,8 +33,9 @@ aid in designing a new addition to the CHF.
 
 5. The data models tend to **avoid extensive cross-dependencies**. Using
   classes from ``chf_base`` is common, though, and some models may also
-  include ``Reference`` from ``chf_bib`` or ``Feature`` and ``MapResource``
-  from ``chf_map`` where appropriate.
+  include ``SourceRelation`` from ``chf_bib`` or ``Feature`` and
+  ``MapResource`` from ``chf_map`` where appropriate. ``GlossaryResource`` may
+  be used across all other data models if needed.
 
 6. A data model extension **should contain** the TCA,
   model/repository/controller files, import and export formats appropriate for

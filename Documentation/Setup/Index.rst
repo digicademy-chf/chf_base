@@ -21,5 +21,5 @@ extension and activate it in a PHP Coposer environment.
 
 For inspiration on how to use the CHF, feel free to take a **look at two
 actual sitepackages** and their Docker containers based on the boilerplate
-code: ``namenforschung`` with ``namenforschung_docker`` (in development) as
-well as ``corpusvitrearum`` with ``corpusvitrearum_docker`` (in development).
+code: ``namenforschung`` with ``namenforschung_docker`` as well as
+``corpusvitrearum`` with ``corpusvitrearum_docker``.
