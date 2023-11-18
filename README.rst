@@ -39,41 +39,19 @@ Roadmap
 
 This is a pre-release version. The following steps are required for the software to move out of beta:
 
-**Version 0.5.0**
-
-- Implement TCA and model
-- Finish initial documentation
-
-**Version 0.6.0**
-
 - Unify mdlr and mrvl in this component
-- Move social links into this component
-
-**Version 0.7.0**
-
+- Move social links here
 - TCA and model work as expected
 - Frontend plugin and templates?
-
-**Version 0.8.0**
-
 - Embedded metadata
 - Infrastructure for imports
-
-**Version 0.9.0**
-
 - Infrastructure for serialisations
 - Infrastructure for search configs
-
-**Version 2.0.0**
-
 - Add API documentation
 
-**Version 2.1.0**
+**Beyond 2.0.0**
 
 - Add testing
 - Generic import
 - Additional serialisations
-
-**Nice to have**
-
 - Automation to include Leaflet files upon new releases
