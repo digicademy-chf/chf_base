@@ -34,6 +34,19 @@ Humanities department at the Academy of Sciences and Literature Mainz.
 :Read online: https://digicademy-chf.github.io/chf_base
 :TER:         https://extensions.typo3.org/extension/chf_base
 
+Features
+========
+
+- HTML: accessible, web app, semantic tags, embedded metadata
+- CSS: atomic, responsive, components, variables, dark mode, transitions
+- JS: supporting CSS, no frameworks, sharing API
+- Layouts: hub, page, text, one per main class, various components
+- Search: dedicated configuration per main class, suggestions, expert modes
+- Academic: sources, footnotes, info buttons, common serialisations/formats
+- Privacy: no external APIs, no frameworks, no preprocessors, GDPR-compliant
+- Optional: common APIs, visualisations, quality assurance
+
+
 Roadmap
 =======
 
