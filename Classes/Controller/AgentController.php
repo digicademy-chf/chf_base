@@ -16,7 +16,7 @@ use Digicademy\CHFBase\Domain\Repository\AgentRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
- * Controller for agents
+ * Controller for Agent
  */
 class AgentController extends ActionController
 {

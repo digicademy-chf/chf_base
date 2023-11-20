@@ -16,7 +16,7 @@ use Digicademy\CHFBase\Domain\Repository\LocationRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
- * Controller for locations
+ * Controller for Location
  */
 class LocationController extends ActionController
 {

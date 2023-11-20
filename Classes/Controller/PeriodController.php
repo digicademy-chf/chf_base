@@ -16,7 +16,7 @@ use Digicademy\CHFBase\Domain\Repository\PeriodRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
- * Controller for periods
+ * Controller for Period
  */
 class PeriodController extends ActionController
 {

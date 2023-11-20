@@ -15,7 +15,7 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- * Repository for agents
+ * Repository for Agent
  * 
  * @extends Repository<Agent>
  */

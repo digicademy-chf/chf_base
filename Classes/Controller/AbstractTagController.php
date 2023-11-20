@@ -29,13 +29,13 @@ class AbstractTagController extends ActionController
 
     public function indexAction(): ResponseInterface
     {
-        $this->view->assign('abstractTags', $this->abstractTagRepository->findAll());
+        $this->view->assign('tags', $this->abstractTagRepository->findAll());
         return $this->htmlResponse();
     }
 
     public function showAction(AbstractTag $abstractTag): ResponseInterface
     {
-        $this->view->assign('abstractTag', $abstractTag);
+        $this->view->assign('tag', $abstractTag);
         return $this->htmlResponse();
     }
 }

@@ -10,21 +10,20 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Repository;
 
-use Digicademy\CHFBase\Domain\Model\Resource;
+use Digicademy\CHFBase\Domain\Model\Extent;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- * Repository for resources
+ * Repository for Extent
  * 
- * @extends Repository<Resource>
+ * @extends Repository<Extent>
  */
-class ResourceRepository extends Repository
+class ExtentRepository extends Repository
 {
     protected $defaultOrderings = [
         'sorting' => QueryInterface::ORDER_ASCENDING,
-        'type'    => QueryInterface::ORDER_ASCENDING,
-        'title'   => QueryInterface::ORDER_ASCENDING,
+        'text'    => QueryInterface::ORDER_ASCENDING,
     ];
 }
 
