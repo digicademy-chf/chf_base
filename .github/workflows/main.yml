@@ -16,7 +16,7 @@ jobs:
       - name: Publish archive with result
         uses: actions/upload-artifact@v3
         with:
-          name: Rendered
+          name: github-pages
           path: ${{ steps.rendering.outputs.renderedPath }}
 
   deploy:
