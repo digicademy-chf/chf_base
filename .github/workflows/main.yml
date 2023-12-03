@@ -14,9 +14,7 @@ jobs:
         uses: TYPO3-Documentation/gh-render-action@0.1.0
         id: rendering
       - name: Publish archive with result
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
-          name: github-pages
+          name: Rendered
           path: ${{ steps.rendering.outputs.renderedPath }}
-      - name: Upload artifact to Pages
-        uses: actions/upload-pages-artifact@v2
