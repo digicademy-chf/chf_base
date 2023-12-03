@@ -7,7 +7,7 @@ on:
     - release/*
 
 jobs:
-  publish-documentation:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Render documentation
@@ -18,3 +18,17 @@ jobs:
         with:
           name: Rendered
           path: ${{ steps.rendering.outputs.renderedPath }}
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
