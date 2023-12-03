@@ -1,0 +1,21 @@
+name: Publish documentation
+
+on:
+  push:
+    branches:
+    - main
+    - release/*
+
+jobs:
+  publish-documentation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Render documentation
+        uses: TYPO3-Documentation/gh-render-action@v0.1.0
+        id: rendering
+
+      - name: Publish archive with result
+        uses: actions/upload-artifact@v1
+        with:
+          name: Rendered
+          path: ${{ steps.rendering.outputs.renderedPath }}
