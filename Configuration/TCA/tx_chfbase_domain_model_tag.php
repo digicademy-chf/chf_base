@@ -291,22 +291,22 @@ return [
             ],
         ],
         'asLabelOfAgent' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfAgent',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfAgent',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfAgent.description',
-            'config'      => [
-                'type'                => 'select',
-                'renderType'          => 'selectMultipleSideBySide',
-                'foreign_table'       => 'tx_chfbase_domain_model_agent',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'tx_chfbase_domain_model_agent',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###',
-                'MM'                  => 'tx_chfbase_domain_model_agent_tag_label_mm',
-                'MM_opposite_field'   => 'label',
-                'size'                => 5,
-                'autoSizeMax'         => 10,
-                'fieldControl'        => [
-                    'editPopup'  => [
+                'MM' => 'tx_chfbase_domain_model_agent_tag_label_mm',
+                'MM_opposite_field' => 'label',
+                'size' => 5,
+                'autoSizeMax' => 10,
+                'fieldControl' => [
+                    'editPopup' => [
                         'disabled' => false,
                     ],
-                    'addRecord'  => [
+                    'addRecord' => [
                         'disabled' => false,
                     ],
                     'listModule' => [
@@ -319,22 +319,22 @@ return [
             ],
         ],
         'asLabelOfLocation' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfLocation',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfLocation',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfLocation.description',
-            'config'      => [
-                'type'                => 'select',
-                'renderType'          => 'selectMultipleSideBySide',
-                'foreign_table'       => 'tx_chfbase_domain_model_location',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'tx_chfbase_domain_model_location',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_location}.{#pid}=###CURRENT_PID###',
-                'MM'                  => 'tx_chfbase_domain_model_location_tag_label_mm',
-                'MM_opposite_field'   => 'label',
-                'size'                => 5,
-                'autoSizeMax'         => 10,
-                'fieldControl'        => [
-                    'editPopup'  => [
+                'MM' => 'tx_chfbase_domain_model_location_tag_label_mm',
+                'MM_opposite_field' => 'label',
+                'size' => 5,
+                'autoSizeMax' => 10,
+                'fieldControl' => [
+                    'editPopup' => [
                         'disabled' => false,
                     ],
-                    'addRecord'  => [
+                    'addRecord' => [
                         'disabled' => false,
                     ],
                     'listModule' => [
@@ -347,22 +347,22 @@ return [
             ],
         ],
         'asLabelOfPeriod' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfPeriod',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfPeriod',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfPeriod.description',
-            'config'      => [
-                'type'                => 'select',
-                'renderType'          => 'selectMultipleSideBySide',
-                'foreign_table'       => 'tx_chfbase_domain_model_period',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'tx_chfbase_domain_model_period',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_period}.{#pid}=###CURRENT_PID###',
-                'MM'                  => 'tx_chfbase_domain_model_period_tag_label_mm',
-                'MM_opposite_field'   => 'label',
-                'size'                => 5,
-                'autoSizeMax'         => 10,
-                'fieldControl'        => [
-                    'editPopup'  => [
+                'MM' => 'tx_chfbase_domain_model_period_tag_label_mm',
+                'MM_opposite_field' => 'label',
+                'size' => 5,
+                'autoSizeMax' => 10,
+                'fieldControl' => [
+                    'editPopup' => [
                         'disabled' => false,
                     ],
-                    'addRecord'  => [
+                    'addRecord' => [
                         'disabled' => false,
                     ],
                     'listModule' => [
@@ -375,23 +375,23 @@ return [
             ],
         ],
         'asLabelTypeOfLabelTag' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTypeTag.asLabelTypeOfLabelTag',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTypeTag.asLabelTypeOfLabelTag',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTypeTag.asLabelTypeOfLabelTag.description',
-            'config'      => [
-                'type'                => 'select',
-                'renderType'          => 'selectMultipleSideBySide',
-                'foreign_table'       => 'tx_chfbase_domain_model_tag',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'tx_chfbase_domain_model_tag',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
-                'MM'                  => 'tx_chfbase_domain_model_tag_tag_labeltype_mm',
-                'MM_opposite_field'   => 'labelType',
-                'size'                => 5,
-                'autoSizeMax'         => 10,
-                'fieldControl'        => [
-                    'editPopup'  => [
+                'MM' => 'tx_chfbase_domain_model_tag_tag_labeltype_mm',
+                'MM_opposite_field' => 'labelType',
+                'size' => 5,
+                'autoSizeMax' => 10,
+                'fieldControl' => [
+                    'editPopup' => [
                         'disabled' => false,
                     ],
-                    'addRecord'  => [
+                    'addRecord' => [
                         'disabled' => false,
                     ],
                     'listModule' => [
@@ -404,23 +404,23 @@ return [
             ],
         ],
         'asLicenceOfLicenceRelation' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfLicenceRelation',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfLicenceRelation',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfLicenceRelation.description',
-            'config'      => [
-                'type'                => 'select',
-                'renderType'          => 'selectMultipleSideBySide',
-                'foreign_table'       => 'tx_chfbase_domain_model_relation',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'licenceRelation\'',
-                'MM'                  => 'tx_chfbase_domain_model_relation_tag_licence_mm',
-                'MM_opposite_field'   => 'licence',
-                'size'                => 5,
-                'autoSizeMax'         => 10,
-                'fieldControl'        => [
-                    'editPopup'  => [
+                'MM' => 'tx_chfbase_domain_model_relation_tag_licence_mm',
+                'MM_opposite_field' => 'licence',
+                'size' => 5,
+                'autoSizeMax' => 10,
+                'fieldControl' => [
+                    'editPopup' => [
                         'disabled' => false,
                     ],
-                    'addRecord'  => [
+                    'addRecord' => [
                         'disabled' => false,
                     ],
                     'listModule' => [

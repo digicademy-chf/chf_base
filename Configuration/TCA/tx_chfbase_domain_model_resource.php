@@ -160,11 +160,11 @@ return [
                       ['HTTP', 'http://'],
                    ],
                 ],
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
+                'required' => true,
             ],
-            'behaviour' => [
-                'allowLanguageSynchronization' => true,
-            ],
-            'required' => true,
         ],
         'title' => [
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractResource.title',
@@ -182,9 +182,9 @@ return [
             'config' => [
                 'type' => 'language',
                 'required' => true,
-            ],
-            'behaviour' => [
-                'allowLanguageSynchronization' => true,
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
             ],
         ],
         'description' => [
@@ -224,52 +224,56 @@ return [
         'authorshipRelation' => [
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.authorshipRelation',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.authorshipRelation.description',
-            'config' => [
-                'type' => 'inline',
+            'config'      => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
-                'foreign_match_fields' => [
-                    'type' => 'authorshipRelation',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
+                    . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'authorshipRelation\'',
+                'MM' => 'tx_chfbase_domain_model_resource_relation_record_mm',
+                'size' => 5,
+                'autoSizeMax' => 10,
+                'fieldControl' => [
+                    'editPopup' => [
+                        'disabled' => false,
+                    ],
+                    'addRecord' => [
+                        'disabled' => false,
+                    ],
+                    'listModule' => [
+                        'disabled' => false,
+                    ],
                 ],
-                'foreign_field' => 'parent',
-                'foreign_table_field' => 'parent_table',
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
-                ],
-                'appearance' => [
-                    'collapseAll' => true,
-                    'expandSingle' => true,
-                    'newRecordLinkAddTitle' => true,
-                    'levelLinksPosition' => 'top',
-                    'useSortable' => true,
-                    'showPossibleLocalizationRecords' => true,
-                    'showAllLocalizationLink' => true,
-                    'showSynchronizationLink' => true,
                 ],
             ],
         ],
         'licenceRelation' => [
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.licenceRelation',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.licenceRelation.description',
-            'config' => [
-                'type' => 'inline',
+            'config'      => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
-                'foreign_match_fields' => [
-                    'type' => 'licenceRelation',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
+                    . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'licenceRelation\'',
+                'MM' => 'tx_chfbase_domain_model_resource_relation_record_mm',
+                'size' => 5,
+                'autoSizeMax' => 10,
+                'fieldControl' => [
+                    'editPopup' => [
+                        'disabled' => false,
+                    ],
+                    'addRecord' => [
+                        'disabled' => false,
+                    ],
+                    'listModule' => [
+                        'disabled' => false,
+                    ],
                 ],
-                'foreign_field' => 'parent',
-                'foreign_table_field' => 'parent_table',
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
-                ],
-                'appearance' => [
-                    'collapseAll' => true,
-                    'expandSingle' => true,
-                    'newRecordLinkAddTitle' => true,
-                    'levelLinksPosition' => 'top',
-                    'useSortable' => true,
-                    'showPossibleLocalizationRecords' => true,
-                    'showAllLocalizationLink' => true,
-                    'showSynchronizationLink' => true,
                 ],
             ],
         ],
@@ -281,9 +285,9 @@ return [
                 'format' => 'date',
                 'eval' => 'int',
                 'default' => 0,
-            ],
-            'behaviour' => [
-                'allowLanguageSynchronization' => true,
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
             ],
         ],
         'revisionNumber' => [
@@ -291,9 +295,9 @@ return [
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractBase.revisionNumber.description',
             'config' => [
                 'type' => 'number',
-            ],
-            'behaviour' => [
-                'allowLanguageSynchronization' => true,
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
             ],
         ],
         'revisionDate' => [
@@ -304,9 +308,9 @@ return [
                 'format' => 'date',
                 'eval' => 'int',
                 'default' => 0,
-            ],
-            'behaviour' => [
-                'allowLanguageSynchronization' => true,
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
             ],
         ],
         'editorialNote' => [
@@ -318,9 +322,9 @@ return [
                 'rows' => 5,
                 'max' => 2000,
                 'eval' => 'trim',
-            ],
-            'behaviour' => [
-                'allowLanguageSynchronization' => true,
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
             ],
         ],
         'allAgents' => [
@@ -439,16 +443,16 @@ return [
             ],
         ],
         'importOrigin' => [
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:database.generic.importOrigin',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:database.generic.importOrigin.description',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.importOrigin',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.importOrigin.description',
             'config' => [
                 'type' => 'input',
                 'size' => 40,
                 'max' => 255,
                 'eval' => 'trim',
-            ],
-            'behaviour' => [
-                'allowLanguageSynchronization' => true,
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
             ],
         ],
         'importState' => [
@@ -459,9 +463,9 @@ return [
                 'size' => 40,
                 'max'  => 255,
                 'eval' => 'trim',
-            ],
-            'behaviour' => [
-                'allowLanguageSynchronization' => true,
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
             ],
         ],
     ],
@@ -486,7 +490,7 @@ return [
         '0' => [
             'showitem' => 'hiddenUuid,typeUri,titleLangCode,description,sameAs,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.editorial,authorshipRelation,licenceRelation,publicationDateRevisionNumberRevisionDate,editorialNote,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractResource.content,allAgents,allFileCollections,allLocations,allPeriods,allRelations,allTags,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.content,allAgents,allFileCollections,allLocations,allPeriods,allRelations,allTags,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.import,importOrigin,importState,',
         ],
     ],
