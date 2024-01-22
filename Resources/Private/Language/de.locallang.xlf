@@ -8,6 +8,14 @@
                 <source>Usage</source>
                 <target>Verwendung</target>
             </trans-unit>
+            <trans-unit id="object.generic.editorial" resname="object.generic.editorial" approved="yes">
+                <source>Editorial</source>
+                <target>Redaktion</target>
+            </trans-unit>
+            <trans-unit id="object.generic.import" resname="object.generic.import" approved="yes">
+                <source>Import</source>
+                <target>Import</target>
+            </trans-unit>
             <trans-unit id="object.generic.hidden.description" resname="object.generic.hidden.description" approved="yes">
                 <source>Whether the record should be visible or not</source>
                 <target>Ob der Datenbankeintrag sichtbar sein soll oder nicht</target>
@@ -35,6 +43,164 @@
             <trans-unit id="object.generic.sameAs.description" resname="object.generic.sameAs.description" approved="yes">
                 <source>Reference web address to identify an entity across the web</source>
                 <target>Referenz-Webadresse zur Identifikation einer Entität im Internet</target>
+            </trans-unit>
+            <trans-unit id="object.generic.importOrigin" resname="object.generic.importOrigin" approved="yes">
+                <source>Import origin</source>
+                <target>Import-Ursprung</target>
+            </trans-unit>
+            <trans-unit id="object.generic.importOrigin.description" resname="object.generic.importOrigin.description" approved="yes">
+                <source>URI or other identifier of the imported original</source>
+                <target>URI oder anderer Identifikator des importierten Originals</target>
+            </trans-unit>
+            <trans-unit id="object.generic.importState" resname="object.generic.importState" approved="yes">
+                <source>Import state</source>
+                <target>Importstatus</target>
+            </trans-unit>
+            <trans-unit id="object.generic.importState.description" resname="object.generic.importState.description" approved="yes">
+                <source>Brief indicator of the last state that was imported successfully</source>
+                <target>Kurze Angabe des letzten Standes, der erfolgreich importiert wurde</target>
+            </trans-unit>
+            <trans-unit id="object.generic.import" resname="object.generic.import" approved="yes">
+                <source>Import</source>
+                <target>Import</target>
+            </trans-unit>
+            <trans-unit id="object.generic.import.description" resname="object.generic.import.description" approved="yes">
+                <source>Full import code that this record is based on</source>
+                <target>Vollständiger Code, mit dem dieser Eintrag importiert wurde</target>
+            </trans-unit>
+            <trans-unit id="object.generic.authorshipRelation" resname="object.generic.authorshipRelation" approved="yes">
+                <source>Authorship relation</source>
+                <target>Autor:innenrelation</target>
+            </trans-unit>
+            <trans-unit id="object.generic.authorshipRelation.description" resname="object.generic.authorshipRelation.description" approved="yes">
+                <source>Authorship of this database record described by a relation to agents</source>
+                <target>Autorenschaft dieses Datenbankeintrags beschrieben durch eine Relation zu Akteur:innen</target>
+            </trans-unit>
+            <trans-unit id="object.generic.licenceRelation" resname="object.generic.licenceRelation" approved="yes">
+                <source>Licence relation</source>
+                <target>Lizenzrelation</target>
+            </trans-unit>
+            <trans-unit id="object.generic.licenceRelation.description" resname="object.generic.licenceRelation.description" approved="yes">
+                <source>Licence of this record described by a relation</source>
+                <target>Lizenz dieses Eintrags beschrieben durch eine Relation</target>
+            </trans-unit>
+            <!-- Object: AbstractBase -->
+            <trans-unit id="object.abstractBase.publicationDate" resname="object.abstractBase.publicationDate" approved="yes">
+                <source>Publication date</source>
+                <target>Veröffentlichungsdatum</target>
+            </trans-unit>
+            <trans-unit id="object.abstractBase.publicationDate.description" resname="object.abstractBase.publicationDate.description" approved="yes">
+                <source>Date when this record was published</source>
+                <target>Datum, an dem dieser Eintrag veröffentlicht wurde</target>
+            </trans-unit>
+            <trans-unit id="object.abstractBase.revisionNumber" resname="object.abstractBase.revisionNumber" approved="yes">
+                <source>Revision number</source>
+                <target>Revisionsnummer</target>
+            </trans-unit>
+            <trans-unit id="object.abstractBase.revisionNumber.description" resname="object.abstractBase.revisionNumber.description" approved="yes">
+                <source>Number of the current revision of this record</source>
+                <target>Nummer der aktuellen Revision dieses Eintrags</target>
+            </trans-unit>
+            <trans-unit id="object.abstractBase.revisionDate" resname="object.abstractBase.revisionDate" approved="yes">
+                <source>Revision date</source>
+                <target>Revisionsdatum</target>
+            </trans-unit>
+            <trans-unit id="object.abstractBase.revisionDate.description" resname="object.abstractBase.revisionDate.description" approved="yes">
+                <source>Date when this record was last revised</source>
+                <target>Datum, an dem dieser Eintrag zuletzt überarbeitet wurde</target>
+            </trans-unit>
+            <trans-unit id="object.abstractBase.editorialNote" resname="object.abstractBase.editorialNote" approved="yes">
+                <source>Editorial note</source>
+                <target>Redaktionsnotiz</target>
+            </trans-unit>
+            <trans-unit id="object.abstractBase.editorialNote.description" resname="object.abstractBase.editorialNote.description" approved="yes">
+                <source>Note for internal usage among the editorial team</source>
+                <target>Notiz für den internen Redaktionsgebrauch</target>
+            </trans-unit>
+            <!-- Object: AbstractResource -->
+            <trans-unit id="object.abstractResource.content" resname="object.abstractResource.content" approved="yes">
+                <source>Content</source>
+                <target>Inhalt</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.type" resname="object.abstractResource.type" approved="yes">
+                <source>Type</source>
+                <target>Art</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.type.description" resname="object.abstractResource.type.description" approved="yes">
+                <source>Type of resource</source>
+                <target>Art der Ressource</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.uri" resname="object.abstractResource.uri" approved="yes">
+                <source>URI</source>
+                <target>URI</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.uri.description" resname="object.abstractResource.uri.description" approved="yes">
+                <source>Canonical web address of this resource</source>
+                <target>Kanonische Webadresse dieser Ressource</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.title" resname="object.abstractResource.title" approved="yes">
+                <source>Title</source>
+                <target>Titel</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.title.description" resname="object.abstractResource.title.description" approved="yes">
+                <source>Name of this resource</source>
+                <target>Name dieser Ressource</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.langCode" resname="object.abstractResource.langCode" approved="yes">
+                <source>Language code</source>
+                <target>Sprachcode</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.langCode.description" resname="object.abstractResource.langCode.description" approved="yes">
+                <source>Language of this resource</source>
+                <target>Sprache dieser Ressource</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.description" resname="object.abstractResource.description" approved="yes">
+                <source>Description</source>
+                <target>Beschreibung</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.description.description" resname="object.abstractResource.description.description" approved="yes">
+                <source>Brief statement about this resource</source>
+                <target>Kurze Information zu dieser Ressource</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.allAgents" resname="object.abstractResource.allAgents" approved="yes">
+                <source>All agents</source>
+                <target>Alle Akteur:innen</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.allAgents.description" resname="object.abstractResource.allAgents.description" approved="yes">
+                <source>List of all agents compiled in this resource</source>
+                <target>Liste aller Akteur:innen, die in dieser Ressource verzeichnet sind</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.allLocations" resname="object.abstractResource.allLocations" approved="yes">
+                <source>All locations</source>
+                <target>Alle Orte</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.allLocations.description" resname="object.abstractResource.allLocations.description" approved="yes">
+                <source>List of all locations compiled in this resource</source>
+                <target>Liste aller Orte, die in dieser Ressource verzeichnet sind</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.allPeriods" resname="object.abstractResource.allPeriods" approved="yes">
+                <source>All periods</source>
+                <target>Alle Zeiträume</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.allPeriods.description" resname="object.abstractResource.allPeriods.description" approved="yes">
+                <source>List of all periods compiled in this resource</source>
+                <target>Liste aller Zeiträume, die in dieser Ressource verzeichnet sind</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.allRelations" resname="object.abstractResource.allRelations" approved="yes">
+                <source>All relations</source>
+                <target>Alle Relationen</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.allRelations.description" resname="object.abstractResource.allRelations.description" approved="yes">
+                <source>List of all relations compiled in this resource</source>
+                <target>Liste aller Relationen, die in dieser Ressource verzeichnet sind</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.allTags" resname="object.abstractResource.allTags" approved="yes">
+                <source>All tags</source>
+                <target>Alle Schlagworte</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.allTags.description" resname="object.abstractResource.allTags.description" approved="yes">
+                <source>List of all tags compiled in this resource</source>
+                <target>Liste aller Schlagworte, die in dieser Ressource verzeichnet sind</target>
             </trans-unit>
             <!-- Object: AbstractTag -->
             <trans-unit id="object.abstractTag" resname="object.abstractTag" approved="yes">
@@ -409,38 +575,6 @@
                 <source>List of further contributors to this record</source>
                 <target>Liste weiterer Beitragender zu diesem Eintrags</target>
             </trans-unit>
-            <trans-unit id="object.agent.publicationDate" resname="object.agent.publicationDate" approved="yes">
-                <source>Publication date</source>
-                <target>Veröffentlichungsdatum</target>
-            </trans-unit>
-            <trans-unit id="object.agent.publicationDate.description" resname="object.agent.publicationDate.description" approved="yes">
-                <source>Date when this record was published</source>
-                <target>Datum, an dem dieser Eintrag veröffentlicht wurde</target>
-            </trans-unit>
-            <trans-unit id="object.agent.revisionNumber" resname="object.agent.revisionNumber" approved="yes">
-                <source>Revision number</source>
-                <target>Revisionsnummer</target>
-            </trans-unit>
-            <trans-unit id="object.agent.revisionNumber.description" resname="object.agent.revisionNumber.description" approved="yes">
-                <source>Number of the current revision of this record</source>
-                <target>Nummer der aktuellen Revision dieses Eintrags</target>
-            </trans-unit>
-            <trans-unit id="object.agent.revisionDate" resname="object.agent.revisionDate" approved="yes">
-                <source>Revision date</source>
-                <target>Revisionsdatum</target>
-            </trans-unit>
-            <trans-unit id="object.agent.revisionDate.description" resname="object.agent.revisionDate.description" approved="yes">
-                <source>Date when this record was last revised</source>
-                <target>Datum, an dem dieser Eintrag zuletzt überarbeitet wurde</target>
-            </trans-unit>
-            <trans-unit id="object.agent.editorialNote" resname="object.agent.editorialNote" approved="yes">
-                <source>Editorial note</source>
-                <target>Redaktionsnotiz</target>
-            </trans-unit>
-            <trans-unit id="object.agent.editorialNote.description" resname="object.agent.editorialNote.description" approved="yes">
-                <source>Note for internal usage among the editorial team</source>
-                <target>Notiz für den internen Redaktionsgebrauch</target>
-            </trans-unit>
             <trans-unit id="object.agent.contentElement" resname="object.agent.contentElement" approved="yes">
                 <source>Content element</source>
                 <target>Inhaltselement</target>
@@ -512,22 +646,6 @@
             <trans-unit id="object.agent.source.description" resname="object.agent.source.description" approved="yes">
                 <source>List of bibliographical references for this record</source>
                 <target>Liste bibliografischer Angaben zu diesem Eintrag</target>
-            </trans-unit>
-            <trans-unit id="object.agent.importOrigin" resname="object.agent.importOrigin" approved="yes">
-                <source>Import origin</source>
-                <target>Import-Ursprung</target>
-            </trans-unit>
-            <trans-unit id="object.agent.importOrigin.description" resname="object.agent.importOrigin.description" approved="yes">
-                <source>URI or other identifier of the imported original</source>
-                <target>URI oder anderer Identifikator des importierten Originals</target>
-            </trans-unit>
-            <trans-unit id="object.agent.import" resname="object.agent.import" approved="yes">
-                <source>Import</source>
-                <target>Import</target>
-            </trans-unit>
-            <trans-unit id="object.agent.import.description" resname="object.agent.import.description" approved="yes">
-                <source>Full import code that this record is based on</source>
-                <target>Vollständiger Code, mit dem dieser Eintrag importiert wurde</target>
             </trans-unit>
             <trans-unit id="object.agent.asAuthorOfResource" resname="object.agent.asAuthorOfResource" approved="yes">
                 <source>Author of a resource</source>

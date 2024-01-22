@@ -133,7 +133,7 @@ return [
                 'type' => 'uuid',
                 'size' => 40,
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
                 'required' => true,
             ],
@@ -147,7 +147,7 @@ return [
                 'richtextConfiguration' => 'chf_base_simple',
                 'softref' => 'typolink_tag,email[subst],url',
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
                 'required' => true,
             ],

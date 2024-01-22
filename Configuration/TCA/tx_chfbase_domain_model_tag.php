@@ -131,7 +131,7 @@ return [
                     'label' => 'asc',
                 ],
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
             ],
         ],
@@ -149,7 +149,7 @@ return [
                 ],
                 'maxitems' => 1,
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
             ],
         ],
@@ -160,7 +160,7 @@ return [
                 'type' => 'uuid',
                 'size' => 40,
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
                 'required' => true,
             ],
@@ -195,7 +195,7 @@ return [
                     'label' => 'asc',
                 ],
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
                 'required' => true,
             ],
@@ -221,7 +221,7 @@ return [
                     'label' => 'asc',
                 ],
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
             ],
         ],
@@ -234,7 +234,7 @@ return [
                 'max' => 255,
                 'eval' => 'trim',
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
                 'required' => true,
             ],
@@ -248,7 +248,7 @@ return [
                 'max' => 255,
                 'eval' => 'trim',
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
                 'required' => true,
             ],
@@ -263,7 +263,7 @@ return [
                 'max' => 2000,
                 'eval' => 'trim',
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
             ],
         ],
@@ -273,10 +273,10 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_chfbase_domain_model_same_as',
-                'foreign_field' => 'parent_id',
+                'foreign_field' => 'parent',
                 'foreign_table_field' => 'parent_table',
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
                 'appearance' => [
                     'collapseAll' => true,
@@ -314,7 +314,7 @@ return [
                     ],
                 ],
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
             ],
         ],
@@ -342,7 +342,7 @@ return [
                     ],
                 ],
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
             ],
         ],
@@ -370,7 +370,7 @@ return [
                     ],
                 ],
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
             ],
         ],
@@ -399,7 +399,7 @@ return [
                     ],
                 ],
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
             ],
         ],
@@ -428,7 +428,7 @@ return [
                     ],
                 ],
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
             ],
         ],

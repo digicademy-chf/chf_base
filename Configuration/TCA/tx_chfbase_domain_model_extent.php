@@ -138,7 +138,7 @@ return [
                     'label' => 'asc',
                 ],
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
                 'required' => true,
             ],
@@ -152,7 +152,7 @@ return [
                 'max' => 255,
                 'eval' => 'trim',
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true,
+                    'allowLanguageSynchronization' => true,
                 ],
                 'required' => true,
             ],
