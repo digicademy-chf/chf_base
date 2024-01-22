@@ -13,7 +13,7 @@
                 <target>Ob der Datenbankeintrag sichtbar sein soll oder nicht</target>
             </trans-unit>
             <trans-unit id="object.generic.parentResource" resname="object.generic.parentResource" approved="yes">
-                <source>Superordinate resource</source>
+                <source>Parent resource</source>
                 <target>Übergeordnete Ressource</target>
             </trans-unit>
             <trans-unit id="object.generic.parentResource.description" resname="object.generic.parentResource.description" approved="yes">
@@ -25,8 +25,8 @@
                 <target>UUID</target>
             </trans-unit>
             <trans-unit id="object.generic.uuid.description" resname="object.generic.uuid.description" approved="yes">
-                <source>Unique identifier of the database record</source>
-                <target>Einzigartiger Identifikator des Datenbankeintrags</target>
+                <source>Unique identifier of this database record</source>
+                <target>Einzigartiger Identifikator dieses Datenbankeintrags</target>
             </trans-unit>
             <trans-unit id="object.generic.sameAs" resname="object.generic.sameAs" approved="yes">
                 <source>Reference URI</source>
@@ -78,8 +78,8 @@
                 <target>Text</target>
             </trans-unit>
             <trans-unit id="object.abstractTag.text.description" resname="object.abstractTag.text.description" approved="yes">
-                <source>Name of the tag</source>
-                <target>Bezeichnung des Schlagworts</target>
+                <source>Full name of the tag</source>
+                <target>Vollständige Bezeichnung des Schlagworts</target>
             </trans-unit>
             <trans-unit id="object.abstractTag.description" resname="object.abstractTag.description" approved="yes">
                 <source>Description</source>
@@ -91,7 +91,7 @@
             </trans-unit>
             <!-- Object: LabelTag -->
             <trans-unit id="object.labelTag.parentLabelTag" resname="object.labelTag.parentLabelTag" approved="yes">
-                <source>Superordinate label</source>
+                <source>Parent label</source>
                 <target>Übergeordnetes Label</target>
             </trans-unit>
             <trans-unit id="object.labelTag.parentLabelTag.description" resname="object.labelTag.parentLabelTag.description" approved="yes">
@@ -100,31 +100,31 @@
             </trans-unit>
             <trans-unit id="object.labelTag.labelType" resname="object.labelTag.labelType" approved="yes">
                 <source>Label type</source>
-                <target>Art des Labels</target>
+                <target>Labelart</target>
             </trans-unit>
             <trans-unit id="object.labelTag.labelType.description" resname="object.labelTag.labelType.description" approved="yes">
-                <source>Categorisation of this label</source>
-                <target>Kategorisierung dieses Labels</target>
+                <source>Category that this label belongs to</source>
+                <target>Kategorie, der dieses Label zugeordnet ist</target>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfAgent" resname="object.labelTag.asLabelOfAgent" approved="yes">
-                <source>As label of an agent</source>
-                <target>Als Label einer Akteur:in</target>
+                <source>Usage as label of an agent</source>
+                <target>Verwendung als Label einer Akteur:in</target>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfAgent.description" resname="object.labelTag.asLabelOfAgent.description" approved="yes">
                 <source>List of agents that use this tag as a label</source>
                 <target>Liste der Akteur:innen, die dieses Schlagwort als Label verwenden</target>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfLocation" resname="object.labelTag.asLabelOfLocation" approved="yes">
-                <source>As label of a location</source>
-                <target>Als Label eines Orts</target>
+                <source>Usage as label of a location</source>
+                <target>Verwendung als Label eines Orts</target>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfLocation.description" resname="object.labelTag.asLabelOfLocation.description" approved="yes">
                 <source>List of locations that use this tag as a label</source>
                 <target>Liste der Orte, die dieses Schlagwort als Label verwenden</target>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfPeriod" resname="object.labelTag.asLabelOfPeriod" approved="yes">
-                <source>As label of a period</source>
-                <target>Als Label eines Zeitraums</target>
+                <source>Usage as label of a period</source>
+                <target>Verwendung als Label eines Zeitraums</target>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfPeriod.description" resname="object.labelTag.asLabelOfPeriod.description" approved="yes">
                 <source>List of periods that use this tag as a label</source>
@@ -132,109 +132,21 @@
             </trans-unit>
             <!-- Object: LabelTypeTag -->
             <trans-unit id="object.labelTypeTag.asLabelTypeOfLabelTag" resname="object.labelTypeTag.asLabelTypeOfLabelTag" approved="yes">
-                <source>As label type of a label</source>
-                <target>Als Labelart eines Labels</target>
+                <source>Usage as label type of a label</source>
+                <target>Verwendung als Labelart eines Labels</target>
             </trans-unit>
             <trans-unit id="object.labelTypeTag.asLabelTypeOfLabelTag.description" resname="object.labelTypeTag.asLabelTypeOfLabelTag.description" approved="yes">
                 <source>List of labels that use this tag as a label type</source>
                 <target>Liste der Labels, die dieses Schlagwort als Labelart verwenden</target>
             </trans-unit>
             <!-- Object: LicenceTag -->
-            <trans-unit id="object.licenceTag.asLicenceOfMetadataOfResource" resname="object.licenceTag.asLicenceOfMetadataOfResource" approved="yes">
-                <source>As metadata licence of a resource</source>
-                <target>Als Metadatenlizenz einer Ressource</target>
+            <trans-unit id="object.licenceTag.asLicenceOfLicenceRelation" resname="object.licenceTag.asLicenceOfLicenceRelation" approved="yes">
+                <source>Usage as licence of a licence relation</source>
+                <target>Verwendung als Lizenz einer Lizenzrelation</target>
             </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfMetadataOfResource.description" resname="object.licenceTag.asLicenceOfMetadataOfResource.description" approved="yes">
-                <source>List of resources that use this tag as a metadata licence</source>
-                <target>Liste der Ressourcen, die dieses Schlagwort als Metadatenlizenz verwenden</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfTextOfResource" resname="object.licenceTag.asLicenceOfTextOfResource" approved="yes">
-                <source>As text licence of a resource</source>
-                <target>Als Textlizenz einer Ressource</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfTextOfResource.description" resname="object.licenceTag.asLicenceOfTextOfResource.description" approved="yes">
-                <source>List of resources that use this tag as a text licence</source>
-                <target>Liste der Ressourcen, die dieses Schlagwort als Textlizenz verwenden</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfMediaOfResource" resname="object.licenceTag.asLicenceOfMediaOfResource" approved="yes">
-                <source>As media licence of a resource</source>
-                <target>Als Medienlizenz einer Ressource</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfMediaOfResource.description" resname="object.licenceTag.asLicenceOfMediaOfResource.description" approved="yes">
-                <source>List of resources that use this tag as a media licence</source>
-                <target>Liste der Ressourcen, die dieses Schlagwort als Medienlizenz verwenden</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfMetadataOfAgent" resname="object.licenceTag.asLicenceOfMetadataOfAgent" approved="yes">
-                <source>As metadata licence of an agent</source>
-                <target>Als Metadatenlizenz einer Akteur:in</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfMetadataOfAgent.description" resname="object.licenceTag.asLicenceOfMetadataOfAgent.description" approved="yes">
-                <source>List of agents that use this tag as a metadata licence</source>
-                <target>Liste der Akteur:innen, die dieses Schlagwort als Metadatenlizenz verwenden</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfTextOfAgent" resname="object.licenceTag.asLicenceOfTextOfAgent" approved="yes">
-                <source>As text licence of an agent</source>
-                <target>Als Textlizenz einer Akteur:in</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfTextOfAgent.description" resname="object.licenceTag.asLicenceOfTextOfAgent.description" approved="yes">
-                <source>List of agents that use this tag as a text licence</source>
-                <target>Liste der Akteur:innen, die dieses Schlagwort als Textlizenz verwenden</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfMediaOfAgent" resname="object.licenceTag.asLicenceOfMediaOfAgent" approved="yes">
-                <source>As media licence of an agent</source>
-                <target>Als Medienlizenz einer Akteur:in</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfMediaOfAgent.description" resname="object.licenceTag.asLicenceOfMediaOfAgent.description" approved="yes">
-                <source>List of agents that use this tag as a media licence</source>
-                <target>Liste der Akteur:innen, die dieses Schlagwort als Medienlizenz verwenden</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfMetadataOfLocation" resname="object.licenceTag.asLicenceOfMetadataOfLocation" approved="yes">
-                <source>As metadata licence of a location</source>
-                <target>Als Metadatenlizenz eines Orts</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfMetadataOfLocation.description" resname="object.licenceTag.asLicenceOfMetadataOfLocation.description" approved="yes">
-                <source>List of locations that use this tag as a metadata licence</source>
-                <target>Liste der Orte, die dieses Schlagwort als Metadatenlizenz verwenden</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfTextOfLocation" resname="object.licenceTag.asLicenceOfTextOfLocation" approved="yes">
-                <source>As text licence of a location</source>
-                <target>Als Textlizenz eines Orts</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfTextOfLocation.description" resname="object.licenceTag.asLicenceOfTextOfLocation.description" approved="yes">
-                <source>List of locations that use this tag as a text licence</source>
-                <target>Liste der Orte, die dieses Schlagwort als Textlizenz verwenden</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfMediaOfLocation" resname="object.licenceTag.asLicenceOfMediaOfLocation" approved="yes">
-                <source>As media licence of a location</source>
-                <target>Als Medienlizenz eines Orts</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfMediaOfLocation.description" resname="object.licenceTag.asLicenceOfMediaOfLocation.description" approved="yes">
-                <source>List of locations that use this tag as a media licence</source>
-                <target>Liste der Orte, die dieses Schlagwort als Medienlizenz verwenden</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfMetadataOfPeriod" resname="object.licenceTag.asLicenceOfMetadataOfPeriod" approved="yes">
-                <source>As metadata licence of a period</source>
-                <target>Als Metadatenlizenz eines Zeitraums</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfMetadataOfPeriod.description" resname="object.licenceTag.asLicenceOfMetadataOfPeriod.description" approved="yes">
-                <source>List of periods that use this tag as a metadata licence</source>
-                <target>Liste der Zeiträume, die dieses Schlagwort als Metadatenlizenz verwenden</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfTextOfPeriod" resname="object.licenceTag.asLicenceOfTextOfPeriod" approved="yes">
-                <source>As text licence of a period</source>
-                <target>Als Textlizenz eines Zeitraums</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfTextOfPeriod.description" resname="object.licenceTag.asLicenceOfTextOfPeriod.description" approved="yes">
-                <source>List of periods that use this tag as a text licence</source>
-                <target>Liste der Zeiträume, die dieses Schlagwort als Textlizenz verwenden</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfMediaOfPeriod" resname="object.licenceTag.asLicenceOfMediaOfPeriod" approved="yes">
-                <source>As media licence of a period</source>
-                <target>Als Medienlizenz eines Zeitraums</target>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfMediaOfPeriod.description" resname="object.licenceTag.asLicenceOfMediaOfPeriod.description" approved="yes">
-                <source>List of periods that use this tag as a media licence</source>
-                <target>Liste der Zeiträume, die dieses Schlagwort als Medienlizenz verwenden</target>
+            <trans-unit id="object.licenceTag.asLicenceOfLicenceRelation.description" resname="object.licenceTag.asLicenceOfLicenceRelation.description" approved="yes">
+                <source>List of licence relations that use this tag as a licence</source>
+                <target>Liste der Lizenzrelationen, die dieses Schlagwort als Lizenz verwenden</target>
             </trans-unit>
             <!-- Object: SameAs -->
             <trans-unit id="object.sameAs" resname="object.sameAs" approved="yes">
@@ -262,6 +174,29 @@
                 <source>Footnote content</source>
                 <target>Inhalt der Fußnote</target>
             </trans-unit>
+            <!-- Object: Extent -->
+            <trans-unit id="object.extent" resname="object.extent" approved="yes">
+                <source>Extent/identifier</source>
+                <target>Umfang/Identifikator</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type" resname="object.extent.type" approved="yes">
+                <source>Type</source>
+                <target>Art</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type.description" resname="object.extent.type.description" approved="yes">
+                <source>Type of extent or identifier</source>
+                <target>Art des Umfangs oder Identifikators</target>
+            </trans-unit>
+            <trans-unit id="object.extent.text" resname="object.extent.text" approved="yes">
+                <source>Text</source>
+                <target>Text</target>
+            </trans-unit>
+            <trans-unit id="object.extent.text.description" resname="object.extent.text.description" approved="yes">
+                <source>Actual extent or identifier</source>
+                <target>Angabe des Ausmaßes oder Identifikators</target>
+            </trans-unit>
+
+
             <!-- Validator: StringOptionsValidator -->
             <trans-unit id="validator.stringOptions.allowedStringInvalid" resname="validator.stringOptions.allowedStringInvalid" approved="yes">
                 <source>One of the allowed options is not a string in the StringOptionsValidator.</source>
@@ -289,7 +224,7 @@
 
 
 
-            <!-- Database: Agent -->
+            <!-- TODO Database: Agent -->
             <trans-unit id="object.agent" resname="object.agent" approved="yes">
                 <source>Agent</source>
                 <target>Akteur:in</target>

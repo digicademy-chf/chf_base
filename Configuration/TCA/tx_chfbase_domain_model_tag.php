@@ -1,13 +1,13 @@
 <?php
 
-# This file is part of the extension CHF Bib for TYPO3.
+# This file is part of the extension CHF Base for TYPO3.
 #
 # For the full copyright and license information, please read the
 # LICENSE.txt file that was distributed with this source code.
 
 
 /**
- * Tag and its properties
+ * AbstractTag and its properties
  * 
  * Configuration of a database table and its editing interface in the
  * TYPO3 backend. This also serves as the basis for the Extbase
@@ -124,15 +124,32 @@ return [
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource.description',
             'config' => [
                 'type' => 'select',
-                'renderType' => 'selectSingle',
+                'renderType' => 'selectSingleBox',
                 'foreign_table' => 'tx_chfbase_domain_model_resource',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_resource}.{#pid}=###CURRENT_PID###',
-                'maxitems' => 1,
                 'sortItems' => [
                     'label' => 'asc',
                 ],
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
+                ],
+            ],
+        ],
+        'parentLabelTag' => [
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.parentLabelTag',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.parentLabelTag.description',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectTree',
+                'foreign_table' => 'tx_chfbase_domain_model_tag',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###'
+                    . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
+                'treeConfig' => [
+                    'parentField' => 'parentLabelTag',
+                ],
+                'maxitems' => 1,
+                'behaviour' => [
+                     'allowLanguageSynchronization' => true,
                 ],
             ],
         ],
@@ -143,7 +160,7 @@ return [
                 'type' => 'uuid',
                 'size' => 40,
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
                 'required' => true,
             ],
@@ -178,27 +195,9 @@ return [
                     'label' => 'asc',
                 ],
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
                 'required' => true,
-            ],
-        ],
-        'parentLabelTag' => [
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.parentLabelTag',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.parentLabelTag.description',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectTree',
-                'foreign_table' => 'tx_chfbase_domain_model_tag',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###'
-                    . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
-                'treeConfig' => [
-                    'parentField' => 'parentLabelTag',
-                ],
-                'maxitems' => 1,
-                'behaviour' => [
-                     'allowLanguageSynchronization' => true
-                ],
             ],
         ],
         'labelType' => [
@@ -222,7 +221,7 @@ return [
                     'label' => 'asc',
                 ],
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
             ],
         ],
@@ -235,7 +234,7 @@ return [
                 'max' => 255,
                 'eval' => 'trim',
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
                 'required' => true,
             ],
@@ -249,7 +248,7 @@ return [
                 'max' => 255,
                 'eval' => 'trim',
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
                 'required' => true,
             ],
@@ -264,7 +263,7 @@ return [
                 'max' => 2000,
                 'eval' => 'trim',
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
             ],
         ],
@@ -277,7 +276,7 @@ return [
                 'foreign_field' => 'parent_id',
                 'foreign_table_field' => 'parent_table',
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
                 'appearance' => [
                     'collapseAll' => true,
@@ -314,6 +313,9 @@ return [
                         'disabled' => false,
                     ],
                 ],
+                'behaviour' => [
+                     'allowLanguageSynchronization' => true,
+                ],
             ],
         ],
         'asLabelOfLocation' => [
@@ -339,6 +341,9 @@ return [
                         'disabled' => false,
                     ],
                 ],
+                'behaviour' => [
+                     'allowLanguageSynchronization' => true,
+                ],
             ],
         ],
         'asLabelOfPeriod' => [
@@ -363,6 +368,9 @@ return [
                     'listModule' => [
                         'disabled' => false,
                     ],
+                ],
+                'behaviour' => [
+                     'allowLanguageSynchronization' => true,
                 ],
             ],
         ],
@@ -390,18 +398,22 @@ return [
                         'disabled' => false,
                     ],
                 ],
+                'behaviour' => [
+                     'allowLanguageSynchronization' => true,
+                ],
             ],
         ],
-        'asLicenceOfMetadataOfResource' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfMetadataOfResource',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfMetadataOfResource.description',
+        'asLicenceOfLicenceRelation' => [
+            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfLicenceRelation',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfLicenceRelation.description',
             'config'      => [
                 'type'                => 'select',
                 'renderType'          => 'selectMultipleSideBySide',
-                'foreign_table'       => 'tx_chfbase_domain_model_resource',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_resource}.{#pid}=###CURRENT_PID###',
-                'MM'                  => 'tx_chfbase_domain_model_resource_tag_licenceofmetadata_mm',
-                'MM_opposite_field'   => 'licenceOfMetadata',
+                'foreign_table'       => 'tx_chfbase_domain_model_relation',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
+                    . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'licenceRelation\'',
+                'MM'                  => 'tx_chfbase_domain_model_relation_tag_licence_mm',
+                'MM_opposite_field'   => 'licence',
                 'size'                => 5,
                 'autoSizeMax'         => 10,
                 'fieldControl'        => [
@@ -415,280 +427,8 @@ return [
                         'disabled' => false,
                     ],
                 ],
-            ],
-        ],
-        'asLicenceOfTextOfResource' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfTextOfResource',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfTextOfResource.description',
-            'config'      => [
-                'type'                => 'select',
-                'renderType'          => 'selectMultipleSideBySide',
-                'foreign_table'       => 'tx_chfbase_domain_model_resource',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_resource}.{#pid}=###CURRENT_PID###',
-                'MM'                  => 'tx_chfbase_domain_model_resource_tag_licenceoftext_mm',
-                'MM_opposite_field'   => 'licenceOfText',
-                'size'                => 5,
-                'autoSizeMax'         => 10,
-                'fieldControl'        => [
-                    'editPopup'  => [
-                        'disabled' => false,
-                    ],
-                    'addRecord'  => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
-                ],
-            ],
-        ],
-        'asLicenceOfMediaOfResource' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfMediaOfResource',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfMediaOfResource.description',
-            'config'      => [
-                'type'                => 'select',
-                'renderType'          => 'selectMultipleSideBySide',
-                'foreign_table'       => 'tx_chfbase_domain_model_resource',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_resource}.{#pid}=###CURRENT_PID###',
-                'MM'                  => 'tx_chfbase_domain_model_resource_tag_licenceofmedia_mm',
-                'MM_opposite_field'   => 'licenceOfMedia',
-                'size'                => 5,
-                'autoSizeMax'         => 10,
-                'fieldControl'        => [
-                    'editPopup'  => [
-                        'disabled' => false,
-                    ],
-                    'addRecord'  => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
-                ],
-            ],
-        ],
-        'asLicenceOfMetadataOfAgent' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfMetadataOfAgent',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfMetadataOfAgent.description',
-            'config'      => [
-                'type'                => 'select',
-                'renderType'          => 'selectMultipleSideBySide',
-                'foreign_table'       => 'tx_chfbase_domain_model_agent',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###',
-                'MM'                  => 'tx_chfbase_domain_model_agent_tag_licenceofmetadata_mm',
-                'MM_opposite_field'   => 'licenceOfMetadata',
-                'size'                => 5,
-                'autoSizeMax'         => 10,
-                'fieldControl'        => [
-                    'editPopup'  => [
-                        'disabled' => false,
-                    ],
-                    'addRecord'  => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
-                ],
-            ],
-        ],
-        'asLicenceOfTextOfAgent' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfTextOfAgent',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfTextOfAgent.description',
-            'config'      => [
-                'type'                => 'select',
-                'renderType'          => 'selectMultipleSideBySide',
-                'foreign_table'       => 'tx_chfbase_domain_model_agent',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###',
-                'MM'                  => 'tx_chfbase_domain_model_agent_tag_licenceoftext_mm',
-                'MM_opposite_field'   => 'licenceOfText',
-                'size'                => 5,
-                'autoSizeMax'         => 10,
-                'fieldControl'        => [
-                    'editPopup'  => [
-                        'disabled' => false,
-                    ],
-                    'addRecord'  => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
-                ],
-            ],
-        ],
-        'asLicenceOfMediaOfAgent' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfMediaOfAgent',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfMediaOfAgent.description',
-            'config'      => [
-                'type'                => 'select',
-                'renderType'          => 'selectMultipleSideBySide',
-                'foreign_table'       => 'tx_chfbase_domain_model_agent',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###',
-                'MM'                  => 'tx_chfbase_domain_model_agent_tag_licenceofmedia_mm',
-                'MM_opposite_field'   => 'licenceOfMedia',
-                'size'                => 5,
-                'autoSizeMax'         => 10,
-                'fieldControl'        => [
-                    'editPopup'  => [
-                        'disabled' => false,
-                    ],
-                    'addRecord'  => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
-                ],
-            ],
-        ],
-        'asLicenceOfMetadataOfLocation' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfMetadataOfLocation',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfMetadataOfLocation.description',
-            'config'      => [
-                'type'                => 'select',
-                'renderType'          => 'selectMultipleSideBySide',
-                'foreign_table'       => 'tx_chfbase_domain_model_location',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_location}.{#pid}=###CURRENT_PID###',
-                'MM'                  => 'tx_chfbase_domain_model_location_tag_licenceofmetadata_mm',
-                'MM_opposite_field'   => 'licenceOfMetadata',
-                'size'                => 5,
-                'autoSizeMax'         => 10,
-                'fieldControl'        => [
-                    'editPopup'  => [
-                        'disabled' => false,
-                    ],
-                    'addRecord'  => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
-                ],
-            ],
-        ],
-        'asLicenceOfTextOfLocation' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfTextOfLocation',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfTextOfLocation.description',
-            'config'      => [
-                'type'                => 'select',
-                'renderType'          => 'selectMultipleSideBySide',
-                'foreign_table'       => 'tx_chfbase_domain_model_location',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_location}.{#pid}=###CURRENT_PID###',
-                'MM'                  => 'tx_chfbase_domain_model_location_tag_licenceoftext_mm',
-                'MM_opposite_field'   => 'licenceOfText',
-                'size'                => 5,
-                'autoSizeMax'         => 10,
-                'fieldControl'        => [
-                    'editPopup'  => [
-                        'disabled' => false,
-                    ],
-                    'addRecord'  => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
-                ],
-            ],
-        ],
-        'asLicenceOfMediaOfLocation' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfMediaOfLocation',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfMediaOfLocation.description',
-            'config'      => [
-                'type'                => 'select',
-                'renderType'          => 'selectMultipleSideBySide',
-                'foreign_table'       => 'tx_chfbase_domain_model_location',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_location}.{#pid}=###CURRENT_PID###',
-                'MM'                  => 'tx_chfbase_domain_model_location_tag_licenceofmedia_mm',
-                'MM_opposite_field'   => 'licenceOfMedia',
-                'size'                => 5,
-                'autoSizeMax'         => 10,
-                'fieldControl'        => [
-                    'editPopup'  => [
-                        'disabled' => false,
-                    ],
-                    'addRecord'  => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
-                ],
-            ],
-        ],
-        'asLicenceOfMetadataOfPeriod' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfMetadataOfPeriod',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfMetadataOfPeriod.description',
-            'config'      => [
-                'type'                => 'select',
-                'renderType'          => 'selectMultipleSideBySide',
-                'foreign_table'       => 'tx_chfbase_domain_model_period',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_period}.{#pid}=###CURRENT_PID###',
-                'MM'                  => 'tx_chfbase_domain_model_period_tag_licenceofmetadata_mm',
-                'MM_opposite_field'   => 'licenceOfMetadata',
-                'size'                => 5,
-                'autoSizeMax'         => 10,
-                'fieldControl'        => [
-                    'editPopup'  => [
-                        'disabled' => false,
-                    ],
-                    'addRecord'  => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
-                ],
-            ],
-        ],
-        'asLicenceOfTextOfPeriod' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfTextOfPeriod',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfTextOfPeriod.description',
-            'config'      => [
-                'type'                => 'select',
-                'renderType'          => 'selectMultipleSideBySide',
-                'foreign_table'       => 'tx_chfbase_domain_model_period',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_period}.{#pid}=###CURRENT_PID###',
-                'MM'                  => 'tx_chfbase_domain_model_period_tag_licenceoftext_mm',
-                'MM_opposite_field'   => 'licenceOfText',
-                'size'                => 5,
-                'autoSizeMax'         => 10,
-                'fieldControl'        => [
-                    'editPopup'  => [
-                        'disabled' => false,
-                    ],
-                    'addRecord'  => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
-                ],
-            ],
-        ],
-        'asLicenceOfMediaOfPeriod' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfMediaOfPeriod',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfMediaOfPeriod.description',
-            'config'      => [
-                'type'                => 'select',
-                'renderType'          => 'selectMultipleSideBySide',
-                'foreign_table'       => 'tx_chfbase_domain_model_period',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_period}.{#pid}=###CURRENT_PID###',
-                'MM'                  => 'tx_chfbase_domain_model_period_tag_licenceofmedia_mm',
-                'MM_opposite_field'   => 'licenceOfMedia',
-                'size'                => 5,
-                'autoSizeMax'         => 10,
-                'fieldControl'        => [
-                    'editPopup'  => [
-                        'disabled' => false,
-                    ],
-                    'addRecord'  => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
+                'behaviour' => [
+                     'allowLanguageSynchronization' => true,
                 ],
             ],
         ],
@@ -697,11 +437,14 @@ return [
         'hiddenParentResource' => [
             'showitem' => 'hidden,parentResource,',
         ],
+        'hiddenParentResourceParentLabelTag' => [
+            'showitem' => 'hidden,parentResource,parentLabelTag,',
+        ],
         'uuidType' => [
             'showitem' => 'uuid,type,',
         ],
-        'parentLabelTagLabelType' => [
-            'showitem' => 'parentLabelTag,labelType,',
+        'uuidTypeLabelType' => [
+            'showitem' => 'uuid,type,labelType,',
         ],
         'codeText' => [
             'showitem' => 'code,text,',
@@ -712,7 +455,7 @@ return [
             'showitem' => 'hiddenParentResource,uuidType,codeText,description,sameAs,',
         ],
         'labelTag' => [
-            'showitem' => 'hiddenParentResource,uuidType,parentLabelTagLabelType,codeText,description,sameAs,
+            'showitem' => 'hiddenParentResourceParentLabelTag,uuidTypeLabelType,codeText,description,sameAs,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLabelOfAgent,asLabelOfLocation,asLabelOfPeriod,',
         ],
         'labelTypeTag' => [
@@ -721,7 +464,7 @@ return [
         ],
         'licenceTag' => [
             'showitem' => 'hiddenParentResource,uuidType,codeText,description,sameAs,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLicenceOfMetadataOfResource,asLicenceOfTextOfResource,asLicenceOfMediaOfResource,asLicenceOfMetadataOfAgent,asLicenceOfTextOfAgent,asLicenceOfMediaOfAgent,asLicenceOfMetadataOfLocation,asLicenceOfTextOfLocation,asLicenceOfMediaOfLocation,asLicenceOfMetadataOfPeriod,asLicenceOfTextOfPeriod,asLicenceOfMediaOfPeriod,',
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLicenceOfLicenceRelation,',
         ],
     ],
 ];

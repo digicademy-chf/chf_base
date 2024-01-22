@@ -141,7 +141,7 @@ return [
                    ],
                 ],
                 'behaviour' => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
                 'required' => true,
             ],

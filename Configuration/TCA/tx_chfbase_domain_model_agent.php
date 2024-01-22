@@ -305,7 +305,7 @@ return [
                 'foreign_field'       => 'parent_id',
                 'foreign_table_field' => 'parent_table',
                 'behaviour'           => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
                 'appearance'          => [
                     'collapseAll'                     => true,
@@ -462,7 +462,7 @@ return [
                 'foreign_field'       => 'parent_id',
                 'foreign_table_field' => 'parent_table',
                 'behaviour'           => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
                 'appearance'          => [
                     'collapseAll'                     => true,
@@ -501,7 +501,7 @@ return [
                 'foreign_field'       => 'parent_id',
                 'foreign_table_field' => 'parent_table',
                 'behaviour'           => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
                 'appearance'          => [
                     'collapseAll'                     => true,
@@ -525,7 +525,7 @@ return [
                 'foreign_table_field' => 'parent_table',
                 'maxitems'            => 1,
                 'behaviour'           => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
                 'appearance'          => [
                     'collapseAll'                     => true,
@@ -548,7 +548,7 @@ return [
                 'foreign_field'       => 'parent_id',
                 'foreign_table_field' => 'parent_table',
                 'behaviour'           => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
                 'appearance'          => [
                     'collapseAll'                     => true,
@@ -572,7 +572,7 @@ return [
                 'foreign_table_field' => 'parent_table',
                 'maxitems'            => 1,
                 'behaviour'           => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
                 'appearance'          => [
                     'collapseAll'                     => true,
@@ -595,7 +595,7 @@ return [
                 'foreign_field'       => 'parent_id',
                 'foreign_table_field' => 'parent_table',
                 'behaviour'           => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
                 'appearance'          => [
                     'collapseAll'                     => true,
@@ -618,7 +618,7 @@ return [
                 'foreign_field'       => 'parent_id',
                 'foreign_table_field' => 'parent_table',
                 'behaviour'           => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
                 'appearance'          => [
                     'collapseAll'                     => true,

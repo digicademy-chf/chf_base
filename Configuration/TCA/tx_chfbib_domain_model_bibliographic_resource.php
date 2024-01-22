@@ -197,7 +197,7 @@ return [
                 'foreign_field'       => 'parent_id',
                 'foreign_table_field' => 'parent_table',
                 'behaviour'           => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
                 'appearance'          => [
                     'collapseAll'                     => true,
@@ -221,7 +221,7 @@ return [
                 'foreign_table_field' => 'parent_table',
                 'foreign_sortby'      => 'sorting',
                 'behaviour'           => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
                 'appearance'          => [
                     'collapseAll'                     => true,
@@ -245,7 +245,7 @@ return [
                 'foreign_table_field' => 'parent_table',
                 'foreign_sortby'      => 'sorting',
                 'behaviour'           => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
                 'appearance'          => [
                     'collapseAll'                     => true,
@@ -269,7 +269,7 @@ return [
                 'foreign_table_field' => 'parent_table',
                 'foreign_sortby'      => 'sorting',
                 'behaviour'           => [
-                     'allowLanguageSynchronization' => true
+                     'allowLanguageSynchronization' => true,
                 ],
                 'appearance'          => [
                     'collapseAll'                     => true,

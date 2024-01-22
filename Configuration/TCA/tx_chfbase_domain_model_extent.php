@@ -7,7 +7,7 @@
 
 
 /**
- * Footnote and its properties
+ * Extent and its properties
  * 
  * Configuration of a database table and its editing interface in the
  * TYPO3 backend. This also serves as the basis for the Extbase
@@ -16,22 +16,22 @@
  */
 return [
     'ctrl' => [
-        'title'                    => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.footnote',
+        'title'                    => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent',
         'label'                    => 'text',
         'tstamp'                   => 'tstamp',
         'crdate'                   => 'crdate',
         'delete'                   => 'deleted',
         'sortby'                   => 'sorting',
-        'default_sortby'           => 'text ASC',
+        'default_sortby'           => 'text ASC,type ASC',
         'versioningWS'             => true,
-        'iconfile'                 => 'EXT:chf_base/Resources/Public/Icons/Footnote.svg',
+        'iconfile'                 => 'EXT:chf_base/Resources/Public/Icons/Extent.svg',
         'origUid'                  => 't3_origuid',
         'hideAtCopy'               => true,
         'languageField'            => 'sys_language_uid',
         'transOrigPointerField'    => 'l18n_parent',
         'transOrigDiffSourceField' => 'l18n_diffsource',
         'translationSource'        => 'l10n_source',
-        'searchFields'             => 'uuid,text',
+        'searchFields'             => 'text,type',
         'enablecolumns'            => [
             'disabled' => 'hidden',
             'fe_group' => 'fe_group',
@@ -84,9 +84,9 @@ return [
                         'value' => 0,
                     ],
                 ],
-                'foreign_table' => 'tx_chfbase_domain_model_footnote',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_footnote}.{#pid}=###CURRENT_PID###'
-                    . ' AND {#tx_chfbase_domain_model_footnote}.{#sys_language_uid} IN (-1,0)',
+                'foreign_table' => 'tx_chfbase_domain_model_extent',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_extent}.{#pid}=###CURRENT_PID###'
+                    . ' AND {#tx_chfbase_domain_model_extent}.{#sys_language_uid} IN (-1,0)',
                 'default' => 0,
             ],
         ],
@@ -126,12 +126,17 @@ return [
                 'type' => 'passthrough',
             ],
         ],
-        'uuid' => [
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid.description',
+        'type' => [
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.description',
             'config' => [
-                'type' => 'uuid',
-                'size' => 40,
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [],
+                'itemGroups' => [],
+                'sortItems' => [
+                    'label' => 'asc',
+                ],
                 'behaviour' => [
                      'allowLanguageSynchronization' => true,
                 ],
@@ -139,13 +144,13 @@ return [
             ],
         ],
         'text' => [
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.footnote.text',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.footnote.text.description',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.text',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.text.description',
             'config' => [
-                'type' => 'text',
-                'enableRichtext' => true,
-                'richtextConfiguration' => 'chf_base_simple',
-                'softref' => 'typolink_tag,email[subst],url',
+                'type' => 'input',
+                'size' => 40,
+                'max' => 255,
+                'eval' => 'trim',
                 'behaviour' => [
                      'allowLanguageSynchronization' => true,
                 ],
@@ -153,10 +158,14 @@ return [
             ],
         ],
     ],
-    'palettes' => [],
+    'palettes' => [
+        'typeText' => [
+            'showitem' => 'type,text,',
+        ],
+    ],
     'types' => [
         '0' => [
-            'showitem' => 'hidden,uuid,text,',
+            'showitem' => 'hidden,typeText,',
         ],
     ],
 ];
