@@ -22,14 +22,16 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
 class PeriodRepository extends Repository
 {
     protected $defaultOrderings = [
-        'sorting'   => QueryInterface::ORDER_ASCENDING,
-        'type'      => QueryInterface::ORDER_ASCENDING,
-        'highlight' => QueryInterface::ORDER_ASCENDING,
-        'when'      => QueryInterface::ORDER_ASCENDING,
-        'from'      => QueryInterface::ORDER_ASCENDING,
-        'to'        => QueryInterface::ORDER_ASCENDING,
-        'notBefore' => QueryInterface::ORDER_ASCENDING,
-        'notAfter'  => QueryInterface::ORDER_ASCENDING,
+        'sorting'         => QueryInterface::ORDER_ASCENDING,
+        'isHighlight'     => QueryInterface::ORDER_ASCENDING,
+        'when'            => QueryInterface::ORDER_ASCENDING,
+        'from'            => QueryInterface::ORDER_ASCENDING,
+        'to'              => QueryInterface::ORDER_ASCENDING,
+        'notBefore'       => QueryInterface::ORDER_ASCENDING,
+        'notAfter'        => QueryInterface::ORDER_ASCENDING,
+        'text'            => QueryInterface::ORDER_ASCENDING,
+        'alternativeText' => QueryInterface::ORDER_ASCENDING,
+        'type'            => QueryInterface::ORDER_ASCENDING,
     ];
 }
 

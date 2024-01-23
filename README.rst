@@ -68,3 +68,7 @@ This is a pre-release version. The following steps are required for the software
 - Generic import
 - Additional serialisations
 - Automation to include Leaflet files upon new releases
+
+**Nice to have**
+
+- Allow ``Period`` to use calendars other than the Gregorian one
