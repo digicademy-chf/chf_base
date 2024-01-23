@@ -366,7 +366,8 @@ return [
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'authorshipRelation\'',
-                'MM' => 'tx_chfbase_domain_model_agent_relation_record_mm',
+                'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
+                'MM_opposite_field' => 'record',
                 'size' => 5,
                 'autoSizeMax' => 10,
                 'fieldControl' => [
@@ -394,7 +395,8 @@ return [
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'licenceRelation\'',
-                'MM' => 'tx_chfbase_domain_model_agent_relation_record_mm',
+                'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
+                'MM_opposite_field' => 'record',
                 'size' => 5,
                 'autoSizeMax' => 10,
                 'fieldControl' => [
@@ -495,7 +497,8 @@ return [
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'agentRelation\'',
-                'MM' => 'tx_chfbase_domain_model_agent_relation_record_mm',
+                'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
+                'MM_opposite_field' => 'record',
                 'size' => 5,
                 'autoSizeMax' => 10,
                 'fieldControl' => [
@@ -523,7 +526,8 @@ return [
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'locationRelation\'',
-                'MM' => 'tx_chfbase_domain_model_agent_relation_record_mm',
+                'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
+                'MM_opposite_field' => 'record',
                 'size' => 5,
                 'autoSizeMax' => 10,
                 'fieldControl' => [
@@ -619,7 +623,8 @@ return [
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'linkRelation\'',
-                'MM' => 'tx_chfbase_domain_model_agent_relation_record_mm',
+                'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
+                'MM_opposite_field' => 'record',
                 'size' => 5,
                 'autoSizeMax' => 10,
                 'fieldControl' => [
@@ -694,17 +699,17 @@ return [
                 ],
             ],
         ],
-        'asAgentOfAuthorshipRelation' => [
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agent.asAgentOfAuthorshipRelation',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agent.asAgentOfAuthorshipRelation.description',
+        'asContributorOfAuthorshipRelation' => [
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agent.asContributorOfAuthorshipRelation',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agent.asContributorOfAuthorshipRelation.description',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'authorshipRelation\'',
-                'MM' => 'tx_chfbase_domain_model_relation_agent_authorshipagent_mm',
-                'MM_opposite_field' => 'agent',
+                'MM' => 'tx_chfbase_domain_model_relation_agent_contributor_mm',
+                'MM_opposite_field' => 'contributor',
                 'size' => 5,
                 'autoSizeMax' => 10,
                 'fieldControl' => [
@@ -754,7 +759,7 @@ return [
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.content,event,agentRelation,locationRelation,contentElement,footnote,media,file,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.relations,linkRelation,volumeRelation,sourceRelation,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.import,importOrigin,import,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asAgentOfAgentRelation,asAgentOfAuthorshipRelation,',
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asAgentOfAgentRelation,asContributorOfAuthorshipRelation,',
         ],
     ],
 ];

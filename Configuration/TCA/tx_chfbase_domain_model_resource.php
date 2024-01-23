@@ -34,6 +34,7 @@ return [
         'transOrigDiffSourceField' => 'l18n_diffsource',
         'translationSource'        => 'l10n_source',
         'searchFields'             => 'type,uri,title,langCode,description,publicationDate,revisionNumber,revisionDate,editorialNote,importOrigin,importState',
+        'type'                     => 'type',
         'enablecolumns'            => [
             'disabled' => 'hidden',
             'fe_group' => 'fe_group',
@@ -230,7 +231,8 @@ return [
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'authorshipRelation\'',
-                'MM' => 'tx_chfbase_domain_model_resource_relation_record_mm',
+                'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
+                'MM_opposite_field' => 'record',
                 'size' => 5,
                 'autoSizeMax' => 10,
                 'fieldControl' => [
@@ -258,7 +260,8 @@ return [
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'licenceRelation\'',
-                'MM' => 'tx_chfbase_domain_model_resource_relation_record_mm',
+                'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
+                'MM_opposite_field' => 'record',
                 'size' => 5,
                 'autoSizeMax' => 10,
                 'fieldControl' => [

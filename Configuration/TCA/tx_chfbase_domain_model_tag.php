@@ -33,8 +33,8 @@ return [
         'transOrigPointerField'    => 'l18n_parent',
         'transOrigDiffSourceField' => 'l18n_diffsource',
         'translationSource'        => 'l10n_source',
-        'type'                     => 'type',
         'searchFields'             => 'uuid,type,code,text,description',
+        'type'                     => 'type',
         'enablecolumns'            => [
             'disabled' => 'hidden',
             'fe_group' => 'fe_group',
@@ -189,7 +189,7 @@ return [
                     ],
                 ],
                 'itemGroups' => [
-                    'chfBase' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractTag.type.chfBase',
+                    'chfBase' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.chfBase',
                 ],
                 'sortItems' => [
                     'label' => 'asc',
@@ -451,7 +451,7 @@ return [
         ],
     ],
     'types' => [
-        'abstractTag' => [
+        '0' => [
             'showitem' => 'hiddenParentResource,uuidType,codeText,description,sameAs,',
         ],
         'labelTag' => [

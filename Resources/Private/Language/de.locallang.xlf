@@ -4,6 +4,10 @@
         <header/>
         <body>
             <!-- Object: generic -->
+            <trans-unit id="object.generic.chfBase" resname="object.generic.chfBase" approved="yes">
+                <source>CHF Base</source>
+                <target>CHF Base</target>
+            </trans-unit>
             <trans-unit id="object.generic.usage" resname="object.generic.usage" approved="yes">
                 <source>Usage</source>
                 <target>Verwendung</target>
@@ -315,11 +319,11 @@
                 <source>List of agent relations that use this agent</source>
                 <target>Liste der Akteur:innenrelationen, die diese Akteur:in verwenden</target>
             </trans-unit>
-            <trans-unit id="object.agent.asAgentOfAuthorshipRelation" resname="object.agent.asAgentOfAuthorshipRelation" approved="yes">
-                <source>Usage as agent of an authorship relation</source>
-                <target>Verwendung als Akteur:in einer Autor:innenrelation</target>
+            <trans-unit id="object.agent.asContributorOfAuthorshipRelation" resname="object.agent.asContributorOfAuthorshipRelation" approved="yes">
+                <source>Usage as contributor of an authorship relation</source>
+                <target>Verwendung als Beitragende:r einer Autor:innenrelation</target>
             </trans-unit>
-            <trans-unit id="object.agent.asAgentOfAuthorshipRelation.description" resname="object.agent.asAgentOfAuthorshipRelation.description" approved="yes">
+            <trans-unit id="object.agent.asContributorOfAuthorshipRelation.description" resname="object.agent.asContributorOfAuthorshipRelation.description" approved="yes">
                 <source>List of authorship relations that use this agent</source>
                 <target>Liste der Autor:innenrelationen, die diese Akteur:in verwenden</target>
             </trans-unit>
@@ -569,7 +573,177 @@
                 <source>Room to list more specific historical events</source>
                 <target>Raum für genauere historische Ereignisse</target>
             </trans-unit>
+            <!-- Object: AbstractRelation -->
+            <trans-unit id="object.abstractRelation" resname="object.abstractRelation" approved="yes">
+                <source>Relation</source>
+                <target>Relation</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.description" resname="object.abstractRelation.description" approved="yes">
+                <source>Description</source>
+                <target>Beschreibung</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.description.description" resname="object.abstractRelation.description.description" approved="yes">
+                <source>Brief statement about this relation</source>
+                <target>Kurze Information zu dieser Relation</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.type" resname="object.abstractRelation.type" approved="yes">
+                <source>Type</source>
+                <target>Art</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.type.description" resname="object.abstractRelation.type.description" approved="yes">
+                <source>Type of relation</source>
+                <target>Art der Relation</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.authorshipRelation" resname="object.abstractRelation.authorshipRelation" approved="yes">
+                <source>Authorship relation</source>
+                <target>Autor:innenrelation</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.locationRelation" resname="object.abstractRelation.locationRelation" approved="yes">
+                <source>Location relation</source>
+                <target>Ortsrelation</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.agentRelation" resname="object.abstractRelation.agentRelation" approved="yes">
+                <source>Agent relation</source>
+                <target>Akteur:innenrelation</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.licenceRelation" resname="object.abstractRelation.licenceRelation" approved="yes">
+                <source>Licence relation</source>
+                <target>Lizenzrelation</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.linkRelation" resname="object.abstractRelation.linkRelation" approved="yes">
+                <source>Link relation</source>
+                <target>Linkrelation</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.record" resname="object.abstractRelation.record" approved="yes">
+                <source>Database record</source>
+                <target>Datenbankeintrag</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.record.description" resname="object.abstractRelation.record.description" approved="yes">
+                <source>Record to connect a relation to</source>
+                <target>Eintrag, mit dem die Relation verbunden sein soll</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role" resname="object.abstractRelation.role" approved="yes">
+                <source>Role</source>
+                <target>Rolle</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.description" resname="object.abstractRelation.role.description" approved="yes">
+                <source>Qualification of this relation</source>
+                <target>Qualifikation dieser Relation</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.author" resname="object.abstractRelation.role.author" approved="yes">
+                <source>Author</source>
+                <target>Autor:in</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.editor" resname="object.abstractRelation.role.editor" approved="yes">
+                <source>Editor</source>
+                <target>Redaktion</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.translator" resname="object.abstractRelation.role.translator" approved="yes">
+                <source>Translator</source>
+                <target>Übersetzung</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.contributor" resname="object.abstractRelation.role.contributor" approved="yes">
+                <source>Contributor</source>
+                <target>Beitragende:r</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.currentLocation" resname="object.abstractRelation.role.currentLocation" approved="yes">
+                <source>Current location</source>
+                <target>Aktueller Standort</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.formerLocation" resname="object.abstractRelation.role.formerLocation" approved="yes">
+                <source>Former location</source>
+                <target>Ehemaliger Standort</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.agency" resname="object.abstractRelation.role.agency" approved="yes">
+                <source>Agency</source>
+                <target>Ausführung</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.relationship" resname="object.abstractRelation.role.relationship" approved="yes">
+                <source>Relationship</source>
+                <target>Beziehung</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.allContent" resname="object.abstractRelation.role.allContent" approved="yes">
+                <source>All content</source>
+                <target>Alle Inhalte</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.metadata" resname="object.abstractRelation.role.metadata" approved="yes">
+                <source>Metadata</source>
+                <target>Metadaten</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.text" resname="object.abstractRelation.role.text" approved="yes">
+                <source>Text</source>
+                <target>Text</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.media" resname="object.abstractRelation.role.media" approved="yes">
+                <source>Media</source>
+                <target>Medien</target>
+            </trans-unit>
+            <!-- Object: AgentRelation -->
+            <trans-unit id="object.agentRelation.agent" resname="object.agentRelation.agent" approved="yes">
+                <source>Agent</source>
+                <target>Akteur:in</target>
+            </trans-unit>
+            <trans-unit id="object.agentRelation.agent.description" resname="object.agentRelation.agent.description" approved="yes">
+                <source>Agent to relate to the record</source>
+                <target>Akteur:in, die mit dem Eintrag verknüpft werden soll</target>
+            </trans-unit>
+            <!-- Object: AuthorshipRelation -->
+            <trans-unit id="object.authorshipRelation.contributor" resname="object.authorshipRelation.contributor" approved="yes">
+                <source>Contributor</source>
+                <target>Beitragende:r</target>
+            </trans-unit>
+            <trans-unit id="object.authorshipRelation.contributor.description" resname="object.authorshipRelation.contributor.description" approved="yes">
+                <source>Contributor to relate to the record</source>
+                <target>Beitragende:r, die mit dem Eintrag verknüpft werden soll</target>
+            </trans-unit>
+            <!-- Object: LocationRelation -->
+            <trans-unit id="object.locationRelation.location" resname="object.locationRelation.location" approved="yes">
+                <source>Location</source>
+                <target>Ortsangabe</target>
+            </trans-unit>
+            <trans-unit id="object.locationRelation.location.description" resname="object.locationRelation.location.description" approved="yes">
+                <source>Location to relate to the record</source>
+                <target>Ort, der mit dem Eintrag verknüpft werden soll</target>
+            </trans-unit>
+            <!-- Object: LicenceRelation -->
+            <trans-unit id="object.licenceRelation.licence" resname="object.licenceRelation.licence" approved="yes">
+                <source>Licence</source>
+                <target>Lizenz</target>
+            </trans-unit>
+            <trans-unit id="object.licenceRelation.licence.description" resname="object.licenceRelation.licence.description" approved="yes">
+                <source>Licence to relate to the record</source>
+                <target>Lizenz, die mit dem Eintrag verknüpft werden soll</target>
+            </trans-unit>
+            <!-- Object: LinkRelation -->
+            <trans-unit id="object.linkRelation.url" resname="object.linkRelation.url" approved="yes">
+                <source>Target URL</source>
+                <target>Ziel-URL</target>
+            </trans-unit>
+            <trans-unit id="object.linkRelation.url.description" resname="object.linkRelation.url.description" approved="yes">
+                <source>URL that the link should point to</source>
+                <target>URL, auf die der Link verweisen soll</target>
+            </trans-unit>
+            <trans-unit id="object.linkRelation.linkText" resname="object.linkRelation.linkText" approved="yes">
+                <source>Link text</source>
+                <target>Linktext</target>
+            </trans-unit>
+            <trans-unit id="object.linkRelation.linkText.description" resname="object.linkRelation.linkText.description" approved="yes">
+                <source>Text to highlight as a link</source>
+                <target>Zur Anzeige als Link genutzter Text</target>
+            </trans-unit>
+            <trans-unit id="object.linkRelation.lastChecked" resname="object.linkRelation.lastChecked" approved="yes">
+                <source>Last checked</source>
+                <target>Letzter Aufruf</target>
+            </trans-unit>
+            <trans-unit id="object.linkRelation.lastChecked.description" resname="object.linkRelation.lastChecked.description" approved="yes">
+                <source>Date of the last successful URL retrieval</source>
+                <target>Datum des letzten erfolgreichen Aufrufs der URL</target>
+            </trans-unit>
             <!-- Object: AbstractResource -->
+            <trans-unit id="object.abstractResource" resname="object.abstractResource" approved="yes">
+                <source>Resource</source>
+                <target>Ressource</target>
+            </trans-unit>
             <trans-unit id="object.abstractResource.type" resname="object.abstractResource.type" approved="yes">
                 <source>Type</source>
                 <target>Art</target>
@@ -662,10 +836,6 @@
             <trans-unit id="object.abstractTag.type.description" resname="object.abstractTag.type.description" approved="yes">
                 <source>Type of tag</source>
                 <target>Art des Schlagworts</target>
-            </trans-unit>
-            <trans-unit id="object.abstractTag.type.chfBase" resname="object.abstractTag.type.chfBase" approved="yes">
-                <source>CHF Base</source>
-                <target>CHF Base</target>
             </trans-unit>
             <trans-unit id="object.abstractTag.type.labelTag" resname="object.abstractTag.type.labelTag" approved="yes">
                 <source>Label</source>
