@@ -1,4 +1,5 @@
 <?php
+defined('TYPO3') or die();
 
 # This file is part of the extension CHF Base for TYPO3.
 #
@@ -103,6 +104,7 @@ return [
         ],
         'hidden' => [
             'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.hidden.description',
             'config' => [
@@ -127,18 +129,18 @@ return [
             ],
         ],
         'uuid' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid.description',
             'config' => [
                 'type' => 'uuid',
                 'size' => 40,
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
                 'required' => true,
             ],
         ],
         'text' => [
+            'exclude' => true,
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.footnote.text',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.footnote.text.description',
             'config' => [

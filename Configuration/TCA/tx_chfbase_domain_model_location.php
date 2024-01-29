@@ -1,4 +1,5 @@
 <?php
+defined('TYPO3') or die();
 
 # This file is part of the extension CHF Base for TYPO3.
 #
@@ -104,6 +105,7 @@ return [
         ],
         'hidden' => [
             'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.hidden.description',
             'config' => [
@@ -118,6 +120,8 @@ return [
             ]
         ],
         'parentResource' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource.description',
             'config' => [
@@ -128,12 +132,11 @@ return [
                 'sortItems' => [
                     'label' => 'asc',
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
         ],
         'parentLocation' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.parentLocation',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.parentLocation.description',
             'config' => [
@@ -145,24 +148,22 @@ return [
                     'parentField' => 'parentLocation',
                 ],
                 'maxitems' => 1,
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
         ],
         'uuid' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid.description',
             'config' => [
                 'type' => 'uuid',
                 'size' => 40,
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
                 'required' => true,
             ],
         ],
         'type' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.type',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.type.description',
             'config' => [
@@ -194,13 +195,11 @@ return [
                         'value' => 'continent',
                     ],
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
                 'required' => true,
             ],
         ],
         'name' => [
+            'exclude' => true,
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.name',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.name.description',
             'config' => [
@@ -215,6 +214,7 @@ return [
             ],
         ],
         'alternativeName' => [
+            'exclude' => true,
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.alternativeName',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.alternativeName.description',
             'config' => [
@@ -228,6 +228,8 @@ return [
             ],
         ],
         'isHistorical' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.isHistorical',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.isHistorical.description',
             'config' => [
@@ -238,12 +240,11 @@ return [
                         'label' => ''
                     ]
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ]
         ],
         'isImaginary' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.isImaginary',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.isImaginary.description',
             'config' => [
@@ -254,12 +255,11 @@ return [
                         'label' => ''
                     ]
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ]
         ],
         'isHighlight' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractHeritage.isHighlight',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractHeritage.isHighlight.description',
             'config' => [
@@ -270,15 +270,14 @@ return [
                         'label' => ''
                     ]
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ]
         ],
         'label' => [
-            'label'       => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.label',
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.label',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.label.description',
-            'config'      => [
+            'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_chfbase_domain_model_tag',
@@ -298,12 +297,11 @@ return [
                         'disabled' => false,
                     ],
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
         ],
         'sameAs' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.sameAs',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.sameAs.description',
             'config' => [
@@ -311,9 +309,6 @@ return [
                 'foreign_table' => 'tx_chfbase_domain_model_same_as',
                 'foreign_field' => 'parent',
                 'foreign_table_field' => 'parent_table',
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
                 'appearance' => [
                     'collapseAll' => true,
                     'expandSingle' => true,
@@ -327,9 +322,11 @@ return [
             ],
         ],
         'authorshipRelation' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.authorshipRelation',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.authorshipRelation.description',
-            'config'      => [
+            'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
@@ -350,15 +347,14 @@ return [
                         'disabled' => false,
                     ],
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
         ],
         'licenceRelation' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.licenceRelation',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.licenceRelation.description',
-            'config'      => [
+            'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
@@ -379,12 +375,11 @@ return [
                         'disabled' => false,
                     ],
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
         ],
         'publicationDate' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractBase.publicationDate',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractBase.publicationDate.description',
             'config' => [
@@ -392,22 +387,20 @@ return [
                 'format' => 'date',
                 'eval' => 'int',
                 'default' => 0,
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
         ],
         'revisionNumber' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractBase.revisionNumber',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractBase.revisionNumber.description',
             'config' => [
                 'type' => 'number',
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
         ],
         'revisionDate' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractBase.revisionDate',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractBase.revisionDate.description',
             'config' => [
@@ -415,12 +408,10 @@ return [
                 'format' => 'date',
                 'eval' => 'int',
                 'default' => 0,
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
         ],
         'editorialNote' => [
+            'exclude' => true,
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractBase.editorialNote',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractBase.editorialNote.description',
             'config' => [
@@ -435,6 +426,8 @@ return [
             ],
         ],
         'event' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.event',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.event.description',
             'config' => [
@@ -442,9 +435,6 @@ return [
                 'foreign_table' => 'tx_chfbase_domain_model_period',
                 'foreign_field' => 'parent',
                 'foreign_table_field' => 'parent_table',
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
                 'appearance'=> [
                     'collapseAll' => true,
                     'expandSingle' => true,
@@ -458,9 +448,11 @@ return [
             ],
         ],
         'agentRelation' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.agentRelation',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.agentRelation.description',
-            'config'      => [
+            'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
@@ -481,12 +473,11 @@ return [
                         'disabled' => false,
                     ],
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
         ],
         'contentElement' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractHeritage.contentElement',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractHeritage.contentElement.description',
             'config' => [
@@ -494,9 +485,6 @@ return [
                 'foreign_table' => 'tt_content',
                 'foreign_field' => 'parent',
                 'foreign_table_field' => 'parent_table',
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
                 'appearance' => [
                     'collapseAll' => true,
                     'expandSingle' => true,
@@ -510,6 +498,8 @@ return [
             ],
         ],
         'footnote' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractHeritage.footnote',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractHeritage.footnote.description',
             'config' => [
@@ -517,9 +507,6 @@ return [
                 'foreign_table' => 'tx_chfbase_domain_model_footnote',
                 'foreign_field' => 'parent',
                 'foreign_table_field' => 'parent_table',
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
                 'appearance' => [
                     'collapseAll' => true,
                     'expandSingle' => true,
@@ -533,28 +520,27 @@ return [
             ],
         ],
         'media' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractHeritage.media',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractHeritage.media.description',
             'config' => [
                 'type' => 'file',
                 'allowed' => 'common-media-types',
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
         ],
         'file' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractHeritage.file',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractHeritage.file.description',
             'config' => [
                 'type' => 'file',
                 'allowed' => 'common-text-types',
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
         ],
         'addressStreet' => [
+            'exclude' => true,
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.addressStreet',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.addressStreet.description',
             'config' => [
@@ -568,6 +554,7 @@ return [
             ],
         ],
         'addressNumber' => [
+            'exclude' => true,
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.addressNumber',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.addressNumber.description',
             'config' => [
@@ -581,6 +568,7 @@ return [
             ],
         ],
         'addressZip' => [
+            'exclude' => true,
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.addressZip',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.addressZip.description',
             'config' => [
@@ -594,6 +582,7 @@ return [
             ],
         ],
         'addressCity' => [
+            'exclude' => true,
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.addressCity',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.addressCity.description',
             'config' => [
@@ -607,9 +596,11 @@ return [
             ],
         ],
         'linkRelation' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.linkRelation',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.linkRelation.description',
-            'config'      => [
+            'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
@@ -630,12 +621,11 @@ return [
                         'disabled' => false,
                     ],
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
         ],
         'importOrigin' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.importOrigin',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.importOrigin.description',
             'config' => [
@@ -643,12 +633,11 @@ return [
                 'size' => 40,
                 'max' => 255,
                 'eval' => 'trim',
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
         ],
         'import' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.import',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.import.description',
             'config' => [
@@ -657,12 +646,11 @@ return [
                 'rows' => 15,
                 'max' => 100000,
                 'eval' => 'trim',
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
         ],
         'asLocationOfLocationRelation' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agent.asLocationOfLocationRelation',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agent.asLocationOfLocationRelation.description',
             'config' => [
@@ -686,9 +674,7 @@ return [
                         'disabled' => false,
                     ],
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
+                'readOnly' => true,
             ],
         ],
     ],

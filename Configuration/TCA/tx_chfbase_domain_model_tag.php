@@ -1,4 +1,5 @@
 <?php
+defined('TYPO3') or die();
 
 # This file is part of the extension CHF Base for TYPO3.
 #
@@ -106,6 +107,7 @@ return [
         ],
         'hidden' => [
             'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.hidden.description',
             'config' => [
@@ -120,6 +122,8 @@ return [
             ]
         ],
         'parentResource' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource.description',
             'config' => [
@@ -130,12 +134,11 @@ return [
                 'sortItems' => [
                     'label' => 'asc',
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
         ],
         'parentLabelTag' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.parentLabelTag',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.parentLabelTag.description',
             'config' => [
@@ -148,24 +151,22 @@ return [
                     'parentField' => 'parentLabelTag',
                 ],
                 'maxitems' => 1,
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
         ],
         'uuid' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid.description',
             'config' => [
                 'type' => 'uuid',
                 'size' => 40,
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
                 'required' => true,
             ],
         ],
         'type' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractTag.type',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractTag.type.description',
             'config' => [
@@ -194,13 +195,12 @@ return [
                 'sortItems' => [
                     'label' => 'asc',
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
                 'required' => true,
             ],
         ],
         'labelType' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.labelType',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.labelType.description',
             'config' => [
@@ -220,12 +220,11 @@ return [
                 'sortItems' => [
                     'label' => 'asc',
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
             ],
         ],
         'code' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractTag.code',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractTag.code.description',
             'config' => [
@@ -233,13 +232,11 @@ return [
                 'size' => 40,
                 'max' => 255,
                 'eval' => 'trim',
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
                 'required' => true,
             ],
         ],
         'text' => [
+            'exclude' => true,
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractTag.text',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractTag.text.description',
             'config' => [
@@ -254,6 +251,7 @@ return [
             ],
         ],
         'description' => [
+            'exclude' => true,
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractTag.description',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractTag.description.description',
             'config' => [
@@ -268,6 +266,8 @@ return [
             ],
         ],
         'sameAs' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.sameAs',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.sameAs.description',
             'config' => [
@@ -275,9 +275,6 @@ return [
                 'foreign_table' => 'tx_chfbase_domain_model_same_as',
                 'foreign_field' => 'parent',
                 'foreign_table_field' => 'parent_table',
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
                 'appearance' => [
                     'collapseAll' => true,
                     'expandSingle' => true,
@@ -291,6 +288,8 @@ return [
             ],
         ],
         'asLabelOfAgent' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfAgent',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfAgent.description',
             'config' => [
@@ -313,12 +312,12 @@ return [
                         'disabled' => false,
                     ],
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
+                'readOnly' => true,
             ],
         ],
         'asLabelOfLocation' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfLocation',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfLocation.description',
             'config' => [
@@ -341,12 +340,12 @@ return [
                         'disabled' => false,
                     ],
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
+                'readOnly' => true,
             ],
         ],
         'asLabelOfPeriod' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfPeriod',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfPeriod.description',
             'config' => [
@@ -369,12 +368,12 @@ return [
                         'disabled' => false,
                     ],
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
+                'readOnly' => true,
             ],
         ],
         'asLabelTypeOfLabelTag' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTypeTag.asLabelTypeOfLabelTag',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTypeTag.asLabelTypeOfLabelTag.description',
             'config' => [
@@ -398,12 +397,12 @@ return [
                         'disabled' => false,
                     ],
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
+                'readOnly' => true,
             ],
         ],
         'asLicenceOfLicenceRelation' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfLicenceRelation',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfLicenceRelation.description',
             'config' => [
@@ -427,9 +426,7 @@ return [
                         'disabled' => false,
                     ],
                 ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
+                'readOnly' => true,
             ],
         ],
     ],
