@@ -1,5 +1,5 @@
 <?php
-
+defined('TYPO3') or die();
 declare(strict_types=1);
 
 # This file is part of the extension CHF Base for TYPO3.
