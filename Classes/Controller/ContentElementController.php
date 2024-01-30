@@ -39,5 +39,3 @@ class ContentElementController extends ActionController
         return $this->htmlResponse();
     }
 }
-
-?>

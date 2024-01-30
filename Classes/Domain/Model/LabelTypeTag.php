@@ -99,5 +99,3 @@ class LabelTypeTag extends AbstractTag
         $this->asLabelTypeOfLabelTag->removeAll($asLabelTypeOfLabelTag);
     }
 }
-
-?>

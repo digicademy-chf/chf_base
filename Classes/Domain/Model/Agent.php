@@ -1013,5 +1013,3 @@ class Agent extends AbstractEntity
         $this->asGenericContributor->removeAll($asGenericContributor);
     }
 }
-
-?>

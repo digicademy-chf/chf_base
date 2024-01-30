@@ -39,5 +39,3 @@ class AbstractResourceController extends ActionController
         return $this->htmlResponse();
     }
 }
-
-?>

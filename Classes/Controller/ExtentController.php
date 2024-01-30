@@ -39,5 +39,3 @@ class ExtentController extends ActionController
         return $this->htmlResponse();
     }
 }
-
-?>

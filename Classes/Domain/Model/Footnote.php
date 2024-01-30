@@ -125,5 +125,3 @@ class Footnote extends AbstractEntity
         $this->text = $text;
     }
 }
-
-?>

@@ -306,5 +306,3 @@ class LabelTag extends AbstractTag
         $this->asLabelOfPeriod->removeAll($asLabelOfPeriod);
     }
 }
-
-?>

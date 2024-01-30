@@ -39,5 +39,3 @@ class AbstractTagController extends ActionController
         return $this->htmlResponse();
     }
 }
-
-?>

@@ -89,5 +89,3 @@ class SameAs extends AbstractEntity
         $this->uri = $uri;
     }
 }
-
-?>

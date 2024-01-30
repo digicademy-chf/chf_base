@@ -24,11 +24,11 @@ return [
     ],
     Digicademy\CHFBase\Domain\Model\AbstractTag::class => [
         'tableName' => 'tx_chfbase_domain_model_tag',
-        'recordType' => 'abstractTag',
+        'recordType' => '0',
         'subclasses' => [
-            'labelTag'     => Digicademy\CHFBase\Domain\Model\LabelTag::class,
+            'labelTag' => Digicademy\CHFBase\Domain\Model\LabelTag::class,
             'labelTypeTag' => Digicademy\CHFBase\Domain\Model\LabelTypeTag::class,
-            'licenceTag'   => Digicademy\CHFBase\Domain\Model\LicenceTag::class,
+            'licenceTag' => Digicademy\CHFBase\Domain\Model\LicenceTag::class,
         ]
     ],
 ];

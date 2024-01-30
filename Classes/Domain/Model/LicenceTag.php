@@ -737,5 +737,3 @@ class LicenceTag extends AbstractTag
         $this->asLicenceOfMediaOfPeriod->removeAll($asLicenceOfMediaOfPeriod);
     }
 }
-
-?>

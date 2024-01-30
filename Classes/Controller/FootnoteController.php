@@ -39,5 +39,3 @@ class FootnoteController extends ActionController
         return $this->htmlResponse();
     }
 }
-
-?>

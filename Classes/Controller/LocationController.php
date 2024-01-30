@@ -39,5 +39,3 @@ class LocationController extends ActionController
         return $this->htmlResponse();
     }
 }
-
-?>

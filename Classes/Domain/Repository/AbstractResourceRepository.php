@@ -28,5 +28,3 @@ class AbstractResourceRepository extends Repository
         'type'    => QueryInterface::ORDER_ASCENDING,
     ];
 }
-
-?>

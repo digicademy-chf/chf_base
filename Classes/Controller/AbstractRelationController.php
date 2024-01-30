@@ -39,5 +39,3 @@ class AbstractRelationController extends ActionController
         return $this->htmlResponse();
     }
 }
-
-?>

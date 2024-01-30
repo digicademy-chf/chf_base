@@ -336,5 +336,3 @@ class AbstractTag extends AbstractEntity
         $this->sameAs->removeAll($sameAs);
     }
 }
-
-?>

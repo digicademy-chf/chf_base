@@ -34,5 +34,3 @@ class PeriodRepository extends Repository
         'type'            => QueryInterface::ORDER_ASCENDING,
     ];
 }
-
-?>

@@ -26,5 +26,3 @@ class FootnoteRepository extends Repository
         'text'    => QueryInterface::ORDER_ASCENDING,
     ];
 }
-
-?>

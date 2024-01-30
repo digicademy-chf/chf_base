@@ -27,5 +27,3 @@ class ExtentRepository extends Repository
         'type'    => QueryInterface::ORDER_ASCENDING,
     ];
 }
-
-?>

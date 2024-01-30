@@ -39,5 +39,3 @@ class SameAsController extends ActionController
         return $this->htmlResponse();
     }
 }
-
-?>

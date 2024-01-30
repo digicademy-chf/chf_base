@@ -39,5 +39,3 @@ class AgentController extends ActionController
         return $this->htmlResponse();
     }
 }
-
-?>

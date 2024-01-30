@@ -27,5 +27,3 @@ class AbstractRelationRepository extends Repository
         'type'    => QueryInterface::ORDER_ASCENDING,
     ];
 }
-
-?>

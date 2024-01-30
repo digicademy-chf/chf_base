@@ -26,5 +26,3 @@ class SameAsRepository extends Repository
         'uri'     => QueryInterface::ORDER_ASCENDING,
     ];
 }
-
-?>

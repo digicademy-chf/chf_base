@@ -39,5 +39,3 @@ class PeriodController extends ActionController
         return $this->htmlResponse();
     }
 }
-
-?>

@@ -27,5 +27,3 @@ class ContentElementRepository extends Repository
         'bodytext' => QueryInterface::ORDER_ASCENDING,
     ];
 }
-
-?>

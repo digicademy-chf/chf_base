@@ -29,5 +29,3 @@ class LocationRepository extends Repository
         'type'            => QueryInterface::ORDER_ASCENDING,
     ];
 }
-
-?>
