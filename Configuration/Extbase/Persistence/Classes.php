@@ -19,8 +19,9 @@ declare(strict_types=1);
  * https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ExtensionArchitecture/Extbase/Reference/Domain/Persistence.html.
  */
 return [
-    Digicademy\CHFBase\Domain\Model\ContentElemet::class => [
-        'tableName' => 'tt_content',
+    Digicademy\CHFBase\Domain\Model\AbstractResource::class => [
+        'tableName' => 'tx_chfbase_domain_model_resource',
+        'recordType' => '0',
     ],
     Digicademy\CHFBase\Domain\Model\AbstractTag::class => [
         'tableName' => 'tx_chfbase_domain_model_tag',
@@ -29,7 +30,21 @@ return [
             'labelTag' => Digicademy\CHFBase\Domain\Model\LabelTag::class,
             'labelTypeTag' => Digicademy\CHFBase\Domain\Model\LabelTypeTag::class,
             'licenceTag' => Digicademy\CHFBase\Domain\Model\LicenceTag::class,
-        ]
+        ],
+    ],
+    Digicademy\CHFBase\Domain\Model\AbstractRelation::class => [
+        'tableName' => 'tx_chfbase_domain_model_relation',
+        'recordType' => '0',
+        'subclasses' => [
+            'authorshipRelation' => Digicademy\CHFBase\Domain\Model\AuthorshipRelation::class,
+            'locationRelation' => Digicademy\CHFBase\Domain\Model\LocationRelation::class,
+            'agentRelation' => Digicademy\CHFBase\Domain\Model\AgentRelation::class,
+            'licenceRelation' => Digicademy\CHFBase\Domain\Model\LicenceRelation::class,
+            'linkRelation' => Digicademy\CHFBase\Domain\Model\LinkRelation::class,
+        ],
+    ],
+    Digicademy\CHFBase\Domain\Model\ContentElemet::class => [
+        'tableName' => 'tt_content',
     ],
 ];
 
