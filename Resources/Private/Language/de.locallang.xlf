@@ -8,6 +8,14 @@
                 <source>CHF Base</source>
                 <target>CHF Base</target>
             </trans-unit>
+            <trans-unit id="object.generic.chfBib" resname="object.generic.chfBib" approved="yes">
+                <source>CHF Bib</source>
+                <target>CHF Bib</target>
+            </trans-unit>
+            <trans-unit id="object.generic.chfLex" resname="object.generic.chfLex" approved="yes">
+                <source>CHF Lex</source>
+                <target>CHF Lex</target>
+            </trans-unit>
             <trans-unit id="object.generic.chfPub" resname="object.generic.chfPub" approved="yes">
                 <source>CHF Pub</source>
                 <target>CHF Pub</target>

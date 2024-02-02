@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Render documentation
-        uses: TYPO3-Documentation/gh-render-action@0.1.0
+        uses: TYPO3-Documentation/gh-render-action
         id: rendering
       - name: Publish archive with result
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact
         with:
-          name: github-pages
+          name: Rendered
           path: ${{ steps.rendering.outputs.renderedPath }}
 
   deploy:
@@ -25,10 +25,10 @@ jobs:
       pages: write
       id-token: write
     environment:
-      name: github-pages
+      name: Rendered
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages
