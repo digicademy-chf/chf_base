@@ -16,7 +16,7 @@ jobs:
       - name: Publish archive with result
         uses: actions/upload-artifact@v4
         with:
-          name: Rendered
+          name: github-pages
           path: ${{ steps.rendering.outputs.renderedPath }}
 
   deploy:
@@ -25,7 +25,7 @@ jobs:
       pages: write
       id-token: write
     environment:
-      name: Rendered
+      name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
