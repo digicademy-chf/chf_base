@@ -448,19 +448,19 @@
             <trans-unit id="object.abstractRelation.type.description" resname="object.abstractRelation.type.description">
                 <source>Type of relation</source>
             </trans-unit>
-            <trans-unit id="object.abstractRelation.authorshipRelation" resname="object.abstractRelation.authorshipRelation">
+            <trans-unit id="object.abstractRelation.type.authorshipRelation" resname="object.abstractRelation.type.authorshipRelation">
                 <source>Authorship relation</source>
             </trans-unit>
-            <trans-unit id="object.abstractRelation.locationRelation" resname="object.abstractRelation.locationRelation">
+            <trans-unit id="object.abstractRelation.type.locationRelation" resname="object.abstractRelation.type.locationRelation">
                 <source>Location relation</source>
             </trans-unit>
-            <trans-unit id="object.abstractRelation.agentRelation" resname="object.abstractRelation.agentRelation">
+            <trans-unit id="object.abstractRelation.type.agentRelation" resname="object.abstractRelation.type.agentRelation">
                 <source>Agent relation</source>
             </trans-unit>
-            <trans-unit id="object.abstractRelation.licenceRelation" resname="object.abstractRelation.licenceRelation">
+            <trans-unit id="object.abstractRelation.type.licenceRelation" resname="object.abstractRelation.type.licenceRelation">
                 <source>Licence relation</source>
             </trans-unit>
-            <trans-unit id="object.abstractRelation.linkRelation" resname="object.abstractRelation.linkRelation">
+            <trans-unit id="object.abstractRelation.type.linkRelation" resname="object.abstractRelation.type.linkRelation">
                 <source>Link relation</source>
             </trans-unit>
             <trans-unit id="object.abstractRelation.record" resname="object.abstractRelation.record">

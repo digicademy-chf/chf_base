@@ -8,6 +8,10 @@
                 <source>CHF Base</source>
                 <target>CHF Base</target>
             </trans-unit>
+            <trans-unit id="object.generic.chfPub" resname="object.generic.chfPub" approved="yes">
+                <source>CHF Pub</source>
+                <target>CHF Pub</target>
+            </trans-unit>
             <trans-unit id="object.generic.usage" resname="object.generic.usage" approved="yes">
                 <source>Usage</source>
                 <target>Verwendung</target>
@@ -594,23 +598,23 @@
                 <source>Type of relation</source>
                 <target>Art der Relation</target>
             </trans-unit>
-            <trans-unit id="object.abstractRelation.authorshipRelation" resname="object.abstractRelation.authorshipRelation" approved="yes">
+            <trans-unit id="object.abstractRelation.type.authorshipRelation" resname="object.abstractRelation.type.authorshipRelation" approved="yes">
                 <source>Authorship relation</source>
                 <target>Autor:innenrelation</target>
             </trans-unit>
-            <trans-unit id="object.abstractRelation.locationRelation" resname="object.abstractRelation.locationRelation" approved="yes">
+            <trans-unit id="object.abstractRelation.type.locationRelation" resname="object.abstractRelation.type.locationRelation" approved="yes">
                 <source>Location relation</source>
                 <target>Ortsrelation</target>
             </trans-unit>
-            <trans-unit id="object.abstractRelation.agentRelation" resname="object.abstractRelation.agentRelation" approved="yes">
+            <trans-unit id="object.abstractRelation.type.agentRelation" resname="object.abstractRelation.type.agentRelation" approved="yes">
                 <source>Agent relation</source>
                 <target>Akteur:innenrelation</target>
             </trans-unit>
-            <trans-unit id="object.abstractRelation.licenceRelation" resname="object.abstractRelation.licenceRelation" approved="yes">
+            <trans-unit id="object.abstractRelation.type.licenceRelation" resname="object.abstractRelation.type.licenceRelation" approved="yes">
                 <source>Licence relation</source>
                 <target>Lizenzrelation</target>
             </trans-unit>
-            <trans-unit id="object.abstractRelation.linkRelation" resname="object.abstractRelation.linkRelation" approved="yes">
+            <trans-unit id="object.abstractRelation.type.linkRelation" resname="object.abstractRelation.type.linkRelation" approved="yes">
                 <source>Link relation</source>
                 <target>Linkrelation</target>
             </trans-unit>
