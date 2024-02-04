@@ -13,7 +13,7 @@ project-specific sitepackage.
 
 ..  figure:: /Components/Components.png
     :alt: Overview of the Cultural Heritage Framework
-    :target: /Components/Components.png
+    :target: ../../_images/Components.png
     :class: with-shadow
 
     Overview of the Cultural Heritage Framework's modular components.

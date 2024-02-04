@@ -19,7 +19,7 @@ jobs:
         id: rendering
       - name: Add index file
         run: |
-          echo -e "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n<meta charset=\"utf-8\"/>\n<meta http-equiv=\"Refresh\" content=\"0; url=\'en-us/Index.html\'\"/>\n<title>Go to main page</title>\n</head>\n\n<body>\n<a href=\"en-us/Index.html\">Go to main page</a>\n</body>\n\n</html>" > index.html
+          echo -e "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n<meta charset=\"utf-8\"/>\n<meta http-equiv=\"Refresh\" content=\"0; url=\'en-us/Index.html\'\"/>\n<title>Go to main page</title>\n</head>\n\n<body>\n<a href=\"en-us/Index.html\">Go to main page</a>\n</body>\n\n</html>" > ${{ steps.rendering.outputs.renderedPath }}/index.html
       - name: Upload documentation artifact
         uses: actions/upload-pages-artifact@v3
         with:

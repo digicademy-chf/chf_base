@@ -26,7 +26,7 @@ Graphical overview
 
 ..  figure:: /Base/DataModel/DataModel.png
     :alt: Data model of the extension
-    :target: /Base/DataModel/DataModel.png
+    :target: ../../_images/DataModel.png
     :class: with-shadow
 
     Overview of the extension's data model. Check the :ref:`api-reference`

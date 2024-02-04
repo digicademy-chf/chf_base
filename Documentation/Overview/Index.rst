@@ -22,7 +22,7 @@ The original idea for a CHF was presented in 2017 by Torsten Schrade, with a
 number of ideas implemented across several projects of the Digital Academy
 ahead of and after the presentation. Work on version 2 of the CHF began in
 2023 in the form of a **complete rewrite** organised by Jonatan Jalle
-Steller - with the exception of `lod`, which had been in development much
+Steller - with the exception of LOD, which had been in development much
 earlier. The rewrite with a new set of components and a different set of
 features was needed to better adapt to various use cases and to provide a
 coherent whole. Work on version 2 of the CHF was accomplished as part of two
