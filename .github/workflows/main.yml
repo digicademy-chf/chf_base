@@ -4,21 +4,30 @@ on:
   push:
     branches:
     - main
-    - release/*
 
 jobs:
+
+  # Build documentation
   build:
     runs-on: ubuntu-latest
     steps:
+      #- name: Checkout
+      #  uses: actions/checkout@v4
+      - name: Set up GitHub Pages
+        uses: actions/configure-pages@v4
+        id: pages
       - name: Render documentation
         uses: TYPO3-Documentation/gh-render-action@0.1.0
         id: rendering
-      - name: Publish archive with result
-        uses: actions/upload-artifact@v4
+      - name: Upload documentation artifact
+        uses: actions/upload-pages-artifact@v2
+      #- name: Publish archive with result
+        #uses: actions/upload-artifact@v4
         with:
           name: github-pages
           path: ${{ steps.rendering.outputs.renderedPath }}
 
+  # Deploy documentation
   deploy:
     needs: build
     permissions:
@@ -29,6 +38,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy artifact to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
