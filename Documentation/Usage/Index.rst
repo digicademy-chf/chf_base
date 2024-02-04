@@ -11,7 +11,7 @@ where necessary. There are a few central concept in the CHF and the TYPO3
 world that may come in handy:
 
 - **Basic instructions** for your own project and sitepackage are provided in
-  the documentation for ``chf_project``.
+  the documentation for CHF Project.
 
 - TYPO3 differentiates between **frontend and backend**, and editing is
   usually done in the latter.
@@ -20,5 +20,5 @@ world that may come in handy:
   is added to.
 
 - New major versions of TYPO3 are released **every 1 1/2 years**. Security
-  updates are released every couple of weeks, and it is your responsibility
-  to keep your project up to date.
+  updates are released every couple of weeks at the latest, and it is your
+  responsibility to keep your project up to date.

@@ -26,5 +26,5 @@ Steller - with the exception of `lod`, which had been in development much
 earlier. The rewrite with a new set of components and a different set of
 features was needed to better adapt to various use cases and to provide a
 coherent whole. Work on version 2 of the CHF was accomplished as part of two
-projects financed by the German Academies Programme: the *Digitales
-Familiennamenwörterbuch Deutschlands* and the *Corpus Vitrearum Medii Aevi*.
+projects financed by the German Academies Programme: the *Digital Dictionary
+of Surnames in Germany* and the *Corpus Vitrearum Germany*.

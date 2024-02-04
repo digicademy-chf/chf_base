@@ -21,6 +21,6 @@ Install and config
 3.  Optionally add an import task
 
     To import data once or periodically, go to the :guilabel:`Task` module
-    in the backend, add a new task, and select :guilabel:`Import lexicographic
-    resource`. Enter the values required to perform the task and either
-    start the task manually or set an interval to run the task automatically.
+    in the backend and add a new task. Enter the fields required to perform the
+    task and either start it manually or set an interval to run the task
+    automatically.

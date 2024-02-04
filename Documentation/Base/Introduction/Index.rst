@@ -10,7 +10,7 @@ The extension provides a number of database tables and corresponding classes
 for use in the various dependent data models in the CHF. This includes
 humanities-specific data such as ``Location``, ``Period``, and ``Actor``, but
 also more generic classes like ``SameAs``. In the same vein of being a service
-extension for other data models, ``chf_base`` also includes key third-party
+extension for other data models, CHF Base also includes key third-party
 libraries like ``Leaflet``, infrastructure to import and serialise data, to
 compile search configuration, and to build user interfaces. The latter is
 realised in the form of generic Fluid templates that sitepackages may use

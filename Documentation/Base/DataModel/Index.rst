@@ -10,13 +10,14 @@ This extension does not provide a fully rounded data model but a set of service
 classes. A ``Location`` may be organised hierarchically to model, for example,
 world regions, countries, regions, cities, and buildings. A ``Period`` may
 similarly be arranged in a hierarchy to model historical periods, phases, or
-dates. ``Actors``, on the other hand, may be grouped together via ``Tag``s as
-labels, but otherwise stand on their own. They may refer to organisations,
-individuals, or other entities in the sense of actor-network theory.
+dates. ``Actor`` objects, on the other hand, may be grouped together via
+``Tag`` labels, but otherwise stand on their own. They may refer to
+organisations, individuals, or other entities in the sense of actor-network
+theory.
 
-In addition, the model provides flexible ``Tag``s to group other classes,
-``Relation``s to connect classes with qualifications like an ``Actor``s role,
-and ``SameAs`` classes to connect entities to authority data.
+In addition, the model provides flexible ``Tag`` objects to group other
+classes, ``Relation`` objects connect classes with qualifications like the role
+of an ``Actor``, and ``SameAs`` classes to connect entities to authority data.
 
 ..  _graphical-overview:
 

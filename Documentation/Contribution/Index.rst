@@ -9,7 +9,7 @@ Contribution
 The Cultural Heritage Framework is an open-source project. We **encourage
 contributions** and have listed a couple of ways in which you could
 contribute below. We only ask that the CHF community follows the
-`**Contributor Covenant code of conduct** <https://www.contributor-covenant.org/version/2/1/code_of_conduct/>`__.
+`Contributor Covenant code of conduct <https://www.contributor-covenant.org/version/2/1/code_of_conduct/>`__.
 Please contact us via the public email address in our GitHub profile if
 you encounter a violation of the code of conduct so we can enforce this
 shared set of rules. You are also free to contact us if you would like

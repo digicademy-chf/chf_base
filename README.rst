@@ -20,12 +20,12 @@ designed for the needs of scholarly editing, lexicography, archives, GLAM
 institutions, and, more generally, projects interested in making cultural
 heritage, books, media, or annotated bibliographies available in their own
 web-based research platform. A key strength of the CHF is the ability to
-produce portals and multimodal editions that include various data types with
-historical points of reference in a single system, including editing
+produce portals and **multimodal editions** that include various data types
+with historical points of reference in a single system, including editing
 interfaces, frontends, and serialisations. Specific data models are organised
 as additional components around the TYPO3 extension ``chf_base``, which
-provides central data types like ``Agent``s, ``Location``s, and ``Period``s,
-but also multiple types of ``Tag``s and ``Relation``s to structure and connect
+provides central data types like ``Agent``, ``Location``, and ``Period``,
+but also multiple types of ``Tag`` and ``Relation`` to structure and connect
 data as well as services like import and export routines. The various
 components are developed and maintained by the Digital Academy, a Digital
 Humanities department at the Academy of Sciences and Literature Mainz.
