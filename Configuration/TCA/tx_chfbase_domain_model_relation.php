@@ -1,11 +1,13 @@
 <?php
-defined('TYPO3') or die();
+declare(strict_types=1);
 
 # This file is part of the extension CHF Base for TYPO3.
 #
 # For the full copyright and license information, please read the
 # LICENSE.txt file that was distributed with this source code.
 
+
+defined('TYPO3') or die();
 
 /**
  * AbstractRelation and its properties
@@ -197,7 +199,7 @@ return [
                 'type' => 'group',
                 'allowed' => 'tx_chfbase_domain_model_resource,tx_chfbase_domain_model_agent,tx_chfbase_domain_model_location,tx_chfbase_domain_model_period,',
                 'foreign_table' => 'tx_chfbase_domain_model_resource', // Needed by Extbase as of TYPO3 12, remove when possible
-                'MM' => 'tx_chfbase_domain_model_relation_any_record_mm'
+                'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
                 'fieldControl' => [
                     'editPopup' => [
                         'disabled' => false,
