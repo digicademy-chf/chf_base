@@ -41,12 +41,24 @@ web-based research platform. A key strength of the CHF is the ability to
 produce portals and **multimodal editions** that include various data types
 with historical points of reference in a single system, including editing
 interfaces, frontends, and serialisations. Specific data models are organised
-as additional components around the TYPO3 extension ``chf_base``, which
+as additional components around the TYPO3 extension CHF Base, which
 provides central data types like ``Agent``, ``Location``, and ``Period``,
 but also multiple types of ``Tag`` and ``Relation`` to structure and connect
 data as well as services like import and export routines. The various
 components are developed and maintained by the Digital Academy, a Digital
 Humanities department at the Academy of Sciences and Literature Mainz.
+
+Features
+========
+
+- HTML: accessible, web app, semantic tags, embedded metadata
+- CSS: atomic, responsive, components, variables, dark mode, transitions
+- JS: supporting CSS, no frameworks, sharing API
+- Layouts: hub, page, text, one per main class, various components
+- Search: dedicated configuration per main class, suggestions, expert modes
+- Academic: sources, footnotes, info buttons, common serialisations/formats
+- Privacy: no external APIs, no frameworks, no preprocessors, GDPR-compliant
+- Optional: common APIs, visualisations, quality assurance
 
 ----
 
@@ -55,6 +67,7 @@ Humanities department at the Academy of Sciences and Literature Mainz.
 ..  toctree::
     :maxdepth: 2
     :titlesonly:
+    :caption: GENERAL
 
     Overview/Index
     Components/Index
@@ -71,6 +84,7 @@ Humanities department at the Academy of Sciences and Literature Mainz.
 ..  toctree::
     :maxdepth: 2
     :titlesonly:
+    :caption: EXTENSION
 
     Base/Introduction/Index
     Base/InstallAndConfig/Index

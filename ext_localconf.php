@@ -1,5 +1,5 @@
 <?php
-defined('TYPO3') or die();
+declare(strict_types=1);
 
 # This file is part of the extension CHF Base for TYPO3.
 #
@@ -7,12 +7,9 @@ defined('TYPO3') or die();
 # LICENSE.txt file that was distributed with this source code.
 
 
-// Register content for this extension
-(function($extKey='chf_base') {
+defined('TYPO3') or die();
 
-    // Backend customisation
-    $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets'] = [
-        'chf_base_simple' => 'EXT:' . $extKey . '/Configuration/RTE/CHFBaseSimple.yaml'
-    ];
-
-})();
+// Backend customisation
+$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets'] = [
+    'chf_base_simple' => 'EXT:chf_base/Configuration/RTE/CHFBaseSimple.yaml'
+];

@@ -27,7 +27,7 @@ abstract: >-
   reference in a single system, including editing
   interfaces, frontends, and serialisations. Specific data
   models are organised as additional components around the
-  TYPO3 extension chf_base, which provides central data
+  TYPO3 extension CHF Base, which provides central data
   types like Agent, Location, and Period, but also multiple
   types of Tag and Relation to structure and connect data
   as well as services like import and export routines. The
@@ -47,4 +47,4 @@ keywords:
   - Social
 license: GPL 3
 version: 0.6.0
-date-released: '2023-11-27'
+date-released: '2024-03-15'
