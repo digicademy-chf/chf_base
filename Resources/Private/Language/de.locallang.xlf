@@ -36,6 +36,10 @@
                 <source>Relations</source>
                 <target>Relationen</target>
             </trans-unit>
+            <trans-unit id="object.generic.restrictions" resname="object.generic.restrictions" approved="yes">
+                <source>Restrictions</source>
+                <target>Einschränkungen</target>
+            </trans-unit>
             <trans-unit id="object.generic.import" resname="object.generic.import" approved="yes">
                 <source>Import</source>
                 <target>Import</target>
