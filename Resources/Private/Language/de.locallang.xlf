@@ -64,6 +64,14 @@
                 <source>Unique identifier of this database record</source>
                 <target>Einzigartiger Identifikator dieses Datenbankeintrags</target>
             </trans-unit>
+            <trans-unit id="object.generic.extent" resname="object.generic.extent" approved="yes">
+                <source>Extent/identifier</source>
+                <target>Umfang/Identifikator</target>
+            </trans-unit>
+            <trans-unit id="object.generic.extent.description" resname="object.generic.extent.description" approved="yes">
+                <source>List of all relevant extents and identifiers</source>
+                <target>Liste aller relevanten Angaben zum Umfang und Identifikatoren</target>
+            </trans-unit>
             <trans-unit id="object.generic.label" resname="object.generic.label" approved="yes">
                 <source>Label</source>
                 <target>Label</target>

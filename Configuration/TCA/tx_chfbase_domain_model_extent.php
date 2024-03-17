@@ -140,9 +140,6 @@ return [
                 'renderType' => 'selectSingle',
                 'items' => [],
                 'itemGroups' => [],
-                'sortItems' => [
-                    'label' => 'asc',
-                ],
                 'required' => true,
             ],
         ],
