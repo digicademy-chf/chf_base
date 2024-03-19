@@ -749,7 +749,7 @@ return [
             'showitem' => 'hiddenParentResource,uuidType,forenameSurname,corporateNameAlternativeName,honorificOccupationGender,isContributorIsHighlight,label,sameAs,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.editorial,authorshipRelation,licenceRelation,publicationDateRevisionNumberRevisionDate,editorialNote,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.content,event,agentRelation,locationRelation,contentElement,footnote,media,file,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.relations,linkRelation,volumeRelation,sourceRelation,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.relations,linkRelation,publicationRelation,sourceRelation,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.import,importOrigin,import,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asAgentOfAgentRelation,asContributorOfAuthorshipRelation,',
         ],

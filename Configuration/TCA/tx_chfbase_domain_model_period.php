@@ -492,8 +492,7 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_chfbase_domain_model_period',
-                'foreign_field' => 'parent',
-                'foreign_table_field' => 'parent_table',
+                'foreign_field' => 'parentPeriod',
                 'appearance'=> [
                     'collapseAll' => true,
                     'expandSingle' => true,
@@ -708,7 +707,7 @@ return [
             'showitem' => 'hiddenParentResource,parentPeriod,uuidType,textAlternativeText,fromToWhen,notBeforeNotAfter,calendarIsHighlight,label,sameAs,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.editorial,authorshipRelation,licenceRelation,publicationDateRevisionNumberRevisionDate,editorialNote,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.content,event,agentRelation,locationRelation,contentElement,footnote,media,file,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.relations,linkRelation,volumeRelation,sourceRelation,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.relations,linkRelation,publicationRelation,sourceRelation,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.import,importOrigin,import,',
         ],
     ],
