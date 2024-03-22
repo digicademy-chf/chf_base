@@ -455,7 +455,7 @@ return [
         ],
         'labelTag' => [
             'showitem' => 'hiddenParentResourceParentLabelTag,uuidTypeLabelType,codeText,description,sameAs,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLabelOfAgent,asLabelOfLocation,asLabelOfPeriod,asLabelOfBibliographicEntry,asLabelOfVolume,asLabelOfEssay,',
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLabelOfAgent,asLabelOfLocation,asLabelOfPeriod,asLabelOfBibliographicEntry,asLabelOfVolume,asLabelOfEssay,asLabelOfSingleObject,asLabelOfObjectGroup,',
         ],
         'labelTypeTag' => [
             'showitem' => 'hiddenParentResource,uuidType,codeText,description,sameAs,
