@@ -134,6 +134,23 @@ return [
                 'sortItems' => [
                     'label' => 'asc',
                 ],
+                'required' => true,
+            ],
+        ],
+        'parentAgent' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agent.parentAgent',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agent.parentAgent.description',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectTree',
+                'foreign_table' => 'tx_chfbase_domain_model_agent',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###',
+                'treeConfig' => [
+                    'parentField' => 'parentAgent',
+                ],
+                'maxitems' => 1,
             ],
         ],
         'uuid' => [

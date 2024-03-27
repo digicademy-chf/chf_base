@@ -144,6 +144,7 @@ return [
                 'sortItems' => [
                     'label' => 'asc',
                 ],
+                'required' => true,
             ],
         ],
         'parentPeriod' => [

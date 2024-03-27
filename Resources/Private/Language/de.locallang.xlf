@@ -231,6 +231,14 @@
                 <source>Agent</source>
                 <target>Akteur:in</target>
             </trans-unit>
+            <trans-unit id="object.agent.parentAgent" resname="object.agent.parentAgent" approved="yes">
+                <source>Parent agent</source>
+                <target>Übergeordnete:r Akteur:in</target>
+            </trans-unit>
+            <trans-unit id="object.agent.parentAgent.description" resname="object.agent.parentAgent.description" approved="yes">
+                <source>Larger agent that this agent is part of</source>
+                <target>Größere:r Akteur:in, zu der diese:r Akteur:in gehört</target>
+            </trans-unit>
             <trans-unit id="object.agent.type" resname="object.agent.type" approved="yes">
                 <source>Type</source>
                 <target>Art</target>

@@ -166,6 +166,12 @@
             <trans-unit id="object.agent" resname="object.agent">
                 <source>Agent</source>
             </trans-unit>
+            <trans-unit id="object.agent.parentAgent" resname="object.agent.parentAgent">
+                <source>Parent agent</source>
+            </trans-unit>
+            <trans-unit id="object.agent.parentAgent.description" resname="object.agent.parentAgent.description">
+                <source>Larger agent that this agent is part of</source>
+            </trans-unit>
             <trans-unit id="object.agent.type" resname="object.agent.type">
                 <source>Type</source>
             </trans-unit>
