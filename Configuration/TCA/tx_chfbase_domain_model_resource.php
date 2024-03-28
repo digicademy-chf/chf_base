@@ -21,13 +21,13 @@ return [
     'ctrl' => [
         'title'                    => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractResource',
         'label'                    => 'title',
-        'label_alt'                => 'uri,type',
+        'label_alt'                => 'type',
         'descriptionColumn'        => 'description',
         'tstamp'                   => 'tstamp',
         'crdate'                   => 'crdate',
         'delete'                   => 'deleted',
         'sortby'                   => 'sorting',
-        'default_sortby'           => 'title ASC,uri ASC,type ASC',
+        'default_sortby'           => 'title ASC,type ASC',
         'versioningWS'             => true,
         'iconfile'                 => 'EXT:chf_base/Resources/Public/Icons/Resource.svg',
         'origUid'                  => 't3_origuid',
@@ -36,7 +36,7 @@ return [
         'transOrigPointerField'    => 'l18n_parent',
         'transOrigDiffSourceField' => 'l18n_diffsource',
         'translationSource'        => 'l10n_source',
-        'searchFields'             => 'type,uri,title,langCode,description,publicationDate,revisionNumber,revisionDate,editorialNote,importOrigin,importState',
+        'searchFields'             => 'type,title,langCode,description,publicationDate,revisionNumber,revisionDate,editorialNote,importOrigin,importState',
         'type'                     => 'type',
         'enablecolumns'            => [
             'disabled' => 'hidden',
@@ -145,25 +145,6 @@ return [
                 'items' => [],
                 'sortItems' => [
                     'label' => 'asc',
-                ],
-                'required' => true,
-            ],
-        ],
-        'uri' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractResource.uri',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractResource.uri.description',
-            'config' => [
-                'type' => 'link',
-                'allowedTypes' => ['page', 'url', 'record'],
-                'allowedOptions' => [],
-                'mode' => 'prepend',
-                'valuePicker' => [
-                   'items' => [
-                      ['HTTPS', 'https://'],
-                      ['HTTP', 'http://'],
-                   ],
                 ],
                 'required' => true,
             ],
@@ -474,8 +455,8 @@ return [
         'hiddenUuid' => [
             'showitem' => 'hidden,uuid,',
         ],
-        'typeUri' => [
-            'showitem' => 'typeUri,',
+        'uuidType' => [
+            'showitem' => 'uuid,type,',
         ],
         'titleLangCode' => [
             'showitem' => 'title,langCode,',
@@ -489,7 +470,7 @@ return [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'hiddenUuid,typeUri,titleLangCode,description,sameAs,
+            'showitem' => 'hidden,uuidType,titleLangCode,description,sameAs,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.editorial,authorshipRelation,licenceRelation,publicationDateRevisionNumberRevisionDate,editorialNote,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.content,allAgents,allFileGroups,allLocations,allPeriods,allRelations,allTags,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.import,importOrigin,importState,',

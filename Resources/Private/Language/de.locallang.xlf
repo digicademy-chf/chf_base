@@ -784,14 +784,6 @@
                 <source>Type of resource</source>
                 <target>Art der Ressource</target>
             </trans-unit>
-            <trans-unit id="object.abstractResource.uri" resname="object.abstractResource.uri" approved="yes">
-                <source>URI</source>
-                <target>URI</target>
-            </trans-unit>
-            <trans-unit id="object.abstractResource.uri.description" resname="object.abstractResource.uri.description" approved="yes">
-                <source>Canonical web address of this resource</source>
-                <target>Kanonische Webadresse dieser Ressource</target>
-            </trans-unit>
             <trans-unit id="object.abstractResource.title" resname="object.abstractResource.title" approved="yes">
                 <source>Title</source>
                 <target>Titel</target>
