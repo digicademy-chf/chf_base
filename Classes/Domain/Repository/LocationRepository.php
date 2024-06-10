@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-defined('TYPO3') or die();
 
 # This file is part of the extension CHF Base for TYPO3.
 #
@@ -13,6 +12,8 @@ namespace Digicademy\CHFBase\Domain\Repository;
 use Digicademy\CHFBase\Domain\Model\Location;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
+
+defined('TYPO3') or die();
 
 /**
  * Repository for Location

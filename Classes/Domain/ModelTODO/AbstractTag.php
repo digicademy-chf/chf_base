@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-defined('TYPO3') or die();
 
 # This file is part of the extension CHF Base for TYPO3.
 #
@@ -16,6 +15,8 @@ use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+
+defined('TYPO3') or die();
 
 /**
  * Model for AbstractTag

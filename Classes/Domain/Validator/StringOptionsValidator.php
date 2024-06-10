@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-defined('TYPO3') or die();
 
 # This file is part of the extension CHF Base for TYPO3.
 #
@@ -12,6 +11,8 @@ namespace Digicademy\CHFBase\Domain\Validator;
 
 use TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator;
 use TYPO3\CMS\Extbase\Validation\Exception\InvalidValidationOptionsException;
+
+defined('TYPO3') or die();
 
 /**
  * Validator for string options

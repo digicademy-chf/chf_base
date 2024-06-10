@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-defined('TYPO3') or die();
 
 # This file is part of the extension CHF Base for TYPO3.
 #
@@ -14,6 +13,8 @@ use Psr\Http\Message\ResponseInterface;
 use Digicademy\CHFBase\Domain\Model\Agent;
 use Digicademy\CHFBase\Domain\Repository\AgentRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+
+defined('TYPO3') or die();
 
 /**
  * Controller for Agent
