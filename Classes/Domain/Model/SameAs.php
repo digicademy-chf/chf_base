@@ -15,9 +15,9 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 defined('TYPO3') or die();
 
 /**
- * Model for ContentElement
+ * Model for SameAs
  */
-class ContentElement extends AbstractEntity
+class SameAs extends AbstractEntity
 {
     /**
      * Whether the record should be visible or not
@@ -27,27 +27,28 @@ class ContentElement extends AbstractEntity
     #[Validate([
         'validator' => 'Boolean',
     ])]
-    protected bool $hidden = false;
+    protected bool $hidden = true;
 
     /**
-     * Name of the content element
+     * External web address
      * 
      * @var string
      */
     #[Validate([
-        'validator' => 'String',
+        'validator' => 'Url',
     ])]
-    protected string $header = '';
+    protected string $uri = '';
 
     /**
-     * Body text of the content element
-     * 
-     * @var string
+     * Construct object
+     *
+     * @param string $uri
+     * @return SameAs
      */
-    #[Validate([
-        'validator' => 'String',
-    ])]
-    protected string $bodytext = '';
+    public function __construct(string $uri)
+    {
+        $this->setUri($uri);
+    }
 
     /**
      * Get hidden
@@ -70,42 +71,22 @@ class ContentElement extends AbstractEntity
     }
 
     /**
-     * Get header
+     * Get URI
      *
      * @return string
      */
-    public function getHeader(): string
+    public function getUri(): string
     {
-        return $this->header;
+        return $this->uri;
     }
 
     /**
-     * Set header
+     * Set URI
      *
-     * @param string $header
+     * @param string $uri
      */
-    public function setHeader(string $header): void
+    public function setUri(string $uri): void
     {
-        $this->header = $header;
-    }
-
-    /**
-     * Get bodytext
-     *
-     * @return string
-     */
-    public function getbodytext(): string
-    {
-        return $this->bodytext;
-    }
-
-    /**
-     * Set bodytext
-     *
-     * @param string $bodytext
-     */
-    public function setBodytext(string $bodytext): void
-    {
-        $this->bodytext = $bodytext;
+        $this->uri = $uri;
     }
 }

@@ -15,9 +15,9 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 defined('TYPO3') or die();
 
 /**
- * Model for SameAs
+ * Model for ContentElement
  */
-class SameAs extends AbstractEntity
+class ContentElement extends AbstractEntity
 {
     /**
      * Whether the record should be visible or not
@@ -27,28 +27,27 @@ class SameAs extends AbstractEntity
     #[Validate([
         'validator' => 'Boolean',
     ])]
-    protected bool $hidden = false;
+    protected bool $hidden = true;
 
     /**
-     * External web address to identify an entity across the web
+     * Name of the content element
      * 
      * @var string
      */
     #[Validate([
-        'validator' => 'Url',
+        'validator' => 'String',
     ])]
-    protected string $uri = '';
+    protected string $header = '';
 
     /**
-     * Construct object
-     *
-     * @param string $uri
-     * @return SameAs
+     * Body of the content element
+     * 
+     * @var string
      */
-    public function __construct(string $uri)
-    {
-        $this->setUri($uri);
-    }
+    #[Validate([
+        'validator' => 'String',
+    ])]
+    protected string $bodytext = '';
 
     /**
      * Get hidden
@@ -71,22 +70,42 @@ class SameAs extends AbstractEntity
     }
 
     /**
-     * Get URI
+     * Get header
      *
      * @return string
      */
-    public function getUri(): string
+    public function getHeader(): string
     {
-        return $this->uri;
+        return $this->header;
     }
 
     /**
-     * Set URI
+     * Set header
      *
-     * @param string $uri
+     * @param string $header
      */
-    public function setUri(string $uri): void
+    public function setHeader(string $header): void
     {
-        $this->uri = $uri;
+        $this->header = $header;
+    }
+
+    /**
+     * Get bodytext
+     *
+     * @return string
+     */
+    public function getbodytext(): string
+    {
+        return $this->bodytext;
+    }
+
+    /**
+     * Set bodytext
+     *
+     * @param string $bodytext
+     */
+    public function setBodytext(string $bodytext): void
+    {
+        $this->bodytext = $bodytext;
     }
 }

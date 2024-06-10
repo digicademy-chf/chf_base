@@ -11,13 +11,14 @@ namespace Digicademy\CHFBase\Domain\Model;
 
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
 
 defined('TYPO3') or die();
 
 /**
- * Model for Footnote
+ * Model for Extent
  */
-class Footnote extends AbstractEntity
+class Extent extends AbstractEntity
 {
     /**
      * Whether the record should be visible or not
@@ -27,24 +28,42 @@ class Footnote extends AbstractEntity
     #[Validate([
         'validator' => 'Boolean',
     ])]
-    protected bool $hidden = false;
+    protected bool $hidden = true;
 
     /**
-     * Unique identifier of the database record
+     * Type of extent or identifier
      * 
      * @var string
      */
     #[Validate([
-        'validator' => 'RegularExpression',
-        'options' => [
-            'regularExpression' => '^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$',
-            'errorMessage' => 'LLL:EXT:da_base/Resources/Private/Language/locallang.xlf:validator.regularExpression.noUuid',
+        'validator' => StringOptionsValidator::class,
+        'options'   => [
+            'allowed' => [
+                'url',
+                'doi',
+                'urn',
+                'edition',
+                'version',
+                'volume',
+                'issue',
+                'issn',
+                'isbn',
+                'callNumber',
+                'height',
+                'width',
+                'diameter',
+                'inventoryNumber',
+                'positionOnPlan',
+                'issue',
+                'panelRow',
+                'panelColumn',
+            ],
         ],
     ])]
-    protected string $uuid = '';
+    protected string $type = 'url';
 
     /**
-     * Content of the footnote
+     * Actual extent or identifier
      * 
      * @var string
      */
@@ -56,13 +75,13 @@ class Footnote extends AbstractEntity
     /**
      * Construct object
      *
-     * @param string $uuid
+     * @param string $type
      * @param string $text
-     * @return Footnote
+     * @return Extent
      */
-    public function __construct(string $uuid, string $text)
+    public function __construct(string $type, string $text)
     {
-        $this->setUuid($uuid);
+        $this->setType($type);
         $this->setText($text);
     }
 
@@ -87,23 +106,23 @@ class Footnote extends AbstractEntity
     }
 
     /**
-     * Get UUID
+     * Get type
      *
      * @return string
      */
-    public function getUuid(): string
+    public function getType(): string
     {
-        return $this->uuid;
+        return $this->type;
     }
 
     /**
-     * Set UUID
+     * Set type
      *
-     * @param string $uuid
+     * @param string $type
      */
-    public function setUuid(string $uuid): void
+    public function setType(string $type): void
     {
-        $this->uuid = $uuid;
+        $this->type = $type;
     }
 
     /**
