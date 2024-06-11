@@ -14,6 +14,12 @@ use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use Digicademy\CHFBib\Domain\Model\BibliographicResource;
+use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
+use Digicademy\CHFLex\Domain\Model\LexicographicResource;
+use Digicademy\CHFMap\Domain\Model\MapResource;
+use Digicademy\CHFObject\Domain\Model\ObjectResource;
+use Digicademy\CHFPub\Domain\Model\PublicationResource;
 
 defined('TYPO3') or die();
 
@@ -35,7 +41,7 @@ class AbstractTag extends AbstractEntity
     /**
      * Resource that this database record is part of
      * 
-     * @var ?ObjectStorage<AbstractResource>
+     * @var ?ObjectStorage<BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource>
      */
     #[Lazy()]
     protected ?ObjectStorage $parentResource = null;
@@ -120,13 +126,13 @@ class AbstractTag extends AbstractEntity
     /**
      * Construct object
      *
-     * @param AbstractResource $parentResource
+     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @param string $uuid
      * @param string $code
      * @param string $text
      * @return AbstractTag
      */
-    public function __construct(AbstractResource $parentResource, string $uuid, string $code, string $text)
+    public function __construct(BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $uuid, string $code, string $text)
     {
         $this->initializeObject();
 

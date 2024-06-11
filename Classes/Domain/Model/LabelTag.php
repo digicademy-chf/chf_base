@@ -13,13 +13,19 @@ use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use Digicademy\CHFBib\Domain\Model\BibliographicEntry;
+use Digicademy\CHFBib\Domain\Model\BibliographicResource;
+use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
 use Digicademy\CHFLex\Domain\Model\DictionaryEntry;
 use Digicademy\CHFLex\Domain\Model\EncyclopediaEntry;
+use Digicademy\CHFLex\Domain\Model\LexicographicResource;
 use Digicademy\CHFMap\Domain\Model\Feature;
+use Digicademy\CHFMap\Domain\Model\MapResource;
 use Digicademy\CHFMedia\Domain\Model\FileGroup;
 use Digicademy\CHFObject\Domain\Model\ObjectGroup;
+use Digicademy\CHFObject\Domain\Model\ObjectResource;
 use Digicademy\CHFObject\Domain\Model\SingleObject;
 use Digicademy\CHFPub\Domain\Model\Essay;
+use Digicademy\CHFPub\Domain\Model\PublicationResource;
 use Digicademy\CHFPub\Domain\Model\Volume;
 
 defined('TYPO3') or die();
@@ -144,13 +150,13 @@ class LabelTag extends AbstractTag
     /**
      * Construct object
      *
-     * @param AbstractResource $parentResource
+     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @param string $uuid
      * @param string $code
      * @param string $text
      * @return LabelTag
      */
-    public function __construct(AbstractResource $parentResource, string $uuid, string $code, string $text)
+    public function __construct(BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $uuid, string $code, string $text)
     {
         parent::__construct($parentResource, $uuid, $code, $text);
         $this->initializeObject();

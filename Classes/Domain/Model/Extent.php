@@ -11,7 +11,6 @@ namespace Digicademy\CHFBase\Domain\Model;
 
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
-use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
 
 defined('TYPO3') or die();
 
