@@ -13,7 +13,6 @@ use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
-use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 defined('TYPO3') or die();
@@ -31,18 +30,18 @@ class AbstractTag extends AbstractEntity
     #[Validate([
         'validator' => 'Boolean',
     ])]
-    protected bool $hidden = false;
+    protected bool $hidden = true;
 
     /**
      * Resource that this database record is part of
      * 
-     * @var Resource|LazyLoadingProxy
+     * @var ?ObjectStorage<AbstractResource>
      */
     #[Lazy()]
-    protected Resource|LazyLoadingProxy $parentResource;
+    protected ?ObjectStorage $parentResource = null;
 
     /**
-     * Unique identifier of the database record
+     * Unique identifier of this database record
      * 
      * @var string
      */
@@ -50,7 +49,7 @@ class AbstractTag extends AbstractEntity
         'validator' => 'RegularExpression',
         'options' => [
             'regularExpression' => '^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$',
-            'errorMessage' => 'LLL:EXT:da_base/Resources/Private/Language/locallang.xlf:validator.regularExpression.noUuid',
+            'errorMessage' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:validator.regularExpression.noUuid',
         ],
     ])]
     protected string $uuid = '';
@@ -82,7 +81,7 @@ class AbstractTag extends AbstractEntity
     protected string $code = '';
 
     /**
-     * Name of the tag
+     * Full name of the tag
      * 
      * @var string
      */
@@ -110,30 +109,32 @@ class AbstractTag extends AbstractEntity
     /**
      * Reference web address to identify an entity across the web
      * 
-     * @var ObjectStorage<SameAs>
+     * @var ?ObjectStorage<SameAs>
      */
     #[Lazy()]
     #[Cascade([
         'value' => 'remove',
     ])]
-    protected ObjectStorage $sameAs;
+    protected ?ObjectStorage $sameAs = null;
 
     /**
      * Construct object
      *
+     * @param AbstractResource $parentResource
      * @param string $uuid
      * @param string $code
      * @param string $text
      * @return AbstractTag
      */
-    public function __construct(string $uuid, string $code, string $text)
+    public function __construct(AbstractResource $parentResource, string $uuid, string $code, string $text)
     {
         $this->initializeObject();
 
+        $this->addParentResource($parentResource);
         $this->setUuid($uuid);
+        $this->setType('0');
         $this->setCode($code);
         $this->setText($text);
-        $this->setType('abstractTag');
     }
 
     /**
@@ -141,8 +142,8 @@ class AbstractTag extends AbstractEntity
      */
     public function initializeObject(): void
     {
-        $this->parentResource = new LazyLoadingProxy();
-        $this->sameAs = new ObjectStorage();
+        $this->parentResource ??= new ObjectStorage();
+        $this->sameAs ??= new ObjectStorage();
     }
 
     /**
@@ -167,25 +168,51 @@ class AbstractTag extends AbstractEntity
 
     /**
      * Get parent resource
-     * 
-     * @return Resource
+     *
+     * @return ObjectStorage<AbstractResource>
      */
-    public function getParentResource(): Resource
+    public function getParentResource(): ?ObjectStorage
     {
-        if ($this->parentResource instanceof LazyLoadingProxy) {
-            $this->parentResource->_loadRealInstance();
-        }
         return $this->parentResource;
     }
 
     /**
      * Set parent resource
-     * 
-     * @param Resource
+     *
+     * @param ObjectStorage<AbstractResource> $parentResource
      */
-    public function setParentResource(Resource $parentResource): void
+    public function setParentResource(ObjectStorage $parentResource): void
     {
         $this->parentResource = $parentResource;
+    }
+
+    /**
+     * Add parent resource
+     *
+     * @param AbstractResource $parentResource
+     */
+    public function addParentResource(AbstractResource $parentResource): void
+    {
+        $this->parentResource?->attach($parentResource);
+    }
+
+    /**
+     * Remove parent resource
+     *
+     * @param AbstractResource $parentResource
+     */
+    public function removeParentResource(AbstractResource $parentResource): void
+    {
+        $this->parentResource?->detach($parentResource);
+    }
+
+    /**
+     * Remove all parent resources
+     */
+    public function removeAllParentResource(): void
+    {
+        $parentResource = clone $this->parentResource;
+        $this->parentResource->removeAll($parentResource);
     }
 
     /**
@@ -293,7 +320,7 @@ class AbstractTag extends AbstractEntity
      *
      * @return ObjectStorage<SameAs>
      */
-    public function getSameAs(): ObjectStorage
+    public function getSameAs(): ?ObjectStorage
     {
         return $this->sameAs;
     }
@@ -315,7 +342,7 @@ class AbstractTag extends AbstractEntity
      */
     public function addSameAs(SameAs $sameAs): void
     {
-        $this->sameAs->attach($sameAs);
+        $this->sameAs?->attach($sameAs);
     }
 
     /**
@@ -325,7 +352,7 @@ class AbstractTag extends AbstractEntity
      */
     public function removeSameAs(SameAs $sameAs): void
     {
-        $this->sameAs->detach($sameAs);
+        $this->sameAs?->detach($sameAs);
     }
 
     /**

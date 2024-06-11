@@ -36,31 +36,12 @@ class Extent extends AbstractEntity
      * @var string
      */
     #[Validate([
-        'validator' => StringOptionsValidator::class,
-        'options'   => [
-            'allowed' => [
-                'url',
-                'doi',
-                'urn',
-                'edition',
-                'version',
-                'volume',
-                'issue',
-                'issn',
-                'isbn',
-                'callNumber',
-                'height',
-                'width',
-                'diameter',
-                'inventoryNumber',
-                'positionOnPlan',
-                'issue',
-                'panelRow',
-                'panelColumn',
-            ],
+        'validator' => 'StringLength', # Validates for string length instead of string values to allow other models to add further types
+        'options' => [
+            'maximum' => 255,
         ],
     ])]
-    protected string $type = 'url';
+    protected string $type = '';
 
     /**
      * Actual extent or identifier
@@ -68,7 +49,10 @@ class Extent extends AbstractEntity
      * @var string
      */
     #[Validate([
-        'validator' => 'String',
+        'validator' => 'StringLength',
+        'options' => [
+            'maximum' => 255,
+        ],
     ])]
     protected string $text = '';
 

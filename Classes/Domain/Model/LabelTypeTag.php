@@ -22,22 +22,23 @@ class LabelTypeTag extends AbstractTag
     /**
      * List of labels that use this tag as a label type
      * 
-     * @var ObjectStorage<LabelTag>
+     * @var ?ObjectStorage<LabelTag>
      */
     #[Lazy()]
-    protected ObjectStorage $asLabelTypeOfLabelTag;
+    protected ?ObjectStorage $asLabelTypeOfLabelTag;
 
     /**
      * Construct object
      *
+     * @param AbstractResource $parentResource
      * @param string $uuid
      * @param string $code
      * @param string $text
      * @return LabelTypeTag
      */
-    public function __construct(string $uuid, string $code, string $text)
+    public function __construct(AbstractResource $parentResource, string $uuid, string $code, string $text)
     {
-        parent::__construct($uuid, $code, $text);
+        parent::__construct($parentResource, $uuid, $code, $text);
         $this->initializeObject();
 
         $this->setType('labelTypeTag');
@@ -48,7 +49,7 @@ class LabelTypeTag extends AbstractTag
      */
     public function initializeObject(): void
     {
-        $this->asLabelTypeOfLabelTag = new ObjectStorage();
+        $this->asLabelTypeOfLabelTag ??= new ObjectStorage();
     }
 
     /**
@@ -56,7 +57,7 @@ class LabelTypeTag extends AbstractTag
      *
      * @return ObjectStorage<LabelTag>
      */
-    public function getAsLabelTypeOfLabelTag(): ObjectStorage
+    public function getAsLabelTypeOfLabelTag(): ?ObjectStorage
     {
         return $this->asLabelTypeOfLabelTag;
     }
@@ -78,7 +79,7 @@ class LabelTypeTag extends AbstractTag
      */
     public function addAsLabelTypeOfLabelTag(LabelTag $asLabelTypeOfLabelTag): void
     {
-        $this->asLabelTypeOfLabelTag->attach($asLabelTypeOfLabelTag);
+        $this->asLabelTypeOfLabelTag?->attach($asLabelTypeOfLabelTag);
     }
 
     /**
@@ -88,11 +89,11 @@ class LabelTypeTag extends AbstractTag
      */
     public function removeAsLabelTypeOfLabelTag(LabelTag $asLabelTypeOfLabelTag): void
     {
-        $this->asLabelTypeOfLabelTag->detach($asLabelTypeOfLabelTag);
+        $this->asLabelTypeOfLabelTag?->detach($asLabelTypeOfLabelTag);
     }
 
     /**
-     * Remove all as label type of label tag
+     * Remove all as label type of label tags
      */
     public function removeAllAsLabelTypeOfLabelTag(): void
     {
