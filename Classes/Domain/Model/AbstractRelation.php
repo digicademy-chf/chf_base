@@ -10,7 +10,6 @@ declare(strict_types=1);
 namespace Digicademy\CHFBase\Domain\Model;
 
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
-use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -18,9 +17,9 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 defined('TYPO3') or die();
 
 /**
- * Model for AbstractTag
+ * Model for AbstractRelation
  */
-class AbstractTag extends AbstractEntity
+class AbstractRelation extends AbstractEntity
 {
     /**
      * Whether the record should be visible or not
@@ -55,7 +54,7 @@ class AbstractTag extends AbstractEntity
     protected string $uuid = '';
 
     /**
-     * Type of tag
+     * Type of relation
      * 
      * @var string
      */
@@ -68,33 +67,7 @@ class AbstractTag extends AbstractEntity
     protected string $type = '';
 
     /**
-     * Abbreviation of the tag
-     * 
-     * @var string
-     */
-    #[Validate([
-        'validator' => 'StringLength',
-        'options' => [
-            'maximum' => 255,
-        ],
-    ])]
-    protected string $code = '';
-
-    /**
-     * Full name of the tag
-     * 
-     * @var string
-     */
-    #[Validate([
-        'validator' => 'StringLength',
-        'options' => [
-            'maximum' => 255,
-        ],
-    ])]
-    protected string $text = '';
-
-    /**
-     * Brief information about the tag
+     * Brief statement about this relation
      * 
      * @var string
      */
@@ -107,34 +80,19 @@ class AbstractTag extends AbstractEntity
     protected string $description = '';
 
     /**
-     * Reference web address to identify an entity across the web
-     * 
-     * @var ?ObjectStorage<SameAs>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $sameAs = null;
-
-    /**
      * Construct object
      *
      * @param object $parentResource
      * @param string $uuid
-     * @param string $code
-     * @param string $text
-     * @return AbstractTag
+     * @return AbstractRelation
      */
-    public function __construct(object $parentResource, string $uuid, string $code, string $text)
+    public function __construct(object $parentResource, string $uuid)
     {
         $this->initializeObject();
 
         $this->addParentResource($parentResource);
         $this->setUuid($uuid);
         $this->setType('0');
-        $this->setCode($code);
-        $this->setText($text);
     }
 
     /**
@@ -143,7 +101,6 @@ class AbstractTag extends AbstractEntity
     public function initializeObject(): void
     {
         $this->parentResource ??= new ObjectStorage();
-        $this->sameAs ??= new ObjectStorage();
     }
 
     /**
@@ -256,46 +213,6 @@ class AbstractTag extends AbstractEntity
     }
 
     /**
-     * Get code
-     *
-     * @return string
-     */
-    public function getCode(): string
-    {
-        return $this->code;
-    }
-
-    /**
-     * Set code
-     *
-     * @param string $code
-     */
-    public function setCode(string $code): void
-    {
-        $this->code = $code;
-    }
-
-    /**
-     * Get text
-     *
-     * @return string
-     */
-    public function getText(): string
-    {
-        return $this->text;
-    }
-
-    /**
-     * Set text
-     *
-     * @param string $text
-     */
-    public function setText(string $text): void
-    {
-        $this->text = $text;
-    }
-
-    /**
      * Get description
      *
      * @return string
@@ -313,54 +230,5 @@ class AbstractTag extends AbstractEntity
     public function setDescription(string $description): void
     {
         $this->description = $description;
-    }
-
-    /**
-     * Get same as
-     *
-     * @return ObjectStorage<SameAs>
-     */
-    public function getSameAs(): ?ObjectStorage
-    {
-        return $this->sameAs;
-    }
-
-    /**
-     * Set same as
-     *
-     * @param ObjectStorage<SameAs> $sameAs
-     */
-    public function setSameAs(ObjectStorage $sameAs): void
-    {
-        $this->sameAs = $sameAs;
-    }
-
-    /**
-     * Add same as
-     *
-     * @param SameAs $sameAs
-     */
-    public function addSameAs(SameAs $sameAs): void
-    {
-        $this->sameAs?->attach($sameAs);
-    }
-
-    /**
-     * Remove same as
-     *
-     * @param SameAs $sameAs
-     */
-    public function removeSameAs(SameAs $sameAs): void
-    {
-        $this->sameAs?->detach($sameAs);
-    }
-
-    /**
-     * Remove all same as
-     */
-    public function removeAllSameAs(): void
-    {
-        $sameAs = clone $this->sameAs;
-        $this->sameAs->removeAll($sameAs);
     }
 }

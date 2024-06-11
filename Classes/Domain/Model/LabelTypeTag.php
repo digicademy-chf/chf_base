@@ -11,12 +11,6 @@ namespace Digicademy\CHFBase\Domain\Model;
 
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-use Digicademy\CHFBib\Domain\Model\BibliographicResource;
-use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
-use Digicademy\CHFLex\Domain\Model\LexicographicResource;
-use Digicademy\CHFMap\Domain\Model\MapResource;
-use Digicademy\CHFObject\Domain\Model\ObjectResource;
-use Digicademy\CHFPub\Domain\Model\PublicationResource;
 
 defined('TYPO3') or die();
 
@@ -36,13 +30,13 @@ class LabelTypeTag extends AbstractTag
     /**
      * Construct object
      *
-     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
+     * @param object $parentResource
      * @param string $uuid
      * @param string $code
      * @param string $text
      * @return LabelTypeTag
      */
-    public function __construct(BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $uuid, string $code, string $text)
+    public function __construct(object $parentResource, string $uuid, string $code, string $text)
     {
         parent::__construct($parentResource, $uuid, $code, $text);
         $this->initializeObject();

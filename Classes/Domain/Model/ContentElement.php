@@ -94,7 +94,7 @@ class ContentElement extends AbstractEntity
      *
      * @return string
      */
-    public function getbodytext(): string
+    public function getBodytext(): string
     {
         return $this->bodytext;
     }
