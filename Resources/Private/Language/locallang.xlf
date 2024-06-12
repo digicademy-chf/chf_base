@@ -58,6 +58,12 @@
             <trans-unit id="object.generic.sameAs.description" resname="object.generic.sameAs.description">
                 <source>Reference web address to identify an entity across the web</source>
             </trans-unit>
+            <trans-unit id="object.generic.extent" resname="object.generic.extent">
+                <source>Extent/identifier</source>
+            </trans-unit>
+            <trans-unit id="object.generic.extent.description" resname="object.generic.extent.description">
+                <source>List of extents and identifiers relevant to this entry</source>
+            </trans-unit>
             <trans-unit id="object.generic.importOrigin" resname="object.generic.importOrigin">
                 <source>Import origin</source>
             </trans-unit>

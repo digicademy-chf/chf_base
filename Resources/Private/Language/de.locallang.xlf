@@ -88,6 +88,14 @@
                 <source>Reference web address to identify an entity across the web</source>
                 <target>Referenz-Webadresse zur Identifikation einer Entität im Internet</target>
             </trans-unit>
+            <trans-unit id="object.generic.extent" resname="object.generic.extent" approved="yes">
+                <source>Extent/identifier</source>
+                <target>Umfang/Identifikator</target>
+            </trans-unit>
+            <trans-unit id="object.generic.extent.description" resname="object.generic.extent.description" approved="yes">
+                <source>List of extents and identifiers relevant to this entry</source>
+                <target>Liste der Umfangsangaben und Identifikatoren, die für diesen Eintrag relevant sind</target>
+            </trans-unit>
             <trans-unit id="object.generic.importOrigin" resname="object.generic.importOrigin" approved="yes">
                 <source>Import origin</source>
                 <target>Import-Ursprung</target>
