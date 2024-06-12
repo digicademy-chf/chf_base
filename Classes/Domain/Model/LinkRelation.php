@@ -187,7 +187,7 @@ class LinkRelation extends AbstractRelation
     /**
      * Set last checked
      *
-     * @param \DateTime $linkText
+     * @param \DateTime $lastChecked
      */
     public function setLastChecked(\DateTime $lastChecked): void
     {
