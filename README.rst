@@ -41,7 +41,6 @@ This is a pre-release version. The following steps are required for the software
 
 - Unify mdlr and mrvl in this component
 - Move social links here
-- TCA and model work as expected
 - Frontend plugin and templates?
 - Embedded metadata
 - Infrastructure for imports
