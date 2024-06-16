@@ -224,7 +224,6 @@ class Agent extends AbstractHeritage
      */
     public function initializeObject(): void
     {
-        $this->parentAgent = new LazyLoadingProxy();
         $this->event ??= new ObjectStorage();
         $this->agentRelation ??= new ObjectStorage();
         $this->locationRelation ??= new ObjectStorage();

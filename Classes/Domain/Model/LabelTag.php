@@ -163,8 +163,6 @@ class LabelTag extends AbstractTag
      */
     public function initializeObject(): void
     {
-        $this->parentLabelTag = new LazyLoadingProxy();
-        $this->labelType = new LazyLoadingProxy();
         $this->asLabelOfAgent ??= new ObjectStorage();
         $this->asLabelOfLocation ??= new ObjectStorage();
         $this->asLabelOfPeriod ??= new ObjectStorage();

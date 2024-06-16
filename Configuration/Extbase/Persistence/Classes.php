@@ -44,7 +44,7 @@ return [
             'linkRelation' => Digicademy\CHFBase\Domain\Model\LinkRelation::class,
         ],
     ],
-    Digicademy\CHFBase\Domain\Model\ContentElemet::class => [
+    Digicademy\CHFBase\Domain\Model\ContentElement::class => [
         'tableName' => 'tt_content',
     ],
 ];

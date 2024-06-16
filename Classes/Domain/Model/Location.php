@@ -221,9 +221,6 @@ class Location extends AbstractHeritage
      */
     public function initializeObject(): void
     {
-        $this->parentLocation = new LazyLoadingProxy();
-        $this->geodata = new LazyLoadingProxy();
-        $this->locationPlan = new LazyLoadingProxy();
         $this->event ??= new ObjectStorage();
         $this->agentRelation ??= new ObjectStorage();
         $this->asLocationOfLocationRelation ??= new ObjectStorage();
@@ -313,26 +310,6 @@ class Location extends AbstractHeritage
     }
 
     /**
-     * Get is contributor
-     *
-     * @return bool
-     */
-    public function getIsContributor(): bool
-    {
-        return $this->isContributor;
-    }
-
-    /**
-     * Set is contributor
-     *
-     * @param bool $isContributor
-     */
-    public function setIsContributor(bool $isContributor): void
-    {
-        $this->isContributor = $isContributor;
-    }
-
-    /**
      * Get is historical
      *
      * @return bool
@@ -400,7 +377,7 @@ class Location extends AbstractHeritage
      * 
      * @return MapResource
      */
-    public function getParentLocation(): MapResource
+    public function getLocationPlan(): MapResource
     {
         if ($this->locationPlan instanceof LazyLoadingProxy) {
             $this->locationPlan->_loadRealInstance();
@@ -413,7 +390,7 @@ class Location extends AbstractHeritage
      * 
      * @param MapResource
      */
-    public function setParentLocation(MapResource $locationPlan): void
+    public function setLocationPlan(MapResource $locationPlan): void
     {
         $this->locationPlan = $locationPlan;
     }
