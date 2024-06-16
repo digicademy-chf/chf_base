@@ -26,10 +26,10 @@ class Agent extends AbstractHeritage
     /**
      * Larger agent that this agent is part of
      * 
-     * @var Agent|LazyLoadingProxy
+     * @var Agent|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected Agent|LazyLoadingProxy $parentAgent;
+    protected Agent|LazyLoadingProxy|null $parentAgent = null;
 
     /**
      * Specific type of agent

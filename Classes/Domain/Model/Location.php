@@ -29,10 +29,10 @@ class Location extends AbstractHeritage
     /**
      * Larger area that this location is part of
      * 
-     * @var Location|LazyLoadingProxy
+     * @var Location|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected Location|LazyLoadingProxy $parentLocation;
+    protected Location|LazyLoadingProxy|null $parentLocation = null;
 
     /**
      * Type of location
@@ -103,18 +103,18 @@ class Location extends AbstractHeritage
     /**
      * Feature to use as geodata of this location
      * 
-     * @var Feature|FeatureCollection|LazyLoadingProxy
+     * @var Feature|FeatureCollection|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected Feature|FeatureCollection|LazyLoadingProxy $geodata;
+    protected Feature|FeatureCollection|LazyLoadingProxy|null $geodata = null;
 
     /**
      * Map depicting this location
      * 
-     * @var MapResource|LazyLoadingProxy
+     * @var MapResource|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected MapResource|LazyLoadingProxy $locationPlan;
+    protected MapResource|LazyLoadingProxy|null $locationPlan = null;
 
     /**
      * Room to list historical events

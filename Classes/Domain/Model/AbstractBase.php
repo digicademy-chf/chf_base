@@ -89,7 +89,7 @@ class AbstractBase extends AbstractEntity
     /**
      * Number of the current revision of this record
      * 
-     * @var int|null
+     * @var ?int
      */
     #[Validate([
         'validator' => 'Number',

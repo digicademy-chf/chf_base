@@ -26,10 +26,10 @@ class Period extends AbstractHeritage
     /**
      * Longer period that this period is part of
      * 
-     * @var Period|LazyLoadingProxy
+     * @var Period|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected Period|LazyLoadingProxy $parentPeriod;
+    protected Period|LazyLoadingProxy|null $parentPeriod = null;
 
     /**
      * Type of period

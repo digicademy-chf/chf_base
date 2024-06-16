@@ -32,18 +32,18 @@ class LabelTag extends AbstractTag
     /**
      * Label that this label is part of
      * 
-     * @var LabelTag|LazyLoadingProxy
+     * @var LabelTag|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected LabelTag|LazyLoadingProxy $parentLabelTag;
+    protected LabelTag|LazyLoadingProxy|null $parentLabelTag = null;
 
     /**
      * Category that this label belongs to
      * 
-     * @var LabelTypeTag|LazyLoadingProxy
+     * @var LabelTypeTag|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected LabelTypeTag|LazyLoadingProxy $labelType;
+    protected LabelTypeTag|LazyLoadingProxy|null $labelType = null;
 
     /**
      * List of agents that use this tag as a label
