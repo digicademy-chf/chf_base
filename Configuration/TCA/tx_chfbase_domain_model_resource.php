@@ -256,7 +256,6 @@ return [
                 'MM_opposite_field' => 'record',
                 'MM_match_fields' => [
                     'fieldname' => 'authorshipRelation',
-                    'tablename' => 'tx_chfbase_domain_model_resource',
                 ],
                 'appearance' => [
                     'collapseAll' => true,
@@ -285,7 +284,6 @@ return [
                 'MM_opposite_field' => 'record',
                 'MM_match_fields' => [
                     'fieldname' => 'licenceRelation',
-                    'tablename' => 'tx_chfbase_domain_model_resource',
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,

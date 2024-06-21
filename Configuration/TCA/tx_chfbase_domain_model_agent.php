@@ -430,7 +430,6 @@ return [
                 'MM_opposite_field' => 'record',
                 'MM_match_fields' => [
                     'fieldname' => 'authorshipRelation',
-                    'tablename' => 'tx_chfbase_domain_model_agent',
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
@@ -462,7 +461,6 @@ return [
                 'MM_opposite_field' => 'record',
                 'MM_match_fields' => [
                     'fieldname' => 'licenceRelation',
-                    'tablename' => 'tx_chfbase_domain_model_agent',
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
@@ -568,7 +566,6 @@ return [
                 'MM_opposite_field' => 'record',
                 'MM_match_fields' => [
                     'fieldname' => 'agentRelation',
-                    'tablename' => 'tx_chfbase_domain_model_agent',
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
@@ -600,7 +597,6 @@ return [
                 'MM_opposite_field' => 'record',
                 'MM_match_fields' => [
                     'fieldname' => 'locationRelation',
-                    'tablename' => 'tx_chfbase_domain_model_agent',
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
@@ -696,7 +692,6 @@ return [
                 'MM_opposite_field' => 'record',
                 'MM_match_fields' => [
                     'fieldname' => 'linkRelation',
-                    'tablename' => 'tx_chfbase_domain_model_agent',
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
@@ -753,7 +748,6 @@ return [
                 'MM_opposite_field' => 'agent',
                 'MM_match_fields' => [
                     'fieldname' => 'asAgentOfAgentRelation',
-                    'tablename' => 'tx_chfbase_domain_model_agent',
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
@@ -786,7 +780,6 @@ return [
                 'MM_opposite_field' => 'contributor',
                 'MM_match_fields' => [
                     'fieldname' => 'asContributorOfAuthorshipRelation',
-                    'tablename' => 'tx_chfbase_domain_model_agent',
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,

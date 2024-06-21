@@ -339,7 +339,6 @@ return [
                 'MM_opposite_field' => 'label',
                 'MM_match_fields' => [
                     'fieldname' => 'asLabelOfAgent',
-                    'tablename' => 'tx_chfbase_domain_model_tag',
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
@@ -371,7 +370,6 @@ return [
                 'MM_opposite_field' => 'label',
                 'MM_match_fields' => [
                     'fieldname' => 'asLabelOfLocation',
-                    'tablename' => 'tx_chfbase_domain_model_tag',
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
@@ -403,7 +401,6 @@ return [
                 'MM_opposite_field' => 'label',
                 'MM_match_fields' => [
                     'fieldname' => 'asLabelOfPeriod',
-                    'tablename' => 'tx_chfbase_domain_model_tag',
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
@@ -436,7 +433,6 @@ return [
                 'MM_opposite_field' => 'labelType',
                 'MM_match_fields' => [
                     'fieldname' => 'asLabelTypeOfLabelTag',
-                    'tablename' => 'tx_chfbase_domain_model_tag',
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
@@ -469,7 +465,6 @@ return [
                 'MM_opposite_field' => 'licence',
                 'MM_match_fields' => [
                     'fieldname' => 'asLicenceOfLicenceRelation',
-                    'tablename' => 'tx_chfbase_domain_model_tag',
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
