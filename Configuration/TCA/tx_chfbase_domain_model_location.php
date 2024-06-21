@@ -764,7 +764,7 @@ return [
         '0' => [
             'showitem' => 'parentResource,parentLocation,--palette--;;uuidType,--palette--;;nameAlternativeName,--palette--;;isHistoricalIsImaginaryIsHighlight,label,sameAs,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.editorial,authorshipRelation,licenceRelation,--palette--;;publicationDateRevisionDateRevisionNumberEditorialNote,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.content,geodata,locationPlan,event,agentRelation,contentElement,footnote,media,file,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.content,geodata,floorPlan,event,agentRelation,contentElement,footnote,media,file,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.address,--palette--;;addressStreetAddressNumber,--palette--;;addressZipAddressCity,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.relations,linkRelation,publicationRelation,sourceRelation,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.import,importOrigin,import,

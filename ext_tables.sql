@@ -44,3 +44,90 @@ CREATE TABLE tx_chfbase_domain_model_tag (
     code varchar(255) DEFAULT '' NOT NULL,
     text varchar(255) DEFAULT '' NOT NULL
 );
+
+# Remove when forge.typo3.org/issues/98322 is fixed to auto-generate these fields
+
+CREATE TABLE tx_chfbase_domain_model_agent_tag_label_mm (
+	fieldname varchar(63) DEFAULT '' NOT NULL
+	tablename varchar(63) DEFAULT '' NOT NULL
+);
+
+CREATE TABLE tx_chfbase_domain_model_location_feature_geodata_mm (
+	fieldname varchar(63) DEFAULT '' NOT NULL
+	tablename varchar(63) DEFAULT '' NOT NULL
+);
+
+CREATE TABLE tx_chfbase_domain_model_location_resource_floorplan_mm (
+	fieldname varchar(63) DEFAULT '' NOT NULL
+	tablename varchar(63) DEFAULT '' NOT NULL
+);
+
+CREATE TABLE tx_chfbase_domain_model_location_tag_label_mm (
+	fieldname varchar(63) DEFAULT '' NOT NULL
+	tablename varchar(63) DEFAULT '' NOT NULL
+);
+
+CREATE TABLE tx_chfbase_domain_model_period_tag_label_mm (
+	fieldname varchar(63) DEFAULT '' NOT NULL
+	tablename varchar(63) DEFAULT '' NOT NULL
+);
+
+CREATE TABLE tx_chfbase_domain_model_relation_agent_agent_mm (
+	fieldname varchar(63) DEFAULT '' NOT NULL
+	tablename varchar(63) DEFAULT '' NOT NULL
+);
+
+CREATE TABLE tx_chfbase_domain_model_relation_agent_contributor_mm (
+	fieldname varchar(63) DEFAULT '' NOT NULL
+	tablename varchar(63) DEFAULT '' NOT NULL
+);
+
+CREATE TABLE tx_chfbase_domain_model_relation_any_record_mm (
+	fieldname varchar(63) DEFAULT '' NOT NULL
+	tablename varchar(63) DEFAULT '' NOT NULL
+);
+
+CREATE TABLE tx_chfbase_domain_model_relation_any_relatedrecord_mm (
+	fieldname varchar(63) DEFAULT '' NOT NULL
+	tablename varchar(63) DEFAULT '' NOT NULL
+);
+
+CREATE TABLE tx_chfbase_domain_model_relation_bibliographic_entry_bibentry_mm (
+	fieldname varchar(63) DEFAULT '' NOT NULL
+	tablename varchar(63) DEFAULT '' NOT NULL
+);
+
+CREATE TABLE tx_chfbase_domain_model_relation_essay_essay_mm (
+	fieldname varchar(63) DEFAULT '' NOT NULL
+	tablename varchar(63) DEFAULT '' NOT NULL
+);
+
+CREATE TABLE tx_chfbase_domain_model_relation_location_location_mm (
+	fieldname varchar(63) DEFAULT '' NOT NULL
+	tablename varchar(63) DEFAULT '' NOT NULL
+);
+
+CREATE TABLE tx_chfbase_domain_model_relation_tag_lexrelationtype_mm (
+	fieldname varchar(63) DEFAULT '' NOT NULL
+	tablename varchar(63) DEFAULT '' NOT NULL
+);
+
+CREATE TABLE tx_chfbase_domain_model_relation_tag_licence_mm (
+	fieldname varchar(63) DEFAULT '' NOT NULL
+	tablename varchar(63) DEFAULT '' NOT NULL
+);
+
+CREATE TABLE tx_chfbase_domain_model_relation_volume_volume_mm (
+	fieldname varchar(63) DEFAULT '' NOT NULL
+	tablename varchar(63) DEFAULT '' NOT NULL
+);
+
+CREATE TABLE tx_chfbase_domain_model_resource_resource_glossary_mm (
+	fieldname varchar(63) DEFAULT '' NOT NULL
+	tablename varchar(63) DEFAULT '' NOT NULL
+);
+
+CREATE TABLE tx_chfbase_domain_model_tag_tag_labeltype_mm (
+	fieldname varchar(63) DEFAULT '' NOT NULL
+	tablename varchar(63) DEFAULT '' NOT NULL
+);

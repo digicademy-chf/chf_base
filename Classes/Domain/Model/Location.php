@@ -114,7 +114,7 @@ class Location extends AbstractHeritage
      * @var MapResource|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected MapResource|LazyLoadingProxy|null $locationPlan = null;
+    protected MapResource|LazyLoadingProxy|null $floorPlan = null;
 
     /**
      * Room to list historical events
@@ -373,26 +373,26 @@ class Location extends AbstractHeritage
     }
 
     /**
-     * Get location plan
+     * Get floor plan
      * 
      * @return MapResource
      */
-    public function getLocationPlan(): MapResource
+    public function getFloorPlan(): MapResource
     {
-        if ($this->locationPlan instanceof LazyLoadingProxy) {
-            $this->locationPlan->_loadRealInstance();
+        if ($this->floorPlan instanceof LazyLoadingProxy) {
+            $this->floorPlan->_loadRealInstance();
         }
-        return $this->locationPlan;
+        return $this->floorPlan;
     }
 
     /**
-     * Set location plan
+     * Set floor plan
      * 
      * @param MapResource
      */
-    public function setLocationPlan(MapResource $locationPlan): void
+    public function setFloorPlan(MapResource $floorPlan): void
     {
-        $this->locationPlan = $locationPlan;
+        $this->floorPlan = $floorPlan;
     }
 
     /**
