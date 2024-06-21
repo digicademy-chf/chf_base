@@ -33,13 +33,15 @@ return [
         'origUid'                  => 't3_origuid',
         'hideAtCopy'               => true,
         'languageField'            => 'sys_language_uid',
-        'transOrigPointerField'    => 'l18n_parent',
-        'transOrigDiffSourceField' => 'l18n_diffsource',
+        'transOrigPointerField'    => 'l10n_parent',
+        'transOrigDiffSourceField' => 'l10n_diffsource',
         'translationSource'        => 'l10n_source',
         'searchFields'             => 'type,title,langCode,description,publicationDate,revisionNumber,revisionDate,editorialNote,importOrigin,importState',
         'type'                     => 'type',
         'enablecolumns'            => [
             'disabled' => 'hidden',
+            'starttime' => 'starttime',
+            'endtime' => 'endtime',
             'fe_group' => 'fe_group',
         ],
     ],
@@ -69,6 +71,7 @@ return [
                 ],
                 'exclusiveKeys' => '-1,-2',
                 'foreign_table' => 'fe_groups',
+                'foreign_table_where' => 'ORDER BY fe_groups.title',
             ],
         ],
         'sys_language_uid' => [
@@ -78,9 +81,9 @@ return [
                 'type' => 'language',
             ],
         ],
-        'l18n_parent' => [
+        'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l10n_parent',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -101,7 +104,7 @@ return [
                 'type' => 'passthrough',
             ],
         ],
-        'l18n_diffsource' => [
+        'l10n_diffsource' => [
             'config' => [
                 'type' => 'passthrough',
                 'default' => '',
@@ -122,6 +125,33 @@ return [
                     ]
                 ],
             ]
+        ],
+        'starttime' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.starttime.description',
+            'config' => [
+                'type' => 'datetime',
+                'format' => 'datetime',
+                'eval' => 'int',
+                'default' => 0,
+            ],
+        ],
+        'endtime' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.endtime.description',
+            'config' => [
+                'type' => 'datetime',
+                'format' => 'datetime',
+                'eval' => 'int',
+                'default' => 0,
+                'range' => [
+                    'upper' => mktime(0, 0, 0, 1, 1, 2106),
+                ],
+            ],
         ],
         'uuid' => [
             'exclude' => true,
@@ -204,7 +234,7 @@ return [
                     'collapseAll' => true,
                     'expandSingle' => true,
                     'newRecordLinkAddTitle' => true,
-                    'levelLinksPosition' => 'top',
+                    'levelLinksPosition' => 'bottom',
                     'useSortable' => true,
                     'showPossibleLocalizationRecords' => true,
                     'showAllLocalizationLink' => true,
@@ -218,25 +248,25 @@ return [
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.authorshipRelation',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.authorshipRelation.description',
             'config' => [
-                'type' => 'select',
-                'renderType' => 'selectMultipleSideBySide',
+                'type' => 'inline',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'authorshipRelation\'',
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
                 'MM_opposite_field' => 'record',
-                'size' => 5,
-                'autoSizeMax' => 10,
-                'fieldControl' => [
-                    'editPopup' => [
-                        'disabled' => false,
-                    ],
-                    'addRecord' => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
+                'MM_match_fields' => [
+                    'fieldname' => 'authorshipRelation',
+                    'tablename' => 'tx_chfbase_domain_model_resource',
+                ],
+                'appearance' => [
+                    'collapseAll' => true,
+                    'expandSingle' => true,
+                    'newRecordLinkAddTitle' => true,
+                    'levelLinksPosition' => 'bottom',
+                    'useSortable' => true,
+                    'showPossibleLocalizationRecords' => true,
+                    'showAllLocalizationLink' => true,
+                    'showSynchronizationLink' => true,
                 ],
             ],
         ],
@@ -253,6 +283,10 @@ return [
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'licenceRelation\'',
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
                 'MM_opposite_field' => 'record',
+                'MM_match_fields' => [
+                    'fieldname' => 'licenceRelation',
+                    'tablename' => 'tx_chfbase_domain_model_resource',
+                ],
                 'size' => 5,
                 'autoSizeMax' => 10,
                 'fieldControl' => [
@@ -287,6 +321,10 @@ return [
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractBase.revisionNumber.description',
             'config' => [
                 'type' => 'number',
+                'size' => 13,
+                'range' => [
+                    'lower' => 1,
+                ],
             ],
         ],
         'revisionDate' => [
@@ -330,7 +368,7 @@ return [
                     'collapseAll' => true,
                     'expandSingle' => true,
                     'newRecordLinkAddTitle' => true,
-                    'levelLinksPosition' => 'top',
+                    'levelLinksPosition' => 'bottom',
                     'useSortable' => false,
                     'showPossibleLocalizationRecords' => true,
                     'showAllLocalizationLink' => true,
@@ -352,7 +390,7 @@ return [
                     'collapseAll' => true,
                     'expandSingle' => true,
                     'newRecordLinkAddTitle' => true,
-                    'levelLinksPosition' => 'top',
+                    'levelLinksPosition' => 'bottom',
                     'useSortable' => false,
                     'showPossibleLocalizationRecords' => true,
                     'showAllLocalizationLink' => true,
@@ -374,7 +412,7 @@ return [
                     'collapseAll' => true,
                     'expandSingle' => true,
                     'newRecordLinkAddTitle' => true,
-                    'levelLinksPosition' => 'top',
+                    'levelLinksPosition' => 'bottom',
                     'useSortable' => false,
                     'showPossibleLocalizationRecords' => true,
                     'showAllLocalizationLink' => true,
@@ -396,7 +434,7 @@ return [
                     'collapseAll' => true,
                     'expandSingle' => true,
                     'newRecordLinkAddTitle' => true,
-                    'levelLinksPosition' => 'top',
+                    'levelLinksPosition' => 'bottom',
                     'useSortable' => false,
                     'showPossibleLocalizationRecords' => true,
                     'showAllLocalizationLink' => true,
@@ -418,7 +456,7 @@ return [
                     'collapseAll' => true,
                     'expandSingle' => true,
                     'newRecordLinkAddTitle' => true,
-                    'levelLinksPosition' => 'top',
+                    'levelLinksPosition' => 'bottom',
                     'useSortable' => false,
                     'showPossibleLocalizationRecords' => true,
                     'showAllLocalizationLink' => true,
@@ -452,26 +490,23 @@ return [
         ],
     ],
     'palettes' => [
-        'hiddenUuid' => [
-            'showitem' => 'hidden,uuid,',
+        'typeUuid' => [
+            'showitem' => 'type,uuid,',
         ],
-        'uuidType' => [
-            'showitem' => 'uuid,type,',
+        'titleLangCodeDescription' => [
+            'showitem' => 'title,langCode,--linebreak--,description,',
         ],
-        'titleLangCode' => [
-            'showitem' => 'title,langCode,',
+        'titleLangCodeDescriptionGlossary' => [
+            'showitem' => 'title,langCode,--linebreak--,description,glossary,',
         ],
-        'publicationDateRevisionNumberRevisionDate' => [
-            'showitem' => 'publicationDate,revisionNumber,revisionDate,',
-        ],
-        'importOriginImportState' => [
-            'showitem' => 'importOrigin,importState,',
+        'publicationDateRevisionDateRevisionNumberEditorialNote' => [
+            'showitem' => 'publicationDate,revisionDate,revisionNumber,--linebreak--,editorialNote,',
         ],
     ],
     'types' => [
         '0' => [
-            'showitem' => 'hidden,uuidType,titleLangCode,description,sameAs,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.editorial,authorshipRelation,licenceRelation,publicationDateRevisionNumberRevisionDate,editorialNote,
+            'showitem' => '--palette--;;typeUuid,--palette--;;titleLangCodeDescription,sameAs,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.editorial,authorshipRelation,licenceRelation,--palette--;;publicationDateRevisionDateRevisionNumberEditorialNote,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.content,allAgents,allFileGroups,allLocations,allPeriods,allRelations,allTags,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.import,importOrigin,importState,',
         ],

@@ -33,13 +33,15 @@ return [
         'origUid'                  => 't3_origuid',
         'hideAtCopy'               => true,
         'languageField'            => 'sys_language_uid',
-        'transOrigPointerField'    => 'l18n_parent',
-        'transOrigDiffSourceField' => 'l18n_diffsource',
+        'transOrigPointerField'    => 'l10n_parent',
+        'transOrigDiffSourceField' => 'l10n_diffsource',
         'translationSource'        => 'l10n_source',
         'searchFields'             => 'uuid,type,code,text,description',
         'type'                     => 'type',
         'enablecolumns'            => [
             'disabled' => 'hidden',
+            'starttime' => 'starttime',
+            'endtime' => 'endtime',
             'fe_group' => 'fe_group',
         ],
     ],
@@ -69,6 +71,7 @@ return [
                 ],
                 'exclusiveKeys' => '-1,-2',
                 'foreign_table' => 'fe_groups',
+                'foreign_table_where' => 'ORDER BY fe_groups.title',
             ],
         ],
         'sys_language_uid' => [
@@ -78,9 +81,9 @@ return [
                 'type' => 'language',
             ],
         ],
-        'l18n_parent' => [
+        'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l10n_parent',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -101,7 +104,7 @@ return [
                 'type' => 'passthrough',
             ],
         ],
-        'l18n_diffsource' => [
+        'l10n_diffsource' => [
             'config' => [
                 'type' => 'passthrough',
                 'default' => '',
@@ -122,6 +125,33 @@ return [
                     ]
                 ],
             ]
+        ],
+        'starttime' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.starttime.description',
+            'config' => [
+                'type' => 'datetime',
+                'format' => 'datetime',
+                'eval' => 'int',
+                'default' => 0,
+            ],
+        ],
+        'endtime' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.endtime.description',
+            'config' => [
+                'type' => 'datetime',
+                'format' => 'datetime',
+                'eval' => 'int',
+                'default' => 0,
+                'range' => [
+                    'upper' => mktime(0, 0, 0, 1, 1, 2106),
+                ],
+            ],
         ],
         'parentResource' => [
             'exclude' => true,
@@ -152,8 +182,13 @@ return [
                     . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
                 'treeConfig' => [
                     'parentField' => 'parentLabelTag',
+                    'appearance' => [
+                        'showHeader' => true,
+                        'expandAll' => true,
+                    ],
                 ],
                 'maxitems' => 1,
+                'size' => 8,
             ],
         ],
         'uuid' => [
@@ -282,7 +317,7 @@ return [
                     'collapseAll' => true,
                     'expandSingle' => true,
                     'newRecordLinkAddTitle' => true,
-                    'levelLinksPosition' => 'top',
+                    'levelLinksPosition' => 'bottom',
                     'useSortable' => true,
                     'showPossibleLocalizationRecords' => true,
                     'showAllLocalizationLink' => true,
@@ -302,6 +337,10 @@ return [
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfbase_domain_model_agent_tag_label_mm',
                 'MM_opposite_field' => 'label',
+                'MM_match_fields' => [
+                    'fieldname' => 'asLabelOfAgent',
+                    'tablename' => 'tx_chfbase_domain_model_tag',
+                ],
                 'size' => 5,
                 'autoSizeMax' => 10,
                 'fieldControl' => [
@@ -330,6 +369,10 @@ return [
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_location}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfbase_domain_model_location_tag_label_mm',
                 'MM_opposite_field' => 'label',
+                'MM_match_fields' => [
+                    'fieldname' => 'asLabelOfLocation',
+                    'tablename' => 'tx_chfbase_domain_model_tag',
+                ],
                 'size' => 5,
                 'autoSizeMax' => 10,
                 'fieldControl' => [
@@ -358,6 +401,10 @@ return [
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_period}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfbase_domain_model_period_tag_label_mm',
                 'MM_opposite_field' => 'label',
+                'MM_match_fields' => [
+                    'fieldname' => 'asLabelOfPeriod',
+                    'tablename' => 'tx_chfbase_domain_model_tag',
+                ],
                 'size' => 5,
                 'autoSizeMax' => 10,
                 'fieldControl' => [
@@ -387,6 +434,10 @@ return [
                     . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
                 'MM' => 'tx_chfbase_domain_model_tag_tag_labeltype_mm',
                 'MM_opposite_field' => 'labelType',
+                'MM_match_fields' => [
+                    'fieldname' => 'asLabelTypeOfLabelTag',
+                    'tablename' => 'tx_chfbase_domain_model_tag',
+                ],
                 'size' => 5,
                 'autoSizeMax' => 10,
                 'fieldControl' => [
@@ -416,6 +467,10 @@ return [
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'licenceRelation\'',
                 'MM' => 'tx_chfbase_domain_model_relation_tag_licence_mm',
                 'MM_opposite_field' => 'licence',
+                'MM_match_fields' => [
+                    'fieldname' => 'asLicenceOfLicenceRelation',
+                    'tablename' => 'tx_chfbase_domain_model_tag',
+                ],
                 'size' => 5,
                 'autoSizeMax' => 10,
                 'fieldControl' => [
@@ -434,36 +489,33 @@ return [
         ],
     ],
     'palettes' => [
-        'hiddenParentResource' => [
-            'showitem' => 'hidden,parentResource,',
+        'typeUuid' => [
+            'showitem' => 'type,uuid,',
         ],
-        'hiddenParentResourceParentLabelTag' => [
-            'showitem' => 'hidden,parentResource,parentLabelTag,',
+        'textCodeDescription' => [
+            'showitem' => 'text,code,--linebreak--,description',
         ],
-        'uuidType' => [
-            'showitem' => 'uuid,type,',
+        'textCodeDescriptionLabelType' => [
+            'showitem' => 'text,code,--linebreak--,description,labelType',
         ],
-        'uuidTypeLabelType' => [
-            'showitem' => 'uuid,type,labelType,',
-        ],
-        'codeText' => [
-            'showitem' => 'code,text,',
+        'parentResourceParentLabelTag' => [
+            'showitem' => 'parentResource,parentLabelTag',
         ],
     ],
     'types' => [
         '0' => [
-            'showitem' => 'hiddenParentResource,uuidType,codeText,description,sameAs,',
+            'showitem' => '--palette--;;typeUuid,--palette--;;textCodeDescription,parentResource,sameAs,',
         ],
         'labelTag' => [
-            'showitem' => 'hiddenParentResourceParentLabelTag,uuidTypeLabelType,codeText,description,sameAs,
+            'showitem' => '--palette--;;typeUuid,--palette--;;textCodeDescriptionLabelType,--palette--;;parentResourceParentLabelTag,sameAs,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLabelOfAgent,asLabelOfLocation,asLabelOfPeriod,asLabelOfFeature,asLabelOfDictionaryEntry,asLabelOfEncyclopediaEntry,asLabelOfBibliographicEntry,asLabelOfVolume,asLabelOfEssay,asLabelOfSingleObject,asLabelOfObjectGroup,asLabelOfFileGroup,',
         ],
         'labelTypeTag' => [
-            'showitem' => 'hiddenParentResource,uuidType,codeText,description,sameAs,
+            'showitem' => '--palette--;;typeUuid,--palette--;;textCodeDescription,parentResource,sameAs,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLabelTypeOfLabelTag,',
         ],
         'licenceTag' => [
-            'showitem' => 'hiddenParentResource,uuidType,codeText,description,sameAs,
+            'showitem' => '--palette--;;typeUuid,--palette--;;textCodeDescription,parentResource,sameAs,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLicenceOfLicenceRelation,',
         ],
     ],

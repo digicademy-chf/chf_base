@@ -5,16 +5,28 @@
         <body>
             <!-- Object: generic -->
             <trans-unit id="object.generic.chfBase" resname="object.generic.chfBase">
-                <source>CHF Base</source>
+                <source>Basic data</source>
             </trans-unit>
             <trans-unit id="object.generic.chfBib" resname="object.generic.chfBib">
-                <source>CHF Bib</source>
+                <source>Bibliography</source>
+            </trans-unit>
+            <trans-unit id="object.generic.chfGloss" resname="object.generic.chfGloss">
+                <source>Glossary</source>
             </trans-unit>
             <trans-unit id="object.generic.chfLex" resname="object.generic.chfLex">
-                <source>CHF Lex</source>
+                <source>Lexicography</source>
+            </trans-unit>
+            <trans-unit id="object.generic.chfMap" resname="object.generic.chfMap">
+                <source>Maps</source>
+            </trans-unit>
+            <trans-unit id="object.generic.chfMedia" resname="object.generic.chfMedia">
+                <source>Media</source>
+            </trans-unit>
+            <trans-unit id="object.generic.chfObject" resname="object.generic.chfObject">
+                <source>Objects</source>
             </trans-unit>
             <trans-unit id="object.generic.chfPub" resname="object.generic.chfPub">
-                <source>CHF Pub</source>
+                <source>Text pubications</source>
             </trans-unit>
             <trans-unit id="object.generic.usage" resname="object.generic.usage">
                 <source>Usage</source>
@@ -32,7 +44,13 @@
                 <source>Import</source>
             </trans-unit>
             <trans-unit id="object.generic.hidden.description" resname="object.generic.hidden.description">
-                <source>Whether the record should be visible or not</source>
+                <source>Record visible or not</source>
+            </trans-unit>
+            <trans-unit id="object.generic.starttime.description" resname="object.generic.starttime.description">
+                <source>When to start showing the record</source>
+            </trans-unit>
+            <trans-unit id="object.generic.endtime.description" resname="object.generic.endtime.description">
+                <source>When to stop showing the record</source>
             </trans-unit>
             <trans-unit id="object.generic.parentResource" resname="object.generic.parentResource">
                 <source>Parent resource</source>
@@ -44,7 +62,7 @@
                 <source>UUID</source>
             </trans-unit>
             <trans-unit id="object.generic.uuid.description" resname="object.generic.uuid.description">
-                <source>Unique identifier of this database record</source>
+                <source>Unique identifier of this record</source>
             </trans-unit>
             <trans-unit id="object.generic.label" resname="object.generic.label">
                 <source>Label</source>
@@ -56,7 +74,7 @@
                 <source>Reference URI</source>
             </trans-unit>
             <trans-unit id="object.generic.sameAs.description" resname="object.generic.sameAs.description">
-                <source>Reference web address to identify an entity across the web</source>
+                <source>Authoritative web address to identify an entity across the web</source>
             </trans-unit>
             <trans-unit id="object.generic.extent" resname="object.generic.extent">
                 <source>Extent/identifier</source>
@@ -117,19 +135,19 @@
                 <source>Publication date</source>
             </trans-unit>
             <trans-unit id="object.abstractBase.publicationDate.description" resname="object.abstractBase.publicationDate.description">
-                <source>Date when this record was published</source>
+                <source>Date of first publication</source>
             </trans-unit>
             <trans-unit id="object.abstractBase.revisionNumber" resname="object.abstractBase.revisionNumber">
                 <source>Revision number</source>
             </trans-unit>
             <trans-unit id="object.abstractBase.revisionNumber.description" resname="object.abstractBase.revisionNumber.description">
-                <source>Number of the current revision of this record</source>
+                <source>Number of the current revision</source>
             </trans-unit>
             <trans-unit id="object.abstractBase.revisionDate" resname="object.abstractBase.revisionDate">
                 <source>Revision date</source>
             </trans-unit>
             <trans-unit id="object.abstractBase.revisionDate.description" resname="object.abstractBase.revisionDate.description">
-                <source>Date when this record was last revised</source>
+                <source>Date of the last revision</source>
             </trans-unit>
             <trans-unit id="object.abstractBase.editorialNote" resname="object.abstractBase.editorialNote">
                 <source>Editorial note</source>
@@ -685,7 +703,7 @@
                 <source>Label type</source>
             </trans-unit>
             <trans-unit id="object.labelTag.labelType.description" resname="object.labelTag.labelType.description">
-                <source>Category that this label belongs to</source>
+                <source>Group of labels that this one belongs to</source>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfAgent" resname="object.labelTag.asLabelOfAgent">
                 <source>Usage as label of an agent</source>

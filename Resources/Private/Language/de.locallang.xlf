@@ -5,20 +5,36 @@
         <body>
             <!-- Object: generic -->
             <trans-unit id="object.generic.chfBase" resname="object.generic.chfBase" approved="yes">
-                <source>CHF Base</source>
-                <target>CHF Base</target>
+                <source>Basic data</source>
+                <target>Basisdaten</target>
             </trans-unit>
             <trans-unit id="object.generic.chfBib" resname="object.generic.chfBib" approved="yes">
-                <source>CHF Bib</source>
-                <target>CHF Bib</target>
+                <source>Bibliography</source>
+                <target>Bibliografie</target>
+            </trans-unit>
+            <trans-unit id="object.generic.chfGloss" resname="object.generic.chfGloss" approved="yes">
+                <source>Glossary</source>
+                <target>Glossare</target>
             </trans-unit>
             <trans-unit id="object.generic.chfLex" resname="object.generic.chfLex" approved="yes">
-                <source>CHF Lex</source>
-                <target>CHF Lex</target>
+                <source>Lexicography</source>
+                <target>Lexikografie</target>
+            </trans-unit>
+            <trans-unit id="object.generic.chfMap" resname="object.generic.chfMap" approved="yes">
+                <source>Maps</source>
+                <target>Kartenmaterial</target>
+            </trans-unit>
+            <trans-unit id="object.generic.chfMedia" resname="object.generic.chfMedia" approved="yes">
+                <source>Media</source>
+                <target>Medien</target>
+            </trans-unit>
+            <trans-unit id="object.generic.chfObject" resname="object.generic.chfObject" approved="yes">
+                <source>Objects</source>
+                <target>Objekte</target>
             </trans-unit>
             <trans-unit id="object.generic.chfPub" resname="object.generic.chfPub" approved="yes">
-                <source>CHF Pub</source>
-                <target>CHF Pub</target>
+                <source>Text pubications</source>
+                <target>Textpublikationen</target>
             </trans-unit>
             <trans-unit id="object.generic.usage" resname="object.generic.usage" approved="yes">
                 <source>Usage</source>
@@ -45,8 +61,16 @@
                 <target>Import</target>
             </trans-unit>
             <trans-unit id="object.generic.hidden.description" resname="object.generic.hidden.description" approved="yes">
-                <source>Whether the record should be visible or not</source>
-                <target>Ob der Datenbankeintrag sichtbar sein soll oder nicht</target>
+                <source>Record visible or not</source>
+                <target>Eintrag sichtbar oder nicht</target>
+            </trans-unit>
+            <trans-unit id="object.generic.starttime.description" resname="object.generic.starttime.description" approved="yes">
+                <source>When to start showing the record</source>
+                <target>Wann der Eintrag sichtbar wird</target>
+            </trans-unit>
+            <trans-unit id="object.generic.endtime.description" resname="object.generic.endtime.description" approved="yes">
+                <source>When to stop showing the record</source>
+                <target>Wann der Eintrag ausgeblendet wird</target>
             </trans-unit>
             <trans-unit id="object.generic.parentResource" resname="object.generic.parentResource" approved="yes">
                 <source>Parent resource</source>
@@ -61,8 +85,8 @@
                 <target>UUID</target>
             </trans-unit>
             <trans-unit id="object.generic.uuid.description" resname="object.generic.uuid.description" approved="yes">
-                <source>Unique identifier of this database record</source>
-                <target>Einzigartiger Identifikator dieses Datenbankeintrags</target>
+                <source>Unique identifier of this record</source>
+                <target>Eindeutiger Identifikator dieses Eintrags</target>
             </trans-unit>
             <trans-unit id="object.generic.extent" resname="object.generic.extent" approved="yes">
                 <source>Extent/identifier</source>
@@ -85,8 +109,8 @@
                 <target>Referenz-URI</target>
             </trans-unit>
             <trans-unit id="object.generic.sameAs.description" resname="object.generic.sameAs.description" approved="yes">
-                <source>Reference web address to identify an entity across the web</source>
-                <target>Referenz-Webadresse zur Identifikation einer Entität im Internet</target>
+                <source>Authoritative web address to identify an entity across the web</source>
+                <target>Verbindliche Webadresse zur Identifikation einer Entität im Internet</target>
             </trans-unit>
             <trans-unit id="object.generic.extent" resname="object.generic.extent" approved="yes">
                 <source>Extent/identifier</source>
@@ -166,24 +190,24 @@
                 <target>Veröffentlichungsdatum</target>
             </trans-unit>
             <trans-unit id="object.abstractBase.publicationDate.description" resname="object.abstractBase.publicationDate.description" approved="yes">
-                <source>Date when this record was published</source>
-                <target>Datum, an dem dieser Eintrag veröffentlicht wurde</target>
+                <source>Date of first publication</source>
+                <target>Datum der Erstveröffentlichung</target>
             </trans-unit>
             <trans-unit id="object.abstractBase.revisionNumber" resname="object.abstractBase.revisionNumber" approved="yes">
                 <source>Revision number</source>
                 <target>Revisionsnummer</target>
             </trans-unit>
             <trans-unit id="object.abstractBase.revisionNumber.description" resname="object.abstractBase.revisionNumber.description" approved="yes">
-                <source>Number of the current revision of this record</source>
-                <target>Nummer der aktuellen Revision dieses Eintrags</target>
+                <source>Number of the current revision</source>
+                <target>Nummer der aktuellen Revision</target>
             </trans-unit>
             <trans-unit id="object.abstractBase.revisionDate" resname="object.abstractBase.revisionDate" approved="yes">
                 <source>Revision date</source>
                 <target>Revisionsdatum</target>
             </trans-unit>
             <trans-unit id="object.abstractBase.revisionDate.description" resname="object.abstractBase.revisionDate.description" approved="yes">
-                <source>Date when this record was last revised</source>
-                <target>Datum, an dem dieser Eintrag zuletzt überarbeitet wurde</target>
+                <source>Date of the last revision</source>
+                <target>Datum der letzten Überarbeitung</target>
             </trans-unit>
             <trans-unit id="object.abstractBase.editorialNote" resname="object.abstractBase.editorialNote" approved="yes">
                 <source>Editorial note</source>
@@ -919,8 +943,8 @@
                 <target>Labelart</target>
             </trans-unit>
             <trans-unit id="object.labelTag.labelType.description" resname="object.labelTag.labelType.description" approved="yes">
-                <source>Category that this label belongs to</source>
-                <target>Kategorie, der dieses Label zugeordnet ist</target>
+                <source>Group of labels that this one belongs to</source>
+                <target>Zugehörigkeit zu einer Gruppe an Labels</target>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfAgent" resname="object.labelTag.asLabelOfAgent" approved="yes">
                 <source>Usage as label of an agent</source>
