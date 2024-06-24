@@ -9,7 +9,8 @@ declare(strict_types=1);
 
 defined('TYPO3') or die();
 
-// Backend customisation
-$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets'] = [
-    'chf_base_simple' => 'EXT:chf_base/Configuration/RTE/CHFBaseSimple.yaml'
+// Customisations of the rich-text editor
+$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets'] += [
+    'chf_base_simple' => 'EXT:chf_base/Configuration/RTE/CHFBaseSimple.yaml',
+    'chf_base_regular' => 'EXT:chf_base/Configuration/RTE/CHFBaseRegular.yaml',
 ];

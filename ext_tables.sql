@@ -102,6 +102,11 @@ CREATE TABLE tx_chfbase_domain_model_relation_essay_essay_mm (
 	tablenames varchar(63) DEFAULT '' NOT NULL
 );
 
+CREATE TABLE tx_chfbase_domain_model_relation_feature_feature_mm (
+	fieldname varchar(63) DEFAULT '' NOT NULL,
+	tablenames varchar(63) DEFAULT '' NOT NULL
+);
+
 CREATE TABLE tx_chfbase_domain_model_relation_location_location_mm (
 	fieldname varchar(63) DEFAULT '' NOT NULL,
 	tablenames varchar(63) DEFAULT '' NOT NULL

@@ -86,7 +86,7 @@ class AbstractResource extends AbstractBase
     protected ?ObjectStorage $allAgents = null;
 
     /**
-     * List of all file groups compiled in this resource
+     * List of all file collections compiled in this resource
      * 
      * @var ?ObjectStorage<FileGroup>
      */

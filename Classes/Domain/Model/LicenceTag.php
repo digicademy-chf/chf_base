@@ -20,7 +20,7 @@ defined('TYPO3') or die();
 class LicenceTag extends AbstractTag
 {
     /**
-     * List of licence relations that use this tag as a licence
+     * List of licence relations that use this licence
      * 
      * @var ?ObjectStorage<LicenceRelation>
      */

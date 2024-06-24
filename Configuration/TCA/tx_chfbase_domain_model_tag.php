@@ -21,7 +21,7 @@ return [
     'ctrl' => [
         'title'                    => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractTag',
         'label'                    => 'text',
-        'label_alt'                => 'code,type',
+        'label_alt'                => 'code',
         'descriptionColumn'        => 'description',
         'tstamp'                   => 'tstamp',
         'crdate'                   => 'crdate',
@@ -244,17 +244,17 @@ return [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
+                'items' => [
+                    [
+                        'label' => '',
+                        'value' => 0,
+                    ],
+                ],
                 'foreign_table' => 'tx_chfbase_domain_model_tag',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTypeTag\'',
                 'MM' => 'tx_chfbase_domain_model_tag_tag_labeltype_mm',
                 'maxitems' => 1,
-                'items' => [
-                    [
-                        'label' => '',
-                        'value' => '0',
-                    ],
-                ],
                 'sortItems' => [
                     'label' => 'asc',
                 ],
@@ -342,18 +342,6 @@ return [
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
-                'fieldControl' => [
-                    'editPopup' => [
-                        'disabled' => false,
-                    ],
-                    'addRecord' => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
-                ],
-                'readOnly' => true,
             ],
         ],
         'asLabelOfLocation' => [
@@ -373,18 +361,6 @@ return [
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
-                'fieldControl' => [
-                    'editPopup' => [
-                        'disabled' => false,
-                    ],
-                    'addRecord' => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
-                ],
-                'readOnly' => true,
             ],
         ],
         'asLabelOfPeriod' => [
@@ -404,18 +380,6 @@ return [
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
-                'fieldControl' => [
-                    'editPopup' => [
-                        'disabled' => false,
-                    ],
-                    'addRecord' => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
-                ],
-                'readOnly' => true,
             ],
         ],
         'asLabelTypeOfLabelTag' => [
@@ -436,18 +400,6 @@ return [
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
-                'fieldControl' => [
-                    'editPopup' => [
-                        'disabled' => false,
-                    ],
-                    'addRecord' => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
-                ],
-                'readOnly' => true,
             ],
         ],
         'asLicenceOfLicenceRelation' => [
@@ -468,18 +420,6 @@ return [
                 ],
                 'size' => 5,
                 'autoSizeMax' => 10,
-                'fieldControl' => [
-                    'editPopup' => [
-                        'disabled' => false,
-                    ],
-                    'addRecord' => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => false,
-                    ],
-                ],
-                'readOnly' => true,
             ],
         ],
     ],

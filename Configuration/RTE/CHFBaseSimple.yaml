@@ -4,16 +4,26 @@ imports:
     - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml' }
     - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
 
-# Bibliography-focused configuration for the editor
+# Simple configuration for the editor
 editor:
   config:
     toolbar:
       items:
         - bold
         - italic
+        - underline
+        - strikethrough
         - subscript
         - superscript
+        - softhyphen
         - '|'
+        - findAndReplace
+        - link
+        - '|'
+        - removeFormat
         - clipboard
         - undo
         - redo
+        - '|'
+        - specialCharacters
+        - sourceEditing

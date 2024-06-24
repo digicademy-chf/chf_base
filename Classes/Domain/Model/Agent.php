@@ -88,7 +88,7 @@ class Agent extends AbstractHeritage
     protected string $corporateName = '';
 
     /**
-     * Common alternative name that may, for example, be useful as a search term
+     * Common alternative name used, i.e., as a search term
      * 
      * @var string
      */
@@ -145,7 +145,7 @@ class Agent extends AbstractHeritage
     protected string $gender = '0';
 
     /**
-     * Makes this agent selectable in authorship relations
+     * Makes this agent selectable as an author
      * 
      * @var bool
      */

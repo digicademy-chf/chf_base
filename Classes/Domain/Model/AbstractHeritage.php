@@ -51,7 +51,7 @@ class AbstractHeritage extends AbstractBase
     protected ?ObjectStorage $label = null;
 
     /**
-     * Room for further, less structured content
+     * Room for page content without a fixed structure
      * 
      * @var ?ObjectStorage<ContentElement>
      */

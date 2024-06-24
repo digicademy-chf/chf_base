@@ -20,7 +20,7 @@ defined('TYPO3') or die();
 class LabelTypeTag extends AbstractTag
 {
     /**
-     * List of labels that use this tag as a label type
+     * List of labels that use this label type
      * 
      * @var ?ObjectStorage<LabelTag>
      */

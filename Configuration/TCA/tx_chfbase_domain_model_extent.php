@@ -169,7 +169,6 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [],
-                'itemGroups' => [],
                 'required' => true,
             ],
         ],
@@ -190,13 +189,13 @@ return [
         ],
     ],
     'palettes' => [
-        'typeText' => [
-            'showitem' => 'type,text,',
+        'textType' => [
+            'showitem' => 'text,type,',
         ],
     ],
     'types' => [
         '0' => [
-            'showitem' => '--palette--;;typeText,',
+            'showitem' => '--palette--;;textType,',
         ],
     ],
 ];

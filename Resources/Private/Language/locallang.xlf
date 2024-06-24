@@ -101,34 +101,34 @@
                 <source>Full import code that this record is based on</source>
             </trans-unit>
             <trans-unit id="object.generic.authorshipRelation" resname="object.generic.authorshipRelation">
-                <source>Authorship relation</source>
+                <source>Authorship</source>
             </trans-unit>
             <trans-unit id="object.generic.authorshipRelation.description" resname="object.generic.authorshipRelation.description">
-                <source>Authorship of this database record described by a relation to agents</source>
+                <source>Authorship of this record</source>
             </trans-unit>
             <trans-unit id="object.generic.agentRelation" resname="object.generic.agentRelation">
-                <source>Agent relation</source>
+                <source>Agent</source>
             </trans-unit>
             <trans-unit id="object.generic.agentRelation.description" resname="object.generic.agentRelation.description">
-                <source>Agent of this database record described by a relation</source>
+                <source>Agent related to this record</source>
             </trans-unit>
             <trans-unit id="object.generic.locationRelation" resname="object.generic.locationRelation">
-                <source>Location relation</source>
+                <source>Location</source>
             </trans-unit>
             <trans-unit id="object.generic.locationRelation.description" resname="object.generic.locationRelation.description">
-                <source>Location of this database record described by a relation</source>
+                <source>Location related to this record</source>
             </trans-unit>
             <trans-unit id="object.generic.licenceRelation" resname="object.generic.licenceRelation">
-                <source>Licence relation</source>
+                <source>Licence</source>
             </trans-unit>
             <trans-unit id="object.generic.licenceRelation.description" resname="object.generic.licenceRelation.description">
-                <source>Licence of this record described by a relation</source>
+                <source>Licence of this record</source>
             </trans-unit>
             <trans-unit id="object.generic.linkRelation" resname="object.generic.linkRelation">
-                <source>Link relation</source>
+                <source>Link</source>
             </trans-unit>
             <trans-unit id="object.generic.linkRelation.description" resname="object.generic.linkRelation.description">
-                <source>Links relevant to this database record described by a relation</source>
+                <source>Links relevant to this database record</source>
             </trans-unit>
             <!-- Object: AbstractBase -->
             <trans-unit id="object.abstractBase.publicationDate" resname="object.abstractBase.publicationDate">
@@ -166,7 +166,7 @@
                 <source>Content element</source>
             </trans-unit>
             <trans-unit id="object.abstractHeritage.contentElement.description" resname="object.abstractHeritage.contentElement.description">
-                <source>Room for further, less structured content</source>
+                <source>Room for page content without a fixed structure</source>
             </trans-unit>
             <trans-unit id="object.abstractHeritage.footnote" resname="object.abstractHeritage.footnote">
                 <source>Footnote</source>
@@ -233,7 +233,7 @@
                 <source>Alternative name</source>
             </trans-unit>
             <trans-unit id="object.agent.alternativeName.description" resname="object.agent.alternativeName.description">
-                <source>Common alternative name that may, for example, be useful as a search term</source>
+                <source>Common alternative name used, i.e., as a search term</source>
             </trans-unit>
             <trans-unit id="object.agent.honorific" resname="object.agent.honorific">
                 <source>Honorific title</source>
@@ -266,7 +266,7 @@
                 <source>Mark as contributor</source>
             </trans-unit>
             <trans-unit id="object.agent.isContributor.description" resname="object.agent.isContributor.description">
-                <source>Makes this agent selectable in authorship relations</source>
+                <source>Makes this agent selectable as an author</source>
             </trans-unit>
             <trans-unit id="object.agent.event" resname="object.agent.event">
                 <source>Event</source>
@@ -333,7 +333,7 @@
                 <source>Alternative name</source>
             </trans-unit>
             <trans-unit id="object.location.alternativeName.description" resname="object.location.alternativeName.description">
-                <source>Common alternative name that may, for example, be useful as a search term</source>
+                <source>Common alternative name used, i.e., as a search term</source>
             </trans-unit>
             <trans-unit id="object.location.isHistorical" resname="object.location.isHistorical">
                 <source>Historical location</source>
@@ -400,31 +400,31 @@
                 <source>Type of period</source>
             </trans-unit>
             <trans-unit id="object.period.type.date" resname="object.period.type.date">
-                <source>date</source>
+                <source>Date</source>
             </trans-unit>
             <trans-unit id="object.period.type.event" resname="object.period.type.event">
-                <source>event</source>
+                <source>Event</source>
             </trans-unit>
             <trans-unit id="object.period.type.period" resname="object.period.type.period">
-                <source>period</source>
+                <source>Period</source>
             </trans-unit>
             <trans-unit id="object.period.type.century" resname="object.period.type.century">
-                <source>century</source>
+                <source>Century</source>
             </trans-unit>
             <trans-unit id="object.period.type.era" resname="object.period.type.era">
-                <source>era</source>
+                <source>Era</source>
             </trans-unit>
             <trans-unit id="object.period.text" resname="object.period.text">
                 <source>Text</source>
             </trans-unit>
-            <trans-unit id="object.period..description" resname="object.period..description">
+            <trans-unit id="object.period.text.description" resname="object.period.text.description">
                 <source>Name of the period or event</source>
             </trans-unit>
             <trans-unit id="object.period.alternativeText" resname="object.period.alternativeText">
                 <source>Alternative text</source>
             </trans-unit>
             <trans-unit id="object.period.alternativeText.description" resname="object.period.alternativeText.description">
-                <source>Common alternative name that may, for example, be useful as a search term</source>
+                <source>Common alternative name used, i.e., as a search term</source>
             </trans-unit>
             <trans-unit id="object.period.from" resname="object.period.from">
                 <source>From</source>
@@ -709,33 +709,33 @@
                 <source>Usage as label of an agent</source>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfAgent.description" resname="object.labelTag.asLabelOfAgent.description">
-                <source>List of agents that use this tag as a label</source>
+                <source>List of agents that use this label</source>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfLocation" resname="object.labelTag.asLabelOfLocation">
                 <source>Usage as label of a location</source>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfLocation.description" resname="object.labelTag.asLabelOfLocation.description">
-                <source>List of locations that use this tag as a label</source>
+                <source>List of locations that use this label</source>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfPeriod" resname="object.labelTag.asLabelOfPeriod">
                 <source>Usage as label of a period</source>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfPeriod.description" resname="object.labelTag.asLabelOfPeriod.description">
-                <source>List of periods that use this tag as a label</source>
+                <source>List of periods that use this label</source>
             </trans-unit>
             <!-- Object: LabelTypeTag -->
             <trans-unit id="object.labelTypeTag.asLabelTypeOfLabelTag" resname="object.labelTypeTag.asLabelTypeOfLabelTag">
                 <source>Usage as label type of a label</source>
             </trans-unit>
             <trans-unit id="object.labelTypeTag.asLabelTypeOfLabelTag.description" resname="object.labelTypeTag.asLabelTypeOfLabelTag.description">
-                <source>List of labels that use this tag as a label type</source>
+                <source>List of labels that use this label type</source>
             </trans-unit>
             <!-- Object: LicenceTag -->
             <trans-unit id="object.licenceTag.asLicenceOfLicenceRelation" resname="object.licenceTag.asLicenceOfLicenceRelation">
                 <source>Usage as licence of a licence relation</source>
             </trans-unit>
             <trans-unit id="object.licenceTag.asLicenceOfLicenceRelation.description" resname="object.licenceTag.asLicenceOfLicenceRelation.description">
-                <source>List of licence relations that use this tag as a licence</source>
+                <source>List of licence relations that use this licence</source>
             </trans-unit>
             <!-- Object: SameAs -->
             <trans-unit id="object.sameAs" resname="object.sameAs">

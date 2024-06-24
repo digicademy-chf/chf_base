@@ -46,7 +46,7 @@ class LabelTag extends AbstractTag
     protected LabelTypeTag|LazyLoadingProxy|null $labelType = null;
 
     /**
-     * List of agents that use this tag as a label
+     * List of agents that use this label
      * 
      * @var ?ObjectStorage<Agent>
      */
@@ -54,7 +54,7 @@ class LabelTag extends AbstractTag
     protected ?ObjectStorage $asLabelOfAgent;
 
     /**
-     * List of locations that use this tag as a label
+     * List of locations that use this label
      * 
      * @var ?ObjectStorage<Location>
      */
@@ -62,7 +62,7 @@ class LabelTag extends AbstractTag
     protected ?ObjectStorage $asLabelOfLocation;
 
     /**
-     * List of periods that use this tag as a label
+     * List of periods that use this label
      * 
      * @var ?ObjectStorage<Period>
      */
@@ -70,7 +70,7 @@ class LabelTag extends AbstractTag
     protected ?ObjectStorage $asLabelOfPeriod;
 
     /**
-     * List of features that use this tag as a label
+     * List of features that use this label
      * 
      * @var ?ObjectStorage<Feature>
      */
@@ -78,7 +78,7 @@ class LabelTag extends AbstractTag
     protected ?ObjectStorage $asLabelOfFeature;
 
     /**
-     * List of dictionary entries that use this tag as a label
+     * List of dictionary entries that use this label
      * 
      * @var ?ObjectStorage<DictionaryEntry>
      */
@@ -86,7 +86,7 @@ class LabelTag extends AbstractTag
     protected ?ObjectStorage $asLabelOfDictionaryEntry;
 
     /**
-     * List of encyclopedia entries that use this tag as a label
+     * List of encyclopedia entries that use this label
      * 
      * @var ?ObjectStorage<EncyclopediaEntry>
      */
@@ -94,7 +94,7 @@ class LabelTag extends AbstractTag
     protected ?ObjectStorage $asLabelOfEncyclopediaEntry;
 
     /**
-     * List of bibliographic entries that use this tag as a label
+     * List of bibliographic entries that use this label
      * 
      * @var ?ObjectStorage<BibliographicEntry>
      */
@@ -102,7 +102,7 @@ class LabelTag extends AbstractTag
     protected ?ObjectStorage $asLabelOfBibliographicEntry;
 
     /**
-     * List of volumes that use this tag as a label
+     * List of volumes that use this label
      * 
      * @var ?ObjectStorage<Volume>
      */
@@ -110,7 +110,7 @@ class LabelTag extends AbstractTag
     protected ?ObjectStorage $asLabelOfVolume;
 
     /**
-     * List of essays that use this tag as a label
+     * List of essays that use this label
      * 
      * @var ?ObjectStorage<Essay>
      */
@@ -118,7 +118,7 @@ class LabelTag extends AbstractTag
     protected ?ObjectStorage $asLabelOfEssay;
 
     /**
-     * List of single objects that use this tag as a label
+     * List of single objects that use this label
      * 
      * @var ?ObjectStorage<SingleObject>
      */
@@ -126,7 +126,7 @@ class LabelTag extends AbstractTag
     protected ?ObjectStorage $asLabelOfSingleObject;
 
     /**
-     * List of object groups that use this tag as a label
+     * List of object groups that use this label
      * 
      * @var ?ObjectStorage<ObjectGroup>
      */
@@ -134,7 +134,7 @@ class LabelTag extends AbstractTag
     protected ?ObjectStorage $asLabelOfObjectGroup;
 
     /**
-     * List of file groups that use this tag as a label
+     * List of file collections that use this label
      * 
      * @var ?ObjectStorage<FileGroup>
      */

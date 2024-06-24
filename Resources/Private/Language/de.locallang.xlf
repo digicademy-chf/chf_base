@@ -122,7 +122,7 @@
             </trans-unit>
             <trans-unit id="object.generic.importOrigin" resname="object.generic.importOrigin" approved="yes">
                 <source>Import origin</source>
-                <target>Import-Ursprung</target>
+                <target>Importursprung</target>
             </trans-unit>
             <trans-unit id="object.generic.importOrigin.description" resname="object.generic.importOrigin.description" approved="yes">
                 <source>URI or other identifier of the imported original</source>
@@ -145,44 +145,44 @@
                 <target>Vollständiger Code, mit dem dieser Eintrag importiert wurde</target>
             </trans-unit>
             <trans-unit id="object.generic.authorshipRelation" resname="object.generic.authorshipRelation" approved="yes">
-                <source>Authorship relation</source>
-                <target>Autor:innenrelation</target>
+                <source>Authorship</source>
+                <target>Autor:in</target>
             </trans-unit>
             <trans-unit id="object.generic.authorshipRelation.description" resname="object.generic.authorshipRelation.description" approved="yes">
-                <source>Authorship of this database record described by a relation to agents</source>
-                <target>Autorenschaft dieses Datenbankeintrags beschrieben durch eine Relation zu Akteur:innen</target>
+                <source>Authorship of this record</source>
+                <target>Autorenschaft dieses Eintrags</target>
             </trans-unit>
             <trans-unit id="object.generic.agentRelation" resname="object.generic.agentRelation" approved="yes">
-                <source>Agent relation</source>
-                <target>Akteur:innenrelation</target>
+                <source>Agent</source>
+                <target>Akteur:in</target>
             </trans-unit>
             <trans-unit id="object.generic.agentRelation.description" resname="object.generic.agentRelation.description" approved="yes">
-                <source>Agent of this database record described by a relation</source>
-                <target>Akteur:in dieses Datenbankeintrags beschrieben durch eine Relation</target>
+                <source>Agent related to this record</source>
+                <target>Akteur:in zu diesem Eintrag</target>
             </trans-unit>
             <trans-unit id="object.generic.locationRelation" resname="object.generic.locationRelation" approved="yes">
-                <source>Location relation</source>
-                <target>Ortsrelation</target>
+                <source>Location</source>
+                <target>Ort</target>
             </trans-unit>
             <trans-unit id="object.generic.locationRelation.description" resname="object.generic.locationRelation.description" approved="yes">
-                <source>Location of this database record described by a relation</source>
-                <target>Ort dieses Datenbankeintrags beschrieben durch eine Relation</target>
+                <source>Location related to this record</source>
+                <target>Ortsangabe zu diesem Eintrag</target>
             </trans-unit>
             <trans-unit id="object.generic.licenceRelation" resname="object.generic.licenceRelation" approved="yes">
-                <source>Licence relation</source>
-                <target>Lizenzrelation</target>
+                <source>Licence</source>
+                <target>Lizenz</target>
             </trans-unit>
             <trans-unit id="object.generic.licenceRelation.description" resname="object.generic.licenceRelation.description" approved="yes">
-                <source>Licence of this record described by a relation</source>
-                <target>Lizenz dieses Eintrags beschrieben durch eine Relation</target>
+                <source>Licence of this record</source>
+                <target>Lizenz dieses Eintrags</target>
             </trans-unit>
             <trans-unit id="object.generic.linkRelation" resname="object.generic.linkRelation" approved="yes">
-                <source>Link relation</source>
-                <target>Linkrelation</target>
+                <source>Link</source>
+                <target>Link</target>
             </trans-unit>
             <trans-unit id="object.generic.linkRelation.description" resname="object.generic.linkRelation.description" approved="yes">
-                <source>Links relevant to this database record described by a relation</source>
-                <target>Links, die für diesen Datenbankeintrag relevant sind, beschrieben durch eine Relation</target>
+                <source>Links relevant to this database record</source>
+                <target>Links, die für diesen Datenbankeintrag relevant sind</target>
             </trans-unit>
             <!-- Object: AbstractBase -->
             <trans-unit id="object.abstractBase.publicationDate" resname="object.abstractBase.publicationDate" approved="yes">
@@ -231,8 +231,8 @@
                 <target>Inhaltselement</target>
             </trans-unit>
             <trans-unit id="object.abstractHeritage.contentElement.description" resname="object.abstractHeritage.contentElement.description" approved="yes">
-                <source>Room for further, less structured content</source>
-                <target>Raum für weitere, weniger strukturierte Inhalte</target>
+                <source>Room for page content without a fixed structure</source>
+                <target>Raum für Seiteninhalte ohne vorgegebene Struktur</target>
             </trans-unit>
             <trans-unit id="object.abstractHeritage.footnote" resname="object.abstractHeritage.footnote" approved="yes">
                 <source>Footnote</source>
@@ -269,7 +269,7 @@
             </trans-unit>
             <trans-unit id="object.agent.parentAgent.description" resname="object.agent.parentAgent.description" approved="yes">
                 <source>Larger agent that this agent is part of</source>
-                <target>Größere:r Akteur:in, zu der diese:r Akteur:in gehört</target>
+                <target>Größere Einheit, zu der diese:r Akteur:in gehört</target>
             </trans-unit>
             <trans-unit id="object.agent.type" resname="object.agent.type" approved="yes">
                 <source>Type</source>
@@ -277,7 +277,7 @@
             </trans-unit>
             <trans-unit id="object.agent.type.description" resname="object.agent.type.description" approved="yes">
                 <source>Specific type of agent</source>
-                <target>Genauere Art der Akteur:in</target>
+                <target>Genauere Art von Akteur:in</target>
             </trans-unit>
             <trans-unit id="object.agent.type.person" resname="object.agent.type.person" approved="yes">
                 <source>Person</source>
@@ -320,8 +320,8 @@
                 <target>Alternativer Name</target>
             </trans-unit>
             <trans-unit id="object.agent.alternativeName.description" resname="object.agent.alternativeName.description" approved="yes">
-                <source>Common alternative name that may, for example, be useful as a search term</source>
-                <target>Gebräuchlicher alternativer Name, der z.B. als Suchbegriff nützlich sein kann</target>
+                <source>Common alternative name used, i.e., as a search term</source>
+                <target>Gebräuchlicher alternativer Name, z.B. als Suchbegriff</target>
             </trans-unit>
             <trans-unit id="object.agent.honorific" resname="object.agent.honorific" approved="yes">
                 <source>Honorific title</source>
@@ -364,8 +364,8 @@
                 <target>Als Beitragende:n markieren</target>
             </trans-unit>
             <trans-unit id="object.agent.isContributor.description" resname="object.agent.isContributor.description" approved="yes">
-                <source>Makes this agent selectable in authorship relations</source>
-                <target>Macht diese Akteur:in in einer Autor:innenrelation auswählbar</target>
+                <source>Makes this agent selectable as an author</source>
+                <target>Macht diese Akteur:in in als Autor:in auswählbar</target>
             </trans-unit>
             <trans-unit id="object.agent.event" resname="object.agent.event" approved="yes">
                 <source>Event</source>
@@ -418,27 +418,27 @@
             </trans-unit>
             <trans-unit id="object.location.type.position" resname="object.location.type.position" approved="yes">
                 <source>Position</source>
-                <target>position</target>
+                <target>Standort</target>
             </trans-unit>
             <trans-unit id="object.location.type.building" resname="object.location.type.building" approved="yes">
                 <source>Building</source>
-                <target>building</target>
+                <target>Gebäude</target>
             </trans-unit>
             <trans-unit id="object.location.type.townOrCity" resname="object.location.type.townOrCity" approved="yes">
                 <source>Town or city</source>
-                <target>townOrCity</target>
+                <target>Gemeinde oder Stadt</target>
             </trans-unit>
             <trans-unit id="object.location.type.regionOrState" resname="object.location.type.regionOrState" approved="yes">
                 <source>Region or state</source>
-                <target>regionOrState</target>
+                <target>Region oder Bundesland</target>
             </trans-unit>
             <trans-unit id="object.location.type.country" resname="object.location.type.country" approved="yes">
                 <source>Country</source>
-                <target>country</target>
+                <target>Land</target>
             </trans-unit>
             <trans-unit id="object.location.type.continent" resname="object.location.type.continent" approved="yes">
                 <source>Continent</source>
-                <target>continent</target>
+                <target>Kontinent</target>
             </trans-unit>
             <trans-unit id="object.location.name" resname="object.location.name" approved="yes">
                 <source>Name</source>
@@ -453,8 +453,8 @@
                 <target>Alternativer Name</target>
             </trans-unit>
             <trans-unit id="object.location.alternativeName.description" resname="object.location.alternativeName.description" approved="yes">
-                <source>Common alternative name that may, for example, be useful as a search term</source>
-                <target>Gebräuchlicher alternativer Name, der z.B. als Suchbegriff nützlich sein kann</target>
+                <source>Common alternative name used, i.e., as a search term</source>
+                <target>Gebräuchlicher alternativer Name, z.B. als Suchbegriff</target>
             </trans-unit>
             <trans-unit id="object.location.isHistorical" resname="object.location.isHistorical" approved="yes">
                 <source>Historical location</source>
@@ -542,30 +542,30 @@
                 <target>Art des Zeitraums</target>
             </trans-unit>
             <trans-unit id="object.period.type.date" resname="object.period.type.date" approved="yes">
-                <source>date</source>
-                <target>date</target>
+                <source>Date</source>
+                <target>Datum</target>
             </trans-unit>
             <trans-unit id="object.period.type.event" resname="object.period.type.event" approved="yes">
-                <source>event</source>
-                <target>event</target>
+                <source>Event</source>
+                <target>Ereignis</target>
             </trans-unit>
             <trans-unit id="object.period.type.period" resname="object.period.type.period" approved="yes">
-                <source>period</source>
-                <target>period</target>
+                <source>Period</source>
+                <target>Zeitalter</target>
             </trans-unit>
             <trans-unit id="object.period.type.century" resname="object.period.type.century" approved="yes">
-                <source>century</source>
-                <target>century</target>
+                <source>Century</source>
+                <target>Jahrhundert</target>
             </trans-unit>
             <trans-unit id="object.period.type.era" resname="object.period.type.era" approved="yes">
-                <source>era</source>
-                <target>era</target>
+                <source>Era</source>
+                <target>Epoche</target>
             </trans-unit>
             <trans-unit id="object.period.text" resname="object.period.text" approved="yes">
                 <source>Text</source>
                 <target>Text</target>
             </trans-unit>
-            <trans-unit id="object.period..description" resname="object.period..description" approved="yes">
+            <trans-unit id="object.period.text.description" resname="object.period.text.description" approved="yes">
                 <source>Name of the period or event</source>
                 <target>Bezeichnung des Zeitraums oder Ereignisses</target>
             </trans-unit>
@@ -574,8 +574,8 @@
                 <target>Alternativer Text</target>
             </trans-unit>
             <trans-unit id="object.period.alternativeText.description" resname="object.period.alternativeText.description" approved="yes">
-                <source>Common alternative name that may, for example, be useful as a search term</source>
-                <target>Gebräuchlicher alternativer Name, der z.B. als Suchbegriff nützlich sein kann</target>
+                <source>Common alternative name used, i.e., as a search term</source>
+                <target>Gebräuchlicher alternativer Name, z.B. als Suchbegriff</target>
             </trans-unit>
             <trans-unit id="object.period.from" resname="object.period.from" approved="yes">
                 <source>From</source>
@@ -607,7 +607,7 @@
             </trans-unit>
             <trans-unit id="object.period.notBefore.description" resname="object.period.notBefore.description" approved="yes">
                 <source>Earliest possible date for very fuzzy periods or events</source>
-                <target>Frühestmögliches Datum bei sehr groben Zeiträumen oder Ereignissen</target>
+                <target>Frühestmögliches Datum bei groben Zeiträumen/Ereignissen</target>
             </trans-unit>
             <trans-unit id="object.period.notAfter" resname="object.period.notAfter" approved="yes">
                 <source>Not after</source>
@@ -615,7 +615,7 @@
             </trans-unit>
             <trans-unit id="object.period.notAfter.description" resname="object.period.notAfter.description" approved="yes">
                 <source>Latest possible date for very fuzzy periods or events</source>
-                <target>Spätestmögliches Datum bei sehr groben Zeiträumen oder Ereignissen</target>
+                <target>Spätestmögliches Datum bei groben Zeiträumen/Ereignissen</target>
             </trans-unit>
             <trans-unit id="object.period.calendar" resname="object.period.calendar" approved="yes">
                 <source>Calendar</source>
@@ -623,7 +623,7 @@
             </trans-unit>
             <trans-unit id="object.period.calendar.description" resname="object.period.calendar.description" approved="yes">
                 <source>Name of the calendar used to generate dates</source>
-                <target>Bezeichnung des für die Datumsangaben zugrunde gelegten Kalenders</target>
+                <target>Bezeichnung des Kalenders der Datumsangaben</target>
             </trans-unit>
             <trans-unit id="object.period.calendar.gregorian" resname="object.period.calendar.gregorian" approved="yes">
                 <source>Gregorian</source>
@@ -748,8 +748,8 @@
                 <target>Akteur:in</target>
             </trans-unit>
             <trans-unit id="object.agentRelation.agent.description" resname="object.agentRelation.agent.description" approved="yes">
-                <source>Agent to relate to the record</source>
-                <target>Akteur:in, die mit dem Eintrag verknüpft werden soll</target>
+                <source>Agents to relate to the record</source>
+                <target>Akteur:innen, die mit dem Eintrag verknüpft werden sollen</target>
             </trans-unit>
             <!-- Object: AuthorshipRelation -->
             <trans-unit id="object.authorshipRelation.contributor" resname="object.authorshipRelation.contributor" approved="yes">
@@ -757,8 +757,8 @@
                 <target>Beitragende:r</target>
             </trans-unit>
             <trans-unit id="object.authorshipRelation.contributor.description" resname="object.authorshipRelation.contributor.description" approved="yes">
-                <source>Contributor to relate to the record</source>
-                <target>Beitragende:r, die mit dem Eintrag verknüpft werden soll</target>
+                <source>Contributors to relate to the record</source>
+                <target>Beitragende, die mit dem Eintrag verknüpft werden sollen</target>
             </trans-unit>
             <!-- Object: LocationRelation -->
             <trans-unit id="object.locationRelation.location" resname="object.locationRelation.location" approved="yes">
@@ -766,8 +766,8 @@
                 <target>Ortsangabe</target>
             </trans-unit>
             <trans-unit id="object.locationRelation.location.description" resname="object.locationRelation.location.description" approved="yes">
-                <source>Location to relate to the record</source>
-                <target>Ort, der mit dem Eintrag verknüpft werden soll</target>
+                <source>Locations to relate to the record</source>
+                <target>Orte, der mit dem Eintrag verknüpft werden soll</target>
             </trans-unit>
             <!-- Object: LicenceRelation -->
             <trans-unit id="object.licenceRelation.licence" resname="object.licenceRelation.licence" approved="yes">
@@ -775,8 +775,8 @@
                 <target>Lizenz</target>
             </trans-unit>
             <trans-unit id="object.licenceRelation.licence.description" resname="object.licenceRelation.licence.description" approved="yes">
-                <source>Licence to relate to the record</source>
-                <target>Lizenz, die mit dem Eintrag verknüpft werden soll</target>
+                <source>Licences to relate to the record</source>
+                <target>Lizenzen, die mit dem Eintrag verknüpft werden soll</target>
             </trans-unit>
             <!-- Object: LinkRelation -->
             <trans-unit id="object.linkRelation.url" resname="object.linkRelation.url" approved="yes">
@@ -951,24 +951,24 @@
                 <target>Verwendung als Label einer Akteur:in</target>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfAgent.description" resname="object.labelTag.asLabelOfAgent.description" approved="yes">
-                <source>List of agents that use this tag as a label</source>
-                <target>Liste der Akteur:innen, die dieses Schlagwort als Label verwenden</target>
+                <source>List of agents that use this label</source>
+                <target>Liste der Akteur:innen, die dieses Label verwenden</target>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfLocation" resname="object.labelTag.asLabelOfLocation" approved="yes">
                 <source>Usage as label of a location</source>
                 <target>Verwendung als Label eines Orts</target>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfLocation.description" resname="object.labelTag.asLabelOfLocation.description" approved="yes">
-                <source>List of locations that use this tag as a label</source>
-                <target>Liste der Orte, die dieses Schlagwort als Label verwenden</target>
+                <source>List of locations that use this label</source>
+                <target>Liste der Orte, die dieses Label verwenden</target>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfPeriod" resname="object.labelTag.asLabelOfPeriod" approved="yes">
                 <source>Usage as label of a period</source>
                 <target>Verwendung als Label eines Zeitraums</target>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfPeriod.description" resname="object.labelTag.asLabelOfPeriod.description" approved="yes">
-                <source>List of periods that use this tag as a label</source>
-                <target>Liste der Zeiträume, die dieses Schlagwort als Label verwenden</target>
+                <source>List of periods that use this label</source>
+                <target>Liste der Zeiträume, die dieses Label verwenden</target>
             </trans-unit>
             <!-- Object: LabelTypeTag -->
             <trans-unit id="object.labelTypeTag.asLabelTypeOfLabelTag" resname="object.labelTypeTag.asLabelTypeOfLabelTag" approved="yes">
@@ -976,8 +976,8 @@
                 <target>Verwendung als Labelart eines Labels</target>
             </trans-unit>
             <trans-unit id="object.labelTypeTag.asLabelTypeOfLabelTag.description" resname="object.labelTypeTag.asLabelTypeOfLabelTag.description" approved="yes">
-                <source>List of labels that use this tag as a label type</source>
-                <target>Liste der Labels, die dieses Schlagwort als Labelart verwenden</target>
+                <source>List of labels that use this label type</source>
+                <target>Liste der Labels, die diese Labelart verwenden</target>
             </trans-unit>
             <!-- Object: LicenceTag -->
             <trans-unit id="object.licenceTag.asLicenceOfLicenceRelation" resname="object.licenceTag.asLicenceOfLicenceRelation" approved="yes">
@@ -985,8 +985,8 @@
                 <target>Verwendung als Lizenz einer Lizenzrelation</target>
             </trans-unit>
             <trans-unit id="object.licenceTag.asLicenceOfLicenceRelation.description" resname="object.licenceTag.asLicenceOfLicenceRelation.description" approved="yes">
-                <source>List of licence relations that use this tag as a licence</source>
-                <target>Liste der Lizenzrelationen, die dieses Schlagwort als Lizenz verwenden</target>
+                <source>List of licence relations that use this licence</source>
+                <target>Liste der Lizenzrelationen, die diese Lizenz verwenden</target>
             </trans-unit>
             <!-- Object: SameAs -->
             <trans-unit id="object.sameAs" resname="object.sameAs" approved="yes">
@@ -1033,7 +1033,7 @@
             </trans-unit>
             <trans-unit id="object.extent.text.description" resname="object.extent.text.description" approved="yes">
                 <source>Actual extent or identifier</source>
-                <target>Angabe des Ausmaßes oder Identifikators</target>
+                <target>Angabe des Umfangs oder Identifikators</target>
             </trans-unit>
             <!-- Validator: StringOptionsValidator -->
             <trans-unit id="validator.stringOptions.allowedStringInvalid" resname="validator.stringOptions.allowedStringInvalid" approved="yes">
