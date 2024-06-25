@@ -52,16 +52,6 @@ CREATE TABLE tx_chfbase_domain_model_agent_tag_label_mm (
 	tablenames varchar(63) DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_chfbase_domain_model_location_feature_geodata_mm (
-	fieldname varchar(63) DEFAULT '' NOT NULL,
-	tablenames varchar(63) DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_chfbase_domain_model_location_resource_floorplan_mm (
-	fieldname varchar(63) DEFAULT '' NOT NULL,
-	tablenames varchar(63) DEFAULT '' NOT NULL
-);
-
 CREATE TABLE tx_chfbase_domain_model_location_tag_label_mm (
 	fieldname varchar(63) DEFAULT '' NOT NULL,
 	tablenames varchar(63) DEFAULT '' NOT NULL
@@ -87,47 +77,12 @@ CREATE TABLE tx_chfbase_domain_model_relation_any_record_mm (
 	tablenames varchar(63) DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_chfbase_domain_model_relation_any_relatedrecord_mm (
-	fieldname varchar(63) DEFAULT '' NOT NULL,
-	tablenames varchar(63) DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_chfbase_domain_model_relation_bibliographic_entry_bibentry_mm (
-	fieldname varchar(63) DEFAULT '' NOT NULL,
-	tablenames varchar(63) DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_chfbase_domain_model_relation_essay_essay_mm (
-	fieldname varchar(63) DEFAULT '' NOT NULL,
-	tablenames varchar(63) DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_chfbase_domain_model_relation_feature_feature_mm (
-	fieldname varchar(63) DEFAULT '' NOT NULL,
-	tablenames varchar(63) DEFAULT '' NOT NULL
-);
-
 CREATE TABLE tx_chfbase_domain_model_relation_location_location_mm (
 	fieldname varchar(63) DEFAULT '' NOT NULL,
 	tablenames varchar(63) DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_chfbase_domain_model_relation_tag_lexrelationtype_mm (
-	fieldname varchar(63) DEFAULT '' NOT NULL,
-	tablenames varchar(63) DEFAULT '' NOT NULL
-);
-
 CREATE TABLE tx_chfbase_domain_model_relation_tag_licence_mm (
-	fieldname varchar(63) DEFAULT '' NOT NULL,
-	tablenames varchar(63) DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_chfbase_domain_model_relation_volume_volume_mm (
-	fieldname varchar(63) DEFAULT '' NOT NULL,
-	tablenames varchar(63) DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_chfbase_domain_model_resource_resource_glossary_mm (
 	fieldname varchar(63) DEFAULT '' NOT NULL,
 	tablenames varchar(63) DEFAULT '' NOT NULL
 );
