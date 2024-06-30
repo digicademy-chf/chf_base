@@ -22,6 +22,7 @@ return [
         'title'                    => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agent',
         'label'                    => 'surname',
         'label_alt'                => 'forename,corporateName,alternativeName',
+        'label_alt_force'          => true,
         'tstamp'                   => 'tstamp',
         'crdate'                   => 'crdate',
         'delete'                   => 'deleted',
@@ -177,6 +178,7 @@ return [
                 'renderType' => 'selectTree',
                 'foreign_table' => 'tx_chfbase_domain_model_agent',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###',
+                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#parentResource}=###REC_FIELD_parentResource###',
                 'treeConfig' => [
                     'parentField' => 'parentAgent',
                     'appearance' => [
@@ -376,8 +378,10 @@ return [
                 'renderType' => 'selectTree',
                 'foreign_table' => 'tx_chfbase_domain_model_tag',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###'
-                    . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'label\'',
+                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#parentResource}=###REC_FIELD_parentResource###'
+                    . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
                 'MM' => 'tx_chfbase_domain_model_agent_tag_label_mm',
+                'multiple' => 1,
                 'treeConfig' => [
                     'parentField' => 'parentLabelTag',
                     'appearance' => [
@@ -419,12 +423,11 @@ return [
                 'type' => 'inline',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
+                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#parentResource}=###REC_FIELD_parentResource###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'authorshipRelation\'',
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
                 'MM_opposite_field' => 'record',
-                'MM_match_fields' => [
-                    'fieldname' => 'authorshipRelation',
-                ],
+                'multiple' => 1,
                 'appearance' => [
                     'collapseAll' => true,
                     'expandSingle' => true,
@@ -434,6 +437,15 @@ return [
                     'showPossibleLocalizationRecords' => true,
                     'showAllLocalizationLink' => true,
                     'showSynchronizationLink' => true,
+                ],
+                'overrideChildTca' => [
+                    'columns' => [
+                        'type' => [
+                            'config' => [
+                                'default' => 'authorshipRelation',
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ],
@@ -446,12 +458,11 @@ return [
                 'type' => 'inline',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
+                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#parentResource}=###REC_FIELD_parentResource###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'licenceRelation\'',
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
                 'MM_opposite_field' => 'record',
-                'MM_match_fields' => [
-                    'fieldname' => 'licenceRelation',
-                ],
+                'multiple' => 1,
                 'appearance' => [
                     'collapseAll' => true,
                     'expandSingle' => true,
@@ -461,6 +472,15 @@ return [
                     'showPossibleLocalizationRecords' => true,
                     'showAllLocalizationLink' => true,
                     'showSynchronizationLink' => true,
+                ],
+                'overrideChildTca' => [
+                    'columns' => [
+                        'type' => [
+                            'config' => [
+                                'default' => 'licenceRelation',
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ],
@@ -547,12 +567,11 @@ return [
                 'type' => 'inline',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
+                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#parentResource}=###REC_FIELD_parentResource###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'agentRelation\'',
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
                 'MM_opposite_field' => 'record',
-                'MM_match_fields' => [
-                    'fieldname' => 'agentRelation',
-                ],
+                'multiple' => 1,
                 'appearance' => [
                     'collapseAll' => true,
                     'expandSingle' => true,
@@ -562,6 +581,15 @@ return [
                     'showPossibleLocalizationRecords' => true,
                     'showAllLocalizationLink' => true,
                     'showSynchronizationLink' => true,
+                ],
+                'overrideChildTca' => [
+                    'columns' => [
+                        'type' => [
+                            'config' => [
+                                'default' => 'agentRelation',
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ],
@@ -574,12 +602,11 @@ return [
                 'type' => 'inline',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
+                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#parentResource}=###REC_FIELD_parentResource###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'locationRelation\'',
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
                 'MM_opposite_field' => 'record',
-                'MM_match_fields' => [
-                    'fieldname' => 'locationRelation',
-                ],
+                'multiple' => 1,
                 'appearance' => [
                     'collapseAll' => true,
                     'expandSingle' => true,
@@ -589,6 +616,15 @@ return [
                     'showPossibleLocalizationRecords' => true,
                     'showAllLocalizationLink' => true,
                     'showSynchronizationLink' => true,
+                ],
+                'overrideChildTca' => [
+                    'columns' => [
+                        'type' => [
+                            'config' => [
+                                'default' => 'locationRelation',
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ],
@@ -665,12 +701,11 @@ return [
                 'type' => 'inline',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
+                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#parentResource}=###REC_FIELD_parentResource###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'linkRelation\'',
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
                 'MM_opposite_field' => 'record',
-                'MM_match_fields' => [
-                    'fieldname' => 'linkRelation',
-                ],
+                'multiple' => 1,
                 'appearance' => [
                     'collapseAll' => true,
                     'expandSingle' => true,
@@ -680,6 +715,15 @@ return [
                     'showPossibleLocalizationRecords' => true,
                     'showAllLocalizationLink' => true,
                     'showSynchronizationLink' => true,
+                ],
+                'overrideChildTca' => [
+                    'columns' => [
+                        'type' => [
+                            'config' => [
+                                'default' => 'linkRelation',
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ],
@@ -718,12 +762,11 @@ return [
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
+                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#parentResource}=###REC_FIELD_parentResource###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'agentRelation\'',
                 'MM' => 'tx_chfbase_domain_model_relation_agent_agent_mm',
                 'MM_opposite_field' => 'agent',
-                'MM_match_fields' => [
-                    'fieldname' => 'asAgentOfAgentRelation',
-                ],
+                'multiple' => 1,
                 'size' => 5,
                 'autoSizeMax' => 10,
             ],
@@ -738,12 +781,11 @@ return [
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
+                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#parentResource}=###REC_FIELD_parentResource###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'authorshipRelation\'',
                 'MM' => 'tx_chfbase_domain_model_relation_agent_contributor_mm',
                 'MM_opposite_field' => 'contributor',
-                'MM_match_fields' => [
-                    'fieldname' => 'asContributorOfAuthorshipRelation',
-                ],
+                'multiple' => 1,
                 'size' => 5,
                 'autoSizeMax' => 10,
             ],
@@ -759,8 +801,8 @@ return [
         'honorificOccupationGender' => [
             'showitem' => 'honorific,occupation,gender,',
         ],
-        'parentResourceLabel' => [
-            'showitem' => 'parentResource,label,',
+        'parentResourceParentAgentLabel' => [
+            'showitem' => 'parentResource,parentAgent,--linebreak--,label,',
         ],
         'authorshipRelationLicenceRelation' => [
             'showitem' => 'authorshipRelation,--linebreak--,licenceRelation,',
@@ -783,7 +825,7 @@ return [
     ],
     'types' => [
         '0' => [
-            'showitem' => '--palette--;;typeUuidIsHighlightIsContributor,--palette--;;forenameSurnameCorporateNameAlternativeName,--palette--;;honorificOccupationGender,--palette--;;parentResourceLabel,sameAs,
+            'showitem' => '--palette--;;typeUuidIsHighlightIsContributor,--palette--;;forenameSurnameCorporateNameAlternativeName,--palette--;;honorificOccupationGender,--palette--;;parentResourceParentAgentLabel,sameAs,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.editorial,--palette--;;authorshipRelationLicenceRelation,--palette--;;publicationDateRevisionDateRevisionNumberEditorialNote,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.content,--palette--;;eventAgentRelationLocationRelation,--palette--;;contentElementFootnote,--palette--;;mediaFile,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.relations,linkRelation,publicationRelation,sourceRelation,

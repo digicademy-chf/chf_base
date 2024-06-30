@@ -17,3 +17,8 @@ $GLOBALS['TYPO3_CONF_VARS']['BE']['defaultPageTSconfig'] .= '
     TCEMAIN.permissions.group = copyFromParent
     TCEMAIN.permissions.everybody = copyFromParent
 ';
+
+// Avoid issues with int labels when copying records
+$GLOBALS['TYPO3_CONF_VARS']['BE']['defaultPageTSconfig'] .= '
+    TCEMAIN.table.tt_content.disablePrependAtCopy = 1
+';

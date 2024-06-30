@@ -230,6 +230,7 @@ return [
                 'allowed' => 'tx_chfbase_domain_model_resource,tx_chfbase_domain_model_agent,tx_chfbase_domain_model_location,tx_chfbase_domain_model_period,tx_chfbib_domain_model_bibliographic_entry,tx_chflex_domain_model_dictionary_entry,tx_chflex_domain_model_encyclopedia_entry,tx_chflex_domain_model_frequency,tx_chflex_domain_model_example,tx_chfmap_domain_model_feature,tx_chfpub_domain_model_volume,tx_chfpub_domain_model_essay,tx_chfobject_domain_model_object_group,tx_chfobject_domain_model_single_object,tx_chfmedia_domain_model_file_group,sys_file_metadata,',
                 'foreign_table' => 'tx_chfbase_domain_model_resource', // Needed by Extbase as of TYPO3 12, remove when possible
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
+                'multiple' => 1,
                 'elementBrowserEntryPoints' => [
                     '_default' => '###CURRENT_PID###',
                 ],
@@ -247,6 +248,7 @@ return [
                 'foreign_table' => 'tx_chfbase_domain_model_agent',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfbase_domain_model_relation_agent_agent_mm',
+                'multiple' => 1,
                 'sortItems' => [
                     'label' => 'asc',
                 ],
@@ -265,6 +267,7 @@ return [
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_agent}.{#isContributor}=TRUE',
                 'MM' => 'tx_chfbase_domain_model_relation_agent_contributor_mm',
+                'multiple' => 1,
                 'sortItems' => [
                     'label' => 'asc',
                 ],
@@ -282,6 +285,7 @@ return [
                 'foreign_table' => 'tx_chfbase_domain_model_location',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_location}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfbase_domain_model_relation_location_location_mm',
+                'multiple' => 1,
                 'sortItems' => [
                     'label' => 'asc',
                 ],
@@ -300,6 +304,7 @@ return [
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'licenceTag\'',
                 'MM' => 'tx_chfbase_domain_model_relation_tag_licence_mm',
+                'multiple' => 1,
                 'sortItems' => [
                     'label' => 'asc',
                 ],
@@ -428,6 +433,10 @@ return [
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.contributor',
                                 'value' => 'contributor',
+                            ],
+                            [
+                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.publisher',
+                                'value' => 'publisher',
                             ],
                         ],
                     ],

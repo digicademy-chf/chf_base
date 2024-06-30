@@ -232,7 +232,7 @@
             </trans-unit>
             <trans-unit id="object.abstractHeritage.contentElement.description" resname="object.abstractHeritage.contentElement.description" approved="yes">
                 <source>Room for page content without a fixed structure</source>
-                <target>Raum für Seiteninhalte ohne vorgegebene Struktur</target>
+                <target>Platz für Seiteninhalte ohne vorgegebene Struktur</target>
             </trans-unit>
             <trans-unit id="object.abstractHeritage.footnote" resname="object.abstractHeritage.footnote" approved="yes">
                 <source>Footnote</source>
@@ -373,7 +373,7 @@
             </trans-unit>
             <trans-unit id="object.agent.event.description" resname="object.agent.event.description" approved="yes">
                 <source>Room to list biographical events</source>
-                <target>Raum für biografische Ereignisse</target>
+                <target>Platz für biografische Ereignisse</target>
             </trans-unit>
             <trans-unit id="object.agent.asAgentOfAgentRelation" resname="object.agent.asAgentOfAgentRelation" approved="yes">
                 <source>Usage as agent of an agent relation</source>
@@ -478,7 +478,7 @@
             </trans-unit>
             <trans-unit id="object.location.event.description" resname="object.location.event.description" approved="yes">
                 <source>Room to list historical events</source>
-                <target>Raum für historische Ereignisse</target>
+                <target>Platz für historische Ereignisse</target>
             </trans-unit>
             <trans-unit id="object.location.addressStreet" resname="object.location.addressStreet" approved="yes">
                 <source>Street</source>
@@ -635,7 +635,7 @@
             </trans-unit>
             <trans-unit id="object.period.event.description" resname="object.period.event.description" approved="yes">
                 <source>Room to list more specific historical events</source>
-                <target>Raum für genauere historische Ereignisse</target>
+                <target>Platz für genauere historische Ereignisse</target>
             </trans-unit>
             <!-- Object: AbstractRelation -->
             <trans-unit id="object.abstractRelation" resname="object.abstractRelation" approved="yes">
@@ -709,6 +709,10 @@
             <trans-unit id="object.abstractRelation.role.contributor" resname="object.abstractRelation.role.contributor" approved="yes">
                 <source>Contributor</source>
                 <target>Beitragende:r</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.publisher" resname="object.abstractRelation.role.publisher" approved="yes">
+                <source>Publisher</source>
+                <target>Verlag</target>
             </trans-unit>
             <trans-unit id="object.abstractRelation.role.currentLocation" resname="object.abstractRelation.role.currentLocation" approved="yes">
                 <source>Current location</source>

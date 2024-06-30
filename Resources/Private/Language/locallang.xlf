@@ -526,6 +526,9 @@
             <trans-unit id="object.abstractRelation.role.contributor" resname="object.abstractRelation.role.contributor">
                 <source>Contributor</source>
             </trans-unit>
+            <trans-unit id="object.abstractRelation.role.publisher" resname="object.abstractRelation.role.publisher">
+                <source>Publisher</source>
+            </trans-unit>
             <trans-unit id="object.abstractRelation.role.currentLocation" resname="object.abstractRelation.role.currentLocation">
                 <source>Current location</source>
             </trans-unit>

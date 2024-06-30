@@ -20,14 +20,15 @@ defined('TYPO3') or die();
 return [
     'ctrl' => [
         'title'                    => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractTag',
-        'label'                    => 'text',
-        'label_alt'                => 'code',
+        'label'                    => 'code',
+        'label_alt'                => 'text',
+        'label_alt_force'          => true,
         'descriptionColumn'        => 'description',
         'tstamp'                   => 'tstamp',
         'crdate'                   => 'crdate',
         'delete'                   => 'deleted',
         'sortby'                   => 'sorting',
-        'default_sortby'           => 'text ASC,code ASC,type ASC',
+        'default_sortby'           => 'code ASC,text ASC,type ASC',
         'versioningWS'             => true,
         'iconfile'                 => 'EXT:chf_base/Resources/Public/Icons/Tag.svg',
         'origUid'                  => 't3_origuid',
@@ -254,6 +255,7 @@ return [
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTypeTag\'',
                 'MM' => 'tx_chfbase_domain_model_tag_tag_labeltype_mm',
+                'multiple' => 1,
                 'maxitems' => 1,
                 'sortItems' => [
                     'label' => 'asc',
@@ -337,9 +339,7 @@ return [
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfbase_domain_model_agent_tag_label_mm',
                 'MM_opposite_field' => 'label',
-                'MM_match_fields' => [
-                    'fieldname' => 'asLabelOfAgent',
-                ],
+                'multiple' => 1,
                 'size' => 5,
                 'autoSizeMax' => 10,
             ],
@@ -356,9 +356,7 @@ return [
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_location}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfbase_domain_model_location_tag_label_mm',
                 'MM_opposite_field' => 'label',
-                'MM_match_fields' => [
-                    'fieldname' => 'asLabelOfLocation',
-                ],
+                'multiple' => 1,
                 'size' => 5,
                 'autoSizeMax' => 10,
             ],
@@ -375,9 +373,7 @@ return [
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_period}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfbase_domain_model_period_tag_label_mm',
                 'MM_opposite_field' => 'label',
-                'MM_match_fields' => [
-                    'fieldname' => 'asLabelOfPeriod',
-                ],
+                'multiple' => 1,
                 'size' => 5,
                 'autoSizeMax' => 10,
             ],
@@ -395,9 +391,7 @@ return [
                     . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
                 'MM' => 'tx_chfbase_domain_model_tag_tag_labeltype_mm',
                 'MM_opposite_field' => 'labelType',
-                'MM_match_fields' => [
-                    'fieldname' => 'asLabelTypeOfLabelTag',
-                ],
+                'multiple' => 1,
                 'size' => 5,
                 'autoSizeMax' => 10,
             ],
@@ -415,9 +409,7 @@ return [
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'licenceRelation\'',
                 'MM' => 'tx_chfbase_domain_model_relation_tag_licence_mm',
                 'MM_opposite_field' => 'licence',
-                'MM_match_fields' => [
-                    'fieldname' => 'asLicenceOfLicenceRelation',
-                ],
+                'multiple' => 1,
                 'size' => 5,
                 'autoSizeMax' => 10,
             ],
