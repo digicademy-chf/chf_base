@@ -34,11 +34,17 @@
             <trans-unit id="object.generic.editorial" resname="object.generic.editorial">
                 <source>Editorial</source>
             </trans-unit>
-            <trans-unit id="object.generic.content" resname="object.generic.content">
-                <source>Content</source>
+            <trans-unit id="object.generic.placement" resname="object.generic.placement">
+                <source>Placement</source>
             </trans-unit>
-            <trans-unit id="object.generic.relations" resname="object.generic.relations">
-                <source>Relations</source>
+            <trans-unit id="object.generic.structured" resname="object.generic.structured">
+                <source>Associations</source>
+            </trans-unit>
+            <trans-unit id="object.generic.unstructured" resname="object.generic.unstructured">
+                <source>Text and media</source>
+            </trans-unit>
+            <trans-unit id="object.generic.bibliography" resname="object.generic.bibliography">
+                <source>Bibliography</source>
             </trans-unit>
             <trans-unit id="object.generic.import" resname="object.generic.import">
                 <source>Import</source>
@@ -77,10 +83,10 @@
                 <source>Authoritative web address to identify an entity across the web</source>
             </trans-unit>
             <trans-unit id="object.generic.extent" resname="object.generic.extent">
-                <source>Extent/identifier</source>
+                <source>Extent</source>
             </trans-unit>
             <trans-unit id="object.generic.extent.description" resname="object.generic.extent.description">
-                <source>List of extents and identifiers relevant to this entry</source>
+                <source>List of extents relevant to this entry</source>
             </trans-unit>
             <trans-unit id="object.generic.importOrigin" resname="object.generic.importOrigin">
                 <source>Import origin</source>
@@ -186,6 +192,60 @@
             <trans-unit id="object.abstractHeritage.file.description" resname="object.abstractHeritage.file.description">
                 <source>Additional files attached to this record</source>
             </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps" resname="object.abstractHeritage.editorialSteps">
+                <source>Editorial steps</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps.description" resname="object.abstractHeritage.editorialSteps.description">
+                <source>Check list for editing this record</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps.checkDatabase" resname="object.abstractHeritage.editorialSteps.checkDatabase">
+                <source>Check database</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps.checkStandard" resname="object.abstractHeritage.editorialSteps.checkStandard">
+                <source>Standard resources</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps.checkForeignLanguage" resname="object.abstractHeritage.editorialSteps.checkForeignLanguage">
+                <source>Foreign-language resources</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps.checkRegional" resname="object.abstractHeritage.editorialSteps.checkRegional">
+                <source>Regional resources</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps.checkPrevious" resname="object.abstractHeritage.editorialSteps.checkPrevious">
+                <source>Preceding projects</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps.checkFurther" resname="object.abstractHeritage.editorialSteps.checkFurther">
+                <source>Further resources</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps.checkAuthorityFiles" resname="object.abstractHeritage.editorialSteps.checkAuthorityFiles">
+                <source>Authority files</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps.checkMaps" resname="object.abstractHeritage.editorialSteps.checkMaps">
+                <source>Domestic and foreign maps</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.publicationSteps" resname="object.abstractHeritage.publicationSteps">
+                <source>Publication steps</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.publicationSteps.description" resname="object.abstractHeritage.publicationSteps.description">
+                <source>Check list for the publication of this record</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.publicationSteps.started" resname="object.abstractHeritage.publicationSteps.started">
+                <source>Started</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.publicationSteps.edited" resname="object.abstractHeritage.publicationSteps.edited">
+                <source>Edited</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.publicationSteps.checked" resname="object.abstractHeritage.publicationSteps.checked">
+                <source>Checked</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.publicationSteps.deferred" resname="object.abstractHeritage.publicationSteps.deferred">
+                <source>Deferred</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.publicationSteps.revised" resname="object.abstractHeritage.publicationSteps.revised">
+                <source>Revised</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.publicationSteps.publicationReady" resname="object.abstractHeritage.publicationSteps.publicationReady">
+                <source>Publication-ready</source>
+            </trans-unit>
             <!-- Object: Agent -->
             <trans-unit id="object.agent" resname="object.agent">
                 <source>Agent</source>
@@ -268,6 +328,12 @@
             <trans-unit id="object.agent.isContributor.description" resname="object.agent.isContributor.description">
                 <source>Makes this agent selectable as an author</source>
             </trans-unit>
+            <trans-unit id="object.agent.agent" resname="object.agent.agent">
+                <source>Agent</source>
+            </trans-unit>
+            <trans-unit id="object.agent.agent.description" resname="object.agent.agent.description">
+                <source>Room to list more specific agents</source>
+            </trans-unit>
             <trans-unit id="object.agent.event" resname="object.agent.event">
                 <source>Event</source>
             </trans-unit>
@@ -289,9 +355,6 @@
             <!-- Object: Location -->
             <trans-unit id="object.location" resname="object.location">
                 <source>Location</source>
-            </trans-unit>
-            <trans-unit id="object.location.address" resname="object.location.address">
-                <source>Address</source>
             </trans-unit>
             <trans-unit id="object.location.parentLocation" resname="object.location.parentLocation">
                 <source>Parent location</source>
@@ -346,6 +409,12 @@
             </trans-unit>
             <trans-unit id="object.location.isImaginary.description" resname="object.location.isImaginary.description">
                 <source>Marks this location as imaginary</source>
+            </trans-unit>
+            <trans-unit id="object.location.location" resname="object.location.location">
+                <source>Location</source>
+            </trans-unit>
+            <trans-unit id="object.location.location.description" resname="object.location.location.description">
+                <source>Room to list more specific locations</source>
             </trans-unit>
             <trans-unit id="object.location.event" resname="object.location.event">
                 <source>Event</source>
@@ -437,6 +506,12 @@
             </trans-unit>
             <trans-unit id="object.period.to.description" resname="object.period.to.description">
                 <source>End date for fuzzier time spans</source>
+            </trans-unit>
+            <trans-unit id="object.period.displayDate" resname="object.period.displayDate">
+                <source>Display date</source>
+            </trans-unit>
+            <trans-unit id="object.period.displayDate.description" resname="object.period.displayDate.description">
+                <source>Text version of the date</source>
             </trans-unit>
             <trans-unit id="object.period.when" resname="object.period.when">
                 <source>Exactly when</source>
@@ -540,6 +615,36 @@
             </trans-unit>
             <trans-unit id="object.abstractRelation.role.relationship" resname="object.abstractRelation.role.relationship">
                 <source>Relationship</source>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.depiction" resname="object.abstractRelation.role.depiction">
+                <source>Depiction</source>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.representation" resname="object.abstractRelation.role.representation">
+                <source>Representation</source>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.designer" resname="object.abstractRelation.role.designer">
+                <source>Designer</source>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.artist" resname="object.abstractRelation.role.artist">
+                <source>Artist</source>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.workshop" resname="object.abstractRelation.role.workshop">
+                <source>Workshop</source>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.manufacturer" resname="object.abstractRelation.role.manufacturer">
+                <source>Manufacturer</source>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.benefactor" resname="object.abstractRelation.role.benefactor">
+                <source>Benefactor</source>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.collector" resname="object.abstractRelation.role.collector">
+                <source>Collector</source>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.curator" resname="object.abstractRelation.role.curator">
+                <source>Curator</source>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.restorer" resname="object.abstractRelation.role.restorer">
+                <source>Restorer</source>
             </trans-unit>
             <trans-unit id="object.abstractRelation.role.allContent" resname="object.abstractRelation.role.allContent">
                 <source>All content</source>
@@ -658,6 +763,12 @@
             <trans-unit id="object.abstractResource.allTags.description" resname="object.abstractResource.allTags.description">
                 <source>List of all tags compiled in this resource</source>
             </trans-unit>
+            <trans-unit id="object.abstractResource.allKeywords" resname="object.abstractResource.allKeywords">
+                <source>All keywords</source>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.allKeywords.description" resname="object.abstractResource.allKeywords.description">
+                <source>List of all keywords compiled in this resource</source>
+            </trans-unit>
             <!-- Object: AbstractTag -->
             <trans-unit id="object.abstractTag" resname="object.abstractTag">
                 <source>Tag</source>
@@ -708,6 +819,12 @@
             <trans-unit id="object.labelTag.labelType.description" resname="object.labelTag.labelType.description">
                 <source>Group of labels that this one belongs to</source>
             </trans-unit>
+            <trans-unit id="object.labelTag.keyword" resname="object.labelTag.keyword">
+                <source>Keyword</source>
+            </trans-unit>
+            <trans-unit id="object.labelTag.keyword.description" resname="object.labelTag.keyword.description">
+                <source>List of keywords describing this label</source>
+            </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfAgent" resname="object.labelTag.asLabelOfAgent">
                 <source>Usage as label of an agent</source>
             </trans-unit>
@@ -750,6 +867,22 @@
             <trans-unit id="object.sameAs.uri.description" resname="object.sameAs.uri.description">
                 <source>External web address</source>
             </trans-unit>
+            <!-- Object: Keyword -->
+            <trans-unit id="object.keyword" resname="object.keyword">
+                <source>Keyword</source>
+            </trans-unit>
+            <trans-unit id="object.keyword.text" resname="object.keyword.text">
+                <source>Text</source>
+            </trans-unit>
+            <trans-unit id="object.keyword.text.description" resname="object.keyword.text.description">
+                <source>Title of this keyword</source>
+            </trans-unit>
+            <trans-unit id="object.keyword.asKeywordOfLabelTag" resname="object.keyword.asKeywordOfLabelTag">
+                <source>Usage as keyword of a label</source>
+            </trans-unit>
+            <trans-unit id="object.keyword.asKeywordOfLabelTag.description" resname="object.keyword.asKeywordOfLabelTag.description">
+                <source>List of labels that use this keyword</source>
+            </trans-unit>
             <!-- Object: Footnote -->
             <trans-unit id="object.footnote" resname="object.footnote">
                 <source>Footnote</source>
@@ -762,19 +895,19 @@
             </trans-unit>
             <!-- Object: Extent -->
             <trans-unit id="object.extent" resname="object.extent">
-                <source>Extent/identifier</source>
+                <source>Extent</source>
             </trans-unit>
             <trans-unit id="object.extent.type" resname="object.extent.type">
                 <source>Type</source>
             </trans-unit>
             <trans-unit id="object.extent.type.description" resname="object.extent.type.description">
-                <source>Type of extent or identifier</source>
+                <source>Type of extent</source>
             </trans-unit>
             <trans-unit id="object.extent.text" resname="object.extent.text">
                 <source>Text</source>
             </trans-unit>
             <trans-unit id="object.extent.text.description" resname="object.extent.text.description">
-                <source>Actual extent or identifier</source>
+                <source>Specific extent</source>
             </trans-unit>
             <!-- Validator: StringOptionsValidator -->
             <trans-unit id="validator.stringOptions.allowedStringInvalid" resname="validator.stringOptions.allowedStringInvalid">

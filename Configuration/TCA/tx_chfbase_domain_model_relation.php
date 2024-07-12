@@ -21,7 +21,8 @@ return [
     'ctrl' => [
         'title'                    => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation',
         'label'                    => 'uuid',
-        'descriptionColumn'        => 'description',
+        'label_alt'                => 'type',
+        'label_alt_force'          => true,
         'tstamp'                   => 'tstamp',
         'crdate'                   => 'crdate',
         'delete'                   => 'deleted',
@@ -230,7 +231,126 @@ return [
                 'allowed' => 'tx_chfbase_domain_model_resource,tx_chfbase_domain_model_agent,tx_chfbase_domain_model_location,tx_chfbase_domain_model_period,tx_chfbib_domain_model_bibliographic_entry,tx_chflex_domain_model_dictionary_entry,tx_chflex_domain_model_encyclopedia_entry,tx_chflex_domain_model_frequency,tx_chflex_domain_model_example,tx_chfmap_domain_model_feature,tx_chfpub_domain_model_volume,tx_chfpub_domain_model_essay,tx_chfobject_domain_model_object_group,tx_chfobject_domain_model_single_object,tx_chfmedia_domain_model_file_group,sys_file_metadata,',
                 'foreign_table' => 'tx_chfbase_domain_model_resource', // Needed by Extbase as of TYPO3 12, remove when possible
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
+                'MM_oppositeUsage' => [
+                    'sys_file_metadata' => [
+                        'publicationRelation',
+                        'sourceRelation',
+                    ],
+                    'tx_chfbase_domain_model_agent' => [
+                        'agentRelation',
+                        'authorshipRelation',
+                        'licenceRelation',
+                        'linkRelation',
+                        'locationRelation',
+                        'publicationRelation',
+                        'sourceRelation',
+                    ],
+                    'tx_chfbase_domain_model_location' => [
+                        'agentRelation',
+                        'authorshipRelation',
+                        'licenceRelation',
+                        'linkRelation',
+                        'publicationRelation',
+                        'sourceRelation',
+                    ],
+                    'tx_chfbase_domain_model_period' => [
+                        'agentRelation',
+                        'authorshipRelation',
+                        'licenceRelation',
+                        'linkRelation',
+                        'locationRelation',
+                        'publicationRelation',
+                        'sourceRelation',
+                    ],
+                    'tx_chfbase_domain_model_resource' => [
+                        'authorshipRelation',
+                        'licenceRelation',
+                    ],
+                    'tx_chfbib_domain_model_bibliographic_entry' => [
+                        'authorshipRelation',
+                        'licenceRelation',
+                        'linkRelation',
+                        'locationRelation',
+                        'publicationRelation',
+                        'sourceRelation',
+                    ],
+                    'tx_chflex_domain_model_dictionary_entry' => [
+                        'authorshipRelation',
+                        'licenceRelation',
+                        'linkRelation',
+                        'publicationRelation',
+                        'similarityRelation',
+                        'sourceRelation',
+                    ],
+                    'tx_chflex_domain_model_encyclopedia_entry' => [
+                        'authorshipRelation',
+                        'licenceRelation',
+                        'linkRelation',
+                        'publicationRelation',
+                        'similarityRelation',
+                        'sourceRelation',
+                    ],
+                    'tx_chflex_domain_model_example' => [
+                        'agentRelation',
+                        'locationRelation',
+                        'sourceRelation',
+                    ],
+                    'tx_chflex_domain_model_frequency' => [
+                        'locationRelation',
+                        'sourceRelation',
+                    ],
+                    'tx_chfmap_domain_model_feature' => [
+                        'authorshipRelation',
+                        'licenceRelation',
+                        'linkRelation',
+                        'publicationRelation',
+                        'sourceRelation',
+                    ],
+                    'tx_chfmedia_domain_model_file_group' => [
+                        'agentRelation',
+                        'authorshipRelation',
+                        'licenceRelation',
+                        'linkRelation',
+                        'locationRelation',
+                        'publicationRelation',
+                        'sourceRelation',
+                    ],
+                    'tx_chfobject_domain_model_object_group' => [
+                        'agentRelation',
+                        'authorshipRelation',
+                        'licenceRelation',
+                        'linkRelation',
+                        'locationRelation',
+                        'publicationRelation',
+                        'sourceRelation',
+                    ],
+                    'tx_chfobject_domain_model_single_object' => [
+                        'agentRelation',
+                        'authorshipRelation',
+                        'licenceRelation',
+                        'linkRelation',
+                        'locationRelation',
+                        'publicationRelation',
+                        'sourceRelation',
+                    ],
+                    'tx_chfpub_domain_model_essay' => [
+                        'authorshipRelation',
+                        'licenceRelation',
+                        'linkRelation',
+                        'publicationRelation',
+                        'sourceRelation',
+                    ],
+                    'tx_chfpub_domain_model_volume' => [
+                        'authorshipRelation',
+                        'licenceRelation',
+                        'linkRelation',
+                        'publicationRelation',
+                        'sourceRelation',
+                    ],
+                ],
                 'multiple' => 1,
+                'maxitems' => 1,
+                'size' => 1,
                 'elementBrowserEntryPoints' => [
                     '_default' => '###CURRENT_PID###',
                 ],
@@ -386,9 +506,6 @@ return [
         ],
     ],
     'palettes' => [
-        'typeUuid' => [
-            'showitem' => 'type,uuid,',
-        ],
         'contributorRole' => [
             'showitem' => 'contributor,role,',
         ],
@@ -404,16 +521,18 @@ return [
         'urlLinkTextLastChecked' => [
             'showitem' => 'url,--linebreak--,linkText,lastChecked,',
         ],
-        'parentResourceDescription' => [
-            'showitem' => 'parentResource,description,',
+        'iriUuid' => [
+            'showitem' => 'iri,uuid,',
         ],
     ],
     'types' => [
         '0' => [
-            'showitem' => '--palette--;;typeUuid,--palette--;;parentResourceDescription,',
+            'showitem' => 'type,description,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,',
         ],
         'authorshipRelation' => [
-            'showitem' => '--palette--;;typeUuid,record,--palette--;;contributorRole,--palette--;;parentResourceDescription,',
+            'showitem' => 'type,record,--palette--;;contributorRole,description,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,',
             'columnsOverrides' => [
                 'role' => [
                     'config' => [
@@ -444,7 +563,8 @@ return [
             ],
         ],
         'locationRelation' => [
-            'showitem' => '--palette--;;typeUuid,record,--palette--;;locationRole,--palette--;;parentResourceDescription,',
+            'showitem' => 'type,record,--palette--;;locationRole,description,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,',
             'columnsOverrides' => [
                 'role' => [
                     'config' => [
@@ -463,7 +583,8 @@ return [
             ],
         ],
         'agentRelation' => [
-            'showitem' => '--palette--;;typeUuid,record,--palette--;;agentRole,--palette--;;parentResourceDescription,',
+            'showitem' => 'type,record,--palette--;;agentRole,description,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,',
             'columnsOverrides' => [
                 'role' => [
                     'config' => [
@@ -476,13 +597,54 @@ return [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.relationship',
                                 'value' => 'relationship',
                             ],
+                            [
+                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.depiction',
+                                'value' => 'depiction',
+                            ],
+                            [
+                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.representation',
+                                'value' => 'representation',
+                            ],
+                            [
+                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.designer',
+                                'value' => 'designer',
+                            ],
+                            [
+                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.artist',
+                                'value' => 'artist',
+                            ],
+                            [
+                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.workshop',
+                                'value' => 'workshop',
+                            ],
+                            [
+                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.manufacturer',
+                                'value' => 'manufacturer',
+                            ],
+                            [
+                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.benefactor',
+                                'value' => 'benefactor',
+                            ],
+                            [
+                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.collector',
+                                'value' => 'collector',
+                            ],
+                            [
+                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.curator',
+                                'value' => 'curator',
+                            ],
+                            [
+                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.restorer',
+                                'value' => 'restorer',
+                            ],
                         ],
                     ],
                 ],
             ],
         ],
         'licenceRelation' => [
-            'showitem' => '--palette--;;typeUuid,record,--palette--;;licenceRole,--palette--;;parentResourceDescription,',
+            'showitem' => 'type,record,--palette--;;licenceRole,description,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,',
             'columnsOverrides' => [
                 'role' => [
                     'config' => [
@@ -509,7 +671,8 @@ return [
             ],
         ],
         'linkRelation' => [
-            'showitem' => '--palette--;;typeUuid,record,--palette--;;urlLinkTextLastChecked,--palette--;;parentResourceDescription,',
+            'showitem' => 'type,record,--palette--;;urlLinkTextLastChecked,description,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,',
         ],
     ],
 ];

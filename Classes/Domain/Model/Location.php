@@ -117,6 +117,17 @@ class Location extends AbstractHeritage
     protected MapResource|LazyLoadingProxy|null $floorPlan = null;
 
     /**
+     * Room to list more specific locations
+     * 
+     * @var ?ObjectStorage<Location>
+     */
+    #[Lazy()]
+    #[Cascade([
+        'value' => 'remove',
+    ])]
+    protected ?ObjectStorage $location = null;
+
+    /**
      * Room to list historical events
      * 
      * @var ?ObjectStorage<Period>
@@ -221,6 +232,7 @@ class Location extends AbstractHeritage
      */
     public function initializeObject(): void
     {
+        $this->location ??= new ObjectStorage();
         $this->event ??= new ObjectStorage();
         $this->agentRelation ??= new ObjectStorage();
         $this->asLocationOfLocationRelation ??= new ObjectStorage();
@@ -393,6 +405,55 @@ class Location extends AbstractHeritage
     public function setFloorPlan(MapResource $floorPlan): void
     {
         $this->floorPlan = $floorPlan;
+    }
+
+    /**
+     * Get location
+     *
+     * @return ObjectStorage<Location>
+     */
+    public function getLocation(): ?ObjectStorage
+    {
+        return $this->location;
+    }
+
+    /**
+     * Set location
+     *
+     * @param ObjectStorage<Location> $location
+     */
+    public function setLocation(ObjectStorage $location): void
+    {
+        $this->location = $location;
+    }
+
+    /**
+     * Add location
+     *
+     * @param Location $location
+     */
+    public function addLocation(Location $location): void
+    {
+        $this->location?->attach($location);
+    }
+
+    /**
+     * Remove location
+     *
+     * @param Location $location
+     */
+    public function removeLocation(Location $location): void
+    {
+        $this->location?->detach($location);
+    }
+
+    /**
+     * Remove all locations
+     */
+    public function removeAllLocation(): void
+    {
+        $location = clone $this->location;
+        $this->location->removeAll($location);
     }
 
     /**

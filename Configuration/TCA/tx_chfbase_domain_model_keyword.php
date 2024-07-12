@@ -10,7 +10,7 @@ declare(strict_types=1);
 defined('TYPO3') or die();
 
 /**
- * Footnote and its properties
+ * Keyword and its properties
  * 
  * Configuration of a database table and its editing interface in the
  * TYPO3 backend. This also serves as the basis for the Extbase
@@ -19,7 +19,7 @@ defined('TYPO3') or die();
  */
 return [
     'ctrl' => [
-        'title'                    => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.footnote',
+        'title'                    => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.keyword',
         'label'                    => 'text',
         'tstamp'                   => 'tstamp',
         'crdate'                   => 'crdate',
@@ -27,14 +27,14 @@ return [
         'sortby'                   => 'sorting',
         'default_sortby'           => 'text ASC',
         'versioningWS'             => true,
-        'iconfile'                 => 'EXT:chf_base/Resources/Public/Icons/Footnote.svg',
+        'iconfile'                 => 'EXT:chf_base/Resources/Public/Icons/Keyword.svg',
         'origUid'                  => 't3_origuid',
         'hideAtCopy'               => true,
         'languageField'            => 'sys_language_uid',
         'transOrigPointerField'    => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'translationSource'        => 'l10n_source',
-        'searchFields'             => 'uuid,text',
+        'searchFields'             => 'text',
         'enablecolumns'            => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
@@ -90,9 +90,9 @@ return [
                         'value' => 0,
                     ],
                 ],
-                'foreign_table' => 'tx_chfbase_domain_model_footnote',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_footnote}.{#pid}=###CURRENT_PID###'
-                    . ' AND {#tx_chfbase_domain_model_footnote}.{#sys_language_uid} IN (-1,0)',
+                'foreign_table' => 'tx_chfbase_domain_model_keyword',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_keyword}.{#pid}=###CURRENT_PID###'
+                    . ' AND {#tx_chfbase_domain_model_keyword}.{#sys_language_uid} IN (-1,0)',
                 'default' => 0,
             ],
         ],
@@ -150,52 +150,62 @@ return [
                 ],
             ],
         ],
-        'parentTable' => [
-            'config' => [
-                'type' => 'passthrough',
-            ],
-        ],
-        'parent' => [
-            'config' => [
-                'type' => 'passthrough',
-            ],
-        ],
-        'uuid' => [
+        'parentResource' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid.description',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource.description',
             'config' => [
-                'type' => 'uuid',
-                'size' => 40,
+                'type' => 'select',
+                'renderType' => 'selectSingleBox',
+                'foreign_table' => 'tx_chfbase_domain_model_resource',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_resource}.{#pid}=###CURRENT_PID###',
+                'sortItems' => [
+                    'label' => 'asc',
+                ],
                 'required' => true,
             ],
         ],
         'text' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.footnote.text',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.footnote.text.description',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.keyword.text',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.keyword.text.description',
             'config' => [
-                'type' => 'text',
-                'enableRichtext' => true,
-                'richtextConfiguration' => 'chf_base_simple',
-                'softref' => 'typolink_tag,email[subst],url',
+                'type' => 'input',
+                'size' => 40,
+                'max' => 255,
+                'eval' => 'trim',
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
                 'required' => true,
             ],
         ],
-    ],
-    'palettes' => [
-        'iriUuid' => [
-            'showitem' => 'iri,uuid,',
+        'asKeywordOfLabelTag' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.keyword.asKeywordOfLabelTag',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.keyword.asKeywordOfLabelTag.description',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'tx_chfbase_domain_model_tag',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###'
+                    . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
+                'MM' => 'tx_chfbase_domain_model_tag_keyword_keyword_mm',
+                'MM_opposite_field' => 'keyword',
+                'multiple' => 1,
+                'size' => 5,
+                'autoSizeMax' => 10,
+            ],
         ],
     ],
+    'palettes' => [],
     'types' => [
         '0' => [
             'showitem' => 'text,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,',
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parentResource,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asKeywordOfLabelTag,',
         ],
     ],
 ];

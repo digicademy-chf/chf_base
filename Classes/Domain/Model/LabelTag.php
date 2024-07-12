@@ -46,6 +46,14 @@ class LabelTag extends AbstractTag
     protected LabelTypeTag|LazyLoadingProxy|null $labelType = null;
 
     /**
+     * List of keywords describing this label
+     * 
+     * @var ?ObjectStorage<Keyword>
+     */
+    #[Lazy()]
+    protected ?ObjectStorage $keyword;
+
+    /**
      * List of agents that use this label
      * 
      * @var ?ObjectStorage<Agent>
@@ -163,6 +171,7 @@ class LabelTag extends AbstractTag
      */
     public function initializeObject(): void
     {
+        $this->keyword ??= new ObjectStorage();
         $this->asLabelOfAgent ??= new ObjectStorage();
         $this->asLabelOfLocation ??= new ObjectStorage();
         $this->asLabelOfPeriod ??= new ObjectStorage();
@@ -221,6 +230,55 @@ class LabelTag extends AbstractTag
     public function setLabelType(LabelTypeTag $labelType): void
     {
         $this->labelType = $labelType;
+    }
+
+    /**
+     * Get keyword
+     *
+     * @return ObjectStorage<Keyword>
+     */
+    public function getKeyword(): ?ObjectStorage
+    {
+        return $this->keyword;
+    }
+
+    /**
+     * Set keyword
+     *
+     * @param ObjectStorage<Keyword> $keyword
+     */
+    public function setKeyword(ObjectStorage $keyword): void
+    {
+        $this->keyword = $keyword;
+    }
+
+    /**
+     * Add keyword
+     *
+     * @param Keyword $keyword
+     */
+    public function addKeyword(Keyword $keyword): void
+    {
+        $this->keyword?->attach($keyword);
+    }
+
+    /**
+     * Remove keyword
+     *
+     * @param Keyword $keyword
+     */
+    public function removeKeyword(Keyword $keyword): void
+    {
+        $this->keyword?->detach($keyword);
+    }
+
+    /**
+     * Remove all keywords
+     */
+    public function removeAllKeyword(): void
+    {
+        $keyword = clone $this->keyword;
+        $this->keyword->removeAll($keyword);
     }
 
     /**

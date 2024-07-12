@@ -126,6 +126,25 @@ class AbstractHeritage extends AbstractBase
         'value' => 'remove',
     ])]
     protected ?ObjectStorage $sourceRelation = null;
+    /**
+     * Check list for editing this record
+     * 
+     * @var string
+     */
+    #[Validate([
+        'validator' => 'String',
+    ])]
+    protected string $editorialSteps = '';
+
+    /**
+     * Check list for the publication of this record
+     * 
+     * @var string
+     */
+    #[Validate([
+        'validator' => 'String',
+    ])]
+    protected string $publicationSteps = '';
 
     /**
      * Full import code that this record is based on
@@ -630,6 +649,46 @@ class AbstractHeritage extends AbstractBase
     {
         $sourceRelation = clone $this->sourceRelation;
         $this->sourceRelation->removeAll($sourceRelation);
+    }
+
+    /**
+     * Get editorial steps
+     *
+     * @return string
+     */
+    public function getEditorialSteps(): string
+    {
+        return $this->editorialSteps;
+    }
+
+    /**
+     * Set editorial steps
+     *
+     * @param string $editorialSteps
+     */
+    public function setEditorialSteps(string $editorialSteps): void
+    {
+        $this->editorialSteps = $editorialSteps;
+    }
+
+    /**
+     * Get publication steps
+     *
+     * @return string
+     */
+    public function getPublicationSteps(): string
+    {
+        return $this->publicationSteps;
+    }
+
+    /**
+     * Set publication steps
+     *
+     * @param string $publicationSteps
+     */
+    public function setPublicationSteps(string $publicationSteps): void
+    {
+        $this->publicationSteps = $publicationSteps;
     }
 
     /**

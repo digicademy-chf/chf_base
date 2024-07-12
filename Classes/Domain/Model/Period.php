@@ -77,6 +77,19 @@ class Period extends AbstractHeritage
     protected string $alternativeText = '';
 
     /**
+     * Text version of the date
+     * 
+     * @var string
+     */
+    #[Validate([
+        'validator' => 'StringLength',
+        'options'   => [
+            'maximum' => 255,
+        ],
+    ])]
+    protected string $displayDate = '';
+
+    /**
      * Start date for fuzzier time spans
      * 
      * @var ?\DateTime
@@ -127,7 +140,7 @@ class Period extends AbstractHeritage
     protected string $calendar = 'gregorian';
 
     /**
-     * Room to list biographical events
+     * Room to list more specific historical events
      * 
      * @var ?ObjectStorage<Period>
      */
@@ -268,6 +281,26 @@ class Period extends AbstractHeritage
     public function setAlternativeText(string $alternativeText): void
     {
         $this->alternativeText = $alternativeText;
+    }
+
+    /**
+     * Get display date
+     *
+     * @return string
+     */
+    public function getDisplayDate(): string
+    {
+        return $this->displayDate;
+    }
+
+    /**
+     * Set display date
+     *
+     * @param string $displayDate
+     */
+    public function setDisplayDate(string $displayDate): void
+    {
+        $this->displayDate = $displayDate;
     }
 
     /**

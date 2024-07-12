@@ -44,13 +44,21 @@
                 <source>Editorial</source>
                 <target>Redaktion</target>
             </trans-unit>
-            <trans-unit id="object.generic.content" resname="object.generic.content" approved="yes">
-                <source>Content</source>
-                <target>Inhalt</target>
+            <trans-unit id="object.generic.placement" resname="object.generic.placement" approved="yes">
+                <source>Placement</source>
+                <target>Einordnung</target>
             </trans-unit>
-            <trans-unit id="object.generic.relations" resname="object.generic.relations" approved="yes">
-                <source>Relations</source>
-                <target>Relationen</target>
+            <trans-unit id="object.generic.structured" resname="object.generic.unstructured" approved="yes">
+                <source>Associations</source>
+                <target>Verbindungen</target>
+            </trans-unit>
+            <trans-unit id="object.generic.unstructured" resname="object.generic.unstructured" approved="yes">
+                <source>Text and media</source>
+                <target>Text und Medien</target>
+            </trans-unit>
+            <trans-unit id="object.generic.bibliography" resname="object.generic.bibliography" approved="yes">
+                <source>Bibliography</source>
+                <target>Bibliografie</target>
             </trans-unit>
             <trans-unit id="object.generic.restrictions" resname="object.generic.restrictions" approved="yes">
                 <source>Restrictions</source>
@@ -88,14 +96,6 @@
                 <source>Unique identifier of this record</source>
                 <target>Eindeutiger Identifikator dieses Eintrags</target>
             </trans-unit>
-            <trans-unit id="object.generic.extent" resname="object.generic.extent" approved="yes">
-                <source>Extent/identifier</source>
-                <target>Umfang/Identifikator</target>
-            </trans-unit>
-            <trans-unit id="object.generic.extent.description" resname="object.generic.extent.description" approved="yes">
-                <source>List of all relevant extents and identifiers</source>
-                <target>Liste aller relevanten Angaben zum Umfang und Identifikatoren</target>
-            </trans-unit>
             <trans-unit id="object.generic.label" resname="object.generic.label" approved="yes">
                 <source>Label</source>
                 <target>Label</target>
@@ -113,12 +113,12 @@
                 <target>Verbindliche Webadresse zur Identifikation einer Entität im Internet</target>
             </trans-unit>
             <trans-unit id="object.generic.extent" resname="object.generic.extent" approved="yes">
-                <source>Extent/identifier</source>
-                <target>Umfang/Identifikator</target>
+                <source>Extent</source>
+                <target>Maßangabe</target>
             </trans-unit>
             <trans-unit id="object.generic.extent.description" resname="object.generic.extent.description" approved="yes">
-                <source>List of extents and identifiers relevant to this entry</source>
-                <target>Liste der Umfangsangaben und Identifikatoren, die für diesen Eintrag relevant sind</target>
+                <source>List of extents relevant to this entry</source>
+                <target>Liste der Maßangabe, die für diesen Eintrag relevant sind</target>
             </trans-unit>
             <trans-unit id="object.generic.importOrigin" resname="object.generic.importOrigin" approved="yes">
                 <source>Import origin</source>
@@ -258,6 +258,78 @@
                 <source>Additional files attached to this record</source>
                 <target>Zusätzliche Dateien, die zu diesem Eintrag gehören</target>
             </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps" resname="object.abstractHeritage.editorialSteps" approved="yes">
+                <source>Editorial steps</source>
+                <target>Redaktionsschritte</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps.description" resname="object.abstractHeritage.editorialSteps.description" approved="yes">
+                <source>Check list for editing this record</source>
+                <target>Checkliste zum Bearbeiten des Eintrags</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps.checkDatabase" resname="object.abstractHeritage.editorialSteps.checkDatabase" approved="yes">
+                <source>Check database</source>
+                <target>Datenbankabfrage</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps.checkStandard" resname="object.abstractHeritage.editorialSteps.checkStandard" approved="yes">
+                <source>Standard resources</source>
+                <target>Standardwerke</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps.checkForeignLanguage" resname="object.abstractHeritage.editorialSteps.checkForeignLanguage" approved="yes">
+                <source>Foreign-language resources</source>
+                <target>Fremdsprachige Werke</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps.checkRegional" resname="object.abstractHeritage.editorialSteps.checkRegional" approved="yes">
+                <source>Regional resources</source>
+                <target>Regionale Werke</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps.checkPrevious" resname="object.abstractHeritage.editorialSteps.checkPrevious" approved="yes">
+                <source>Preceding projects</source>
+                <target>Vorgängerprojekte</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps.checkFurther" resname="object.abstractHeritage.editorialSteps.checkFurther" approved="yes">
+                <source>Further resources</source>
+                <target>Weitere Werke</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps.checkAuthorityFiles" resname="object.abstractHeritage.editorialSteps.checkAuthorityFiles" approved="yes">
+                <source>Authority files</source>
+                <target>Normdatenabgleich</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.editorialSteps.checkMaps" resname="object.abstractHeritage.editorialSteps.checkMaps" approved="yes">
+                <source>Domestic and foreign maps</source>
+                <target>Kartierung im In- und Ausland</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.publicationSteps" resname="object.abstractHeritage.publicationSteps" approved="yes">
+                <source>Publication steps</source>
+                <target>Publikationsschritte</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.publicationSteps.description" resname="object.abstractHeritage.publicationSteps.description" approved="yes">
+                <source>Check list for the publication of this record</source>
+                <target>Checkliste zur Veröffentlichung des Eintrags</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.publicationSteps.started" resname="object.abstractHeritage.publicationSteps.started" approved="yes">
+                <source>Started</source>
+                <target>Angefangen</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.publicationSteps.edited" resname="object.abstractHeritage.publicationSteps.edited" approved="yes">
+                <source>Edited</source>
+                <target>Redaktionell bearbeitet</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.publicationSteps.checked" resname="object.abstractHeritage.publicationSteps.checked" approved="yes">
+                <source>Checked</source>
+                <target>Überprüft</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.publicationSteps.deferred" resname="object.abstractHeritage.publicationSteps.deferred" approved="yes">
+                <source>Deferred</source>
+                <target>Zurückgestellt</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.publicationSteps.revised" resname="object.abstractHeritage.publicationSteps.revised" approved="yes">
+                <source>Revised</source>
+                <target>Überarbeitet</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.publicationSteps.publicationReady" resname="object.abstractHeritage.publicationSteps.publicationReady" approved="yes">
+                <source>Publication-ready</source>
+                <target>Publikationsfreigabe</target>
+            </trans-unit>
             <!-- Object: Agent -->
             <trans-unit id="object.agent" resname="object.agent" approved="yes">
                 <source>Agent</source>
@@ -277,7 +349,7 @@
             </trans-unit>
             <trans-unit id="object.agent.type.description" resname="object.agent.type.description" approved="yes">
                 <source>Specific type of agent</source>
-                <target>Genauere Art von Akteur:in</target>
+                <target>Genauere Art der Akteur:in</target>
             </trans-unit>
             <trans-unit id="object.agent.type.person" resname="object.agent.type.person" approved="yes">
                 <source>Person</source>
@@ -367,6 +439,14 @@
                 <source>Makes this agent selectable as an author</source>
                 <target>Macht diese Akteur:in in als Autor:in auswählbar</target>
             </trans-unit>
+            <trans-unit id="object.agent.agent" resname="object.agent.agent" approved="yes">
+                <source>Agent</source>
+                <target>Akteur:in</target>
+            </trans-unit>
+            <trans-unit id="object.agent.agent.description" resname="object.agent.agent.description" approved="yes">
+                <source>Room to list more specific agents</source>
+                <target>Platz für untergeordnete Akteur:innen</target>
+            </trans-unit>
             <trans-unit id="object.agent.event" resname="object.agent.event" approved="yes">
                 <source>Event</source>
                 <target>Ereignis</target>
@@ -395,10 +475,6 @@
             <trans-unit id="object.location" resname="object.location" approved="yes">
                 <source>Location</source>
                 <target>Ort</target>
-            </trans-unit>
-            <trans-unit id="object.location.address" resname="object.location.address" approved="yes">
-                <source>Address</source>
-                <target>Adresse</target>
             </trans-unit>
             <trans-unit id="object.location.parentLocation" resname="object.location.parentLocation" approved="yes">
                 <source>Parent location</source>
@@ -471,6 +547,14 @@
             <trans-unit id="object.location.isImaginary.description" resname="object.location.isImaginary.description" approved="yes">
                 <source>Marks this location as imaginary</source>
                 <target>Markiert diesen Ort als erfunden</target>
+            </trans-unit>
+            <trans-unit id="object.location.location" resname="object.location.location" approved="yes">
+                <source>Location</source>
+                <target>Ort</target>
+            </trans-unit>
+            <trans-unit id="object.location.location.description" resname="object.location.location.description" approved="yes">
+                <source>Room to list more specific locations</source>
+                <target>Platz für genauere Ortsangaben</target>
             </trans-unit>
             <trans-unit id="object.location.event" resname="object.location.event" approved="yes">
                 <source>Event</source>
@@ -592,6 +676,14 @@
             <trans-unit id="object.period.to.description" resname="object.period.to.description" approved="yes">
                 <source>End date for fuzzier time spans</source>
                 <target>Enddatum für etwas gröbere Zeitspannen</target>
+            </trans-unit>
+            <trans-unit id="object.period.displayDate" resname="object.period.displayDate" approved="yes">
+                <source>Display date</source>
+                <target>Anzeigedatum</target>
+            </trans-unit>
+            <trans-unit id="object.period.displayDate.description" resname="object.period.displayDate.description" approved="yes">
+                <source>Text version of the date</source>
+                <target>Textversion des Datums</target>
             </trans-unit>
             <trans-unit id="object.period.when" resname="object.period.when" approved="yes">
                 <source>Exactly when</source>
@@ -729,6 +821,46 @@
             <trans-unit id="object.abstractRelation.role.relationship" resname="object.abstractRelation.role.relationship" approved="yes">
                 <source>Relationship</source>
                 <target>Beziehung</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.depiction" resname="object.abstractRelation.role.depiction" approved="yes">
+                <source>Depiction</source>
+                <target>Darstellung</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.representation" resname="object.abstractRelation.role.representation" approved="yes">
+                <source>Representation</source>
+                <target>Repräsentation</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.designer" resname="object.abstractRelation.role.designer" approved="yes">
+                <source>Designer</source>
+                <target>Entwerfer:in</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.artist" resname="object.abstractRelation.role.artist" approved="yes">
+                <source>Artist</source>
+                <target>Künstler:in</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.workshop" resname="object.abstractRelation.role.workshop" approved="yes">
+                <source>Workshop</source>
+                <target>Werkstatt</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.manufacturer" resname="object.abstractRelation.role.manufacturer" approved="yes">
+                <source>Manufacturer</source>
+                <target>Herstellung</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.benefactor" resname="object.abstractRelation.role.benefactor" approved="yes">
+                <source>Benefactor</source>
+                <target>Stifter:in</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.collector" resname="object.abstractRelation.role.collector" approved="yes">
+                <source>Collector</source>
+                <target>Sammler:in</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.curator" resname="object.abstractRelation.role.curator" approved="yes">
+                <source>Curator</source>
+                <target>Kurator:in</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.restorer" resname="object.abstractRelation.role.restorer" approved="yes">
+                <source>Restorer</source>
+                <target>Restaurator:in</target>
             </trans-unit>
             <trans-unit id="object.abstractRelation.role.allContent" resname="object.abstractRelation.role.allContent" approved="yes">
                 <source>All content</source>
@@ -878,16 +1010,24 @@
             </trans-unit>
             <trans-unit id="object.abstractResource.allTags" resname="object.abstractResource.allTags" approved="yes">
                 <source>All tags</source>
-                <target>Alle Schlagworte</target>
+                <target>Alle Kennzeichen</target>
             </trans-unit>
             <trans-unit id="object.abstractResource.allTags.description" resname="object.abstractResource.allTags.description" approved="yes">
                 <source>List of all tags compiled in this resource</source>
-                <target>Liste aller Schlagworte, die in dieser Ressource verzeichnet sind</target>
+                <target>Liste aller Kennzeichen, die in dieser Ressource verzeichnet sind</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.allKeywords" resname="object.abstractResource.allKeywords" approved="yes">
+                <source>All keywords</source>
+                <target>Alle Stichworte</target>
+            </trans-unit>
+            <trans-unit id="object.abstractResource.allKeywords.description" resname="object.abstractResource.allKeywords.description" approved="yes">
+                <source>List of all keywords compiled in this resource</source>
+                <target>Liste aller Stichworte, die in dieser Ressource verzeichnet sind</target>
             </trans-unit>
             <!-- Object: AbstractTag -->
             <trans-unit id="object.abstractTag" resname="object.abstractTag" approved="yes">
                 <source>Tag</source>
-                <target>Schlagwort</target>
+                <target>Kennzeichen</target>
             </trans-unit>
             <trans-unit id="object.abstractTag.type" resname="object.abstractTag.type" approved="yes">
                 <source>Type</source>
@@ -895,7 +1035,7 @@
             </trans-unit>
             <trans-unit id="object.abstractTag.type.description" resname="object.abstractTag.type.description" approved="yes">
                 <source>Type of tag</source>
-                <target>Art des Schlagworts</target>
+                <target>Art des Kennzeichens</target>
             </trans-unit>
             <trans-unit id="object.abstractTag.type.labelTag" resname="object.abstractTag.type.labelTag" approved="yes">
                 <source>Label</source>
@@ -915,7 +1055,7 @@
             </trans-unit>
             <trans-unit id="object.abstractTag.code.description" resname="object.abstractTag.code.description" approved="yes">
                 <source>Abbreviation of the tag</source>
-                <target>Abkürzung des Schlagworts</target>
+                <target>Abkürzung des Kennzeichens</target>
             </trans-unit>
             <trans-unit id="object.abstractTag.text" resname="object.abstractTag.text" approved="yes">
                 <source>Text</source>
@@ -923,7 +1063,7 @@
             </trans-unit>
             <trans-unit id="object.abstractTag.text.description" resname="object.abstractTag.text.description" approved="yes">
                 <source>Full name of the tag</source>
-                <target>Vollständige Bezeichnung des Schlagworts</target>
+                <target>Vollständige Bezeichnung des Kennzeichens</target>
             </trans-unit>
             <trans-unit id="object.abstractTag.description" resname="object.abstractTag.description" approved="yes">
                 <source>Description</source>
@@ -931,7 +1071,7 @@
             </trans-unit>
             <trans-unit id="object.abstractTag.description.description" resname="object.abstractTag.description.description" approved="yes">
                 <source>Brief information about the tag</source>
-                <target>Kurze Erläuterung des Schlagworts</target>
+                <target>Kurze Erläuterung des Kennzeichens</target>
             </trans-unit>
             <!-- Object: LabelTag -->
             <trans-unit id="object.labelTag.parentLabelTag" resname="object.labelTag.parentLabelTag" approved="yes">
@@ -949,6 +1089,14 @@
             <trans-unit id="object.labelTag.labelType.description" resname="object.labelTag.labelType.description" approved="yes">
                 <source>Group of labels that this one belongs to</source>
                 <target>Zugehörigkeit zu einer Gruppe an Labels</target>
+            </trans-unit>
+            <trans-unit id="object.labelTag.keyword" resname="object.labelTag.keyword" approved="yes">
+                <source>Keyword</source>
+                <target>Stichwort</target>
+            </trans-unit>
+            <trans-unit id="object.labelTag.keyword.description" resname="object.labelTag.keyword.description" approved="yes">
+                <source>List of keywords describing this label</source>
+                <target>Liste an Stichworten, die  dieses Label beschreiben</target>
             </trans-unit>
             <trans-unit id="object.labelTag.asLabelOfAgent" resname="object.labelTag.asLabelOfAgent" approved="yes">
                 <source>Usage as label of an agent</source>
@@ -1005,6 +1153,27 @@
                 <source>External web address</source>
                 <target>Externe Webadresse</target>
             </trans-unit>
+            <!-- Object: Keyword -->
+            <trans-unit id="object.keyword" resname="object.keyword" approved="yes">
+                <source>Keyword</source>
+                <target>Stichwort</target>
+            </trans-unit>
+            <trans-unit id="object.keyword.text" resname="object.keyword.text" approved="yes">
+                <source>Text</source>
+                <target>Text</target>
+            </trans-unit>
+            <trans-unit id="object.keyword.text.description" resname="object.keyword.text.description" approved="yes">
+                <source>Title of this keyword</source>
+                <target>Titel des Stichworts</target>
+            </trans-unit>
+            <trans-unit id="object.keyword.asKeywordOfLabelTag" resname="object.keyword.asKeywordOfLabelTag" approved="yes">
+                <source>Usage as keyword of a label</source>
+                <target>Verwendung als Stichwort eines Labels</target>
+            </trans-unit>
+            <trans-unit id="object.keyword.asKeywordOfLabelTag.description" resname="object.keyword.asKeywordOfLabelTag.description" approved="yes">
+                <source>List of labels that use this keyword</source>
+                <target>Liste der Labels, die dieses Stichwort verwenden</target>
+            </trans-unit>
             <!-- Object: Footnote -->
             <trans-unit id="object.footnote" resname="object.footnote" approved="yes">
                 <source>Footnote</source>
@@ -1020,24 +1189,24 @@
             </trans-unit>
             <!-- Object: Extent -->
             <trans-unit id="object.extent" resname="object.extent" approved="yes">
-                <source>Extent/identifier</source>
-                <target>Umfang/Identifikator</target>
+                <source>Extent</source>
+                <target>Maßangabe</target>
             </trans-unit>
             <trans-unit id="object.extent.type" resname="object.extent.type" approved="yes">
                 <source>Type</source>
                 <target>Art</target>
             </trans-unit>
             <trans-unit id="object.extent.type.description" resname="object.extent.type.description" approved="yes">
-                <source>Type of extent or identifier</source>
-                <target>Art des Umfangs oder Identifikators</target>
+                <source>Type of extent</source>
+                <target>Art der Maßangabe</target>
             </trans-unit>
             <trans-unit id="object.extent.text" resname="object.extent.text" approved="yes">
                 <source>Text</source>
                 <target>Text</target>
             </trans-unit>
             <trans-unit id="object.extent.text.description" resname="object.extent.text.description" approved="yes">
-                <source>Actual extent or identifier</source>
-                <target>Angabe des Umfangs oder Identifikators</target>
+                <source>Specific extent</source>
+                <target>Konkrete Maßangabe</target>
             </trans-unit>
             <!-- Validator: StringOptionsValidator -->
             <trans-unit id="validator.stringOptions.allowedStringInvalid" resname="validator.stringOptions.allowedStringInvalid" approved="yes">

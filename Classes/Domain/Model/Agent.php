@@ -155,6 +155,17 @@ class Agent extends AbstractHeritage
     protected bool $isContributor = false;
 
     /**
+     * Room to list more specific agents
+     * 
+     * @var ?ObjectStorage<Agent>
+     */
+    #[Lazy()]
+    #[Cascade([
+        'value' => 'remove',
+    ])]
+    protected ?ObjectStorage $agent = null;
+
+    /**
      * Room to list biographical events
      * 
      * @var ?ObjectStorage<Period>
@@ -224,6 +235,7 @@ class Agent extends AbstractHeritage
      */
     public function initializeObject(): void
     {
+        $this->agent ??= new ObjectStorage();
         $this->event ??= new ObjectStorage();
         $this->agentRelation ??= new ObjectStorage();
         $this->locationRelation ??= new ObjectStorage();
@@ -432,6 +444,55 @@ class Agent extends AbstractHeritage
     public function setIsContributor(bool $isContributor): void
     {
         $this->isContributor = $isContributor;
+    }
+
+    /**
+     * Get agent
+     *
+     * @return ObjectStorage<Agent>
+     */
+    public function getAgent(): ?ObjectStorage
+    {
+        return $this->agent;
+    }
+
+    /**
+     * Set agent
+     *
+     * @param ObjectStorage<Agent> $agent
+     */
+    public function setAgent(ObjectStorage $agent): void
+    {
+        $this->agent = $agent;
+    }
+
+    /**
+     * Add agent
+     *
+     * @param Agent $agent
+     */
+    public function addAgent(Agent $agent): void
+    {
+        $this->agent?->attach($agent);
+    }
+
+    /**
+     * Remove agent
+     *
+     * @param Agent $agent
+     */
+    public function removeAgent(Agent $agent): void
+    {
+        $this->agent?->detach($agent);
+    }
+
+    /**
+     * Remove all agents
+     */
+    public function removeAllAgent(): void
+    {
+        $agent = clone $this->agent;
+        $this->agent->removeAll($agent);
     }
 
     /**

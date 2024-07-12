@@ -23,7 +23,6 @@ return [
         'label'                    => 'code',
         'label_alt'                => 'text',
         'label_alt_force'          => true,
-        'descriptionColumn'        => 'description',
         'tstamp'                   => 'tstamp',
         'crdate'                   => 'crdate',
         'delete'                   => 'deleted',
@@ -305,6 +304,27 @@ return [
                 ],
             ],
         ],
+        'keyword' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.keyword',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.keyword.description',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'tx_chfbase_domain_model_keyword',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_keyword}.{#pid}=###CURRENT_PID###',
+                'MM' => 'tx_chfbase_domain_model_tag_keyword_keyword_mm',
+                'multiple' => 1,
+                'size' => 5,
+                'autoSizeMax' => 10,
+                'fieldControl' => [
+                    'addRecord' => [
+                        'disabled' => false,
+                    ],
+                ],
+            ],
+        ],
         'sameAs' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
@@ -416,33 +436,37 @@ return [
         ],
     ],
     'palettes' => [
-        'typeUuid' => [
-            'showitem' => 'type,uuid,',
+        'typeLabelType' => [
+            'showitem' => 'type,labelType,',
         ],
         'textCodeDescription' => [
-            'showitem' => 'text,code,--linebreak--,description',
+            'showitem' => 'text,code,--linebreak--,description,',
         ],
-        'textCodeDescriptionLabelType' => [
-            'showitem' => 'text,code,--linebreak--,description,labelType',
+        'iriUuid' => [
+            'showitem' => 'iri,uuid,',
         ],
-        'parentResourceParentLabelTag' => [
-            'showitem' => 'parentResource,parentLabelTag',
+        'parentLabelTagParentResource' => [
+            'showitem' => 'parentLabelTag,parentResource,',
         ],
     ],
     'types' => [
         '0' => [
-            'showitem' => '--palette--;;typeUuid,--palette--;;textCodeDescription,parentResource,sameAs,',
+            'showitem' => 'type,--palette--;;textCodeDescription,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,sameAs,',
         ],
         'labelTag' => [
-            'showitem' => '--palette--;;typeUuid,--palette--;;textCodeDescriptionLabelType,--palette--;;parentResourceParentLabelTag,sameAs,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLabelOfAgent,asLabelOfLocation,asLabelOfPeriod,asLabelOfFeature,asLabelOfDictionaryEntry,asLabelOfEncyclopediaEntry,asLabelOfBibliographicEntry,asLabelOfVolume,asLabelOfEssay,asLabelOfSingleObject,asLabelOfObjectGroup,asLabelOfFileGroup,',
+            'showitem' => '--palette--;;typeLabelType,--palette--;;textCodeDescription,keyword,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,--palette--;;parentLabelTagParentResource,sameAs,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLabelOfAgent,asLabelOfLocation,asLabelOfPeriod,asLabelOfFeature,asLabelOfDictionaryEntry,asLabelOfEncyclopediaEntry,asLabelOfBibliographicEntry,asLabelOfEssay,asLabelOfVolume,asLabelOfSingleObject,asLabelOfObjectGroup,asLabelOfFileGroup,',
         ],
         'labelTypeTag' => [
-            'showitem' => '--palette--;;typeUuid,--palette--;;textCodeDescription,parentResource,sameAs,
+            'showitem' => 'type,--palette--;;textCodeDescription,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,sameAs,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLabelTypeOfLabelTag,',
         ],
         'licenceTag' => [
-            'showitem' => '--palette--;;typeUuid,--palette--;;textCodeDescription,parentResource,sameAs,
+            'showitem' => 'type,--palette--;;textCodeDescription,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,sameAs,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLicenceOfLicenceRelation,',
         ],
     ],

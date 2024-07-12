@@ -18,6 +18,7 @@ theory.
 In addition, the model provides flexible ``Tag`` objects to group other
 classes, ``Relation`` objects connect classes with qualifications like the role
 of an ``Actor``, and ``SameAs`` classes to connect entities to authority data.
+Simple ``Keyword`` objects may be used to interconnect labels.
 
 ..  _graphical-overview:
 

@@ -89,12 +89,15 @@ class AbstractBase extends AbstractEntity
     /**
      * Number of the current revision of this record
      * 
-     * @var ?int
+     * @var int
      */
     #[Validate([
-        'validator' => 'Number',
+        'validator' => 'NumberRange',
+        'options' => [
+            'minimum' => 1,
+        ],
     ])]
-    protected ?int $revisionNumber = null;
+    protected int $revisionNumber = 1;
 
     /**
      * Date when this record was last revised

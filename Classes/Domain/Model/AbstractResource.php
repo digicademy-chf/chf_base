@@ -141,6 +141,17 @@ class AbstractResource extends AbstractBase
     protected ?ObjectStorage $allTags = null;
 
     /**
+     * List of all keywords compiled in this resource
+     * 
+     * @var ?ObjectStorage<object>
+     */
+    #[Lazy()]
+    #[Cascade([
+        'value' => 'remove',
+    ])]
+    protected ?ObjectStorage $allKeywords = null;
+
+    /**
      * Brief indicator of the last state that was imported successfully
      * 
      * @var string
@@ -181,6 +192,7 @@ class AbstractResource extends AbstractBase
         $this->allPeriods ??= new ObjectStorage();
         $this->allRelations ??= new ObjectStorage();
         $this->allTags ??= new ObjectStorage();
+        $this->allKeywords ??= new ObjectStorage();
     }
 
     /**
@@ -555,6 +567,55 @@ class AbstractResource extends AbstractBase
     {
         $allTags = clone $this->allTags;
         $this->allTags->removeAll($allTags);
+    }
+
+    /**
+     * Get all keywords
+     *
+     * @return ObjectStorage<object>
+     */
+    public function getAllKeywords(): ?ObjectStorage
+    {
+        return $this->allKeywords;
+    }
+
+    /**
+     * Set all keywords
+     *
+     * @param ObjectStorage<object> $allKeywords
+     */
+    public function setAllKeywords(ObjectStorage $allKeywords): void
+    {
+        $this->allKeywords = $allKeywords;
+    }
+
+    /**
+     * Add all keywords
+     *
+     * @param object $allKeywords
+     */
+    public function addAllKeywords(object $allKeywords): void
+    {
+        $this->allKeywords?->attach($allKeywords);
+    }
+
+    /**
+     * Remove all keywords
+     *
+     * @param object $allKeywords
+     */
+    public function removeAllKeywords(object $allKeywords): void
+    {
+        $this->allKeywords?->detach($allKeywords);
+    }
+
+    /**
+     * Remove all all keywords
+     */
+    public function removeAllAllKeywords(): void
+    {
+        $allKeywords = clone $this->allKeywords;
+        $this->allKeywords->removeAll($allKeywords);
     }
 
     /**
