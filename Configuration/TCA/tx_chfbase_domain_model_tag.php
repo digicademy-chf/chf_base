@@ -233,6 +233,7 @@ return [
                 'sortItems' => [
                     'label' => 'asc',
                 ],
+                'default' => 'labelTag',
                 'required' => true,
             ],
         ],

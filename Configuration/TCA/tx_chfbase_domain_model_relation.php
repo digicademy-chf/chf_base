@@ -218,6 +218,7 @@ return [
                 'itemGroups' => [
                     'chfBase' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.chfBase',
                 ],
+                'default' => 'authorshipRelation',
                 'required' => true,
             ],
         ],
@@ -439,7 +440,129 @@ return [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [],
+                'items' => [
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.author',
+                        'value' => 'author',
+                        'group' => 'authorshipRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.editor',
+                        'value' => 'editor',
+                        'group' => 'authorshipRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.translator',
+                        'value' => 'translator',
+                        'group' => 'authorshipRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.contributor',
+                        'value' => 'contributor',
+                        'group' => 'authorshipRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.publisher',
+                        'value' => 'publisher',
+                        'group' => 'authorshipRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.currentLocation',
+                        'value' => 'currentLocation',
+                        'group' => 'locationRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.formerLocation',
+                        'value' => 'formerLocation',
+                        'group' => 'locationRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.agency',
+                        'value' => 'agency',
+                        'group' => 'agentRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.relationship',
+                        'value' => 'relationship',
+                        'group' => 'agentRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.depiction',
+                        'value' => 'depiction',
+                        'group' => 'agentRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.representation',
+                        'value' => 'representation',
+                        'group' => 'agentRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.designer',
+                        'value' => 'designer',
+                        'group' => 'agentRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.artist',
+                        'value' => 'artist',
+                        'group' => 'agentRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.workshop',
+                        'value' => 'workshop',
+                        'group' => 'agentRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.manufacturer',
+                        'value' => 'manufacturer',
+                        'group' => 'agentRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.benefactor',
+                        'value' => 'benefactor',
+                        'group' => 'agentRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.collector',
+                        'value' => 'collector',
+                        'group' => 'agentRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.curator',
+                        'value' => 'curator',
+                        'group' => 'agentRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.restorer',
+                        'value' => 'restorer',
+                        'group' => 'agentRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.allContent',
+                        'value' => 'allContent',
+                        'group' => 'licenceRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.metadata',
+                        'value' => 'metadata',
+                        'group' => 'licenceRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.text',
+                        'value' => 'text',
+                        'group' => 'licenceRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.media',
+                        'value' => 'media',
+                        'group' => 'licenceRelation',
+                    ],
+                ],
+                'itemGroups' => [
+                    'authorshipRelation' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.type.authorshipRelation',
+                    'locationRelation' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.type.locationRelation',
+                    'agentRelation' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.type.agentRelation',
+                    'licenceRelation' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.type.licenceRelation',
+                ],
                 'required' => true,
             ],
         ],
@@ -540,22 +663,27 @@ return [
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.author',
                                 'value' => 'author',
+                                'group' => 'authorshipRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.editor',
                                 'value' => 'editor',
+                                'group' => 'authorshipRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.translator',
                                 'value' => 'translator',
+                                'group' => 'authorshipRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.contributor',
                                 'value' => 'contributor',
+                                'group' => 'authorshipRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.publisher',
                                 'value' => 'publisher',
+                                'group' => 'authorshipRelation',
                             ],
                         ],
                     ],
@@ -572,10 +700,12 @@ return [
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.currentLocation',
                                 'value' => 'currentLocation',
+                                'group' => 'locationRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.formerLocation',
                                 'value' => 'formerLocation',
+                                'group' => 'locationRelation',
                             ],
                         ],
                     ],
@@ -592,50 +722,62 @@ return [
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.agency',
                                 'value' => 'agency',
+                                'group' => 'agentRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.relationship',
                                 'value' => 'relationship',
+                                'group' => 'agentRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.depiction',
                                 'value' => 'depiction',
+                                'group' => 'agentRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.representation',
                                 'value' => 'representation',
+                                'group' => 'agentRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.designer',
                                 'value' => 'designer',
+                                'group' => 'agentRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.artist',
                                 'value' => 'artist',
+                                'group' => 'agentRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.workshop',
                                 'value' => 'workshop',
+                                'group' => 'agentRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.manufacturer',
                                 'value' => 'manufacturer',
+                                'group' => 'agentRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.benefactor',
                                 'value' => 'benefactor',
+                                'group' => 'agentRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.collector',
                                 'value' => 'collector',
+                                'group' => 'agentRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.curator',
                                 'value' => 'curator',
+                                'group' => 'agentRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.restorer',
                                 'value' => 'restorer',
+                                'group' => 'agentRelation',
                             ],
                         ],
                     ],
@@ -652,18 +794,22 @@ return [
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.allContent',
                                 'value' => 'allContent',
+                                'group' => 'licenceRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.metadata',
                                 'value' => 'metadata',
+                                'group' => 'licenceRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.text',
                                 'value' => 'text',
+                                'group' => 'licenceRelation',
                             ],
                             [
                                 'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.media',
                                 'value' => 'media',
+                                'group' => 'licenceRelation',
                             ],
                         ],
                     ],

@@ -273,6 +273,7 @@ return [
                         'type' => [
                             'config' => [
                                 'default' => 'authorshipRelation',
+                                'readOnly' => true,
                             ],
                         ],
                     ],
@@ -309,6 +310,7 @@ return [
                         'type' => [
                             'config' => [
                                 'default' => 'licenceRelation',
+                                'readOnly' => true,
                             ],
                         ],
                     ],

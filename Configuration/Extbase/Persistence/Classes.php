@@ -48,5 +48,3 @@ return [
         'tablenames' => 'tt_content',
     ],
 ];
-
-?>
