@@ -29,7 +29,7 @@ return [
         'sortby'                   => 'sorting',
         'default_sortby'           => 'uuid ASC,type ASC',
         'versioningWS'             => true,
-        'iconfile'                 => 'EXT:chf_base/Resources/Public/Icons/Relation.svg',
+        'iconfile'                 => 'EXT:chf_base/Resources/Public/Icons/TableRelation.svg',
         'origUid'                  => 't3_origuid',
         'hideAtCopy'               => true,
         'languageField'            => 'sys_language_uid',

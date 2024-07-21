@@ -30,7 +30,7 @@ return [
         'sortby'                   => 'sorting',
         'default_sortby'           => 'isHighlight ASC,surname ASC,forename ASC,corporateName ASC,alternativeName ASC,type ASC',
         'versioningWS'             => true,
-        'iconfile'                 => 'EXT:chf_base/Resources/Public/Icons/Agent.svg',
+        'iconfile'                 => 'EXT:chf_base/Resources/Public/Icons/TableAgent.svg',
         'origUid'                  => 't3_origuid',
         'hideAtCopy'               => true,
         'languageField'            => 'sys_language_uid',
@@ -191,6 +191,28 @@ return [
                 'size' => 8,
             ],
         ],
+        #'iri' => [
+            #'exclude' => true,
+            #'l10n_mode' => 'exclude',
+            #'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.iri',
+            #'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.iri.description',
+            #'config' => [
+                #'type' => 'slug',
+                #'size' => 40,
+                #'generatorOptions' => [
+                    #'fields' => [
+                        #'uid',
+                    #],
+                    #'fieldSeparator' => '-',
+                    #'prefixParentPageSlug' => false,
+                #],
+                #'fallbackCharacter' => '',
+                #'prependSlash' => true,
+                #'eval' => 'uniqueInSite',
+                #'default' => '',
+                #'required' => true,
+            #],
+        #],
         'uuid' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',

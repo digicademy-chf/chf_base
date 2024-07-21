@@ -27,7 +27,7 @@ return [
         'sortby'                   => 'sorting',
         'default_sortby'           => 'uri ASC',
         'versioningWS'             => true,
-        'iconfile'                 => 'EXT:chf_base/Resources/Public/Icons/SameAs.svg',
+        'iconfile'                 => 'EXT:chf_base/Resources/Public/Icons/TableSameAs.svg',
         'origUid'                  => 't3_origuid',
         'hideAtCopy'               => true,
         'languageField'            => 'sys_language_uid',

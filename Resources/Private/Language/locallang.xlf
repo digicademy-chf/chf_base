@@ -64,6 +64,12 @@
             <trans-unit id="object.generic.parentResource.description" resname="object.generic.parentResource.description">
                 <source>Resource that this database record is part of</source>
             </trans-unit>
+            <trans-unit id="object.generic.iri" resname="object.generic.iri">
+                <source>IRI</source>
+            </trans-unit>
+            <trans-unit id="object.generic.iri.description" resname="object.generic.iri.description">
+                <source>Site-specific identifier of this record</source>
+            </trans-unit>
             <trans-unit id="object.generic.uuid" resname="object.generic.uuid">
                 <source>UUID</source>
             </trans-unit>
@@ -922,6 +928,17 @@
             <!-- Validator: RegularExpressionValidator -->
             <trans-unit id="validator.regularExpression.noUuid" resname="validator.regularExpression.noUuid">
                 <source>The given value was not a UUID.</source>
+            </trans-unit>
+            <!-- Plugin: generic -->
+            <trans-unit id="plugin.generic.heritage" resname="plugin.generic.heritage">
+                <source>Cultural Heritage Framework</source>
+            </trans-unit>
+            <!-- Plugin: BaseRest -->
+            <trans-unit id="plugin.baseRest" resname="plugin.baseRest">
+                <source>Rest API</source>
+            </trans-unit>
+            <trans-unit id="plugin.baseRest.description" resname="plugin.baseRest.description">
+                <source>Simple API for CHF content</source>
             </trans-unit>
         </body>
     </file>

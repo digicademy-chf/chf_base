@@ -88,13 +88,21 @@
                 <source>Resource that this database record is part of</source>
                 <target>Ressource, zu der dieser Datenbankeintrag gehört</target>
             </trans-unit>
+            <trans-unit id="object.generic.iri" resname="object.generic.iri" approved="yes">
+                <source>IRI</source>
+                <target>IRI</target>
+            </trans-unit>
+            <trans-unit id="object.generic.iri.description" resname="object.generic.iri.description" approved="yes">
+                <source>Site-specific identifier of this record</source>
+                <target>Seitenspezifische Kennung dieses Eintrags</target>
+            </trans-unit>
             <trans-unit id="object.generic.uuid" resname="object.generic.uuid" approved="yes">
                 <source>UUID</source>
                 <target>UUID</target>
             </trans-unit>
             <trans-unit id="object.generic.uuid.description" resname="object.generic.uuid.description" approved="yes">
                 <source>Unique identifier of this record</source>
-                <target>Eindeutiger Identifikator dieses Eintrags</target>
+                <target>Eindeutige Kennung dieses Eintrags</target>
             </trans-unit>
             <trans-unit id="object.generic.label" resname="object.generic.label" approved="yes">
                 <source>Label</source>
@@ -1225,6 +1233,20 @@
             <trans-unit id="validator.regularExpression.noUuid" resname="validator.regularExpression.noUuid" approved="yes">
                 <source>The given value was not a UUID.</source>
                 <target>Der Wert war keine UUID.</target>
+            </trans-unit>
+            <!-- Plugin: generic -->
+            <trans-unit id="plugin.generic.heritage" resname="plugin.generic.heritage" approved="yes">
+                <source>Cultural Heritage Framework</source>
+                <target>Cultural Heritage Framework</target>
+            </trans-unit>
+            <!-- Plugin: BaseRest -->
+            <trans-unit id="plugin.baseRest" resname="plugin.baseRest" approved="yes">
+                <source>Rest API</source>
+                <target>Rest-Schnittstelle</target>
+            </trans-unit>
+            <trans-unit id="plugin.baseRest.description" resname="plugin.baseRest.description" approved="yes">
+                <source>Simple API for CHF content</source>
+                <target>Einfache Schnittstelle für CHF-Inhalte</target>
             </trans-unit>
         </body>
     </file>
