@@ -62,16 +62,10 @@ in a Digital Humanities-focused web app. Using these helpers may require a bit
 of configuration in accordance with their individual documentation. They may
 also be used without any of the CHF data models listed above:
 
-- *Not updated yet:* LOD (resolvable identifiers, content negotiation, RDF
-  statements)
+- *Not in development yet:* `ENDPNT <https://github.com/digicademy/endpnt>`__
+  (SPARQL, OAI-PMH, and SRU endpoints)
 
-  - *Not in development yet:* LOD SRU (generic Search/Retrieve-via-URL API)
-
-  - *Not in development yet:* LOD SPARQL (generic SPARQL API)
-
-  - *Not in development yet:* LOD OAI-PMH (generic OAI-PMH API)
-
-- `QAD <https://github.com/digicademy/qad>`__ (quality assurance for data,
+- `DASH <https://github.com/digicademy/dash>`__ (quality assurance for data,
   dashboards)
 
 - `VIS <https://github.com/digicademy/vis>`__ (a set of visualisations)
