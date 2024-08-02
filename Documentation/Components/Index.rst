@@ -62,10 +62,10 @@ in a Digital Humanities-focused web app. Using these helpers may require a bit
 of configuration in accordance with their individual documentation. They may
 also be used without any of the CHF data models listed above:
 
-- *Not in development yet:* `ENDPNT <https://github.com/digicademy/endpnt>`__
+- *Not in development yet:* `ENDPT <https://github.com/digicademy/endpt>`__
   (SPARQL, OAI-PMH, and SRU endpoints)
 
-- `DASH <https://github.com/digicademy/dash>`__ (quality assurance for data,
+- `DSH <https://github.com/digicademy/dsh>`__ (quality assurance for data,
   dashboards)
 
 - `VIS <https://github.com/digicademy/vis>`__ (a set of visualisations)
