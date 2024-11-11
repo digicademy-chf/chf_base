@@ -12,7 +12,7 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3') or die();
 
-// Customisations of the rich-text editor
+// Rich-text editor customisations
 $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets'] += [
     'chf_base_simple' => 'EXT:chf_base/Configuration/RTE/CHFBaseSimple.yaml',
     'chf_base_regular' => 'EXT:chf_base/Configuration/RTE/CHFBaseRegular.yaml',

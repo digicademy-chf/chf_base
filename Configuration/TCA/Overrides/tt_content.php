@@ -7,6 +7,8 @@ declare(strict_types=1);
 # LICENSE.txt file that was distributed with this source code.
 
 
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+
 defined('TYPO3') or die();
 
 /**
@@ -23,7 +25,7 @@ $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['itemGroups']['herit
     = 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.generic.heritage';
 
 // Add plugin 'BaseRest'
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+ExtensionUtility::registerPlugin(
     'CHFBase',
     'BaseRest',
     'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.baseRest',
