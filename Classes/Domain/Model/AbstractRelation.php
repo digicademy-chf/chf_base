@@ -22,7 +22,7 @@ defined('TYPO3') or die();
 class AbstractRelation extends AbstractEntity
 {
     /**
-     * Whether the record should be visible or not
+     * Record visible or not
      * 
      * @var bool
      */
@@ -30,28 +30,6 @@ class AbstractRelation extends AbstractEntity
         'validator' => 'Boolean',
     ])]
     protected bool $hidden = true;
-
-    /**
-     * Resource that this database record is part of
-     * 
-     * @var ?ObjectStorage<object>
-     */
-    #[Lazy()]
-    protected ?ObjectStorage $parentResource = null;
-
-    /**
-     * Unique identifier of this database record
-     * 
-     * @var string
-     */
-    #[Validate([
-        'validator' => 'RegularExpression',
-        'options' => [
-            'regularExpression' => '^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$',
-            'errorMessage' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:validator.regularExpression.noUuid',
-        ],
-    ])]
-    protected string $uuid = '';
 
     /**
      * Type of relation
@@ -80,6 +58,28 @@ class AbstractRelation extends AbstractEntity
     protected string $description = '';
 
     /**
+     * Resource that this database record is part of
+     * 
+     * @var ?ObjectStorage<object>
+     */
+    #[Lazy()]
+    protected ?ObjectStorage $parentResource = null;
+
+    /**
+     * Unique identifier of this record
+     * 
+     * @var string
+     */
+    #[Validate([
+        'validator' => 'RegularExpression',
+        'options' => [
+            'regularExpression' => '^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$',
+            'errorMessage' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:validator.regularExpression.noUuid',
+        ],
+    ])]
+    protected string $uuid = '';
+
+    /**
      * Construct object
      *
      * @param object $parentResource
@@ -90,9 +90,49 @@ class AbstractRelation extends AbstractEntity
     {
         $this->initializeObject();
 
+        $this->setType('0');
         $this->addParentResource($parentResource);
         $this->setUuid($uuid);
-        $this->setType('0');
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     */
+    public function setType(string $type): void
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     */
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
     }
 
     /**
@@ -190,45 +230,5 @@ class AbstractRelation extends AbstractEntity
     public function setUuid(string $uuid): void
     {
         $this->uuid = $uuid;
-    }
-
-    /**
-     * Get type
-     *
-     * @return string
-     */
-    public function getType(): string
-    {
-        return $this->type;
-    }
-
-    /**
-     * Set type
-     *
-     * @param string $type
-     */
-    public function setType(string $type): void
-    {
-        $this->type = $type;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string
-     */
-    public function getDescription(): string
-    {
-        return $this->description;
-    }
-
-    /**
-     * Set description
-     *
-     * @param string $description
-     */
-    public function setDescription(string $description): void
-    {
-        $this->description = $description;
     }
 }

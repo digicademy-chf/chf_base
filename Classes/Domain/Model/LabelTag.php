@@ -15,6 +15,10 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use Digicademy\CHFBib\Domain\Model\BibliographicEntry;
 use Digicademy\CHFLex\Domain\Model\DictionaryEntry;
 use Digicademy\CHFLex\Domain\Model\EncyclopediaEntry;
+use Digicademy\CHFLex\Domain\Model\InflectedForm;
+use Digicademy\CHFLex\Domain\Model\Sense;
+use Digicademy\CHFLex\Domain\Model\Pronunciation;
+use Digicademy\CHFLex\Domain\Model\Example;
 use Digicademy\CHFMap\Domain\Model\Feature;
 use Digicademy\CHFMedia\Domain\Model\FileGroup;
 use Digicademy\CHFObject\Domain\Model\ObjectGroup;
@@ -30,15 +34,7 @@ defined('TYPO3') or die();
 class LabelTag extends AbstractTag
 {
     /**
-     * Label that this label is part of
-     * 
-     * @var LabelTag|LazyLoadingProxy|null
-     */
-    #[Lazy()]
-    protected LabelTag|LazyLoadingProxy|null $parentLabelTag = null;
-
-    /**
-     * Category that this label belongs to
+     * Group of labels that this one belongs to
      * 
      * @var LabelTypeTag|LazyLoadingProxy|null
      */
@@ -52,6 +48,14 @@ class LabelTag extends AbstractTag
      */
     #[Lazy()]
     protected ?ObjectStorage $keyword;
+
+    /**
+     * Label that this label is part of
+     * 
+     * @var LabelTag|LazyLoadingProxy|null
+     */
+    #[Lazy()]
+    protected LabelTag|LazyLoadingProxy|null $parentLabelTag = null;
 
     /**
      * List of agents that use this label
@@ -102,6 +106,38 @@ class LabelTag extends AbstractTag
     protected ?ObjectStorage $asLabelOfEncyclopediaEntry;
 
     /**
+     * List of inflected forms that use this label
+     * 
+     * @var ?ObjectStorage<InflectedForm>
+     */
+    #[Lazy()]
+    protected ?ObjectStorage $asLabelOfInflectedForm;
+
+    /**
+     * List of senses that use this label
+     * 
+     * @var ?ObjectStorage<Sense>
+     */
+    #[Lazy()]
+    protected ?ObjectStorage $asLabelOfSense;
+
+    /**
+     * List of pronunciations that use this label
+     * 
+     * @var ?ObjectStorage<Pronunciation>
+     */
+    #[Lazy()]
+    protected ?ObjectStorage $asLabelOfPronunciation;
+
+    /**
+     * List of examples that use this label
+     * 
+     * @var ?ObjectStorage<Example>
+     */
+    #[Lazy()]
+    protected ?ObjectStorage $asLabelOfExample;
+
+    /**
      * List of bibliographic entries that use this label
      * 
      * @var ?ObjectStorage<BibliographicEntry>
@@ -110,20 +146,20 @@ class LabelTag extends AbstractTag
     protected ?ObjectStorage $asLabelOfBibliographicEntry;
 
     /**
-     * List of volumes that use this label
-     * 
-     * @var ?ObjectStorage<Volume>
-     */
-    #[Lazy()]
-    protected ?ObjectStorage $asLabelOfVolume;
-
-    /**
      * List of essays that use this label
      * 
      * @var ?ObjectStorage<Essay>
      */
     #[Lazy()]
     protected ?ObjectStorage $asLabelOfEssay;
+
+    /**
+     * List of volumes that use this label
+     * 
+     * @var ?ObjectStorage<Volume>
+     */
+    #[Lazy()]
+    protected ?ObjectStorage $asLabelOfVolume;
 
     /**
      * List of single objects that use this label
@@ -152,15 +188,15 @@ class LabelTag extends AbstractTag
     /**
      * Construct object
      *
+     * @param string $text
+     * @param string $code
      * @param object $parentResource
      * @param string $uuid
-     * @param string $code
-     * @param string $text
      * @return LabelTag
      */
-    public function __construct(object $parentResource, string $uuid, string $code, string $text)
+    public function __construct(string $text, string $code, object $parentResource, string $uuid)
     {
-        parent::__construct($parentResource, $uuid, $code, $text);
+        parent::__construct($text, $code, $parentResource, $uuid);
         $this->initializeObject();
 
         $this->setType('labelTag');
@@ -179,34 +215,11 @@ class LabelTag extends AbstractTag
         $this->asLabelOfDictionaryEntry ??= new ObjectStorage();
         $this->asLabelOfEncyclopediaEntry ??= new ObjectStorage();
         $this->asLabelOfBibliographicEntry ??= new ObjectStorage();
-        $this->asLabelOfVolume ??= new ObjectStorage();
         $this->asLabelOfEssay ??= new ObjectStorage();
+        $this->asLabelOfVolume ??= new ObjectStorage();
         $this->asLabelOfSingleObject ??= new ObjectStorage();
         $this->asLabelOfObjectGroup ??= new ObjectStorage();
         $this->asLabelOfFileGroup ??= new ObjectStorage();
-    }
-
-    /**
-     * Get parent label tag
-     * 
-     * @return LabelTag
-     */
-    public function getParentLabelTag(): LabelTag
-    {
-        if ($this->parentLabelTag instanceof LazyLoadingProxy) {
-            $this->parentLabelTag->_loadRealInstance();
-        }
-        return $this->parentLabelTag;
-    }
-
-    /**
-     * Set parent label tag
-     * 
-     * @param LabelTag
-     */
-    public function setParentLabelTag(LabelTag $parentLabelTag): void
-    {
-        $this->parentLabelTag = $parentLabelTag;
     }
 
     /**
@@ -279,6 +292,29 @@ class LabelTag extends AbstractTag
     {
         $keyword = clone $this->keyword;
         $this->keyword->removeAll($keyword);
+    }
+
+    /**
+     * Get parent label tag
+     * 
+     * @return LabelTag
+     */
+    public function getParentLabelTag(): LabelTag
+    {
+        if ($this->parentLabelTag instanceof LazyLoadingProxy) {
+            $this->parentLabelTag->_loadRealInstance();
+        }
+        return $this->parentLabelTag;
+    }
+
+    /**
+     * Set parent label tag
+     * 
+     * @param LabelTag
+     */
+    public function setParentLabelTag(LabelTag $parentLabelTag): void
+    {
+        $this->parentLabelTag = $parentLabelTag;
     }
 
     /**
@@ -576,6 +612,202 @@ class LabelTag extends AbstractTag
     }
 
     /**
+     * Get as label of inflected form
+     *
+     * @return ObjectStorage<InflectedForm>
+     */
+    public function getAsLabelOfInflectedForm(): ?ObjectStorage
+    {
+        return $this->asLabelOfInflectedForm;
+    }
+
+    /**
+     * Set as label of inflected form
+     *
+     * @param ObjectStorage<InflectedForm> $asLabelOfInflectedForm
+     */
+    public function setAsLabelOfInflectedForm(ObjectStorage $asLabelOfInflectedForm): void
+    {
+        $this->asLabelOfInflectedForm = $asLabelOfInflectedForm;
+    }
+
+    /**
+     * Add as label of inflected form
+     *
+     * @param InflectedForm $asLabelOfInflectedForm
+     */
+    public function addAsLabelOfInflectedForm(InflectedForm $asLabelOfInflectedForm): void
+    {
+        $this->asLabelOfInflectedForm?->attach($asLabelOfInflectedForm);
+    }
+
+    /**
+     * Remove as label of inflected form
+     *
+     * @param InflectedForm $asLabelOfInflectedForm
+     */
+    public function removeAsLabelOfInflectedForm(InflectedForm $asLabelOfInflectedForm): void
+    {
+        $this->asLabelOfInflectedForm?->detach($asLabelOfInflectedForm);
+    }
+
+    /**
+     * Remove all as label of inflected forms
+     */
+    public function removeAllAsLabelOfInflectedForm(): void
+    {
+        $asLabelOfInflectedForm = clone $this->asLabelOfInflectedForm;
+        $this->asLabelOfInflectedForm->removeAll($asLabelOfInflectedForm);
+    }
+
+    /**
+     * Get as label of sense
+     *
+     * @return ObjectStorage<Sense>
+     */
+    public function getAsLabelOfSense(): ?ObjectStorage
+    {
+        return $this->asLabelOfSense;
+    }
+
+    /**
+     * Set as label of sense
+     *
+     * @param ObjectStorage<Sense> $asLabelOfSense
+     */
+    public function setAsLabelOfSense(ObjectStorage $asLabelOfSense): void
+    {
+        $this->asLabelOfSense = $asLabelOfSense;
+    }
+
+    /**
+     * Add as label of sense
+     *
+     * @param Sense $asLabelOfSense
+     */
+    public function addAsLabelOfSense(Sense $asLabelOfSense): void
+    {
+        $this->asLabelOfSense?->attach($asLabelOfSense);
+    }
+
+    /**
+     * Remove as label of sense
+     *
+     * @param Sense $asLabelOfSense
+     */
+    public function removeAsLabelOfSense(Sense $asLabelOfSense): void
+    {
+        $this->asLabelOfSense?->detach($asLabelOfSense);
+    }
+
+    /**
+     * Remove all as label of senses
+     */
+    public function removeAllAsLabelOfSense(): void
+    {
+        $asLabelOfSense = clone $this->asLabelOfSense;
+        $this->asLabelOfSense->removeAll($asLabelOfSense);
+    }
+
+    /**
+     * Get as label of pronunciation
+     *
+     * @return ObjectStorage<Pronunciation>
+     */
+    public function getAsLabelOfPronunciation(): ?ObjectStorage
+    {
+        return $this->asLabelOfPronunciation;
+    }
+
+    /**
+     * Set as label of pronunciation
+     *
+     * @param ObjectStorage<Pronunciation> $asLabelOfPronunciation
+     */
+    public function setAsLabelOfPronunciation(ObjectStorage $asLabelOfPronunciation): void
+    {
+        $this->asLabelOfPronunciation = $asLabelOfPronunciation;
+    }
+
+    /**
+     * Add as label of pronunciation
+     *
+     * @param Pronunciation $asLabelOfPronunciation
+     */
+    public function addAsLabelOfPronunciation(Pronunciation $asLabelOfPronunciation): void
+    {
+        $this->asLabelOfPronunciation?->attach($asLabelOfPronunciation);
+    }
+
+    /**
+     * Remove as label of pronunciation
+     *
+     * @param Pronunciation $asLabelOfPronunciation
+     */
+    public function removeAsLabelOfPronunciation(Pronunciation $asLabelOfPronunciation): void
+    {
+        $this->asLabelOfPronunciation?->detach($asLabelOfPronunciation);
+    }
+
+    /**
+     * Remove all as label of pronunciations
+     */
+    public function removeAllAsLabelOfPronunciation(): void
+    {
+        $asLabelOfPronunciation = clone $this->asLabelOfPronunciation;
+        $this->asLabelOfPronunciation->removeAll($asLabelOfPronunciation);
+    }
+
+    /**
+     * Get as label of example
+     *
+     * @return ObjectStorage<Example>
+     */
+    public function getAsLabelOfExample(): ?ObjectStorage
+    {
+        return $this->asLabelOfExample;
+    }
+
+    /**
+     * Set as label of example
+     *
+     * @param ObjectStorage<Example> $asLabelOfExample
+     */
+    public function setAsLabelOfExample(ObjectStorage $asLabelOfExample): void
+    {
+        $this->asLabelOfExample = $asLabelOfExample;
+    }
+
+    /**
+     * Add as label of example
+     *
+     * @param Example $asLabelOfExample
+     */
+    public function addAsLabelOfExample(Example $asLabelOfExample): void
+    {
+        $this->asLabelOfExample?->attach($asLabelOfExample);
+    }
+
+    /**
+     * Remove as label of example
+     *
+     * @param Example $asLabelOfExample
+     */
+    public function removeAsLabelOfExample(Example $asLabelOfExample): void
+    {
+        $this->asLabelOfExample?->detach($asLabelOfExample);
+    }
+
+    /**
+     * Remove all as label of examples
+     */
+    public function removeAllAsLabelOfExample(): void
+    {
+        $asLabelOfExample = clone $this->asLabelOfExample;
+        $this->asLabelOfExample->removeAll($asLabelOfExample);
+    }
+
+    /**
      * Get as label of bibliographic entry
      *
      * @return ObjectStorage<BibliographicEntry>
@@ -625,55 +857,6 @@ class LabelTag extends AbstractTag
     }
 
     /**
-     * Get as label of volume
-     *
-     * @return ObjectStorage<Volume>
-     */
-    public function getAsLabelOfVolume(): ?ObjectStorage
-    {
-        return $this->asLabelOfVolume;
-    }
-
-    /**
-     * Set as label of volume
-     *
-     * @param ObjectStorage<Volume> $asLabelOfVolume
-     */
-    public function setAsLabelOfVolume(ObjectStorage $asLabelOfVolume): void
-    {
-        $this->asLabelOfVolume = $asLabelOfVolume;
-    }
-
-    /**
-     * Add as label of volume
-     *
-     * @param Volume $asLabelOfVolume
-     */
-    public function addAsLabelOfVolume(Volume $asLabelOfVolume): void
-    {
-        $this->asLabelOfVolume?->attach($asLabelOfVolume);
-    }
-
-    /**
-     * Remove as label of volume
-     *
-     * @param Volume $asLabelOfVolume
-     */
-    public function removeAsLabelOfVolume(Volume $asLabelOfVolume): void
-    {
-        $this->asLabelOfVolume?->detach($asLabelOfVolume);
-    }
-
-    /**
-     * Remove all as label of volumes
-     */
-    public function removeAllAsLabelOfVolume(): void
-    {
-        $asLabelOfVolume = clone $this->asLabelOfVolume;
-        $this->asLabelOfVolume->removeAll($asLabelOfVolume);
-    }
-
-    /**
      * Get as label of essay
      *
      * @return ObjectStorage<Essay>
@@ -720,6 +903,55 @@ class LabelTag extends AbstractTag
     {
         $asLabelOfEssay = clone $this->asLabelOfEssay;
         $this->asLabelOfEssay->removeAll($asLabelOfEssay);
+    }
+
+    /**
+     * Get as label of volume
+     *
+     * @return ObjectStorage<Volume>
+     */
+    public function getAsLabelOfVolume(): ?ObjectStorage
+    {
+        return $this->asLabelOfVolume;
+    }
+
+    /**
+     * Set as label of volume
+     *
+     * @param ObjectStorage<Volume> $asLabelOfVolume
+     */
+    public function setAsLabelOfVolume(ObjectStorage $asLabelOfVolume): void
+    {
+        $this->asLabelOfVolume = $asLabelOfVolume;
+    }
+
+    /**
+     * Add as label of volume
+     *
+     * @param Volume $asLabelOfVolume
+     */
+    public function addAsLabelOfVolume(Volume $asLabelOfVolume): void
+    {
+        $this->asLabelOfVolume?->attach($asLabelOfVolume);
+    }
+
+    /**
+     * Remove as label of volume
+     *
+     * @param Volume $asLabelOfVolume
+     */
+    public function removeAsLabelOfVolume(Volume $asLabelOfVolume): void
+    {
+        $this->asLabelOfVolume?->detach($asLabelOfVolume);
+    }
+
+    /**
+     * Remove all as label of volumes
+     */
+    public function removeAllAsLabelOfVolume(): void
+    {
+        $asLabelOfVolume = clone $this->asLabelOfVolume;
+        $this->asLabelOfVolume->removeAll($asLabelOfVolume);
     }
 
     /**

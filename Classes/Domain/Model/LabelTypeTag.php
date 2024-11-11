@@ -30,15 +30,15 @@ class LabelTypeTag extends AbstractTag
     /**
      * Construct object
      *
+     * @param string $text
+     * @param string $code
      * @param object $parentResource
      * @param string $uuid
-     * @param string $code
-     * @param string $text
      * @return LabelTypeTag
      */
-    public function __construct(object $parentResource, string $uuid, string $code, string $text)
+    public function __construct(string $text, string $code, object $parentResource, string $uuid)
     {
-        parent::__construct($parentResource, $uuid, $code, $text);
+        parent::__construct($text, $code, $parentResource, $uuid);
         $this->initializeObject();
 
         $this->setType('labelTypeTag');

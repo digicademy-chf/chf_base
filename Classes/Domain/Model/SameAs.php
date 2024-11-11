@@ -20,7 +20,7 @@ defined('TYPO3') or die();
 class SameAs extends AbstractEntity
 {
     /**
-     * Whether the record should be visible or not
+     * Record visible or not
      * 
      * @var bool
      */

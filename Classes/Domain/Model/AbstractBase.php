@@ -23,7 +23,7 @@ defined('TYPO3') or die();
 class AbstractBase extends AbstractEntity
 {
     /**
-     * Whether the record should be visible or not
+     * Record visible or not
      * 
      * @var bool
      */
@@ -33,7 +33,7 @@ class AbstractBase extends AbstractEntity
     protected bool $hidden = true;
 
     /**
-     * Unique identifier of this database record
+     * Unique identifier of this record
      * 
      * @var string
      */
@@ -47,7 +47,7 @@ class AbstractBase extends AbstractEntity
     protected string $uuid = '';
 
     /**
-     * Reference web address to identify an entity across the web
+     * Authoritative web address to identify an entity across the web
      * 
      * @var ?ObjectStorage<SameAs>
      */
@@ -58,36 +58,21 @@ class AbstractBase extends AbstractEntity
     protected ?ObjectStorage $sameAs = null;
 
     /**
-     * Authorship of this database record described by a relation to agents
-     * 
-     * @var ?ObjectStorage<AuthorshipRelation>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $authorshipRelation = null;
-
-    /**
-     * Licence of this record described by a relation
-     * 
-     * @var ?ObjectStorage<LicenceRelation>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $licenceRelation = null;
-
-    /**
-     * Date when this record was published
+     * Date of first publication
      * 
      * @var ?\DateTime
      */
     protected ?\DateTime $publicationDate = null;
 
     /**
-     * Number of the current revision of this record
+     * Date of the last revision
+     * 
+     * @var ?\DateTime
+     */
+    protected ?\DateTime $revisionDate = null;
+
+    /**
+     * Number of the current revision
      * 
      * @var int
      */
@@ -98,13 +83,6 @@ class AbstractBase extends AbstractEntity
         ],
     ])]
     protected int $revisionNumber = 1;
-
-    /**
-     * Date when this record was last revised
-     * 
-     * @var ?\DateTime
-     */
-    protected ?\DateTime $revisionDate = null;
 
     /**
      * Note for internal usage among the editorial team
@@ -118,6 +96,28 @@ class AbstractBase extends AbstractEntity
         ],
     ])]
     protected string $editorialNote = '';
+
+    /**
+     * Authorship of this record
+     * 
+     * @var ?ObjectStorage<AuthorshipRelation>
+     */
+    #[Lazy()]
+    #[Cascade([
+        'value' => 'remove',
+    ])]
+    protected ?ObjectStorage $authorshipRelation = null;
+
+    /**
+     * Licence of this record (individual override)
+     * 
+     * @var ?ObjectStorage<LicenceRelation>
+     */
+    #[Lazy()]
+    #[Cascade([
+        'value' => 'remove',
+    ])]
+    protected ?ObjectStorage $licenceRelation = null;
 
     /**
      * URI or other identifier of the imported original
@@ -245,6 +245,86 @@ class AbstractBase extends AbstractEntity
     }
 
     /**
+     * Get publication date
+     *
+     * @return ?\DateTime
+     */
+    public function getPublicationDate(): ?\DateTime
+    {
+        return $this->publicationDate;
+    }
+
+    /**
+     * Set publication date
+     *
+     * @param \DateTime $publicationDate
+     */
+    public function setPublicationDate(\DateTime $publicationDate): void
+    {
+        $this->publicationDate = $publicationDate;
+    }
+
+    /**
+     * Get revision date
+     *
+     * @return ?\DateTime
+     */
+    public function getRevisionDate(): ?\DateTime
+    {
+        return $this->revisionDate;
+    }
+
+    /**
+     * Set revision date
+     *
+     * @param \DateTime $revisionDate
+     */
+    public function setRevisionDate(\DateTime $revisionDate): void
+    {
+        $this->revisionDate = $revisionDate;
+    }
+
+    /**
+     * Get revision number
+     *
+     * @return int
+     */
+    public function getRevisionNumber(): int
+    {
+        return $this->revisionNumber;
+    }
+
+    /**
+     * Set revision number
+     *
+     * @param int $revisionNumber
+     */
+    public function setRevisionNumber(int $revisionNumber): void
+    {
+        $this->revisionNumber = $revisionNumber;
+    }
+
+    /**
+     * Get editorial note
+     *
+     * @return string
+     */
+    public function getEditorialNote(): string
+    {
+        return $this->editorialNote;
+    }
+
+    /**
+     * Set editorial note
+     *
+     * @param string $editorialNote
+     */
+    public function setEditorialNote(string $editorialNote): void
+    {
+        $this->editorialNote = $editorialNote;
+    }
+
+    /**
      * Get authorship relation
      *
      * @return ObjectStorage<AuthorshipRelation>
@@ -340,86 +420,6 @@ class AbstractBase extends AbstractEntity
     {
         $licenceRelation = clone $this->licenceRelation;
         $this->licenceRelation->removeAll($licenceRelation);
-    }
-
-    /**
-     * Get publication date
-     *
-     * @return ?\DateTime
-     */
-    public function getPublicationDate(): ?\DateTime
-    {
-        return $this->publicationDate;
-    }
-
-    /**
-     * Set publication date
-     *
-     * @param \DateTime $publicationDate
-     */
-    public function setPublicationDate(\DateTime $publicationDate): void
-    {
-        $this->publicationDate = $publicationDate;
-    }
-
-    /**
-     * Get revision number
-     *
-     * @return int
-     */
-    public function getRevisionNumber(): int
-    {
-        return $this->revisionNumber;
-    }
-
-    /**
-     * Set revision number
-     *
-     * @param int $revisionNumber
-     */
-    public function setRevisionNumber(int $revisionNumber): void
-    {
-        $this->revisionNumber = $revisionNumber;
-    }
-
-    /**
-     * Get revision date
-     *
-     * @return ?\DateTime
-     */
-    public function getRevisionDate(): ?\DateTime
-    {
-        return $this->revisionDate;
-    }
-
-    /**
-     * Set revision date
-     *
-     * @param \DateTime $revisionDate
-     */
-    public function setRevisionDate(\DateTime $revisionDate): void
-    {
-        $this->revisionDate = $revisionDate;
-    }
-
-    /**
-     * Get editorial note
-     *
-     * @return string
-     */
-    public function getEditorialNote(): string
-    {
-        return $this->editorialNote;
-    }
-
-    /**
-     * Set editorial note
-     *
-     * @param string $editorialNote
-     */
-    public function setEditorialNote(string $editorialNote): void
-    {
-        $this->editorialNote = $editorialNote;
     }
 
     /**

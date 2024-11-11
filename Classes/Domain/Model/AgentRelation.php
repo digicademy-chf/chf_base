@@ -31,7 +31,7 @@ class AgentRelation extends AbstractRelation
     protected object|null $record = null;
 
     /**
-     * Agent to relate to the record
+     * Agents to relate to the record
      * 
      * @var ?ObjectStorage<Agent>
      */
@@ -68,13 +68,13 @@ class AgentRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param object $parentResource
-     * @param string $uuid
      * @param object $record
      * @param Agent $agent
+     * @param object $parentResource
+     * @param string $uuid
      * @return AgentRelation
      */
-    public function __construct(object $parentResource, string $uuid, object $record, Agent $agent)
+    public function __construct(object $record, Agent $agent, object $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
         $this->initializeObject();

@@ -152,28 +152,6 @@ return [
                 ],
             ],
         ],
-        'parentTable' => [
-            'config' => [
-                'type' => 'passthrough',
-            ],
-        ],
-        'parent' => [
-            'config' => [
-                'type' => 'passthrough',
-            ],
-        ],
-        'type' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.description',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'items' => [],
-                'required' => true,
-            ],
-        ],
         'text' => [
             'exclude' => true,
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.text',
@@ -187,6 +165,82 @@ return [
                     'allowLanguageSynchronization' => true,
                 ],
                 'required' => true,
+            ],
+        ],
+        'type' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.description',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.url',
+                        'value' => 'url',
+                        'group' => 'chfBase',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.doi',
+                        'value' => 'doi',
+                        'group' => 'chfBase',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.urn',
+                        'value' => 'urn',
+                        'group' => 'chfBase',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.edition',
+                        'value' => 'edition',
+                        'group' => 'chfBase',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.version',
+                        'value' => 'version',
+                        'group' => 'chfBase',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.volume',
+                        'value' => 'volume',
+                        'group' => 'chfBase',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.issue',
+                        'value' => 'issue',
+                        'group' => 'chfBase',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.issn',
+                        'value' => 'issn',
+                        'group' => 'chfBase',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.isbn',
+                        'value' => 'isbn',
+                        'group' => 'chfBase',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.callNumber',
+                        'value' => 'callNumber',
+                        'group' => 'chfBase',
+                    ],
+                ],
+                'itemGroups' => [
+                    'chfBase' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.chfBase',
+                ],
+                'required' => true,
+            ],
+        ],
+        'parentTable' => [
+            'config' => [
+                'type' => 'passthrough',
+            ],
+        ],
+        'parent' => [
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
     ],

@@ -20,7 +20,7 @@ defined('TYPO3') or die();
 class Extent extends AbstractEntity
 {
     /**
-     * Whether the record should be visible or not
+     * Record visible or not
      * 
      * @var bool
      */
@@ -30,20 +30,7 @@ class Extent extends AbstractEntity
     protected bool $hidden = true;
 
     /**
-     * Type of extent or identifier
-     * 
-     * @var string
-     */
-    #[Validate([
-        'validator' => 'StringLength', # Validates for string length instead of string values to allow other models to add further types
-        'options' => [
-            'maximum' => 255,
-        ],
-    ])]
-    protected string $type = '';
-
-    /**
-     * Actual extent or identifier
+     * Specific extent
      * 
      * @var string
      */
@@ -56,16 +43,29 @@ class Extent extends AbstractEntity
     protected string $text = '';
 
     /**
+     * Type of extent
+     * 
+     * @var string
+     */
+    #[Validate([
+        'validator' => 'StringLength', # Validates for string length instead of string values to allow other models to add further types
+        'options' => [
+            'maximum' => 255,
+        ],
+    ])]
+    protected string $type = '';
+
+    /**
      * Construct object
      *
-     * @param string $type
      * @param string $text
+     * @param string $type
      * @return Extent
      */
-    public function __construct(string $type, string $text)
+    public function __construct(string $text, string $type)
     {
-        $this->setType($type);
         $this->setText($text);
+        $this->setType($type);
     }
 
     /**
@@ -89,26 +89,6 @@ class Extent extends AbstractEntity
     }
 
     /**
-     * Get type
-     *
-     * @return string
-     */
-    public function getType(): string
-    {
-        return $this->type;
-    }
-
-    /**
-     * Set type
-     *
-     * @param string $type
-     */
-    public function setType(string $type): void
-    {
-        $this->type = $type;
-    }
-
-    /**
      * Get text
      *
      * @return string
@@ -126,5 +106,25 @@ class Extent extends AbstractEntity
     public function setText(string $text): void
     {
         $this->text = $text;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     */
+    public function setType(string $type): void
+    {
+        $this->type = $type;
     }
 }

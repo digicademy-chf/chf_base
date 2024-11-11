@@ -31,7 +31,7 @@ class LocationRelation extends AbstractRelation
     protected object|null $record = null;
 
     /**
-     * Location to relate to the record
+     * Locations to relate to the record
      * 
      * @var ?ObjectStorage<Location>
      */
@@ -48,7 +48,6 @@ class LocationRelation extends AbstractRelation
         'options'   => [
             'allowed' => [
                 '0',
-                'currentLocation',
                 'formerLocation',
             ],
         ],
@@ -58,13 +57,13 @@ class LocationRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param object $parentResource
-     * @param string $uuid
      * @param object $record
      * @param Location $location
+     * @param object $parentResource
+     * @param string $uuid
      * @return LocationRelation
      */
-    public function __construct(object $parentResource, string $uuid, object $record, Location $location)
+    public function __construct(object $record, Location $location, object $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
         $this->initializeObject();

@@ -25,24 +25,6 @@ defined('TYPO3') or die();
 class AbstractHeritage extends AbstractBase
 {
     /**
-     * Resource that this database record is part of
-     * 
-     * @var ?ObjectStorage<object>
-     */
-    #[Lazy()]
-    protected ?ObjectStorage $parentResource = null;
-
-    /**
-     * Makes this record available at the top of lists
-     * 
-     * @var bool
-     */
-    #[Validate([
-        'validator' => 'Boolean',
-    ])]
-    protected bool $isHighlight = false;
-
-    /**
      * Label to group the database record into
      * 
      * @var ?ObjectStorage<LabelTag>
@@ -95,7 +77,18 @@ class AbstractHeritage extends AbstractBase
     protected ?ObjectStorage $file;
 
     /**
-     * Links relevant to this database record described by a relation
+     * Sources of this database record
+     * 
+     * @var ?ObjectStorage<SourceRelation>
+     */
+    #[Lazy()]
+    #[Cascade([
+        'value' => 'remove',
+    ])]
+    protected ?ObjectStorage $sourceRelation = null;
+
+    /**
+     * Links relevant to this database record
      * 
      * @var ?ObjectStorage<LinkRelation>
      */
@@ -106,7 +99,7 @@ class AbstractHeritage extends AbstractBase
     protected ?ObjectStorage $linkRelation = null;
 
     /**
-     * Publication of this database record described by a relation
+     * Relevant text publications in the database
      * 
      * @var ?ObjectStorage<PublicationRelation>
      */
@@ -117,15 +110,33 @@ class AbstractHeritage extends AbstractBase
     protected ?ObjectStorage $publicationRelation = null;
 
     /**
-     * Source of this database record described by a relation
+     * Lists this record without its content
      * 
-     * @var ?ObjectStorage<SourceRelation>
+     * @var bool
+     */
+    #[Validate([
+        'validator' => 'Boolean',
+    ])]
+    protected bool $isTeaser = false;
+
+    /**
+     * Makes this record available at the top of lists
+     * 
+     * @var bool
+     */
+    #[Validate([
+        'validator' => 'Boolean',
+    ])]
+    protected bool $isHighlight = false;
+
+    /**
+     * Resource that this database record is part of
+     * 
+     * @var ?ObjectStorage<object>
      */
     #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $sourceRelation = null;
+    protected ?ObjectStorage $parentResource = null;
+
     /**
      * Check list for editing this record
      * 
@@ -179,84 +190,15 @@ class AbstractHeritage extends AbstractBase
      */
     public function initializeObject(): void
     {
-        $this->parentResource ??= new ObjectStorage();
         $this->label ??= new ObjectStorage();
         $this->contentElement ??= new ObjectStorage();
         $this->footnote ??= new ObjectStorage();
         $this->media ??= new ObjectStorage();
         $this->file ??= new ObjectStorage();
+        $this->sourceRelation ??= new ObjectStorage();
         $this->linkRelation ??= new ObjectStorage();
         $this->publicationRelation ??= new ObjectStorage();
-        $this->sourceRelation ??= new ObjectStorage();
-    }
-
-    /**
-     * Get parent resource
-     *
-     * @return ObjectStorage<object>
-     */
-    public function getParentResource(): ?ObjectStorage
-    {
-        return $this->parentResource;
-    }
-
-    /**
-     * Set parent resource
-     *
-     * @param ObjectStorage<object> $parentResource
-     */
-    public function setParentResource(ObjectStorage $parentResource): void
-    {
-        $this->parentResource = $parentResource;
-    }
-
-    /**
-     * Add parent resource
-     *
-     * @param object $parentResource
-     */
-    public function addParentResource(object $parentResource): void
-    {
-        $this->parentResource?->attach($parentResource);
-    }
-
-    /**
-     * Remove parent resource
-     *
-     * @param object $parentResource
-     */
-    public function removeParentResource(object $parentResource): void
-    {
-        $this->parentResource?->detach($parentResource);
-    }
-
-    /**
-     * Remove all parent resources
-     */
-    public function removeAllParentResource(): void
-    {
-        $parentResource = clone $this->parentResource;
-        $this->parentResource->removeAll($parentResource);
-    }
-
-    /**
-     * Get is highlight
-     *
-     * @return bool
-     */
-    public function getIsHighlight(): bool
-    {
-        return $this->isHighlight;
-    }
-
-    /**
-     * Set is highlight
-     *
-     * @param bool $isHighlight
-     */
-    public function setIsHighlight(bool $isHighlight): void
-    {
-        $this->isHighlight = $isHighlight;
+        $this->parentResource ??= new ObjectStorage();
     }
 
     /**
@@ -505,6 +447,55 @@ class AbstractHeritage extends AbstractBase
     }
 
     /**
+     * Get source relation
+     *
+     * @return ObjectStorage<SourceRelation>
+     */
+    public function getSourceRelation(): ?ObjectStorage
+    {
+        return $this->sourceRelation;
+    }
+
+    /**
+     * Set source relation
+     *
+     * @param ObjectStorage<SourceRelation> $sourceRelation
+     */
+    public function setSourceRelation(ObjectStorage $sourceRelation): void
+    {
+        $this->sourceRelation = $sourceRelation;
+    }
+
+    /**
+     * Add source relation
+     *
+     * @param SourceRelation $sourceRelation
+     */
+    public function addSourceRelation(SourceRelation $sourceRelation): void
+    {
+        $this->sourceRelation?->attach($sourceRelation);
+    }
+
+    /**
+     * Remove source relation
+     *
+     * @param SourceRelation $sourceRelation
+     */
+    public function removeSourceRelation(SourceRelation $sourceRelation): void
+    {
+        $this->sourceRelation?->detach($sourceRelation);
+    }
+
+    /**
+     * Remove all source relations
+     */
+    public function removeAllSourceRelation(): void
+    {
+        $sourceRelation = clone $this->sourceRelation;
+        $this->sourceRelation->removeAll($sourceRelation);
+    }
+
+    /**
      * Get link relation
      *
      * @return ObjectStorage<LinkRelation>
@@ -603,52 +594,92 @@ class AbstractHeritage extends AbstractBase
     }
 
     /**
-     * Get source relation
+     * Get is teaser
      *
-     * @return ObjectStorage<SourceRelation>
+     * @return bool
      */
-    public function getSourceRelation(): ?ObjectStorage
+    public function getIsTeaser(): bool
     {
-        return $this->sourceRelation;
+        return $this->isTeaser;
     }
 
     /**
-     * Set source relation
+     * Set is teaser
      *
-     * @param ObjectStorage<SourceRelation> $sourceRelation
+     * @param bool $isTeaser
      */
-    public function setSourceRelation(ObjectStorage $sourceRelation): void
+    public function setIsTeaser(bool $isTeaser): void
     {
-        $this->sourceRelation = $sourceRelation;
+        $this->isTeaser = $isTeaser;
     }
 
     /**
-     * Add source relation
+     * Get is highlight
      *
-     * @param SourceRelation $sourceRelation
+     * @return bool
      */
-    public function addSourceRelation(SourceRelation $sourceRelation): void
+    public function getIsHighlight(): bool
     {
-        $this->sourceRelation?->attach($sourceRelation);
+        return $this->isHighlight;
     }
 
     /**
-     * Remove source relation
+     * Set is highlight
      *
-     * @param SourceRelation $sourceRelation
+     * @param bool $isHighlight
      */
-    public function removeSourceRelation(SourceRelation $sourceRelation): void
+    public function setIsHighlight(bool $isHighlight): void
     {
-        $this->sourceRelation?->detach($sourceRelation);
+        $this->isHighlight = $isHighlight;
     }
 
     /**
-     * Remove all source relations
+     * Get parent resource
+     *
+     * @return ObjectStorage<object>
      */
-    public function removeAllSourceRelation(): void
+    public function getParentResource(): ?ObjectStorage
     {
-        $sourceRelation = clone $this->sourceRelation;
-        $this->sourceRelation->removeAll($sourceRelation);
+        return $this->parentResource;
+    }
+
+    /**
+     * Set parent resource
+     *
+     * @param ObjectStorage<object> $parentResource
+     */
+    public function setParentResource(ObjectStorage $parentResource): void
+    {
+        $this->parentResource = $parentResource;
+    }
+
+    /**
+     * Add parent resource
+     *
+     * @param object $parentResource
+     */
+    public function addParentResource(object $parentResource): void
+    {
+        $this->parentResource?->attach($parentResource);
+    }
+
+    /**
+     * Remove parent resource
+     *
+     * @param object $parentResource
+     */
+    public function removeParentResource(object $parentResource): void
+    {
+        $this->parentResource?->detach($parentResource);
+    }
+
+    /**
+     * Remove all parent resources
+     */
+    public function removeAllParentResource(): void
+    {
+        $parentResource = clone $this->parentResource;
+        $this->parentResource->removeAll($parentResource);
     }
 
     /**

@@ -32,6 +32,7 @@ class PeriodRepository extends Repository
         'notAfter'        => QueryInterface::ORDER_ASCENDING,
         'text'            => QueryInterface::ORDER_ASCENDING,
         'alternativeText' => QueryInterface::ORDER_ASCENDING,
+        'displayDate'     => QueryInterface::ORDER_ASCENDING,
         'type'            => QueryInterface::ORDER_ASCENDING,
     ];
 }

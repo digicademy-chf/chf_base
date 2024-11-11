@@ -150,6 +150,21 @@ return [
                 ],
             ],
         ],
+        'text' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.keyword.text',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.keyword.text.description',
+            'config' => [
+                'type' => 'input',
+                'size' => 40,
+                'max' => 255,
+                'eval' => 'trim',
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
+                'required' => true,
+            ],
+        ],
         'parentResource' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
@@ -162,21 +177,6 @@ return [
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_resource}.{#pid}=###CURRENT_PID###',
                 'sortItems' => [
                     'label' => 'asc',
-                ],
-                'required' => true,
-            ],
-        ],
-        'text' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.keyword.text',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.keyword.text.description',
-            'config' => [
-                'type' => 'input',
-                'size' => 40,
-                'max' => 255,
-                'eval' => 'trim',
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
                 ],
                 'required' => true,
             ],

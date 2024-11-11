@@ -24,14 +24,6 @@ defined('TYPO3') or die();
 class Period extends AbstractHeritage
 {
     /**
-     * Longer period that this period is part of
-     * 
-     * @var Period|LazyLoadingProxy|null
-     */
-    #[Lazy()]
-    protected Period|LazyLoadingProxy|null $parentPeriod = null;
-
-    /**
      * Type of period
      * 
      * @var string
@@ -49,6 +41,21 @@ class Period extends AbstractHeritage
         ],
     ])]
     protected string $type = 'date';
+
+    /**
+     * Name of the calendar used to generate dates
+     * 
+     * @var string
+     */
+    #[Validate([
+        'validator' => StringOptionsValidator::class,
+        'options'   => [
+            'allowed' => [
+                'gregorian',
+            ],
+        ],
+    ])]
+    protected string $calendar = 'gregorian';
 
     /**
      * Name of the period or event
@@ -75,6 +82,13 @@ class Period extends AbstractHeritage
         ],
     ])]
     protected string $alternativeText = '';
+
+    /**
+     * Exact date of an event
+     * 
+     * @var ?\DateTime
+     */
+    protected ?\DateTime $when = null;
 
     /**
      * Text version of the date
@@ -104,13 +118,6 @@ class Period extends AbstractHeritage
     protected ?\DateTime $to = null;
 
     /**
-     * Exact date of an event
-     * 
-     * @var ?\DateTime
-     */
-    protected ?\DateTime $when = null;
-
-    /**
      * Earliest possible date for very fuzzy periods or events
      * 
      * @var ?\DateTime
@@ -125,21 +132,6 @@ class Period extends AbstractHeritage
     protected ?\DateTime $notAfter = null;
 
     /**
-     * Name of the calendar used to generate dates
-     * 
-     * @var string
-     */
-    #[Validate([
-        'validator' => StringOptionsValidator::class,
-        'options'   => [
-            'allowed' => [
-                'gregorian',
-            ],
-        ],
-    ])]
-    protected string $calendar = 'gregorian';
-
-    /**
      * Room to list more specific historical events
      * 
      * @var ?ObjectStorage<Period>
@@ -151,7 +143,7 @@ class Period extends AbstractHeritage
     protected ?ObjectStorage $event = null;
 
     /**
-     * Agent of this database record described by a relation
+     * Agent related to this record
      * 
      * @var ?ObjectStorage<AgentRelation>
      */
@@ -162,7 +154,7 @@ class Period extends AbstractHeritage
     protected ?ObjectStorage $agentRelation = null;
 
     /**
-     * Location of this database record described by a relation
+     * Location related to this record
      * 
      * @var ?ObjectStorage<LocationRelation>
      */
@@ -173,15 +165,23 @@ class Period extends AbstractHeritage
     protected ?ObjectStorage $locationRelation = null;
 
     /**
+     * Longer period that this period is part of
+     * 
+     * @var Period|LazyLoadingProxy|null
+     */
+    #[Lazy()]
+    protected Period|LazyLoadingProxy|null $parentPeriod = null;
+
+    /**
      * Construct object
      *
-     * @param object $parentResource
-     * @param string $uuid
      * @param string $type
      * @param string $text
+     * @param object $parentResource
+     * @param string $uuid
      * @return Period
      */
-    public function __construct(object $parentResource, string $uuid, string $type, string $text)
+    public function __construct(string $type, string $text, object $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
         $this->initializeObject();
@@ -198,29 +198,6 @@ class Period extends AbstractHeritage
         $this->event ??= new ObjectStorage();
         $this->agentRelation ??= new ObjectStorage();
         $this->locationRelation ??= new ObjectStorage();
-    }
-
-    /**
-     * Get parent period
-     * 
-     * @return Period
-     */
-    public function getParentPeriod(): Period
-    {
-        if ($this->parentPeriod instanceof LazyLoadingProxy) {
-            $this->parentPeriod->_loadRealInstance();
-        }
-        return $this->parentPeriod;
-    }
-
-    /**
-     * Set parent period
-     * 
-     * @param Period
-     */
-    public function setParentPeriod(Period $parentPeriod): void
-    {
-        $this->parentPeriod = $parentPeriod;
     }
 
     /**
@@ -241,6 +218,26 @@ class Period extends AbstractHeritage
     public function setType(string $type): void
     {
         $this->type = $type;
+    }
+
+    /**
+     * Get calendar
+     *
+     * @return string
+     */
+    public function getCalendar(): string
+    {
+        return $this->calendar;
+    }
+
+    /**
+     * Set calendar
+     *
+     * @param string $calendar
+     */
+    public function setCalendar(string $calendar): void
+    {
+        $this->calendar = $calendar;
     }
 
     /**
@@ -281,6 +278,26 @@ class Period extends AbstractHeritage
     public function setAlternativeText(string $alternativeText): void
     {
         $this->alternativeText = $alternativeText;
+    }
+
+    /**
+     * Get when
+     *
+     * @return ?\DateTime
+     */
+    public function getWhen(): ?\DateTime
+    {
+        return $this->when;
+    }
+
+    /**
+     * Set when
+     *
+     * @param \DateTime $when
+     */
+    public function setWhen(\DateTime $when): void
+    {
+        $this->when = $when;
     }
 
     /**
@@ -344,26 +361,6 @@ class Period extends AbstractHeritage
     }
 
     /**
-     * Get when
-     *
-     * @return ?\DateTime
-     */
-    public function getWhen(): ?\DateTime
-    {
-        return $this->when;
-    }
-
-    /**
-     * Set when
-     *
-     * @param \DateTime $when
-     */
-    public function setWhen(\DateTime $when): void
-    {
-        $this->when = $when;
-    }
-
-    /**
      * Get not before
      *
      * @return ?\DateTime
@@ -401,26 +398,6 @@ class Period extends AbstractHeritage
     public function setNotAfter(\DateTime $notAfter): void
     {
         $this->notAfter = $notAfter;
-    }
-
-    /**
-     * Get calendar
-     *
-     * @return string
-     */
-    public function getCalendar(): string
-    {
-        return $this->calendar;
-    }
-
-    /**
-     * Set calendar
-     *
-     * @param string $calendar
-     */
-    public function setCalendar(string $calendar): void
-    {
-        $this->calendar = $calendar;
     }
 
     /**
@@ -568,5 +545,28 @@ class Period extends AbstractHeritage
     {
         $locationRelation = clone $this->locationRelation;
         $this->locationRelation->removeAll($locationRelation);
+    }
+
+    /**
+     * Get parent period
+     * 
+     * @return Period
+     */
+    public function getParentPeriod(): Period
+    {
+        if ($this->parentPeriod instanceof LazyLoadingProxy) {
+            $this->parentPeriod->_loadRealInstance();
+        }
+        return $this->parentPeriod;
+    }
+
+    /**
+     * Set parent period
+     * 
+     * @param Period
+     */
+    public function setParentPeriod(Period $parentPeriod): void
+    {
+        $this->parentPeriod = $parentPeriod;
     }
 }

@@ -18,6 +18,8 @@ use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
 use Digicademy\CHFMap\Domain\Model\Feature;
 use Digicademy\CHFMap\Domain\Model\FeatureCollection;
 use Digicademy\CHFMap\Domain\Model\MapResource;
+use Digicademy\CHFObject\Domain\Model\SingleObject;
+use Digicademy\CHFObject\Domain\Model\ObjectGroup;
 
 defined('TYPO3') or die();
 
@@ -26,14 +28,6 @@ defined('TYPO3') or die();
  */
 class Location extends AbstractHeritage
 {
-    /**
-     * Larger area that this location is part of
-     * 
-     * @var Location|LazyLoadingProxy|null
-     */
-    #[Lazy()]
-    protected Location|LazyLoadingProxy|null $parentLocation = null;
-
     /**
      * Type of location
      * 
@@ -79,75 +73,6 @@ class Location extends AbstractHeritage
         ],
     ])]
     protected string $alternativeName = '';
-
-    /**
-     * Marks this location as historical
-     * 
-     * @var bool
-     */
-    #[Validate([
-        'validator' => 'Boolean',
-    ])]
-    protected bool $isHistorical = false;
-
-    /**
-     * Marks this location as imaginary
-     * 
-     * @var bool
-     */
-    #[Validate([
-        'validator' => 'Boolean',
-    ])]
-    protected bool $isImaginary = false;
-
-    /**
-     * Feature to use as geodata of this location
-     * 
-     * @var Feature|FeatureCollection|LazyLoadingProxy|null
-     */
-    #[Lazy()]
-    protected Feature|FeatureCollection|LazyLoadingProxy|null $geodata = null;
-
-    /**
-     * Map depicting this location
-     * 
-     * @var MapResource|LazyLoadingProxy|null
-     */
-    #[Lazy()]
-    protected MapResource|LazyLoadingProxy|null $floorPlan = null;
-
-    /**
-     * Room to list more specific locations
-     * 
-     * @var ?ObjectStorage<Location>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $location = null;
-
-    /**
-     * Room to list historical events
-     * 
-     * @var ?ObjectStorage<Period>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $event = null;
-
-    /**
-     * Agent of this database record described by a relation
-     * 
-     * @var ?ObjectStorage<AgentRelation>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $agentRelation = null;
 
     /**
      * Street as part of the location's address
@@ -202,6 +127,105 @@ class Location extends AbstractHeritage
     protected string $addressCity = '';
 
     /**
+     * Feature to use as geodata of this location
+     * 
+     * @var Feature|FeatureCollection|LazyLoadingProxy|null
+     */
+    #[Lazy()]
+    protected Feature|FeatureCollection|LazyLoadingProxy|null $geodata = null;
+
+    /**
+     * Map depicting this location
+     * 
+     * @var MapResource|LazyLoadingProxy|null
+     */
+    #[Lazy()]
+    protected MapResource|LazyLoadingProxy|null $floorPlan = null;
+
+    /**
+     * Room to list more specific locations
+     * 
+     * @var ?ObjectStorage<Location>
+     */
+    #[Lazy()]
+    #[Cascade([
+        'value' => 'remove',
+    ])]
+    protected ?ObjectStorage $location = null;
+
+    /**
+     * Room to list single objects as part of this location
+     * 
+     * @var ?ObjectStorage<SingleObject>
+     */
+    #[Lazy()]
+    #[Cascade([
+        'value' => 'remove',
+    ])]
+    protected ?ObjectStorage $object = null;
+
+    /**
+     * Room to list object groups as part of this location
+     * 
+     * @var ?ObjectStorage<ObjectGroup>
+     */
+    #[Lazy()]
+    #[Cascade([
+        'value' => 'remove',
+    ])]
+    protected ?ObjectStorage $objectGroup = null;
+
+    /**
+     * Room to list historical events
+     * 
+     * @var ?ObjectStorage<Period>
+     */
+    #[Lazy()]
+    #[Cascade([
+        'value' => 'remove',
+    ])]
+    protected ?ObjectStorage $event = null;
+
+    /**
+     * Agent related to this record
+     * 
+     * @var ?ObjectStorage<AgentRelation>
+     */
+    #[Lazy()]
+    #[Cascade([
+        'value' => 'remove',
+    ])]
+    protected ?ObjectStorage $agentRelation = null;
+
+    /**
+     * Marks this location as historical
+     * 
+     * @var bool
+     */
+    #[Validate([
+        'validator' => 'Boolean',
+    ])]
+    protected bool $isHistorical = false;
+
+    /**
+     * Marks this location as imaginary
+     * 
+     * @var bool
+     */
+    #[Validate([
+        'validator' => 'Boolean',
+    ])]
+    protected bool $isImaginary = false;
+
+    /**
+     * Larger area that this location is part of
+     * 
+     * @var Location|LazyLoadingProxy|null
+     */
+    #[Lazy()]
+    protected Location|LazyLoadingProxy|null $parentLocation = null;
+
+    /**
      * List of location relations that use this location
      * 
      * @var ?ObjectStorage<LocationRelation>
@@ -212,13 +236,13 @@ class Location extends AbstractHeritage
     /**
      * Construct object
      *
-     * @param object $parentResource
-     * @param string $uuid
      * @param string $type
      * @param string $name
+     * @param object $parentResource
+     * @param string $uuid
      * @return Location
      */
-    public function __construct(object $parentResource, string $uuid, string $type, string $name)
+    public function __construct(string $type, string $name, object $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
         $this->initializeObject();
@@ -233,32 +257,11 @@ class Location extends AbstractHeritage
     public function initializeObject(): void
     {
         $this->location ??= new ObjectStorage();
+        $this->object ??= new ObjectStorage();
+        $this->objectGroup ??= new ObjectStorage();
         $this->event ??= new ObjectStorage();
         $this->agentRelation ??= new ObjectStorage();
         $this->asLocationOfLocationRelation ??= new ObjectStorage();
-    }
-
-    /**
-     * Get parent location
-     * 
-     * @return Location
-     */
-    public function getParentLocation(): Location
-    {
-        if ($this->parentLocation instanceof LazyLoadingProxy) {
-            $this->parentLocation->_loadRealInstance();
-        }
-        return $this->parentLocation;
-    }
-
-    /**
-     * Set parent location
-     * 
-     * @param Location
-     */
-    public function setParentLocation(Location $parentLocation): void
-    {
-        $this->parentLocation = $parentLocation;
     }
 
     /**
@@ -322,43 +325,83 @@ class Location extends AbstractHeritage
     }
 
     /**
-     * Get is historical
+     * Get address street
      *
-     * @return bool
+     * @return string
      */
-    public function getIsHistorical(): bool
+    public function getAddressStreet(): string
     {
-        return $this->isHistorical;
+        return $this->addressStreet;
     }
 
     /**
-     * Set is historical
+     * Set address street
      *
-     * @param bool $isHistorical
+     * @param string $addressStreet
      */
-    public function setIsHistorical(bool $isHistorical): void
+    public function setAddressStreet(string $addressStreet): void
     {
-        $this->isHistorical = $isHistorical;
+        $this->addressStreet = $addressStreet;
     }
 
     /**
-     * Get is imaginary
+     * Get address number
      *
-     * @return bool
+     * @return string
      */
-    public function getIsImaginary(): bool
+    public function getAddressNumber(): string
     {
-        return $this->isImaginary;
+        return $this->addressNumber;
     }
 
     /**
-     * Set is imaginary
+     * Set address number
      *
-     * @param bool $isImaginary
+     * @param string $addressNumber
      */
-    public function setIsImaginary(bool $isImaginary): void
+    public function setAddressNumber(string $addressNumber): void
     {
-        $this->isImaginary = $isImaginary;
+        $this->addressNumber = $addressNumber;
+    }
+
+    /**
+     * Get address ZIP
+     *
+     * @return string
+     */
+    public function getAddressZip(): string
+    {
+        return $this->addressZip;
+    }
+
+    /**
+     * Set address ZIP
+     *
+     * @param string $addressZip
+     */
+    public function setAddressZip(string $addressZip): void
+    {
+        $this->addressZip = $addressZip;
+    }
+
+    /**
+     * Get address city
+     *
+     * @return string
+     */
+    public function getAddressCity(): string
+    {
+        return $this->addressCity;
+    }
+
+    /**
+     * Set address city
+     *
+     * @param string $addressCity
+     */
+    public function setAddressCity(string $addressCity): void
+    {
+        $this->addressCity = $addressCity;
     }
 
     /**
@@ -454,6 +497,104 @@ class Location extends AbstractHeritage
     {
         $location = clone $this->location;
         $this->location->removeAll($location);
+    }
+
+    /**
+     * Get object
+     *
+     * @return ObjectStorage<SingleObject>
+     */
+    public function getObject(): ?ObjectStorage
+    {
+        return $this->object;
+    }
+
+    /**
+     * Set object
+     *
+     * @param ObjectStorage<SingleObject> $object
+     */
+    public function setObject(ObjectStorage $object): void
+    {
+        $this->object = $object;
+    }
+
+    /**
+     * Add object
+     *
+     * @param SingleObject $object
+     */
+    public function addObject(SingleObject $object): void
+    {
+        $this->object?->attach($object);
+    }
+
+    /**
+     * Remove object
+     *
+     * @param SingleObject $object
+     */
+    public function removeObject(SingleObject $object): void
+    {
+        $this->object?->detach($object);
+    }
+
+    /**
+     * Remove all objects
+     */
+    public function removeAllObject(): void
+    {
+        $object = clone $this->object;
+        $this->object->removeAll($object);
+    }
+
+    /**
+     * Get object group
+     *
+     * @return ObjectStorage<ObjectGroup>
+     */
+    public function getObjectGroup(): ?ObjectStorage
+    {
+        return $this->objectGroup;
+    }
+
+    /**
+     * Set object group
+     *
+     * @param ObjectStorage<ObjectGroup> $objectGroup
+     */
+    public function setObjectGroup(ObjectStorage $objectGroup): void
+    {
+        $this->objectGroup = $objectGroup;
+    }
+
+    /**
+     * Add object group
+     *
+     * @param ObjectGroup $objectGroup
+     */
+    public function addObjectGroup(ObjectGroup $objectGroup): void
+    {
+        $this->objectGroup?->attach($objectGroup);
+    }
+
+    /**
+     * Remove object group
+     *
+     * @param ObjectGroup $objectGroup
+     */
+    public function removeObjectGroup(ObjectGroup $objectGroup): void
+    {
+        $this->objectGroup?->detach($objectGroup);
+    }
+
+    /**
+     * Remove all object groups
+     */
+    public function removeAllObjectGroup(): void
+    {
+        $objectGroup = clone $this->objectGroup;
+        $this->objectGroup->removeAll($objectGroup);
     }
 
     /**
@@ -555,83 +696,66 @@ class Location extends AbstractHeritage
     }
 
     /**
-     * Get address street
+     * Get is historical
      *
-     * @return string
+     * @return bool
      */
-    public function getAddressStreet(): string
+    public function getIsHistorical(): bool
     {
-        return $this->addressStreet;
+        return $this->isHistorical;
     }
 
     /**
-     * Set address street
+     * Set is historical
      *
-     * @param string $addressStreet
+     * @param bool $isHistorical
      */
-    public function setAddressStreet(string $addressStreet): void
+    public function setIsHistorical(bool $isHistorical): void
     {
-        $this->addressStreet = $addressStreet;
+        $this->isHistorical = $isHistorical;
     }
 
     /**
-     * Get address number
+     * Get is imaginary
      *
-     * @return string
+     * @return bool
      */
-    public function getAddressNumber(): string
+    public function getIsImaginary(): bool
     {
-        return $this->addressNumber;
+        return $this->isImaginary;
     }
 
     /**
-     * Set address number
+     * Set is imaginary
      *
-     * @param string $addressNumber
+     * @param bool $isImaginary
      */
-    public function setAddressNumber(string $addressNumber): void
+    public function setIsImaginary(bool $isImaginary): void
     {
-        $this->addressNumber = $addressNumber;
+        $this->isImaginary = $isImaginary;
     }
 
     /**
-     * Get address ZIP
-     *
-     * @return string
+     * Get parent location
+     * 
+     * @return Location
      */
-    public function getAddressZip(): string
+    public function getParentLocation(): Location
     {
-        return $this->addressZip;
+        if ($this->parentLocation instanceof LazyLoadingProxy) {
+            $this->parentLocation->_loadRealInstance();
+        }
+        return $this->parentLocation;
     }
 
     /**
-     * Set address ZIP
-     *
-     * @param string $addressZip
+     * Set parent location
+     * 
+     * @param Location
      */
-    public function setAddressZip(string $addressZip): void
+    public function setParentLocation(Location $parentLocation): void
     {
-        $this->addressZip = $addressZip;
-    }
-
-    /**
-     * Get address city
-     *
-     * @return string
-     */
-    public function getAddressCity(): string
-    {
-        return $this->addressCity;
-    }
-
-    /**
-     * Set address city
-     *
-     * @param string $addressCity
-     */
-    public function setAddressCity(string $addressCity): void
-    {
-        $this->addressCity = $addressCity;
+        $this->parentLocation = $parentLocation;
     }
 
     /**

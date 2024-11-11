@@ -24,14 +24,6 @@ defined('TYPO3') or die();
 class Agent extends AbstractHeritage
 {
     /**
-     * Larger agent that this agent is part of
-     * 
-     * @var Agent|LazyLoadingProxy|null
-     */
-    #[Lazy()]
-    protected Agent|LazyLoadingProxy|null $parentAgent = null;
-
-    /**
      * Specific type of agent
      * 
      * @var string
@@ -132,30 +124,15 @@ class Agent extends AbstractHeritage
      * @var string
      */
     #[Validate([
-        'validator' => StringOptionsValidator::class,
+        'validator' => 'StringLength',
         'options'   => [
-            'allowed' => [
-                '0',
-                'female',
-                'male',
-                'nonBinary',
-            ],
+            'maximum' => 255,
         ],
     ])]
-    protected string $gender = '0';
+    protected string $gender = '';
 
     /**
-     * Makes this agent selectable as an author
-     * 
-     * @var bool
-     */
-    #[Validate([
-        'validator' => 'Boolean',
-    ])]
-    protected bool $isContributor = false;
-
-    /**
-     * Room to list more specific agents
+     * Room to list employees or organisational units
      * 
      * @var ?ObjectStorage<Agent>
      */
@@ -177,7 +154,7 @@ class Agent extends AbstractHeritage
     protected ?ObjectStorage $event = null;
 
     /**
-     * Agent of this database record described by a relation
+     * Agent related to this record
      * 
      * @var ?ObjectStorage<AgentRelation>
      */
@@ -188,7 +165,7 @@ class Agent extends AbstractHeritage
     protected ?ObjectStorage $agentRelation = null;
 
     /**
-     * Location of this database record described by a relation
+     * Location related to this record
      * 
      * @var ?ObjectStorage<LocationRelation>
      */
@@ -197,6 +174,24 @@ class Agent extends AbstractHeritage
         'value' => 'remove',
     ])]
     protected ?ObjectStorage $locationRelation = null;
+
+    /**
+     * Makes this agent selectable as an author
+     * 
+     * @var bool
+     */
+    #[Validate([
+        'validator' => 'Boolean',
+    ])]
+    protected bool $isContributor = false;
+
+    /**
+     * Larger agent that this agent is part of
+     * 
+     * @var Agent|LazyLoadingProxy|null
+     */
+    #[Lazy()]
+    protected Agent|LazyLoadingProxy|null $parentAgent = null;
 
     /**
      * List of agent relations that use this agent
@@ -217,12 +212,12 @@ class Agent extends AbstractHeritage
     /**
      * Construct object
      *
+     * @param string $type
      * @param object $parentResource
      * @param string $uuid
-     * @param string $type
      * @return Agent
      */
-    public function __construct(object $parentResource, string $uuid, string $type)
+    public function __construct(string $type, object $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
         $this->initializeObject();
@@ -241,29 +236,6 @@ class Agent extends AbstractHeritage
         $this->locationRelation ??= new ObjectStorage();
         $this->asAgentOfAgentRelation ??= new ObjectStorage();
         $this->asContributorOfAuthorshipRelation ??= new ObjectStorage();
-    }
-
-    /**
-     * Get parent agent
-     * 
-     * @return Agent
-     */
-    public function getParentAgent(): Agent
-    {
-        if ($this->parentAgent instanceof LazyLoadingProxy) {
-            $this->parentAgent->_loadRealInstance();
-        }
-        return $this->parentAgent;
-    }
-
-    /**
-     * Set parent agent
-     * 
-     * @param Agent
-     */
-    public function setParentAgent(Agent $parentAgent): void
-    {
-        $this->parentAgent = $parentAgent;
     }
 
     /**
@@ -424,26 +396,6 @@ class Agent extends AbstractHeritage
     public function setGender(string $gender): void
     {
         $this->gender = $gender;
-    }
-
-    /**
-     * Get is contributor
-     *
-     * @return bool
-     */
-    public function getIsContributor(): bool
-    {
-        return $this->isContributor;
-    }
-
-    /**
-     * Set is contributor
-     *
-     * @param bool $isContributor
-     */
-    public function setIsContributor(bool $isContributor): void
-    {
-        $this->isContributor = $isContributor;
     }
 
     /**
@@ -640,6 +592,49 @@ class Agent extends AbstractHeritage
     {
         $locationRelation = clone $this->locationRelation;
         $this->locationRelation->removeAll($locationRelation);
+    }
+
+    /**
+     * Get is contributor
+     *
+     * @return bool
+     */
+    public function getIsContributor(): bool
+    {
+        return $this->isContributor;
+    }
+
+    /**
+     * Set is contributor
+     *
+     * @param bool $isContributor
+     */
+    public function setIsContributor(bool $isContributor): void
+    {
+        $this->isContributor = $isContributor;
+    }
+
+    /**
+     * Get parent agent
+     * 
+     * @return Agent
+     */
+    public function getParentAgent(): Agent
+    {
+        if ($this->parentAgent instanceof LazyLoadingProxy) {
+            $this->parentAgent->_loadRealInstance();
+        }
+        return $this->parentAgent;
+    }
+
+    /**
+     * Set parent agent
+     * 
+     * @param Agent
+     */
+    public function setParentAgent(Agent $parentAgent): void
+    {
+        $this->parentAgent = $parentAgent;
     }
 
     /**

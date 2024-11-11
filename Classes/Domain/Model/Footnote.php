@@ -20,7 +20,7 @@ defined('TYPO3') or die();
 class Footnote extends AbstractEntity
 {
     /**
-     * Whether the record should be visible or not
+     * Record visible or not
      * 
      * @var bool
      */
@@ -30,7 +30,17 @@ class Footnote extends AbstractEntity
     protected bool $hidden = true;
 
     /**
-     * Unique identifier of this database record
+     * Footnote content
+     * 
+     * @var string
+     */
+    #[Validate([
+        'validator' => 'String',
+    ])]
+    protected string $text = '';
+
+    /**
+     * Unique identifier of this record
      * 
      * @var string
      */
@@ -44,26 +54,16 @@ class Footnote extends AbstractEntity
     protected string $uuid = '';
 
     /**
-     * Footnote content
-     * 
-     * @var string
-     */
-    #[Validate([
-        'validator' => 'String',
-    ])]
-    protected string $text = '';
-
-    /**
      * Construct object
      *
-     * @param string $uuid
      * @param string $text
+     * @param string $uuid
      * @return Footnote
      */
-    public function __construct(string $uuid, string $text)
+    public function __construct(string $text, string $uuid)
     {
-        $this->setUuid($uuid);
         $this->setText($text);
+        $this->setUuid($uuid);
     }
 
     /**
@@ -87,26 +87,6 @@ class Footnote extends AbstractEntity
     }
 
     /**
-     * Get UUID
-     *
-     * @return string
-     */
-    public function getUuid(): string
-    {
-        return $this->uuid;
-    }
-
-    /**
-     * Set UUID
-     *
-     * @param string $uuid
-     */
-    public function setUuid(string $uuid): void
-    {
-        $this->uuid = $uuid;
-    }
-
-    /**
      * Get text
      *
      * @return string
@@ -124,5 +104,25 @@ class Footnote extends AbstractEntity
     public function setText(string $text): void
     {
         $this->text = $text;
+    }
+
+    /**
+     * Get UUID
+     *
+     * @return string
+     */
+    public function getUuid(): string
+    {
+        return $this->uuid;
+    }
+
+    /**
+     * Set UUID
+     *
+     * @param string $uuid
+     */
+    public function setUuid(string $uuid): void
+    {
+        $this->uuid = $uuid;
     }
 }

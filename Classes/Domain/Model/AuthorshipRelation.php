@@ -31,7 +31,7 @@ class AuthorshipRelation extends AbstractRelation
     protected object|null $record = null;
 
     /**
-     * Contributor to relate to the record
+     * Contributors to relate to the record
      * 
      * @var ?ObjectStorage<Agent>
      */
@@ -60,13 +60,13 @@ class AuthorshipRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param object $parentResource
-     * @param string $uuid
      * @param object $record
      * @param Agent $contributor
+     * @param object $parentResource
+     * @param string $uuid
      * @return AuthorshipRelation
      */
-    public function __construct(object $parentResource, string $uuid, object $record, Agent $contributor)
+    public function __construct(object $record, Agent $contributor, object $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
         $this->initializeObject();

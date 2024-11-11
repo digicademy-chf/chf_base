@@ -86,17 +86,6 @@ class AbstractResource extends AbstractBase
     protected ?ObjectStorage $allAgents = null;
 
     /**
-     * List of all file collections compiled in this resource
-     * 
-     * @var ?ObjectStorage<FileGroup>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $allFileGroups = null;
-
-    /**
      * List of all locations compiled in this resource
      * 
      * @var ?ObjectStorage<Location>
@@ -117,17 +106,6 @@ class AbstractResource extends AbstractBase
         'value' => 'remove',
     ])]
     protected ?ObjectStorage $allPeriods = null;
-
-    /**
-     * List of all relations compiled in this resource
-     * 
-     * @var ?ObjectStorage<object>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $allRelations = null;
 
     /**
      * List of all tags compiled in this resource
@@ -152,6 +130,28 @@ class AbstractResource extends AbstractBase
     protected ?ObjectStorage $allKeywords = null;
 
     /**
+     * List of all relations compiled in this resource
+     * 
+     * @var ?ObjectStorage<object>
+     */
+    #[Lazy()]
+    #[Cascade([
+        'value' => 'remove',
+    ])]
+    protected ?ObjectStorage $allRelations = null;
+
+    /**
+     * List of all file collections compiled in this resource
+     * 
+     * @var ?ObjectStorage<FileGroup>
+     */
+    #[Lazy()]
+    #[Cascade([
+        'value' => 'remove',
+    ])]
+    protected ?ObjectStorage $allFileGroups = null;
+
+    /**
      * Brief indicator of the last state that was imported successfully
      * 
      * @var string
@@ -167,16 +167,15 @@ class AbstractResource extends AbstractBase
     /**
      * Construct object
      *
-     * @param string $uuid
      * @param string $langCode
+     * @param string $uuid
      * @return AbstractResource
      */
-    public function __construct(string $uuid, string $langCode)
+    public function __construct(string $langCode, string $uuid)
     {
         parent::__construct($uuid);
         $this->initializeObject();
 
-        $this->setUuid($uuid);
         $this->setType('0');
         $this->setLangCode($langCode);
     }
@@ -187,12 +186,12 @@ class AbstractResource extends AbstractBase
     public function initializeObject(): void
     {
         $this->allAgents ??= new ObjectStorage();
-        $this->allFileGroups ??= new ObjectStorage();
         $this->allLocations ??= new ObjectStorage();
         $this->allPeriods ??= new ObjectStorage();
-        $this->allRelations ??= new ObjectStorage();
         $this->allTags ??= new ObjectStorage();
         $this->allKeywords ??= new ObjectStorage();
+        $this->allRelations ??= new ObjectStorage();
+        $this->allFileGroups ??= new ObjectStorage();
     }
 
     /**
@@ -325,55 +324,6 @@ class AbstractResource extends AbstractBase
     }
 
     /**
-     * Get all file groups
-     *
-     * @return ObjectStorage<FileGroup>
-     */
-    public function getAllFileGroups(): ?ObjectStorage
-    {
-        return $this->allFileGroups;
-    }
-
-    /**
-     * Set all file groups
-     *
-     * @param ObjectStorage<FileGroup> $allFileGroups
-     */
-    public function setAllFileGroups(ObjectStorage $allFileGroups): void
-    {
-        $this->allFileGroups = $allFileGroups;
-    }
-
-    /**
-     * Add all file groups
-     *
-     * @param FileGroup $allFileGroups
-     */
-    public function addAllFileGroups(FileGroup $allFileGroups): void
-    {
-        $this->allFileGroups?->attach($allFileGroups);
-    }
-
-    /**
-     * Remove all file groups
-     *
-     * @param FileGroup $allFileGroups
-     */
-    public function removeAllFileGroups(FileGroup $allFileGroups): void
-    {
-        $this->allFileGroups?->detach($allFileGroups);
-    }
-
-    /**
-     * Remove all all file groups
-     */
-    public function removeAllAllFileGroups(): void
-    {
-        $allFileGroups = clone $this->allFileGroups;
-        $this->allFileGroups->removeAll($allFileGroups);
-    }
-
-    /**
      * Get all locations
      *
      * @return ObjectStorage<Location>
@@ -472,55 +422,6 @@ class AbstractResource extends AbstractBase
     }
 
     /**
-     * Get all relations
-     *
-     * @return ObjectStorage<object>
-     */
-    public function getAllRelations(): ?ObjectStorage
-    {
-        return $this->allRelations;
-    }
-
-    /**
-     * Set all relations
-     *
-     * @param ObjectStorage<object> $allRelations
-     */
-    public function setAllRelations(ObjectStorage $allRelations): void
-    {
-        $this->allRelations = $allRelations;
-    }
-
-    /**
-     * Add all relations
-     *
-     * @param object $allRelations
-     */
-    public function addAllRelations(object $allRelations): void
-    {
-        $this->allRelations?->attach($allRelations);
-    }
-
-    /**
-     * Remove all relations
-     *
-     * @param object $allRelations
-     */
-    public function removeAllRelations(object $allRelations): void
-    {
-        $this->allRelations?->detach($allRelations);
-    }
-
-    /**
-     * Remove all all relations
-     */
-    public function removeAllAllRelations(): void
-    {
-        $allRelations = clone $this->allRelations;
-        $this->allRelations->removeAll($allRelations);
-    }
-
-    /**
      * Get all tags
      *
      * @return ObjectStorage<object>
@@ -616,6 +517,104 @@ class AbstractResource extends AbstractBase
     {
         $allKeywords = clone $this->allKeywords;
         $this->allKeywords->removeAll($allKeywords);
+    }
+
+    /**
+     * Get all relations
+     *
+     * @return ObjectStorage<object>
+     */
+    public function getAllRelations(): ?ObjectStorage
+    {
+        return $this->allRelations;
+    }
+
+    /**
+     * Set all relations
+     *
+     * @param ObjectStorage<object> $allRelations
+     */
+    public function setAllRelations(ObjectStorage $allRelations): void
+    {
+        $this->allRelations = $allRelations;
+    }
+
+    /**
+     * Add all relations
+     *
+     * @param object $allRelations
+     */
+    public function addAllRelations(object $allRelations): void
+    {
+        $this->allRelations?->attach($allRelations);
+    }
+
+    /**
+     * Remove all relations
+     *
+     * @param object $allRelations
+     */
+    public function removeAllRelations(object $allRelations): void
+    {
+        $this->allRelations?->detach($allRelations);
+    }
+
+    /**
+     * Remove all all relations
+     */
+    public function removeAllAllRelations(): void
+    {
+        $allRelations = clone $this->allRelations;
+        $this->allRelations->removeAll($allRelations);
+    }
+
+    /**
+     * Get all file groups
+     *
+     * @return ObjectStorage<FileGroup>
+     */
+    public function getAllFileGroups(): ?ObjectStorage
+    {
+        return $this->allFileGroups;
+    }
+
+    /**
+     * Set all file groups
+     *
+     * @param ObjectStorage<FileGroup> $allFileGroups
+     */
+    public function setAllFileGroups(ObjectStorage $allFileGroups): void
+    {
+        $this->allFileGroups = $allFileGroups;
+    }
+
+    /**
+     * Add all file groups
+     *
+     * @param FileGroup $allFileGroups
+     */
+    public function addAllFileGroups(FileGroup $allFileGroups): void
+    {
+        $this->allFileGroups?->attach($allFileGroups);
+    }
+
+    /**
+     * Remove all file groups
+     *
+     * @param FileGroup $allFileGroups
+     */
+    public function removeAllFileGroups(FileGroup $allFileGroups): void
+    {
+        $this->allFileGroups?->detach($allFileGroups);
+    }
+
+    /**
+     * Remove all all file groups
+     */
+    public function removeAllAllFileGroups(): void
+    {
+        $allFileGroups = clone $this->allFileGroups;
+        $this->allFileGroups->removeAll($allFileGroups);
     }
 
     /**

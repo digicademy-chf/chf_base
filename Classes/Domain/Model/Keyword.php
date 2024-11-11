@@ -22,7 +22,7 @@ defined('TYPO3') or die();
 class Keyword extends AbstractEntity
 {
     /**
-     * Whether the record should be visible or not
+     * Record visible or not
      * 
      * @var bool
      */
@@ -30,6 +30,16 @@ class Keyword extends AbstractEntity
         'validator' => 'Boolean',
     ])]
     protected bool $hidden = true;
+
+    /**
+     * Title of this keyword
+     * 
+     * @var string
+     */
+    #[Validate([
+        'validator' => 'String',
+    ])]
+    protected string $text = '';
 
     /**
      * Resource that this database record is part of
@@ -40,17 +50,7 @@ class Keyword extends AbstractEntity
     protected ?ObjectStorage $parentResource = null;
 
     /**
-     * Name of this keyword
-     * 
-     * @var string
-     */
-    #[Validate([
-        'validator' => 'String',
-    ])]
-    protected string $text = '';
-
-    /**
-     * List of label tags that use this keyword
+     * List of labels that use this keyword
      * 
      * @var ?ObjectStorage<LabelTag>
      */
@@ -60,16 +60,16 @@ class Keyword extends AbstractEntity
     /**
      * Construct object
      *
-     * @param object $parentResource
      * @param string $text
+     * @param object $parentResource
      * @return Keyword
      */
-    public function __construct(object $parentResource, string $text)
+    public function __construct(string $text, object $parentResource)
     {
         $this->initializeObject();
 
-        $this->addParentResource($parentResource);
         $this->setText($text);
+        $this->addParentResource($parentResource);
     }
 
     /**
@@ -99,6 +99,26 @@ class Keyword extends AbstractEntity
     public function setHidden(bool $hidden): void
     {
         $this->hidden = $hidden;
+    }
+
+    /**
+     * Get text
+     *
+     * @return string
+     */
+    public function getText(): string
+    {
+        return $this->text;
+    }
+
+    /**
+     * Set text
+     *
+     * @param string $text
+     */
+    public function setText(string $text): void
+    {
+        $this->text = $text;
     }
 
     /**
@@ -148,26 +168,6 @@ class Keyword extends AbstractEntity
     {
         $parentResource = clone $this->parentResource;
         $this->parentResource->removeAll($parentResource);
-    }
-
-    /**
-     * Get text
-     *
-     * @return string
-     */
-    public function getText(): string
-    {
-        return $this->text;
-    }
-
-    /**
-     * Set text
-     *
-     * @param string $text
-     */
-    public function setText(string $text): void
-    {
-        $this->text = $text;
     }
 
     /**

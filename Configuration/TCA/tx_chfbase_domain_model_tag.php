@@ -36,7 +36,7 @@ return [
         'transOrigPointerField'    => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'translationSource'        => 'l10n_source',
-        'searchFields'             => 'uuid,type,code,text,description',
+        'searchFields'             => 'type,text,code,description,uuid',
         'type'                     => 'type',
         'enablecolumns'            => [
             'disabled' => 'hidden',
@@ -153,55 +153,6 @@ return [
                 ],
             ],
         ],
-        'parentResource' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource.description',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingleBox',
-                'foreign_table' => 'tx_chfbase_domain_model_resource',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_resource}.{#pid}=###CURRENT_PID###',
-                'sortItems' => [
-                    'label' => 'asc',
-                ],
-                'required' => true,
-            ],
-        ],
-        'parentLabelTag' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.parentLabelTag',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.parentLabelTag.description',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectTree',
-                'foreign_table' => 'tx_chfbase_domain_model_tag',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###'
-                    . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
-                'treeConfig' => [
-                    'parentField' => 'parentLabelTag',
-                    'appearance' => [
-                        'showHeader' => true,
-                        'expandAll' => true,
-                    ],
-                ],
-                'maxitems' => 1,
-                'size' => 8,
-            ],
-        ],
-        'uuid' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid.description',
-            'config' => [
-                'type' => 'uuid',
-                'size' => 40,
-                'required' => true,
-            ],
-        ],
         'type' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
@@ -262,19 +213,6 @@ return [
                 ],
             ],
         ],
-        'code' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractTag.code',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractTag.code.description',
-            'config' => [
-                'type' => 'input',
-                'size' => 40,
-                'max' => 255,
-                'eval' => 'trim',
-                'required' => true,
-            ],
-        ],
         'text' => [
             'exclude' => true,
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractTag.text',
@@ -287,6 +225,19 @@ return [
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
+                'required' => true,
+            ],
+        ],
+        'code' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractTag.code',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractTag.code.description',
+            'config' => [
+                'type' => 'input',
+                'size' => 40,
+                'max' => 255,
+                'eval' => 'trim',
                 'required' => true,
             ],
         ],
@@ -324,6 +275,55 @@ return [
                         'disabled' => false,
                     ],
                 ],
+            ],
+        ],
+        'parentLabelTag' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.parentLabelTag',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.parentLabelTag.description',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectTree',
+                'foreign_table' => 'tx_chfbase_domain_model_tag',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###'
+                    . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
+                'treeConfig' => [
+                    'parentField' => 'parentLabelTag',
+                    'appearance' => [
+                        'showHeader' => true,
+                        'expandAll' => true,
+                    ],
+                ],
+                'maxitems' => 1,
+                'size' => 8,
+            ],
+        ],
+        'parentResource' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource.description',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingleBox',
+                'foreign_table' => 'tx_chfbase_domain_model_resource',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_resource}.{#pid}=###CURRENT_PID###',
+                'sortItems' => [
+                    'label' => 'asc',
+                ],
+                'required' => true,
+            ],
+        ],
+        'uuid' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid.description',
+            'config' => [
+                'type' => 'uuid',
+                'size' => 40,
+                'required' => true,
             ],
         ],
         'sameAs' => [
@@ -443,31 +443,31 @@ return [
         'textCodeDescription' => [
             'showitem' => 'text,code,--linebreak--,description,',
         ],
-        'iriUuid' => [
-            'showitem' => 'iri,uuid,',
-        ],
         'parentLabelTagParentResource' => [
             'showitem' => 'parentLabelTag,parentResource,',
+        ],
+        'iriUuidSameAs' => [
+            'showitem' => 'iri,uuid,--linebreak--,sameAs,',
         ],
     ],
     'types' => [
         '0' => [
             'showitem' => 'type,--palette--;;textCodeDescription,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,sameAs,',
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parentResource,--palette--;;iriUuidSameAs,',
         ],
         'labelTag' => [
             'showitem' => '--palette--;;typeLabelType,--palette--;;textCodeDescription,keyword,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,--palette--;;parentLabelTagParentResource,sameAs,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLabelOfAgent,asLabelOfLocation,asLabelOfPeriod,asLabelOfFeature,asLabelOfDictionaryEntry,asLabelOfEncyclopediaEntry,asLabelOfBibliographicEntry,asLabelOfEssay,asLabelOfVolume,asLabelOfSingleObject,asLabelOfObjectGroup,asLabelOfFileGroup,',
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;parentLabelTagParentResource,--palette--;;iriUuidSameAs,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLabelOfAgent,asLabelOfLocation,asLabelOfPeriod,asLabelOfFeature,asLabelOfDictionaryEntry,asLabelOfEncyclopediaEntry,asLabelOfInflectedForm,asLabelOfSense,asLabelOfPronunciation,asLabelOfExample,asLabelOfBibliographicEntry,asLabelOfEssay,asLabelOfVolume,asLabelOfSingleObject,asLabelOfObjectGroup,asLabelOfFileGroup,',
         ],
         'labelTypeTag' => [
             'showitem' => 'type,--palette--;;textCodeDescription,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,sameAs,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parentResource,--palette--;;iriUuidSameAs,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLabelTypeOfLabelTag,',
         ],
         'licenceTag' => [
             'showitem' => 'type,--palette--;;textCodeDescription,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,sameAs,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parentResource,--palette--;;iriUuidSameAs,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLicenceOfLicenceRelation,',
         ],
     ],

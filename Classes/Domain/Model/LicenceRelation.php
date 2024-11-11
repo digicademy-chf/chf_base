@@ -31,7 +31,7 @@ class LicenceRelation extends AbstractRelation
     protected object|null $record = null;
 
     /**
-     * Licence to relate to the record
+     * Licences to relate to the record
      * 
      * @var ?ObjectStorage<LicenceTag>
      */
@@ -60,13 +60,13 @@ class LicenceRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param object $parentResource
-     * @param string $uuid
      * @param object $record
      * @param LicenceTag $licence
+     * @param object $parentResource
+     * @param string $uuid
      * @return LicenceRelation
      */
-    public function __construct(object $parentResource, string $uuid, object $record, LicenceTag $licence)
+    public function __construct(object $record, LicenceTag $licence, object $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
         $this->initializeObject();

@@ -14,14 +14,14 @@
             </trans-unit>
             <trans-unit id="object.generic.chfGloss" resname="object.generic.chfGloss" approved="yes">
                 <source>Glossary</source>
-                <target>Glossare</target>
+                <target>Glossar</target>
             </trans-unit>
             <trans-unit id="object.generic.chfLex" resname="object.generic.chfLex" approved="yes">
                 <source>Lexicography</source>
                 <target>Lexikografie</target>
             </trans-unit>
             <trans-unit id="object.generic.chfMap" resname="object.generic.chfMap" approved="yes">
-                <source>Maps</source>
+                <source>Map</source>
                 <target>Kartenmaterial</target>
             </trans-unit>
             <trans-unit id="object.generic.chfMedia" resname="object.generic.chfMedia" approved="yes">
@@ -29,12 +29,12 @@
                 <target>Medien</target>
             </trans-unit>
             <trans-unit id="object.generic.chfObject" resname="object.generic.chfObject" approved="yes">
-                <source>Objects</source>
-                <target>Objekte</target>
+                <source>Object</source>
+                <target>Objekt</target>
             </trans-unit>
             <trans-unit id="object.generic.chfPub" resname="object.generic.chfPub" approved="yes">
-                <source>Text pubications</source>
-                <target>Textpublikationen</target>
+                <source>Text publication</source>
+                <target>Textpublikation</target>
             </trans-unit>
             <trans-unit id="object.generic.usage" resname="object.generic.usage" approved="yes">
                 <source>Usage</source>
@@ -126,7 +126,7 @@
             </trans-unit>
             <trans-unit id="object.generic.extent.description" resname="object.generic.extent.description" approved="yes">
                 <source>List of extents relevant to this entry</source>
-                <target>Liste der Maßangabe, die für diesen Eintrag relevant sind</target>
+                <target>Liste der Maßangaben, die für diesen Eintrag relevant sind</target>
             </trans-unit>
             <trans-unit id="object.generic.importOrigin" resname="object.generic.importOrigin" approved="yes">
                 <source>Import origin</source>
@@ -153,40 +153,40 @@
                 <target>Vollständiger Code, mit dem dieser Eintrag importiert wurde</target>
             </trans-unit>
             <trans-unit id="object.generic.authorshipRelation" resname="object.generic.authorshipRelation" approved="yes">
-                <source>Authorship</source>
-                <target>Autor:in</target>
+                <source>Authorship relation</source>
+                <target>Autor:innenangabe</target>
             </trans-unit>
             <trans-unit id="object.generic.authorshipRelation.description" resname="object.generic.authorshipRelation.description" approved="yes">
                 <source>Authorship of this record</source>
                 <target>Autorenschaft dieses Eintrags</target>
             </trans-unit>
             <trans-unit id="object.generic.agentRelation" resname="object.generic.agentRelation" approved="yes">
-                <source>Agent</source>
-                <target>Akteur:in</target>
+                <source>Agent relation</source>
+                <target>Akteur:innenangabe</target>
             </trans-unit>
             <trans-unit id="object.generic.agentRelation.description" resname="object.generic.agentRelation.description" approved="yes">
                 <source>Agent related to this record</source>
                 <target>Akteur:in zu diesem Eintrag</target>
             </trans-unit>
             <trans-unit id="object.generic.locationRelation" resname="object.generic.locationRelation" approved="yes">
-                <source>Location</source>
-                <target>Ort</target>
+                <source>Location relation</source>
+                <target>Ortsangabe</target>
             </trans-unit>
             <trans-unit id="object.generic.locationRelation.description" resname="object.generic.locationRelation.description" approved="yes">
                 <source>Location related to this record</source>
-                <target>Ortsangabe zu diesem Eintrag</target>
+                <target>Mit diesem Eintrag verbundene Orte</target>
             </trans-unit>
             <trans-unit id="object.generic.licenceRelation" resname="object.generic.licenceRelation" approved="yes">
-                <source>Licence</source>
-                <target>Lizenz</target>
+                <source>Licence relation</source>
+                <target>Lizenzangabe</target>
             </trans-unit>
             <trans-unit id="object.generic.licenceRelation.description" resname="object.generic.licenceRelation.description" approved="yes">
-                <source>Licence of this record</source>
-                <target>Lizenz dieses Eintrags</target>
+                <source>Licence of this record (individual override)</source>
+                <target>Lizenz dieses Eintrags (falls nicht übergeordnet)</target>
             </trans-unit>
             <trans-unit id="object.generic.linkRelation" resname="object.generic.linkRelation" approved="yes">
-                <source>Link</source>
-                <target>Link</target>
+                <source>Link relation</source>
+                <target>Linkangabe</target>
             </trans-unit>
             <trans-unit id="object.generic.linkRelation.description" resname="object.generic.linkRelation.description" approved="yes">
                 <source>Links relevant to this database record</source>
@@ -226,6 +226,14 @@
                 <target>Notiz für den internen Redaktionsgebrauch</target>
             </trans-unit>
             <!-- Object: AbstractHeritage -->
+            <trans-unit id="object.abstractHeritage.isTeaser" resname="object.abstractHeritage.isTeaser" approved="yes">
+                <source>Tease record</source>
+                <target>Eintrag anreißen</target>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.isTeaser.description" resname="object.abstractHeritage.isTeaser.description" approved="yes">
+                <source>Lists this record without its content</source>
+                <target>Listet diesen Eintrag ohne Inhalt auf</target>
+            </trans-unit>
             <trans-unit id="object.abstractHeritage.isHighlight" resname="object.abstractHeritage.isHighlight" approved="yes">
                 <source>Highlight record</source>
                 <target>Eintrag hervorheben</target>
@@ -240,7 +248,7 @@
             </trans-unit>
             <trans-unit id="object.abstractHeritage.contentElement.description" resname="object.abstractHeritage.contentElement.description" approved="yes">
                 <source>Room for page content without a fixed structure</source>
-                <target>Platz für Seiteninhalte ohne vorgegebene Struktur</target>
+                <target>Raum für Seiteninhalte ohne vorgegebene Struktur</target>
             </trans-unit>
             <trans-unit id="object.abstractHeritage.footnote" resname="object.abstractHeritage.footnote" approved="yes">
                 <source>Footnote</source>
@@ -452,8 +460,8 @@
                 <target>Akteur:in</target>
             </trans-unit>
             <trans-unit id="object.agent.agent.description" resname="object.agent.agent.description" approved="yes">
-                <source>Room to list more specific agents</source>
-                <target>Platz für untergeordnete Akteur:innen</target>
+                <source>Room to list employees or organisational units</source>
+                <target>Angabe von Mitarbeitenden oder Organisationseinheiten</target>
             </trans-unit>
             <trans-unit id="object.agent.event" resname="object.agent.event" approved="yes">
                 <source>Event</source>
@@ -461,7 +469,7 @@
             </trans-unit>
             <trans-unit id="object.agent.event.description" resname="object.agent.event.description" approved="yes">
                 <source>Room to list biographical events</source>
-                <target>Platz für biografische Ereignisse</target>
+                <target>Raum für biografische Ereignisse</target>
             </trans-unit>
             <trans-unit id="object.agent.asAgentOfAgentRelation" resname="object.agent.asAgentOfAgentRelation" approved="yes">
                 <source>Usage as agent of an agent relation</source>
@@ -562,7 +570,7 @@
             </trans-unit>
             <trans-unit id="object.location.location.description" resname="object.location.location.description" approved="yes">
                 <source>Room to list more specific locations</source>
-                <target>Platz für genauere Ortsangaben</target>
+                <target>Raum für untergeordnete Ortsangaben</target>
             </trans-unit>
             <trans-unit id="object.location.event" resname="object.location.event" approved="yes">
                 <source>Event</source>
@@ -570,7 +578,7 @@
             </trans-unit>
             <trans-unit id="object.location.event.description" resname="object.location.event.description" approved="yes">
                 <source>Room to list historical events</source>
-                <target>Platz für historische Ereignisse</target>
+                <target>Raum für historische Ereignisse</target>
             </trans-unit>
             <trans-unit id="object.location.addressStreet" resname="object.location.addressStreet" approved="yes">
                 <source>Street</source>
@@ -735,7 +743,7 @@
             </trans-unit>
             <trans-unit id="object.period.event.description" resname="object.period.event.description" approved="yes">
                 <source>Room to list more specific historical events</source>
-                <target>Platz für genauere historische Ereignisse</target>
+                <target>Raum für genauere historische Ereignisse</target>
             </trans-unit>
             <!-- Object: AbstractRelation -->
             <trans-unit id="object.abstractRelation" resname="object.abstractRelation" approved="yes">
@@ -813,10 +821,6 @@
             <trans-unit id="object.abstractRelation.role.publisher" resname="object.abstractRelation.role.publisher" approved="yes">
                 <source>Publisher</source>
                 <target>Verlag</target>
-            </trans-unit>
-            <trans-unit id="object.abstractRelation.role.currentLocation" resname="object.abstractRelation.role.currentLocation" approved="yes">
-                <source>Current location</source>
-                <target>Aktueller Standort</target>
             </trans-unit>
             <trans-unit id="object.abstractRelation.role.formerLocation" resname="object.abstractRelation.role.formerLocation" approved="yes">
                 <source>Former location</source>
@@ -1018,11 +1022,11 @@
             </trans-unit>
             <trans-unit id="object.abstractResource.allTags" resname="object.abstractResource.allTags" approved="yes">
                 <source>All tags</source>
-                <target>Alle Kennzeichen</target>
+                <target>Alle Tags</target>
             </trans-unit>
             <trans-unit id="object.abstractResource.allTags.description" resname="object.abstractResource.allTags.description" approved="yes">
                 <source>List of all tags compiled in this resource</source>
-                <target>Liste aller Kennzeichen, die in dieser Ressource verzeichnet sind</target>
+                <target>Liste aller Tags, die in dieser Ressource verzeichnet sind</target>
             </trans-unit>
             <trans-unit id="object.abstractResource.allKeywords" resname="object.abstractResource.allKeywords" approved="yes">
                 <source>All keywords</source>
@@ -1035,7 +1039,7 @@
             <!-- Object: AbstractTag -->
             <trans-unit id="object.abstractTag" resname="object.abstractTag" approved="yes">
                 <source>Tag</source>
-                <target>Kennzeichen</target>
+                <target>Tag</target>
             </trans-unit>
             <trans-unit id="object.abstractTag.type" resname="object.abstractTag.type" approved="yes">
                 <source>Type</source>
@@ -1043,7 +1047,7 @@
             </trans-unit>
             <trans-unit id="object.abstractTag.type.description" resname="object.abstractTag.type.description" approved="yes">
                 <source>Type of tag</source>
-                <target>Art des Kennzeichens</target>
+                <target>Art des Tags</target>
             </trans-unit>
             <trans-unit id="object.abstractTag.type.labelTag" resname="object.abstractTag.type.labelTag" approved="yes">
                 <source>Label</source>
@@ -1063,7 +1067,7 @@
             </trans-unit>
             <trans-unit id="object.abstractTag.code.description" resname="object.abstractTag.code.description" approved="yes">
                 <source>Abbreviation of the tag</source>
-                <target>Abkürzung des Kennzeichens</target>
+                <target>Abkürzung des Tags</target>
             </trans-unit>
             <trans-unit id="object.abstractTag.text" resname="object.abstractTag.text" approved="yes">
                 <source>Text</source>
@@ -1071,7 +1075,7 @@
             </trans-unit>
             <trans-unit id="object.abstractTag.text.description" resname="object.abstractTag.text.description" approved="yes">
                 <source>Full name of the tag</source>
-                <target>Vollständige Bezeichnung des Kennzeichens</target>
+                <target>Vollständige Bezeichnung des Tags</target>
             </trans-unit>
             <trans-unit id="object.abstractTag.description" resname="object.abstractTag.description" approved="yes">
                 <source>Description</source>
@@ -1079,7 +1083,7 @@
             </trans-unit>
             <trans-unit id="object.abstractTag.description.description" resname="object.abstractTag.description.description" approved="yes">
                 <source>Brief information about the tag</source>
-                <target>Kurze Erläuterung des Kennzeichens</target>
+                <target>Kurze Erläuterung des Tags</target>
             </trans-unit>
             <!-- Object: LabelTag -->
             <trans-unit id="object.labelTag.parentLabelTag" resname="object.labelTag.parentLabelTag" approved="yes">
@@ -1208,6 +1212,46 @@
                 <source>Type of extent</source>
                 <target>Art der Maßangabe</target>
             </trans-unit>
+            <trans-unit id="object.extent.type.url" resname="object.extent.type.url" approved="yes">
+                <source>URL (web address)</source>
+                <target>URL (Webadresse)</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type.doi" resname="object.extent.type.doi" approved="yes">
+                <source>DOI</source>
+                <target>DOI</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type.urn" resname="object.extent.type.urn" approved="yes">
+                <source>Further URN/PID (incl. Handle)</source>
+                <target>Andere URN/PID (inkl. Handle)</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type.edition" resname="object.extent.type.edition" approved="yes">
+                <source>Edition</source>
+                <target>Ausgabe</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type.version" resname="object.extent.type.version" approved="yes">
+                <source>Version</source>
+                <target>Version</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type.volume" resname="object.extent.type.volume" approved="yes">
+                <source>Volume</source>
+                <target>Band</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type.issue" resname="object.extent.type.issue" approved="yes">
+                <source>Issue</source>
+                <target>Heftnummer</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type.issn" resname="object.extent.type.issn" approved="yes">
+                <source>ISSN</source>
+                <target>ISSN</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type.isbn" resname="object.extent.type.isbn" approved="yes">
+                <source>ISBN</source>
+                <target>ISBN</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type.callNumber" resname="object.extent.type.callNumber" approved="yes">
+                <source>Call number</source>
+                <target>Signatur</target>
+            </trans-unit>
             <trans-unit id="object.extent.text" resname="object.extent.text" approved="yes">
                 <source>Text</source>
                 <target>Text</target>
@@ -1247,6 +1291,230 @@
             <trans-unit id="plugin.baseRest.description" resname="plugin.baseRest.description" approved="yes">
                 <source>Simple API for CHF content</source>
                 <target>Einfache Schnittstelle für CHF-Inhalte</target>
+            </trans-unit>
+            <!-- Layout: generic -->
+            <trans-unit id="layout.generic.main" resname="layout.generic.main" approved="yes">
+                <source>Main area</source>
+                <target>Hauptbereich</target>
+            </trans-unit>
+            <!-- Layout: Default -->
+            <trans-unit id="layout.default" resname="layout.default" approved="yes">
+                <source>Default</source>
+                <target>Standard</target>
+            </trans-unit>
+            <!-- Layout: Hub -->
+            <trans-unit id="layout.hub" resname="layout.hub" approved="yes">
+                <source>Hub</source>
+                <target>Drehkreuz</target>
+            </trans-unit>
+            <!-- Templates -->
+            <trans-unit id="templates.generic.date" resname="templates.generic.date" approved="yes">
+                <source>%e %B %Y</source>
+                <target>%e. %B %Y</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.type.page" resname="templates.generic.type.page" approved="yes">
+                <source>page</source>
+                <target>Seite</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve" resname="templates.generic.retrieve" approved="yes">
+                <source>Retrieve %s</source>
+                <target>%s abrufen</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.jsonld" resname="templates.generic.retrieve.jsonld" approved="yes">
+                <source><![CDATA[<abbr title="JavaScript Object Notation for Linked Data">]]>JSON-LD<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="JavaScript Object Notation for Linked Data">]]>JSON-LD<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.jsonld.plain" resname="templates.generic.retrieve.jsonld.plain" approved="yes">
+                <source>JSON-LD</source>
+                <target>JSON-LD</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.rdfxml" resname="templates.generic.retrieve.rdfxml" approved="yes">
+                <source><![CDATA[<abbr title="Resource Description Framework/Extensible Markup Language">]]>RDF/XML<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Resource Description Framework/Extensible Markup Language">]]>RDF/XML<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.rdfxml.plain" resname="templates.generic.retrieve.rdfxml.plain" approved="yes">
+                <source>RDF/XML</source>
+                <target>RDF/XML</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.turtle" resname="templates.generic.retrieve.turtle" approved="yes">
+                <source><![CDATA[<abbr title="Turtle">]]>TTL<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Turtle">]]>TTL<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.turtle.plain" resname="templates.generic.retrieve.turtle.plain" approved="yes">
+                <source>TTL</source>
+                <target>TTL</target>
+            </trans-unit>
+            <trans-unit id="templates.header.jump" resname="templates.header.jump" approved="yes">
+                <source>On this page</source>
+                <target>Auf dieser Seite</target>
+            </trans-unit>
+            <trans-unit id="templates.header.navigation" resname="templates.header.navigation" approved="yes">
+                <source>Navigation</source>
+                <target>Navigation</target>
+            </trans-unit>
+            <trans-unit id="templates.header.search" resname="templates.header.search" approved="yes">
+                <source>Search</source>
+                <target>Suche</target>
+            </trans-unit>
+            <trans-unit id="templates.header.meta" resname="templates.header.meta" approved="yes">
+                <source>Meta</source>
+                <target>Meta</target>
+            </trans-unit>
+            <trans-unit id="templates.title.back" resname="templates.title.back" approved="yes">
+                <source>Back</source>
+                <target>Zurück</target>
+            </trans-unit>
+            <trans-unit id="templates.title.download" resname="templates.title.download" approved="yes">
+                <source>Download</source>
+                <target>Herunterladen</target>
+            </trans-unit>
+            <trans-unit id="templates.title.download.copy" resname="templates.title.download.copy" approved="yes">
+                <source>Copy URL</source>
+                <target>URL kopieren</target>
+            </trans-unit>
+            <trans-unit id="templates.title.download.copy.success" resname="templates.title.download.copy.success" approved="yes">
+                <source>URL copied successfully</source>
+                <target>URL erfolgreich kopiert</target>
+            </trans-unit>
+            <trans-unit id="templates.title.download.copy.failure" resname="templates.title.download.copy.failure" approved="yes">
+                <source>Something went wrong</source>
+                <target>Das hat leider nicht geklappt</target>
+            </trans-unit>
+            <trans-unit id="templates.title.download.pdf" resname="templates.title.download.pdf" approved="yes">
+                <source><![CDATA[<abbr title="Portable Document Format">]]>PDF<![CDATA[</abbr>]]> of %s</source>
+                <target>%s als <![CDATA[<abbr title="Portable Document Format">]]>PDF<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.title.remember" resname="templates.title.remember" approved="yes">
+                <source>Remember %s</source>
+                <target>%s merken</target>
+            </trans-unit>
+            <trans-unit id="templates.main.rights" resname="templates.main.rights" approved="yes">
+                <source>Rights statement</source>
+                <target>Rechteangabe</target>
+            </trans-unit>
+            <trans-unit id="templates.main.share" resname="templates.main.share" approved="yes">
+                <source>Share</source>
+                <target>Teilen</target>
+            </trans-unit>
+            <trans-unit id="templates.main.share.share" resname="templates.main.share.share" approved="yes">
+                <source>Share %s</source>
+                <target>%s teilen</target>
+            </trans-unit>
+            <trans-unit id="templates.main.share.copy" resname="templates.main.share.copy" approved="yes">
+                <source>Copy rights statement</source>
+                <target>Rechteangabe kopieren</target>
+            </trans-unit>
+            <trans-unit id="templates.main.share.copy.success" resname="templates.main.share.copy.success" approved="yes">
+                <source>Rights statement copied successfully</source>
+                <target>Rechteangabe erfolgreich kopiert</target>
+            </trans-unit>
+            <trans-unit id="templates.main.share.copy.failure" resname="templates.main.share.copy.failure" approved="yes">
+                <source>Something went wrong</source>
+                <target>Das hat leider nicht geklappt</target>
+            </trans-unit>
+            <trans-unit id="templates.main.jump" resname="templates.main.jump" approved="yes">
+                <source>Table of contents</source>
+                <target>Inhaltsverzeichnis</target>
+            </trans-unit>
+            <trans-unit id="templates.main.content" resname="templates.main.content" approved="yes">
+                <source>Content</source>
+                <target>Inhalt</target>
+            </trans-unit>
+            <trans-unit id="templates.about" resname="templates.about" approved="yes">
+                <source>About this %s</source>
+                <target>Über diese %s</target>
+            </trans-unit>
+            <trans-unit id="templates.about.properties" resname="templates.about.properties" approved="yes">
+                <source>Properties</source>
+                <target>Eigenschaften</target>
+            </trans-unit>
+            <trans-unit id="templates.about.abstract" resname="templates.about.abstract" approved="yes">
+                <source>Abstract</source>
+                <target>Auszug</target>
+            </trans-unit>
+            <trans-unit id="templates.about.author" resname="templates.about.author" approved="yes">
+                <source>Author</source>
+                <target>Autor:in</target>
+            </trans-unit>
+            <trans-unit id="templates.about.updated" resname="templates.about.updated" approved="yes">
+                <source>Updated</source>
+                <target>Aktualisiert</target>
+            </trans-unit>
+            <trans-unit id="templates.about.url" resname="templates.about.url" approved="yes">
+                <source><![CDATA[<abbr title="Uniform Resource Locator">]]>URL<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Uniform Resource Locator">]]>URL<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.data" resname="templates.about.data" approved="yes">
+                <source>Data</source>
+                <target>Datensatz</target>
+            </trans-unit>
+            <trans-unit id="templates.footer" resname="templates.footer" approved="yes">
+                <source>Footer</source>
+                <target>Fußleiste</target>
+            </trans-unit>
+            <trans-unit id="templates.footer.service" resname="templates.footer.service" approved="yes">
+                <source>Service</source>
+                <target>Service</target>
+            </trans-unit>
+            <trans-unit id="templates.footer.partners" resname="templates.footer.partners" approved="yes">
+                <source>Co-operation partners</source>
+                <target>Kooperationspartner</target>
+            </trans-unit>
+            <trans-unit id="templates.footer.social" resname="templates.footer.social" approved="yes">
+                <source>Social media profiles</source>
+                <target>Social Media-Profile</target>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.up" resname="templates.footer.social.up" approved="yes">
+                <source>To top of page</source>
+                <target>Zum Seitenanfang</target>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.rss" resname="templates.footer.social.rss" approved="yes">
+                <source>RSS feed</source>
+                <target>RSS-Feed</target>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.mastodon" resname="templates.footer.social.mastodon" approved="yes">
+                <source>Mastodon profile</source>
+                <target>Mastodon-Profil</target>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.linkedin" resname="templates.footer.social.linkedin" approved="yes">
+                <source>LinkedIn profile</source>
+                <target>LinkedIn-Profil</target>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.instagram" resname="templates.footer.social.instagram" approved="yes">
+                <source>Instagram profile</source>
+                <target>Instagram-Profil</target>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.facebook" resname="templates.footer.social.facebook" approved="yes">
+                <source>Facebook profile</source>
+                <target>Facebook-Profil</target>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.bluesky" resname="templates.footer.social.bluesky" approved="yes">
+                <source>Bluesky profile</source>
+                <target>Bluesky-Profil</target>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.xitter" resname="templates.footer.social.xitter" approved="yes">
+                <source>X profile (formerly Twitter)</source>
+                <target>X-Profil (früher Twitter)</target>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.gitlab" resname="templates.footer.social.gitlab" approved="yes">
+                <source>GitLab repository</source>
+                <target>GitLab-Repositorium</target>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.github" resname="templates.footer.social.github" approved="yes">
+                <source>GitHub repository</source>
+                <target>GitHub-Repositorium</target>
+            </trans-unit>
+            <trans-unit id="templates.aside.settings" resname="templates.aside.settings" approved="yes">
+                <source>Settings</source>
+                <target>Einstellungen</target>
+            </trans-unit>
+            <trans-unit id="templates.aside.watchlist" resname="templates.aside.watchlist" approved="yes">
+                <source>Watchlist</source>
+                <target>Merkliste</target>
+            </trans-unit>
+            <trans-unit id="templates.links.home" resname="templates.links.home" approved="yes">
+                <source>Show homepage</source>
+                <target>Startseite aufrufen</target>
             </trans-unit>
         </body>
     </file>

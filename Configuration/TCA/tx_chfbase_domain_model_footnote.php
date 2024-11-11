@@ -34,7 +34,7 @@ return [
         'transOrigPointerField'    => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'translationSource'        => 'l10n_source',
-        'searchFields'             => 'uuid,text',
+        'searchFields'             => 'text,uuid',
         'enablecolumns'            => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
@@ -150,6 +150,21 @@ return [
                 ],
             ],
         ],
+        'text' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.footnote.text',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.footnote.text.description',
+            'config' => [
+                'type' => 'text',
+                'enableRichtext' => true,
+                'richtextConfiguration' => 'chf_base_simple',
+                'softref' => 'typolink_tag,email[subst],url',
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
+                'required' => true,
+            ],
+        ],
         'parentTable' => [
             'config' => [
                 'type' => 'passthrough',
@@ -168,21 +183,6 @@ return [
             'config' => [
                 'type' => 'uuid',
                 'size' => 40,
-                'required' => true,
-            ],
-        ],
-        'text' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.footnote.text',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.footnote.text.description',
-            'config' => [
-                'type' => 'text',
-                'enableRichtext' => true,
-                'richtextConfiguration' => 'chf_base_simple',
-                'softref' => 'typolink_tag,email[subst],url',
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
                 'required' => true,
             ],
         ],

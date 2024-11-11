@@ -36,7 +36,7 @@ return [
         'transOrigPointerField'    => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'translationSource'        => 'l10n_source',
-        'searchFields'             => 'uuid,type,description',
+        'searchFields'             => 'type,description,uuid',
         'type'                     => 'type',
         'enablecolumns'            => [
             'disabled' => 'hidden',
@@ -151,33 +151,6 @@ return [
                 'range' => [
                     'upper' => mktime(0, 0, 0, 1, 1, 2106),
                 ],
-            ],
-        ],
-        'parentResource' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource.description',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingleBox',
-                'foreign_table' => 'tx_chfbase_domain_model_resource',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_resource}.{#pid}=###CURRENT_PID###',
-                'sortItems' => [
-                    'label' => 'asc',
-                ],
-                'required' => true,
-            ],
-        ],
-        'uuid' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid.description',
-            'config' => [
-                'type' => 'uuid',
-                'size' => 40,
-                'required' => true,
             ],
         ],
         'type' => [
@@ -358,24 +331,6 @@ return [
                 'required' => true,
             ],
         ],
-        'agent' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agentRelation.agent',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agentRelation.agent.description',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingleBox',
-                'foreign_table' => 'tx_chfbase_domain_model_agent',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###',
-                'MM' => 'tx_chfbase_domain_model_relation_agent_agent_mm',
-                'multiple' => 1,
-                'sortItems' => [
-                    'label' => 'asc',
-                ],
-                'required' => true,
-            ],
-        ],
         'contributor' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
@@ -406,6 +361,24 @@ return [
                 'foreign_table' => 'tx_chfbase_domain_model_location',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_location}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfbase_domain_model_relation_location_location_mm',
+                'multiple' => 1,
+                'sortItems' => [
+                    'label' => 'asc',
+                ],
+                'required' => true,
+            ],
+        ],
+        'agent' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agentRelation.agent',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agentRelation.agent.description',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingleBox',
+                'foreign_table' => 'tx_chfbase_domain_model_agent',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###',
+                'MM' => 'tx_chfbase_domain_model_relation_agent_agent_mm',
                 'multiple' => 1,
                 'sortItems' => [
                     'label' => 'asc',
@@ -465,11 +438,6 @@ return [
                         'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.publisher',
                         'value' => 'publisher',
                         'group' => 'authorshipRelation',
-                    ],
-                    [
-                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.currentLocation',
-                        'value' => 'currentLocation',
-                        'group' => 'locationRelation',
                     ],
                     [
                         'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.formerLocation',
@@ -563,6 +531,7 @@ return [
                     'agentRelation' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.type.agentRelation',
                     'licenceRelation' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.type.licenceRelation',
                 ],
+                'default' => 'author',
                 'required' => true,
             ],
         ],
@@ -608,7 +577,6 @@ return [
             'config' => [
                 'type' => 'datetime',
                 'format' => 'date',
-                'eval' => 'int',
                 'default' => 0,
             ],
         ],
@@ -625,6 +593,33 @@ return [
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
+            ],
+        ],
+        'parentResource' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource.description',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingleBox',
+                'foreign_table' => 'tx_chfbase_domain_model_resource',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_resource}.{#pid}=###CURRENT_PID###',
+                'sortItems' => [
+                    'label' => 'asc',
+                ],
+                'required' => true,
+            ],
+        ],
+        'uuid' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.uuid.description',
+            'config' => [
+                'type' => 'uuid',
+                'size' => 40,
+                'required' => true,
             ],
         ],
     ],
@@ -651,174 +646,27 @@ return [
     'types' => [
         '0' => [
             'showitem' => 'type,description,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,',
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parentResource,--palette--;;iriUuid,',
         ],
         'authorshipRelation' => [
             'showitem' => 'type,record,--palette--;;contributorRole,description,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,',
-            'columnsOverrides' => [
-                'role' => [
-                    'config' => [
-                        'items' => [
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.author',
-                                'value' => 'author',
-                                'group' => 'authorshipRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.editor',
-                                'value' => 'editor',
-                                'group' => 'authorshipRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.translator',
-                                'value' => 'translator',
-                                'group' => 'authorshipRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.contributor',
-                                'value' => 'contributor',
-                                'group' => 'authorshipRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.publisher',
-                                'value' => 'publisher',
-                                'group' => 'authorshipRelation',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parentResource,--palette--;;iriUuid,',
         ],
         'locationRelation' => [
             'showitem' => 'type,record,--palette--;;locationRole,description,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,',
-            'columnsOverrides' => [
-                'role' => [
-                    'config' => [
-                        'items' => [
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.currentLocation',
-                                'value' => 'currentLocation',
-                                'group' => 'locationRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.formerLocation',
-                                'value' => 'formerLocation',
-                                'group' => 'locationRelation',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parentResource,--palette--;;iriUuid,',
         ],
         'agentRelation' => [
             'showitem' => 'type,record,--palette--;;agentRole,description,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,',
-            'columnsOverrides' => [
-                'role' => [
-                    'config' => [
-                        'items' => [
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.agency',
-                                'value' => 'agency',
-                                'group' => 'agentRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.relationship',
-                                'value' => 'relationship',
-                                'group' => 'agentRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.depiction',
-                                'value' => 'depiction',
-                                'group' => 'agentRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.representation',
-                                'value' => 'representation',
-                                'group' => 'agentRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.designer',
-                                'value' => 'designer',
-                                'group' => 'agentRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.artist',
-                                'value' => 'artist',
-                                'group' => 'agentRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.workshop',
-                                'value' => 'workshop',
-                                'group' => 'agentRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.manufacturer',
-                                'value' => 'manufacturer',
-                                'group' => 'agentRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.benefactor',
-                                'value' => 'benefactor',
-                                'group' => 'agentRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.collector',
-                                'value' => 'collector',
-                                'group' => 'agentRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.curator',
-                                'value' => 'curator',
-                                'group' => 'agentRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.restorer',
-                                'value' => 'restorer',
-                                'group' => 'agentRelation',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parentResource,--palette--;;iriUuid,',
         ],
         'licenceRelation' => [
             'showitem' => 'type,record,--palette--;;licenceRole,description,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,',
-            'columnsOverrides' => [
-                'role' => [
-                    'config' => [
-                        'items' => [
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.allContent',
-                                'value' => 'allContent',
-                                'group' => 'licenceRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.metadata',
-                                'value' => 'metadata',
-                                'group' => 'licenceRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.text',
-                                'value' => 'text',
-                                'group' => 'licenceRelation',
-                            ],
-                            [
-                                'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.media',
-                                'value' => 'media',
-                                'group' => 'licenceRelation',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parentResource,--palette--;;iriUuid,',
         ],
         'linkRelation' => [
             'showitem' => 'type,record,--palette--;;urlLinkTextLastChecked,description,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,parentResource,',
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parentResource,--palette--;;iriUuid,',
         ],
     ],
 ];

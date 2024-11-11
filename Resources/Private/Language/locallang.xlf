@@ -17,16 +17,16 @@
                 <source>Lexicography</source>
             </trans-unit>
             <trans-unit id="object.generic.chfMap" resname="object.generic.chfMap">
-                <source>Maps</source>
+                <source>Map</source>
             </trans-unit>
             <trans-unit id="object.generic.chfMedia" resname="object.generic.chfMedia">
                 <source>Media</source>
             </trans-unit>
             <trans-unit id="object.generic.chfObject" resname="object.generic.chfObject">
-                <source>Objects</source>
+                <source>Object</source>
             </trans-unit>
             <trans-unit id="object.generic.chfPub" resname="object.generic.chfPub">
-                <source>Text pubications</source>
+                <source>Text publication</source>
             </trans-unit>
             <trans-unit id="object.generic.usage" resname="object.generic.usage">
                 <source>Usage</source>
@@ -113,31 +113,31 @@
                 <source>Full import code that this record is based on</source>
             </trans-unit>
             <trans-unit id="object.generic.authorshipRelation" resname="object.generic.authorshipRelation">
-                <source>Authorship</source>
+                <source>Authorship relation</source>
             </trans-unit>
             <trans-unit id="object.generic.authorshipRelation.description" resname="object.generic.authorshipRelation.description">
                 <source>Authorship of this record</source>
             </trans-unit>
             <trans-unit id="object.generic.agentRelation" resname="object.generic.agentRelation">
-                <source>Agent</source>
+                <source>Agent relation</source>
             </trans-unit>
             <trans-unit id="object.generic.agentRelation.description" resname="object.generic.agentRelation.description">
                 <source>Agent related to this record</source>
             </trans-unit>
             <trans-unit id="object.generic.locationRelation" resname="object.generic.locationRelation">
-                <source>Location</source>
+                <source>Location relation</source>
             </trans-unit>
             <trans-unit id="object.generic.locationRelation.description" resname="object.generic.locationRelation.description">
                 <source>Location related to this record</source>
             </trans-unit>
             <trans-unit id="object.generic.licenceRelation" resname="object.generic.licenceRelation">
-                <source>Licence</source>
+                <source>Licence relation</source>
             </trans-unit>
             <trans-unit id="object.generic.licenceRelation.description" resname="object.generic.licenceRelation.description">
-                <source>Licence of this record</source>
+                <source>Licence of this record (individual override)</source>
             </trans-unit>
             <trans-unit id="object.generic.linkRelation" resname="object.generic.linkRelation">
-                <source>Link</source>
+                <source>Link relation</source>
             </trans-unit>
             <trans-unit id="object.generic.linkRelation.description" resname="object.generic.linkRelation.description">
                 <source>Links relevant to this database record</source>
@@ -168,6 +168,12 @@
                 <source>Note for internal usage among the editorial team</source>
             </trans-unit>
             <!-- Object: AbstractHeritage -->
+            <trans-unit id="object.abstractHeritage.isTeaser" resname="object.abstractHeritage.isTeaser">
+                <source>Tease record</source>
+            </trans-unit>
+            <trans-unit id="object.abstractHeritage.isTeaser.description" resname="object.abstractHeritage.isTeaser.description">
+                <source>Lists this record without its content</source>
+            </trans-unit>
             <trans-unit id="object.abstractHeritage.isHighlight" resname="object.abstractHeritage.isHighlight">
                 <source>Highlight record</source>
             </trans-unit>
@@ -338,7 +344,7 @@
                 <source>Agent</source>
             </trans-unit>
             <trans-unit id="object.agent.agent.description" resname="object.agent.agent.description">
-                <source>Room to list more specific agents</source>
+                <source>Room to list employees or organisational units</source>
             </trans-unit>
             <trans-unit id="object.agent.event" resname="object.agent.event">
                 <source>Event</source>
@@ -609,9 +615,6 @@
             </trans-unit>
             <trans-unit id="object.abstractRelation.role.publisher" resname="object.abstractRelation.role.publisher">
                 <source>Publisher</source>
-            </trans-unit>
-            <trans-unit id="object.abstractRelation.role.currentLocation" resname="object.abstractRelation.role.currentLocation">
-                <source>Current location</source>
             </trans-unit>
             <trans-unit id="object.abstractRelation.role.formerLocation" resname="object.abstractRelation.role.formerLocation">
                 <source>Former location</source>
@@ -909,6 +912,36 @@
             <trans-unit id="object.extent.type.description" resname="object.extent.type.description">
                 <source>Type of extent</source>
             </trans-unit>
+            <trans-unit id="object.extent.type.url" resname="object.extent.type.url">
+                <source>URL (web address)</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.doi" resname="object.extent.type.doi">
+                <source>DOI</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.urn" resname="object.extent.type.urn">
+                <source>Further URN/PID (incl. Handle)</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.edition" resname="object.extent.type.edition">
+                <source>Edition</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.version" resname="object.extent.type.version">
+                <source>Version</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.volume" resname="object.extent.type.volume">
+                <source>Volume</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.issue" resname="object.extent.type.issue">
+                <source>Issue</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.issn" resname="object.extent.type.issn">
+                <source>ISSN</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.isbn" resname="object.extent.type.isbn">
+                <source>ISBN</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.callNumber" resname="object.extent.type.callNumber">
+                <source>Call number</source>
+            </trans-unit>
             <trans-unit id="object.extent.text" resname="object.extent.text">
                 <source>Text</source>
             </trans-unit>
@@ -939,6 +972,166 @@
             </trans-unit>
             <trans-unit id="plugin.baseRest.description" resname="plugin.baseRest.description">
                 <source>Simple API for CHF content</source>
+            </trans-unit>
+            <!-- Layout: generic -->
+            <trans-unit id="layout.generic.main" resname="layout.generic.main">
+                <source>Main area</source>
+            </trans-unit>
+            <!-- Layout: Default -->
+            <trans-unit id="layout.default" resname="layout.default">
+                <source>Default</source>
+            </trans-unit>
+            <!-- Layout: Hub -->
+            <trans-unit id="layout.hub" resname="layout.hub">
+                <source>Hub</source>
+            </trans-unit>
+            <!-- Templates -->
+            <trans-unit id="templates.generic.date" resname="templates.generic.date">
+                <source>%e %B %Y</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.type.page" resname="templates.generic.type.page">
+                <source>page</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve" resname="templates.generic.retrieve">
+                <source>Retrieve %s</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.jsonld" resname="templates.generic.retrieve.jsonld">
+                <source><![CDATA[<abbr title="JavaScript Object Notation for Linked Data">]]>JSON-LD<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.rdfxml" resname="templates.generic.retrieve.rdfxml">
+                <source><![CDATA[<abbr title="Resource Description Framework/Extensible Markup Language">]]>RDF/XML<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.turtle" resname="templates.generic.retrieve.turtle">
+                <source><![CDATA[<abbr title="Turtle">]]>TTL<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.header.jump" resname="templates.header.jump">
+                <source>On this page</source>
+            </trans-unit>
+            <trans-unit id="templates.header.navigation" resname="templates.header.navigation">
+                <source>Navigation</source>
+            </trans-unit>
+            <trans-unit id="templates.header.search" resname="templates.header.search">
+                <source>Search</source>
+            </trans-unit>
+            <trans-unit id="templates.header.meta" resname="templates.header.meta">
+                <source>Meta</source>
+            </trans-unit>
+            <trans-unit id="templates.title.back" resname="templates.title.back">
+                <source>Back</source>
+            </trans-unit>
+            <trans-unit id="templates.title.download" resname="templates.title.download">
+                <source>Download</source>
+            </trans-unit>
+            <trans-unit id="templates.title.download.copy" resname="templates.title.download.copy">
+                <source>Copy URL</source>
+            </trans-unit>
+            <trans-unit id="templates.title.download.copy.success" resname="templates.title.download.copy.success">
+                <source>URL copied successfully</source>
+            </trans-unit>
+            <trans-unit id="templates.title.download.copy.failure" resname="templates.title.download.copy.failure">
+                <source>Something went wrong</source>
+            </trans-unit>
+            <trans-unit id="templates.title.download.pdf" resname="templates.title.download.pdf">
+                <source><![CDATA[<abbr title="Portable Document Format">]]>PDF<![CDATA[</abbr>]]> of %s</source>
+            </trans-unit>
+            <trans-unit id="templates.title.remember" resname="templates.title.remember">
+                <source>Remember %s</source>
+            </trans-unit>
+            <trans-unit id="templates.main.rights" resname="templates.main.rights">
+                <source>Rights statement</source>
+            </trans-unit>
+            <trans-unit id="templates.main.share" resname="templates.main.share">
+                <source>Share</source>
+            </trans-unit>
+            <trans-unit id="templates.main.share.share" resname="templates.main.share.share">
+                <source>Share %s</source>
+            </trans-unit>
+            <trans-unit id="templates.main.share.copy" resname="templates.main.share.copy">
+                <source>Copy rights statement</source>
+            </trans-unit>
+            <trans-unit id="templates.main.share.copy.success" resname="templates.main.share.copy.success">
+                <source>Rights statement copied successfully</source>
+            </trans-unit>
+            <trans-unit id="templates.main.share.copy.failure" resname="templates.main.share.copy.failure">
+                <source>Something went wrong</source>
+            </trans-unit>
+            <trans-unit id="templates.main.jump" resname="templates.main.jump">
+                <source>Table of contents</source>
+            </trans-unit>
+            <trans-unit id="templates.main.content" resname="templates.main.content">
+                <source>Content</source>
+            </trans-unit>
+            <trans-unit id="templates.about" resname="templates.about">
+                <source>About this %s</source>
+            </trans-unit>
+            <trans-unit id="templates.about.properties" resname="templates.about.properties">
+                <source>Properties</source>
+            </trans-unit>
+            <trans-unit id="templates.about.abstract" resname="templates.about.abstract">
+                <source>Abstract</source>
+            </trans-unit>
+            <trans-unit id="templates.about.author" resname="templates.about.author">
+                <source>Author</source>
+            </trans-unit>
+            <trans-unit id="templates.about.updated" resname="templates.about.updated">
+                <source>Updated</source>
+            </trans-unit>
+            <trans-unit id="templates.about.url" resname="templates.about.url">
+                <source><![CDATA[<abbr title="Uniform Resource Locator">]]>URL<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.data" resname="templates.about.data">
+                <source>Data</source>
+            </trans-unit>
+            <trans-unit id="templates.footer" resname="templates.footer">
+                <source>Footer</source>
+            </trans-unit>
+            <trans-unit id="templates.footer.service" resname="templates.footer.service">
+                <source>Service</source>
+            </trans-unit>
+            <trans-unit id="templates.footer.partners" resname="templates.footer.partners">
+                <source>Co-operation partners</source>
+            </trans-unit>
+            <trans-unit id="templates.footer.social" resname="templates.footer.social">
+                <source>Social media profiles</source>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.up" resname="templates.footer.social.up">
+                <source>To top of page</source>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.rss" resname="templates.footer.social.rss">
+                <source>RSS feed</source>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.mastodon" resname="templates.footer.social.mastodon">
+                <source>Mastodon profile</source>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.linkedin" resname="templates.footer.social.linkedin">
+                <source>LinkedIn profile</source>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.instagram" resname="templates.footer.social.instagram">
+                <source>Instagram profile</source>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.facebook" resname="templates.footer.social.facebook">
+                <source>Facebook profile</source>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.bluesky" resname="templates.footer.social.bluesky">
+                <source>Bluesky profile</source>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.xitter" resname="templates.footer.social.xitter">
+                <source>X profile (formerly Twitter)</source>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.gitlab" resname="templates.footer.social.gitlab">
+                <source>GitLab repository</source>
+            </trans-unit>
+            <trans-unit id="templates.footer.social.github" resname="templates.footer.social.github">
+                <source>GitHub repository</source>
+            </trans-unit>
+            <trans-unit id="templates.aside.settings" resname="templates.aside.settings">
+                <source>Settings</source>
+            </trans-unit>
+            <trans-unit id="templates.aside.watchlist" resname="templates.aside.watchlist">
+                <source>Watchlist</source>
+            </trans-unit>
+            <trans-unit id="templates.links.home" resname="templates.links.home">
+                <source>Show homepage</source>
             </trans-unit>
         </body>
     </file>

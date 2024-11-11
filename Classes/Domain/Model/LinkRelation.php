@@ -12,7 +12,6 @@ namespace Digicademy\CHFBase\Domain\Model;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 defined('TYPO3') or die();
 
@@ -62,13 +61,13 @@ class LinkRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param object $parentResource
-     * @param string $uuid
      * @param object $record
      * @param string $url
+     * @param object $parentResource
+     * @param string $uuid
      * @return LinkRelation
      */
-    public function __construct(object $parentResource, string $uuid, object $record, string $url)
+    public function __construct(object $record, string $url, object $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
 

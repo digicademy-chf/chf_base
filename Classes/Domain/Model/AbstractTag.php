@@ -23,7 +23,7 @@ defined('TYPO3') or die();
 class AbstractTag extends AbstractEntity
 {
     /**
-     * Whether the record should be visible or not
+     * Record visible or not
      * 
      * @var bool
      */
@@ -31,28 +31,6 @@ class AbstractTag extends AbstractEntity
         'validator' => 'Boolean',
     ])]
     protected bool $hidden = true;
-
-    /**
-     * Resource that this database record is part of
-     * 
-     * @var ?ObjectStorage<object>
-     */
-    #[Lazy()]
-    protected ?ObjectStorage $parentResource = null;
-
-    /**
-     * Unique identifier of this database record
-     * 
-     * @var string
-     */
-    #[Validate([
-        'validator' => 'RegularExpression',
-        'options' => [
-            'regularExpression' => '^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$',
-            'errorMessage' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:validator.regularExpression.noUuid',
-        ],
-    ])]
-    protected string $uuid = '';
 
     /**
      * Type of tag
@@ -68,19 +46,6 @@ class AbstractTag extends AbstractEntity
     protected string $type = '';
 
     /**
-     * Abbreviation of the tag
-     * 
-     * @var string
-     */
-    #[Validate([
-        'validator' => 'StringLength',
-        'options' => [
-            'maximum' => 255,
-        ],
-    ])]
-    protected string $code = '';
-
-    /**
      * Full name of the tag
      * 
      * @var string
@@ -92,6 +57,19 @@ class AbstractTag extends AbstractEntity
         ],
     ])]
     protected string $text = '';
+
+    /**
+     * Abbreviation of the tag
+     * 
+     * @var string
+     */
+    #[Validate([
+        'validator' => 'StringLength',
+        'options' => [
+            'maximum' => 255,
+        ],
+    ])]
+    protected string $code = '';
 
     /**
      * Brief information about the tag
@@ -107,7 +85,29 @@ class AbstractTag extends AbstractEntity
     protected string $description = '';
 
     /**
-     * Reference web address to identify an entity across the web
+     * Resource that this database record is part of
+     * 
+     * @var ?ObjectStorage<object>
+     */
+    #[Lazy()]
+    protected ?ObjectStorage $parentResource = null;
+
+    /**
+     * Unique identifier of this record
+     * 
+     * @var string
+     */
+    #[Validate([
+        'validator' => 'RegularExpression',
+        'options' => [
+            'regularExpression' => '^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$',
+            'errorMessage' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:validator.regularExpression.noUuid',
+        ],
+    ])]
+    protected string $uuid = '';
+
+    /**
+     * Authoritative web address to identify an entity across the web
      * 
      * @var ?ObjectStorage<SameAs>
      */
@@ -120,21 +120,21 @@ class AbstractTag extends AbstractEntity
     /**
      * Construct object
      *
+     * @param string $text
+     * @param string $code
      * @param object $parentResource
      * @param string $uuid
-     * @param string $code
-     * @param string $text
      * @return AbstractTag
      */
-    public function __construct(object $parentResource, string $uuid, string $code, string $text)
+    public function __construct(string $text, string $code, object $parentResource, string $uuid)
     {
         $this->initializeObject();
 
+        $this->setType('0');
+        $this->setText($text);
+        $this->setCode($code);
         $this->addParentResource($parentResource);
         $this->setUuid($uuid);
-        $this->setType('0');
-        $this->setCode($code);
-        $this->setText($text);
     }
 
     /**
@@ -164,6 +164,86 @@ class AbstractTag extends AbstractEntity
     public function setHidden(bool $hidden): void
     {
         $this->hidden = $hidden;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     */
+    public function setType(string $type): void
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * Get text
+     *
+     * @return string
+     */
+    public function getText(): string
+    {
+        return $this->text;
+    }
+
+    /**
+     * Set text
+     *
+     * @param string $text
+     */
+    public function setText(string $text): void
+    {
+        $this->text = $text;
+    }
+
+    /**
+     * Get code
+     *
+     * @return string
+     */
+    public function getCode(): string
+    {
+        return $this->code;
+    }
+
+    /**
+     * Set code
+     *
+     * @param string $code
+     */
+    public function setCode(string $code): void
+    {
+        $this->code = $code;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     */
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
     }
 
     /**
@@ -233,86 +313,6 @@ class AbstractTag extends AbstractEntity
     public function setUuid(string $uuid): void
     {
         $this->uuid = $uuid;
-    }
-
-    /**
-     * Get type
-     *
-     * @return string
-     */
-    public function getType(): string
-    {
-        return $this->type;
-    }
-
-    /**
-     * Set type
-     *
-     * @param string $type
-     */
-    public function setType(string $type): void
-    {
-        $this->type = $type;
-    }
-
-    /**
-     * Get code
-     *
-     * @return string
-     */
-    public function getCode(): string
-    {
-        return $this->code;
-    }
-
-    /**
-     * Set code
-     *
-     * @param string $code
-     */
-    public function setCode(string $code): void
-    {
-        $this->code = $code;
-    }
-
-    /**
-     * Get text
-     *
-     * @return string
-     */
-    public function getText(): string
-    {
-        return $this->text;
-    }
-
-    /**
-     * Set text
-     *
-     * @param string $text
-     */
-    public function setText(string $text): void
-    {
-        $this->text = $text;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string
-     */
-    public function getDescription(): string
-    {
-        return $this->description;
-    }
-
-    /**
-     * Set description
-     *
-     * @param string $description
-     */
-    public function setDescription(string $description): void
-    {
-        $this->description = $description;
     }
 
     /**
