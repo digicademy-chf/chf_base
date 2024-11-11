@@ -24,12 +24,12 @@ defined('TYPO3') or die();
 $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['itemGroups']['heritage']
     = 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.generic.heritage';
 
-// Add plugin 'BaseRest'
+// Add plugin 'Rest'
 ExtensionUtility::registerPlugin(
     'CHFBase',
-    'BaseRest',
-    'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.baseRest',
-    'tx-chfbase-plugin-base-rest',
+    'Rest',
+    'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.rest',
+    'tx-chfbase-plugin-rest',
     'heritage',
-    'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.baseRest.description',
+    'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.rest.description',
 );

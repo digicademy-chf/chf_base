@@ -1283,12 +1283,12 @@
                 <source>Cultural Heritage Framework</source>
                 <target>Cultural Heritage Framework</target>
             </trans-unit>
-            <!-- Plugin: BaseRest -->
-            <trans-unit id="plugin.baseRest" resname="plugin.baseRest" approved="yes">
+            <!-- Plugin: Rest -->
+            <trans-unit id="plugin.rest" resname="plugin.rest" approved="yes">
                 <source>Rest API</source>
                 <target>Rest-Schnittstelle</target>
             </trans-unit>
-            <trans-unit id="plugin.baseRest.description" resname="plugin.baseRest.description" approved="yes">
+            <trans-unit id="plugin.rest.description" resname="plugin.rest.description" approved="yes">
                 <source>Simple API for CHF content</source>
                 <target>Einfache Schnittstelle für CHF-Inhalte</target>
             </trans-unit>

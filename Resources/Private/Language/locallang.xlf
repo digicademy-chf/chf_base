@@ -966,11 +966,11 @@
             <trans-unit id="plugin.generic.heritage" resname="plugin.generic.heritage">
                 <source>Cultural Heritage Framework</source>
             </trans-unit>
-            <!-- Plugin: BaseRest -->
-            <trans-unit id="plugin.baseRest" resname="plugin.baseRest">
+            <!-- Plugin: Rest -->
+            <trans-unit id="plugin.rest" resname="plugin.rest">
                 <source>Rest API</source>
             </trans-unit>
-            <trans-unit id="plugin.baseRest.description" resname="plugin.baseRest.description">
+            <trans-unit id="plugin.rest.description" resname="plugin.rest.description">
                 <source>Simple API for CHF content</source>
             </trans-unit>
             <!-- Layout: generic -->

@@ -58,8 +58,8 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:chf_base/Resources/Public/Icons/TableTag.svg',
     ],
-    'tx-chfbase-plugin-base-rest' => [
+    'tx-chfbase-plugin-rest' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:chf_base/Resources/Public/Icons/PluginBaseRest.svg',
+        'source' => 'EXT:chf_base/Resources/Public/Icons/PluginRest.svg',
     ],
 ];

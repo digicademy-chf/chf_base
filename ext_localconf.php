@@ -18,10 +18,10 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets'] += [
     'chf_base_regular' => 'EXT:chf_base/Configuration/RTE/CHFBaseRegular.yaml',
 ];
 
-// Register 'BaseRest' content element
+// Register 'Rest' content element
 ExtensionUtility::configurePlugin(
     'CHFBase',
-    'BaseRest',
+    'Rest',
     [
         AbstractResourceController::class => 'index',
         AbstractResourceController::class => 'show',
