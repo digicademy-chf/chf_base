@@ -1,0 +1,70 @@
+# CHF Templates
+page = PAGE
+page {
+    typeNum = 0
+    10 = PAGEVIEW
+    10 {
+        paths {
+            100 = EXT:chf_base/Resources/Private/Templates/Page/
+            200 = {$chf.templates.path}
+        }
+        variables {
+            parentPageTitle = TEXT
+            parentPageTitle.data = levelfield:-1:title
+        }
+        dataProcessing {
+            10 = menu
+            10 {
+                as = mainMenu
+                levels = 1
+                titleField = nav_title // title
+                includeSpacer = 0
+                expandAll = 1
+            }
+            20 = menu
+            20 {
+                as = serviceMenu
+                levels = 1
+                titleField = nav_title // title
+                includeSpacer = 0
+                expandAll = 1
+                special = directory
+                special.value = {$chf.templates.serviceFolder}
+            }
+            30 = database-query
+            30 {
+                as = mainContent
+                table = tt_content
+                orderBy = sorting
+                where = colPos = 0
+            }
+        }
+    }
+    includeCSS {
+        mdlr = EXT:chf_base/Resources/Public/Css/mdlr.css
+    }
+    includeJS {
+        mdlr = EXT:chf_base/Resources/Public/JavaScript/mdlr.js
+        mdlr.defer = 1
+    }
+}
+
+# JSON-LD
+jsonld = PAGE
+jsonld {
+    typeNum = 100
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders.10.header = Content-type:application/ld+json
+    }
+    10 = PAGEVIEW
+    10 {
+        paths {
+            100 = EXT:chf_base/Resources/Private/Templates/JsonLd/
+            200 = {$chf.templates.path}
+        }
+    }
+}
+
+# Settings
+config.admPanel = 1

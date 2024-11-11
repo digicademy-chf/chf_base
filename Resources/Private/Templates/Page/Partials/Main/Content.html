@@ -1,0 +1,521 @@
+        <section id="main-content" class="mdlr-content mdlr-section mdlr-variant-primary"><div>
+
+            <div class="mdlr-share">
+
+                <section>
+
+                    <h3><f:translate key="templates.main.rights" extensionName="chf_base"/></h3>
+
+                    <dl class="mdlr-credits">
+                        <!--<div>
+                            <dt>Metadaten</dt>
+                            <dd><a href="https://creativecommons.org/publicdomain/zero/1.0/" title="Lizenz aufrufen" rel="licence" target="_blank"><abbr title="Creative Commons Zero 1.0">CC0</abbr></a></dd>
+                        </div>
+                        <div>
+                            <dt>Text</dt>
+                            <dd>Uwe Gast, <a href="https://creativecommons.org/licenses/by/4.0/" title="Lizenz aufrufen" rel="licence" target="_blank"><abbr title="Creative Commons, Namensnennung 4.0">CC BY</abbr></a></dd>
+                        </div>
+                        <div>
+                            <dt><abbr title="Uniform Resource Name">URN</abbr></dt>
+                            <dd><a href="https://nbn-resolving.org/urn:nbn:de:0238-20230109144637061-9432689-4" class="mdlr-function-copy" data-target="urn:nbn:de:0238-20230109144637061-9432689-4" data-success="URN erfolgreich kopiert" data-failure="Das hat leider nicht geklappt" title="URN kopieren" rel="canonical">urn:nbn:de:0238-20230109144637061-9432689-4</a></dd>
+                        </div>
+                        <div>
+                            <dt>Permalink</dt>
+                            <dd><a href="https://corpusvitrearum.de/id/S123" class="mdlr-function-copy" data-target="https://corpusvitrearum.de/id/S123" data-success="Permalink erfolgreich kopiert" data-failure="Das hat leider nicht geklappt" title="Permalink kopieren" rel="canonical">https://corpusvitrearum.de/id/S123</a></dd>
+                        </div>-->
+                        <f:if condition="{page.pageRecord.author}"><div>
+                            <dt><f:translate key="templates.about.author" extensionName="chf_base"/></dt>
+                            <dd>{page.pageRecord.author}</dd>
+                        </div></f:if>
+                        <div>
+                            <dt><f:format.raw><f:translate key="templates.about.url" extensionName="chf_base"/></f:format.raw></dt>
+                            <dd><f:link.page class="mdlr-function-copy" data-target="{f:uri.page(absolute: 'true')}" data-success="{f:translate(key: 'templates.title.download.copy.success', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.title.download.copy.failure', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.title.download.copy', extensionName: 'chf_base')}" rel="canonical"><f:uri.page absolute="true"/></f:link.page></dd>
+                        </div>
+                    </dl>
+
+                </section>
+
+                <section>
+
+                    <h3><f:translate key="templates.main.share" extensionName="chf_base"/></h3>
+
+                    <ul class="mdlr-buttonrow mdlr-variant-right mdlr-variant-separate">
+                        <li>
+                            <button id="credits-share" class="mdlr-variant-round mdlr-variant-icon mdlr-function-modal" aria-controls="share" title="{f:translate(key: 'templates.main.share.share', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\'templates.generic.type.page\\', extensionName: \\'chf_base\\')}\'}')}">
+                                <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <use href="#icon-share"/>
+                                </svg>
+                                <span><f:translate key="templates.main.share.share" extensionName="chf_base" arguments="{0: '{f:translate(key: \'templates.generic.type.page\', extensionName: \'chf_base\')}'}"/>Beitrag teilen</span>
+                            </button>
+                        </li>
+                        <f:if condition="{page.pageRecord.author}"><li>
+                            <button class="mdlr-variant-round mdlr-variant-icon mdlr-function-copy" data-target="{f:translate(key: 'templates.about.author', extensionName: 'chf_base')}: {page.pageRecord.author}" data-success="{f:translate(key: 'templates.main.share.copy.success', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.main.share.copy.failure', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.main.share.copy', extensionName: 'chf_base')}">
+                                <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <use href="#icon-copy"/>
+                                </svg>
+                                <span><f:translate key="templates.main.share.copy" extensionName="chf_base"/></span>
+                            </button>
+                        </li></f:if>
+                        <!--<li>
+                            <button class="mdlr-variant-round mdlr-function-copy" data-target="Gast, Uwe. „Eine Liste, 27 Zeichnungen und die Glasgemälde aus der ehemaligen Deutschordenskirche in Weinheim (Bergstraße).“ Corpus Vitrearum Deutschland: Scheibenweise, Revision 1, Akademie der Wissenschaften und der Literatur Mainz, 20. Januar 2023, urn:nbn:de:0238-20230109144637061-9432689-4." data-success="Zitation erfolgreich kopiert" data-failure="Das hat leider nicht geklappt" title="Zitation kopieren">
+                                <span>Zitation</span>
+                            </button>
+                        </li>-->
+                    </ul>
+
+                </section>
+
+            </div>
+
+            <section class="mdlr-share mdlr-variant-right">
+
+                <h3><f:translate key="templates.main.jump" extensionName="chf_base"/></h3>
+
+                <ul class="mdlr-jump"><f:for each="{mainContent}" as="contentElement">
+                    <f:if condition="{contentElement.data.header}"><li><a href="#c{contentElement.data.uid}">{contentElement.data.header}</a></li></f:if>
+                </f:for></ul>
+
+            </section>
+
+<f:for each="{mainContent}" as="contentElement"><f:cObject
+    typoscriptObjectPath="tt_content.{contentElement.data.CType}"
+    data="{contentElement.data}"
+    table="tt_content"
+/></f:for>
+
+            <!--<p>
+                Dass die Deutschordenskirche St. Maria in Weinheim an der Bergstraße vor ihrem Abbruch 1809 zahlreiche Glasgemälde aus den 1530er-Jahren besaß, ist in der Forschung hinlänglich bekannt. Es sei hier nur auf die Beschreibungen von John G. Weiss, Josef Fresin, Hans Huth und Renate Neumüllers-Klauser verwiesen, die sich auf eine Auflistung der Glasgemälde im Jahr 1788 berufen konnten, bei Huth und Neumüllers-Klauser verbunden mit dem Hinweis, dass 1794 auch Abzeichnungen der Glasgemälde angefertigt und ins Zentralarchiv des Deutschen Ordens in Mergentheim gesandt worden seien, mit heute unbekanntem Verbleib (<a href="#reference-18" class="mdlr-function-reference" title="Referenz einblenden">Weiss 1911</a>, <abbr title="Seite">S.</abbr>&nbsp;551; <a href="#reference-06" class="mdlr-function-reference" title="Referenz einblenden">Fresin 1962</a>, <abbr title="Seite">S.</abbr>&nbsp;95; <a href="#reference-10" class="mdlr-function-reference" title="Referenz einblenden">Huth 1967</a>, <abbr title="Seite">S.</abbr>&nbsp;409, 411–413; <a href="#reference-13" class="mdlr-function-reference" title="Referenz einblenden">Neumüllers-Klauser 1977</a>, <abbr title="Seite">S.</abbr>&nbsp;67f., Nr. 107 †). Zwar sind diese Abzeichnungen niemals verschwunden gewesen, doch ist das Wissen um ihre Herkunft verloren gegangen, sodass Sascha Kimmelmann sie unlängst als „Kopien“ von Wappenscheiben aus dem Kapitelsaal des ehemaligen Deutschordensschlosses Mergentheim veröffentlicht hat (<a href="#reference-11" class="mdlr-function-reference" title="Referenz einblenden">Kimmelmann 2019</a>, <abbr title="Seite">S.</abbr>&nbsp;58 mit <abbr title="Abbildung">Abb.</abbr>&nbsp;30f. auf <abbr title="Seite">S.</abbr>&nbsp;59). Deren ursprünglicher Standort Weinheim blieb buchstäblich auf der Strecke, und die Frage, was denn mit diesen Wappenscheiben geschehen sein könnte, wurde erst gar nicht aufgeworfen, da man sie wohl für verloren hielt. Aber auch sie sind nicht gänzlich verschwunden, sondern befinden sich in Resten − unerkannt – auf Schloss Altshausen im Besitz des Hauses Württemberg (<a href="#reference-02" class="mdlr-function-reference" title="Referenz einblenden">Becksmann 1986</a>, <abbr title="Seite">S.</abbr>&nbsp;13f., <abbr title="Nummer">Nr.</abbr>&nbsp;44f., und <abbr title="Seite">S.</abbr>&nbsp;14, <abbr title="Anmerkung">Anm.</abbr> 31). All dieses Partikularwissen soll im Folgenden zur Vorbereitung eines längeren Beitrags summarisch zusammengeführt werden.
+            </p>
+
+            <h3 id="church">Deutschordenskirche</h3>
+
+            <figure class="mdlr-variant-right">
+                <div class="mdlr-variant-overlay">
+                    <img src="assets/blog1.jpg" id="image-01" alt="Grund- und Aufriss der Deutschordenskirche St. Maria in Weinheim (Bergstraße)">
+                    <ul class="mdlr-buttonrow mdlr-variant-separate mdlr-variant-overlay">
+                        <li>
+                            <button class="mdlr-variant-round mdlr-variant-icon mdlr-variant-round mdlr-variant-overlay mdlr-function-fullscreen" data-target="image-01" data-failure="Das hat leider nicht geklappt" title="Als Vollbild zeigen">
+                                <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <use href="#icon-fullscreen"/>
+                                </svg>
+                                <span>Als Vollbild zeigen</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <figcaption><em><abbr title="Abbildung">Abb.</abbr> 1:</em> Peter Elias Berthold, Grund- und Aufriss der Deutschordenskirche St. Maria in Weinheim (Bergstraße), 1718. Landesarchiv Baden-Württemberg, Generallandesarchiv Karlsruhe G Baupläne Weinheim 4. <span><em>Aufnahme:</em> Landesarchiv Baden-Württemberg, GLAK.</span></figcaption>
+            </figure>
+
+            <p>
+                Die Deutschordenskirche St. Maria in Weinheim war ein länglicher Saalbau mit 4 Fensterachsen an den Seiten und einem flachen 3/8-Chorschluss, der im Jahr 1350 von dem Deutschmeister Wolfram von Nellenburg im Zentrum der Stadt zu errichten begonnen worden war (<a href="#reference-10" class="mdlr-function-reference" title="Referenz einblenden">Huth 1967</a>, <abbr title="Seite">S.</abbr>&nbsp;409; <a href="#reference-06" class="mdlr-function-reference" title="Referenz einblenden">Fresin 1962</a>, <abbr title="Seite">S.</abbr>&nbsp;94f.; <a href="#reference-13" class="mdlr-function-reference" title="Referenz einblenden">Neumüllers-Klauser 1977</a>, <abbr title="Seite">S.</abbr>&nbsp;12f., <abbr title="Nummer">Nr.</abbr>&nbsp;17; <a href="#reference-17" class="mdlr-function-reference" title="Referenz einblenden">Wagner 1999</a>, <abbr title="Seite">S.</abbr>&nbsp;16–20)
+                <a href="#info-01" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-intext mdlr-function-info" role="button" title="Informationen einblenden">
+                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <use href="#icon-info"/>
+                    </svg>
+                    <span>Informationen einblenden</span>
+                </a>
+                Grund- und Aufriss sind in einer 1718 datierten Zeichnung des Zimmermeisters Peter Elias Berthold überliefert, als der Bau anlässlich der Neuerrichtung des Amtshauses modernisiert werden sollte (<abbr title="Abbildung">Abb.</abbr> 1). Er hatte neun zweibahnige und zwei einbahnige Maßwerkfenster, in denen – möglicherweise zusammengeführt in einem Fenster – 27 Rundscheiben mit Wappen von Deutschordensrittern und dem Pfalzgrafen sowie Szenen aus dem Marien- und Christusleben, Heilige, aber auch profane Darstellungen zu sehen waren.
+            </p>
+
+            <p>
+                Zu diesen Scheiben liegt eine selten ausführliche schriftliche und bildliche Dokumentation vor (<a href="#reference-08" class="mdlr-function-reference" title="Referenz einblenden">Generallandesarchiv Karlsruhe</a>; <a href="#reference-15" class="mdlr-function-reference" title="Referenz einblenden">Staatsarchiv Ludwigsburg</a>). Da ist zunächst jenes <em>Verzeichnuß / Welche Wappen […] sich in denen des Hohen Ordens Commenderie Kirchen fensteren zu Weinheim vorfinden und aus gelegenheit deren neu gemachten fensteren aufge[unleserlich] worden</em> (<a href="#reference-08" class="mdlr-function-reference" title="Referenz einblenden">Generallandesarchiv Karlsruhe</a>). Es wurde am 5. Oktober 1788 vom Kommendenverwalter Joseph Andreas Sartorius erstellt, der insgesamt 21 Wappenscheiben – zumeist mit Blasonierung – aufführt: <em>Nassau</em>, <em>Köed</em>, <em>Voheissen 1537</em>, <em>georg Von Rodenstein</em>, <em>Schwalbach</em>, <em>Biberach</em>, <em>Henrich Marschal Von Pappen 1537</em>, <em>grorod</em>, <em>Haldermanstein</em>, <em>Ludwig Von Gott: Gnad pfalz Graf bey rhein</em> […] <em>1537</em>, <em>Stauwen</em>, <em>Rosenburg</em>, <em>Dieter Von Cleen</em>, <em>Walter Von Cronberg</em> […] <em>1531</em> [sic!], <em>Bellerhem</em>, <em>Wilhelm Halber</em>, <em>Berlickheim</em>, <em>Von Erlickem</em>, <em>Neyneck</em>, <em>Haberkorn</em> und <em>Landschad</em> (<abbr title="vergleiche">vgl.</abbr> <a href="#appendix">Anhang</a>). Aus Sorge um den Erhalt dieser Scheiben sandte Sartorius sein Verzeichnis am 15. August 1790 an die Regierung des Deutschen Ordens in Mergentheim (<a href="#reference-08" class="mdlr-function-reference" title="Referenz einblenden"><em><abbr title="ebenda">ibid.</abbr></em></a>), wurde dafür laut Antwortschreiben vom 22. September 1790 ausdrücklich gelobt und zugleich aufgefordert, seine Angaben zu präzisieren, auch im Hinblick auf die Beschreibung der Wappen <em>nach heraldischen Grundsätzen</em> (<a href="#reference-08" class="mdlr-function-reference" title="Referenz einblenden"><em><abbr title="ebenda">ibid.</abbr></em></a>). Nach Beratung mit Johannes Schwab (1731–1795), Professor für Experimentalphysik und Mathematik an der Universität Heidelberg, der auch Privatkollegs über Diplomatik anbot, verfiel man auf die Idee, die Scheiben von einem Maler abzeichnen zu lassen (Schreiben vom 14. März 1791), was seitens der Ordensregierung unter strengen Auflagen zur Ausführung am 1. April 1791 genehmigt wurde (<a href="#reference-08" class="mdlr-function-reference" title="Referenz einblenden"><em><abbr title="ebenda">ibid.</abbr></em></a>).
+                <a href="#info-02" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-intext mdlr-function-info" role="button" title="Informationen einblenden">
+                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <use href="#icon-info"/>
+                    </svg>
+                    <span>Informationen einblenden</span>
+                </a>
+            </p>
+
+            <h3 id="drawings">Abzeichnungen</h3>
+
+            <figure>
+                <div>
+                    <div class="mdlr-variant-overlay">
+                        <img src="assets/blog2.jpg" id="image-02" alt="Wappen Walther von Cronberg">
+                        <ul class="mdlr-buttonrow mdlr-variant-separate mdlr-variant-overlay">
+                            <li>
+                                <button class="mdlr-variant-round mdlr-variant-icon mdlr-variant-round mdlr-variant-overlay mdlr-function-fullscreen" data-target="image-02" data-failure="Das hat leider nicht geklappt" title="Als Vollbild zeigen">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <use href="#icon-fullscreen"/>
+                                    </svg>
+                                    <span>Als Vollbild zeigen</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mdlr-variant-overlay">
+                        <img src="assets/blog3.jpg" id="image-03" alt="Wappen Dietrich von Cleen">
+                        <ul class="mdlr-buttonrow mdlr-variant-separate mdlr-variant-overlay">
+                            <li>
+                                <button class="mdlr-variant-round mdlr-variant-icon mdlr-variant-round mdlr-variant-overlay mdlr-function-fullscreen" data-target="image-03" data-failure="Das hat leider nicht geklappt" title="Als Vollbild zeigen">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <use href="#icon-fullscreen"/>
+                                    </svg>
+                                    <span>Als Vollbild zeigen</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mdlr-variant-overlay">
+                        <img src="assets/blog4.jpg" id="image-04" alt="Wappen Pfalzgraf Ludwig V.">
+                        <ul class="mdlr-buttonrow mdlr-variant-separate mdlr-variant-overlay">
+                            <li>
+                                <button class="mdlr-variant-round mdlr-variant-icon mdlr-variant-round mdlr-variant-overlay mdlr-function-fullscreen" data-target="image-04" data-failure="Das hat leider nicht geklappt" title="Als Vollbild zeigen">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <use href="#icon-fullscreen"/>
+                                    </svg>
+                                    <span>Als Vollbild zeigen</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <figcaption><em><abbr title="Abbildungen">Abb.</abbr> 2, 3 und 4:</em> Nicolaus Rudersheim, Wappen Walther von Cronberg, Wappen Dietrich von Cleen und Wappen Pfalzgraf Ludwig V., 1794. Landesarchiv Baden-Württemberg, Staatsarchiv Ludwigsburg B 236 Bü 194. <span>Aufnahmen: Landesarchiv Baden-Württemberg, StAL.</span></figcaption>
+            </figure>
+
+            <p>
+                Für die Aufgabe wurde der Maler Nicolaus Rudersheim ausgewählt (Schreiben vom 13. Februar 1792), ein heute kaum noch bekannter Porträtist aus Mannheim, von dem einige wenige Bildnisse erhalten sind (<a href="#reference-08" class="mdlr-function-reference" title="Referenz einblenden"><em><abbr title="ebenda">ibid.</abbr></em></a>).
+                <a href="#info-03" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-intext mdlr-function-info" role="button" title="Informationen einblenden">
+                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <use href="#icon-info"/>
+                    </svg>
+                    <span>Informationen einblenden</span>
+                </a>
+                Nach längerem Hin und Her wurde schließlich am 4. Juli 1794 ein Kostenvoranschlag der Arbeiten in Höhe von 151 Gulden und 45 Kreuzern aufgestellt (<em>Verzeichnuß deren auf die Aushub= und reparation deren in der Commende Kirch zu Weinheim vorfindlichen Wappen fenstern und deren Copirung berechneten Kosten</em>), dem zufolge vorgesehen war, <em>den ganzen flügel worein sie</em> [die Wappenscheiben; Anm. d. Verf.] <em>befestiget, auszuheben, sie sorgfältig auszuschneiden, mit neuem glas wieder zu verbleyen, zu befestigen</em> und die Scheiben vor Ort abzeichnen zu lassen (<em>Vor 10 stuck große Wappen p[ro] stuck 5 fl 30 xr / Vor 17 kleine stuck ad 2 fl 45 xr</em>; <a href="#reference-08" class="mdlr-function-reference" title="Referenz einblenden"><em><abbr title="ebenda">ibid.</abbr></em></a>). Dies wurde am 9. Juli 1794 von höchster Stelle genehmigt, nun mit der Auflage, <em>die copirte Wappen samt den Originalien</em> nach Mergentheim zu senden (<a href="#reference-08" class="mdlr-function-reference" title="Referenz einblenden"><em><abbr title="ebenda">ibid.</abbr></em></a>).
+            </p>
+
+            <figure class="mdlr-variant-left">
+                <div class="mdlr-variant-overlay">
+                    <img src="assets/blog5.jpg" id="image-05" alt="Wappen Buches (Büches)">
+                    <ul class="mdlr-buttonrow mdlr-variant-separate mdlr-variant-overlay">
+                        <li>
+                            <button class="mdlr-variant-round mdlr-variant-icon mdlr-variant-round mdlr-variant-overlay mdlr-function-fullscreen" data-target="image-05" data-failure="Das hat leider nicht geklappt" title="Als Vollbild zeigen">
+                                <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <use href="#icon-fullscreen"/>
+                                </svg>
+                                <span>Als Vollbild zeigen</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <figcaption><em><abbr title="Abbildung">Abb.</abbr> 5:</em> Nicolaus Rudersheim, Wappen Buches (Büches), 1794. Landesarchiv Baden-Württemberg, Staatsarchiv Ludwigsburg B 236 Bü 194. <span>Aufnahmen: Landesarchiv Baden-Württemberg, StAL.</span></figcaption>
+            </figure>
+
+            <p>
+                Es deutet alles darauf hin, dass dieser Weisung entsprochen wurde, denn nur über Mergentheim, das 1809 vom Königreich Württemberg in Besitz genommen wurde (<a href="#reference-16" class="mdlr-function-reference" title="Referenz einblenden">Täubl 1966</a>, <abbr title="besonders">bes.</abbr>&nbsp;<abbr title="Seite">S.</abbr>&nbsp;171–173), können die <em>copirte Wappen</em> wie auch die <em>Originalien</em> an ihre gegenwärtigen Standorte gekommen sein.
+            </p>
+
+            <p>
+                Die Abzeichnungen der Weinheimer Wappenscheiben befinden sich heute in Ludwigsburg, wohin nach der Besetzung von Stadt und Schloss Mergentheim durch das Königreich Württemberg ein Teil des Bestandes des Ordensarchives gelangt ist (<a href="#reference-14" class="mdlr-function-reference" title="Referenz einblenden">Seiler 2014</a>, <abbr title="Seite">S.</abbr>&nbsp;36–56). Die Akte, in der auf 19 Folioblättern mimetisch genaue Abbildungen von 10 großen und 17 kleinen Rundscheiben versammelt sind (<abbr title="Abbildung">Abb.</abbr> 2–5), trägt die irreführende Aufschrift <em>Farbige Kopien von Rundscheiben (Glasmalereien) aus dem Deutschordensschloss zu Mergentheim</em> (<a href="#reference-15" class="mdlr-function-reference" title="Referenz einblenden">Staatsarchiv Ludwigsburg</a>). Vergleicht man aber diese „Kopien“ mit Sartorius’ Auflistung von 1788, so sind die Übereinstimmungen so umfassend, dass es sich um dasselbe, für Weinheim in Anspruch zu nehmende Scheibenkonvolut handeln muss: Alle 21 schriftlich aufgelisteten Wappenscheiben sind auch zeichnerisch erfasst (siehe <a href="#appendix">Anhang</a>). Während Sartorius aber nur Wappenscheiben <em>mit</em> Inschrift aufnahm (21 Positionen), umfassen die Abzeichnungen <em>alle</em> Wappenscheiben, das heißt auch Scheiben <em>ohne</em> oder <em>ohne vollständige</em> Inschrift (insgesamt 27 Positionen), womit die Differenz von sechs Scheiben zwischen beiden Konvoluten zu erklären ist.
+            </p>
+
+            <h3 id="originals">Originalien</h3>
+
+            <figure>
+                <div>
+                    <div class="mdlr-variant-overlay">
+                        <img src="assets/blog6.jpg" id="image-06" alt="Wappen Walther von Cronberg">
+                        <ul class="mdlr-buttonrow mdlr-variant-separate mdlr-variant-overlay">
+                            <li>
+                                <button class="mdlr-variant-round mdlr-variant-icon mdlr-variant-round mdlr-variant-overlay mdlr-function-fullscreen" data-target="image-06" data-failure="Das hat leider nicht geklappt" title="Als Vollbild zeigen">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <use href="#icon-fullscreen"/>
+                                    </svg>
+                                    <span>Als Vollbild zeigen</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mdlr-variant-overlay">
+                        <img src="assets/blog7.jpg" id="image-07" alt="Wappen Dietrich von Cleen">
+                        <ul class="mdlr-buttonrow mdlr-variant-separate mdlr-variant-overlay">
+                            <li>
+                                <button class="mdlr-variant-round mdlr-variant-icon mdlr-variant-round mdlr-variant-overlay mdlr-function-fullscreen" data-target="image-07" data-failure="Das hat leider nicht geklappt" title="Als Vollbild zeigen">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <use href="#icon-fullscreen"/>
+                                    </svg>
+                                    <span>Als Vollbild zeigen</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mdlr-variant-overlay">
+                        <img src="assets/blog8.jpg" id="image-08" alt="Wappen Pfalzgraf Ludwig V.">
+                        <ul class="mdlr-buttonrow mdlr-variant-separate mdlr-variant-overlay">
+                            <li>
+                                <button class="mdlr-variant-round mdlr-variant-icon mdlr-variant-round mdlr-variant-overlay mdlr-function-fullscreen" data-target="image-08" data-failure="Das hat leider nicht geklappt" title="Als Vollbild zeigen">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <use href="#icon-fullscreen"/>
+                                    </svg>
+                                    <span>Als Vollbild zeigen</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <figcaption><em><abbr title="Abbildungen">Abb.</abbr> 6, 7 und 8:</em> Wappen Walther von Cronberg, 1537, Wappen Dietrich von Cleen, Wappen Pfalzgraf Ludwig V., 1537, aus Weinheim, ehem. Deutschordenskirche. Ehemals Friedrichshafen, Schloss. <span>Aufnahmen: CVMA Deutschland, Freiburg i. Br., Archiv (Josef L. Fischer, um 1914/15).</span></figcaption>
+            </figure>
+
+            <p>
+                So wie die Abzeichnungen der Weinheimer Wappenscheiben 1809 in württembergischen Besitz übergegangen sind, muss es auch mit den in Mergentheim aufbewahrten <em>Originalien</em> geschehen sein. Zwar gibt es keine diesbezügliche Quelle, doch besitzt der Umstand, dass sich vermutlich elf Scheiben in der Sammlung von Schloss Friedrichshafen befanden, genug Beweiskraft für diesen Analogieschluss. Die Glasgemälde im Friedrichshafener Schloss – einem ehemaligen Benediktinerkloster, das unter König Wilhelm I. von Württemberg (* 1781, Kg. 1816–1864) zu einer Sommerresidenz für die Familie ausgebaut und 1853 mit historischen Glasfenstern aus der Inselkapelle im Park von Schloss Monrepos ausgestattet wurde – wurden erstmals 1882 von Karl Mayer von Mayerfels publiziert (<a href="#reference-12" class="mdlr-function-reference" title="Referenz einblenden">Mayer von Mayerfels 1882</a>, <abbr title="Seite">S.</abbr>&nbsp;43–68).
+                <a href="#info-04" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-intext mdlr-function-info" role="button" title="Informationen einblenden">
+                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <use href="#icon-info"/>
+                    </svg>
+                    <span>Informationen einblenden</span>
+                </a>
+            </p>
+
+            <figure class="mdlr-variant-right">
+                <div class="mdlr-variant-overlay">
+                    <img src="assets/blog9.jpg" id="image-09" alt="Wappen Dietrich von Cleen">
+                    <ul class="mdlr-buttonrow mdlr-variant-separate mdlr-variant-overlay">
+                        <li>
+                            <button class="mdlr-variant-round mdlr-variant-icon mdlr-variant-round mdlr-variant-overlay mdlr-function-fullscreen" data-target="image-09" data-failure="Das hat leider nicht geklappt" title="Als Vollbild zeigen">
+                                <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <use href="#icon-fullscreen"/>
+                                </svg>
+                                <span>Als Vollbild zeigen</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <figcaption><em><abbr title="Abbildung">Abb.</abbr> 9:</em> Wappen Dietrich von Cleen, 1537(?), aus Weinheim, ehem. Deutschordenskirche. Altshausen, Schloss. <span>Aufnahme: CVMA Deutschland, Freiburg i. Br. (Rainer Wohlrabe).</span></figcaption>
+            </figure>
+
+            <p>
+                Sie waren nach dekorativen Gesichtspunkten in insgesamt 20 Fenstern in Parterregang, Stiegenhaus und Oberem Gang sowie im Kiosk der Königin Olga eingebaut, die Reste der Weinheimer Wappenscheiben allesamt im Oberen Gang, dort verteilt auf das vierte, sechste, siebente, achte, elfte und zwölfte Fenster; erhalten waren damals neben falsch verbleiten Teilen von Inschriften der Wappenscheiben Heinrich Marschall von Pappenheim, Pfalzgraf Ludwig V. (?) (<abbr title="Abbildung">Abb.</abbr> 8) und Walther von Cronberg (<abbr title="Abbildung">Abb.</abbr> 6) auch deren Wappen selbst sowie die Wappenscheiben Adelmann von Adelmannsfelden, Dietrich von Cleen (<abbr title="Abbildung">Abb.</abbr> 7), Bellersheim, Landschad (von Steinach), Bibra, Wilhelm Halber, Haberkorn und Berlichingen (siehe <a href="#appendix">Anhang</a>). Nach einer Restaurierung, die unter der Aufsicht von Josef Ludwig Fischer 1914/15 in München durchgeführt wurde (<a href="#reference-02" class="mdlr-function-reference" title="Referenz einblenden">Becksmann 1986</a>, <abbr title="Seite">S.</abbr>&nbsp;4f.), wurde offenbar nur noch ein Teil der Weinheimer Wappen wieder in Friedrichshafen eingesetzt, denn in dem im Jahr 1938 im Zuge der Kriegsbergung der Sammlung erstellten Inventar werden lediglich vier Scheiben erwähnt (Nr. 65–68); eine weitere kleine Rundscheibe wird noch unter den Glasgemälden und Fragmenten genannt, die sich nicht in den Fenstern des Schlosses befanden (siehe <a href="#appendix">Anhang</a>; <a href="#reference-01" class="mdlr-function-reference" title="Referenz einblenden">Archiv des Hauses Württemberg</a>).
+                <a href="#info-05" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-intext mdlr-function-info" role="button" title="Informationen einblenden">
+                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <use href="#icon-info"/>
+                    </svg>
+                    <span>Informationen einblenden</span>
+                </a>
+            </p>
+
+            <p>
+                Nach dem Ende des Zweiten Weltkriegs konnten die im Schloss Altshausen deponierten Glasgemälde nicht mehr an ihren vorherigen Standort zurückgebracht werden, da Stadt und Schloss Friedrichshafen nach den Luftangriffen der Alliierten stark zerstört waren.
+                <a href="#info-06" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-intext mdlr-function-info" role="button" title="Informationen einblenden">
+                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <use href="#icon-info"/>
+                    </svg>
+                    <span>Informationen einblenden</span>
+                </a>
+                Die Sammlung verblieb in Altshausen, ihr mittelalterlicher Bestand bis ca. 1530 wurde in den Jahren 1958 und 1986 durch das Corpus Vitrearum Medii Aevi Deutschland publiziert (<a href="#reference-19" class="mdlr-function-reference" title="Referenz einblenden">Wentzel 1958</a>, <abbr title="Seite">S.</abbr>&nbsp;177–185; <a href="#reference-02" class="mdlr-function-reference" title="Referenz einblenden">Becksmann 1986</a>, <abbr title="Seite">S.</abbr>&nbsp;3–16), darunter auch drei der erwiesenermaßen aus Weinheim stammenden Wappenscheiben (<abbr title="Abbildung">Abb.</abbr> 9; <a href="#reference-02" class="mdlr-function-reference" title="Referenz einblenden">Becksmann 1986</a>, <abbr title="Seite">S.</abbr>&nbsp;13f., <abbr title="Nummer">Nr.</abbr>&nbsp;44f., und <abbr title="Seite">S.</abbr>&nbsp;14, <abbr title="Anmerkung">Anm.</abbr>&nbsp;31).
+                <a href="#info-07" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-intext mdlr-function-info" role="button" title="Informationen einblenden">
+                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <use href="#icon-info"/>
+                    </svg>
+                    <span>Informationen einblenden</span>
+                </a>
+                Ob sich aber in Altshausen weitere Reste der offenbar nach und nach dezimierten <em>Originalien</em> auffinden lassen, bedarf noch der Überprüfung, wie auch alle Fragen der Rekonstruktion sowie geschichtlichen und stilistisch-zeitlichen Einordnung der Weinheimer Wappenscheibenserie Gegenstand des angekündigten längeren Beitrags sein werden.
+            </p>
+
+            <h3 id="appendix">Anhang</h3>
+
+            <table>
+                <caption><em><abbr title="Tabelle">Tab.</abbr> 1:</em> Konkordanz der für Weinheim gesicherten Glasgemälde und ihrer Provenienz</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" width="15%">Objekt</th>
+                        <th scope="col" width="21%">Weinheim I: Verzeichnis 1788 (<a href="#reference-08" class="mdlr-function-reference" title="Referenz einblenden">Generallandesarchiv Karlsruhe</a>)</th>
+                        <th scope="col" width="22%">Weinheim II: Abzeichnungen 1794 (<a href="#reference-09" class="mdlr-function-reference" title="Referenz einblenden">Hauptstaatsarchiv Stuttgart</a>)</th>
+                        <th scope="col" width="21%">Friedrichshafen: <a href="#reference-12" class="mdlr-function-reference" title="Referenz einblenden">Mayer von Mayerfels 1882</a></th>
+                        <th scope="col" width="21%">Altshausen: Inventar 1938 (<a href="#reference-01" class="mdlr-function-reference" title="Referenz einblenden">Archiv des Hauses Württemberg</a>)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" class="secondary">01.&nbsp;Wappen<br>Neuhausen</th>
+                        <td>–</td>
+                        <td>I.&nbsp;Gr.&nbsp;Rundscheibe mit Wappen Neuhausen und Anbetung der Könige</td>
+                        <td>–</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">02.&nbsp;Wappen<br>Hohenlohe</th>
+                        <td>–</td>
+                        <td>II.&nbsp;Gr.&nbsp;Rundscheibe mit Wappen Hohenlohe und Jagdszenen</td>
+                        <td>–</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">03.&nbsp;Wappen<br>Georg von Rodenstein</th>
+                        <td><em>georg Von Rodenstein Commenthur zu Francfurt</em></td>
+                        <td>III.&nbsp;Gr.&nbsp;Rundscheibe mit Wappen Georg von Rodenstein<br>Inschrift: <em>GEORG&nbsp;· VON&nbsp;· RODENSTEIN&nbsp;· COMENTVR&nbsp;· …KFOR…</em></td>
+                        <td>–</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">04.&nbsp;Wappen<br>Johann Voheißen</th>
+                        <td><em>Voheissen 1537&nbsp;= Eine rothe roos im weißen feldt unten / gelber adler mit einem ring im rothen feldt.</em></td>
+                        <td>IV.&nbsp;Gr.&nbsp;Rundscheibe mit Wappen Johann Voheißen<br>Inschrift: <em>JOHANN VOHEEYSEN ANNO 1537</em></td>
+                        <td>–</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">05.&nbsp;Wappen<br>Heinrich Marschall von Pappenheim</th>
+                        <td><em>Henrich Marschal Von Pappen 1537</em></td>
+                        <td>V.&nbsp;Gr.&nbsp;Rundscheibe mit Wappen Heinrich Marschall von Pappenheim<br>Inschrift: <em>HEINRICH MARSCHALCK VON BAPPENHEIM 1537</em></td>
+                        <td>Oberer Gang, 4.&nbsp;Fenster: Fragment der Inschrift (S.&nbsp;56, Nr.&nbsp;2)<br>Oberer Gang, 6.&nbsp;Fenster: Fragment der Inschrift (S.&nbsp;58, Nr.&nbsp;1)<br>Oberer Gang, 12.&nbsp;Fenster: Wappen Heinrich Marschall von Pappenheim (S.&nbsp;65, Nr.&nbsp;2)</td>
+                        <td><em>Nr.&nbsp;66. Wappen des Deutschordenskomthurs Heinrich Marschall von Pappenheim, 1531</em> [sic!] (Bl.&nbsp;8)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">06.&nbsp;Wappen<br>Heusenstamm</th>
+                        <td>–</td>
+                        <td>VI.&nbsp;Gr.&nbsp;Rundscheibe mit Wappen Heusenstamm und Christusszenen</td>
+                        <td>–</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">07.&nbsp;Wappen<br>Walther von Cronberg</th>
+                        <td><em>Walter von Cronberg Meister deutschen Ordens 1531</em></td>
+                        <td>VII.&nbsp;Gr.&nbsp;Rundscheibe mit Wappen Walther von Cronberg<br>Inschrift: <em>WALTHER VON …ONBVRG&nbsp;… DEVTSCH&nbsp;… ORDENS 1537</em></td>
+                        <td>Oberer Gang, 6.&nbsp;Fenster: Fragment der Inschrift (S.&nbsp;58, Nr.&nbsp;2)<br>Oberer Gang, 12.&nbsp;Fenster: Wappen Walther von Cronberg (S.&nbsp;65, Nr.&nbsp;1)</td>
+                        <td><em>Nr.&nbsp;65. Wappen des Hoch-u.Deutschmeisters Walther von Cronberg, 1531</em> [sic!] (Bl.&nbsp;8)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">08.&nbsp;Wappen<br>Dietrich von Cleen</th>
+                        <td><em>Dieter von Cleen die 4 Evangelisten in der Vorstellung&nbsp;/ des Engels, des löws, Kuh und adlers.</em></td>
+                        <td>VIII.&nbsp;Gr.&nbsp;Rundscheibe mit Wappen Dietrich von Cleen und Evangelistensymbolen<br>Inschrift: <em>DIETHER VON CLEEN&nbsp;·</em></td>
+                        <td>Oberer Gang, 8.&nbsp;Fenster: Wappen Dietrich von Cleen (S.&nbsp;60, Nr.&nbsp;2)</td>
+                        <td><em>Nr.&nbsp;67. Vierpassscheibe mit Wappen des Deutschmeisters Diether v.&nbsp;Cleen, 1515–1526</em> (Bl.&nbsp;8)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">09.&nbsp;Wappen<br>Adelmann von Adelmannsfelden</th>
+                        <td>–</td>
+                        <td>IX.&nbsp;Gr.&nbsp;Rundscheibe mit Wappen Adelmann von Adelmannsfelden und Heiligen</td>
+                        <td>Oberer Gang, 8.&nbsp;Fenster: Wappen Adelmann von Adelmannsfelden (S.&nbsp;60, Nr.&nbsp;1)</td>
+                        <td><em>Nr.&nbsp;68. Vierpassscheibe des Deutschmeisters Johann Adelmann von Adelmannsfelden, gest.&nbsp;1515</em> (Bl.&nbsp;8)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">10.&nbsp;Wappen<br>Pfalzgraf Ludwig V.</th>
+                        <td><em>Ludwig Von Gott: Gnad pfalz Graf bey rhein, hertzog in beurn&nbsp;/ des H:&nbsp;R:&nbsp;R: Truchseß und Churfürst 1537</em></td>
+                        <td>X.&nbsp;Gr.&nbsp;Rundscheibe mit Wappen Pfalzgraf Ludwig&nbsp;V.<br>Inschrift: <em>·&nbsp;LVDWIG&nbsp;· V(ON)&nbsp;· G(OTTES)&nbsp;· G(NADEN)&nbsp;· PFALCZGRAF&nbsp;· BEY&nbsp;· RIN&nbsp;· HERZOG&nbsp;· I(N)&nbsp;· BEIER&nbsp;· DES&nbsp;· H(EILIGEN)&nbsp;· R(ÖMISCHEN)&nbsp;· R(EICHS)&nbsp;· ERCZTRVCHSES&nbsp;· VND&nbsp;· CHVRFVRST&nbsp;· 1537&nbsp;·</em></td>
+                        <td>Oberer Gang, 6.&nbsp;Fenster: Fragment der Inschrift (S.&nbsp;58, Nr.&nbsp;1)<br>Oberer Gang, 7.&nbsp;Fenster: Wappen Pfalzgraf Ludwig&nbsp;V.&nbsp;(?) (S.&nbsp;59f., Nr.&nbsp;1)</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">11.&nbsp;Wappen<br>Buches (Büches)</th>
+                        <td>–</td>
+                        <td>I.&nbsp;Kl.&nbsp;Rundscheibe mit Wappen Buches (Büches)<br>Inschrift: <em>…YCHIS</em></td>
+                        <td>–</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">12.&nbsp;Wappen<br>Nothaft von Hohenberg</th>
+                        <td>–</td>
+                        <td>II.&nbsp;Kl.&nbsp;Rundscheibe mit Wappen Nothaft von Hohenberg</td>
+                        <td>–</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">13.&nbsp;Wappen<br>N.&nbsp;N.</th>
+                        <td><em>Köed. Ein weißer adler im schwartzen feldt.</em></td>
+                        <td>III.&nbsp;Kl.&nbsp;Rundscheibe mit Wappen N.&nbsp;N.<br>Inschrift: <em>RO(E)D</em></td>
+                        <td>–</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">14.&nbsp;Wappen<br>Nassau</th>
+                        <td><em>Nassau Ein gelber löw im Weißen feldt.</em></td>
+                        <td>IV.&nbsp;Kl.&nbsp;Rundscheibe mit Wappen Nassau<br>Inschrift: <em>NASSAW</em></td>
+                        <td>–</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">15.&nbsp;Wappen<br>Bibra</th>
+                        <td><em>Biberach. Ein schwartzer bieber im gelben feldt.</em></td>
+                        <td>V.&nbsp;Kl.&nbsp;Rundscheibe mit Wappen Bibra<br>Inschrift: <em>BIBERACH</em></td>
+                        <td>Oberer Gang, 11.&nbsp;Fenster: Wappen Bibra (S.&nbsp;63, Nr.&nbsp;1)</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">16.&nbsp;Wappen<br>Schwalbach</th>
+                        <td><em>Schwalbach. Ein grauer Adler im weißen feldt.</em></td>
+                        <td>VI.&nbsp;Kl.&nbsp;Rundscheibe mit Wappen Schwalbach<br>Inschrift: <em>SCHWALBACH</em></td>
+                        <td>–</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">17.&nbsp;Wappen<br>Haberkorn</th>
+                        <td><em>Haberkorn ein spitzer huth oben mit einem busch.</em></td>
+                        <td>VII.&nbsp;Kl.&nbsp;Rundscheibe mit Wappen Haberkorn<br>Inschrift: <em>HABERKORN</em></td>
+                        <td>Oberer Gang, 11.&nbsp;Fenster: Wappen Haberkorn (S.&nbsp;63, Nr.&nbsp;2)</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">18.&nbsp;Wappen<br>Neuneck</th>
+                        <td><em>Neyneck. ein Gelber balcen mit einem stern oben&nbsp;/ im weißen feldt.</em></td>
+                        <td>VIII.&nbsp;Kl.&nbsp;Rundscheibe mit Wappen Neuneck<br>Inschrift: <em>NEYNNECK</em></td>
+                        <td>–</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">19.&nbsp;Wappen<br>Landschad von Steinach</th>
+                        <td><em>Landschad eine harf im gelben feldt.</em></td>
+                        <td>IX.&nbsp;Kl.&nbsp;Rundscheibe mit Wappen Landschad von Steinach<br>Inschrift: <em>LANDSCHAD</em></td>
+                        <td>Oberer Gang, 11.&nbsp;Fenster: Wappen Landschad von Steinach (S.&nbsp;63, Nr.&nbsp;1)</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">20.&nbsp;Wappen<br>Philipp von Erligheim</th>
+                        <td><em>Von Erlickem ein weißer löw im gelben feldt.</em></td>
+                        <td>X.&nbsp;Kl.&nbsp;Rundscheibe mit Wappen Philipp von Erligheim<br>Inschrift: <em>PHILIP&nbsp;· V(ON)&nbsp;· ERLICKEM</em></td>
+                        <td>–</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">21.&nbsp;Wappen<br>Berlichingen</th>
+                        <td><em>Berlickheim</em></td>
+                        <td>XI.&nbsp;Kl.&nbsp;Rundscheibe mit Wappen Berlichingen<br>Inschrift: <em>·&nbsp;BERLICKEM&nbsp;·</em></td>
+                        <td>Oberer Gang, 11.&nbsp;Fenster: Wappen Berlichingen (S.&nbsp;63, Nr.&nbsp;2)</td>
+                        <td><em>1 rund, klein, Wappen eines D.O.Ritters, v.Berlichingen (um&nbsp;1530–40.)</em> (Bl.&nbsp;20)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">22.&nbsp;Wappen<br>Wilhelm Halber</th>
+                        <td><em>Wilhelm Halber&nbsp;= drey weiße schwanen im schwartzen&nbsp;/ feldt.</em></td>
+                        <td>XII.&nbsp;Kl.&nbsp;Rundscheibe mit Wappen Wilhelm Halber<br>Inschrift: <em>WILHELM&nbsp;· HALBER</em></td>
+                        <td>Oberer Gang, 11.&nbsp;Fenster: Wappen Wilhelm Halber (S.&nbsp;63, Nr.&nbsp;2)</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">23.&nbsp;Wappen<br>Bellersheim</th>
+                        <td><em>Bellerhem. gelb und schwartze Kreuzzer mit einem&nbsp;/ zug im weißen feldt.</em></td>
+                        <td>XIII.&nbsp;Kl.&nbsp;Rundscheibe mit Wappen Bellersheim<br>Inschrift: <em>BELLERSHEM</em></td>
+                        <td>Oberer Gang, 11.&nbsp;Fenster: Wappen Bellersheim (S.&nbsp;63, Nr.&nbsp;1)</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">24.&nbsp;Wappen<br>Rosenberg</th>
+                        <td><em>Rosenburg ein schwartz Gerambs</em>&nbsp;[?] <em>im weißen feldt.</em></td>
+                        <td>XIV.&nbsp;Kl.&nbsp;Rundscheibe mit Wappen Rosenberg<br>Inschrift: <em>ROSENBVRG</em></td>
+                        <td>–</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">25.&nbsp;Wappen<br>Staufen</th>
+                        <td><em>Stauwen&nbsp;= drey weiße Kelch im weißen feld.</em></td>
+                        <td>XV.&nbsp;Kl.&nbsp;Rundscheibe mit Wappen Staufen<br>Inschrift: <em>STAVFFEN</em></td>
+                        <td>–</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">26.&nbsp;Wappen<br>Haldermannstetten</th>
+                        <td><em>Haldermanstein</em></td>
+                        <td>XVI.&nbsp;Kl.&nbsp;Rundscheibe mit Wappen Haldermannstetten<br>Inschrift: <em>HALDERMAN-STETTEN</em></td>
+                        <td>–</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="secondary">27.&nbsp;Wappen<br>Groroth (Groenroth)</th>
+                        <td><em>grorod drey gelbe Kugel und balcen im schwartzen feld</em></td>
+                        <td>XVII.&nbsp;Kl.&nbsp;Rundscheibe mit Wappen Groroth (Groenroth)<br>Inschrift: <em>GROROD</em></td>
+                        <td>–</td>
+                        <td>–</td>
+                    </tr>
+                </tbody>
+            </table>-->
+
+        </div></section>

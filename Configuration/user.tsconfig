@@ -1,0 +1,6 @@
+# Enable parts of the admin panel for non-admin users
+admPanel.enable {
+  preview = 1
+  cache = 1
+  edit = 1
+}

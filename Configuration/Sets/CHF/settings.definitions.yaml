@@ -1,0 +1,71 @@
+settings:
+  chf.templates.path:
+    label: 'Template path'
+    description: 'Path to a page-view template structure for overrides of CHF templates'
+    type: string
+    default: ''
+  chf.templates.logo:
+    label: 'Logo path'
+    description: 'Path to a logo file to use in the header and footer of a page'
+    type: string
+    default: 'EXT:chf_base/Resources/Public/Images/logo.svg'
+  chf.templates.serviceFolder:
+    label: 'Service folder'
+    description: 'Page ID of a folder that contains service content like a privacy page'
+    type: int
+    default:
+  chf.partners.urls:
+    label: 'Partner URLs'
+    description: 'List of partner URLs to link to in the footer'
+    type: stringlist
+    default: []
+  chf.partners.logos:
+    label: 'Partner logos'
+    description: 'List of paths to partner logo files to show in the footer'
+    type: stringlist
+    default: []
+  chf.partners.names:
+    label: 'Partner names'
+    description: 'List of partner names given as labels in the footer'
+    type: stringlist
+    default: []
+  chf.socials.mastodon:
+    label: 'Mastodon social account'
+    description: 'URL of a profile on Mastodon'
+    type: string
+    default:
+  chf.socials.linkedin:
+    label: 'LinkedIn social account'
+    description: 'URL of a profile on LinkedIn'
+    type: string
+    default:
+  chf.socials.instagram:
+    label: 'Instagram social account'
+    description: 'URL of a profile on Instagram'
+    type: string
+    default:
+  chf.socials.facebook:
+    label: 'Facebook social account'
+    description: 'URL of a profile on Facebook'
+    type: string
+    default:
+  chf.socials.bluesky:
+    label: 'Bluesky social account'
+    description: 'URL of a profile on Bluesky'
+    type: string
+    default:
+  chf.socials.xitter:
+    label: 'X social account'
+    description: 'URL of a profile on X'
+    type: string
+    default:
+  chf.socials.gitlab:
+    label: 'GitLab social account'
+    description: 'URL of a profile on GitLab'
+    type: string
+    default:
+  chf.socials.github:
+    label: 'GitHub social account'
+    description: 'URL of a profile on GitHub'
+    type: string
+    default:

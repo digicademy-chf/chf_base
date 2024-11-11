@@ -1,0 +1,75 @@
+            <nav id="footer-social">
+                <h3><f:translate key="templates.footer.social" extensionName="chf_base"/></h3>
+                <ul class="mdlr-buttonrow mdlr-variant-right mdlr-variant-separate">
+                    <li>
+                        <a href="#" class="mdlr-button mdlr-variant-round mdlr-variant-icon mdlr-variant-transparent mdlr-function-up" title="{f:translate(key: 'templates.footer.social.up', extensionName: 'chf_base')}">
+                            <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <use href="#icon-up"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <!--<li>
+                        <a href="#" target="_blank" class="mdlr-button mdlr-variant-round mdlr-variant-icon mdlr-variant-transparent" title="{f:translate(key: 'templates.footer.social.rss', extensionName: 'chf_base')}">
+                            <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <use href="#icon-feed"/>
+                            </svg>
+                        </a>
+                    </li>-->
+                    <f:if condition="{settings.chf.socials.github}"><li>
+                        <a href="{settings.chf.socials.github}" target="_blank" class="mdlr-button mdlr-variant-round mdlr-variant-icon mdlr-variant-transparent" title="{f:translate(key: 'templates.footer.social.github', extensionName: 'chf_base')}">
+                            <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <use href="#icon-github"/>
+                            </svg>
+                        </a>
+                    </li></f:if>
+                    <f:if condition="{settings.chf.socials.gitlab}"><li>
+                        <a href="{settings.chf.socials.gitlab}" target="_blank" class="mdlr-button mdlr-variant-round mdlr-variant-icon mdlr-variant-transparent" title="{f:translate(key: 'templates.footer.social.gitlab', extensionName: 'chf_base')}">
+                            <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <use href="#icon-gitlab"/>
+                            </svg>
+                        </a>
+                    </li></f:if>
+                    <f:if condition="{settings.chf.socials.xitter}"><li>
+                        <a href="{settings.chf.socials.xitter}" target="_blank" class="mdlr-button mdlr-variant-round mdlr-variant-icon mdlr-variant-transparent" title="{f:translate(key: 'templates.footer.social.xitter', extensionName: 'chf_base')}">
+                            <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <use href="#icon-xitter"/>
+                            </svg>
+                        </a>
+                    </li></f:if>
+                    <f:if condition="{settings.chf.socials.bluesky}"><li>
+                        <a href="{settings.chf.socials.bluesky}" target="_blank" class="mdlr-button mdlr-variant-round mdlr-variant-icon mdlr-variant-transparent" title="{f:translate(key: 'templates.footer.social.bluesky', extensionName: 'chf_base')}">
+                            <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <use href="#icon-bluesky"/>
+                            </svg>
+                        </a>
+                    </li></f:if>
+                    <f:if condition="{settings.chf.socials.facebook}"><li>
+                        <a href="{settings.chf.socials.facebook}" target="_blank" class="mdlr-button mdlr-variant-round mdlr-variant-icon mdlr-variant-transparent" title="{f:translate(key: 'templates.footer.social.facebook', extensionName: 'chf_base')}">
+                            <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <use href="#icon-facebook"/>
+                            </svg>
+                        </a>
+                    </li></f:if>
+                    <f:if condition="{settings.chf.socials.instagram}"><li>
+                        <a href="{settings.chf.socials.instagram}" target="_blank" class="mdlr-button mdlr-variant-round mdlr-variant-icon mdlr-variant-transparent" title="{f:translate(key: 'templates.footer.social.instagram', extensionName: 'chf_base')}">
+                            <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <use href="#icon-instagram"/>
+                            </svg>
+                        </a>
+                    </li></f:if>
+                    <f:if condition="{settings.chf.socials.linkedin}"><li>
+                        <a href="{settings.chf.socials.linkedin}" target="_blank" class="mdlr-button mdlr-variant-round mdlr-variant-icon mdlr-variant-transparent" title="{f:translate(key: 'templates.footer.social.linkedin', extensionName: 'chf_base')}">
+                            <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <use href="#icon-linkedin"/>
+                            </svg>
+                        </a>
+                    </li></f:if>
+                    <f:if condition="{settings.chf.socials.mastodon}"><li>
+                        <a href="{settings.chf.socials.mastodon}" target="_blank" class="mdlr-button mdlr-variant-round mdlr-variant-icon mdlr-variant-transparent" title="{f:translate(key: 'templates.footer.social.mastodon', extensionName: 'chf_base')}">
+                            <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <use href="#icon-mastodon"/>
+                            </svg>
+                        </a>
+                    </li></f:if>
+                </ul>
+            </nav>

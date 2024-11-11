@@ -1,0 +1,11 @@
+// Use permissions of parent page on newly created pages
+TCEMAIN.permissions {
+  userid = copyFromParent
+  groupid = copyFromParent
+  user = copyFromParent
+  group = copyFromParent
+  everybody = copyFromParent
+}
+
+// Avoid issues with int labels when copying records
+TCEMAIN.table.tt_content.disablePrependAtCopy = 1
