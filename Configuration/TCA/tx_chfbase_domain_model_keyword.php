@@ -165,7 +165,7 @@ return [
                 'required' => true,
             ],
         ],
-        'parentResource' => [
+        'parent_resource' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource',
@@ -181,7 +181,7 @@ return [
                 'required' => true,
             ],
         ],
-        'asKeywordOfLabelTag' => [
+        'as_keyword_of_label_tag' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.keyword.asKeywordOfLabelTag',
@@ -204,8 +204,8 @@ return [
     'types' => [
         '0' => [
             'showitem' => 'text,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parentResource,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asKeywordOfLabelTag,',
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parent_resource,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,as_keyword_of_label_tag,',
         ],
     ],
 ];

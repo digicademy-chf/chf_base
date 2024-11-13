@@ -21,14 +21,14 @@ return [
     'ctrl' => [
         'title'                    => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agent',
         'label'                    => 'surname',
-        'label_alt'                => 'forename,corporateName,alternativeName',
+        'label_alt'                => 'forename,corporate_name,alternative_name',
         'label_alt_force'          => true,
-        'descriptionColumn'        => 'editorialNote',
+        'descriptionColumn'        => 'editorial_note',
         'tstamp'                   => 'tstamp',
         'crdate'                   => 'crdate',
         'delete'                   => 'deleted',
         'sortby'                   => 'sorting',
-        'default_sortby'           => 'isHighlight ASC,surname ASC,forename ASC,corporateName ASC,alternativeName ASC,type ASC',
+        'default_sortby'           => 'is_highlight ASC,surname ASC,forename ASC,corporate_name ASC,alternative_name ASC,type ASC',
         'versioningWS'             => true,
         'iconfile'                 => 'EXT:chf_base/Resources/Public/Icons/TableAgent.svg',
         'origUid'                  => 't3_origuid',
@@ -37,7 +37,7 @@ return [
         'transOrigPointerField'    => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'translationSource'        => 'l10n_source',
-        'searchFields'             => 'type,forename,surname,corporateName,alternativeName,honorific,occupation,gender,uuid,publicationDate,revisionDate,revisionNumber,editorialNote,importOrigin,import',
+        'searchFields'             => 'type,forename,surname,corporate_name,alternative_name,honorific,occupation,gender,uuid,publication_date,revision_date,revision_number,editorial_note,import_origin,import',
         'enablecolumns'            => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
@@ -207,7 +207,7 @@ return [
                 ],
             ],
         ],
-        'corporateName' => [
+        'corporate_name' => [
             'exclude' => true,
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agent.corporateName',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agent.corporateName.description',
@@ -221,7 +221,7 @@ return [
                 ],
             ],
         ],
-        'alternativeName' => [
+        'alternative_name' => [
             'exclude' => true,
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agent.alternativeName',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agent.alternativeName.description',
@@ -297,12 +297,12 @@ return [
                 'renderType' => 'selectTree',
                 'foreign_table' => 'tx_chfbase_domain_model_tag',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###'
-                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#parentResource}=###REC_FIELD_parentResource###'
+                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#parent_resource}=###REC_FIELD_parent_resource###'
                     . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
                 'MM' => 'tx_chfbase_domain_model_agent_tag_label_mm',
                 'multiple' => 1,
                 'treeConfig' => [
-                    'parentField' => 'parentLabelTag',
+                    'parentField' => 'parent_label_tag',
                     'appearance' => [
                         'showHeader' => true,
                         'expandAll' => true,
@@ -319,7 +319,7 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_chfbase_domain_model_agent',
-                'foreign_field' => 'parentAgent',
+                'foreign_field' => 'parent_agent',
                 'appearance'=> [
                     'collapseAll' => true,
                     'expandSingle' => true,
@@ -354,7 +354,7 @@ return [
                 ],
             ],
         ],
-        'agentRelation' => [
+        'agent_relation' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.agentRelation',
@@ -365,7 +365,7 @@ return [
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
                 'MM_match_fields' => [
                     'tablenames' => 'tx_chfbase_domain_model_agent',
-                    'fieldname' => 'agentRelation',
+                    'fieldname' => 'agent_relation',
                 ],
                 'MM_opposite_field' => 'record',
                 'multiple' => 1,
@@ -391,7 +391,7 @@ return [
                 ],
             ],
         ],
-        'locationRelation' => [
+        'location_relation' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.locationRelation',
@@ -402,7 +402,7 @@ return [
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
                 'MM_match_fields' => [
                     'tablenames' => 'tx_chfbase_domain_model_agent',
-                    'fieldname' => 'locationRelation',
+                    'fieldname' => 'location_relation',
                 ],
                 'MM_opposite_field' => 'record',
                 'multiple' => 1,
@@ -428,7 +428,7 @@ return [
                 ],
             ],
         ],
-        'contentElement' => [
+        'content_element' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractHeritage.contentElement',
@@ -491,7 +491,7 @@ return [
                 'type' => 'file',
             ],
         ],
-        'linkRelation' => [
+        'link_relation' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.linkRelation',
@@ -502,7 +502,7 @@ return [
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
                 'MM_match_fields' => [
                     'tablenames' => 'tx_chfbase_domain_model_agent',
-                    'fieldname' => 'linkRelation',
+                    'fieldname' => 'link_relation',
                 ],
                 'MM_opposite_field' => 'record',
                 'multiple' => 1,
@@ -528,7 +528,7 @@ return [
                 ],
             ],
         ],
-        'isTeaser' => [
+        'is_teaser' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractHeritage.isTeaser',
@@ -543,7 +543,7 @@ return [
                 ],
             ]
         ],
-        'isHighlight' => [
+        'is_highlight' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractHeritage.isHighlight',
@@ -558,7 +558,7 @@ return [
                 ],
             ]
         ],
-        'isContributor' => [
+        'is_contributor' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agent.isContributor',
@@ -573,7 +573,7 @@ return [
                 ],
             ]
         ],
-        'parentAgent' => [
+        'parent_agent' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agent.parentAgent',
@@ -583,9 +583,9 @@ return [
                 'renderType' => 'selectTree',
                 'foreign_table' => 'tx_chfbase_domain_model_agent',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###',
-                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#parentResource}=###REC_FIELD_parentResource###',
+                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#parent_resource}=###REC_FIELD_parent_resource###',
                 'treeConfig' => [
-                    'parentField' => 'parentAgent',
+                    'parentField' => 'parent_agent',
                     'appearance' => [
                         'showHeader' => true,
                         'expandAll' => true,
@@ -595,7 +595,7 @@ return [
                 'size' => 8,
             ],
         ],
-        'parentResource' => [
+        'parent_resource' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource',
@@ -650,7 +650,7 @@ return [
                 'required' => true,
             ],
         ],
-        'sameAs' => [
+        'same_as' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.sameAs',
@@ -672,8 +672,7 @@ return [
                 ],
             ],
         ],
-
-        'publicationDate' => [
+        'publication_date' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractBase.publicationDate',
@@ -684,7 +683,7 @@ return [
                 'default' => 0,
             ],
         ],
-        'revisionDate' => [
+        'revision_date' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractBase.revisionDate',
@@ -695,7 +694,7 @@ return [
                 'default' => 0,
             ],
         ],
-        'revisionNumber' => [
+        'revision_number' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractBase.revisionNumber',
@@ -710,7 +709,7 @@ return [
                 'required' => true,
             ],
         ],
-        'editorialNote' => [
+        'editorial_note' => [
             'exclude' => true,
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractBase.editorialNote',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractBase.editorialNote.description',
@@ -725,7 +724,7 @@ return [
                 ],
             ],
         ],
-        'authorshipRelation' => [
+        'authorship_relation' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.authorshipRelation',
@@ -736,7 +735,7 @@ return [
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
                 'MM_match_fields' => [
                     'tablenames' => 'tx_chfbase_domain_model_agent',
-                    'fieldname' => 'authorshipRelation',
+                    'fieldname' => 'authorship_relation',
                 ],
                 'MM_opposite_field' => 'record',
                 'multiple' => 1,
@@ -762,7 +761,7 @@ return [
                 ],
             ],
         ],
-        'licenceRelation' => [
+        'licence_relation' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.licenceRelation',
@@ -773,7 +772,7 @@ return [
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
                 'MM_match_fields' => [
                     'tablenames' => 'tx_chfbase_domain_model_agent',
-                    'fieldname' => 'licenceRelation',
+                    'fieldname' => 'licence_relation',
                 ],
                 'MM_opposite_field' => 'record',
                 'multiple' => 1,
@@ -799,7 +798,7 @@ return [
                 ],
             ],
         ],
-        'editorialSteps' => [
+        'editorial_steps' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractHeritage.editorialSteps',
@@ -835,7 +834,7 @@ return [
                 ],
             ],
         ],
-        'publicationSteps' => [
+        'publication_steps' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractHeritage.publicationSteps',
@@ -871,7 +870,7 @@ return [
                 ],
             ],
         ],
-        'importOrigin' => [
+        'import_origin' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.importOrigin',
@@ -896,7 +895,7 @@ return [
                 'eval' => 'trim',
             ],
         ],
-        'asAgentOfAgentRelation' => [
+        'as_agent_of_agent_relation' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agent.asAgentOfAgentRelation',
@@ -906,7 +905,7 @@ return [
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
-                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#parentResource}=###REC_FIELD_parentResource###'
+                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#parent_resource}=###REC_FIELD_parent_resource###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'agentRelation\'',
                 'MM' => 'tx_chfbase_domain_model_relation_agent_agent_mm',
                 'MM_opposite_field' => 'agent',
@@ -915,7 +914,7 @@ return [
                 'autoSizeMax' => 10,
             ],
         ],
-        'asContributorOfAuthorshipRelation' => [
+        'as_contributor_of_authorship_relation' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agent.asContributorOfAuthorshipRelation',
@@ -925,7 +924,7 @@ return [
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
-                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#parentResource}=###REC_FIELD_parentResource###'
+                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#parent_resource}=###REC_FIELD_parent_resource###'
                     . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'authorshipRelation\'',
                 'MM' => 'tx_chfbase_domain_model_relation_agent_contributor_mm',
                 'MM_opposite_field' => 'contributor',
@@ -937,7 +936,7 @@ return [
     ],
     'palettes' => [
         'forenameSurnameCorporateNameAlternativeName' => [
-            'showitem' => 'forename,surname,--linebreak--,corporateName,alternativeName,',
+            'showitem' => 'forename,surname,--linebreak--,corporate_name,alternative_name,',
         ],
         'honorificOccupation' => [
             'showitem' => 'honorific,occupation,',
@@ -946,37 +945,37 @@ return [
             'showitem' => 'gender,label,',
         ],
         'eventAgentRelationLocationRelation' => [
-            'showitem' => 'event,--linebreak--,agentRelation,--linebreak--,locationRelation,',
+            'showitem' => 'event,--linebreak--,agentRelation,--linebreak--,location_relation,',
         ],
         'contentElementFootnote' => [
-            'showitem' => 'contentElement,--linebreak--,footnote,',
+            'showitem' => 'content_element,--linebreak--,footnote,',
         ],
         'mediaFile' => [
             'showitem' => 'media,--linebreak--,file,',
         ],
         'sourceRelationLinkRelation' => [
-            'showitem' => 'sourceRelation,--linebreak--,linkRelation,',
+            'showitem' => 'source_relation,--linebreak--,link_relation,',
         ],
         'isTeaserIsHighlightIsContributor' => [
-            'showitem' => 'isTeaser,isHighlight,isContributor,',
+            'showitem' => 'is_teaser,is_highlight,is_contributor,',
         ],
         'parentAgentParentResource' => [
-            'showitem' => 'parentAgent,parentResource,',
+            'showitem' => 'parent_agent,parent_resource,',
         ],
         'iriUuidSameAs' => [
-            'showitem' => 'iri,uuid,--linebreak--,sameAs,',
+            'showitem' => 'iri,uuid,--linebreak--,same_as,',
         ],
         'publicationDateRevisionDateRevisionNumberEditorialNote' => [
-            'showitem' => 'publicationDate,revisionDate,revisionNumber,--linebreak--,editorialNote,',
+            'showitem' => 'publication_date,revision_date,revision_number,--linebreak--,editorial_note,',
         ],
         'authorshipRelationLicenceRelation' => [
-            'showitem' => 'authorshipRelation,--linebreak--,licenceRelation,',
+            'showitem' => 'authorship_relation,--linebreak--,licence_relation,',
         ],
         'editorialStepsPublicationSteps' => [
-            'showitem' => 'editorialSteps,publicationSteps,',
+            'showitem' => 'editorial_steps,publication_steps,',
         ],
         'importOriginImport' => [
-            'showitem' => 'importOrigin,--linebreak--,import,',
+            'showitem' => 'import_origin,--linebreak--,import,',
         ],
     ],
     'types' => [
@@ -984,11 +983,11 @@ return [
             'showitem' => 'type,--palette--;;forenameSurnameCorporateNameAlternativeName,--palette--;;honorificOccupation,--palette--;;genderLabel,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.structured,agent,--palette--;;eventAgentRelationLocationRelation,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.unstructured,--palette--;;contentElementFootnote,--palette--;;mediaFile,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.bibliography,--palette--;;sourceRelationLinkRelation,publicationRelation,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.bibliography,--palette--;;sourceRelationLinkRelation,publication_relation,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;isTeaserIsHighlightIsContributor,--palette--;;parentAgentParentResource,--palette--;;iriUuidSameAs,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.editorial,--palette--;;publicationDateRevisionDateRevisionNumberEditorialNote,--palette--;;authorshipRelationLicenceRelation,--palette--;;editorialStepsPublicationSteps,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.import,--palette--;;importOriginImport,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asAgentOfAgentRelation,asContributorOfAuthorshipRelation,',
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,as_agent_of_agent_relation,as_contributor_of_authorship_relation,',
         ],
     ],
 ];

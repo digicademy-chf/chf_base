@@ -188,7 +188,7 @@ return [
                 'required' => true,
             ],
         ],
-        'labelType' => [
+        'label_type' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.labelType',
@@ -277,7 +277,7 @@ return [
                 ],
             ],
         ],
-        'parentLabelTag' => [
+        'parent_label_tag' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.parentLabelTag',
@@ -289,7 +289,7 @@ return [
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
                 'treeConfig' => [
-                    'parentField' => 'parentLabelTag',
+                    'parentField' => 'parent_label_tag',
                     'appearance' => [
                         'showHeader' => true,
                         'expandAll' => true,
@@ -299,7 +299,7 @@ return [
                 'size' => 8,
             ],
         ],
-        'parentResource' => [
+        'parent_resource' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource',
@@ -326,7 +326,7 @@ return [
                 'required' => true,
             ],
         ],
-        'sameAs' => [
+        'same_as' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.sameAs',
@@ -348,7 +348,7 @@ return [
                 ],
             ],
         ],
-        'asLabelOfAgent' => [
+        'as_label_of_agent' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfAgent',
@@ -365,7 +365,7 @@ return [
                 'autoSizeMax' => 10,
             ],
         ],
-        'asLabelOfLocation' => [
+        'as_label_of_location' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfLocation',
@@ -382,7 +382,7 @@ return [
                 'autoSizeMax' => 10,
             ],
         ],
-        'asLabelOfPeriod' => [
+        'as_label_of_period' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTag.asLabelOfPeriod',
@@ -399,7 +399,7 @@ return [
                 'autoSizeMax' => 10,
             ],
         ],
-        'asLabelTypeOfLabelTag' => [
+        'as_label_type_of_label_tag' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.labelTypeTag.asLabelTypeOfLabelTag',
@@ -411,13 +411,13 @@ return [
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
                 'MM' => 'tx_chfbase_domain_model_tag_tag_labeltype_mm',
-                'MM_opposite_field' => 'labelType',
+                'MM_opposite_field' => 'label_type',
                 'multiple' => 1,
                 'size' => 5,
                 'autoSizeMax' => 10,
             ],
         ],
-        'asLicenceOfLicenceRelation' => [
+        'as_licence_of_licence_relation' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.licenceTag.asLicenceOfLicenceRelation',
@@ -438,37 +438,37 @@ return [
     ],
     'palettes' => [
         'typeLabelType' => [
-            'showitem' => 'type,labelType,',
+            'showitem' => 'type,label_type,',
         ],
         'textCodeDescription' => [
             'showitem' => 'text,code,--linebreak--,description,',
         ],
         'parentLabelTagParentResource' => [
-            'showitem' => 'parentLabelTag,parentResource,',
+            'showitem' => 'parent_label_tag,parent_resource,',
         ],
         'iriUuidSameAs' => [
-            'showitem' => 'iri,uuid,--linebreak--,sameAs,',
+            'showitem' => 'iri,uuid,--linebreak--,same_as,',
         ],
     ],
     'types' => [
         '0' => [
             'showitem' => 'type,--palette--;;textCodeDescription,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parentResource,--palette--;;iriUuidSameAs,',
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parent_resource,--palette--;;iriUuidSameAs,',
         ],
         'labelTag' => [
             'showitem' => '--palette--;;typeLabelType,--palette--;;textCodeDescription,keyword,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;parentLabelTagParentResource,--palette--;;iriUuidSameAs,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLabelOfAgent,asLabelOfLocation,asLabelOfPeriod,asLabelOfFeature,asLabelOfDictionaryEntry,asLabelOfEncyclopediaEntry,asLabelOfInflectedForm,asLabelOfSense,asLabelOfPronunciation,asLabelOfExample,asLabelOfBibliographicEntry,asLabelOfEssay,asLabelOfVolume,asLabelOfSingleObject,asLabelOfObjectGroup,asLabelOfFileGroup,',
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,as_label_of_agent,as_label_of_location,as_label_of_period,as_label_of_feature,as_label_of_dictionary_entry,as_label_of_encyclopedia_entry,as_label_of_inflected_form,as_label_of_sense,as_label_of_pronunciation,as_label_of_example,as_label_of_bibliographic_entry,as_label_of_essay,as_label_of_volume,as_label_of_single_object,as_label_of_object_group,as_label_of_file_group,',
         ],
         'labelTypeTag' => [
             'showitem' => 'type,--palette--;;textCodeDescription,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parentResource,--palette--;;iriUuidSameAs,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLabelTypeOfLabelTag,',
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parent_resource,--palette--;;iriUuidSameAs,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,as_label_type_of_label_tag,',
         ],
         'licenceTag' => [
             'showitem' => 'type,--palette--;;textCodeDescription,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parentResource,--palette--;;iriUuidSameAs,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,asLicenceOfLicenceRelation,',
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parent_resource,--palette--;;iriUuidSameAs,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,as_licence_of_licence_relation,',
         ],
     ],
 ];

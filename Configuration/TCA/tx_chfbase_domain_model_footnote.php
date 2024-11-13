@@ -165,7 +165,7 @@ return [
                 'required' => true,
             ],
         ],
-        'parentTable' => [
+        'parent_table' => [
             'config' => [
                 'type' => 'passthrough',
             ],
