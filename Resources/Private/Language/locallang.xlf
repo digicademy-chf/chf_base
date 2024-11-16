@@ -616,8 +616,23 @@
             <trans-unit id="object.abstractRelation.role.publisher" resname="object.abstractRelation.role.publisher">
                 <source>Publisher</source>
             </trans-unit>
+            <trans-unit id="object.abstractRelation.role.genericLocation" resname="object.abstractRelation.role.genericLocation">
+                <source>Generic location</source>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.originLocation" resname="object.abstractRelation.role.originLocation">
+                <source>Place of origin</source>
+            </trans-unit>
             <trans-unit id="object.abstractRelation.role.formerLocation" resname="object.abstractRelation.role.formerLocation">
                 <source>Former location</source>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.birthPlace" resname="object.abstractRelation.role.birthPlace">
+                <source>Birthplace</source>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.workPlace" resname="object.abstractRelation.role.workPlace">
+                <source>Workplace</source>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.deathPlace" resname="object.abstractRelation.role.deathPlace">
+                <source>Place of death</source>
             </trans-unit>
             <trans-unit id="object.abstractRelation.role.agency" resname="object.abstractRelation.role.agency">
                 <source>Agency</source>

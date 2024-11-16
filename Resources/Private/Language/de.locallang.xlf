@@ -822,9 +822,29 @@
                 <source>Publisher</source>
                 <target>Verlag</target>
             </trans-unit>
+            <trans-unit id="object.abstractRelation.role.genericLocation" resname="object.abstractRelation.role.genericLocation" approved="yes">
+                <source>Generic location</source>
+                <target>Allgemeine Ortsangabe</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.originLocation" resname="object.abstractRelation.role.originLocation" approved="yes">
+                <source>Place of origin</source>
+                <target>Herkunftsort</target>
+            </trans-unit>
             <trans-unit id="object.abstractRelation.role.formerLocation" resname="object.abstractRelation.role.formerLocation" approved="yes">
                 <source>Former location</source>
                 <target>Ehemaliger Standort</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.birthPlace" resname="object.abstractRelation.role.birthPlace" approved="yes">
+                <source>Birthplace</source>
+                <target>Geburtsort</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.workPlace" resname="object.abstractRelation.role.workPlace" approved="yes">
+                <source>Workplace</source>
+                <target>Wirkungsort</target>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.deathPlace" resname="object.abstractRelation.role.deathPlace" approved="yes">
+                <source>Place of death</source>
+                <target>Sterbeort</target>
             </trans-unit>
             <trans-unit id="object.abstractRelation.role.agency" resname="object.abstractRelation.role.agency" approved="yes">
                 <source>Agency</source>

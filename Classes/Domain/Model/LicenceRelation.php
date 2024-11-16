@@ -47,7 +47,6 @@ class LicenceRelation extends AbstractRelation
         'validator' => StringOptionsValidator::class,
         'options'   => [
             'allowed' => [
-                '0',
                 'allContent',
                 'metadata',
                 'text',
@@ -55,7 +54,7 @@ class LicenceRelation extends AbstractRelation
             ],
         ],
     ])]
-    protected string $role = '0';
+    protected string $role = 'allContent';
 
     /**
      * Construct object

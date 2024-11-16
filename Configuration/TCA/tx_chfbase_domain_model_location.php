@@ -374,6 +374,11 @@ return [
                                 'readOnly' => true,
                             ],
                         ],
+                        'role' => [
+                            'config' => [
+                                'default' => 'artist',
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -693,6 +698,11 @@ return [
                                 'readOnly' => true,
                             ],
                         ],
+                        'role' => [
+                            'config' => [
+                                'default' => 'author',
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -728,6 +738,11 @@ return [
                             'config' => [
                                 'default' => 'licenceRelation',
                                 'readOnly' => true,
+                            ],
+                        ],
+                        'role' => [
+                            'config' => [
+                                'default' => 'allContent',
                             ],
                         ],
                     ],
@@ -861,7 +876,7 @@ return [
             'showitem' => 'geodata,floor_lan,',
         ],
         'objectObjectGroup' => [
-            'showitem' => 'object,object_group,',
+            'showitem' => 'object,--linebreak--,object_group,',
         ],
         'eventAgentRelation' => [
             'showitem' => 'event,--linebreak--,agent_relation,',

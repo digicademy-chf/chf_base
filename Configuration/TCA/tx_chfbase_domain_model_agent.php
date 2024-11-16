@@ -387,6 +387,11 @@ return [
                                 'readOnly' => true,
                             ],
                         ],
+                        'role' => [
+                            'config' => [
+                                'default' => 'relationship',
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -422,6 +427,11 @@ return [
                             'config' => [
                                 'default' => 'locationRelation',
                                 'readOnly' => true,
+                            ],
+                        ],
+                        'role' => [
+                            'config' => [
+                                'default' => 'birthPlace',
                             ],
                         ],
                     ],
@@ -757,6 +767,11 @@ return [
                                 'readOnly' => true,
                             ],
                         ],
+                        'role' => [
+                            'config' => [
+                                'default' => 'author',
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -792,6 +807,11 @@ return [
                             'config' => [
                                 'default' => 'licenceRelation',
                                 'readOnly' => true,
+                            ],
+                        ],
+                        'role' => [
+                            'config' => [
+                                'default' => 'allContent',
                             ],
                         ],
                     ],

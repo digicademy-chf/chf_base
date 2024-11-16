@@ -47,7 +47,6 @@ class AgentRelation extends AbstractRelation
         'validator' => StringOptionsValidator::class,
         'options'   => [
             'allowed' => [
-                '0',
                 'agency',
                 'relationship',
                 'depiction',
@@ -63,7 +62,7 @@ class AgentRelation extends AbstractRelation
             ],
         ],
     ])]
-    protected string $role = '0';
+    protected string $role = 'artist';
 
     /**
      * Construct object

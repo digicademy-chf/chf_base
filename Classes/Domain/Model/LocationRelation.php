@@ -47,12 +47,16 @@ class LocationRelation extends AbstractRelation
         'validator' => StringOptionsValidator::class,
         'options'   => [
             'allowed' => [
-                '0',
+                'genericLocation',
+                'originLocation',
                 'formerLocation',
+                'birthPlace',
+                'workPlace',
+                'deathPlace',
             ],
         ],
     ])]
-    protected string $role = '0';
+    protected string $role = 'genericLocation';
 
     /**
      * Construct object

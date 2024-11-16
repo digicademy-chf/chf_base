@@ -219,7 +219,6 @@ return [
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
-                'required' => true,
             ],
         ],
         'alternative_text' => [
@@ -382,6 +381,11 @@ return [
                                 'readOnly' => true,
                             ],
                         ],
+                        'role' => [
+                            'config' => [
+                                'default' => 'artist',
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -417,6 +421,11 @@ return [
                             'config' => [
                                 'default' => 'locationRelation',
                                 'readOnly' => true,
+                            ],
+                        ],
+                        'role' => [
+                            'config' => [
+                                'default' => 'genericLocation',
                             ],
                         ],
                     ],
@@ -718,6 +727,11 @@ return [
                                 'readOnly' => true,
                             ],
                         ],
+                        'role' => [
+                            'config' => [
+                                'default' => 'author',
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -753,6 +767,11 @@ return [
                             'config' => [
                                 'default' => 'licenceRelation',
                                 'readOnly' => true,
+                            ],
+                        ],
+                        'role' => [
+                            'config' => [
+                                'default' => 'allContent',
                             ],
                         ],
                     ],

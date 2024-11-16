@@ -176,18 +176,16 @@ class Period extends AbstractHeritage
      * Construct object
      *
      * @param string $type
-     * @param string $text
      * @param object $parentResource
      * @param string $uuid
      * @return Period
      */
-    public function __construct(string $type, string $text, object $parentResource, string $uuid)
+    public function __construct(string $type, object $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
         $this->initializeObject();
 
         $this->setType($type);
-        $this->setText($text);
     }
 
     /**

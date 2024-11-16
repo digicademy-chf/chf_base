@@ -338,15 +338,20 @@ return [
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.authorshipRelation.contributor.description',
             'config' => [
                 'type' => 'select',
-                'renderType' => 'selectSingleBox',
+                'renderType' => 'selectTree',
                 'foreign_table' => 'tx_chfbase_domain_model_agent',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###'
                     . ' AND {#tx_chfbase_domain_model_agent}.{#is_contributor}=TRUE',
                 'MM' => 'tx_chfbase_domain_model_relation_agent_contributor_mm',
                 'multiple' => 1,
-                'sortItems' => [
-                    'label' => 'asc',
+                'treeConfig' => [
+                    'parentField' => 'parent_agent',
+                    'appearance' => [
+                        'showHeader' => true,
+                        'expandAll' => true,
+                    ],
                 ],
+                'size' => 8,
                 'required' => true,
             ],
         ],
@@ -357,14 +362,19 @@ return [
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.locationRelation.location.description',
             'config' => [
                 'type' => 'select',
-                'renderType' => 'selectSingleBox',
+                'renderType' => 'selectTree',
                 'foreign_table' => 'tx_chfbase_domain_model_location',
                 'foreign_table_where' => 'AND {#tx_chfbase_domain_model_location}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfbase_domain_model_relation_location_location_mm',
                 'multiple' => 1,
-                'sortItems' => [
-                    'label' => 'asc',
+                'treeConfig' => [
+                    'parentField' => 'parent_location',
+                    'appearance' => [
+                        'showHeader' => true,
+                        'expandAll' => true,
+                    ],
                 ],
+                'size' => 8,
                 'required' => true,
             ],
         ],
@@ -375,14 +385,20 @@ return [
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.agentRelation.agent.description',
             'config' => [
                 'type' => 'select',
-                'renderType' => 'selectSingleBox',
+                'renderType' => 'selectTree',
                 'foreign_table' => 'tx_chfbase_domain_model_agent',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###'
+                    . ' AND {#tx_chfbase_domain_model_agent}.{#is_contributor}=FALSE',
                 'MM' => 'tx_chfbase_domain_model_relation_agent_agent_mm',
                 'multiple' => 1,
-                'sortItems' => [
-                    'label' => 'asc',
+                'treeConfig' => [
+                    'parentField' => 'parent_agent',
+                    'appearance' => [
+                        'showHeader' => true,
+                        'expandAll' => true,
+                    ],
                 ],
+                'size' => 8,
                 'required' => true,
             ],
         ],
@@ -440,8 +456,33 @@ return [
                         'group' => 'authorshipRelation',
                     ],
                     [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.genericLocation',
+                        'value' => 'genericLocation',
+                        'group' => 'locationRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.originLocation',
+                        'value' => 'originLocation',
+                        'group' => 'locationRelation',
+                    ],
+                    [
                         'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.formerLocation',
                         'value' => 'formerLocation',
+                        'group' => 'locationRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.birthPlace',
+                        'value' => 'birthPlace',
+                        'group' => 'locationRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.workPlace',
+                        'value' => 'workPlace',
+                        'group' => 'locationRelation',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.role.deathPlace',
+                        'value' => 'deathPlace',
                         'group' => 'locationRelation',
                     ],
                     [
@@ -566,7 +607,6 @@ return [
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
-                'required' => true,
             ],
         ],
         'last_checked' => [

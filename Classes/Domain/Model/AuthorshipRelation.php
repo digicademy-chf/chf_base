@@ -47,7 +47,6 @@ class AuthorshipRelation extends AbstractRelation
         'validator' => StringOptionsValidator::class,
         'options'   => [
             'allowed' => [
-                '0',
                 'author',
                 'editor',
                 'translator',
@@ -55,7 +54,7 @@ class AuthorshipRelation extends AbstractRelation
             ],
         ],
     ])]
-    protected string $role = '0';
+    protected string $role = 'author';
 
     /**
      * Construct object
