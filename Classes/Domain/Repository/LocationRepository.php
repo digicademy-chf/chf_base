@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace Digicademy\CHFBase\Domain\Repository;
 
 use Digicademy\CHFBase\Domain\Model\Location;
+use Digicademy\CHFBase\Domain\Repository\Traits\StoragePageAgnosticTrait;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
@@ -22,6 +23,8 @@ defined('TYPO3') or die();
  */
 class LocationRepository extends Repository
 {
+    use StoragePageAgnosticTrait;
+
     protected $defaultOrderings = [
         'sorting'         => QueryInterface::ORDER_ASCENDING,
         'isHighlight'     => QueryInterface::ORDER_ASCENDING,

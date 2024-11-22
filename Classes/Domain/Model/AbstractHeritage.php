@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
-use TYPO3\CMS\Core\Resource\FileReference;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\Annotation\Validate;

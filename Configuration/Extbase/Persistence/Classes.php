@@ -21,11 +21,11 @@ defined('TYPO3') or die();
  */
 return [
     Digicademy\CHFBase\Domain\Model\AbstractResource::class => [
-        'tablenames' => 'tx_chfbase_domain_model_resource',
+        'tableName' => 'tx_chfbase_domain_model_resource',
         'recordType' => '0',
     ],
     Digicademy\CHFBase\Domain\Model\AbstractTag::class => [
-        'tablenames' => 'tx_chfbase_domain_model_tag',
+        'tableName' => 'tx_chfbase_domain_model_tag',
         'recordType' => '0',
         'subclasses' => [
             'labelTag' => Digicademy\CHFBase\Domain\Model\LabelTag::class,
@@ -34,7 +34,7 @@ return [
         ],
     ],
     Digicademy\CHFBase\Domain\Model\AbstractRelation::class => [
-        'tablenames' => 'tx_chfbase_domain_model_relation',
+        'tableName' => 'tx_chfbase_domain_model_relation',
         'recordType' => '0',
         'subclasses' => [
             'authorshipRelation' => Digicademy\CHFBase\Domain\Model\AuthorshipRelation::class,
@@ -45,6 +45,6 @@ return [
         ],
     ],
     Digicademy\CHFBase\Domain\Model\ContentElement::class => [
-        'tablenames' => 'tt_content',
+        'tableName' => 'tt_content',
     ],
 ];
