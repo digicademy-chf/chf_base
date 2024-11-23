@@ -13,7 +13,26 @@ use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use Digicademy\CHFBase\Domain\Model\AgentRelation;
+use Digicademy\CHFBase\Domain\Model\AuthorshipRelation;
+use Digicademy\CHFBase\Domain\Model\LabelTag;
+use Digicademy\CHFBase\Domain\Model\LabelTypeTag;
+use Digicademy\CHFBase\Domain\Model\LicenceRelation;
+use Digicademy\CHFBase\Domain\Model\LicenceTag;
+use Digicademy\CHFBase\Domain\Model\LinkRelation;
+use Digicademy\CHFBase\Domain\Model\LocationRelation;
+use Digicademy\CHFBib\Domain\Model\SourceRelation;
+use Digicademy\CHFLex\Domain\Model\DefinitionTypeTag;
+use Digicademy\CHFLex\Domain\Model\InflectionTypeTag;
+use Digicademy\CHFLex\Domain\Model\LexicographicRelation;
+use Digicademy\CHFLex\Domain\Model\MemberRoleTag;
+use Digicademy\CHFLex\Domain\Model\PartOfSpeechTag;
+use Digicademy\CHFLex\Domain\Model\RelationTypeTag;
+use Digicademy\CHFLex\Domain\Model\SimilarityRelation;
+use Digicademy\CHFLex\Domain\Model\TranscriptionSchemeTag;
+use Digicademy\CHFMap\Domain\Model\VariantRelation;
 use Digicademy\CHFMedia\Domain\Model\FileGroup;
+use Digicademy\CHFPub\Domain\Model\PublicationRelation;
 
 defined('TYPO3') or die();
 
@@ -110,7 +129,7 @@ class AbstractResource extends AbstractBase
     /**
      * List of all tags compiled in this resource
      * 
-     * @var ?ObjectStorage<object>
+     * @var ?ObjectStorage<LabelTag|LabelTypeTag|LicenceTag|DefinitionTypeTag|InflectionTypeTag|MemberRoleTag|PartOfSpeechTag|RelationTypeTag|TranscriptionSchemeTag>
      */
     #[Lazy()]
     #[Cascade([
@@ -121,7 +140,7 @@ class AbstractResource extends AbstractBase
     /**
      * List of all keywords compiled in this resource
      * 
-     * @var ?ObjectStorage<object>
+     * @var ?ObjectStorage<Keyword>
      */
     #[Lazy()]
     #[Cascade([
@@ -132,7 +151,7 @@ class AbstractResource extends AbstractBase
     /**
      * List of all relations compiled in this resource
      * 
-     * @var ?ObjectStorage<object>
+     * @var ?ObjectStorage<AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|VariantRelation|PublicationRelation>
      */
     #[Lazy()]
     #[Cascade([
@@ -424,7 +443,7 @@ class AbstractResource extends AbstractBase
     /**
      * Get all tags
      *
-     * @return ObjectStorage<object>
+     * @return ObjectStorage<LabelTag|LabelTypeTag|LicenceTag|DefinitionTypeTag|InflectionTypeTag|MemberRoleTag|PartOfSpeechTag|RelationTypeTag|TranscriptionSchemeTag>
      */
     public function getAllTags(): ?ObjectStorage
     {
@@ -434,7 +453,7 @@ class AbstractResource extends AbstractBase
     /**
      * Set all tags
      *
-     * @param ObjectStorage<object> $allTags
+     * @param ObjectStorage<LabelTag|LabelTypeTag|LicenceTag|DefinitionTypeTag|InflectionTypeTag|MemberRoleTag|PartOfSpeechTag|RelationTypeTag|TranscriptionSchemeTag> $allTags
      */
     public function setAllTags(ObjectStorage $allTags): void
     {
@@ -444,9 +463,9 @@ class AbstractResource extends AbstractBase
     /**
      * Add all tags
      *
-     * @param object $allTags
+     * @param LabelTag|LabelTypeTag|LicenceTag|DefinitionTypeTag|InflectionTypeTag|MemberRoleTag|PartOfSpeechTag|RelationTypeTag|TranscriptionSchemeTag $allTags
      */
-    public function addAllTags(object $allTags): void
+    public function addAllTags(LabelTag|LabelTypeTag|LicenceTag|DefinitionTypeTag|InflectionTypeTag|MemberRoleTag|PartOfSpeechTag|RelationTypeTag|TranscriptionSchemeTag $allTags): void
     {
         $this->allTags?->attach($allTags);
     }
@@ -454,9 +473,9 @@ class AbstractResource extends AbstractBase
     /**
      * Remove all tags
      *
-     * @param object $allTags
+     * @param LabelTag|LabelTypeTag|LicenceTag|DefinitionTypeTag|InflectionTypeTag|MemberRoleTag|PartOfSpeechTag|RelationTypeTag|TranscriptionSchemeTag $allTags
      */
-    public function removeAllTags(object $allTags): void
+    public function removeAllTags(LabelTag|LabelTypeTag|LicenceTag|DefinitionTypeTag|InflectionTypeTag|MemberRoleTag|PartOfSpeechTag|RelationTypeTag|TranscriptionSchemeTag $allTags): void
     {
         $this->allTags?->detach($allTags);
     }
@@ -473,7 +492,7 @@ class AbstractResource extends AbstractBase
     /**
      * Get all keywords
      *
-     * @return ObjectStorage<object>
+     * @return ObjectStorage<Keyword>
      */
     public function getAllKeywords(): ?ObjectStorage
     {
@@ -483,7 +502,7 @@ class AbstractResource extends AbstractBase
     /**
      * Set all keywords
      *
-     * @param ObjectStorage<object> $allKeywords
+     * @param ObjectStorage<Keyword> $allKeywords
      */
     public function setAllKeywords(ObjectStorage $allKeywords): void
     {
@@ -493,9 +512,9 @@ class AbstractResource extends AbstractBase
     /**
      * Add all keywords
      *
-     * @param object $allKeywords
+     * @param Keyword $allKeywords
      */
-    public function addAllKeywords(object $allKeywords): void
+    public function addAllKeywords(Keyword $allKeywords): void
     {
         $this->allKeywords?->attach($allKeywords);
     }
@@ -503,9 +522,9 @@ class AbstractResource extends AbstractBase
     /**
      * Remove all keywords
      *
-     * @param object $allKeywords
+     * @param Keyword $allKeywords
      */
-    public function removeAllKeywords(object $allKeywords): void
+    public function removeAllKeywords(Keyword $allKeywords): void
     {
         $this->allKeywords?->detach($allKeywords);
     }
@@ -522,7 +541,7 @@ class AbstractResource extends AbstractBase
     /**
      * Get all relations
      *
-     * @return ObjectStorage<object>
+     * @return ObjectStorage<AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|VariantRelation|PublicationRelation>
      */
     public function getAllRelations(): ?ObjectStorage
     {
@@ -532,7 +551,7 @@ class AbstractResource extends AbstractBase
     /**
      * Set all relations
      *
-     * @param ObjectStorage<object> $allRelations
+     * @param ObjectStorage<AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|VariantRelation|PublicationRelation> $allRelations
      */
     public function setAllRelations(ObjectStorage $allRelations): void
     {
@@ -542,9 +561,9 @@ class AbstractResource extends AbstractBase
     /**
      * Add all relations
      *
-     * @param object $allRelations
+     * @param AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|VariantRelation|PublicationRelation $allRelations
      */
-    public function addAllRelations(object $allRelations): void
+    public function addAllRelations(AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|VariantRelation|PublicationRelation $allRelations): void
     {
         $this->allRelations?->attach($allRelations);
     }
@@ -552,9 +571,9 @@ class AbstractResource extends AbstractBase
     /**
      * Remove all relations
      *
-     * @param object $allRelations
+     * @param AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|VariantRelation|PublicationRelation $allRelations
      */
-    public function removeAllRelations(object $allRelations): void
+    public function removeAllRelations(AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|VariantRelation|PublicationRelation $allRelations): void
     {
         $this->allRelations?->detach($allRelations);
     }

@@ -14,6 +14,16 @@ use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
+use Digicademy\CHFBib\Domain\Model\BibliographicResource;
+use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
+use Digicademy\CHFLex\Domain\Model\Example;
+use Digicademy\CHFLex\Domain\Model\LexicographicResource;
+use Digicademy\CHFMap\Domain\Model\MapResource;
+use Digicademy\CHFMedia\Domain\Model\FileGroup;
+use Digicademy\CHFObject\Domain\Model\ObjectGroup;
+use Digicademy\CHFObject\Domain\Model\ObjectResource;
+use Digicademy\CHFObject\Domain\Model\SingleObject;
+use Digicademy\CHFPub\Domain\Model\PublicationResource;
 
 defined('TYPO3') or die();
 
@@ -25,10 +35,10 @@ class AgentRelation extends AbstractRelation
     /**
      * Record to connect a relation to
      * 
-     * @var object|LazyLoadingProxy|null
+     * @var Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected object|null $record = null;
+    protected Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup|null $record = null;
 
     /**
      * Agents to relate to the record
@@ -67,13 +77,13 @@ class AgentRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param object $record
+     * @param Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup $record
      * @param Agent $agent
-     * @param object $parentResource
+     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @param string $uuid
      * @return AgentRelation
      */
-    public function __construct(object $record, Agent $agent, object $parentResource, string $uuid)
+    public function __construct(Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup $record, Agent $agent, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
         $this->initializeObject();
@@ -94,9 +104,9 @@ class AgentRelation extends AbstractRelation
     /**
      * Get record
      * 
-     * @return object
+     * @return Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup
      */
-    public function getRecord(): object
+    public function getRecord(): Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup
     {
         if ($this->record instanceof LazyLoadingProxy) {
             $this->record->_loadRealInstance();
@@ -107,9 +117,9 @@ class AgentRelation extends AbstractRelation
     /**
      * Set record
      * 
-     * @param object
+     * @param Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup
      */
-    public function setRecord(object $record): void
+    public function setRecord(Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup $record): void
     {
         $this->record = $record;
     }

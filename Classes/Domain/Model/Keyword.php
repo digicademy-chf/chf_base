@@ -13,6 +13,12 @@ use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use Digicademy\CHFBib\Domain\Model\BibliographicResource;
+use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
+use Digicademy\CHFLex\Domain\Model\LexicographicResource;
+use Digicademy\CHFMap\Domain\Model\MapResource;
+use Digicademy\CHFObject\Domain\Model\ObjectResource;
+use Digicademy\CHFPub\Domain\Model\PublicationResource;
 
 defined('TYPO3') or die();
 
@@ -44,7 +50,7 @@ class Keyword extends AbstractEntity
     /**
      * Resource that this database record is part of
      * 
-     * @var ?ObjectStorage<object>
+     * @var ?ObjectStorage<BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource>
      */
     #[Lazy()]
     protected ?ObjectStorage $parentResource = null;
@@ -61,10 +67,10 @@ class Keyword extends AbstractEntity
      * Construct object
      *
      * @param string $text
-     * @param object $parentResource
+     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @return Keyword
      */
-    public function __construct(string $text, object $parentResource)
+    public function __construct(string $text, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource)
     {
         $this->initializeObject();
 
@@ -124,7 +130,7 @@ class Keyword extends AbstractEntity
     /**
      * Get parent resource
      *
-     * @return ObjectStorage<object>
+     * @return ObjectStorage<BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource>
      */
     public function getParentResource(): ?ObjectStorage
     {
@@ -134,7 +140,7 @@ class Keyword extends AbstractEntity
     /**
      * Set parent resource
      *
-     * @param ObjectStorage<object> $parentResource
+     * @param ObjectStorage<BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource> $parentResource
      */
     public function setParentResource(ObjectStorage $parentResource): void
     {
@@ -144,9 +150,9 @@ class Keyword extends AbstractEntity
     /**
      * Add parent resource
      *
-     * @param object $parentResource
+     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      */
-    public function addParentResource(object $parentResource): void
+    public function addParentResource(BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource): void
     {
         $this->parentResource?->attach($parentResource);
     }
@@ -154,9 +160,9 @@ class Keyword extends AbstractEntity
     /**
      * Remove parent resource
      *
-     * @param object $parentResource
+     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      */
-    public function removeParentResource(object $parentResource): void
+    public function removeParentResource(BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource): void
     {
         $this->parentResource?->detach($parentResource);
     }

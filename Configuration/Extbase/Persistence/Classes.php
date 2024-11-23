@@ -33,6 +33,18 @@ return [
             'licenceTag' => Digicademy\CHFBase\Domain\Model\LicenceTag::class,
         ],
     ],
+    Digicademy\CHFBase\Domain\Model\LabelTag::class => [
+        'tableName' => 'tx_chfbase_domain_model_tag',
+        'recordType' => 'labelTag',
+    ],
+    Digicademy\CHFBase\Domain\Model\LabelTypeTag::class => [
+        'tableName' => 'tx_chfbase_domain_model_tag',
+        'recordType' => 'labelTypeTag',
+    ],
+    Digicademy\CHFBase\Domain\Model\LicenceTag::class => [
+        'tableName' => 'tx_chfbase_domain_model_tag',
+        'recordType' => 'licenceTag',
+    ],
     Digicademy\CHFBase\Domain\Model\AbstractRelation::class => [
         'tableName' => 'tx_chfbase_domain_model_relation',
         'recordType' => '0',
@@ -43,6 +55,26 @@ return [
             'licenceRelation' => Digicademy\CHFBase\Domain\Model\LicenceRelation::class,
             'linkRelation' => Digicademy\CHFBase\Domain\Model\LinkRelation::class,
         ],
+    ],
+    Digicademy\CHFBase\Domain\Model\AuthorshipRelation::class => [
+        'tableName' => 'tx_chfbase_domain_model_relation',
+        'recordType' => 'authorshipRelation',
+    ],
+    Digicademy\CHFBase\Domain\Model\LocationRelation::class => [
+        'tableName' => 'tx_chfbase_domain_model_relation',
+        'recordType' => 'locationRelation',
+    ],
+    Digicademy\CHFBase\Domain\Model\AgentRelation::class => [
+        'tableName' => 'tx_chfbase_domain_model_relation',
+        'recordType' => 'agentRelation',
+    ],
+    Digicademy\CHFBase\Domain\Model\LicenceRelation::class => [
+        'tableName' => 'tx_chfbase_domain_model_relation',
+        'recordType' => 'licenceRelation',
+    ],
+    Digicademy\CHFBase\Domain\Model\LinkRelation::class => [
+        'tableName' => 'tx_chfbase_domain_model_relation',
+        'recordType' => 'linkRelation',
     ],
     Digicademy\CHFBase\Domain\Model\ContentElement::class => [
         'tableName' => 'tt_content',

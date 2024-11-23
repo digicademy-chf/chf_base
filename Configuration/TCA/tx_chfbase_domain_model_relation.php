@@ -202,7 +202,7 @@ return [
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.record.description',
             'config' => [
                 'type' => 'group',
-                'allowed' => 'tx_chfbase_domain_model_resource,tx_chfbase_domain_model_agent,tx_chfbase_domain_model_location,tx_chfbase_domain_model_period,tx_chfbib_domain_model_bibliographic_entry,tx_chflex_domain_model_dictionary_entry,tx_chflex_domain_model_encyclopedia_entry,tx_chflex_domain_model_frequency,tx_chflex_domain_model_example,tx_chfmap_domain_model_feature,tx_chfpub_domain_model_volume,tx_chfpub_domain_model_essay,tx_chfobject_domain_model_object_group,tx_chfobject_domain_model_single_object,tx_chfmedia_domain_model_file_group,sys_file_metadata,',
+                'allowed' => 'tx_chfbase_domain_model_resource,tx_chfbase_domain_model_agent,tx_chfbase_domain_model_location,tx_chfbase_domain_model_period,tx_chfbib_domain_model_bibliographicentry,tx_chflex_domain_model_dictionaryentry,tx_chflex_domain_model_encyclopediaentry,tx_chflex_domain_model_frequency,tx_chflex_domain_model_example,tx_chfmap_domain_model_feature,tx_chfpub_domain_model_volume,tx_chfpub_domain_model_essay,tx_chfobject_domain_model_objectgroup,tx_chfobject_domain_model_singleobject,tx_chfmedia_domain_model_filegroup,sys_file_metadata,',
                 'foreign_table' => 'tx_chfbase_domain_model_resource', // Needed by Extbase as of TYPO3 12, remove when possible
                 'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
                 'MM_oppositeUsage' => [
@@ -240,7 +240,7 @@ return [
                         'authorship_relation',
                         'licence_relation',
                     ],
-                    'tx_chfbib_domain_model_bibliographic_entry' => [
+                    'tx_chfbib_domain_model_bibliographicentry' => [
                         'authorship_relation',
                         'licence_relation',
                         'link_relation',
@@ -248,7 +248,7 @@ return [
                         'publication_relation',
                         'source_relation',
                     ],
-                    'tx_chflex_domain_model_dictionary_entry' => [
+                    'tx_chflex_domain_model_dictionaryentry' => [
                         'authorship_relation',
                         'licence_relation',
                         'link_relation',
@@ -256,7 +256,7 @@ return [
                         'similarity_relation',
                         'source_relation',
                     ],
-                    'tx_chflex_domain_model_encyclopedia_entry' => [
+                    'tx_chflex_domain_model_encyclopediaentry' => [
                         'authorship_relation',
                         'licence_relation',
                         'link_relation',
@@ -280,7 +280,7 @@ return [
                         'publication_relation',
                         'source_relation',
                     ],
-                    'tx_chfmedia_domain_model_file_group' => [
+                    'tx_chfmedia_domain_model_filegroup' => [
                         'agent_relation',
                         'authorship_relation',
                         'licence_relation',
@@ -289,7 +289,7 @@ return [
                         'publication_relation',
                         'source_relation',
                     ],
-                    'tx_chfobject_domain_model_object_group' => [
+                    'tx_chfobject_domain_model_objectgroup' => [
                         'agent_relation',
                         'authorship_relation',
                         'licence_relation',
@@ -298,7 +298,7 @@ return [
                         'publication_relation',
                         'source_relation',
                     ],
-                    'tx_chfobject_domain_model_single_object' => [
+                    'tx_chfobject_domain_model_singleobject' => [
                         'agent_relation',
                         'authorship_relation',
                         'licence_relation',

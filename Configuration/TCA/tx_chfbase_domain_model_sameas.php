@@ -90,9 +90,9 @@ return [
                         'value' => 0,
                     ],
                 ],
-                'foreign_table' => 'tx_chfbase_domain_model_same_as',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_same_as}.{#pid}=###CURRENT_PID###'
-                    . ' AND {#tx_chfbase_domain_model_same_as}.{#sys_language_uid} IN (-1,0)',
+                'foreign_table' => 'tx_chfbase_domain_model_sameas',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_sameas}.{#pid}=###CURRENT_PID###'
+                    . ' AND {#tx_chfbase_domain_model_sameas}.{#sys_language_uid} IN (-1,0)',
                 'default' => 0,
             ],
         ],

@@ -12,6 +12,22 @@ namespace Digicademy\CHFBase\Domain\Model;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
+use Digicademy\CHFBib\Domain\Model\BibliographicEntry;
+use Digicademy\CHFBib\Domain\Model\BibliographicResource;
+use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
+use Digicademy\CHFLex\Domain\Model\DictionaryEntry;
+use Digicademy\CHFLex\Domain\Model\EncyclopediaEntry;
+use Digicademy\CHFLex\Domain\Model\LexicographicResource;
+use Digicademy\CHFMap\Domain\Model\Feature;
+use Digicademy\CHFMap\Domain\Model\FeatureCollection;
+use Digicademy\CHFMap\Domain\Model\MapResource;
+use Digicademy\CHFMedia\Domain\Model\FileGroup;
+use Digicademy\CHFObject\Domain\Model\ObjectGroup;
+use Digicademy\CHFObject\Domain\Model\ObjectResource;
+use Digicademy\CHFObject\Domain\Model\SingleObject;
+use Digicademy\CHFPub\Domain\Model\Essay;
+use Digicademy\CHFPub\Domain\Model\PublicationResource;
+use Digicademy\CHFPub\Domain\Model\Volume;
 
 defined('TYPO3') or die();
 
@@ -23,10 +39,10 @@ class LinkRelation extends AbstractRelation
     /**
      * Record to connect a relation to
      * 
-     * @var object|LazyLoadingProxy|null
+     * @var Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected object|null $record = null;
+    protected Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume|null $record = null;
 
     /**
      * URL that the link should point to
@@ -61,13 +77,13 @@ class LinkRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param object $record
+     * @param Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record
      * @param string $url
-     * @param object $parentResource
+     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @param string $uuid
      * @return LinkRelation
      */
-    public function __construct(object $record, string $url, object $parentResource, string $uuid)
+    public function __construct(Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record, string $url, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
 
@@ -79,9 +95,9 @@ class LinkRelation extends AbstractRelation
     /**
      * Get record
      * 
-     * @return object
+     * @return Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume
      */
-    public function getRecord(): object
+    public function getRecord(): Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume
     {
         if ($this->record instanceof LazyLoadingProxy) {
             $this->record->_loadRealInstance();
@@ -92,9 +108,9 @@ class LinkRelation extends AbstractRelation
     /**
      * Set record
      * 
-     * @param object
+     * @param Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume
      */
-    public function setRecord(object $record): void
+    public function setRecord(Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record): void
     {
         $this->record = $record;
     }

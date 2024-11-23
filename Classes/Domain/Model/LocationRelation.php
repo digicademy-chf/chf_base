@@ -14,6 +14,17 @@ use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
+use Digicademy\CHFBib\Domain\Model\BibliographicResource;
+use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
+use Digicademy\CHFLex\Domain\Model\Example;
+use Digicademy\CHFLex\Domain\Model\Frequency;
+use Digicademy\CHFLex\Domain\Model\LexicographicResource;
+use Digicademy\CHFMap\Domain\Model\MapResource;
+use Digicademy\CHFMedia\Domain\Model\FileGroup;
+use Digicademy\CHFObject\Domain\Model\SingleObject;
+use Digicademy\CHFObject\Domain\Model\ObjectGroup;
+use Digicademy\CHFObject\Domain\Model\ObjectResource;
+use Digicademy\CHFPub\Domain\Model\PublicationResource;
 
 defined('TYPO3') or die();
 
@@ -25,10 +36,10 @@ class LocationRelation extends AbstractRelation
     /**
      * Record to connect a relation to
      * 
-     * @var object|LazyLoadingProxy|null
+     * @var Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected object|null $record = null;
+    protected Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup|null $record = null;
 
     /**
      * Locations to relate to the record
@@ -61,13 +72,13 @@ class LocationRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param object $record
+     * @param Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup $record
      * @param Location $location
-     * @param object $parentResource
+     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @param string $uuid
      * @return LocationRelation
      */
-    public function __construct(object $record, Location $location, object $parentResource, string $uuid)
+    public function __construct(Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup $record, Location $location, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
         $this->initializeObject();
@@ -88,9 +99,9 @@ class LocationRelation extends AbstractRelation
     /**
      * Get record
      * 
-     * @return object
+     * @return Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup
      */
-    public function getRecord(): object
+    public function getRecord(): Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup
     {
         if ($this->record instanceof LazyLoadingProxy) {
             $this->record->_loadRealInstance();
@@ -101,9 +112,9 @@ class LocationRelation extends AbstractRelation
     /**
      * Set record
      * 
-     * @param object
+     * @param Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup
      */
-    public function setRecord(object $record): void
+    public function setRecord(Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup $record): void
     {
         $this->record = $record;
     }

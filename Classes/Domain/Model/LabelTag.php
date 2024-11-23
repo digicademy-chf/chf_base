@@ -13,17 +13,23 @@ use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use Digicademy\CHFBib\Domain\Model\BibliographicEntry;
+use Digicademy\CHFBib\Domain\Model\BibliographicResource;
+use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
 use Digicademy\CHFLex\Domain\Model\DictionaryEntry;
 use Digicademy\CHFLex\Domain\Model\EncyclopediaEntry;
-use Digicademy\CHFLex\Domain\Model\InflectedForm;
-use Digicademy\CHFLex\Domain\Model\Sense;
-use Digicademy\CHFLex\Domain\Model\Pronunciation;
 use Digicademy\CHFLex\Domain\Model\Example;
+use Digicademy\CHFLex\Domain\Model\InflectedForm;
+use Digicademy\CHFLex\Domain\Model\LexicographicResource;
+use Digicademy\CHFLex\Domain\Model\Pronunciation;
+use Digicademy\CHFLex\Domain\Model\Sense;
 use Digicademy\CHFMap\Domain\Model\Feature;
+use Digicademy\CHFMap\Domain\Model\MapResource;
 use Digicademy\CHFMedia\Domain\Model\FileGroup;
 use Digicademy\CHFObject\Domain\Model\ObjectGroup;
+use Digicademy\CHFObject\Domain\Model\ObjectResource;
 use Digicademy\CHFObject\Domain\Model\SingleObject;
 use Digicademy\CHFPub\Domain\Model\Essay;
+use Digicademy\CHFPub\Domain\Model\PublicationResource;
 use Digicademy\CHFPub\Domain\Model\Volume;
 
 defined('TYPO3') or die();
@@ -190,11 +196,11 @@ class LabelTag extends AbstractTag
      *
      * @param string $text
      * @param string $code
-     * @param object $parentResource
+     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @param string $uuid
      * @return LabelTag
      */
-    public function __construct(string $text, string $code, object $parentResource, string $uuid)
+    public function __construct(string $text, string $code, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $uuid)
     {
         parent::__construct($text, $code, $parentResource, $uuid);
         $this->initializeObject();
