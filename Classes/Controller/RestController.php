@@ -9,17 +9,16 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Controller;
 
-use Psr\Http\Message\ResponseInterface;
-use Digicademy\CHFBase\Domain\Model\AbstractResource;
 use Digicademy\CHFBase\Domain\Repository\AbstractResourceRepository;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 defined('TYPO3') or die();
 
 /**
- * Controller for AbstractResource
+ * Controller for Rest
  */
-class AbstractResourceController extends ActionController
+class RestController extends ActionController
 {
     private AbstractResourceRepository $abstractResourceRepository;
 
@@ -30,13 +29,7 @@ class AbstractResourceController extends ActionController
 
     public function indexAction(): ResponseInterface
     {
-        $this->view->assign('resources', $this->abstractResourceRepository->findAll());
-        return $this->htmlResponse();
-    }
-
-    public function showAction(AbstractResource $abstractResource): ResponseInterface
-    {
-        $this->view->assign('resource', $abstractResource);
+        $this->view->assign('resource', $this->abstractResourceRepository->findOneBy([]));
         return $this->htmlResponse();
     }
 }

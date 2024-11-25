@@ -8,29 +8,28 @@ declare(strict_types=1);
 
 
 namespace Digicademy\CHFBase\Controller;
-
-use Psr\Http\Message\ResponseInterface;
 use Digicademy\CHFBase\Domain\Model\Period;
-use Digicademy\CHFBase\Domain\Repository\PeriodRepository;
+use Digicademy\CHFBase\Domain\Repository\AbstractResourceRepository;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 defined('TYPO3') or die();
 
 /**
- * Controller for Period
+ * Controller for Timeline
  */
-class PeriodController extends ActionController
+class TimelineController extends ActionController
 {
-    private PeriodRepository $periodRepository;
+    private AbstractResourceRepository $abstractResourceRepository;
 
-    public function injectPeriodRepository(PeriodRepository $periodRepository): void
+    public function injectAbstractResourceRepository(AbstractResourceRepository $abstractResourceRepository): void
     {
-        $this->periodRepository = $periodRepository;
+        $this->abstractResourceRepository = $abstractResourceRepository;
     }
 
     public function indexAction(): ResponseInterface
     {
-        $this->view->assign('periods', $this->periodRepository->findAll());
+        $this->view->assign('resource', $this->abstractResourceRepository->findOneBy([]));
         return $this->htmlResponse();
     }
 

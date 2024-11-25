@@ -8,29 +8,28 @@ declare(strict_types=1);
 
 
 namespace Digicademy\CHFBase\Controller;
-
-use Psr\Http\Message\ResponseInterface;
 use Digicademy\CHFBase\Domain\Model\Location;
-use Digicademy\CHFBase\Domain\Repository\LocationRepository;
+use Digicademy\CHFBase\Domain\Repository\AbstractResourceRepository;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 defined('TYPO3') or die();
 
 /**
- * Controller for Location
+ * Controller for Places
  */
-class LocationController extends ActionController
+class PlacesController extends ActionController
 {
-    private LocationRepository $locationRepository;
+    private AbstractResourceRepository $abstractResourceRepository;
 
-    public function injectLocationRepository(LocationRepository $locationRepository): void
+    public function injectAbstractResourceRepository(AbstractResourceRepository $abstractResourceRepository): void
     {
-        $this->locationRepository = $locationRepository;
+        $this->abstractResourceRepository = $abstractResourceRepository;
     }
 
     public function indexAction(): ResponseInterface
     {
-        $this->view->assign('locations', $this->locationRepository->findAll());
+        $this->view->assign('resource', $this->abstractResourceRepository->findOneBy([]));
         return $this->htmlResponse();
     }
 

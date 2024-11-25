@@ -1,0 +1,49 @@
+<?php
+declare(strict_types=1);
+
+# This file is part of the extension CHF Base for TYPO3.
+#
+# For the full copyright and license information, please read the
+# LICENSE.txt file that was distributed with this source code.
+
+
+namespace Digicademy\CHFBase\Controller;
+
+use Digicademy\CHFBase\Domain\Model\AbstractTag;
+use Digicademy\CHFBase\Domain\Model\Keyword;
+use Digicademy\CHFBase\Domain\Repository\AbstractResourceRepository;
+use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+
+defined('TYPO3') or die();
+
+/**
+ * Controller for Structure
+ */
+class StructureController extends ActionController
+{
+    private AbstractResourceRepository $abstractResourceRepository;
+
+    public function injectAbstractResourceRepository(AbstractResourceRepository $abstractResourceRepository): void
+    {
+        $this->abstractResourceRepository = $abstractResourceRepository;
+    }
+
+    public function indexAction(): ResponseInterface
+    {
+        $this->view->assign('resource', $this->abstractResourceRepository->findOneBy([]));
+        return $this->htmlResponse();
+    }
+
+    public function showTagAction(AbstractTag $abstractTag): ResponseInterface
+    {
+        $this->view->assign('tag', $abstractTag);
+        return $this->htmlResponse();
+    }
+
+    public function showKeywordAction(Keyword $keyword): ResponseInterface
+    {
+        $this->view->assign('keyword', $keyword);
+        return $this->htmlResponse();
+    }
+}

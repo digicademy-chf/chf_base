@@ -33,3 +33,63 @@ ExtensionUtility::registerPlugin(
     'heritage',
     'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.rest.description',
 );
+
+// Add plugin 'Contributors'
+ExtensionUtility::registerPlugin(
+    'CHFBase',
+    'Contributors',
+    'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.contributors',
+    'tx-chfbase-plugin-contributors',
+    'heritage',
+    'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.contributors.description',
+);
+
+// Add plugin 'Agents'
+ExtensionUtility::registerPlugin(
+    'CHFBase',
+    'Agents',
+    'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.agents',
+    'tx-chfbase-plugin-agents',
+    'heritage',
+    'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.agents.description',
+);
+
+// Add plugin 'Timeline'
+ExtensionUtility::registerPlugin(
+    'CHFBase',
+    'Timeline',
+    'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.timeline',
+    'tx-chfbase-plugin-timeline',
+    'heritage',
+    'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.timeline.description',
+);
+
+// Add plugin 'Places'
+ExtensionUtility::registerPlugin(
+    'CHFBase',
+    'Places',
+    'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.places',
+    'tx-chfbase-plugin-places',
+    'heritage',
+    'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.places.description',
+);
+
+// Add plugin 'Structure'
+ExtensionUtility::registerPlugin(
+    'CHFBase',
+    'Structure',
+    'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.structure',
+    'tx-chfbase-plugin-structure',
+    'heritage',
+    'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.structure.description',
+);
+
+// Add plugin 'Connections'
+ExtensionUtility::registerPlugin(
+    'CHFBase',
+    'Connections',
+    'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.connections',
+    'tx-chfbase-plugin-connections',
+    'heritage',
+    'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.connections.description',
+);

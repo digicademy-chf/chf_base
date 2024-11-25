@@ -9,28 +9,28 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Controller;
 
-use Psr\Http\Message\ResponseInterface;
 use Digicademy\CHFBase\Domain\Model\AbstractRelation;
-use Digicademy\CHFBase\Domain\Repository\AbstractRelationRepository;
+use Digicademy\CHFBase\Domain\Repository\AbstractResourceRepository;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 defined('TYPO3') or die();
 
 /**
- * Controller for AbstractRelation
+ * Controller for Connections
  */
-class AbstractRelationController extends ActionController
+class ConnectionsController extends ActionController
 {
-    private AbstractRelationRepository $abstractRelationRepository;
+    private AbstractResourceRepository $abstractResourceRepository;
 
-    public function injectAbstractRelationRepository(AbstractRelationRepository $abstractRelationRepository): void
+    public function injectAbstractResourceRepository(AbstractResourceRepository $abstractResourceRepository): void
     {
-        $this->abstractRelationRepository = $abstractRelationRepository;
+        $this->abstractResourceRepository = $abstractResourceRepository;
     }
 
     public function indexAction(): ResponseInterface
     {
-        $this->view->assign('relations', $this->abstractRelationRepository->findAll());
+        $this->view->assign('resource', $this->abstractResourceRepository->findOneBy([]));
         return $this->htmlResponse();
     }
 

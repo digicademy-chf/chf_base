@@ -8,29 +8,28 @@ declare(strict_types=1);
 
 
 namespace Digicademy\CHFBase\Controller;
-
-use Psr\Http\Message\ResponseInterface;
 use Digicademy\CHFBase\Domain\Model\Agent;
-use Digicademy\CHFBase\Domain\Repository\AgentRepository;
+use Digicademy\CHFBase\Domain\Repository\AbstractResourceRepository;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 defined('TYPO3') or die();
 
 /**
- * Controller for Agent
+ * Controller for Agents
  */
-class AgentController extends ActionController
+class AgentsController extends ActionController
 {
-    private AgentRepository $agentRepository;
+    private AbstractResourceRepository $abstractResourceRepository;
 
-    public function injectAgentRepository(AgentRepository $agentRepository): void
+    public function injectAbstractResourceRepository(AbstractResourceRepository $abstractResourceRepository): void
     {
-        $this->agentRepository = $agentRepository;
+        $this->abstractResourceRepository = $abstractResourceRepository;
     }
 
     public function indexAction(): ResponseInterface
     {
-        $this->view->assign('agents', $this->agentRepository->findAll());
+        $this->view->assign('resource', $this->abstractResourceRepository->findOneBy([]));
         return $this->htmlResponse();
     }
 

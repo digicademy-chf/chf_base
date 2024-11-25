@@ -988,6 +988,48 @@
             <trans-unit id="plugin.rest.description" resname="plugin.rest.description">
                 <source>Simple API for CHF content</source>
             </trans-unit>
+            <!-- Plugin: Contributors -->
+            <trans-unit id="plugin.contributors" resname="plugin.contributors">
+                <source>Contributors</source>
+            </trans-unit>
+            <trans-unit id="plugin.contributors.description" resname="plugin.contributors.description">
+                <source>List and show contributors</source>
+            </trans-unit>
+            <!-- Plugin: Agents -->
+            <trans-unit id="plugin.agents" resname="plugin.agents">
+                <source>Agents</source>
+            </trans-unit>
+            <trans-unit id="plugin.agents.description" resname="plugin.agents.description">
+                <source>List and show people and organizations</source>
+            </trans-unit>
+            <!-- Plugin: Timeline -->
+            <trans-unit id="plugin.timeline" resname="plugin.timeline">
+                <source>Timeline</source>
+            </trans-unit>
+            <trans-unit id="plugin.timeline.description" resname="plugin.timeline.description">
+                <source>List and show periods</source>
+            </trans-unit>
+            <!-- Plugin: Places -->
+            <trans-unit id="plugin.places" resname="plugin.places">
+                <source>Places</source>
+            </trans-unit>
+            <trans-unit id="plugin.places.description" resname="plugin.places.description">
+                <source>List and show locations</source>
+            </trans-unit>
+            <!-- Plugin: Structure -->
+            <trans-unit id="plugin.structure" resname="plugin.structure">
+                <source>Structure</source>
+            </trans-unit>
+            <trans-unit id="plugin.structure.description" resname="plugin.structure.description">
+                <source>List and show tags and keywords</source>
+            </trans-unit>
+            <!-- Plugin: Connections -->
+            <trans-unit id="plugin.connections" resname="plugin.connections">
+                <source>Connections</source>
+            </trans-unit>
+            <trans-unit id="plugin.connections.description" resname="plugin.connections.description">
+                <source>List and show relations</source>
+            </trans-unit>
             <!-- Layout: generic -->
             <trans-unit id="layout.generic.main" resname="layout.generic.main">
                 <source>Main area</source>

@@ -62,4 +62,28 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:chf_base/Resources/Public/Icons/PluginRest.svg',
     ],
+    'tx-chfbase-plugin-contributors' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:chf_base/Resources/Public/Icons/PluginContributors.svg',
+    ],
+    'tx-chfbase-plugin-agents' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:chf_base/Resources/Public/Icons/PluginAgents.svg',
+    ],
+    'tx-chfbase-plugin-timeline' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:chf_base/Resources/Public/Icons/PluginTimeline.svg',
+    ],
+    'tx-chfbase-plugin-places' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:chf_base/Resources/Public/Icons/PluginPlaces.svg',
+    ],
+    'tx-chfbase-plugin-structure' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:chf_base/Resources/Public/Icons/PluginStructure.svg',
+    ],
+    'tx-chfbase-plugin-connections' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:chf_base/Resources/Public/Icons/PluginConnections.svg',
+    ],
 ];

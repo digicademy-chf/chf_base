@@ -1312,6 +1312,60 @@
                 <source>Simple API for CHF content</source>
                 <target>Einfache Schnittstelle für CHF-Inhalte</target>
             </trans-unit>
+            <!-- Plugin: Contributors -->
+            <trans-unit id="plugin.contributors" resname="plugin.contributors" approved="yes">
+                <source>Contributors</source>
+                <target>Beitragende</target>
+            </trans-unit>
+            <trans-unit id="plugin.contributors.description" resname="plugin.contributors.description" approved="yes">
+                <source>List and show contributors</source>
+                <target>Beitragende auflisten und anzeigen</target>
+            </trans-unit>
+            <!-- Plugin: Agents -->
+            <trans-unit id="plugin.agents" resname="plugin.agents" approved="yes">
+                <source>Agents</source>
+                <target>Akteur:innen</target>
+            </trans-unit>
+            <trans-unit id="plugin.agents.description" resname="plugin.agents.description" approved="yes">
+                <source>List and show people and organizations</source>
+                <target>Personen und Organisationen auflisten und anzeigen</target>
+            </trans-unit>
+            <!-- Plugin: Timeline -->
+            <trans-unit id="plugin.timeline" resname="plugin.timeline" approved="yes">
+                <source>Timeline</source>
+                <target>Zeitstrahl</target>
+            </trans-unit>
+            <trans-unit id="plugin.timeline.description" resname="plugin.timeline.description" approved="yes">
+                <source>List and show periods</source>
+                <target>Zeiträume auflisten und anzeigen</target>
+            </trans-unit>
+            <!-- Plugin: Places -->
+            <trans-unit id="plugin.places" resname="plugin.places" approved="yes">
+                <source>Places</source>
+                <target>Orte</target>
+            </trans-unit>
+            <trans-unit id="plugin.places.description" resname="plugin.places.description" approved="yes">
+                <source>List and show locations</source>
+                <target>Orte auflisten und anzeigen</target>
+            </trans-unit>
+            <!-- Plugin: Structure -->
+            <trans-unit id="plugin.structure" resname="plugin.structure" approved="yes">
+                <source>Structure</source>
+                <target>Struktur</target>
+            </trans-unit>
+            <trans-unit id="plugin.structure.description" resname="plugin.structure.description" approved="yes">
+                <source>List and show tags and keywords</source>
+                <target>Tags und Stichworte auflisten und anzeigen</target>
+            </trans-unit>
+            <!-- Plugin: Connections -->
+            <trans-unit id="plugin.connections" resname="plugin.connections" approved="yes">
+                <source>Connections</source>
+                <target>Verbindungen</target>
+            </trans-unit>
+            <trans-unit id="plugin.connections.description" resname="plugin.connections.description" approved="yes">
+                <source>List and show relations</source>
+                <target>Relationen auflisten und anzeigen</target>
+            </trans-unit>
             <!-- Layout: generic -->
             <trans-unit id="layout.generic.main" resname="layout.generic.main" approved="yes">
                 <source>Main area</source>
