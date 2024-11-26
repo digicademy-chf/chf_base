@@ -30,7 +30,8 @@ class ConnectionsController extends ActionController
 
     public function indexAction(): ResponseInterface
     {
-        $this->view->assign('resource', $this->abstractResourceRepository->findOneBy([]));
+        $resourceIdentifier = $this->settings['resource'];
+        $this->view->assign('resource', $this->abstractResourceRepository->findByIdentifier($resourceIdentifier));
         return $this->htmlResponse();
     }
 

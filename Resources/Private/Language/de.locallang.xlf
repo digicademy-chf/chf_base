@@ -1303,6 +1303,18 @@
                 <source>Cultural Heritage Framework</source>
                 <target>Cultural Heritage Framework</target>
             </trans-unit>
+            <trans-unit id="plugin.generic.data" resname="plugin.generic.data" approved="yes">
+                <source>Data</source>
+                <target>Daten</target>
+            </trans-unit>
+            <trans-unit id="plugin.generic.resource" resname="plugin.generic.resource" approved="yes">
+                <source>Resource</source>
+                <target>Ressource</target>
+            </trans-unit>
+            <trans-unit id="plugin.generic.resource.description" resname="plugin.generic.resource.description" approved="yes">
+                <source>Dataset to use in this plugin</source>
+                <target>Datensatz für dieses Plugin</target>
+            </trans-unit>
             <!-- Plugin: Rest -->
             <trans-unit id="plugin.rest" resname="plugin.rest" approved="yes">
                 <source>Rest API</source>

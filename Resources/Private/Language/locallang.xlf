@@ -981,6 +981,15 @@
             <trans-unit id="plugin.generic.heritage" resname="plugin.generic.heritage">
                 <source>Cultural Heritage Framework</source>
             </trans-unit>
+            <trans-unit id="plugin.generic.data" resname="plugin.generic.data">
+                <source>Data</source>
+            </trans-unit>
+            <trans-unit id="plugin.generic.resource" resname="plugin.generic.resource">
+                <source>Resource</source>
+            </trans-unit>
+            <trans-unit id="plugin.generic.resource.description" resname="plugin.generic.resource.description">
+                <source>Dataset to use in this plugin</source>
+            </trans-unit>
             <!-- Plugin: Rest -->
             <trans-unit id="plugin.rest" resname="plugin.rest">
                 <source>Rest API</source>

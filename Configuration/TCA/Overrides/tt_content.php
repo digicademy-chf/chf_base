@@ -7,6 +7,7 @@ declare(strict_types=1);
 # LICENSE.txt file that was distributed with this source code.
 
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3') or die();
@@ -92,4 +93,61 @@ ExtensionUtility::registerPlugin(
     'tx-chfbase-plugin-connections',
     'heritage',
     'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.connections.description',
+);
+
+// Add data tab to plugin form
+ExtensionManagementUtility::addToAllTCAtypes(
+    'tt_content',
+    '--div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.generic.data,pi_flexform',
+    'chfbase_rest,chfbase_contributors,chfbase_agents,chfbase_timeline,chfbase_places,chfbase_structure,chfbase_connections',
+    'after:subheader',
+);
+
+// Add form for plugin 'Rest'
+ExtensionManagementUtility::addPiFlexFormValue(
+    '*',
+    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
+    'chfbase_rest',
+);
+
+// Add form for plugin 'Contributors'
+ExtensionManagementUtility::addPiFlexFormValue(
+    '*',
+    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
+    'chfbase_contributors',
+);
+
+// Add form for plugin 'Agents'
+ExtensionManagementUtility::addPiFlexFormValue(
+    '*',
+    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
+    'chfbase_agents',
+);
+
+// Add form for plugin 'Timeline'
+ExtensionManagementUtility::addPiFlexFormValue(
+    '*',
+    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
+    'chfbase_timeline',
+);
+
+// Add form for plugin 'Places'
+ExtensionManagementUtility::addPiFlexFormValue(
+    '*',
+    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
+    'chfbase_places',
+);
+
+// Add form for plugin 'Structure'
+ExtensionManagementUtility::addPiFlexFormValue(
+    '*',
+    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
+    'chfbase_structure',
+);
+
+// Add form for plugin 'Connections'
+ExtensionManagementUtility::addPiFlexFormValue(
+    '*',
+    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
+    'chfbase_connections',
 );
