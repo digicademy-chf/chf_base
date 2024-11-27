@@ -9,3 +9,14 @@ TCEMAIN.permissions {
 
 // Avoid issues with int labels when copying records
 TCEMAIN.table.tt_content.disablePrependAtCopy = 1
+
+// Check external links in link validation (disabled in TYPO3 defaults)
+// Include custom link/email/softref fields in link validation
+mod.linkvalidator {
+  linktypes = db,file,external
+  searchFields {
+    tx_chfbase_domain_model_relation = url
+    tx_chfbase_domain_model_sameas = uri
+    tx_chfbase_domain_model_footnote = text
+  }
+}
