@@ -13,6 +13,7 @@ use Digicademy\CHFBase\Domain\Model\AbstractTag;
 use Digicademy\CHFBase\Domain\Model\Keyword;
 use Digicademy\CHFBase\Domain\Repository\AbstractResourceRepository;
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Core\Cache\CacheTag;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 defined('TYPO3') or die();
@@ -29,22 +30,63 @@ class StructureController extends ActionController
         $this->abstractResourceRepository = $abstractResourceRepository;
     }
 
+    /**
+     * Show tag and keyword list
+     *
+     * @return ResponseInterface
+     */
     public function indexAction(): ResponseInterface
     {
+        // Get resource
         $resourceIdentifier = $this->settings['resource'];
         $this->view->assign('resource', $this->abstractResourceRepository->findByIdentifier($resourceIdentifier));
+
+        // Set cache tag
+        $this->request->getAttribute('frontend.cache.collector')->addCacheTags(
+            new CacheTag('chf')
+        );
+
+        // Create response
         return $this->htmlResponse();
     }
 
+    /**
+     * Show single tag
+     *
+     * @param AbstractTag $abstractTag
+     * @return ResponseInterface
+     */
     public function showTagAction(AbstractTag $abstractTag): ResponseInterface
     {
+        // Get tag
         $this->view->assign('tag', $abstractTag);
+
+        // Set cache tag
+        $this->request->getAttribute('frontend.cache.collector')->addCacheTags(
+            new CacheTag('chf')
+        );
+
+        // Create response
         return $this->htmlResponse();
     }
 
+    /**
+     * Show single keyword
+     *
+     * @param Keyword $keyword
+     * @return ResponseInterface
+     */
     public function showKeywordAction(Keyword $keyword): ResponseInterface
     {
+        // Get keyword
         $this->view->assign('keyword', $keyword);
+
+        // Set cache tag
+        $this->request->getAttribute('frontend.cache.collector')->addCacheTags(
+            new CacheTag('chf')
+        );
+
+        // Create response
         return $this->htmlResponse();
     }
 }
