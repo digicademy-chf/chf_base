@@ -1,0 +1,61 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <aside id="aside-settings" class="mdlr-modal" aria-hidden="true" role="dialog"><div>
+
+        <div>
+            <h2>Einstellungen</h2>
+            <button class="mdlr-variant-icon mdlr-variant-round mdlr-variant-transparent mdlr-function-closemodal" title="Dialog schließen">
+                <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <use href="#icon-close"/>
+                </svg>
+                <span>Dialog schließen</span>
+            </button>
+        </div>
+
+        <h3>Auf diesem Gerät</h3>
+
+        <form id="settings-form" class="mdlr-form">
+            <fieldset id="settings-language">
+                <legend>Sprache</legend>
+                <h4 aria-hidden="true">Sprache</h4>
+                <div class="mdlr-option mdlr-variant-radioasbutton">
+                    <input type="radio" id="settings-language-auto" name="language" value="auto" checked>
+                    <label for="settings-language-auto">Automatisch</label>
+                </div>
+                <div class="mdlr-option mdlr-variant-radioasbutton">
+                    <input type="radio" id="settings-language-de" name="language" value="de">
+                    <label for="settings-language-de">Deutsch</label>
+                </div>
+                <div class="mdlr-option mdlr-variant-radioasbutton">
+                    <input type="radio" id="settings-language-en" name="language" value="en">
+                    <label for="settings-language-en">Englisch</label>
+                </div>
+            </fieldset>
+            <fieldset id="settings-theme">
+                <legend>Farbschema</legend>
+                <h4 aria-hidden="true">Farbschema</h4>
+                <div>
+                    <input type="radio" id="settings-theme-auto" name="theme" value="auto" checked>
+                    <label for="settings-theme-auto">Automatisch</label>
+                </div>
+                <div>
+                    <input type="radio" id="settings-theme-de" name="theme" value="light">
+                    <label for="settings-theme-light">Hell</label>
+                </div>
+                <div>
+                    <input type="radio" id="settings-theme-en" name="theme" value="dark">
+                    <label for="settings-theme-dark">Dunkel</label>
+                </div>
+            </fieldset>
+        </form>
+
+        <h3>Privatsphäre</h3>
+
+        <div>
+            <p>Beim Ändern einer Standardeinstellung hinterlegt diese Webanwendung ein Cookie im Browser. Es ist 30 Tage gültig und wird nicht zur Nachverfolgung genutzt.</p>
+            <button class="mdlr-function-cookiereset" data-success="Cookie erfolgreich gelöscht" data-failure="Konnte leider nicht gelöscht werden" hidden>
+                <span>Cookie löschen</span>
+            </button>
+        </div>
+
+    </div></aside>
+</html>

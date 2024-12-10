@@ -1,0 +1,13 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+            <section id="footer-partners">
+                <h3><f:translate key="templates.footer.partners" extensionName="chf_base"/></h3>
+                <f:if condition="{settings.chf.partners.urls} && {settings.chf.partners.logos} && {settings.chf.partners.names}"><ul class="mdlr-imagerow">
+                    <f:for each="{settings.chf.partners.urls}" as="url" key="index"><li>
+                        <f:link.external uri="{url}" title="{settings.chf.partners.names.{index}}" target="_blank">
+                            <span>{settings.chf.partners.names.{index}}</span>
+                            <img src="{f:uri.image(src: '{settings.chf.partners.logos.{index}}')}" alt="{settings.chf.partners.names.{index}}" aria-hidden="true">
+                        </f:link.external>
+                    </li></f:for>
+                </ul></f:if>
+            </section>
+</html>

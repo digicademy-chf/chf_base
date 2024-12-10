@@ -1,0 +1,11 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{settings.chf.templates.serviceFolder}">            <nav id="footer-service">
+                <h3><f:translate key="templates.footer.service" extensionName="chf_base"/></h3>
+                <ul class="mdlr-linkrow">
+                    <f:for each="{serviceMenu}" as="menuItem"><li>
+                        <f:link.page pageUid="{menuItem.data.uid}" class="{f:if(condition: menuItem.active, then:'mdlr-variant-active')}"><span>{menuItem.title}</span></f:link.page>
+                    </li>
+                    </f:for>
+                </ul>
+            </nav></f:if>
+</html>

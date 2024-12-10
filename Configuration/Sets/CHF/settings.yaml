@@ -15,6 +15,6 @@ styles:
       #linkWrap.width: '800m'
       #linkWrap.height: '600m'
   templates:
-    templateRootPath: EXT:chf_base/Resources/Private/Templates/FluidStyledContent/Templates/
-    partialRootPath: EXT:chf_base/Resources/Private/Templates/FluidStyledContent/Partials/
-    layoutRootPath: EXT:chf_base/Resources/Private/Templates/FluidStyledContent/Layouts/
+    templateRootPath: EXT:chf_base/Resources/Private/FluidStyledContent/Templates/
+    partialRootPath: EXT:chf_base/Resources/Private/FluidStyledContent/Partials/
+    layoutRootPath: EXT:chf_base/Resources/Private/FluidStyledContent/Layouts/

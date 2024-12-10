@@ -1,9 +1,0 @@
-        <nav id="header-navigation">
-            <h2><f:translate key="templates.header.navigation" extensionName="chf_base"/></h2>
-            <ul class="mdlr-viewswitcher">
-                <f:for each="{mainMenu}" as="menuItem"><li>
-                    <f:link.page pageUid="{menuItem.data.uid}" class="{f:if(condition: menuItem.active, then:'mdlr-variant-active')}"><span>{menuItem.title}</span></f:link.page>
-                </li>
-                </f:for>
-            </ul>
-        </nav>

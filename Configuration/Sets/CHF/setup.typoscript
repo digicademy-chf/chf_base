@@ -1,12 +1,15 @@
-# CHF Templates
+# Settings
+config.admPanel = 1
+
+# Page-view templates
 page = PAGE
 page {
     typeNum = 0
     10 = PAGEVIEW
     10 {
         paths {
-            100 = EXT:chf_base/Resources/Private/Templates/Page/
-            200 = {$chf.templates.path}
+            100 = EXT:chf_base/Resources/Private/PageView/
+            200 = {$chf.templates.path}PageView/
         }
         variables {
             parentPageTitle = TEXT
@@ -49,7 +52,7 @@ page {
     }
 }
 
-# JSON-LD
+# JSON-LD templates
 jsonld = PAGE
 jsonld {
     typeNum = 100
@@ -60,11 +63,36 @@ jsonld {
     10 = PAGEVIEW
     10 {
         paths {
-            100 = EXT:chf_base/Resources/Private/Templates/JsonLd/
-            200 = {$chf.templates.path}
+            100 = EXT:chf_base/Resources/Private/JsonLd/
+            200 = {$chf.templates.path}JsonLd/
         }
     }
 }
 
-# Settings
-config.admPanel = 1
+# Plugin templates
+plugin.tx_chfbase {
+  view {
+    templateRootPaths {
+        100 = EXT:chf_base/Resources/Private/Templates/
+        200 = {$chf.templates.path}Templates/
+    }
+    partialRootPaths {
+        100 = EXT:chf_base/Resources/Private/Partials/
+        200 = {$chf.templates.path}Partials/
+    }
+    layoutRootPaths {
+        100 = EXT:chf_base/Resources/Private/Layouts/
+        200 = {$chf.templates.path}Layouts/
+    }
+    defaultPid = auto
+  }
+}
+
+# Extension TypoScript
+@import 'EXT:chf_bib/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:chf_gloss/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:chf_lex/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:chf_map/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:chf_media/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:chf_object/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:chf_pub/Configuration/TypoScript/setup.typoscript'
