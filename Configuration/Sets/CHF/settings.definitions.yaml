@@ -13,7 +13,7 @@ settings:
     label: 'Service folder'
     description: 'Page ID of a folder that contains service content like a privacy page'
     type: int
-    default:
+    default: 0
   chf.partners.urls:
     label: 'Partner URLs'
     description: 'List of partner URLs to link to in the footer'

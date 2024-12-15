@@ -25,6 +25,7 @@ use Digicademy\CHFLex\Domain\Model\Sense;
 use Digicademy\CHFMap\Domain\Model\Feature;
 use Digicademy\CHFMap\Domain\Model\MapResource;
 use Digicademy\CHFMedia\Domain\Model\FileGroup;
+use Digicademy\CHFMedia\Domain\Model\FileMetadata;
 use Digicademy\CHFObject\Domain\Model\ObjectGroup;
 use Digicademy\CHFObject\Domain\Model\ObjectResource;
 use Digicademy\CHFObject\Domain\Model\SingleObject;
@@ -192,6 +193,14 @@ class LabelTag extends AbstractTag
     protected ?ObjectStorage $asLabelOfFileGroup;
 
     /**
+     * List of files that use this label
+     * 
+     * @var ?ObjectStorage<FileMetadata>
+     */
+    #[Lazy()]
+    protected ?ObjectStorage $asLabelOfFileMetadata;
+
+    /**
      * Construct object
      *
      * @param string $text
@@ -226,6 +235,7 @@ class LabelTag extends AbstractTag
         $this->asLabelOfSingleObject ??= new ObjectStorage();
         $this->asLabelOfObjectGroup ??= new ObjectStorage();
         $this->asLabelOfFileGroup ??= new ObjectStorage();
+        $this->asLabelOfFileMetadata ??= new ObjectStorage();
     }
 
     /**
@@ -1105,5 +1115,54 @@ class LabelTag extends AbstractTag
     {
         $asLabelOfFileGroup = clone $this->asLabelOfFileGroup;
         $this->asLabelOfFileGroup->removeAll($asLabelOfFileGroup);
+    }
+
+    /**
+     * Get as label of file metadata
+     *
+     * @return ObjectStorage<FileMetadata>
+     */
+    public function getAsLabelOfFileMetadata(): ?ObjectStorage
+    {
+        return $this->asLabelOfFileMetadata;
+    }
+
+    /**
+     * Set as label of file metadata
+     *
+     * @param ObjectStorage<FileMetadata> $asLabelOfFileMetadata
+     */
+    public function setAsLabelOfFileMetadata(ObjectStorage $asLabelOfFileMetadata): void
+    {
+        $this->asLabelOfFileMetadata = $asLabelOfFileMetadata;
+    }
+
+    /**
+     * Add as label of file metadata
+     *
+     * @param FileMetadata $asLabelOfFileMetadata
+     */
+    public function addAsLabelOfFileMetadata(FileMetadata $asLabelOfFileMetadata): void
+    {
+        $this->asLabelOfFileMetadata?->attach($asLabelOfFileMetadata);
+    }
+
+    /**
+     * Remove as label of file metadata
+     *
+     * @param FileMetadata $asLabelOfFileMetadata
+     */
+    public function removeAsLabelOfFileMetadata(FileMetadata $asLabelOfFileMetadata): void
+    {
+        $this->asLabelOfFileMetadata?->detach($asLabelOfFileMetadata);
+    }
+
+    /**
+     * Remove all as label of file metadata
+     */
+    public function removeAllAsLabelOfFileMetadata(): void
+    {
+        $asLabelOfFileMetadata = clone $this->asLabelOfFileMetadata;
+        $this->asLabelOfFileMetadata->removeAll($asLabelOfFileMetadata);
     }
 }
