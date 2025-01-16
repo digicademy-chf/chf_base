@@ -1,6 +1,13 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-            <f:link.page pageUid="{page.rootPageId}" title="{f:translate(key: 'templates.links.home', extensionName: 'chf_base')}" class="mdlr-footer-logo" aria-hidden="true">
-                <span><f:if condition="{language.websiteTitle}"><f:then>{language.websiteTitle}</f:then><f:else>{site.configuration.websiteTitle}</f:else></f:if></span>
-                <img src="{f:uri.image(src: '{settings.chf.templates.logo}')}" alt="{f:if(condition: '{language.websiteTitle}', then: '{language.websiteTitle}', else: '{site.configuration.websiteTitle}')}" aria-hidden="true">
-            </f:link.page>
+    <div class="mdlr-logo mdlr-variant-highlight mdlr-pattern-slot-a mdlr-pattern-align-left mdlr-pattern-align-middle">
+        <f:link.page pageUid="{page.rootPageId}" title="{f:translate(key: 'templates.generic.home', extensionName: 'chf_base')}" class="mdlr-imagelink">
+            <span>
+                <f:if condition="{language.websiteTitle}">
+                    <f:then>{language.websiteTitle}</f:then>
+                    <f:else>{site.configuration.websiteTitle}</f:else>
+                </f:if>
+            </span>
+            <img src="{f:uri.image(src: '{settings.chf.templates.logo}')}" alt="{f:if(condition: '{language.websiteTitle}', then: '{language.websiteTitle}', else: '{site.configuration.websiteTitle}')}" aria-hidden="true">
+        </f:link.page>
+    </div>
 </html>

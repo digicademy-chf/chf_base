@@ -9,11 +9,41 @@ settings:
     description: 'Path to a logo file to use in the header and footer of a page'
     type: string
     default: 'EXT:chf_base/Resources/Public/Images/logo.svg'
+  chf.templates.favicon:
+    label: 'Favicon path'
+    description: 'Path to an icon file to use as the favicon of a page'
+    type: string
+    default: 'EXT:corpusvitrearum/Resources/Public/Images/favicon-small.svg'
   chf.templates.serviceFolder:
     label: 'Service folder'
     description: 'Page ID of a folder that contains service content like a privacy page'
     type: int
     default: 0
+  chf.templates.searchPage:
+    label: 'Search page'
+    description: 'Page ID that contains the faceted search'
+    type: int
+    default: 0
+  chf.templates.searchExample:
+    label: 'Sample searches'
+    description: 'List of exemplary search terms to show users as guidance'
+    type: stringlist
+    default: []
+  chf.templates.apiPage:
+    label: 'API page'
+    description: 'Page ID that contains information about available APIs like REST and SPARQL'
+    type: int
+    default: 0
+  chf.citation.style:
+    label: 'Citation style'
+    description: 'Title of the citation style to apply to sample citations'
+    type: string
+    default: 'mla-author-title' # 'mla-author-year'
+  chf.citation.publisher:
+    label: 'Publisher'
+    description: 'Name of the publisher to use in sample citations'
+    type: string
+    default:
   chf.partners.urls:
     label: 'Partner URLs'
     description: 'List of partner URLs to link to in the footer'

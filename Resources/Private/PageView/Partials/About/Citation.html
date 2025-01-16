@@ -1,0 +1,24 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true"><f:if condition="{author}">
+        <f:then>{author -> f:format.htmlspecialchars()}</f:then>
+        <f:else><f:if condition="{publication}">
+            <f:then>{publication -> f:format.htmlspecialchars()}</f:then>
+            <f:else><f:translate key="templates.generic.unknown" extensionName="chf_base"/></f:else>
+        </f:if></f:else>
+    </f:if><f:if condition="{style} == 'mla-author-date'">
+        <f:then> (<f:if condition="{year}">
+            <f:then>{year}</f:then>
+            <f:else><f:format.date pattern="yyyy">today</f:format.date></f:else>
+        </f:if>)</f:then>
+    </f:if>. <f:if condition="{title}">
+    <f:then><f:translate key="templates.generic.quote" extensionName="chf_base" arguments="{0: '{title -> f:format.htmlspecialchars()}{f:if(condition: \'{subtitle}\', then: \': {subtitle -> f:format.htmlspecialchars()}\')}.'}"/> </f:then>
+</f:if><f:if condition="{publication}">
+    <f:then><f:if condition="{italics}"><em></f:if>{publication -> f:format.htmlspecialchars()}<f:if condition="{italics}"></em></f:if>, </f:then>
+</f:if><f:if condition="{publisher}">
+    <f:then>{publisher -> f:format.htmlspecialchars()}, </f:then>
+</f:if><f:if condition="{date}">
+    <f:then>{date}, </f:then>
+</f:if><f:if condition="{url}">
+    <f:then>URL: {url}</f:then>
+</f:if>.<f:if condition="!{date}">
+    <f:then> <f:translate key="templates.generic.accessed" extensionName="chf_base" arguments="{0: '{f:format.date(date: \'today\', pattern: \'LONGDATE\')}'}"/>.</f:then>
+</f:if></html>

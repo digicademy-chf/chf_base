@@ -1052,11 +1052,71 @@
                 <source>Hub</source>
             </trans-unit>
             <!-- Templates -->
-            <trans-unit id="templates.generic.date" resname="templates.generic.date">
-                <source>%e %B %Y</source>
+            <trans-unit id="templates.generic.home" resname="templates.generic.home">
+                <source>Show homepage</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.close" resname="templates.generic.close">
+                <source>Close</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.unknown" resname="templates.generic.unknown">
+                <source>Unknown</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.quote" resname="templates.generic.quote">
+                <source>“%s”</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.accessed" resname="templates.generic.accessed">
+                <source>Accessed %s</source>
             </trans-unit>
             <trans-unit id="templates.generic.type.page" resname="templates.generic.type.page">
                 <source>page</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.urn" resname="templates.generic.copy.urn">
+                <source><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.urn.hint" resname="templates.generic.copy.urn.hint">
+                <source>Copy URN</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.urn.success" resname="templates.generic.copy.urn.success">
+                <source>URN copied successfully</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.urn.failure" resname="templates.generic.copy.urn.failure">
+                <source>Something went wrong</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.permalink" resname="templates.generic.copy.permalink">
+                <source>Permalink</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.permalink.hint" resname="templates.generic.copy.permalink.hint">
+                <source>Copy permalink</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.permalink.success" resname="templates.generic.copy.permalink.success">
+                <source>Permalink copied successfully</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.permalink.failure" resname="templates.generic.copy.permalink.failure">
+                <source>Something went wrong</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.url" resname="templates.generic.copy.url">
+                <source><![CDATA[<abbr title="Uniform Resource Locator">]]>URL<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.url.hint" resname="templates.generic.copy.url.hint">
+                <source>Copy URL</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.url.success" resname="templates.generic.copy.url.success">
+                <source>URL copied successfully</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.url.failure" resname="templates.generic.copy.url.failure">
+                <source>Something went wrong</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.citation" resname="templates.generic.copy.citation">
+                <source>Copy citation</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.citation.success" resname="templates.generic.copy.citation.success">
+                <source>Citation copied successfully</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.citation.failure" resname="templates.generic.copy.citation.failure">
+                <source>Something went wrong</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.email" resname="templates.generic.email">
+                <source>Compose email</source>
             </trans-unit>
             <trans-unit id="templates.generic.retrieve" resname="templates.generic.retrieve">
                 <source>Retrieve %s</source>
@@ -1064,20 +1124,32 @@
             <trans-unit id="templates.generic.retrieve.jsonld" resname="templates.generic.retrieve.jsonld">
                 <source><![CDATA[<abbr title="JavaScript Object Notation for Linked Data">]]>JSON-LD<![CDATA[</abbr>]]></source>
             </trans-unit>
-            <trans-unit id="templates.generic.retrieve.rdfxml" resname="templates.generic.retrieve.rdfxml">
-                <source><![CDATA[<abbr title="Resource Description Framework/Extensible Markup Language">]]>RDF/XML<![CDATA[</abbr>]]></source>
+            <trans-unit id="templates.generic.retrieve.jsonld.plain" resname="templates.generic.retrieve.jsonld.plain">
+                <source>JSON-LD</source>
             </trans-unit>
             <trans-unit id="templates.generic.retrieve.turtle" resname="templates.generic.retrieve.turtle">
                 <source><![CDATA[<abbr title="Turtle">]]>TTL<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.turtle.plain" resname="templates.generic.retrieve.turtle.plain">
+                <source>TTL</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.rdfxml" resname="templates.generic.retrieve.rdfxml">
+                <source><![CDATA[<abbr title="Resource Description Framework/Extensible Markup Language">]]>RDF/XML<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.rdfxml.plain" resname="templates.generic.retrieve.rdfxml.plain">
+                <source>RDF/XML</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.teixml" resname="templates.generic.retrieve.teixml">
+                <source><![CDATA[<abbr title="Text Encoding Initiative/Extensible Markup Language">]]>TEI/XML<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.teixml.plain" resname="templates.generic.retrieve.teixml.plain">
+                <source>TEI/XML</source>
             </trans-unit>
             <trans-unit id="templates.header.jump" resname="templates.header.jump">
                 <source>On this page</source>
             </trans-unit>
             <trans-unit id="templates.header.navigation" resname="templates.header.navigation">
                 <source>Navigation</source>
-            </trans-unit>
-            <trans-unit id="templates.header.search" resname="templates.header.search">
-                <source>Search</source>
             </trans-unit>
             <trans-unit id="templates.header.meta" resname="templates.header.meta">
                 <source>Meta</source>
@@ -1088,20 +1160,11 @@
             <trans-unit id="templates.title.download" resname="templates.title.download">
                 <source>Download</source>
             </trans-unit>
-            <trans-unit id="templates.title.download.copy" resname="templates.title.download.copy">
-                <source>Copy URL</source>
-            </trans-unit>
-            <trans-unit id="templates.title.download.copy.success" resname="templates.title.download.copy.success">
-                <source>URL copied successfully</source>
-            </trans-unit>
-            <trans-unit id="templates.title.download.copy.failure" resname="templates.title.download.copy.failure">
-                <source>Something went wrong</source>
-            </trans-unit>
             <trans-unit id="templates.title.download.pdf" resname="templates.title.download.pdf">
-                <source><![CDATA[<abbr title="Portable Document Format">]]>PDF<![CDATA[</abbr>]]> of %s</source>
+                <source><![CDATA[<abbr title="Portable Document Format">]]>PDF<![CDATA[</abbr>]]> or print</source>
             </trans-unit>
             <trans-unit id="templates.title.remember" resname="templates.title.remember">
-                <source>Remember %s</source>
+                <source>Remember</source>
             </trans-unit>
             <trans-unit id="templates.main.rights" resname="templates.main.rights">
                 <source>Rights statement</source>
@@ -1127,26 +1190,62 @@
             <trans-unit id="templates.main.content" resname="templates.main.content">
                 <source>Content</source>
             </trans-unit>
+            <trans-unit id="templates.main.content.empty" resname="templates.main.content.empty">
+                <source>This page is currently empty. Content would otherwise be displayed here.</source>
+            </trans-unit>
             <trans-unit id="templates.about" resname="templates.about">
-                <source>About this %s</source>
+                <source>Further metadata</source>
             </trans-unit>
             <trans-unit id="templates.about.properties" resname="templates.about.properties">
                 <source>Properties</source>
             </trans-unit>
-            <trans-unit id="templates.about.abstract" resname="templates.about.abstract">
-                <source>Abstract</source>
+            <trans-unit id="templates.about.reference" resname="templates.about.reference">
+                <source>Reference</source>
+            </trans-unit>
+            <trans-unit id="templates.about.serializations" resname="templates.about.serializations">
+                <source>Linked Open Data</source>
             </trans-unit>
             <trans-unit id="templates.about.author" resname="templates.about.author">
                 <source>Author</source>
             </trans-unit>
-            <trans-unit id="templates.about.updated" resname="templates.about.updated">
-                <source>Updated</source>
+            <trans-unit id="templates.about.photographer" resname="templates.about.photographer">
+                <source>Photographer</source>
+            </trans-unit>
+            <trans-unit id="templates.about.editor" resname="templates.about.editor">
+                <source>Editor</source>
+            </trans-unit>
+            <trans-unit id="templates.about.publisher" resname="templates.about.publisher">
+                <source>Publisher</source>
+            </trans-unit>
+            <trans-unit id="templates.about.print" resname="templates.about.print">
+                <source>Print</source>
+            </trans-unit>
+            <trans-unit id="templates.about.online" resname="templates.about.online">
+                <source>Online</source>
+            </trans-unit>
+            <trans-unit id="templates.about.digest" resname="templates.about.digest">
+                <source>Digest</source>
+            </trans-unit>
+            <trans-unit id="templates.about.urn" resname="templates.about.urn">
+                <source><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.permalink" resname="templates.about.permalink">
+                <source>Permalink</source>
             </trans-unit>
             <trans-unit id="templates.about.url" resname="templates.about.url">
                 <source><![CDATA[<abbr title="Uniform Resource Locator">]]>URL<![CDATA[</abbr>]]></source>
             </trans-unit>
-            <trans-unit id="templates.about.data" resname="templates.about.data">
-                <source>Data</source>
+            <trans-unit id="templates.about.citation" resname="templates.about.citation">
+                <source>Citation</source>
+            </trans-unit>
+            <trans-unit id="templates.about.api.before" resname="templates.about.api.before">
+                <source>The raw data of this web application is available </source>
+            </trans-unit>
+            <trans-unit id="templates.about.api.link" resname="templates.about.api.link">
+                <source>via <![CDATA[<abbr title="Application Programming Interface">]]>API<![CDATA[</abbr>]]>s</source>
+            </trans-unit>
+            <trans-unit id="templates.about.api.after" resname="templates.about.api.after">
+                <source>. The indicated re-use licenses apply even when you process the data automatically.</source>
             </trans-unit>
             <trans-unit id="templates.footer" resname="templates.footer">
                 <source>Footer</source>
@@ -1190,14 +1289,149 @@
             <trans-unit id="templates.footer.social.github" resname="templates.footer.social.github">
                 <source>GitHub repository</source>
             </trans-unit>
-            <trans-unit id="templates.aside.settings" resname="templates.aside.settings">
-                <source>Settings</source>
+            <trans-unit id="templates.share" resname="templates.share">
+                <source>Share</source>
             </trans-unit>
-            <trans-unit id="templates.aside.watchlist" resname="templates.aside.watchlist">
+            <trans-unit id="templates.share.preview" resname="templates.share.preview">
+                <source>Preview</source>
+            </trans-unit>
+            <trans-unit id="templates.share.preview.site" resname="templates.share.preview.site">
+                <source>Website</source>
+            </trans-unit>
+            <trans-unit id="templates.share.preview.title" resname="templates.share.preview.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="templates.share.preview.description" resname="templates.share.preview.description">
+                <source>Description</source>
+            </trans-unit>
+            <trans-unit id="templates.share.device" resname="templates.share.device">
+                <source>On this device</source>
+            </trans-unit>
+            <trans-unit id="templates.share.device.apps" resname="templates.share.device.apps">
+                <source>Apps</source>
+            </trans-unit>
+            <trans-unit id="templates.share.device.apps.hint" resname="templates.share.device.apps.hint">
+                <source>Send to app</source>
+            </trans-unit>
+            <trans-unit id="templates.share.device.apps.success" resname="templates.share.device.apps.success">
+                <source>Shared successfully</source>
+            </trans-unit>
+            <trans-unit id="templates.share.device.apps.failure" resname="templates.share.device.apps.failure">
+                <source>Nothing was shared</source>
+            </trans-unit>
+            <trans-unit id="templates.share.device.apps.error" resname="templates.share.device.apps.error">
+                <source>Something went wrong</source>
+            </trans-unit>
+            <trans-unit id="templates.share.device.email" resname="templates.share.device.email">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="templates.share.device.email.hint" resname="templates.share.device.email.hint">
+                <source>Share by email</source>
+            </trans-unit>
+            <trans-unit id="templates.share.services" resname="templates.share.services">
+                <source>Social networks</source>
+            </trans-unit>
+            <trans-unit id="templates.share.services.mastodon" resname="templates.share.services.mastodon">
+                <source>Mastodon</source>
+            </trans-unit>
+            <trans-unit id="templates.share.services.mastodon.prompt" resname="templates.share.services.mastodon.prompt">
+                <source>Mastodon server to toot on</source>
+            </trans-unit>
+            <trans-unit id="templates.share.services.mastodon.failure" resname="templates.share.services.mastodon.failure">
+                <source>Nothing was tooted</source>
+            </trans-unit>
+            <trans-unit id="templates.share.services.mastodon.hint" resname="templates.share.services.mastodon.hint">
+                <source>Share on Mastodon</source>
+            </trans-unit>
+            <trans-unit id="templates.share.services.pocket" resname="templates.share.services.pocket">
+                <source>Pocket</source>
+            </trans-unit>
+            <trans-unit id="templates.share.services.pocket.hint" resname="templates.share.services.pocket.hint">
+                <source>Share on Pocket</source>
+            </trans-unit>
+            <trans-unit id="templates.share.services.linkedin" resname="templates.share.services.linkedin">
+                <source>LinkedIn</source>
+            </trans-unit>
+            <trans-unit id="templates.share.services.linkedin.hint" resname="templates.share.services.linkedin.hint">
+                <source>Share on LinkedIn</source>
+            </trans-unit>
+            <trans-unit id="templates.share.services.tumblr" resname="templates.share.services.tumblr">
+                <source>Tumblr</source>
+            </trans-unit>
+            <trans-unit id="templates.share.services.tumblr.hint" resname="templates.share.services.tumblr.hint">
+                <source>Share on Tumblr</source>
+            </trans-unit>
+            <trans-unit id="templates.share.services.reddit" resname="templates.share.services.reddit">
+                <source>Reddit</source>
+            </trans-unit>
+            <trans-unit id="templates.share.services.reddit.hint" resname="templates.share.services.reddit.hint">
+                <source>Share on Reddit</source>
+            </trans-unit>
+            <trans-unit id="templates.share.services.facebook" resname="templates.share.services.facebook">
+                <source>Facebook</source>
+            </trans-unit>
+            <trans-unit id="templates.share.services.facebook.hint" resname="templates.share.services.facebook.hint">
+                <source>Share on Facebook</source>
+            </trans-unit>
+            <trans-unit id="templates.share.services.xitter" resname="templates.share.services.xitter">
+                <source>X (formerly Twitter)</source>
+            </trans-unit>
+            <trans-unit id="templates.share.services.xitter.hint" resname="templates.share.services.xitter.hint">
+                <source>Share on X (formerly Twitter)</source>
+            </trans-unit>
+            <trans-unit id="templates.share.dissociation" resname="templates.share.dissociation">
+                <source>These services are integrated as links only. Their inclusion is not an endorsement.</source>
+            </trans-unit>
+            <trans-unit id="templates.watchlist" resname="templates.watchlist">
                 <source>Watchlist</source>
             </trans-unit>
-            <trans-unit id="templates.links.home" resname="templates.links.home">
-                <source>Show homepage</source>
+            <trans-unit id="templates.watchlist.empty" resname="templates.watchlist.empty">
+                <source>The watchlist ist still empty. Add new content by clicking on star symbols across this site.</source>
+            </trans-unit>
+            <trans-unit id="templates.search" resname="templates.search">
+                <source>Search</source>
+            </trans-unit>
+            <trans-unit id="templates.search.query" resname="templates.search.query">
+                <source>Search term</source>
+            </trans-unit>
+            <trans-unit id="templates.search.query.placeholder" resname="templates.search.query.placeholder">
+                <source>Type to search…</source>
+            </trans-unit>
+            <trans-unit id="templates.search.go" resname="templates.search.go">
+                <source>Search</source>
+            </trans-unit>
+            <trans-unit id="templates.search.example" resname="templates.search.example">
+                <source>Search for this example</source>
+            </trans-unit>
+            <trans-unit id="templates.search.exact" resname="templates.search.exact">
+                <source>Exact</source>
+            </trans-unit>
+            <trans-unit id="templates.search.advanced" resname="templates.search.advanced">
+                <source>Advanced</source>
+            </trans-unit>
+            <trans-unit id="templates.search.note" resname="templates.search.note">
+                <source>An exact search only retrieves letter-for-letter matches in titles or names. Regular expressions (<![CDATA[<abbr title="Perl Compatible Regular Expressions">]]>PCRE<![CDATA[</abbr>]]>2) can be used for specific queries.</source>
+            </trans-unit>
+            <trans-unit id="templates.settings" resname="templates.settings">
+                <source>Settings</source>
+            </trans-unit>
+            <trans-unit id="templates.settings.language" resname="templates.settings.language">
+                <source>Language</source>
+            </trans-unit>
+            <trans-unit id="templates.settings.color" resname="templates.settings.color">
+                <source>Colour</source>
+            </trans-unit>
+            <trans-unit id="templates.settings.color.auto" resname="templates.settings.color.auto">
+                <source>Auto</source>
+            </trans-unit>
+            <trans-unit id="templates.settings.color.light" resname="templates.settings.color.light">
+                <source>Light</source>
+            </trans-unit>
+            <trans-unit id="templates.settings.color.dark" resname="templates.settings.color.dark">
+                <source>Dark</source>
+            </trans-unit>
+            <trans-unit id="templates.settings.powered" resname="templates.settings.powered">
+                <source>Powered by the <![CDATA[<a href="https://github.com/digicademy-chf" target="_blank">]]>Cultural Heritage Framework<![CDATA[</a>]]></source>
             </trans-unit>
         </body>
     </file>

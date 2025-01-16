@@ -1,34 +1,60 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-                <section class="mdlr-box">
-
-                    <h4><f:translate key="templates.about.properties" extensionName="chf_base"/></h4>
-
-                    <dl class="mdlr-boxedlist">
-                        <f:if condition="{page.pageRecord.author}"><div>
-                            <dt><f:translate key="templates.about.author" extensionName="chf_base"/></dt>
-                            <dd><f:if condition="{page.pageRecord.author_email}"><f:then><f:link.email email="{page.pageRecord.author_email}">{page.pageRecord.author}</f:link.email></f:then><f:else>{page.pageRecord.author}</f:else></f:if></dd>
-                        </div></f:if>
-                        <f:if condition="{page.pageRecord.lastUpdated}"><div>
-                            <dt><f:translate key="templates.about.updated" extensionName="chf_base"/></dt>
-                            <dd><time datetime="{page.pageRecord.lastUpdated -> f:format.date(format: '%Y-%m-%d')}"><f:format.date format="{f:translate(key: 'templates.generic.date', extensionName: 'chf_base')}">{page.pageRecord.lastUpdated}</f:format.date></time></dd>
-                        </div></f:if>
-                        <f:if condition="{page.pageRecord.abstract}"><div>
-                            <dt><f:translate key="templates.about.abstract" extensionName="chf_base"/></dt>
-                            <dd class="mdlr-variant-running">{page.pageRecord.abstract}</dd>
-                        </div></f:if>
-                        <div>
-                            <dt><f:format.raw><f:translate key="templates.about.url" extensionName="chf_base"/></f:format.raw></dt>
-                            <dd>
-                                <button class="mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-neartext mdlr-function-copy" data-target="{f:uri.page(absolute: 'true')}" data-success="{f:translate(key: 'templates.title.download.copy.success', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.title.download.copy.failure', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.title.download.copy', extensionName: 'chf_base')}">
+    <f:if condition="{page.pageRecord.author} || {page.pageRecord.lastUpdated} || {page.pageRecord.abstract} || {page.pageRecord.description}">
+        <section class="mdlr-pattern-slot-a">
+            <h4 class="mdlr-variant-tacit"><f:translate key="templates.about.properties" extensionName="chf_base"/></h4>
+            <dl class="mdlr-boxedlist">
+                <f:if condition="{page.pageRecord.author}">
+                    <div>
+                        <dt><f:translate key="templates.about.author" extensionName="chf_base"/></dt>
+                        <dd>
+                            <f:if condition="{page.pageRecord.author_email}">
+                                <f:link.email email="{page.pageRecord.author_email}" rel="author" class="mdlr-button mdlr-variant-tinyicon mdlr-variant-round mdlr-variant-unobserved mdlr-variant-sidelined" title="{f:translate(key: 'templates.generic.email', extensionName: 'chf_base')}">
                                     <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                        <use href="#icon-copy"/>
+                                        <use href="#icon-email"/>
                                     </svg>
-                                    <span><f:translate key="templates.title.download.copy" extensionName="chf_base"/></span>
-                                </button>
-                                <f:link.page class="mdlr-function-copy" data-target="{f:uri.page(absolute: 'true')}" data-success="{f:translate(key: 'templates.title.download.copy.success', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.title.download.copy.failure', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.title.download.copy', extensionName: 'chf_base')}" rel="canonical"><f:uri.page absolute="true"/></f:link.page>
-                            </dd>
-                        </div>
-                    </dl>
-
-                </section>
+                                    <span><f:translate key="templates.generic.email" extensionName="chf_base"/></span>
+                                </f:link.email>
+                            </f:if>
+                            {page.pageRecord.author}
+                        </dd>
+                    </div>
+                </f:if>
+                <!--<div>
+                    <dt><f:translate key="templates.about.photographer" extensionName="chf_base"/></dt>
+                    <dd></dd>
+                </div>
+                <div>
+                    <dt><f:translate key="templates.about.editor" extensionName="chf_base"/></dt>
+                    <dd></dd>
+                </div>
+                <div>
+                    <dt><f:translate key="templates.about.publisher" extensionName="chf_base"/></dt>
+                    <dd></dd>
+                </div>
+                <div>
+                    <dt><f:translate key="templates.about.print" extensionName="chf_base"/></dt>
+                    <dd>2003 (Band XVII, Abb. 10)</dd>
+                </div>-->
+                <f:if condition="{page.pageRecord.lastUpdated}">
+                    <div>
+                        <dt><f:translate key="templates.about.online" extensionName="chf_base"/></dt>
+                        <dd><time datetime="{page.pageRecord.lastUpdated -> f:format.date(format: '%Y-%m-%d')}"><f:format.date pattern="LONGDATE">{page.pageRecord.lastUpdated}</f:format.date></time></dd>
+                    </div>
+                </f:if>
+                <f:if condition="{page.pageRecord.abstract} || {page.pageRecord.description}">
+                    <div>
+                        <dt><f:translate key="templates.about.digest" extensionName="chf_base"/></dt>
+                        <dd>
+                            <f:if condition="{page.pageRecord.abstract}">
+                                <f:then>{page.pageRecord.abstract}</f:then>
+                                <f:else>
+                                    <f:if condition="{page.pageRecord.description}">{page.pageRecord.description}</f:if>
+                                </f:else>
+                            </f:if>
+                        </dd>
+                    </div>
+                </f:if>
+            </dl>
+        </section>
+    </f:if>
 </html>

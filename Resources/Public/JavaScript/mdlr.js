@@ -2,7 +2,7 @@
     Name: Mdlr
     Description: Atomic web frontend library for use in accessible, responsive web apps
     Author: Jonatan Jalle Steller
-    Version: 0.0.2
+    Version: 0.5.0
     Licence: MIT
 
     The interface library is designed to work with semantic HTML code.
@@ -202,47 +202,6 @@ function mdlrFullscreen(clickedElement) {
 
 
 /*
-# Headerbar ###################################################################
-*/
-
-// Variable
-const headerbars = mdlrElements('.mdlr-headerbar');
-
-// Set up observer
-const headerbarOptions = {
-    rootMargin: '25px 0px 0px 0px',
-    threshold: 1
-}
-
-// Add or remove class when reference element hits or exits viewport
-const headerbarCallback = (entries, observer) => {
-    entries.forEach(function(entry) {
-
-        // Entering viewport
-        if(entry.isIntersecting) {
-            headerbars.forEach(function(headerbar) {
-                headerbar.classList.remove('mdlr-variant-scrolled');
-            });
-        }
-
-        // Exiting viewport
-        else {
-            headerbars.forEach(function(headerbar) {
-                headerbar.classList.add('mdlr-variant-scrolled');
-            });
-        }
-    });
-}
-
-// Initialise observer
-const headerbarObserver = new IntersectionObserver(headerbarCallback, headerbarOptions);
-const headerbarTargets = mdlrElements('.mdlr-function-scroll');
-headerbarTargets.forEach(function(headerbarTarget) {
-    headerbarObserver.observe(headerbarTarget);
-});
-
-
-/*
 # Dropdown ####################################################################
 */
 
@@ -303,176 +262,6 @@ function mdlrDropdown(handle) {
 
 
 /*
-# Modal #######################################################################
-*/
-
-// Variables
-const modals = mdlrElements('.mdlr-modal');
-const modalOpeners = mdlrElements('.mdlr-function-modal');
-const modalClosers = mdlrElements('.mdlr-function-closemodal');
-
-// Activate opener buttons in modals
-if(modalOpeners) {
-    modalOpeners.forEach(function(modalOpener) {
-        modalOpener.addEventListener('click', function(e) {
-            mdlrModalOpen(e.currentTarget);
-            e.preventDefault();
-        });
-        modalOpener.addEventListener('keydown', function(e) {
-            if(e.code == 'Enter' || e.code == 'Space') {
-                mdlrModalOpen(e.currentTarget);
-                e.preventDefault();
-            }
-        });
-    });
-}
-
-// Activate close buttons in modals
-if(modalClosers) {
-    modalClosers.forEach(function(modalCloser) {
-        modalCloser.addEventListener('click', function(e) {
-            mdlrModalClose();
-            e.preventDefault();
-        });
-        modalCloser.addEventListener('keydown', function(e) {
-            if(e.code == 'Enter' || e.code == 'Space') {
-                mdlrModalClose();
-                e.preventDefault();
-            }
-        });
-    });
-}
-
-// Open a specific modal
-function mdlrModalOpen(clickedElement) {
-
-    // Retrieve modal to open and identify the opener
-    const modal = document.getElementById(clickedElement.getAttribute('aria-controls'));
-    modal.dataset.opener = clickedElement.id;
-
-    // Open modal
-    modal.setAttribute('aria-hidden', 'true');
-    modal.classList.add('mdlr-variant-active');
-
-    // Focus the modal's close button for keyboard users
-    modal.querySelectorAll('button')[0].focus();
-
-    // Enable scroll prevention
-    document.body.classList.add('mdlr-variant-modal');
-
-    // Set one-time listener to close modal under some circumstances
-    setTimeout(function() {
-
-        // Click outside the modal's main pane
-        document.addEventListener('click', mdlrModalCloseConditions);
-
-        // Touch or swipe outside the main pane
-        window.addEventListener('touchstart', mdlrModalCloseConditions);
-
-        // Press escape
-        window.addEventListener('keydown', mdlrModalCloseConditions);
-    }, 350 );
-}
-
-// Close all modals
-function mdlrModalClose() {
-
-    // Remove scroll prevention
-    document.body.classList.remove('mdlr-variant-modal');
-
-    // Actually close modals
-    modals.forEach(function(modal) {
-        modal.classList.remove('mdlr-variant-active');
-        modal.setAttribute('aria-hidden', 'true');
-    
-        // Return keyboard focus to the opener
-        if(modal.dataset.opener) {
-            var openerId = modal.dataset.opener;
-            if(openerId != '') {
-                document.getElementById(openerId).focus();
-            }
-            modal.dataset.opener = '';
-        }
-    });
-
-    // Remove unnecessary listeners
-    document.removeEventListener('click', mdlrModalCloseConditions);
-    document.removeEventListener('touchstart', mdlrModalCloseConditions);
-    document.removeEventListener('keydown', mdlrModalCloseConditions);
-}
-
-// Close all modals under certain conditions
-function mdlrModalCloseConditions(e) {
-
-    // Check for 'escape' keypress if the event is a keypress
-    if(e.code) {
-        if(e.code == 'Escape') {
-            mdlrModalClose();
-            e.preventDefault();
-        }
-    }
-
-    // Check if click was outside the modal's main pane
-    else {
-        if(! e.target.closest('.mdlr-modal > div')) {
-            mdlrModalClose();
-            e.preventDefault();
-        }
-    }
-}
-
-
-/*
-# Mastodon ####################################################################
-*/
-
-// Variables
-const mastodonButtons = mdlrElements('.mdlr-function-mastodon');
-
-// Activate Mastodon share buttons
-if(mastodonButtons) {
-    mastodonButtons.forEach(function(mastodonButton) {
-        mastodonButton.addEventListener('click', function(e) {
-            mdlrMastodonShare(e.currentTarget);
-            e.preventDefault();
-        });
-        mastodonButton.addEventListener('keydown', function(e) {
-            if(e.code == 'Enter' || e.code == 'Space') {
-                mdlrMastodonShare(e.currentTarget);
-                e.preventDefault();
-            }
-        });
-    });
-}
-
-// Share a link to a user-defined Mastodon instance
-// Necessary because there is no central share URL due to federation
-function mdlrMastodonShare(clickedElement) {
-
-    // Get content
-    const targetText = clickedElement.dataset.target;
-    const promptMessage = clickedElement.dataset.prompt;
-    const failureMessage = clickedElement.dataset.failure;
-
-    // Ask user about their Mastodon instance
-    instance = prompt(promptMessage, 'mastodon.social');
-
-    // Assemble the target URL
-    if (instance != null && instance != '') {
-        target = 'https://' + instance + '/share?text=' + targetText;
-
-        // Open user-defined target URL
-        window.open(target, '_blank');
-    }
-
-    // Notify user of cancellation
-    else {
-        mdlrToastOpen(failureMessage)
-    }
-}
-
-
-/*
 # Timeline ####################################################################
 */
 
@@ -501,55 +290,6 @@ function mdlrTimelineHighlight(hoveredElement) {
         hoveredElement.addEventListener('mouseout', function(e) {
             target.classList.remove('mdlr-variant-active');
         }, {once: true});
-    }
-}
-
-
-/*
-# Copy ########################################################################
-*/
-
-// Variable
-const copyButtons = mdlrElements('.mdlr-function-copy');
-
-// Activate all copy buttons
-if(copyButtons) {
-    copyButtons.forEach(function(copyButton) {
-        copyButton.addEventListener('click', function(e) {
-            mdlrCopy(e.currentTarget);
-            e.preventDefault();
-        });
-        copyButton.addEventListener('keydown', function(e) {
-            if(e.code == 'Enter' || e.code == 'Space') {
-                mdlrCopy(e.currentTarget);
-                e.preventDefault();
-            }
-        });
-    });
-}
-
-// Copy desired content
-function mdlrCopy(clickedElement) {
-    if(clickedElement) {
-
-        // Get content
-        const content = clickedElement.dataset.target;
-        const successMessage = clickedElement.dataset.success;
-        const failureMessage = clickedElement.dataset.failure;
-
-        // Copy content to the clipboard
-        if(content) {
-            navigator.clipboard.writeText(content)
-
-                // Success notification
-                .then(function() {
-                    mdlrToastOpen(successMessage);
-
-                // Failure notification
-                }, function() {
-                    mdlrToastOpen(failureMessage);
-                });
-        }
     }
 }
 
@@ -775,6 +515,380 @@ function mdlrReferenceCloseConditions(e) {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+/*
+# Headerbars ##################################################################
+*/
+
+// Variable
+const headerbars = mdlrElements('.mdlr-variant-headerbar');
+
+// Set up observer
+const headerbarOptions = {
+    rootMargin: '25px 0px 0px 0px',
+    threshold: 1
+}
+
+// Add or remove class when target element hits or exits viewport
+const headerbarCallback = (entries, observer) => {
+    entries.forEach(function(entry) {
+
+        // Entering viewport
+        if(entry.isIntersecting) {
+            headerbars.forEach(function(headerbar) {
+                headerbar.classList.remove('mdlr-variant-scrolled');
+            });
+        }
+
+        // Exiting viewport
+        else {
+            headerbars.forEach(function(headerbar) {
+                headerbar.classList.add('mdlr-variant-scrolled');
+            });
+        }
+    });
+}
+
+// Initialise observer
+const headerbarObserver = new IntersectionObserver(headerbarCallback, headerbarOptions);
+const headerbarTargets = mdlrElements('.mdlr-function-scroll');
+headerbarTargets.forEach(function(headerbarTarget) {
+    headerbarObserver.observe(headerbarTarget);
+});
+
+/*
+# Toggles #####################################################################
+*/
+
+// Variable
+const toggles = mdlrElements('.mdlr-function-toggle');
+
+// Activate all toggles
+if(toggles) {
+    toggles.forEach(function(toggle) {
+        if(toggle.tagName == 'INPUT' && toggle.getAttribute('type') == 'checkbox') {
+            toggle.addEventListener('change', function(e) {
+                mdlrToggle(e.currentTarget);
+                e.preventDefault();
+            });
+        }
+        else {
+            toggle.addEventListener('click', function(e) {
+                mdlrToggle(e.currentTarget);
+                e.preventDefault();
+            });
+            toggle.addEventListener('keydown', function(e) {
+                if(e.code == 'Enter' || e.code == 'Space') {
+                    mdlrToggle(e.currentTarget);
+                    e.preventDefault();
+                }
+            });
+        }
+    });
+}
+
+// Toggle display of an element
+function mdlrToggle(clickedElement) {
+    if(clickedElement) {
+
+        // Get toggle data
+        const toggleClass = 'mdlr-variant-active';
+        const elementId = clickedElement.getAttribute('aria-controls');
+        const element = document.getElementById(elementId);
+
+        // Toggle CSS class
+        if(element) {
+
+            // Remove
+            if(element.classList.contains(toggleClass)) {
+                element.classList.remove(toggleClass);
+                clickedElement.classList.remove(toggleClass);
+            }
+
+            // Add
+            else {
+                element.classList.add(toggleClass);
+                clickedElement.classList.add(toggleClass);
+            }
+        }
+    }
+}
+
+/*
+# Modals ######################################################################
+*/
+
+// Variables
+const modals = mdlrElements('.mdlr-modal');
+const modalOpeners = mdlrElements('.mdlr-function-modal');
+const modalClosers = mdlrElements('.mdlr-function-modal-close');
+var modalTransition = 200;
+
+// Calculate CSS transition duration
+if(modals) {
+    modalTransition = (parseFloat(window.getComputedStyle(modals[0]).transitionDuration)) * 1000;
+}
+
+// Activate opener buttons in modals
+if(modalOpeners) {
+    modalOpeners.forEach(function(modalOpener) {
+        modalOpener.addEventListener('click', function(e) {
+            mdlrModalOpen(e.currentTarget);
+            e.preventDefault();
+        });
+        modalOpener.addEventListener('keydown', function(e) {
+            if(e.code == 'Enter' || e.code == 'Space') {
+                mdlrModalOpen(e.currentTarget);
+                e.preventDefault();
+            }
+        });
+    });
+}
+
+// Activate close buttons in modals
+if(modalClosers) {
+    modalClosers.forEach(function(modalCloser) {
+        modalCloser.addEventListener('click', function(e) {
+            mdlrModalClose();
+            e.preventDefault();
+        });
+        modalCloser.addEventListener('keydown', function(e) {
+            if(e.code == 'Enter' || e.code == 'Space') {
+                mdlrModalClose();
+                e.preventDefault();
+            }
+        });
+    });
+}
+
+// Open a specific modal
+function mdlrModalOpen(clickedElement) {
+
+    // Retrieve modal to open and identify the opener
+    const modalId = clickedElement.getAttribute('aria-controls');
+    const modal = document.getElementById(modalId);
+    const focusId = clickedElement.dataset.focus;
+    const focusElement = document.getElementById(focusId);
+    modal.dataset.opener = clickedElement.id;
+
+    // Show dialog
+    modal.showModal();
+    modal.setAttribute('aria-hidden', 'false');
+    modal.classList.add('mdlr-variant-active');
+
+    // Focus close button for keyboard users
+    modal.querySelectorAll('button')[0].focus();
+
+    // Enable scroll prevention
+    document.body.classList.add('mdlr-variant-modal');
+
+    // Focus specific element
+    setTimeout(function() {
+        if(focusElement) {
+            focusElement.focus();
+        }
+
+        // Set one-time listeners for removing the modal (click, swipe, keypress)
+        document.addEventListener('click', mdlrModalCloseConditions);
+        window.addEventListener('touchstart', mdlrModalCloseConditions);
+        window.addEventListener('keydown', mdlrModalCloseConditions);
+    }, modalTransition);
+}
+
+// Close all modals
+function mdlrModalClose() {
+
+    // Remove scroll prevention
+    document.body.classList.remove('mdlr-variant-modal');
+
+    // Hide modal
+    modals.forEach(function(modal) {
+        modal.classList.remove('mdlr-variant-active');
+        modal.setAttribute('aria-hidden', 'true');
+
+        // Close modal after transition
+        setTimeout(function() {
+            modal.close();
+        }, modalTransition + 25);
+    
+        // Return keyboard focus to the opener
+        const modalOpenerId = modal.dataset.opener
+        if(modalOpenerId && modalOpenerId != '') {
+            document.getElementById(modalOpenerId).focus();
+            modal.dataset.opener = '';
+        }
+    });
+
+    // Remove unnecessary listeners for removing the modal (click, swipe, keypress)
+    document.removeEventListener('click', mdlrModalCloseConditions);
+    window.removeEventListener('touchstart', mdlrModalCloseConditions);
+    window.removeEventListener('keydown', mdlrModalCloseConditions);
+}
+
+// Close conditions for listeners
+function mdlrModalCloseConditions(e) {
+
+    // Check for 'escape' keypress
+    if(e.code) {
+        if(e.code == 'Escape') {
+            mdlrModalClose();
+            e.preventDefault();
+        }
+    }
+
+    // Check if click/swipe is outside focus element
+    else {
+        if(e.composedPath()[0].nodeName == 'DIALOG') { /* TODO This also fires when it should not */
+            mdlrModalClose();
+            e.preventDefault();
+        }
+    }
+}
+
+/*
+# Toasts ######################################################################
+*/
+
+// Variables
+const toasts = mdlrElements('.mdlr-toast');
+const toastClosers = mdlrElements('.mdlr-function-toast-close');
+var toastTransition = 200;
+
+// Calculate CSS transition duration
+if(toasts) {
+    toastTransition = (parseFloat(window.getComputedStyle(toasts[0]).transitionDuration)) * 1000;
+}
+
+// Activate all close buttons for toasts
+if(toastClosers) {
+    toastClosers.forEach(function(toastCloser) {
+        toastCloser.addEventListener('click', function(e) {
+            mdlrToastClose();
+            e.preventDefault();
+        });
+        toastCloser.addEventListener('keydown', function(e) {
+            if(e.code == 'Enter' || e.code == 'Space') {
+                mdlrToastClose();
+                e.preventDefault();
+            }
+        });
+    });
+}
+
+// Open toast notification
+function mdlrToastOpen(toastText) {
+
+    // Close open notification and add delay to accomodate the transition
+    // Delay also makes actions appear like they took time to compute
+    mdlrToastClose()
+    setTimeout(function() {
+
+        // Add notification text
+        toasts.forEach(function(toast) {
+            const notifications = toast.getElementsByTagName('p');
+            for(const notification of notifications) {
+                notification.textContent = toastText;
+            }
+
+            // Show dialog
+            toast.showModal();
+            toast.setAttribute('aria-hidden', 'false');
+            toast.classList.add('mdlr-variant-active');
+
+        });
+
+        // Remove notification after three seconds and transition bonus
+        setTimeout(function() {
+            mdlrToastClose();
+        }, toastTransition + 3050);
+
+    }, toastTransition + 50);
+}
+
+// Close toast notification
+function mdlrToastClose() {
+
+    // Remove active notifications
+    toasts.forEach(function(toast) {
+        toast.classList.remove('mdlr-variant-active');
+        toast.setAttribute('aria-hidden', 'true');
+
+        // Clear dialog element and notification text
+        setTimeout(function() {
+            toast.close();
+            const notifications = toast.getElementsByTagName('p');
+            for(const notification of notifications) {
+                notification.textContent = '';
+            }
+        }, toastTransition + 25);
+    });
+}
+
+/*
+# Copy ########################################################################
+*/
+
+// Variable
+const copyButtons = mdlrElements('.mdlr-function-copy');
+
+// Activate all copy buttons
+if(copyButtons) {
+    copyButtons.forEach(function(copyButton) {
+        copyButton.addEventListener('click', function(e) {
+            mdlrCopy(e.currentTarget);
+            e.preventDefault();
+        });
+        copyButton.addEventListener('keydown', function(e) {
+            if(e.code == 'Enter' || e.code == 'Space') {
+                mdlrCopy(e.currentTarget);
+                e.preventDefault();
+            }
+        });
+    });
+}
+
+// Copy desired content
+function mdlrCopy(clickedElement) {
+    if(clickedElement) {
+
+        // Get content
+        const content = clickedElement.dataset.target;
+        const successMessage = clickedElement.dataset.success;
+        const failureMessage = clickedElement.dataset.failure;
+
+        // Copy content to the clipboard
+        if(content && successMessage && failureMessage) {
+            try {
+                navigator.clipboard.writeText(content)
+
+                // Success notification
+                .then(function() {
+                    mdlrToastOpen(successMessage);
+
+                // Failure notification
+                }, function() {
+                    mdlrToastOpen(failureMessage);
+                });
+
+            // Error notification, especially in non-HTTPS contexts
+            // navigator.clipboard.writeText is only available with HTTPS
+            } catch (error) {
+                mdlrToastOpen(failureMessage);
+            }
+        }
+    }
+}
+
 /*
 # Share #######################################################################
 */
@@ -841,74 +955,52 @@ async function mdlrShare(clickedElement) {
     }
 }
 
-
 /*
-# Toasts ######################################################################
+# Mastodon ####################################################################
 */
 
 // Variables
-const toasts = mdlrElements('.mdlr-toasts');
-const toastClosers = mdlrElements('.mdlr-function-closetoast');
+const mastodonButtons = mdlrElements('.mdlr-function-mastodon');
 
-// Activate close buttons for toasts
-if(toastClosers) {
-    toastClosers.forEach(function(toastCloser) {
-        toastCloser.addEventListener('click', function(e) {
-            mdlrToastClose();
+// Activate Mastodon share buttons
+if(mastodonButtons) {
+    mastodonButtons.forEach(function(mastodonButton) {
+        mastodonButton.addEventListener('click', function(e) {
+            mdlrMastodon(e.currentTarget);
             e.preventDefault();
         });
-        toastCloser.addEventListener('keydown', function(e) {
+        mastodonButton.addEventListener('keydown', function(e) {
             if(e.code == 'Enter' || e.code == 'Space') {
-                mdlrToastClose();
+                mdlrMastodon(e.currentTarget);
                 e.preventDefault();
             }
         });
     });
 }
 
-// Open toast notification
-function mdlrToastOpen(toastText) {
+// Share to user-defined Mastodon instance (no central share URL due to federation)
+function mdlrMastodon(clickedElement) {
 
-    // Close open notification and add a delay to accomodate the transition
-    // The delay also makes actions appear like they took time to compute
-    mdlrToastClose()
-    setTimeout(function() {
+    // Get content
+    var target = clickedElement.dataset.target;
+    const promptMessage = clickedElement.dataset.prompt;
+    const failureMessage = clickedElement.dataset.failure;
 
-        // Add notification text
-        toasts.forEach(function(toast) {
-            const notifications = toast.getElementsByTagName('p');
-            for(const notification of notifications) {
-                notification.textContent = toastText;
-            }
+    // Ask user about their Mastodon instance
+    var instance = prompt(promptMessage, 'mastodon.social');
 
-            // Activate notifications
-            toast.classList.add('mdlr-variant-active');
-            toast.setAttribute('aria-hidden', 'false');
+    // Clean and assemble target URL
+    if(instance != null && instance != '') {
+        instance = instance.replace(/^(https\:\/\/)/, '');
+        instance = instance.replace(/^(http\:\/\/)/, '');
+        target = 'https://' + instance + '/share?text=' + target;
 
-        });
+        // Open user-defined target URL
+        window.open(target, '_blank');
+    }
 
-        // Remove notification after three seconds and a transition bonus
-        setTimeout(function() {
-            mdlrToastClose();
-        }, 3250);
-
-    }, 250);
-}
-
-// Close toast notification
-function mdlrToastClose() {
-
-    // Remove active notifications
-    toasts.forEach(function(toast) {
-        toast.classList.remove('mdlr-variant-active');
-        toast.setAttribute('aria-hidden', 'true');
-
-        // Remove notification text
-        setTimeout(function() {
-            const notifications = toast.getElementsByTagName('p');
-            for(const notification of notifications) {
-                notification.textContent = '';
-            }
-        }, 225)
-    });
+    // Notify user of cancellation
+    else {
+        mdlrToastOpen(failureMessage)
+    }
 }

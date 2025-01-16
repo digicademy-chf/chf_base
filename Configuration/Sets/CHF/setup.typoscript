@@ -1,5 +1,12 @@
 # Settings
-config.admPanel = 1
+config {
+    admPanel = 1
+
+    # Page title
+    pageTitleFirst = 1
+    pageTitleSeparator = –
+    pageTitleSeparator.noTrimWrap = | | |
+}
 
 # Page-view templates
 page = PAGE
@@ -34,13 +41,43 @@ page {
                 special = directory
                 special.value = {$chf.templates.serviceFolder}
             }
-            30 = database-query
+            30 = menu
             30 {
+                as = rootlineMenu
+                special = rootline
+                special {
+                    range = 0|-2
+                    reverseOrder = 1
+                }
+            }
+            40 = menu
+            40 {
+                as = languageMenu
+                special = language
+                special {
+                    value = auto
+                    normalWhenNoLanguage = 1
+                }
+            }
+            50 = page-content
+            50 {
+                as = content
+            }
+            60 = files
+            60 {
+                as = images
+                references {
+                    table = pages
+                    fieldName = media
+                }
+            }
+            /*50 = database-query
+            50 {
                 as = mainContent
                 table = tt_content
                 orderBy = sorting
                 where = colPos = 0
-            }
+            }*/
         }
     }
     includeCSS {
@@ -50,21 +87,128 @@ page {
         mdlr = EXT:chf_base/Resources/Public/JavaScript/mdlr.js
         mdlr.defer = 1
     }
+    shortcutIcon = {$chf.templates.favicon}
+    # TODO Richtige Daten
+    meta {
+        viewport = width=device-width, initial-scale=1.0
+        theme-color = #3b6cff
+        apple-mobile-web-app-status-bar-style = #3b6cff
+        apple-mobile-web-app-capable = yes
+        apple-mobile-web-app-title = Corpus Vitrearum Deutschland
+        citation_title = Eine Liste, 27 Zeichnungen und die Glasgemälde aus der ehemaligen Deutschordenskirche in Weinheim (Bergstraße)
+        citation_date = 2023/01/20
+        citation_inbook_title = Corpus Vitrearum Deutschland: Scheibenweise
+        citation_publisher = Akademie der Wissenschaften und der Literatur Mainz
+        citation_public_url = https://corpusvitrearum.de/id/S12345
+        citation_language = de-DE
+        og:title = Eine Liste, 27 Zeichnungen und die Glasgemälde aus der ehemaligen Deutschordenskirche in Weinheim (Bergstraße)
+        og:title.attribute = property
+        og:site_name = Corpus Vitrearum Deutschland
+        og:site_name.attribute = property
+        og:description = Dass die Deutschordenskirche St. Maria in Weinheim an der Bergstraße vor ihrem Abbruch 1809 zahlreiche Glasgemälde aus den 1530er-Jahren besaß, ist in der Forschung hinlänglich bekannt.
+        og:description.attribute = property
+        og:locale = de_DE
+        og:locale.attribute = property
+        og:locale:alternate = en_GB
+        og:locale:alternate.attribute = property
+        og:type = website
+        og:type.attribute = property
+        og:url = https://corpusvitrearum.de/id/S12345
+        og:url.attribute = property
+        og:image = https://adwmainz.pages.gitlab.rlp.net/digicademy/cvma/cvma-next/images/sample.jpg
+        og:image.attribute = property
+    }
+    headerData {
+        10.value = <link rel="shortcut icon" href="images/favicon-small.svg">
+        20.value = <link rel="mask-icon" href="images/favicon-small-mask.svg" color="#3b6cff">
+        30.value = <link rel="apple-touch-icon" href="images/favicon-medium-extra.png">
+        40.value = <link rel="manifest" href="manifest.json">
+    }
+    # TODO Alternative serialisations
+    # TODO Embedded JSON-LD
 }
 
 # JSON-LD templates
 jsonld = PAGE
 jsonld {
-    typeNum = 100
+    typeNum = 6024975381
     config {
         disableAllHeaderCode = 1
-        additionalHeaders.10.header = Content-type:application/ld+json
+        additionalHeaders.10.header = Content-Type: application/ld+json
     }
     10 = PAGEVIEW
     10 {
         paths {
             100 = EXT:chf_base/Resources/Private/JsonLd/
             200 = {$chf.templates.path}JsonLd/
+        }
+    }
+}
+
+# TTL templates
+ttl = PAGE
+ttl {
+    typeNum = 2867941442
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders.10.header = Content-Type: text/turtle
+    }
+    10 = PAGEVIEW
+    10 {
+        paths {
+            100 = EXT:chf_base/Resources/Private/Ttl/
+            200 = {$chf.templates.path}Ttl/
+        }
+    }
+}
+
+# RDF/XML templates
+rdfxml = PAGE
+rdfxml {
+    typeNum = 1295536366
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders.10.header = Content-Type: application/rdf+xml
+    }
+    10 = PAGEVIEW
+    10 {
+        paths {
+            100 = EXT:chf_base/Resources/Private/RdfXml/
+            200 = {$chf.templates.path}RdfXml/
+        }
+    }
+}
+
+# TEI/XML templates
+teixml = PAGE
+teixml {
+    typeNum = 9631552583
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders.10.header = Content-Type: application/tei+xml
+    }
+    10 = PAGEVIEW
+    10 {
+        paths {
+            100 = EXT:chf_base/Resources/Private/TeiXml/
+            200 = {$chf.templates.path}TeiXml/
+        }
+    }
+}
+
+# RSS templates
+rss = PAGE
+rss {
+    typeNum = 3719240617
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders.10.header = Content-Type: application/rss+xml
+    }
+    10 = PAGEVIEW
+    10 {
+        paths {
+            100 = EXT:chf_base/Resources/Private/Rss/
+            200 = {$chf.templates.path}Rss/
         }
     }
 }

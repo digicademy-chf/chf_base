@@ -1,0 +1,44 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <dialog id="search" class="mdlr-modal mdlr-variant-wide" aria-hidden="true">
+        <f:render partial="Dialogs/Title" arguments="{title: '{f:translate(key: \'templates.search\', extensionName: \'chf_base\')}'}"/>
+        <form class="mdlr-form" role="search">
+            <div class="mdlr-form-search">
+                <label for="search-query" class="mdlr-variant-tacit"><f:translate key="templates.search.query" extensionName="chf_base"/></label>
+                <input type="search" id="search-query" name="q" placeholder="{f:translate(key: 'templates.search.query.placeholder', extensionName: 'chf_base')}">
+                <button id="search-submit" class="mdlr-variant-icon mdlr-variant-round" title="{f:translate(key: 'templates.search.go', extensionName: 'chf_base')}">
+                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <use href="#icon-go"/>
+                    </svg>
+                    <span><f:translate key="templates.search.go" extensionName="chf_base"/></span>
+                </button>
+            </div>
+            <div class="mdlr-form-addition">
+                <f:if condition="{settings.chf.templates.searchExample}">
+                    <ul class="mdlr-pills">
+                        <f:for each="{settings.chf.templates.searchExample}" as="searchExample">
+                            <li>
+                                <a href="#{searchExample -> f:format.urlencode()}" title="{f:translate(key: 'templates.search.example', extensionName: 'chf_base')}">
+                                    <span>{searchExample}</span>
+                                </a>
+                            </li>
+                        </f:for>
+                    </ul>
+                </f:if>
+                <ul class="mdlr-linkrow">
+                    <li class="mdlr-form-entry">
+                        <input type="checkbox" class="mdlr-switch mdlr-function-toggle" id="search-exact" name="search-exact" aria-controls="search-note">
+                        <label for="search-exact"><f:translate key="templates.search.exact" extensionName="chf_base"/></label>
+                    </li>
+                    <f:if condition="{settings.chf.templates.searchPage}">
+                        <li>
+                            <f:link.page pageUid="{settings.chf.templates.searchPage}">
+                                <span><f:translate key="templates.search.advanced" extensionName="chf_base"/></span>
+                            </f:link.page>
+                        </li>
+                    </f:if>
+                </ul>
+            </div>
+        </form>
+        <p id="search-note" class="mdlr-note mdlr-variant-ondemand"><f:format.raw><f:translate key="templates.search.note" extensionName="chf_base"/></f:format.raw></p>
+    </dialog>
+</html>

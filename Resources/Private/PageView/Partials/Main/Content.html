@@ -1,5 +1,10 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-        <section id="main-content" class="mdlr-content mdlr-section mdlr-variant-primary"><div>
+
+        <f:if condition="{content.main.records}">
+
+        <f:then>
+
+        <section id="main-content" class="mdlr-content2 mdlr-section mdlr-variant-primary"><div>
 
             <div class="mdlr-share">
 
@@ -30,7 +35,7 @@
                         </div></f:if>
                         <div>
                             <dt><f:format.raw><f:translate key="templates.about.url" extensionName="chf_base"/></f:format.raw></dt>
-                            <dd><f:link.page class="mdlr-function-copy" data-target="{f:uri.page(absolute: 'true')}" data-success="{f:translate(key: 'templates.title.download.copy.success', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.title.download.copy.failure', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.title.download.copy', extensionName: 'chf_base')}" rel="canonical"><f:uri.page absolute="true"/></f:link.page></dd>
+                            <dd><f:link.page class="mdlr-function-copy" data-target="{f:uri.page(absolute: 'true')}" data-success="{f:translate(key: 'templates.generic.copy.url.success', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.generic.copy.url.failure', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.generic.copy.url.hint', extensionName: 'chf_base')}" rel="canonical"><f:uri.page absolute="true"/></f:link.page></dd>
                         </div>
                     </dl>
 
@@ -42,11 +47,11 @@
 
                     <ul class="mdlr-buttonrow mdlr-variant-right mdlr-variant-separate">
                         <li>
-                            <button id="credits-share" class="mdlr-variant-round mdlr-variant-icon mdlr-function-modal" aria-controls="share" title="{f:translate(key: 'templates.main.share.share', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\'templates.generic.type.page\\', extensionName: \\'chf_base\\')}\'}')}">
+                            <!--LASTUSAGEOFTHISPATTERN--><button id="credits-share" class="mdlr-variant-round mdlr-variant-icon mdlr-function-modal" aria-controls="share" title="{f:translate(key: 'templates.main.share.share', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\'templates.generic.type.page\\', extensionName: \\'chf_base\\')}\'}')}">
                                 <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                     <use href="#icon-share"/>
                                 </svg>
-                                <span><f:translate key="templates.main.share.share" extensionName="chf_base" arguments="{0: '{f:translate(key: \'templates.generic.type.page\', extensionName: \'chf_base\')}'}"/>Beitrag teilen</span>
+                                <!--HARDCODE ENTFERNEN--><span><f:translate key="templates.main.share.share" extensionName="chf_base" arguments="{0: '{f:translate(key: \'templates.generic.type.page\', extensionName: \'chf_base\')}'}"/>Beitrag teilen</span>
                             </button>
                         </li>
                         <f:if condition="{page.pageRecord.author}"><li>
@@ -72,17 +77,17 @@
 
                 <h3><f:translate key="templates.main.jump" extensionName="chf_base"/></h3>
 
-                <ul class="mdlr-jump"><f:for each="{mainContent}" as="contentElement">
+                <ul class="mdlr-jump"><f:for each="{content}" as="contentElement">
                     <f:if condition="{contentElement.data.header}"><li><a href="#c{contentElement.data.uid}">{contentElement.data.header}</a></li></f:if>
                 </f:for></ul>
 
             </section>
 
-<f:for each="{mainContent}" as="contentElement"><f:cObject
+<f:comment><f:for each="{content.main.records}" as="contentElement"><f:cObject
     typoscriptObjectPath="tt_content.{contentElement.data.CType}"
     data="{contentElement.data}"
     table="tt_content"
-/></f:for>
+/></f:for></f:comment>
 
             <!--<p>
                 Dass die Deutschordenskirche St. Maria in Weinheim an der Bergstraße vor ihrem Abbruch 1809 zahlreiche Glasgemälde aus den 1530er-Jahren besaß, ist in der Forschung hinlänglich bekannt. Es sei hier nur auf die Beschreibungen von John G. Weiss, Josef Fresin, Hans Huth und Renate Neumüllers-Klauser verwiesen, die sich auf eine Auflistung der Glasgemälde im Jahr 1788 berufen konnten, bei Huth und Neumüllers-Klauser verbunden mit dem Hinweis, dass 1794 auch Abzeichnungen der Glasgemälde angefertigt und ins Zentralarchiv des Deutschen Ordens in Mergentheim gesandt worden seien, mit heute unbekanntem Verbleib (<a href="#reference-18" class="mdlr-function-reference" title="Referenz einblenden">Weiss 1911</a>, <abbr title="Seite">S.</abbr>&nbsp;551; <a href="#reference-06" class="mdlr-function-reference" title="Referenz einblenden">Fresin 1962</a>, <abbr title="Seite">S.</abbr>&nbsp;95; <a href="#reference-10" class="mdlr-function-reference" title="Referenz einblenden">Huth 1967</a>, <abbr title="Seite">S.</abbr>&nbsp;409, 411–413; <a href="#reference-13" class="mdlr-function-reference" title="Referenz einblenden">Neumüllers-Klauser 1977</a>, <abbr title="Seite">S.</abbr>&nbsp;67f., Nr. 107 †). Zwar sind diese Abzeichnungen niemals verschwunden gewesen, doch ist das Wissen um ihre Herkunft verloren gegangen, sodass Sascha Kimmelmann sie unlängst als „Kopien“ von Wappenscheiben aus dem Kapitelsaal des ehemaligen Deutschordensschlosses Mergentheim veröffentlicht hat (<a href="#reference-11" class="mdlr-function-reference" title="Referenz einblenden">Kimmelmann 2019</a>, <abbr title="Seite">S.</abbr>&nbsp;58 mit <abbr title="Abbildung">Abb.</abbr>&nbsp;30f. auf <abbr title="Seite">S.</abbr>&nbsp;59). Deren ursprünglicher Standort Weinheim blieb buchstäblich auf der Strecke, und die Frage, was denn mit diesen Wappenscheiben geschehen sein könnte, wurde erst gar nicht aufgeworfen, da man sie wohl für verloren hielt. Aber auch sie sind nicht gänzlich verschwunden, sondern befinden sich in Resten − unerkannt – auf Schloss Altshausen im Besitz des Hauses Württemberg (<a href="#reference-02" class="mdlr-function-reference" title="Referenz einblenden">Becksmann 1986</a>, <abbr title="Seite">S.</abbr>&nbsp;13f., <abbr title="Nummer">Nr.</abbr>&nbsp;44f., und <abbr title="Seite">S.</abbr>&nbsp;14, <abbr title="Anmerkung">Anm.</abbr> 31). All dieses Partikularwissen soll im Folgenden zur Vorbereitung eines längeren Beitrags summarisch zusammengeführt werden.
@@ -109,7 +114,7 @@
 
             <p>
                 Die Deutschordenskirche St. Maria in Weinheim war ein länglicher Saalbau mit 4 Fensterachsen an den Seiten und einem flachen 3/8-Chorschluss, der im Jahr 1350 von dem Deutschmeister Wolfram von Nellenburg im Zentrum der Stadt zu errichten begonnen worden war (<a href="#reference-10" class="mdlr-function-reference" title="Referenz einblenden">Huth 1967</a>, <abbr title="Seite">S.</abbr>&nbsp;409; <a href="#reference-06" class="mdlr-function-reference" title="Referenz einblenden">Fresin 1962</a>, <abbr title="Seite">S.</abbr>&nbsp;94f.; <a href="#reference-13" class="mdlr-function-reference" title="Referenz einblenden">Neumüllers-Klauser 1977</a>, <abbr title="Seite">S.</abbr>&nbsp;12f., <abbr title="Nummer">Nr.</abbr>&nbsp;17; <a href="#reference-17" class="mdlr-function-reference" title="Referenz einblenden">Wagner 1999</a>, <abbr title="Seite">S.</abbr>&nbsp;16–20)
-                <a href="#info-01" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-intext mdlr-function-info" role="button" title="Informationen einblenden">
+                <a href="#info-01" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-embedded mdlr-function-info" role="button" title="Informationen einblenden">
                     <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <use href="#icon-info"/>
                     </svg>
@@ -120,7 +125,7 @@
 
             <p>
                 Zu diesen Scheiben liegt eine selten ausführliche schriftliche und bildliche Dokumentation vor (<a href="#reference-08" class="mdlr-function-reference" title="Referenz einblenden">Generallandesarchiv Karlsruhe</a>; <a href="#reference-15" class="mdlr-function-reference" title="Referenz einblenden">Staatsarchiv Ludwigsburg</a>). Da ist zunächst jenes <em>Verzeichnuß / Welche Wappen […] sich in denen des Hohen Ordens Commenderie Kirchen fensteren zu Weinheim vorfinden und aus gelegenheit deren neu gemachten fensteren aufge[unleserlich] worden</em> (<a href="#reference-08" class="mdlr-function-reference" title="Referenz einblenden">Generallandesarchiv Karlsruhe</a>). Es wurde am 5. Oktober 1788 vom Kommendenverwalter Joseph Andreas Sartorius erstellt, der insgesamt 21 Wappenscheiben – zumeist mit Blasonierung – aufführt: <em>Nassau</em>, <em>Köed</em>, <em>Voheissen 1537</em>, <em>georg Von Rodenstein</em>, <em>Schwalbach</em>, <em>Biberach</em>, <em>Henrich Marschal Von Pappen 1537</em>, <em>grorod</em>, <em>Haldermanstein</em>, <em>Ludwig Von Gott: Gnad pfalz Graf bey rhein</em> […] <em>1537</em>, <em>Stauwen</em>, <em>Rosenburg</em>, <em>Dieter Von Cleen</em>, <em>Walter Von Cronberg</em> […] <em>1531</em> [sic!], <em>Bellerhem</em>, <em>Wilhelm Halber</em>, <em>Berlickheim</em>, <em>Von Erlickem</em>, <em>Neyneck</em>, <em>Haberkorn</em> und <em>Landschad</em> (<abbr title="vergleiche">vgl.</abbr> <a href="#appendix">Anhang</a>). Aus Sorge um den Erhalt dieser Scheiben sandte Sartorius sein Verzeichnis am 15. August 1790 an die Regierung des Deutschen Ordens in Mergentheim (<a href="#reference-08" class="mdlr-function-reference" title="Referenz einblenden"><em><abbr title="ebenda">ibid.</abbr></em></a>), wurde dafür laut Antwortschreiben vom 22. September 1790 ausdrücklich gelobt und zugleich aufgefordert, seine Angaben zu präzisieren, auch im Hinblick auf die Beschreibung der Wappen <em>nach heraldischen Grundsätzen</em> (<a href="#reference-08" class="mdlr-function-reference" title="Referenz einblenden"><em><abbr title="ebenda">ibid.</abbr></em></a>). Nach Beratung mit Johannes Schwab (1731–1795), Professor für Experimentalphysik und Mathematik an der Universität Heidelberg, der auch Privatkollegs über Diplomatik anbot, verfiel man auf die Idee, die Scheiben von einem Maler abzeichnen zu lassen (Schreiben vom 14. März 1791), was seitens der Ordensregierung unter strengen Auflagen zur Ausführung am 1. April 1791 genehmigt wurde (<a href="#reference-08" class="mdlr-function-reference" title="Referenz einblenden"><em><abbr title="ebenda">ibid.</abbr></em></a>).
-                <a href="#info-02" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-intext mdlr-function-info" role="button" title="Informationen einblenden">
+                <a href="#info-02" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-embedded mdlr-function-info" role="button" title="Informationen einblenden">
                     <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <use href="#icon-info"/>
                     </svg>
@@ -177,7 +182,7 @@
 
             <p>
                 Für die Aufgabe wurde der Maler Nicolaus Rudersheim ausgewählt (Schreiben vom 13. Februar 1792), ein heute kaum noch bekannter Porträtist aus Mannheim, von dem einige wenige Bildnisse erhalten sind (<a href="#reference-08" class="mdlr-function-reference" title="Referenz einblenden"><em><abbr title="ebenda">ibid.</abbr></em></a>).
-                <a href="#info-03" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-intext mdlr-function-info" role="button" title="Informationen einblenden">
+                <a href="#info-03" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-embedded mdlr-function-info" role="button" title="Informationen einblenden">
                     <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <use href="#icon-info"/>
                     </svg>
@@ -260,7 +265,7 @@
 
             <p>
                 So wie die Abzeichnungen der Weinheimer Wappenscheiben 1809 in württembergischen Besitz übergegangen sind, muss es auch mit den in Mergentheim aufbewahrten <em>Originalien</em> geschehen sein. Zwar gibt es keine diesbezügliche Quelle, doch besitzt der Umstand, dass sich vermutlich elf Scheiben in der Sammlung von Schloss Friedrichshafen befanden, genug Beweiskraft für diesen Analogieschluss. Die Glasgemälde im Friedrichshafener Schloss – einem ehemaligen Benediktinerkloster, das unter König Wilhelm I. von Württemberg (* 1781, Kg. 1816–1864) zu einer Sommerresidenz für die Familie ausgebaut und 1853 mit historischen Glasfenstern aus der Inselkapelle im Park von Schloss Monrepos ausgestattet wurde – wurden erstmals 1882 von Karl Mayer von Mayerfels publiziert (<a href="#reference-12" class="mdlr-function-reference" title="Referenz einblenden">Mayer von Mayerfels 1882</a>, <abbr title="Seite">S.</abbr>&nbsp;43–68).
-                <a href="#info-04" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-intext mdlr-function-info" role="button" title="Informationen einblenden">
+                <a href="#info-04" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-embedded mdlr-function-info" role="button" title="Informationen einblenden">
                     <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <use href="#icon-info"/>
                     </svg>
@@ -287,7 +292,7 @@
 
             <p>
                 Sie waren nach dekorativen Gesichtspunkten in insgesamt 20 Fenstern in Parterregang, Stiegenhaus und Oberem Gang sowie im Kiosk der Königin Olga eingebaut, die Reste der Weinheimer Wappenscheiben allesamt im Oberen Gang, dort verteilt auf das vierte, sechste, siebente, achte, elfte und zwölfte Fenster; erhalten waren damals neben falsch verbleiten Teilen von Inschriften der Wappenscheiben Heinrich Marschall von Pappenheim, Pfalzgraf Ludwig V. (?) (<abbr title="Abbildung">Abb.</abbr> 8) und Walther von Cronberg (<abbr title="Abbildung">Abb.</abbr> 6) auch deren Wappen selbst sowie die Wappenscheiben Adelmann von Adelmannsfelden, Dietrich von Cleen (<abbr title="Abbildung">Abb.</abbr> 7), Bellersheim, Landschad (von Steinach), Bibra, Wilhelm Halber, Haberkorn und Berlichingen (siehe <a href="#appendix">Anhang</a>). Nach einer Restaurierung, die unter der Aufsicht von Josef Ludwig Fischer 1914/15 in München durchgeführt wurde (<a href="#reference-02" class="mdlr-function-reference" title="Referenz einblenden">Becksmann 1986</a>, <abbr title="Seite">S.</abbr>&nbsp;4f.), wurde offenbar nur noch ein Teil der Weinheimer Wappen wieder in Friedrichshafen eingesetzt, denn in dem im Jahr 1938 im Zuge der Kriegsbergung der Sammlung erstellten Inventar werden lediglich vier Scheiben erwähnt (Nr. 65–68); eine weitere kleine Rundscheibe wird noch unter den Glasgemälden und Fragmenten genannt, die sich nicht in den Fenstern des Schlosses befanden (siehe <a href="#appendix">Anhang</a>; <a href="#reference-01" class="mdlr-function-reference" title="Referenz einblenden">Archiv des Hauses Württemberg</a>).
-                <a href="#info-05" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-intext mdlr-function-info" role="button" title="Informationen einblenden">
+                <a href="#info-05" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-embedded mdlr-function-info" role="button" title="Informationen einblenden">
                     <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <use href="#icon-info"/>
                     </svg>
@@ -297,14 +302,14 @@
 
             <p>
                 Nach dem Ende des Zweiten Weltkriegs konnten die im Schloss Altshausen deponierten Glasgemälde nicht mehr an ihren vorherigen Standort zurückgebracht werden, da Stadt und Schloss Friedrichshafen nach den Luftangriffen der Alliierten stark zerstört waren.
-                <a href="#info-06" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-intext mdlr-function-info" role="button" title="Informationen einblenden">
+                <a href="#info-06" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-embedded mdlr-function-info" role="button" title="Informationen einblenden">
                     <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <use href="#icon-info"/>
                     </svg>
                     <span>Informationen einblenden</span>
                 </a>
                 Die Sammlung verblieb in Altshausen, ihr mittelalterlicher Bestand bis ca. 1530 wurde in den Jahren 1958 und 1986 durch das Corpus Vitrearum Medii Aevi Deutschland publiziert (<a href="#reference-19" class="mdlr-function-reference" title="Referenz einblenden">Wentzel 1958</a>, <abbr title="Seite">S.</abbr>&nbsp;177–185; <a href="#reference-02" class="mdlr-function-reference" title="Referenz einblenden">Becksmann 1986</a>, <abbr title="Seite">S.</abbr>&nbsp;3–16), darunter auch drei der erwiesenermaßen aus Weinheim stammenden Wappenscheiben (<abbr title="Abbildung">Abb.</abbr> 9; <a href="#reference-02" class="mdlr-function-reference" title="Referenz einblenden">Becksmann 1986</a>, <abbr title="Seite">S.</abbr>&nbsp;13f., <abbr title="Nummer">Nr.</abbr>&nbsp;44f., und <abbr title="Seite">S.</abbr>&nbsp;14, <abbr title="Anmerkung">Anm.</abbr>&nbsp;31).
-                <a href="#info-07" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-intext mdlr-function-info" role="button" title="Informationen einblenden">
+                <a href="#info-07" class="mdlr-button mdlr-variant-icon mdlr-variant-transparent mdlr-variant-round mdlr-variant-embedded mdlr-function-info" role="button" title="Informationen einblenden">
                     <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <use href="#icon-info"/>
                     </svg>
@@ -520,4 +525,19 @@
             </table>-->
 
         </div></section>
+
+        </f:then>
+        <f:else>
+            <section id="main-content" class="mdlr-section mdlr-variant-primary">
+
+                <div class="mdlr-empty">
+                    <svg width="160" height="160" viewBox="0 0 160 160" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <use href="#illustration-placeholder"/>
+                    </svg>
+                    <p><f:translate key="templates.main.content.empty" extensionName="chf_base"/></p>
+                </div>
+
+            </section>
+        </f:else>
+    </f:if>
 </html>

@@ -1394,13 +1394,93 @@
                 <target>Drehkreuz</target>
             </trans-unit>
             <!-- Templates -->
-            <trans-unit id="templates.generic.date" resname="templates.generic.date" approved="yes">
-                <source>%e %B %Y</source>
-                <target>%e. %B %Y</target>
+            <trans-unit id="templates.generic.home" resname="templates.generic.home" approved="yes">
+                <source>Show homepage</source>
+                <target>Startseite aufrufen</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.close" resname="templates.generic.close" approved="yes">
+                <source>Close</source>
+                <target>Schließen</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.unknown" resname="templates.generic.unknown" approved="yes">
+                <source>Unknown</source>
+                <target>Unbekannt</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.quote" resname="templates.generic.quote" approved="yes">
+                <source>“%s”</source>
+                <target>„%s“</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.accessed" resname="templates.generic.accessed" approved="yes">
+                <source>Accessed %s</source>
+                <target>Letzter Zugriff %s</target>
             </trans-unit>
             <trans-unit id="templates.generic.type.page" resname="templates.generic.type.page" approved="yes">
                 <source>page</source>
                 <target>Seite</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.urn" resname="templates.generic.copy.urn" approved="yes">
+                <source><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.urn.hint" resname="templates.generic.copy.urn.hint" approved="yes">
+                <source>Copy URN</source>
+                <target>URN kopieren</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.urn.success" resname="templates.generic.copy.urn.success" approved="yes">
+                <source>URN copied successfully</source>
+                <target>URN erfolgreich kopiert</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.urn.failure" resname="templates.generic.copy.urn.failure" approved="yes">
+                <source>Something went wrong</source>
+                <target>Das hat leider nicht geklappt</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.permalink" resname="templates.generic.copy.permalink" approved="yes">
+                <source>Permalink</source>
+                <target>Permalink</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.permalink.hint" resname="templates.generic.copy.permalink.hint" approved="yes">
+                <source>Copy permalink</source>
+                <target>Permalink kopieren</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.permalink.success" resname="templates.generic.copy.permalink.success" approved="yes">
+                <source>Permalink copied successfully</source>
+                <target>Permalink erfolgreich kopiert</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.permalink.failure" resname="templates.generic.copy.permalink.failure" approved="yes">
+                <source>Something went wrong</source>
+                <target>Das hat leider nicht geklappt</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.url" resname="templates.generic.copy.url" approved="yes">
+                <source><![CDATA[<abbr title="Uniform Resource Locator">]]>URL<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Uniform Resource Locator">]]>URL<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.url.hint" resname="templates.generic.copy.url.hint" approved="yes">
+                <source>Copy URL</source>
+                <target>URL kopieren</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.url.success" resname="templates.generic.copy.url.success" approved="yes">
+                <source>URL copied successfully</source>
+                <target>URL erfolgreich kopiert</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.url.failure" resname="templates.generic.copy.url.failure" approved="yes">
+                <source>Something went wrong</source>
+                <target>Das hat leider nicht geklappt</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.citation" resname="templates.generic.copy.citation" approved="yes">
+                <source>Copy citation</source>
+                <target>Zitation kopieren</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.citation.success" resname="templates.generic.copy.citation.success" approved="yes">
+                <source>Citation copied successfully</source>
+                <target>Zitation erfolgreich kopiert</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.citation.failure" resname="templates.generic.copy.citation.failure" approved="yes">
+                <source>Something went wrong</source>
+                <target>Das hat leider nicht geklappt</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.email" resname="templates.generic.email" approved="yes">
+                <source>Compose email</source>
+                <target>E-Mail verfassen</target>
             </trans-unit>
             <trans-unit id="templates.generic.retrieve" resname="templates.generic.retrieve" approved="yes">
                 <source>Retrieve %s</source>
@@ -1414,14 +1494,6 @@
                 <source>JSON-LD</source>
                 <target>JSON-LD</target>
             </trans-unit>
-            <trans-unit id="templates.generic.retrieve.rdfxml" resname="templates.generic.retrieve.rdfxml" approved="yes">
-                <source><![CDATA[<abbr title="Resource Description Framework/Extensible Markup Language">]]>RDF/XML<![CDATA[</abbr>]]></source>
-                <target><![CDATA[<abbr title="Resource Description Framework/Extensible Markup Language">]]>RDF/XML<![CDATA[</abbr>]]></target>
-            </trans-unit>
-            <trans-unit id="templates.generic.retrieve.rdfxml.plain" resname="templates.generic.retrieve.rdfxml.plain" approved="yes">
-                <source>RDF/XML</source>
-                <target>RDF/XML</target>
-            </trans-unit>
             <trans-unit id="templates.generic.retrieve.turtle" resname="templates.generic.retrieve.turtle" approved="yes">
                 <source><![CDATA[<abbr title="Turtle">]]>TTL<![CDATA[</abbr>]]></source>
                 <target><![CDATA[<abbr title="Turtle">]]>TTL<![CDATA[</abbr>]]></target>
@@ -1430,6 +1502,22 @@
                 <source>TTL</source>
                 <target>TTL</target>
             </trans-unit>
+            <trans-unit id="templates.generic.retrieve.rdfxml" resname="templates.generic.retrieve.rdfxml" approved="yes">
+                <source><![CDATA[<abbr title="Resource Description Framework/Extensible Markup Language">]]>RDF/XML<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Resource Description Framework/Extensible Markup Language">]]>RDF/XML<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.rdfxml.plain" resname="templates.generic.retrieve.rdfxml.plain" approved="yes">
+                <source>RDF/XML</source>
+                <target>RDF/XML</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.teixml" resname="templates.generic.retrieve.teixml" approved="yes">
+                <source><![CDATA[<abbr title="Text Encoding Initiative/Extensible Markup Language">]]>TEI/XML<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Text Encoding Initiative/Extensible Markup Language">]]>TEI/XML<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.teixml.plain" resname="templates.generic.retrieve.teixml.plain" approved="yes">
+                <source>TEI/XML</source>
+                <target>TEI/XML</target>
+            </trans-unit>
             <trans-unit id="templates.header.jump" resname="templates.header.jump" approved="yes">
                 <source>On this page</source>
                 <target>Auf dieser Seite</target>
@@ -1437,10 +1525,6 @@
             <trans-unit id="templates.header.navigation" resname="templates.header.navigation" approved="yes">
                 <source>Navigation</source>
                 <target>Navigation</target>
-            </trans-unit>
-            <trans-unit id="templates.header.search" resname="templates.header.search" approved="yes">
-                <source>Search</source>
-                <target>Suche</target>
             </trans-unit>
             <trans-unit id="templates.header.meta" resname="templates.header.meta" approved="yes">
                 <source>Meta</source>
@@ -1452,27 +1536,15 @@
             </trans-unit>
             <trans-unit id="templates.title.download" resname="templates.title.download" approved="yes">
                 <source>Download</source>
-                <target>Herunterladen</target>
-            </trans-unit>
-            <trans-unit id="templates.title.download.copy" resname="templates.title.download.copy" approved="yes">
-                <source>Copy URL</source>
-                <target>URL kopieren</target>
-            </trans-unit>
-            <trans-unit id="templates.title.download.copy.success" resname="templates.title.download.copy.success" approved="yes">
-                <source>URL copied successfully</source>
-                <target>URL erfolgreich kopiert</target>
-            </trans-unit>
-            <trans-unit id="templates.title.download.copy.failure" resname="templates.title.download.copy.failure" approved="yes">
-                <source>Something went wrong</source>
-                <target>Das hat leider nicht geklappt</target>
+                <target>Download</target>
             </trans-unit>
             <trans-unit id="templates.title.download.pdf" resname="templates.title.download.pdf" approved="yes">
-                <source><![CDATA[<abbr title="Portable Document Format">]]>PDF<![CDATA[</abbr>]]> of %s</source>
-                <target>%s als <![CDATA[<abbr title="Portable Document Format">]]>PDF<![CDATA[</abbr>]]></target>
+                <source><![CDATA[<abbr title="Portable Document Format">]]>PDF<![CDATA[</abbr>]]> or print</source>
+                <target><![CDATA[<abbr title="Portable Document Format">]]>PDF<![CDATA[</abbr>]]> oder drucken</target>
             </trans-unit>
             <trans-unit id="templates.title.remember" resname="templates.title.remember" approved="yes">
-                <source>Remember %s</source>
-                <target>%s merken</target>
+                <source>Remember</source>
+                <target>Merken</target>
             </trans-unit>
             <trans-unit id="templates.main.rights" resname="templates.main.rights" approved="yes">
                 <source>Rights statement</source>
@@ -1506,33 +1578,81 @@
                 <source>Content</source>
                 <target>Inhalt</target>
             </trans-unit>
+            <trans-unit id="templates.main.content.empty" resname="templates.main.content.empty" approved="yes">
+                <source>This page is currently empty. Content would otherwise be displayed here.</source>
+                <target>Diese Seite ist momentan noch leer. An dieser Stelle würden sonst Inhalte angezeigt.</target>
+            </trans-unit>
             <trans-unit id="templates.about" resname="templates.about" approved="yes">
-                <source>About this %s</source>
-                <target>Über diese %s</target>
+                <source>Further metadata</source>
+                <target>Weitere Metadaten</target>
             </trans-unit>
             <trans-unit id="templates.about.properties" resname="templates.about.properties" approved="yes">
                 <source>Properties</source>
                 <target>Eigenschaften</target>
             </trans-unit>
-            <trans-unit id="templates.about.abstract" resname="templates.about.abstract" approved="yes">
-                <source>Abstract</source>
-                <target>Auszug</target>
+            <trans-unit id="templates.about.reference" resname="templates.about.reference" approved="yes">
+                <source>Reference</source>
+                <target>Referenz</target>
+            </trans-unit>
+            <trans-unit id="templates.about.serializations" resname="templates.about.serializations" approved="yes">
+                <source>Linked Open Data</source>
+                <target>Linked Open Data</target>
             </trans-unit>
             <trans-unit id="templates.about.author" resname="templates.about.author" approved="yes">
                 <source>Author</source>
                 <target>Autor:in</target>
             </trans-unit>
-            <trans-unit id="templates.about.updated" resname="templates.about.updated" approved="yes">
-                <source>Updated</source>
-                <target>Aktualisiert</target>
+            <trans-unit id="templates.about.photographer" resname="templates.about.photographer" approved="yes">
+                <source>Photographer</source>
+                <target>Fotograf:in</target>
+            </trans-unit>
+            <trans-unit id="templates.about.editor" resname="templates.about.editor" approved="yes">
+                <source>Editor</source>
+                <target>Redaktion</target>
+            </trans-unit>
+            <trans-unit id="templates.about.publisher" resname="templates.about.publisher" approved="yes">
+                <source>Publisher</source>
+                <target>Verlag</target>
+            </trans-unit>
+            <trans-unit id="templates.about.print" resname="templates.about.print" approved="yes">
+                <source>Print</source>
+                <target>Gedruckt</target>
+            </trans-unit>
+            <trans-unit id="templates.about.online" resname="templates.about.online" approved="yes">
+                <source>Online</source>
+                <target>Online</target>
+            </trans-unit>
+            <trans-unit id="templates.about.digest" resname="templates.about.digest" approved="yes">
+                <source>Digest</source>
+                <target>Auszug</target>
+            </trans-unit>
+            <trans-unit id="templates.about.urn" resname="templates.about.urn" approved="yes">
+                <source><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.permalink" resname="templates.about.permalink" approved="yes">
+                <source>Permalink</source>
+                <target>Permalink</target>
             </trans-unit>
             <trans-unit id="templates.about.url" resname="templates.about.url" approved="yes">
                 <source><![CDATA[<abbr title="Uniform Resource Locator">]]>URL<![CDATA[</abbr>]]></source>
                 <target><![CDATA[<abbr title="Uniform Resource Locator">]]>URL<![CDATA[</abbr>]]></target>
             </trans-unit>
-            <trans-unit id="templates.about.data" resname="templates.about.data" approved="yes">
-                <source>Data</source>
-                <target>Datensatz</target>
+            <trans-unit id="templates.about.citation" resname="templates.about.citation" approved="yes">
+                <source>Citation</source>
+                <target>Zitation</target>
+            </trans-unit>
+            <trans-unit id="templates.about.api.before" resname="templates.about.api.before" approved="yes">
+                <source>The raw data of this web application is available </source>
+                <target>Die Rohdaten dieser Webanwendung sind </target>
+            </trans-unit>
+            <trans-unit id="templates.about.api.link" resname="templates.about.api.link" approved="yes">
+                <source>via <![CDATA[<abbr title="Application Programming Interface">]]>API<![CDATA[</abbr>]]>s</source>
+                <target>per <![CDATA[<abbr title="Application Programming Interface">]]>API<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.api.after" resname="templates.about.api.after" approved="yes">
+                <source>. The indicated re-use licenses apply even when you process the data automatically.</source>
+                <target> abrufbar. Auch bei der automatisierten Verarbeitung gelten die angegebenen Nachnutzungslizenzen.</target>
             </trans-unit>
             <trans-unit id="templates.footer" resname="templates.footer" approved="yes">
                 <source>Footer</source>
@@ -1590,17 +1710,197 @@
                 <source>GitHub repository</source>
                 <target>GitHub-Repositorium</target>
             </trans-unit>
-            <trans-unit id="templates.aside.settings" resname="templates.aside.settings" approved="yes">
-                <source>Settings</source>
-                <target>Einstellungen</target>
+            <trans-unit id="templates.share" resname="templates.share" approved="yes">
+                <source>Share</source>
+                <target>Teilen</target>
             </trans-unit>
-            <trans-unit id="templates.aside.watchlist" resname="templates.aside.watchlist" approved="yes">
+            <trans-unit id="templates.share.preview" resname="templates.share.preview" approved="yes">
+                <source>Preview</source>
+                <target>Vorschau</target>
+            </trans-unit>
+            <trans-unit id="templates.share.preview.site" resname="templates.share.preview.site" approved="yes">
+                <source>Website</source>
+                <target>Webseite</target>
+            </trans-unit>
+            <trans-unit id="templates.share.preview.title" resname="templates.share.preview.title" approved="yes">
+                <source>Title</source>
+                <target>Titel</target>
+            </trans-unit>
+            <trans-unit id="templates.share.preview.description" resname="templates.share.preview.description" approved="yes">
+                <source>Description</source>
+                <target>Beschreibung</target>
+            </trans-unit>
+            <trans-unit id="templates.share.device" resname="templates.share.device" approved="yes">
+                <source>On this device</source>
+                <target>Auf diesem Gerät</target>
+            </trans-unit>
+            <trans-unit id="templates.share.device.apps" resname="templates.share.device.apps" approved="yes">
+                <source>Apps</source>
+                <target>Apps</target>
+            </trans-unit>
+            <trans-unit id="templates.share.device.apps.hint" resname="templates.share.device.apps.hint" approved="yes">
+                <source>Send to app</source>
+                <target>An App senden</target>
+            </trans-unit>
+            <trans-unit id="templates.share.device.apps.success" resname="templates.share.device.apps.success" approved="yes">
+                <source>Shared successfully</source>
+                <target>Erfolgreich geteilt</target>
+            </trans-unit>
+            <trans-unit id="templates.share.device.apps.failure" resname="templates.share.device.apps.failure" approved="yes">
+                <source>Nothing was shared</source>
+                <target>Es wurde nichts geteilt</target>
+            </trans-unit>
+            <trans-unit id="templates.share.device.apps.error" resname="templates.share.device.apps.error" approved="yes">
+                <source>Something went wrong</source>
+                <target>Das hat leider nicht geklappt</target>
+            </trans-unit>
+            <trans-unit id="templates.share.device.email" resname="templates.share.device.email" approved="yes">
+                <source>Email</source>
+                <target>E-Mail</target>
+            </trans-unit>
+            <trans-unit id="templates.share.device.email.hint" resname="templates.share.device.email.hint" approved="yes">
+                <source>Share by email</source>
+                <target>Per E-Mail teilen</target>
+            </trans-unit>
+            <trans-unit id="templates.share.services" resname="templates.share.services" approved="yes">
+                <source>Social networks</source>
+                <target>Soziale Netzwerke</target>
+            </trans-unit>
+            <trans-unit id="templates.share.services.mastodon" resname="templates.share.services.mastodon" approved="yes">
+                <source>Mastodon</source>
+                <target>Mastodon</target>
+            </trans-unit>
+            <trans-unit id="templates.share.services.mastodon.prompt" resname="templates.share.services.mastodon.prompt" approved="yes">
+                <source>Mastodon server to toot on</source>
+                <target>Mastodon-Server zum Tröten</target>
+            </trans-unit>
+            <trans-unit id="templates.share.services.mastodon.failure" resname="templates.share.services.mastodon.failure" approved="yes">
+                <source>Nothing was tooted</source>
+                <target>Es wurde nichts getrötet</target>
+            </trans-unit>
+            <trans-unit id="templates.share.services.mastodon.hint" resname="templates.share.services.mastodon.hint" approved="yes">
+                <source>Share on Mastodon</source>
+                <target>Auf Mastodon teilen</target>
+            </trans-unit>
+            <trans-unit id="templates.share.services.pocket" resname="templates.share.services.pocket" approved="yes">
+                <source>Pocket</source>
+                <target>Pocket</target>
+            </trans-unit>
+            <trans-unit id="templates.share.services.pocket.hint" resname="templates.share.services.pocket.hint" approved="yes">
+                <source>Share on Pocket</source>
+                <target>Auf Pocket teilen</target>
+            </trans-unit>
+            <trans-unit id="templates.share.services.linkedin" resname="templates.share.services.linkedin" approved="yes">
+                <source>LinkedIn</source>
+                <target>LinkedIn</target>
+            </trans-unit>
+            <trans-unit id="templates.share.services.linkedin.hint" resname="templates.share.services.linkedin.hint" approved="yes">
+                <source>Share on LinkedIn</source>
+                <target>Auf LinkedIn teilen</target>
+            </trans-unit>
+            <trans-unit id="templates.share.services.tumblr" resname="templates.share.services.tumblr" approved="yes">
+                <source>Tumblr</source>
+                <target>Tumblr</target>
+            </trans-unit>
+            <trans-unit id="templates.share.services.tumblr.hint" resname="templates.share.services.tumblr.hint" approved="yes">
+                <source>Share on Tumblr</source>
+                <target>Auf Tumblr teilen</target>
+            </trans-unit>
+            <trans-unit id="templates.share.services.reddit" resname="templates.share.services.reddit" approved="yes">
+                <source>Reddit</source>
+                <target>Reddit</target>
+            </trans-unit>
+            <trans-unit id="templates.share.services.reddit.hint" resname="templates.share.services.reddit.hint" approved="yes">
+                <source>Share on Reddit</source>
+                <target>Auf Reddit teilen</target>
+            </trans-unit>
+            <trans-unit id="templates.share.services.facebook" resname="templates.share.services.facebook" approved="yes">
+                <source>Facebook</source>
+                <target>Facebook</target>
+            </trans-unit>
+            <trans-unit id="templates.share.services.facebook.hint" resname="templates.share.services.facebook.hint" approved="yes">
+                <source>Share on Facebook</source>
+                <target>Auf Facebook teilen</target>
+            </trans-unit>
+            <trans-unit id="templates.share.services.xitter" resname="templates.share.services.xitter" approved="yes">
+                <source>X (formerly Twitter)</source>
+                <target>X (früher Twitter)</target>
+            </trans-unit>
+            <trans-unit id="templates.share.services.xitter.hint" resname="templates.share.services.xitter.hint" approved="yes">
+                <source>Share on X (formerly Twitter)</source>
+                <target>Auf X (früher Twitter) teilen</target>
+            </trans-unit>
+            <trans-unit id="templates.share.dissociation" resname="templates.share.dissociation" approved="yes">
+                <source>These services are integrated as links only. Their inclusion is not an endorsement.</source>
+                <target>Diese Dienste sind nur als Links eingebunden. Deren Angabe ist keine Befürwortung.</target>
+            </trans-unit>
+            <trans-unit id="templates.watchlist" resname="templates.watchlist" approved="yes">
                 <source>Watchlist</source>
                 <target>Merkliste</target>
             </trans-unit>
-            <trans-unit id="templates.links.home" resname="templates.links.home" approved="yes">
-                <source>Show homepage</source>
-                <target>Startseite aufrufen</target>
+            <trans-unit id="templates.watchlist.empty" resname="templates.watchlist.empty" approved="yes">
+                <source>The watchlist ist still empty. Add new content by clicking on star symbols across this site.</source>
+                <target>Die Merkliste ist noch leer. Neue Inhalte können durch Klick auf Stern-Symbole hinzugefügt werden.</target>
+            </trans-unit>
+            <trans-unit id="templates.search" resname="templates.search" approved="yes">
+                <source>Search</source>
+                <target>Suche</target>
+            </trans-unit>
+            <trans-unit id="templates.search.query" resname="templates.search.query" approved="yes">
+                <source>Search term</source>
+                <target>Suchbegriff</target>
+            </trans-unit>
+            <trans-unit id="templates.search.query.placeholder" resname="templates.search.query.placeholder" approved="yes">
+                <source>Type to search…</source>
+                <target>Suchbegriff eingeben…</target>
+            </trans-unit>
+            <trans-unit id="templates.search.go" resname="templates.search.go" approved="yes">
+                <source>Search</source>
+                <target>Suchen</target>
+            </trans-unit>
+            <trans-unit id="templates.search.example" resname="templates.search.example" approved="yes">
+                <source>Search for this example</source>
+                <target>Nach diesem Beispiel suchen</target>
+            </trans-unit>
+            <trans-unit id="templates.search.exact" resname="templates.search.exact" approved="yes">
+                <source>Exact</source>
+                <target>Genau</target>
+            </trans-unit>
+            <trans-unit id="templates.search.advanced" resname="templates.search.advanced" approved="yes">
+                <source>Advanced</source>
+                <target>Erweitert</target>
+            </trans-unit>
+            <trans-unit id="templates.search.note" resname="templates.search.note" approved="yes">
+                <source>An exact search only retrieves letter-for-letter matches in titles or names. Regular expressions (<![CDATA[<abbr title="Perl Compatible Regular Expressions">]]>PCRE<![CDATA[</abbr>]]>2) can be used for specific queries.</source>
+                <target>Eine genaue Suche findet nur exakte Treffer in Titeln oder Namen. Für gezielte Abfragen werden dabei reguläre Ausdrücke (<![CDATA[<abbr title="Perl Compatible Regular Expressions">]]>PCRE<![CDATA[</abbr>]]>2) unterstützt.</target>
+            </trans-unit>
+            <trans-unit id="templates.settings" resname="templates.settings" approved="yes">
+                <source>Settings</source>
+                <target>Einstellungen</target>
+            </trans-unit>
+            <trans-unit id="templates.settings.language" resname="templates.settings.language" approved="yes">
+                <source>Language</source>
+                <target>Sprache</target>
+            </trans-unit>
+            <trans-unit id="templates.settings.color" resname="templates.settings.color" approved="yes">
+                <source>Colour</source>
+                <target>Farbe</target>
+            </trans-unit>
+            <trans-unit id="templates.settings.color.auto" resname="templates.settings.color.auto" approved="yes">
+                <source>Auto</source>
+                <target>Auto</target>
+            </trans-unit>
+            <trans-unit id="templates.settings.color.light" resname="templates.settings.color.light" approved="yes">
+                <source>Light</source>
+                <target>Hell</target>
+            </trans-unit>
+            <trans-unit id="templates.settings.color.dark" resname="templates.settings.color.dark" approved="yes">
+                <source>Dark</source>
+                <target>Dunkel</target>
+            </trans-unit>
+            <trans-unit id="templates.settings.powered" resname="templates.settings.powered" approved="yes">
+                <source>Powered by the <![CDATA[<a href="https://github.com/digicademy-chf" target="_blank">]]>Cultural Heritage Framework<![CDATA[</a>]]></source>
+                <target>Betrieben mit dem <![CDATA[<a href="https://github.com/digicademy-chf" target="_blank">]]>Cultural Heritage Framework<![CDATA[</a>]]></target>
             </trans-unit>
         </body>
     </file>

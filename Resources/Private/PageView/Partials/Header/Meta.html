@@ -1,28 +1,28 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-        <nav id="header-meta">
-            <h2><f:translate key="templates.header.meta" extensionName="chf_base"/></h2>
-            <ul class="mdlr-buttonrow mdlr-variant-right mdlr-variant-separate">
-                <li>
-                    <button id="header-meta-settings" class="mdlr-variant-icon mdlr-variant-transparent mdlr-function-modal" aria-controls="aside-settings" title="{f:translate(key: 'templates.aside.settings', extensionName: 'chf_base')}" >
-                        <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <use href="#icon-settings"/>
-                        </svg>
-                        <span><f:translate key="templates.aside.settings" extensionName="chf_base"/></span>
-                    </button>
-                </li>
-                <li>
-                    <button id="header-meta-search" class="mdlr-variant-icon mdlr-variant-transparent mdlr-function-search" aria-controls="header-search" title="{f:translate(key: 'templates.header.search', extensionName: 'chf_base')}" >
-                        <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <use href="#icon-search"/>
-                        </svg>
-                        <span><f:translate key="templates.header.search" extensionName="chf_base"/></span>
-                    </button>
-                </li>
-                <li>
-                    <button id="header-meta-watchlist" class="mdlr-variant-transparent mdlr-function-modal" aria-controls="aside-watchlist">
-                        <span><f:translate key="templates.aside.watchlist" extensionName="chf_base"/></span>
-                    </button>
-                </li>
-            </ul>
-        </nav>
+    <nav id="header-meta" class="mdlr-pattern-slot-c mdlr-pattern-align-right mdlr-pattern-align-middle">
+        <h2 class="mdlr-variant-tacit"><f:translate key="templates.header.meta" extensionName="chf_base"/></h2>
+        <ul class="mdlr-buttonrow mdlr-variant-separate">
+            <li>
+                <button id="header-meta-watchlist" class="mdlr-variant-unobtrusive mdlr-function-modal" aria-controls="watchlist">
+                    <span><f:translate key="templates.watchlist" extensionName="chf_base"/></span>
+                </button>
+            </li>
+            <li>
+                <button id="header-meta-search" class="mdlr-variant-icon mdlr-variant-unobtrusive mdlr-function-modal" aria-controls="search" data-focus="search-query" title="{f:translate(key: 'templates.header.search', extensionName: 'chf_base')}" >
+                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <use href="#icon-search"/>
+                    </svg>
+                    <span><f:translate key="templates.header.search" extensionName="chf_base"/></span>
+                </button>
+            </li>
+            <li>
+                <button id="header-meta-settings" class="mdlr-variant-icon mdlr-variant-unobtrusive mdlr-function-modal" aria-controls="settings" title="{f:translate(key: 'templates.settings', extensionName: 'chf_base')}" >
+                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <use href="#icon-settings"/>
+                    </svg>
+                    <span><f:translate key="templates.settings" extensionName="chf_base"/></span>
+                </button>
+            </li>
+        </ul>
+    </nav>
 </html>

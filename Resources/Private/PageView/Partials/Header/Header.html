@@ -1,5 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <header id="header" class="mdlr-headerbar"><div>
+    <header id="header" class="mdlr-section mdlr-variant-headerbar mdlr-variant-ultrawide">
+        <div class="mdlr-pattern mdlr-variant-triptych" id="header-headerbar">
 
 <f:render partial="Header/Name" arguments="{_all}"/>
 
@@ -7,9 +8,8 @@
 
 <f:render partial="Header/Navigation" arguments="{mainMenu: mainMenu}"/>
 
-<f:render partial="Header/Search"/>
-
 <f:render partial="Header/Meta"/>
 
-    </div></header>
+        </div>
+    </header>
 </html>

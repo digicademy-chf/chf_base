@@ -10,12 +10,14 @@
 
 <f:render partial="Footer/Footer" arguments="{_all}"/>
 
-<f:render partial="Aside/Notifications"/>
+<f:render partial="Dialogs/Share" arguments="{site: '{f:if(condition: \'{language.websiteTitle}\', then: \'{language.websiteTitle}\', else: \'{site.configuration.websiteTitle}\')}', title: '{page.pageRecord.title}', description: '{f:if(condition: \'{page.pageRecord.abstract}\', then: \'{page.pageRecord.abstract}\', else: \'{page.pageRecord.description}\')}', images: '{images}'}"/>
 
-<f:render partial="Aside/Watchlist"/>
+<f:render partial="Dialogs/Watchlist"/>
 
-<f:render partial="Aside/Share" arguments="{_all}"/>
+<f:render partial="Dialogs/Search"/>
 
-<f:render partial="Aside/Settings"/>
+<f:render partial="Dialogs/Settings" arguments="{_all}"/>
+
+<f:render partial="Dialogs/Notification"/>
 
 </html>
