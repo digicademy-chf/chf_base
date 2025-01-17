@@ -87,45 +87,7 @@ page {
         mdlr = EXT:chf_base/Resources/Public/JavaScript/mdlr.js
         mdlr.defer = 1
     }
-    shortcutIcon = {$chf.templates.favicon}
-    # TODO Richtige Daten
-    meta {
-        viewport = width=device-width, initial-scale=1.0
-        theme-color = #3b6cff
-        apple-mobile-web-app-status-bar-style = #3b6cff
-        apple-mobile-web-app-capable = yes
-        apple-mobile-web-app-title = Corpus Vitrearum Deutschland
-        citation_title = Eine Liste, 27 Zeichnungen und die Glasgemälde aus der ehemaligen Deutschordenskirche in Weinheim (Bergstraße)
-        citation_date = 2023/01/20
-        citation_inbook_title = Corpus Vitrearum Deutschland: Scheibenweise
-        citation_publisher = Akademie der Wissenschaften und der Literatur Mainz
-        citation_public_url = https://corpusvitrearum.de/id/S12345
-        citation_language = de-DE
-        og:title = Eine Liste, 27 Zeichnungen und die Glasgemälde aus der ehemaligen Deutschordenskirche in Weinheim (Bergstraße)
-        og:title.attribute = property
-        og:site_name = Corpus Vitrearum Deutschland
-        og:site_name.attribute = property
-        og:description = Dass die Deutschordenskirche St. Maria in Weinheim an der Bergstraße vor ihrem Abbruch 1809 zahlreiche Glasgemälde aus den 1530er-Jahren besaß, ist in der Forschung hinlänglich bekannt.
-        og:description.attribute = property
-        og:locale = de_DE
-        og:locale.attribute = property
-        og:locale:alternate = en_GB
-        og:locale:alternate.attribute = property
-        og:type = website
-        og:type.attribute = property
-        og:url = https://corpusvitrearum.de/id/S12345
-        og:url.attribute = property
-        og:image = https://adwmainz.pages.gitlab.rlp.net/digicademy/cvma/cvma-next/images/sample.jpg
-        og:image.attribute = property
-    }
-    headerData {
-        10.value = <link rel="shortcut icon" href="images/favicon-small.svg">
-        20.value = <link rel="mask-icon" href="images/favicon-small-mask.svg" color="#3b6cff">
-        30.value = <link rel="apple-touch-icon" href="images/favicon-medium-extra.png">
-        40.value = <link rel="manifest" href="manifest.json">
-    }
-    # TODO Alternative serialisations
-    # TODO Embedded JSON-LD
+    shortcutIcon = {$chf.templates.favicon.main}
 }
 
 # JSON-LD templates

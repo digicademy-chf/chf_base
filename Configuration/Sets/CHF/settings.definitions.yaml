@@ -8,12 +8,27 @@ settings:
     label: 'Logo path'
     description: 'Path to a logo file to use in the header and footer of a page'
     type: string
-    default: 'EXT:chf_base/Resources/Public/Images/logo.svg'
-  chf.templates.favicon:
+    default: 'EXT:chf_base/Resources/Public/Images/logo-chf.svg'
+  chf.templates.favicon.main:
     label: 'Favicon path'
     description: 'Path to an icon file to use as the favicon of a page'
     type: string
-    default: 'EXT:corpusvitrearum/Resources/Public/Images/favicon-small.svg'
+    default: 'EXT:chf_base/Resources/Public/Images/favicon-main.svg'
+  chf.templates.favicon.mask:
+    label: 'Masked favicon path'
+    description: 'Path to an icon file to use as the masked favicon of a page'
+    type: string
+    default: 'EXT:chf_base/Resources/Public/Images/favicon-mask.svg'
+  chf.templates.favicon.app:
+    label: 'App favicon path'
+    description: 'Path to an icon file to use as the app favicon of a page'
+    type: string
+    default: 'EXT:chf_base/Resources/Public/Images/favicon-app.png'
+  chf.templates.color.highlight:
+    label: 'Highlight color'
+    description: 'Hex code of the highlight color'
+    type: color
+    default: '#b21527'
   chf.templates.serviceFolder:
     label: 'Service folder'
     description: 'Page ID of a folder that contains service content like a privacy page'

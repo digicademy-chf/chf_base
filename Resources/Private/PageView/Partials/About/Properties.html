@@ -47,9 +47,7 @@
                         <dd>
                             <f:if condition="{page.pageRecord.abstract}">
                                 <f:then>{page.pageRecord.abstract}</f:then>
-                                <f:else>
-                                    <f:if condition="{page.pageRecord.description}">{page.pageRecord.description}</f:if>
-                                </f:else>
+                                <f:else>{page.pageRecord.description}</f:else>
                             </f:if>
                         </dd>
                     </div>
