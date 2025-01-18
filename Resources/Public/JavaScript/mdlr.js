@@ -535,7 +535,7 @@ const headerbars = mdlrElements('.mdlr-variant-headerbar');
 
 // Set up observer
 const headerbarOptions = {
-    rootMargin: '25px 0px 0px 0px',
+    rootMargin: '0px 0px 0px 0px',
     threshold: 1
 }
 
