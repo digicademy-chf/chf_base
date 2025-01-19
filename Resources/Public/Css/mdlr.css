@@ -2329,7 +2329,12 @@ dialog.mdlr-modal.mdlr-variant-active {
     .mdlr-pattern-back {
         position: absolute;
         top: calc(0.5 * var(--mdlr-spacing-padding-vertical));
-        left: calc(0.75 * var(--mdlr-spacing-margin));
+        left: var(--mdlr-spacing-margin);
+        min-height: calc(1.5 * var(--mdlr-spacing-padding-vertical) + var(--mdlr-font-main-height));
+    }
+
+    .mdlr-pattern-back > img {
+        margin: auto;
     }
 }
 
@@ -2423,6 +2428,10 @@ dialog.mdlr-modal.mdlr-variant-active {
     
     .mdlr-pattern-align-right-below-600 .mdlr-buttonrow.mdlr-variant-separate {
         margin-right: -0.5em;
+    }
+
+    .mdlr-pattern-back {
+        left: calc(0.75 * var(--mdlr-spacing-margin));
     }
 }
 

@@ -4,9 +4,14 @@ settings:
     description: 'Path to a page-view template structure for overrides of CHF templates'
     type: string
     default: ''
-  chf.templates.logo:
+  chf.templates.logo.main:
     label: 'Logo path'
     description: 'Path to a logo file to use in the header and footer of a page'
+    type: string
+    default: 'EXT:chf_base/Resources/Public/Images/logo-chf.svg'
+  chf.templates.logo.small:
+    label: 'Small logo path'
+    description: 'Path to a small logo file to use in the mobile views of a page'
     type: string
     default: 'EXT:chf_base/Resources/Public/Images/logo-chf.svg'
   chf.templates.favicon.main:

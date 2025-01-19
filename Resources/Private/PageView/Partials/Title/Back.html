@@ -1,17 +1,31 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <div class="mdlr-pattern-slot-a mdlr-pattern-align-left mdlr-pattern-align-middle mdlr-pattern-back">
         <f:for each="{rootlineMenu}" as="menuItem" iteration="index">
-            <f:if condition="{index.isFirst} && {menuItem.current} == 0">
-                <ul class="mdlr-buttonrow mdlr-variant-separate">
-                    <li>
-                        <f:link.page pageUid="{menuItem.data.uid}" class="mdlr-button mdlr-variant-texticon mdlr-variant-unobtrusive">
-                            <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <use href="#icon-back"/>
-                            </svg>
-                            <span><f:translate key="templates.title.back" extensionName="chf_base"/></span>
-                        </f:link.page>
-                    </li>
-                </ul>
+            <f:if condition="{index.cycle} == 1">
+                <f:then>
+                    <f:variable name="currentPage">{menuItem.link}</f:variable>
+                </f:then>
+                <f:else>
+                    <f:if condition="{index.cycle} == 2">
+                        <f:if condition="{menuItem.current} == 0 && {menuItem.link} != {currentPage}">
+                            <f:then>
+                                <ul class="mdlr-buttonrow mdlr-variant-separate">
+                                    <li>
+                                        <f:link.page pageUid="{menuItem.data.uid}" class="mdlr-button mdlr-variant-texticon mdlr-variant-unobtrusive">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                <use href="#icon-back"/>
+                                            </svg>
+                                            <span><f:translate key="templates.title.back" extensionName="chf_base"/></span>
+                                        </f:link.page>
+                                    </li>
+                                </ul>
+                            </f:then>
+                            <f:else>
+                                <img src="{f:uri.image(src: '{settings.chf.templates.logo.small}')}" class="mdlr-variant-tacit-above-900" alt="{f:if(condition: '{language.websiteTitle}', then: '{language.websiteTitle}', else: '{site.configuration.websiteTitle}')}" aria-hidden="true">
+                            </f:else>
+                        </f:if>
+                    </f:if>
+                </f:else>
             </f:if>
         </f:for>
     </div>
