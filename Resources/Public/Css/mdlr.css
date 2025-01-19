@@ -1385,6 +1385,11 @@ ul.mdlr-buttonrow.mdlr-variant-separate {
     gap: var(--mdlr-spacing-extralarge);
 }
 
+ol.mdlr-buttonrow.mdlr-variant-nowrap,
+ul.mdlr-buttonrow.mdlr-variant-nowrap {
+    flex-wrap: nowrap;
+}
+
 .mdlr-buttonrow:not(.mdlr-variant-separate) > li > a.mdlr-button,
 .mdlr-buttonrow:not(.mdlr-variant-separate) > li > button {
     border-radius: 0;
@@ -1404,30 +1409,38 @@ ul.mdlr-buttonrow.mdlr-variant-separate {
 
 /* Viewswitchers */
 
-.mdlr-viewswitcher {
+ol.mdlr-viewswitcher,
+ul.mdlr-viewswitcher {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.mdlr-viewswitcher a {
+ol.mdlr-viewswitcher > li,
+ul.mdlr-viewswitcher > li {
+    overflow: hidden;
+}
+
+ol.mdlr-viewswitcher > li > a,
+ul.mdlr-viewswitcher > li > a {
     position: relative;
     display: block;
     padding: calc(0.75 * var(--mdlr-spacing-padding-vertical)) calc(0.5 * var(--mdlr-spacing-padding-horizontal));
     transform: translateY(var(--mdlr-font-main-offset));
     color: var(--mdlr-color-light-text);
-    text-align: center;
     text-decoration: none;
     white-space: nowrap;
-    text-overflow: ellipsis;
+    text-overflow: '.';
     overflow: hidden;
 }
 
-.mdlr-viewswitcher a.mdlr-variant-active {
+ol.mdlr-viewswitcher > li > a.mdlr-variant-active,
+ul.mdlr-viewswitcher > li > a.mdlr-variant-active {
     font-weight: var(--mdlr-font-main-emphasis);
 }
 
-.mdlr-viewswitcher a::after {
+ol.mdlr-viewswitcher > li > a::after,
+ul.mdlr-viewswitcher > li > a::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -1439,20 +1452,24 @@ ul.mdlr-buttonrow.mdlr-variant-separate {
     transition: var(--mdlr-transition-change);
 }
 
-.mdlr-viewswitcher a:hover::after {
+ol.mdlr-viewswitcher > li > a:hover::after,
+ul.mdlr-viewswitcher > li > a:hover::after {
     border-color: var(--mdlr-color-accent);
 }
 
-.mdlr-viewswitcher a:active::after {
+ol.mdlr-viewswitcher > li > a:active::after,
+ul.mdlr-viewswitcher > li > a:active::after {
     border-color: var(--mdlr-color-accent-text);
     transition: var(--mdlr-transition-click);
 }
 
-.mdlr-viewswitcher a.mdlr-variant-active::after {
+ol.mdlr-viewswitcher > li > a.mdlr-variant-active::after,
+ul.mdlr-viewswitcher > li > a.mdlr-variant-active::after {
     border-color: var(--mdlr-color-highlight);
 }
 
-.mdlr-viewswitcher a:focus-visible {
+ol.mdlr-viewswitcher > li > a:focus-visible,
+ul.mdlr-viewswitcher > li > a:focus-visible {
     border-radius: var(--mdlr-spacing-outlineradius);
     outline: var(--mdlr-color-highlight) var(--mdlr-spacing-medium) solid;
     outline-offset: var(--mdlr-spacing-medium);
@@ -1460,24 +1477,18 @@ ul.mdlr-buttonrow.mdlr-variant-separate {
 
 @supports not selector( :focus-visible ) { /* Duplicate of the above, which is only supported in Safari since version 15.4 */
 
-    .mdlr-viewswitcher a:focus {
+    ol.mdlr-viewswitcher > li > a:focus,
+    ul.mdlr-viewswitcher > li > a:focus {
         border-radius: var(--mdlr-spacing-outlineradius);
         outline: var(--mdlr-color-highlight) var(--mdlr-spacing-medium) solid;
         outline-offset: var(--mdlr-spacing-medium);
     }
 }
 
-@media screen and (min-width: 901px) and (max-width: 1000px) {
-
-    .mdlr-viewswitcher a {
-        padding-left: calc(0.325 * var(--mdlr-spacing-padding-horizontal));
-        padding-right: calc(0.325 * var(--mdlr-spacing-padding-horizontal));
-    }
-}
-
 @media screen and (max-width: 900px) {
 
-    .mdlr-viewswitcher {
+    ol.mdlr-viewswitcher,
+    ul.mdlr-viewswitcher {
         position: fixed;
         left: 0;
         bottom: 0;
@@ -1486,45 +1497,21 @@ ul.mdlr-buttonrow.mdlr-variant-separate {
         -webkit-backdrop-filter: var(--mdlr-color-light-backdrop-filter);
         backdrop-filter: var(--mdlr-color-light-backdrop-filter);
         box-shadow: var(--mdlr-shadow-flat);
-        padding: calc(0.5 * var(--mdlr-spacing-padding-vertical)) 0;
+        padding: calc(0.5 * var(--mdlr-spacing-padding-vertical)) calc(0.5 * var(--mdlr-spacing-padding-horizontal));
+        justify-content: space-evenly;
+        overflow-x: scroll;
         transition: var(--mdlr-transition-elevate);
         z-index: 10000;
     }
 
-    .mdlr-viewswitcher:hover {
+    ol.mdlr-viewswitcher:hover,
+    ul.mdlr-viewswitcher:hover {
         box-shadow: var(--mdlr-shadow-regular);
     }
-}
 
-@media screen and (max-width: 600px) {
-
-    .mdlr-viewswitcher {
-        font-size: calc(0.85 * var(--mdlr-font-main-size));
-    }
-
-    .mdlr-viewswitcher a {
-        padding-left: calc(0.325 * var(--mdlr-spacing-padding-horizontal));
-        padding-right: calc(0.325 * var(--mdlr-spacing-padding-horizontal));
-    }
-
-    .mdlr-viewswitcher a::after {
-        margin-top: 2em;
-    }
-}
-
-@media screen and (max-width: 450px) {
-
-    .mdlr-viewswitcher {
-        font-size: calc(0.75 * var(--mdlr-font-main-size));
-    }
-
-    .mdlr-viewswitcher a {
-        padding-left: calc(0.3 * var(--mdlr-spacing-padding-horizontal));
-        padding-right: calc(0.3 * var(--mdlr-spacing-padding-horizontal));
-    }
-
-    .mdlr-viewswitcher a::after {
-        margin-top: 2.15em;
+    ol.mdlr-viewswitcher > li,
+    ul.mdlr-viewswitcher > li {
+        display: inline-block;
     }
 }
 
