@@ -79,6 +79,11 @@
         <meta property="og:site_name" content="{f:if(condition: '{language.websiteTitle}', then: '{language.websiteTitle}', else: '{site.configuration.websiteTitle}')}">
 
         <!--Serialisations-->
+        <link rel="alternate" type="application/ld+json" href="{f:uri.page(pageType: '6024975381')}" title="{f:translate(key: 'templates.generic.retrieve.jsonld.plain', extensionName: 'chf_base')}">
+        <link rel="alternate" type="text/turtle" href="{f:uri.page(pageType: '2867941442')}" title="{f:translate(key: 'templates.generic.retrieve.turtle.plain', extensionName: 'chf_base')}">
+        <link rel="alternate" type="application/rdf+xml" href="{f:uri.page(pageType: '1295536366')}" title="{f:translate(key: 'templates.generic.retrieve.rdfxml.plain', extensionName: 'chf_base')}">
+        <link rel="alternate" type="application/tei+xml" href="{f:uri.page(pageType: '9631552583')}" title="{f:translate(key: 'templates.generic.retrieve.teixml.plain', extensionName: 'chf_base')}">
+
         <!--Embedded JSON-LD-->
     </chfbase:headData>
 </html>
