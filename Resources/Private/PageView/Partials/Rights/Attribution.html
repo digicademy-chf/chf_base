@@ -1,0 +1,38 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <dl class="mdlr-attribution">
+        <!--<div>
+            <dt><f:format.raw><f:translate key="templates.about.urn" extensionName="chf_base"/></f:format.raw></dt>
+            <dd><f:link.page class="mdlr-variant-inherit mdlr-function-copy" data-target="{f:uri.page(absolute: 'true')}" data-success="{f:translate(key: 'templates.generic.copy.urn.success', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.generic.copy.urn.failure', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.generic.copy.urn.hint', extensionName: 'chf_base')}" rel="canonical"><f:uri.page absolute="true"/></f:link.page></dd>
+        </div>
+        <div>
+            <dt><f:translate key="templates.about.permalink" extensionName="chf_base"/></dt>
+            <dd><f:link.page class="mdlr-variant-inherit mdlr-function-copy" data-target="{f:uri.page(absolute: 'true')}" data-success="{f:translate(key: 'templates.generic.copy.permalink.success', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.generic.copy.permalink.failure', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.generic.copy.permalink.hint', extensionName: 'chf_base')}" rel="canonical"><f:uri.page absolute="true"/></f:link.page></dd>
+        </div>-->
+        <div>
+            <dt><f:format.raw><f:translate key="templates.about.url" extensionName="chf_base"/></f:format.raw></dt>
+            <dd><f:link.page class="mdlr-variant-inherit mdlr-function-copy" data-target="{f:uri.page(absolute: 'true')}" data-success="{f:translate(key: 'templates.generic.copy.url.success', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.generic.copy.url.failure', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.generic.copy.url.hint', extensionName: 'chf_base')}" rel="canonical"><f:uri.page absolute="true"/></f:link.page></dd>
+        </div>
+        <!--<div>
+            <dt><f:translate key="templates.main.rights.credit" extensionName="chf_base"/></dt>
+            <dd>Credit string (role.allContent)</dd>
+        </div>
+        <div>
+            <dt><f:translate key="object.abstractRelation.role.metadata" extensionName="chf_base"/></dt>
+            <dd>Author, link to licence</dd>
+        </div>
+        <div>
+            <dt><f:translate key="object.abstractRelation.role.text" extensionName="chf_base"/></dt>
+            <dd>Author, link to licence</dd>
+        </div>
+        <div>
+            <dt><f:translate key="object.abstractRelation.role.media" extensionName="chf_base"/></dt>
+            <dd>Author, link to licence</dd>
+        </div>-->
+        <f:if condition="{page.pageRecord.author}">
+            <div>
+                <dt><f:translate key="templates.about.author" extensionName="chf_base"/></dt>
+                <dd>{page.pageRecord.author}</dd>
+            </div>
+        </f:if>
+    </dl>
+</html>

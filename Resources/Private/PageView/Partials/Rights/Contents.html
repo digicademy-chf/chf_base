@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <li class="mdlr-dropdown-wrapper">
+        <button id="main-right-toc-handle" class="mdlr-variant-texticon mdlr-variant-round mdlr-function-dropdown" aria-controls="main-right-toc-content" aria-haspopup="true" aria-expanded="false">
+            <span><f:translate key="templates.main.rights.toc" extensionName="chf_base"/></span>
+            <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <use href="#icon-down"/>
+            </svg>
+        </button>
+        <ul class="mdlr-dropdown mdlr-variant-simplehierarchy" id="main-right-toc-content" role="listbox" aria-labelledby="title-download-handle" tabindex="-1">
+            <f:for each="{contentElements.main.records}" as="contentElement" iteration="index">
+                <f:if condition="{contentElement.header}">
+                    <li>
+                        <f:switch expression="{contentElement.header_layout}">
+                            <f:case value="100"/>
+                            <f:case value="4">
+                                <a href="#c{contentElement.uid}" class="mdlr-button mdlr-variant-mini mdlr-variant-unobtrusive mdlr-variant-indent-1">
+                                    <span>{contentElement.header}</span>
+                                </a>
+                            </f:case>
+                            <f:case value="5">
+                                <a href="#c{contentElement.uid}" class="mdlr-button mdlr-variant-mini mdlr-variant-unobtrusive mdlr-variant-indent-2">
+                                    <span>{contentElement.header}</span>
+                                </a>
+                            </f:case>
+                            <f:defaultCase>
+                                <a href="#c{contentElement.uid}" class="mdlr-button mdlr-variant-mini mdlr-variant-unobtrusive">
+                                    <span>{contentElement.header}</span>
+                                </a>
+                            </f:defaultCase>
+                        </f:switch>
+                    </li>
+                </f:if>
+            </f:for>
+        </ul>
+    </li>
+</html>
