@@ -1414,9 +1414,13 @@
                 <source>Accessed %s</source>
                 <target>Letzter Zugriff %s</target>
             </trans-unit>
-            <trans-unit id="templates.generic.type.page" resname="templates.generic.type.page" approved="yes">
-                <source>page</source>
-                <target>Seite</target>
+            <trans-unit id="templates.generic.hierarchy.toggle" resname="templates.generic.hierarchy.toggle" approved="yes">
+                <source>Expand or collapse</source>
+                <target>Auf- oder zuklappen</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.hierarchy.item" resname="templates.generic.hierarchy.item" approved="yes">
+                <source>Item</source>
+                <target>Eintrag</target>
             </trans-unit>
             <trans-unit id="templates.generic.copy.urn" resname="templates.generic.copy.urn" approved="yes">
                 <source><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]></source>
@@ -1550,29 +1554,29 @@
                 <source>Rights statement</source>
                 <target>Rechteangabe</target>
             </trans-unit>
-            <trans-unit id="templates.main.share" resname="templates.main.share" approved="yes">
-                <source>Share</source>
-                <target>Teilen</target>
+            <trans-unit id="templates.main.rights.toc" resname="templates.main.rights.toc" approved="yes">
+                <source>Contents</source>
+                <target>Inhalt</target>
             </trans-unit>
-            <trans-unit id="templates.main.share.share" resname="templates.main.share.share" approved="yes">
-                <source>Share %s</source>
-                <target>%s teilen</target>
+            <trans-unit id="templates.main.rights.credit" resname="templates.main.rights.credit" approved="yes">
+                <source>Rights</source>
+                <target>Rechte</target>
             </trans-unit>
-            <trans-unit id="templates.main.share.copy" resname="templates.main.share.copy" approved="yes">
+            <trans-unit id="templates.main.rights.copy" resname="templates.main.rights.copy" approved="yes">
                 <source>Copy rights statement</source>
                 <target>Rechteangabe kopieren</target>
             </trans-unit>
-            <trans-unit id="templates.main.share.copy.success" resname="templates.main.share.copy.success" approved="yes">
+            <trans-unit id="templates.main.rights.copy.success" resname="templates.main.rights.copy.success" approved="yes">
                 <source>Rights statement copied successfully</source>
                 <target>Rechteangabe erfolgreich kopiert</target>
             </trans-unit>
-            <trans-unit id="templates.main.share.copy.failure" resname="templates.main.share.copy.failure" approved="yes">
+            <trans-unit id="templates.main.rights.copy.failure" resname="templates.main.rights.copy.failure" approved="yes">
                 <source>Something went wrong</source>
                 <target>Das hat leider nicht geklappt</target>
             </trans-unit>
-            <trans-unit id="templates.main.jump" resname="templates.main.jump" approved="yes">
-                <source>Table of contents</source>
-                <target>Inhaltsverzeichnis</target>
+            <trans-unit id="templates.main.rights.share" resname="templates.main.rights.share" approved="yes">
+                <source>Share</source>
+                <target>Teilen</target>
             </trans-unit>
             <trans-unit id="templates.main.content" resname="templates.main.content" approved="yes">
                 <source>Content</source>

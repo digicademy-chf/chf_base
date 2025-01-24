@@ -1,42 +1,9 @@
 /*
-    Name: Mdlr
-    Description: Atomic web frontend library for use in accessible, responsive web apps
-    Author: Jonatan Jalle Steller
-    Version: 0.5.0
-    Licence: MIT
+This file is part of the MDLR web frontend library v0.5.0.
 
-    The interface library is designed to work with semantic HTML code.
-    Each of the following sections controls a single component.
+The atomic interface library is designed to work with semantic HTML for
+accessible, responsive web apps. It is MIT licenced.
 */
-
-
-/*
-# Basics ######################################################################
-*/
-
-// Identify elements
-function mdlrElements(selector) {
-    return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
-}
-
-
-/*
-# Web app #####################################################################
-*/
-
-// Register service worker
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('serviceworker.js')
-
-    // Successful
-    .then(function(registration) {
-        //console.log('Service worker registration succeeded:', registration);
-
-    // Unsuccessful attempt
-    }, function(error) {
-        //console.log('Service worker registration failed:', error);
-    });
-}
 
 /*
 // Show a functioning install button if the app is not installed yet
@@ -83,64 +50,6 @@ window.addEventListener( 'beforeinstallprompt', (e) => {
         deferredPrompt = null;
     } );
 } );*/
-
-
-/*
-# Back, up, and PDF ###########################################################
-*/
-
-// Variable
-const backButtons = mdlrElements('.mdlr-function-back');
-const upButtons = mdlrElements('.mdlr-function-up');
-const pdfButtons = mdlrElements('.mdlr-function-pdf');
-
-// Activate back buttons
-if(backButtons) {
-    backButtons.forEach(function(backButton) {
-        backButton.addEventListener('click', function(e) {
-            history.back();
-            e.preventDefault();
-        });
-        backButton.addEventListener('keydown', function(e) {
-            if(e.code == 'Enter' || e.code == 'Space') {
-                history.back();
-                e.preventDefault();
-            }
-        });
-    });
-}
-
-// Activate up buttons
-if(upButtons) {
-    upButtons.forEach(function(upButton) {
-        upButton.addEventListener('click', function(e) {
-            window.scrollTo(0, 0);
-            e.preventDefault();
-        });
-        upButton.addEventListener('keydown', function(e) {
-            if(e.code == 'Enter' || e.code == 'Space') {
-                window.scrollTo(0, 0);
-                e.preventDefault();
-            }
-        });
-    });
-}
-
-// Activate PDF buttons
-if(pdfButtons) {
-    pdfButtons.forEach(function(pdfButton) {
-        pdfButton.addEventListener('click', function(e) {
-            window.print();
-            e.preventDefault();
-        });
-        pdfButton.addEventListener('keydown', function(e) {
-            if(e.code == 'Enter' || e.code == 'Space') {
-                window.print();
-                e.preventDefault();
-            }
-        });
-    });
-}
 
 
 /*
@@ -199,66 +108,6 @@ function mdlrFullscreen(clickedElement) {
 		console.log('Fullscreen API is not supported.');
 	}
 };*/
-
-
-/*
-# Dropdown ####################################################################
-*/
-
-// Variable
-const dropdownHandles = mdlrElements('.mdlr-function-dropdown');
-
-// Activate all dropdown handles
-if(dropdownHandles) {
-    dropdownHandles.forEach(function(dropdownHandle) {
-
-        // On click
-        dropdownHandle.addEventListener('click', function(e) {
-            mdlrDropdown(e.currentTarget);
-            e.preventDefault();
-        });
-
-        // On enter or space keypresses
-        dropdownHandle.addEventListener('keydown', function(e) {
-            if(e.code == 'Enter' || e.code == 'Space') {
-                mdlrDropdown(e.currentTarget);
-                e.preventDefault();
-            }
-        });
-    });
-}
-
-// Toggle a clicked dropdown handle and content
-function mdlrDropdown(handle) {
-    if(handle) {
-
-        // Identify content element
-        content = document.getElementById(handle.getAttribute('aria-controls'));
-
-        // If dropdown is open, close it
-        if(handle.classList.contains('mdlr-variant-active') ) {
-            handle.setAttribute('aria-expanded', 'false');
-            handle.classList.remove('mdlr-variant-active');
-            content.classList.remove('mdlr-variant-active');
-        }
-
-        // If dropdown is closed, open it
-        else {
-            handle.setAttribute('aria-expanded', 'true');
-            handle.classList.add('mdlr-variant-active');
-            content.classList.add('mdlr-variant-active');
-
-            // Set a one-time listener to close the dropdown on the next click anywhere in the document
-            setTimeout(function() {
-                document.addEventListener('click', function(e) {
-                    handle.setAttribute('aria-expanded', 'false');
-                    handle.classList.remove('mdlr-variant-active');
-                    content.classList.remove('mdlr-variant-active');
-                }, {once: true});
-            }, 300);
-        }
-    }
-}
 
 
 /*
@@ -526,6 +375,84 @@ function mdlrReferenceCloseConditions(e) {
 
 
 
+
+
+
+/*
+# Basics ######################################################################
+*/
+
+// Identify elements
+function mdlrElements(selector) {
+    return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
+}
+
+/*
+# Web app #####################################################################
+*/
+
+// Register service worker
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('mdlr-sw.js')
+}
+
+/*
+# Back, up, and PDF ###########################################################
+*/
+
+// Variable
+const backButtons = mdlrElements('.mdlr-function-back');
+const upButtons = mdlrElements('.mdlr-function-up');
+const pdfButtons = mdlrElements('.mdlr-function-pdf');
+
+// Activate back buttons
+if(backButtons) {
+    backButtons.forEach(function(backButton) {
+        backButton.addEventListener('click', function(e) {
+            history.back();
+            e.preventDefault();
+        });
+        backButton.addEventListener('keydown', function(e) {
+            if(e.code == 'Enter' || e.code == 'Space') {
+                history.back();
+                e.preventDefault();
+            }
+        });
+    });
+}
+
+// Activate up buttons
+if(upButtons) {
+    upButtons.forEach(function(upButton) {
+        upButton.addEventListener('click', function(e) {
+            window.scrollTo(0, 0);
+            e.preventDefault();
+        });
+        upButton.addEventListener('keydown', function(e) {
+            if(e.code == 'Enter' || e.code == 'Space') {
+                window.scrollTo(0, 0);
+                e.preventDefault();
+            }
+        });
+    });
+}
+
+// Activate PDF buttons
+if(pdfButtons) {
+    pdfButtons.forEach(function(pdfButton) {
+        pdfButton.addEventListener('click', function(e) {
+            window.print();
+            e.preventDefault();
+        });
+        pdfButton.addEventListener('keydown', function(e) {
+            if(e.code == 'Enter' || e.code == 'Space') {
+                window.print();
+                e.preventDefault();
+            }
+        });
+    });
+}
+
 /*
 # Headerbars ##################################################################
 */
@@ -619,6 +546,166 @@ function mdlrToggle(clickedElement) {
             else {
                 element.classList.add(toggleClass);
                 clickedElement.classList.add(toggleClass);
+            }
+        }
+    }
+}
+
+/*
+# Dropdown ####################################################################
+*/
+
+// Variable
+const dropdowns = mdlrElements('.mdlr-function-dropdown');
+const dropdownClass = 'mdlr-variant-active';
+var dropdownTransition = 200;
+
+// Calculate CSS transition duration
+if(dropdowns) {
+    dropdownTransition = (parseFloat(window.getComputedStyle(dropdowns[0]).transitionDuration)) * 1000;
+}
+
+// Activate all dropdown handles
+if(dropdowns) {
+    dropdowns.forEach(function(dropdown) {
+
+        // On click
+        dropdown.addEventListener('click', function(e) {
+            mdlrDropdown(e.currentTarget);
+            e.preventDefault();
+        });
+
+        // On enter or space keypresses
+        dropdown.addEventListener('keydown', function(e) {
+            if(e.code == 'Enter' || e.code == 'Space') {
+                mdlrDropdown(e.currentTarget);
+                e.preventDefault();
+            }
+        });
+    });
+}
+
+// Toggle a clicked dropdown handle and element
+function mdlrDropdown(dropdown) {
+    if(dropdown) {
+
+        // If dropdown is open, close it
+        if(dropdown.classList.contains(dropdownClass) ) {
+            mdlrDropdownClose();
+        }
+
+        // If dropdown is closed, open it
+        else {
+            mdlrDropdownClose();
+            setTimeout(function() {
+
+                // Identify content element
+                const element = document.getElementById(dropdown.getAttribute('aria-controls'));
+
+                // Open dropdown
+                mdlrDropdownOpen(dropdown, element)
+
+                // Set one-time listeners for closing the dropdown (click, swipe, keypress)
+                setTimeout(function() {
+                    document.addEventListener('click', mdlrDropdownCloseConditions);
+                    window.addEventListener('touchstart', mdlrDropdownCloseConditions);
+                    window.addEventListener('keydown', mdlrDropdownCloseConditions);
+                }, dropdownTransition);
+            }, dropdownTransition);
+        }
+    }
+}
+
+// Open specific dropdown
+function mdlrDropdownOpen(dropdown, element) {
+    dropdown.setAttribute('aria-expanded', 'true');
+    dropdown.classList.add(dropdownClass);
+    element.classList.add(dropdownClass);
+}
+
+// Close all dropdowns
+function mdlrDropdownClose() {
+    dropdowns.forEach(function(dropdown) {
+
+        // Identify content element
+        const element = document.getElementById(dropdown.getAttribute('aria-controls'));
+
+        // Close dropdown handle and content
+        dropdown.setAttribute('aria-expanded', 'false');
+        dropdown.classList.remove(dropdownClass);
+        element.classList.remove(dropdownClass);
+
+        // Remove unnecessary listeners for closing the dropdown (click, swipe, keypress)
+        document.removeEventListener('click', mdlrDropdownCloseConditions);
+        window.removeEventListener('touchstart', mdlrDropdownCloseConditions);
+        window.removeEventListener('keydown', mdlrDropdownCloseConditions);
+    });
+}
+
+// Close conditions for listeners
+function mdlrDropdownCloseConditions(e) {
+
+    // Check for 'escape' keypress
+    if(e.code) {
+        if(e.code == 'Escape') {
+            mdlrDropdownClose();
+            e.preventDefault();
+        }
+    }
+
+    // Check if click/swipe is outside focus element
+    else {
+        if(! e.target.closest('.mdlr-dropdown')) {
+            mdlrDropdownClose();
+            e.preventDefault();
+        }
+    }
+}
+
+/*
+# Hierarchy ###################################################################
+*/
+
+// Variable
+const hierarchies = mdlrElements('.mdlr-function-hierarchy');
+
+// Activate all toggles
+if(hierarchies) {
+    hierarchies.forEach(function(hierarchy) {
+        hierarchy.addEventListener('click', function(e) {
+            mdlrHierarchy(e.currentTarget);
+            e.preventDefault();
+        });
+        hierarchy.addEventListener('keydown', function(e) {
+            if(e.code == 'Enter' || e.code == 'Space') {
+                mdlrHierarchy(e.currentTarget);
+                e.preventDefault();
+            }
+        });
+    });
+}
+
+// Toggle display of an element
+function mdlrHierarchy(clickedElement) {
+    if(clickedElement) {
+
+        // Get toggle data
+        const hierarchyClass = 'mdlr-variant-active';
+        const element = clickedElement.parentElement.parentElement.querySelector('ul.mdlr-variant-ondemand');
+
+        // Toggle CSS class
+        if(element) {
+
+            // Remove
+            if(element.classList.contains(hierarchyClass)) {
+                element.classList.remove(hierarchyClass);
+                clickedElement.classList.remove(hierarchyClass);
+            }
+
+            // Add
+            else {
+                element.classList.add(hierarchyClass);
+                clickedElement.classList.add(hierarchyClass);
             }
         }
     }

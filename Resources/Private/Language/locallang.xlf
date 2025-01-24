@@ -1067,8 +1067,11 @@
             <trans-unit id="templates.generic.accessed" resname="templates.generic.accessed">
                 <source>Accessed %s</source>
             </trans-unit>
-            <trans-unit id="templates.generic.type.page" resname="templates.generic.type.page">
-                <source>page</source>
+            <trans-unit id="templates.generic.hierarchy.toggle" resname="templates.generic.hierarchy.toggle">
+                <source>Expand or collapse</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.hierarchy.item" resname="templates.generic.hierarchy.item">
+                <source>Item</source>
             </trans-unit>
             <trans-unit id="templates.generic.copy.urn" resname="templates.generic.copy.urn">
                 <source><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]></source>
@@ -1169,23 +1172,23 @@
             <trans-unit id="templates.main.rights" resname="templates.main.rights">
                 <source>Rights statement</source>
             </trans-unit>
-            <trans-unit id="templates.main.share" resname="templates.main.share">
-                <source>Share</source>
+            <trans-unit id="templates.main.rights.toc" resname="templates.main.rights.toc">
+                <source>Contents</source>
             </trans-unit>
-            <trans-unit id="templates.main.share.share" resname="templates.main.share.share">
-                <source>Share %s</source>
+            <trans-unit id="templates.main.rights.credit" resname="templates.main.rights.credit">
+                <source>Rights</source>
             </trans-unit>
-            <trans-unit id="templates.main.share.copy" resname="templates.main.share.copy">
+            <trans-unit id="templates.main.rights.copy" resname="templates.main.rights.copy">
                 <source>Copy rights statement</source>
             </trans-unit>
-            <trans-unit id="templates.main.share.copy.success" resname="templates.main.share.copy.success">
+            <trans-unit id="templates.main.rights.copy.success" resname="templates.main.rights.copy.success">
                 <source>Rights statement copied successfully</source>
             </trans-unit>
-            <trans-unit id="templates.main.share.copy.failure" resname="templates.main.share.copy.failure">
+            <trans-unit id="templates.main.rights.copy.failure" resname="templates.main.rights.copy.failure">
                 <source>Something went wrong</source>
             </trans-unit>
-            <trans-unit id="templates.main.jump" resname="templates.main.jump">
-                <source>Table of contents</source>
+            <trans-unit id="templates.main.rights.share" resname="templates.main.rights.share">
+                <source>Share</source>
             </trans-unit>
             <trans-unit id="templates.main.content" resname="templates.main.content">
                 <source>Content</source>

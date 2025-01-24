@@ -62,7 +62,7 @@ page {
             }
             50 = page-content
             50 {
-                as = content
+                as = contentElements
             }
             60 = files
             60 {
@@ -72,13 +72,6 @@ page {
                     fieldName = media
                 }
             }
-            /*50 = database-query
-            50 {
-                as = mainContent
-                table = tt_content
-                orderBy = sorting
-                where = colPos = 0
-            }*/
         }
     }
     includeCSS {
