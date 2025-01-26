@@ -992,7 +992,7 @@
             </trans-unit>
             <!-- Plugin: Rest -->
             <trans-unit id="plugin.rest" resname="plugin.rest">
-                <source>Rest API</source>
+                <source>REST API</source>
             </trans-unit>
             <trans-unit id="plugin.rest.description" resname="plugin.rest.description">
                 <source>Simple API for CHF content</source>

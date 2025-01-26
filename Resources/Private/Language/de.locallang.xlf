@@ -1317,8 +1317,8 @@
             </trans-unit>
             <!-- Plugin: Rest -->
             <trans-unit id="plugin.rest" resname="plugin.rest" approved="yes">
-                <source>Rest API</source>
-                <target>Rest-Schnittstelle</target>
+                <source>REST API</source>
+                <target>REST-Schnittstelle</target>
             </trans-unit>
             <trans-unit id="plugin.rest.description" resname="plugin.rest.description" approved="yes">
                 <source>Simple API for CHF content</source>
