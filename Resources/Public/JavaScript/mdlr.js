@@ -60,7 +60,7 @@ window.addEventListener( 'beforeinstallprompt', (e) => {
 const fullscreenButtons = mdlrElements('.mdlr-function-fullscreen');
 
 // Activate fullscreen buttons
-if(fullscreenButtons) {
+if(fullscreenButtons.length > 0) {
     fullscreenButtons.forEach(function(fullscreenButton) {
         fullscreenButton.addEventListener('click', function(e) {
             mdlrFullscreen(e.currentTarget);
@@ -118,7 +118,7 @@ function mdlrFullscreen(clickedElement) {
 const timelineRegions = mdlrElements('.mdlr-function-timeline');
 
 // Activate all copy buttons
-if(timelineRegions) {
+if(timelineRegions.length > 0) {
     timelineRegions.forEach(function(timelineRegion) {
         timelineRegion.addEventListener('mouseover', function(e) {
             mdlrTimelineHighlight(e.currentTarget);
@@ -152,7 +152,7 @@ const infoButtons = mdlrElements('.mdlr-function-info');
 const infoPopovers = mdlrElements('.mdlr-info > ol > li');
 
 // Activate all info buttons
-if(infoButtons) {
+if(infoButtons.length > 0) {
     infoButtons.forEach(function(infoButton) {
         infoButton.addEventListener('click', function(e) {
             mdlrInfoOpen(e.currentTarget);
@@ -218,7 +218,7 @@ function mdlrInfoOpen(clickedElement) {
 function mdlrInfoClose() {
 
     // Close popovers
-    if(infoPopovers) {
+    if(infoPopovers.length > 0) {
         infoPopovers.forEach(function(infoPopover) {
             infoPopover.classList.remove('mdlr-variant-active');
         });
@@ -259,7 +259,7 @@ function mdlrInfoCloseConditions(e) {
 const referenceLinks = mdlrElements('.mdlr-function-reference');
 
 // Activate all reference links
-if(referenceLinks) {
+if(referenceLinks.length > 0) {
     referenceLinks.forEach(function(referenceLink) {
         referenceLink.addEventListener('click', function(e) {
             mdlrReferenceOpen(e.currentTarget);
@@ -406,7 +406,7 @@ const upButtons = mdlrElements('.mdlr-function-up');
 const pdfButtons = mdlrElements('.mdlr-function-pdf');
 
 // Activate back buttons
-if(backButtons) {
+if(backButtons.length > 0) {
     backButtons.forEach(function(backButton) {
         backButton.addEventListener('click', function(e) {
             history.back();
@@ -422,7 +422,7 @@ if(backButtons) {
 }
 
 // Activate up buttons
-if(upButtons) {
+if(upButtons.length > 0) {
     upButtons.forEach(function(upButton) {
         upButton.addEventListener('click', function(e) {
             window.scrollTo(0, 0);
@@ -438,7 +438,7 @@ if(upButtons) {
 }
 
 // Activate PDF buttons
-if(pdfButtons) {
+if(pdfButtons.length > 0) {
     pdfButtons.forEach(function(pdfButton) {
         pdfButton.addEventListener('click', function(e) {
             window.print();
@@ -501,7 +501,7 @@ headerbarTargets.forEach(function(headerbarTarget) {
 const toggles = mdlrElements('.mdlr-function-toggle');
 
 // Activate all toggles
-if(toggles) {
+if(toggles.length > 0) {
     toggles.forEach(function(toggle) {
         if(toggle.tagName == 'INPUT' && toggle.getAttribute('type') == 'checkbox') {
             toggle.addEventListener('change', function(e) {
@@ -561,12 +561,12 @@ const dropdownClass = 'mdlr-variant-active';
 var dropdownTransition = 200;
 
 // Calculate CSS transition duration
-if(dropdowns) {
+if(dropdowns.length > 0) {
     dropdownTransition = (parseFloat(window.getComputedStyle(dropdowns[0]).transitionDuration)) * 1000;
 }
 
 // Activate all dropdown handles
-if(dropdowns) {
+if(dropdowns.length > 0) {
     dropdowns.forEach(function(dropdown) {
 
         // On click
@@ -670,7 +670,7 @@ function mdlrDropdownCloseConditions(e) {
 const hierarchies = mdlrElements('.mdlr-function-hierarchy');
 
 // Activate all toggles
-if(hierarchies) {
+if(hierarchies.length > 0) {
     hierarchies.forEach(function(hierarchy) {
         hierarchy.addEventListener('click', function(e) {
             mdlrHierarchy(e.currentTarget);
@@ -722,12 +722,12 @@ const modalClosers = mdlrElements('.mdlr-function-modal-close');
 var modalTransition = 200;
 
 // Calculate CSS transition duration
-if(modals) {
+if(modals.length > 0) {
     modalTransition = (parseFloat(window.getComputedStyle(modals[0]).transitionDuration)) * 1000;
 }
 
 // Activate opener buttons in modals
-if(modalOpeners) {
+if(modalOpeners.length > 0) {
     modalOpeners.forEach(function(modalOpener) {
         modalOpener.addEventListener('click', function(e) {
             mdlrModalOpen(e.currentTarget);
@@ -743,7 +743,7 @@ if(modalOpeners) {
 }
 
 // Activate close buttons in modals
-if(modalClosers) {
+if(modalClosers.length > 0) {
     modalClosers.forEach(function(modalCloser) {
         modalCloser.addEventListener('click', function(e) {
             mdlrModalClose();
@@ -852,12 +852,12 @@ const toastClosers = mdlrElements('.mdlr-function-toast-close');
 var toastTransition = 200;
 
 // Calculate CSS transition duration
-if(toasts) {
+if(toasts.length > 0) {
     toastTransition = (parseFloat(window.getComputedStyle(toasts[0]).transitionDuration)) * 1000;
 }
 
 // Activate all close buttons for toasts
-if(toastClosers) {
+if(toastClosers.length > 0) {
     toastClosers.forEach(function(toastCloser) {
         toastCloser.addEventListener('click', function(e) {
             mdlrToastClose();
@@ -929,7 +929,7 @@ function mdlrToastClose() {
 const copyButtons = mdlrElements('.mdlr-function-copy');
 
 // Activate all copy buttons
-if(copyButtons) {
+if(copyButtons.length > 0) {
     copyButtons.forEach(function(copyButton) {
         copyButton.addEventListener('click', function(e) {
             mdlrCopy(e.currentTarget);
@@ -984,7 +984,7 @@ function mdlrCopy(clickedElement) {
 const shareButtons = mdlrElements('.mdlr-function-share');
 
 // Activate all share buttons
-if(shareButtons) {
+if(shareButtons.length > 0) {
     shareButtons.forEach(function(shareButton) {
         shareButton.addEventListener('click', function(e) {
             mdlrShare(e.currentTarget);
@@ -1050,7 +1050,7 @@ async function mdlrShare(clickedElement) {
 const mastodonButtons = mdlrElements('.mdlr-function-mastodon');
 
 // Activate Mastodon share buttons
-if(mastodonButtons) {
+if(mastodonButtons.length > 0) {
     mastodonButtons.forEach(function(mastodonButton) {
         mastodonButton.addEventListener('click', function(e) {
             mdlrMastodon(e.currentTarget);
