@@ -30,7 +30,6 @@ use Digicademy\CHFLex\Domain\Model\PartOfSpeechTag;
 use Digicademy\CHFLex\Domain\Model\RelationTypeTag;
 use Digicademy\CHFLex\Domain\Model\SimilarityRelation;
 use Digicademy\CHFLex\Domain\Model\TranscriptionSchemeTag;
-use Digicademy\CHFMap\Domain\Model\VariantRelation;
 use Digicademy\CHFMedia\Domain\Model\FileGroup;
 use Digicademy\CHFPub\Domain\Model\PublicationRelation;
 
@@ -151,7 +150,7 @@ class AbstractResource extends AbstractBase
     /**
      * List of all relations compiled in this resource
      * 
-     * @var ?ObjectStorage<AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|VariantRelation|PublicationRelation>
+     * @var ?ObjectStorage<AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|PublicationRelation>
      */
     #[Lazy()]
     #[Cascade([
@@ -541,7 +540,7 @@ class AbstractResource extends AbstractBase
     /**
      * Get all relations
      *
-     * @return ObjectStorage<AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|VariantRelation|PublicationRelation>
+     * @return ObjectStorage<AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|PublicationRelation>
      */
     public function getAllRelations(): ?ObjectStorage
     {
@@ -551,7 +550,7 @@ class AbstractResource extends AbstractBase
     /**
      * Set all relations
      *
-     * @param ObjectStorage<AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|VariantRelation|PublicationRelation> $allRelations
+     * @param ObjectStorage<AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|PublicationRelation> $allRelations
      */
     public function setAllRelations(ObjectStorage $allRelations): void
     {
@@ -561,9 +560,9 @@ class AbstractResource extends AbstractBase
     /**
      * Add all relations
      *
-     * @param AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|VariantRelation|PublicationRelation $allRelations
+     * @param AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|PublicationRelation $allRelations
      */
-    public function addAllRelations(AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|VariantRelation|PublicationRelation $allRelations): void
+    public function addAllRelations(AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|PublicationRelation $allRelations): void
     {
         $this->allRelations?->attach($allRelations);
     }
@@ -571,9 +570,9 @@ class AbstractResource extends AbstractBase
     /**
      * Remove all relations
      *
-     * @param AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|VariantRelation|PublicationRelation $allRelations
+     * @param AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|PublicationRelation $allRelations
      */
-    public function removeAllRelations(AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|VariantRelation|PublicationRelation $allRelations): void
+    public function removeAllRelations(AuthorshipRelation|LocationRelation|AgentRelation|LicenceRelation|LinkRelation|SourceRelation|SimilarityRelation|LexicographicRelation|PublicationRelation $allRelations): void
     {
         $this->allRelations?->detach($allRelations);
     }
