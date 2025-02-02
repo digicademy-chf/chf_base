@@ -19,7 +19,6 @@ use Digicademy\CHFLex\Domain\Model\DictionaryEntry;
 use Digicademy\CHFLex\Domain\Model\EncyclopediaEntry;
 use Digicademy\CHFLex\Domain\Model\LexicographicResource;
 use Digicademy\CHFMap\Domain\Model\Feature;
-use Digicademy\CHFMap\Domain\Model\FeatureCollection;
 use Digicademy\CHFMap\Domain\Model\MapResource;
 use Digicademy\CHFMedia\Domain\Model\FileGroup;
 use Digicademy\CHFObject\Domain\Model\ObjectGroup;
@@ -39,10 +38,10 @@ class LinkRelation extends AbstractRelation
     /**
      * Record to connect a relation to
      * 
-     * @var Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume|LazyLoadingProxy|null
+     * @var Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume|null $record = null;
+    protected Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume|null $record = null;
 
     /**
      * URL that the link should point to
@@ -77,13 +76,13 @@ class LinkRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record
+     * @param Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record
      * @param string $url
      * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @param string $uuid
      * @return LinkRelation
      */
-    public function __construct(Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record, string $url, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $uuid)
+    public function __construct(Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record, string $url, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
 
@@ -95,9 +94,9 @@ class LinkRelation extends AbstractRelation
     /**
      * Get record
      * 
-     * @return Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume
+     * @return Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume
      */
-    public function getRecord(): Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume
+    public function getRecord(): Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume
     {
         if ($this->record instanceof LazyLoadingProxy) {
             $this->record->_loadRealInstance();
@@ -108,9 +107,9 @@ class LinkRelation extends AbstractRelation
     /**
      * Set record
      * 
-     * @param Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume
+     * @param Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume
      */
-    public function setRecord(Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FeatureCollection|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record): void
+    public function setRecord(Agent|Location|Period|BibliographicEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record): void
     {
         $this->record = $record;
     }

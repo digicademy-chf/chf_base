@@ -19,7 +19,6 @@ use Digicademy\CHFBib\Domain\Model\BibliographicResource;
 use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
 use Digicademy\CHFLex\Domain\Model\LexicographicResource;
 use Digicademy\CHFMap\Domain\Model\Feature;
-use Digicademy\CHFMap\Domain\Model\FeatureCollection;
 use Digicademy\CHFMap\Domain\Model\MapResource;
 use Digicademy\CHFObject\Domain\Model\SingleObject;
 use Digicademy\CHFObject\Domain\Model\ObjectGroup;
@@ -134,10 +133,10 @@ class Location extends AbstractHeritage
     /**
      * Feature to use as geodata of this location
      * 
-     * @var Feature|FeatureCollection|LazyLoadingProxy|null
+     * @var Feature|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected Feature|FeatureCollection|LazyLoadingProxy|null $geodata = null;
+    protected Feature|LazyLoadingProxy|null $geodata = null;
 
     /**
      * Map depicting this location
@@ -412,9 +411,9 @@ class Location extends AbstractHeritage
     /**
      * Get geodata
      * 
-     * @return Feature|FeatureCollection
+     * @return Feature
      */
-    public function getGeodata(): Feature|FeatureCollection
+    public function getGeodata(): Feature
     {
         if ($this->geodata instanceof LazyLoadingProxy) {
             $this->geodata->_loadRealInstance();
@@ -425,9 +424,9 @@ class Location extends AbstractHeritage
     /**
      * Set geodata
      * 
-     * @param Feature|FeatureCollection
+     * @param Feature
      */
-    public function setGeodata(Feature|FeatureCollection $geodata): void
+    public function setGeodata(Feature $geodata): void
     {
         $this->geodata = $geodata;
     }

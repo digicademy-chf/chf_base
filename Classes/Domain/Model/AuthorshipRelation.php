@@ -21,7 +21,6 @@ use Digicademy\CHFLex\Domain\Model\DictionaryEntry;
 use Digicademy\CHFLex\Domain\Model\EncyclopediaEntry;
 use Digicademy\CHFLex\Domain\Model\LexicographicResource;
 use Digicademy\CHFMap\Domain\Model\Feature;
-use Digicademy\CHFMap\Domain\Model\FeatureCollection;
 use Digicademy\CHFMap\Domain\Model\MapResource;
 use Digicademy\CHFMedia\Domain\Model\FileGroup;
 use Digicademy\CHFObject\Domain\Model\ObjectGroup;
@@ -41,10 +40,10 @@ class AuthorshipRelation extends AbstractRelation
     /**
      * Record to connect a relation to
      * 
-     * @var Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FeatureCollection|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume|LazyLoadingProxy|null
+     * @var Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FeatureCollection|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume|null $record = null;
+    protected Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume|null $record = null;
 
     /**
      * Contributors to relate to the record
@@ -75,13 +74,13 @@ class AuthorshipRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FeatureCollection|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume $record
+     * @param Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume $record
      * @param Agent $contributor
      * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @param string $uuid
      * @return AuthorshipRelation
      */
-    public function __construct(Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FeatureCollection|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume $record, Agent $contributor, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $uuid)
+    public function __construct(Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume $record, Agent $contributor, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $uuid)
     {
         parent::__construct($parentResource, $uuid);
         $this->initializeObject();
@@ -102,9 +101,9 @@ class AuthorshipRelation extends AbstractRelation
     /**
      * Get record
      * 
-     * @return Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FeatureCollection|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume
+     * @return Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume
      */
-    public function getRecord(): Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FeatureCollection|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume
+    public function getRecord(): Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume
     {
         if ($this->record instanceof LazyLoadingProxy) {
             $this->record->_loadRealInstance();
@@ -115,9 +114,9 @@ class AuthorshipRelation extends AbstractRelation
     /**
      * Set record
      * 
-     * @param Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FeatureCollection|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume
+     * @param Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume
      */
-    public function setRecord(Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FeatureCollection|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume $record): void
+    public function setRecord(Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume $record): void
     {
         $this->record = $record;
     }
