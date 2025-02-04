@@ -872,8 +872,8 @@ return [
         'addressStreetAddressNumberAddressZipAddressCity' => [
             'showitem' => 'address_street,address_number,--linebreak--,address_zip,address_city',
         ],
-        'geodataFloorPlan' => [
-            'showitem' => 'geodata,floor_lan,',
+        'coordinatesGeodataFloorPlan' => [
+            'showitem' => 'coordinates,--linebreak--,geodata,--linebreak--,floor_plan,',
         ],
         'objectObjectGroup' => [
             'showitem' => 'object,--linebreak--,object_group,',
@@ -915,7 +915,7 @@ return [
     'types' => [
         '0' => [
             'showitem' => 'type,--palette--;;nameAlternativeName,--palette--;;addressStreetAddressNumberAddressZipAddressCity,label,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.structured,--palette--;;geodataFloorPlan,location,--palette--;;objectObjectGroup,--palette--;;eventAgentRelation,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.structured,--palette--;;coordinatesGeodataFloorPlan,location,--palette--;;objectObjectGroup,--palette--;;eventAgentRelation,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.unstructured,--palette--;;contentElementFootnote,--palette--;;mediaFile,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.bibliography,--palette--;;sourceRelationLinkRelation,publication_relation,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;isTeaserIsHighlightIsHistoricalIsImaginary,--palette--;;parentLocationParentResource,--palette--;;iriUuidSameAs,

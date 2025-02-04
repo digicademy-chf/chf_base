@@ -9,15 +9,17 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
-use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
+use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
 use Digicademy\CHFBib\Domain\Model\BibliographicResource;
 use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
 use Digicademy\CHFLex\Domain\Model\LexicographicResource;
+use Digicademy\CHFMap\Domain\Model\Coordinates;
 use Digicademy\CHFMap\Domain\Model\Feature;
 use Digicademy\CHFMap\Domain\Model\MapResource;
 use Digicademy\CHFObject\Domain\Model\SingleObject;
@@ -131,6 +133,17 @@ class Location extends AbstractHeritage
     protected string $addressCity = '';
 
     /**
+     * Geolocation of this location
+     * 
+     * @var ?ObjectStorage<Coordinates>
+     */
+    #[Lazy()]
+    #[Cascade([
+        'value' => 'remove',
+    ])]
+    protected ?ObjectStorage $coordinates = null;
+
+    /**
      * Feature to use as geodata of this location
      * 
      * @var Feature|LazyLoadingProxy|null
@@ -141,10 +154,13 @@ class Location extends AbstractHeritage
     /**
      * Map depicting this location
      * 
-     * @var MapResource|LazyLoadingProxy|null
+     * @var FileReference|LazyLoadingProxy|null
      */
     #[Lazy()]
-    protected MapResource|LazyLoadingProxy|null $floorPlan = null;
+    #[Cascade([
+        'value' => 'remove',
+    ])]
+    protected FileReference|LazyLoadingProxy|null $floorPlan = null;
 
     /**
      * Room to list more specific locations
@@ -260,6 +276,7 @@ class Location extends AbstractHeritage
      */
     public function initializeObject(): void
     {
+        $this->coordinates ??= new ObjectStorage();
         $this->location ??= new ObjectStorage();
         $this->object ??= new ObjectStorage();
         $this->objectGroup ??= new ObjectStorage();
@@ -409,6 +426,55 @@ class Location extends AbstractHeritage
     }
 
     /**
+     * Get coordinates
+     *
+     * @return ObjectStorage<Coordinates>
+     */
+    public function getCoordinates(): ?ObjectStorage
+    {
+        return $this->coordinates;
+    }
+
+    /**
+     * Set coordinates
+     *
+     * @param ObjectStorage<Coordinates> $coordinates
+     */
+    public function setCoordinates(ObjectStorage $coordinates): void
+    {
+        $this->coordinates = $coordinates;
+    }
+
+    /**
+     * Add coordinates
+     *
+     * @param Coordinates $coordinates
+     */
+    public function addCoordinates(Coordinates $coordinates): void
+    {
+        $this->coordinates?->attach($coordinates);
+    }
+
+    /**
+     * Remove coordinates
+     *
+     * @param Coordinates $coordinates
+     */
+    public function removeCoordinates(Coordinates $coordinates): void
+    {
+        $this->coordinates?->detach($coordinates);
+    }
+
+    /**
+     * Remove all coordinates
+     */
+    public function removeAllCoordinates(): void
+    {
+        $coordinates = clone $this->coordinates;
+        $this->coordinates->removeAll($coordinates);
+    }
+
+    /**
      * Get geodata
      * 
      * @return Feature
@@ -434,9 +500,9 @@ class Location extends AbstractHeritage
     /**
      * Get floor plan
      * 
-     * @return MapResource
+     * @return FileReference
      */
-    public function getFloorPlan(): MapResource
+    public function getFloorPlan(): FileReference
     {
         if ($this->floorPlan instanceof LazyLoadingProxy) {
             $this->floorPlan->_loadRealInstance();
@@ -447,9 +513,9 @@ class Location extends AbstractHeritage
     /**
      * Set floor plan
      * 
-     * @param MapResource
+     * @param FileReference
      */
-    public function setFloorPlan(MapResource $floorPlan): void
+    public function setFloorPlan(FileReference $floorPlan): void
     {
         $this->floorPlan = $floorPlan;
     }
