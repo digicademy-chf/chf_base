@@ -872,55 +872,31 @@ return [
         'addressStreetAddressNumberAddressZipAddressCity' => [
             'showitem' => 'address_street,address_number,--linebreak--,address_zip,address_city',
         ],
-        'coordinatesGeodataFloorPlan' => [
-            'showitem' => 'coordinates,--linebreak--,geodata,--linebreak--,floor_plan,',
-        ],
-        'objectObjectGroup' => [
-            'showitem' => 'object,--linebreak--,object_group,',
-        ],
-        'eventAgentRelation' => [
-            'showitem' => 'event,--linebreak--,agent_relation,',
-        ],
-        'contentElementFootnote' => [
-            'showitem' => 'content_element,--linebreak--,footnote,',
-        ],
-        'mediaFile' => [
-            'showitem' => 'media,--linebreak--,file,',
-        ],
-        'sourceRelationLinkRelation' => [
-            'showitem' => 'source_relation,--linebreak--,link_relation,',
-        ],
         'isTeaserIsHighlightIsHistoricalIsImaginary' => [
             'showitem' => 'is_teaser,is_highlight,--linebreak--,is_historical,is_imaginary,',
         ],
         'parentLocationParentResource' => [
             'showitem' => 'parent_location,parent_resource,',
         ],
-        'iriUuidSameAs' => [
-            'showitem' => 'iri,uuid,--linebreak--,same_as,',
+        'iriUuid' => [
+            'showitem' => 'iri,uuid,',
         ],
-        'publicationDateRevisionDateRevisionNumberEditorialNote' => [
-            'showitem' => 'publication_date,revision_date,revision_number,--linebreak--,editorial_note,',
-        ],
-        'authorshipRelationLicenceRelation' => [
-            'showitem' => 'authorship_relation,--linebreak--,licence_relation,',
+        'publicationDateRevisionDateRevisionNumber' => [
+            'showitem' => 'publication_date,revision_date,revision_number,',
         ],
         'editorialStepsPublicationSteps' => [
             'showitem' => 'editorial_steps,publication_steps,',
-        ],
-        'importOriginImport' => [
-            'showitem' => 'import_origin,--linebreak--,import,',
         ],
     ],
     'types' => [
         '0' => [
             'showitem' => 'type,--palette--;;nameAlternativeName,--palette--;;addressStreetAddressNumberAddressZipAddressCity,label,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.structured,--palette--;;coordinatesGeodataFloorPlan,location,--palette--;;objectObjectGroup,--palette--;;eventAgentRelation,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.unstructured,--palette--;;contentElementFootnote,--palette--;;mediaFile,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.bibliography,--palette--;;sourceRelationLinkRelation,publication_relation,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;isTeaserIsHighlightIsHistoricalIsImaginary,--palette--;;parentLocationParentResource,--palette--;;iriUuidSameAs,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.editorial,--palette--;;publicationDateRevisionDateRevisionNumberEditorialNote,--palette--;;authorshipRelationLicenceRelation,--palette--;;editorialStepsPublicationSteps,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.import,--palette--;;importOriginImport,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.structured,coordinates,geodata,floor_plan,location,object,object_group,event,agent_relation,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.unstructured,content_element,footnote,media,file,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.bibliography,source_relation,link_relation,publication_relation,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;isTeaserIsHighlightIsHistoricalIsImaginary,--palette--;;parentLocationParentResource,--palette--;;iriUuid,same_as,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.editorial,--palette--;;publicationDateRevisionDateRevisionNumber,editorial_note,authorship_relation,licence_relation,--palette--;;editorialStepsPublicationSteps,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.import,import_origin,import,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,as_location_of_location_relation,',
         ],
     ],

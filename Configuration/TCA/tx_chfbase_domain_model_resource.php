@@ -537,32 +537,23 @@ return [
         ],
     ],
     'palettes' => [
-        'titleLangCodeDescription' => [
-            'showitem' => 'title,lang_code,--linebreak--,description,',
+        'titleLangCode' => [
+            'showitem' => 'title,lang_code,',
         ],
-        'titleLangCodeDescriptionGlossary' => [
-            'showitem' => 'title,lang_code,--linebreak--,description,glossary,',
+        'iriUuid' => [
+            'showitem' => 'iri,uuid,',
         ],
-        'iriUuidSameAs' => [
-            'showitem' => 'iri,uuid,--linebreak--,same_as,',
-        ],
-        'publicationDateRevisionDateRevisionNumberEditorialNote' => [
-            'showitem' => 'publication_date,revision_date,revision_number,--linebreak--,editorial_note,',
-        ],
-        'authorshipRelationLicenceRelation' => [
-            'showitem' => 'authorship_relation,--linebreak--,licence_relation,',
-        ],
-        'importOriginImportState' => [
-            'showitem' => 'import_origin,--linebreak--,import_state,',
+        'publicationDateRevisionDateRevisionNumber' => [
+            'showitem' => 'publication_date,revision_date,revision_number,',
         ],
     ],
     'types' => [
         '0' => [
-            'showitem' => 'type,--palette--;;titleLangCodeDescription,
+            'showitem' => 'type,--palette--;;titleLangCode,description,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.structured,all_agents,all_locations,all_periods,all_tags,all_keywords,all_relations,all_file_groups,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuidSameAs,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.editorial,--palette--;;publicationDateRevisionDateRevisionNumberEditorialNote,--palette--;;authorshipRelationLicenceRelation,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.import,--palette--;;importOriginImportState,',
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;iriUuid,same_as,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.editorial,--palette--;;publicationDateRevisionDateRevisionNumber,editorial_note,authorship_relation,licence_relation,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.import,import_origin,import_state,',
         ],
     ],
 ];

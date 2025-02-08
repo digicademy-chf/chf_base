@@ -440,34 +440,34 @@ return [
         'typeLabelType' => [
             'showitem' => 'type,label_type,',
         ],
-        'textCodeDescription' => [
-            'showitem' => 'text,code,--linebreak--,description,',
+        'textCode' => [
+            'showitem' => 'text,code,',
         ],
         'parentLabelTagParentResource' => [
             'showitem' => 'parent_label_tag,parent_resource,',
         ],
-        'iriUuidSameAs' => [
-            'showitem' => 'iri,uuid,--linebreak--,same_as,',
+        'iriUuid' => [
+            'showitem' => 'iri,uuid,',
         ],
     ],
     'types' => [
         '0' => [
-            'showitem' => 'type,--palette--;;textCodeDescription,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parent_resource,--palette--;;iriUuidSameAs,',
+            'showitem' => 'type,--palette--;;textCode,description,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parent_resource,--palette--;;iriUuid,same_as,',
         ],
         'labelTag' => [
-            'showitem' => '--palette--;;typeLabelType,--palette--;;textCodeDescription,keyword,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;parentLabelTagParentResource,--palette--;;iriUuidSameAs,
+            'showitem' => '--palette--;;typeLabelType,--palette--;;textCode,description,keyword,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;parentLabelTagParentResource,--palette--;;iriUuid,same_as,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,as_label_of_agent,as_label_of_location,as_label_of_period,as_label_of_feature,as_label_of_dictionary_entry,as_label_of_encyclopedia_entry,as_label_of_inflected_form,as_label_of_sense,as_label_of_pronunciation,as_label_of_example,as_label_of_bibliographic_entry,as_label_of_essay,as_label_of_volume,as_label_of_single_object,as_label_of_object_group,as_label_of_file_group,',
         ],
         'labelTypeTag' => [
-            'showitem' => 'type,--palette--;;textCodeDescription,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parent_resource,--palette--;;iriUuidSameAs,
+            'showitem' => 'type,--palette--;;textCode,description,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parent_resource,--palette--;;iriUuid,same_as,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,as_label_type_of_label_tag,',
         ],
         'licenceTag' => [
-            'showitem' => 'type,--palette--;;textCodeDescription,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parent_resource,--palette--;;iriUuidSameAs,
+            'showitem' => 'type,--palette--;;textCode,description,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,parent_resource,--palette--;;iriUuid,same_as,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.usage,as_licence_of_licence_relation,',
         ],
     ],
