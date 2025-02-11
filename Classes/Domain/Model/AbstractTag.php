@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
+use Digicademy\CHFBase\Domain\Model\Traits\IriTrait;
+use Digicademy\CHFBase\Domain\Model\Traits\UuidTrait;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\Annotation\Validate;
@@ -28,6 +30,9 @@ defined('TYPO3') or die();
  */
 class AbstractTag extends AbstractEntity
 {
+    use IriTrait;
+    use UuidTrait;
+
     /**
      * Record visible or not
      * 
@@ -99,20 +104,6 @@ class AbstractTag extends AbstractEntity
     protected ?ObjectStorage $parentResource = null;
 
     /**
-     * Unique identifier of this record
-     * 
-     * @var string
-     */
-    #[Validate([
-        'validator' => 'RegularExpression',
-        'options' => [
-            'regularExpression' => '^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$',
-            'errorMessage' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:validator.regularExpression.noUuid',
-        ],
-    ])]
-    protected string $uuid = '';
-
-    /**
      * Authoritative web address to identify an entity across the web
      * 
      * @var ?ObjectStorage<SameAs>
@@ -129,10 +120,11 @@ class AbstractTag extends AbstractEntity
      * @param string $text
      * @param string $code
      * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
+     * @param string $iri
      * @param string $uuid
      * @return AbstractTag
      */
-    public function __construct(string $text, string $code, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $uuid)
+    public function __construct(string $text, string $code, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $iri, string $uuid)
     {
         $this->initializeObject();
 
@@ -140,6 +132,7 @@ class AbstractTag extends AbstractEntity
         $this->setText($text);
         $this->setCode($code);
         $this->addParentResource($parentResource);
+        $this->setIri($iri);
         $this->setUuid($uuid);
     }
 
@@ -299,26 +292,6 @@ class AbstractTag extends AbstractEntity
     {
         $parentResource = clone $this->parentResource;
         $this->parentResource->removeAll($parentResource);
-    }
-
-    /**
-     * Get UUID
-     *
-     * @return string
-     */
-    public function getUuid(): string
-    {
-        return $this->uuid;
-    }
-
-    /**
-     * Set UUID
-     *
-     * @param string $uuid
-     */
-    public function setUuid(string $uuid): void
-    {
-        $this->uuid = $uuid;
     }
 
     /**

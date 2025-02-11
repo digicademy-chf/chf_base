@@ -80,12 +80,13 @@ class AgentRelation extends AbstractRelation
      * @param Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup $record
      * @param Agent $agent
      * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
+     * @param string $iri
      * @param string $uuid
      * @return AgentRelation
      */
-    public function __construct(Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup $record, Agent $agent, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $uuid)
+    public function __construct(Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup $record, Agent $agent, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $iri, string $uuid)
     {
-        parent::__construct($parentResource, $uuid);
+        parent::__construct($parentResource, $iri, $uuid);
         $this->initializeObject();
 
         $this->setType('agentRelation');

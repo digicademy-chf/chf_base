@@ -77,12 +77,13 @@ class LicenceRelation extends AbstractRelation
      * @param Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume $record
      * @param LicenceTag $licence
      * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
+     * @param string $iri
      * @param string $uuid
      * @return LicenceRelation
      */
-    public function __construct(Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume $record, LicenceTag $licence, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $uuid)
+    public function __construct(Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume $record, LicenceTag $licence, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $iri, string $uuid)
     {
-        parent::__construct($parentResource, $uuid);
+        parent::__construct($parentResource, $iri, $uuid);
         $this->initializeObject();
 
         $this->setType('licenceRelation');

@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
+use Digicademy\CHFBase\Domain\Model\Traits\IriTrait;
+use Digicademy\CHFBase\Domain\Model\Traits\UuidTrait;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
@@ -19,6 +21,9 @@ defined('TYPO3') or die();
  */
 class Footnote extends AbstractEntity
 {
+    use IriTrait;
+    use UuidTrait;
+
     /**
      * Record visible or not
      * 
@@ -40,29 +45,17 @@ class Footnote extends AbstractEntity
     protected string $text = '';
 
     /**
-     * Unique identifier of this record
-     * 
-     * @var string
-     */
-    #[Validate([
-        'validator' => 'RegularExpression',
-        'options' => [
-            'regularExpression' => '^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$',
-            'errorMessage' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:validator.regularExpression.noUuid',
-        ],
-    ])]
-    protected string $uuid = '';
-
-    /**
      * Construct object
      *
      * @param string $text
+     * @param string $iri
      * @param string $uuid
      * @return Footnote
      */
-    public function __construct(string $text, string $uuid)
+    public function __construct(string $text, string $iri, string $uuid)
     {
         $this->setText($text);
+        $this->setIri($iri);
         $this->setUuid($uuid);
     }
 
@@ -104,25 +97,5 @@ class Footnote extends AbstractEntity
     public function setText(string $text): void
     {
         $this->text = $text;
-    }
-
-    /**
-     * Get UUID
-     *
-     * @return string
-     */
-    public function getUuid(): string
-    {
-        return $this->uuid;
-    }
-
-    /**
-     * Set UUID
-     *
-     * @param string $uuid
-     */
-    public function setUuid(string $uuid): void
-    {
-        $this->uuid = $uuid;
     }
 }

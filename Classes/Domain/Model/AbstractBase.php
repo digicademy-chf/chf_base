@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
+use Digicademy\CHFBase\Domain\Model\Traits\IriTrait;
+use Digicademy\CHFBase\Domain\Model\Traits\UuidTrait;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\Annotation\Validate;
@@ -22,6 +24,9 @@ defined('TYPO3') or die();
  */
 class AbstractBase extends AbstractEntity
 {
+    use IriTrait;
+    use UuidTrait;
+
     /**
      * Record visible or not
      * 
@@ -31,20 +36,6 @@ class AbstractBase extends AbstractEntity
         'validator' => 'Boolean',
     ])]
     protected bool $hidden = true;
-
-    /**
-     * Unique identifier of this record
-     * 
-     * @var string
-     */
-    #[Validate([
-        'validator' => 'RegularExpression',
-        'options' => [
-            'regularExpression' => '^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$',
-            'errorMessage' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:validator.regularExpression.noUuid',
-        ],
-    ])]
-    protected string $uuid = '';
 
     /**
      * Authoritative web address to identify an entity across the web
@@ -135,13 +126,15 @@ class AbstractBase extends AbstractEntity
     /**
      * Construct object
      *
+     * @param string $iri
      * @param string $uuid
      * @return AbstractBase
      */
-    public function __construct(string $uuid)
+    public function __construct(string $iri, string $uuid)
     {
         $this->initializeObject();
 
+        $this->setIri($iri);
         $this->setUuid($uuid);
     }
 
@@ -173,26 +166,6 @@ class AbstractBase extends AbstractEntity
     public function setHidden(bool $hidden): void
     {
         $this->hidden = $hidden;
-    }
-
-    /**
-     * Get UUID
-     *
-     * @return string
-     */
-    public function getUuid(): string
-    {
-        return $this->uuid;
-    }
-
-    /**
-     * Set UUID
-     *
-     * @param string $uuid
-     */
-    public function setUuid(string $uuid): void
-    {
-        $this->uuid = $uuid;
     }
 
     /**

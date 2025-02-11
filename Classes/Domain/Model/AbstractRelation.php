@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
+use Digicademy\CHFBase\Domain\Model\Traits\IriTrait;
+use Digicademy\CHFBase\Domain\Model\Traits\UuidTrait;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
@@ -27,6 +29,9 @@ defined('TYPO3') or die();
  */
 class AbstractRelation extends AbstractEntity
 {
+    use IriTrait;
+    use UuidTrait;
+
     /**
      * Record visible or not
      * 
@@ -72,32 +77,20 @@ class AbstractRelation extends AbstractEntity
     protected ?ObjectStorage $parentResource = null;
 
     /**
-     * Unique identifier of this record
-     * 
-     * @var string
-     */
-    #[Validate([
-        'validator' => 'RegularExpression',
-        'options' => [
-            'regularExpression' => '^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$',
-            'errorMessage' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:validator.regularExpression.noUuid',
-        ],
-    ])]
-    protected string $uuid = '';
-
-    /**
      * Construct object
      *
      * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
+     * @param string $iri
      * @param string $uuid
      * @return AbstractRelation
      */
-    public function __construct(BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $uuid)
+    public function __construct(BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $iri, string $uuid)
     {
         $this->initializeObject();
 
         $this->setType('0');
         $this->addParentResource($parentResource);
+        $this->setIri($iri);
         $this->setUuid($uuid);
     }
 
@@ -216,25 +209,5 @@ class AbstractRelation extends AbstractEntity
     {
         $parentResource = clone $this->parentResource;
         $this->parentResource->removeAll($parentResource);
-    }
-
-    /**
-     * Get UUID
-     *
-     * @return string
-     */
-    public function getUuid(): string
-    {
-        return $this->uuid;
-    }
-
-    /**
-     * Set UUID
-     *
-     * @param string $uuid
-     */
-    public function setUuid(string $uuid): void
-    {
-        $this->uuid = $uuid;
     }
 }

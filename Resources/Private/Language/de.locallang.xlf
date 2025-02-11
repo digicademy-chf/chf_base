@@ -1294,6 +1294,10 @@
                 <target>Der Wert war nicht in der Liste erlaubter Werte.</target>
             </trans-unit>
             <!-- Validator: RegularExpressionValidator -->
+            <trans-unit id="validator.regularExpression.noIri" resname="validator.regularExpression.noIri" approved="yes">
+                <source>The given value was not an IRI.</source>
+                <target>Der Wert war keine IRI.</target>
+            </trans-unit>
             <trans-unit id="validator.regularExpression.noUuid" resname="validator.regularExpression.noUuid" approved="yes">
                 <source>The given value was not a UUID.</source>
                 <target>Der Wert war keine UUID.</target>

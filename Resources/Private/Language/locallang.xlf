@@ -974,6 +974,9 @@
                 <source>The given value was not in the list of allowed values.</source>
             </trans-unit>
             <!-- Validator: RegularExpressionValidator -->
+            <trans-unit id="validator.regularExpression.noIri" resname="validator.regularExpression.noIri">
+                <source>The given value was not an IRI.</source>
+            </trans-unit>
             <trans-unit id="validator.regularExpression.noUuid" resname="validator.regularExpression.noUuid">
                 <source>The given value was not a UUID.</source>
             </trans-unit>

@@ -180,12 +180,13 @@ class AbstractHeritage extends AbstractBase
      * Construct object
      *
      * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
+     * @param string $iri
      * @param string $uuid
      * @return AbstractHeritage
      */
-    public function __construct(BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $uuid)
+    public function __construct(BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $iri, string $uuid)
     {
-        parent::__construct($uuid);
+        parent::__construct($iri, $uuid);
         $this->initializeObject();
 
         $this->addParentResource($parentResource);
