@@ -29,6 +29,6 @@ final class SlugPrefix
      */
     public function getPrefix(array $parameters, TcaSlug $reference): string
     {
-        return 'id/';
+        return '';
     }
 }

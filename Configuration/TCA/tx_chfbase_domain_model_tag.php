@@ -36,7 +36,7 @@ return [
         'transOrigPointerField'    => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'translationSource'        => 'l10n_source',
-        'searchFields'             => 'type,text,code,description,uuid',
+        'searchFields'             => 'type,text,code,description,iri,uuid',
         'type'                     => 'type',
         'enablecolumns'            => [
             'disabled' => 'hidden',
@@ -313,6 +313,32 @@ return [
                     'label' => 'asc',
                 ],
                 'required' => true,
+            ],
+        ],
+        'iri' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.iri',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.iri.description',
+            'config' => [
+                'type' => 'slug',
+                'size' => 40,
+                'appearance' => [
+                    'prefix' => 'Digicademy\CHFBase\UserFunctions\FormEngine\SlugPrefix->getPrefix',
+                ],
+                'prependSlash' => false,
+                'generatorOptions' => [
+                    'fields' => [
+                        'uid',
+                    ],
+                    'fieldSeparator' => '/',
+                    'prefixParentPageSlug' => false,
+                    'replacements' => [
+                        '/' => '',
+                    ],
+                ],
+                'eval' => 'uniqueInSite',
+                'fallbackCharacter' => '',
             ],
         ],
         'uuid' => [
