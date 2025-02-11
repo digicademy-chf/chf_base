@@ -340,8 +340,7 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectTree',
                 'foreign_table' => 'tx_chfbase_domain_model_agent',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###'
-                    . ' AND {#tx_chfbase_domain_model_agent}.{#is_contributor}=TRUE',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#is_contributor}=TRUE',
                 'MM' => 'tx_chfbase_domain_model_relation_agent_contributor_mm',
                 'multiple' => 1,
                 'treeConfig' => [
@@ -364,7 +363,6 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectTree',
                 'foreign_table' => 'tx_chfbase_domain_model_location',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_location}.{#pid}=###CURRENT_PID###',
                 'MM' => 'tx_chfbase_domain_model_relation_location_location_mm',
                 'multiple' => 1,
                 'treeConfig' => [
@@ -387,8 +385,7 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectTree',
                 'foreign_table' => 'tx_chfbase_domain_model_agent',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###'
-                    . ' AND {#tx_chfbase_domain_model_agent}.{#is_contributor}=FALSE',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#is_contributor}=FALSE',
                 'MM' => 'tx_chfbase_domain_model_relation_agent_agent_mm',
                 'multiple' => 1,
                 'treeConfig' => [
@@ -411,8 +408,7 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingleBox',
                 'foreign_table' => 'tx_chfbase_domain_model_tag',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###'
-                    . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'licenceTag\'',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#type}=\'licenceTag\'',
                 'MM' => 'tx_chfbase_domain_model_relation_tag_licence_mm',
                 'multiple' => 1,
                 'sortItems' => [
@@ -644,7 +640,6 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingleBox',
                 'foreign_table' => 'tx_chfbase_domain_model_resource',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_resource}.{#pid}=###CURRENT_PID###',
                 'sortItems' => [
                     'label' => 'asc',
                 ],

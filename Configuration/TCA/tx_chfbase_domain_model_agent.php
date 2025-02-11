@@ -296,9 +296,7 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectTree',
                 'foreign_table' => 'tx_chfbase_domain_model_tag',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#pid}=###CURRENT_PID###'
-                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#parent_resource}=###REC_FIELD_parent_resource###'
-                    . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
                 'MM' => 'tx_chfbase_domain_model_agent_tag_label_mm',
                 'multiple' => 1,
                 'treeConfig' => [
@@ -592,8 +590,6 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectTree',
                 'foreign_table' => 'tx_chfbase_domain_model_agent',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#pid}=###CURRENT_PID###',
-                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_agent}.{#parent_resource}=###REC_FIELD_parent_resource###',
                 'treeConfig' => [
                     'parentField' => 'parent_agent',
                     'appearance' => [
@@ -614,7 +610,6 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingleBox',
                 'foreign_table' => 'tx_chfbase_domain_model_resource',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_resource}.{#pid}=###CURRENT_PID###',
                 'sortItems' => [
                     'label' => 'asc',
                 ],
@@ -922,9 +917,7 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
-                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#parent_resource}=###REC_FIELD_parent_resource###'
-                    . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'agentRelation\'',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#type}=\'agentRelation\'',
                 'MM' => 'tx_chfbase_domain_model_relation_agent_agent_mm',
                 'MM_opposite_field' => 'agent',
                 'multiple' => 1,
@@ -941,9 +934,7 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#pid}=###CURRENT_PID###'
-                #'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#parent_resource}=###REC_FIELD_parent_resource###'
-                    . ' AND {#tx_chfbase_domain_model_relation}.{#type}=\'authorshipRelation\'',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_relation}.{#type}=\'authorshipRelation\'',
                 'MM' => 'tx_chfbase_domain_model_relation_agent_contributor_mm',
                 'MM_opposite_field' => 'contributor',
                 'multiple' => 1,
