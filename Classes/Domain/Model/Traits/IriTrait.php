@@ -30,7 +30,7 @@ trait IriTrait
             'errorMessage' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:validator.regularExpression.noIri',
         ],
     ])]
-    protected string $iri = '';
+    protected string $iri; # IRI is usually set automatically by the DataHandler
 
     /**
      * Get IRI

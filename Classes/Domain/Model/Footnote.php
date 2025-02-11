@@ -48,15 +48,11 @@ class Footnote extends AbstractEntity
      * Construct object
      *
      * @param string $text
-     * @param string $iri
-     * @param string $uuid
      * @return Footnote
      */
-    public function __construct(string $text, string $iri, string $uuid)
+    public function __construct(string $text)
     {
         $this->setText($text);
-        $this->setIri($iri);
-        $this->setUuid($uuid);
     }
 
     /**

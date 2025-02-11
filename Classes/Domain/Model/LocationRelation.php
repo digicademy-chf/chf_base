@@ -75,13 +75,11 @@ class LocationRelation extends AbstractRelation
      * @param Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup $record
      * @param Location $location
      * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
-     * @param string $iri
-     * @param string $uuid
      * @return LocationRelation
      */
-    public function __construct(Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup $record, Location $location, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $iri, string $uuid)
+    public function __construct(Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup $record, Location $location, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource)
     {
-        parent::__construct($parentResource, $iri, $uuid);
+        parent::__construct($parentResource);
         $this->initializeObject();
 
         $this->setType('locationRelation');

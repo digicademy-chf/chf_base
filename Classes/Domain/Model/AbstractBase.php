@@ -126,16 +126,11 @@ class AbstractBase extends AbstractEntity
     /**
      * Construct object
      *
-     * @param string $iri
-     * @param string $uuid
      * @return AbstractBase
      */
-    public function __construct(string $iri, string $uuid)
+    public function __construct()
     {
         $this->initializeObject();
-
-        $this->setIri($iri);
-        $this->setUuid($uuid);
     }
 
     /**

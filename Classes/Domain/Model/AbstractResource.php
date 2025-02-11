@@ -186,13 +186,11 @@ class AbstractResource extends AbstractBase
      * Construct object
      *
      * @param string $langCode
-     * @param string $iri
-     * @param string $uuid
      * @return AbstractResource
      */
-    public function __construct(string $langCode, string $iri, string $uuid)
+    public function __construct(string $langCode)
     {
-        parent::__construct($iri, $uuid);
+        parent::__construct();
         $this->initializeObject();
 
         $this->setType('0');

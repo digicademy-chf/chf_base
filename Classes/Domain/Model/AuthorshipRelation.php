@@ -77,13 +77,11 @@ class AuthorshipRelation extends AbstractRelation
      * @param Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume $record
      * @param Agent $contributor
      * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
-     * @param string $iri
-     * @param string $uuid
      * @return AuthorshipRelation
      */
-    public function __construct(Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume $record, Agent $contributor, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $iri, string $uuid)
+    public function __construct(Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume $record, Agent $contributor, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource)
     {
-        parent::__construct($parentResource, $iri, $uuid);
+        parent::__construct($parentResource);
         $this->initializeObject();
 
         $this->setType('authorshipRelation');

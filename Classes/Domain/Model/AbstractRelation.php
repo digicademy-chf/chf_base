@@ -80,18 +80,14 @@ class AbstractRelation extends AbstractEntity
      * Construct object
      *
      * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
-     * @param string $iri
-     * @param string $uuid
      * @return AbstractRelation
      */
-    public function __construct(BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource, string $iri, string $uuid)
+    public function __construct(BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource)
     {
         $this->initializeObject();
 
         $this->setType('0');
         $this->addParentResource($parentResource);
-        $this->setIri($iri);
-        $this->setUuid($uuid);
     }
 
     /**
