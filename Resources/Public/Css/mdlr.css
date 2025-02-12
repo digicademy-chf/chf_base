@@ -1815,6 +1815,7 @@ div.mdlr-boxedlist-addition {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -moz-box-orient: vertical;
     -webkit-box-orient: vertical;
 }
