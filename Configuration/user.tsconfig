@@ -4,3 +4,6 @@ admPanel.enable {
   cache = 1
   edit = 1
 }
+
+# Show nav titles instead of full ones in the page tree
+options.pageTree.showNavTitle = 1
