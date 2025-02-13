@@ -512,6 +512,10 @@
                 <source>Position</source>
                 <target>Standort</target>
             </trans-unit>
+            <trans-unit id="object.location.type.fieldName" resname="object.location.type.fieldName" approved="yes">
+                <source>Field name</source>
+                <target>Flurname</target>
+            </trans-unit>
             <trans-unit id="object.location.type.building" resname="object.location.type.building" approved="yes">
                 <source>Building</source>
                 <target>Gebäude</target>

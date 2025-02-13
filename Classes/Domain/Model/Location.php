@@ -44,6 +44,7 @@ class Location extends AbstractHeritage
         'options'   => [
             'allowed' => [
                 'position',
+                'fieldName',
                 'building',
                 'townOrCity',
                 'regionOrState',

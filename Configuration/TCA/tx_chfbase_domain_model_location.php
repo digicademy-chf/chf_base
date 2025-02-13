@@ -166,6 +166,10 @@ return [
                         'value' => 'position',
                     ],
                     [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.type.fieldName',
+                        'value' => 'fieldName',
+                    ],
+                    [
                         'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.location.type.building',
                         'value' => 'building',
                     ],

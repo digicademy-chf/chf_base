@@ -383,6 +383,9 @@
             <trans-unit id="object.location.type.position" resname="object.location.type.position">
                 <source>Position</source>
             </trans-unit>
+            <trans-unit id="object.location.type.fieldName" resname="object.location.type.fieldName">
+                <source>Field name</source>
+            </trans-unit>
             <trans-unit id="object.location.type.building" resname="object.location.type.building">
                 <source>Building</source>
             </trans-unit>
