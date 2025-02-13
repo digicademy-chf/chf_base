@@ -237,7 +237,6 @@ return [
                 'size' => 40,
                 'max' => 255,
                 'eval' => 'trim',
-                'required' => true,
             ],
         ],
         'description' => [

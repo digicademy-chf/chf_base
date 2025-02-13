@@ -118,17 +118,15 @@ class AbstractTag extends AbstractEntity
      * Construct object
      *
      * @param string $text
-     * @param string $code
      * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @return AbstractTag
      */
-    public function __construct(string $text, string $code, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource)
+    public function __construct(string $text, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource)
     {
         $this->initializeObject();
 
         $this->setType('0');
         $this->setText($text);
-        $this->setCode($code);
         $this->addParentResource($parentResource);
     }
 

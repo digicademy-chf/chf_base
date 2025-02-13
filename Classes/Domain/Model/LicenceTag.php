@@ -37,13 +37,12 @@ class LicenceTag extends AbstractTag
      * Construct object
      *
      * @param string $text
-     * @param string $code
      * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @return LicenceTag
      */
-    public function __construct(string $text, string $code, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource)
+    public function __construct(string $text, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource)
     {
-        parent::__construct($text, $code, $parentResource);
+        parent::__construct($text, $parentResource);
         $this->initializeObject();
 
         $this->setType('licenceTag');
