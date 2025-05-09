@@ -1,20 +1,20 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:variable name="listContents">0</f:variable>
-    <f:for each="{contentElements.main.records}" as="contentElement">
+    <f:for each="{contentElements}" as="contentElement">
         <f:if condition="{contentElement.header}">
             <f:variable name="listContents">1</f:variable>
         </f:if>
     </f:for>
     <f:if condition="{listContents}">
         <li class="mdlr-dropdown-wrapper">
-            <button id="main-right-toc-handle" class="mdlr-variant-texticon mdlr-variant-round mdlr-function-dropdown" aria-controls="main-right-toc-content" aria-haspopup="true" aria-expanded="false">
-                <span><f:translate key="templates.main.rights.toc" extensionName="chf_base"/></span>
+            <button id="toolbar-toc-handle" class="mdlr-variant-icon mdlr-function-dropdown" title="{f:translate(key: 'templates.toolbar.toc', extensionName: 'chf_base')}" aria-controls="toolbar-toc-content" aria-haspopup="true" aria-expanded="false">
+                <span><f:translate key="templates.toolbar.toc" extensionName="chf_base"/></span>
                 <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <use href="#icon-down"/>
+                    <use href="#icon-toc"/>
                 </svg>
             </button>
-            <ul class="mdlr-dropdown mdlr-variant-simplehierarchy" id="main-right-toc-content" role="listbox" aria-labelledby="title-download-handle" tabindex="-1">
-                <f:for each="{contentElements.main.records}" as="contentElement" iteration="index">
+            <ul class="mdlr-dropdown mdlr-variant-simplehierarchy" id="toolbar-toc-content" role="listbox" aria-labelledby="toolbar-toc-handle" tabindex="-1">
+                <f:for each="{contentElements}" as="contentElement" iteration="index">
                     <f:if condition="{contentElement.header}">
                         <li>
                             <f:switch expression="{contentElement.header_layout}">

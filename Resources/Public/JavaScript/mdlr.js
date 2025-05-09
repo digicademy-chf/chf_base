@@ -494,64 +494,6 @@ headerbarTargets.forEach(function(headerbarTarget) {
 });
 
 /*
-# Toggles #####################################################################
-*/
-
-// Variable
-const toggles = mdlrElements('.mdlr-function-toggle');
-
-// Activate all toggles
-if(toggles.length > 0) {
-    toggles.forEach(function(toggle) {
-        if(toggle.tagName == 'INPUT' && toggle.getAttribute('type') == 'checkbox') {
-            toggle.addEventListener('change', function(e) {
-                mdlrToggle(e.currentTarget);
-                e.preventDefault();
-            });
-        }
-        else {
-            toggle.addEventListener('click', function(e) {
-                mdlrToggle(e.currentTarget);
-                e.preventDefault();
-            });
-            toggle.addEventListener('keydown', function(e) {
-                if(e.code == 'Enter' || e.code == 'Space') {
-                    mdlrToggle(e.currentTarget);
-                    e.preventDefault();
-                }
-            });
-        }
-    });
-}
-
-// Toggle display of an element
-function mdlrToggle(clickedElement) {
-    if(clickedElement) {
-
-        // Get toggle data
-        const toggleClass = 'mdlr-variant-active';
-        const elementId = clickedElement.getAttribute('aria-controls');
-        const element = document.getElementById(elementId);
-
-        // Toggle CSS class
-        if(element) {
-
-            // Remove
-            if(element.classList.contains(toggleClass)) {
-                element.classList.remove(toggleClass);
-                clickedElement.classList.remove(toggleClass);
-            }
-
-            // Add
-            else {
-                element.classList.add(toggleClass);
-                clickedElement.classList.add(toggleClass);
-            }
-        }
-    }
-}
-
-/*
 # Dropdown ####################################################################
 */
 
@@ -835,7 +777,10 @@ function mdlrModalCloseConditions(e) {
 
     // Check if click/swipe is outside focus element
     else {
-        if(e.composedPath()[0].nodeName == 'DIALOG') { /* TODO This also fires when it should not */
+        const openModal = document.querySelector('.mdlr-modal[open]');
+        const openModalRect = openModal.getBoundingClientRect();
+        const inOpenModal = (openModalRect.top <= e.clientY && e.clientY <= openModalRect.top + openModalRect.height && openModalRect.left <= e.clientX && e.clientX <= openModalRect.left + openModalRect.width);
+        if (! inOpenModal) {
             mdlrModalClose();
             e.preventDefault();
         }

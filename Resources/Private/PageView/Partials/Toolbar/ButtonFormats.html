@@ -1,0 +1,73 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <li class="mdlr-dropdown-wrapper">
+        <button id="toolbar-formats-handle" class="mdlr-variant-texticon mdlr-function-dropdown" aria-controls="toolbar-formats-content" aria-haspopup="true" aria-expanded="false">
+            <span><f:translate key="templates.toolbar.formats" extensionName="chf_base"/></span>
+            <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <use href="#icon-down"/>
+            </svg>
+        </button>
+        <ul class="mdlr-dropdown" id="toolbar-formats-content" role="listbox" aria-labelledby="toolbar-formats-handle" tabindex="-1">
+            <li>
+                <button class="mdlr-variant-mini mdlr-variant-unobtrusive mdlr-function-pdf">
+                    <span><f:format.raw><f:translate key="templates.toolbar.formats.pdf" extensionName="chf_base"/></f:format.raw></span>
+                </button>
+            </li>
+            <li class="mdlr-variant-separate">
+                <button disabled class="mdlr-variant-mini mdlr-variant-unobtrusive">
+                    <span><f:format.raw><f:translate key="templates.generic.retrieve" extensionName="chf_base" arguments="{0: '{f:translate(key: \'templates.generic.retrieve.jsonld\', extensionName: \'chf_base\')}'}"/></f:format.raw></span>
+                </button>
+                <!--<f:link.page pageType="6024975381" class="mdlr-button mdlr-variant-mini mdlr-variant-unobtrusive" rel="alternate" type="application/ld+json">
+                    <span><f:format.raw><f:translate key="templates.generic.retrieve" extensionName="chf_base" arguments="{0: '{f:translate(key: \'templates.generic.retrieve.jsonld\', extensionName: \'chf_base\')}'}"/></f:format.raw></span>
+                </f:link.page>-->
+                <button disabled class="mdlr-variant-miniicon mdlr-variant-transparent mdlr-function-copy" data-target="{f:uri.page(pageType: '6024975381', absolute: 'true')}" data-success="{f:translate(key: 'templates.generic.copy.url.success', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.generic.copy.url.failure', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.generic.copy.url.hint', extensionName: 'chf_base')}">
+                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <use href="#icon-copy"/>
+                    </svg>
+                    <span><f:format.raw><f:translate key="templates.generic.copy.url" extensionName="chf_base"/></f:format.raw></span>
+                </button>
+            </li>
+            <li>
+                <button disabled class="mdlr-variant-mini mdlr-variant-unobtrusive">
+                    <span><f:format.raw><f:translate key="templates.generic.retrieve" extensionName="chf_base" arguments="{0: '{f:translate(key: \'templates.generic.retrieve.turtle\', extensionName: \'chf_base\')}'}"/></f:format.raw></span>
+                </button>
+                <!--<f:link.page pageType="2867941442" class="mdlr-button mdlr-variant-mini mdlr-variant-unobtrusive" rel="alternate" type="text/turtle">
+                    <span><f:format.raw><f:translate key="templates.generic.retrieve" extensionName="chf_base" arguments="{0: '{f:translate(key: \'templates.generic.retrieve.turtle\', extensionName: \'chf_base\')}'}"/></f:format.raw></span>
+                </f:link.page>-->
+                <button disabled class="mdlr-variant-miniicon mdlr-variant-transparent mdlr-function-copy" data-target="{f:uri.page(pageType: '2867941442', absolute: 'true')}" data-success="{f:translate(key: 'templates.generic.copy.url.success', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.generic.copy.url.failure', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.generic.copy.url.hint', extensionName: 'chf_base')}">
+                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <use href="#icon-copy"/>
+                    </svg>
+                    <span><f:format.raw><f:translate key="templates.generic.copy.url" extensionName="chf_base"/></f:format.raw></span>
+                </button>
+            </li>
+            <li>
+                <button disabled class="mdlr-variant-mini mdlr-variant-unobtrusive">
+                    <span><f:format.raw><f:translate key="templates.generic.retrieve" extensionName="chf_base" arguments="{0: '{f:translate(key: \'templates.generic.retrieve.rdfxml\', extensionName: \'chf_base\')}'}"/></f:format.raw></span>
+                </button>
+                <!--<f:link.page pageType="1295536366" class="mdlr-button mdlr-variant-mini mdlr-variant-unobtrusive" rel="alternate" type="application/rdf+xml">
+                    <span><f:format.raw><f:translate key="templates.generic.retrieve" extensionName="chf_base" arguments="{0: '{f:translate(key: \'templates.generic.retrieve.rdfxml\', extensionName: \'chf_base\')}'}"/></f:format.raw></span>
+                </f:link.page>-->
+                <button disabled class="mdlr-variant-miniicon mdlr-variant-transparent mdlr-function-copy" data-target="{f:uri.page(pageType: '1295536366', absolute: 'true')}" data-success="{f:translate(key: 'templates.generic.copy.url.success', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.generic.copy.url.failure', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.generic.copy.url.hint', extensionName: 'chf_base')}">
+                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <use href="#icon-copy"/>
+                    </svg>
+                    <span><f:format.raw><f:translate key="templates.generic.copy.url" extensionName="chf_base"/></f:format.raw></span>
+                </button>
+            </li>
+            <li>
+                <button disabled class="mdlr-variant-mini mdlr-variant-unobtrusive">
+                    <span><f:format.raw><f:translate key="templates.generic.retrieve" extensionName="chf_base" arguments="{0: '{f:translate(key: \'templates.generic.retrieve.teixml\', extensionName: \'chf_base\')}'}"/></f:format.raw></span>
+                </button>
+                <!--<f:link.page pageType="9631552583" class="mdlr-button mdlr-variant-mini mdlr-variant-unobtrusive" rel="alternate" type="application/tei+xml">
+                    <span><f:format.raw><f:translate key="templates.generic.retrieve" extensionName="chf_base" arguments="{0: '{f:translate(key: \'templates.generic.retrieve.teixml\', extensionName: \'chf_base\')}'}"/></f:format.raw></span>
+                </f:link.page>-->
+                <button disabled class="mdlr-variant-miniicon mdlr-variant-transparent mdlr-function-copy" data-target="{f:uri.page(pageType: '9631552583', absolute: 'true')}" data-success="{f:translate(key: 'templates.generic.copy.url.success', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.generic.copy.url.failure', extensionName: 'chf_base')}" title="{f:translate(key: '.hint', extensionName: 'chf_base')}">
+                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <use href="#icon-copy"/>
+                    </svg>
+                    <span><f:format.raw><f:translate key="templates.generic.copy.url" extensionName="chf_base"/></f:format.raw></span>
+                </button>
+            </li>
+        </ul>
+    </li>
+</html>

@@ -1,13 +1,40 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <h1 id="header-name" class="mdlr-logo mdlr-pattern-slot-a mdlr-pattern-align-left-above-600 mdlr-pattern-align-middle mdlr-variant-tacit-below-900">
-        <f:link.page pageUid="{page.rootPageId}" title="{f:translate(key: 'templates.generic.home', extensionName: 'chf_base')}" class="mdlr-imagelink">
-            <span>
-                <f:if condition="{language.websiteTitle}">
-                    <f:then>{language.websiteTitle}</f:then>
-                    <f:else>{site.configuration.websiteTitle}</f:else>
-                </f:if>
-            </span>
-            <img src="{f:uri.image(src: '{settings.chf.templates.logo.main}')}" alt="{f:if(condition: '{language.websiteTitle}', then: '{language.websiteTitle}', else: '{site.configuration.websiteTitle}')}" aria-hidden="true">
-        </f:link.page>
-    </h1>
+    <div class="mdlr-logo mdlr-variant-back mdlr-pattern-slot-a mdlr-pattern-align-left">
+        <h1 id="header-name">
+            <f:link.page pageUid="{site.rootPageId}" title="{f:translate(key: 'templates.generic.home', extensionName: 'chf_base')}" class="mdlr-imagelink">
+                <span>
+                    <f:if condition="{language.websiteTitle}">
+                        <f:then>{language.websiteTitle}</f:then>
+                        <f:else>{site.configuration.websiteTitle}</f:else>
+                    </f:if>
+                </span>
+                <img src="{f:uri.image(src: '{settings.chf.templates.logo.small}')}" alt="{f:if(condition: '{language.websiteTitle}', then: '{language.websiteTitle}', else: '{site.configuration.websiteTitle}')}" aria-hidden="true">
+            </f:link.page>
+        </h1>
+        <f:for each="{rootlineMenu}" as="menuItem" iteration="index">
+            <f:if condition="{index.cycle} == 1">
+                <f:then>
+                    <f:variable name="currentPage">{menuItem.link}</f:variable>
+                </f:then>
+                <f:else>
+                    <f:if condition="{index.cycle} == 2">
+                        <f:if condition="{menuItem.current} == 0 && {menuItem.link} != {currentPage}">
+                            <f:then>
+                                <ul class="mdlr-buttonrow mdlr-variant-separate mdlr-variant-nowrap">
+                                    <li>
+                                        <f:link.page pageUid="{menuItem.data.uid}" class="mdlr-button mdlr-variant-icon mdlr-variant-unobtrusive" title="{f:translate(key: 'templates.header.back', extensionName: 'chf_base')}">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                <use href="#icon-back"/>
+                                            </svg>
+                                            <span><f:translate key="templates.header.back" extensionName="chf_base"/></span>
+                                        </f:link.page>
+                                    </li>
+                                </ul>
+                            </f:then>
+                        </f:if>
+                    </f:if>
+                </f:else>
+            </f:if>
+        </f:for>
+    </div>
 </html>

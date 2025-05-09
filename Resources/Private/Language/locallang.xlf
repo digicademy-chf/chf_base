@@ -1103,6 +1103,18 @@
             <trans-unit id="templates.generic.copy.permalink.failure" resname="templates.generic.copy.permalink.failure">
                 <source>Something went wrong</source>
             </trans-unit>
+            <trans-unit id="templates.generic.copy.uri" resname="templates.generic.copy.uri">
+                <source><![CDATA[<abbr title="Uniform Resource Identifier">]]>URI<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.uri.hint" resname="templates.generic.copy.uri.hint">
+                <source>Copy URI</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.uri.success" resname="templates.generic.copy.uri.success">
+                <source>URI copied successfully</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.uri.failure" resname="templates.generic.copy.uri.failure">
+                <source>Something went wrong</source>
+            </trans-unit>
             <trans-unit id="templates.generic.copy.url" resname="templates.generic.copy.url">
                 <source><![CDATA[<abbr title="Uniform Resource Locator">]]>URL<![CDATA[</abbr>]]></source>
             </trans-unit>
@@ -1157,53 +1169,38 @@
             <trans-unit id="templates.header.jump" resname="templates.header.jump">
                 <source>On this page</source>
             </trans-unit>
+            <trans-unit id="templates.header.back" resname="templates.header.back">
+                <source>Back</source>
+            </trans-unit>
             <trans-unit id="templates.header.navigation" resname="templates.header.navigation">
                 <source>Navigation</source>
             </trans-unit>
             <trans-unit id="templates.header.meta" resname="templates.header.meta">
                 <source>Meta</source>
             </trans-unit>
-            <trans-unit id="templates.title.back" resname="templates.title.back">
-                <source>Back</source>
-            </trans-unit>
-            <trans-unit id="templates.title.download" resname="templates.title.download">
-                <source>Download</source>
-            </trans-unit>
-            <trans-unit id="templates.title.download.pdf" resname="templates.title.download.pdf">
-                <source><![CDATA[<abbr title="Portable Document Format">]]>PDF<![CDATA[</abbr>]]> or print</source>
-            </trans-unit>
-            <trans-unit id="templates.title.remember" resname="templates.title.remember">
+            <trans-unit id="templates.toolbar.remember" resname="templates.toolbar.remember">
                 <source>Remember</source>
             </trans-unit>
-            <trans-unit id="templates.main.rights" resname="templates.main.rights">
-                <source>Rights statement</source>
-            </trans-unit>
-            <trans-unit id="templates.main.rights.toc" resname="templates.main.rights.toc">
-                <source>Contents</source>
-            </trans-unit>
-            <trans-unit id="templates.main.rights.credit" resname="templates.main.rights.credit">
-                <source>Rights</source>
-            </trans-unit>
-            <trans-unit id="templates.main.rights.copy" resname="templates.main.rights.copy">
-                <source>Copy rights statement</source>
-            </trans-unit>
-            <trans-unit id="templates.main.rights.copy.success" resname="templates.main.rights.copy.success">
-                <source>Rights statement copied successfully</source>
-            </trans-unit>
-            <trans-unit id="templates.main.rights.copy.failure" resname="templates.main.rights.copy.failure">
-                <source>Something went wrong</source>
-            </trans-unit>
-            <trans-unit id="templates.main.rights.share" resname="templates.main.rights.share">
+            <trans-unit id="templates.toolbar.share" resname="templates.toolbar.share">
                 <source>Share</source>
             </trans-unit>
-            <trans-unit id="templates.main.content" resname="templates.main.content">
+            <trans-unit id="templates.toolbar.toc" resname="templates.toolbar.toc">
+                <source>Contents</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.formats" resname="templates.toolbar.formats">
+                <source>Data formats</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.formats.pdf" resname="templates.toolbar.formats.pdf">
+                <source><![CDATA[<abbr title="Portable Document Format">]]>PDF<![CDATA[</abbr>]]> or print</source>
+            </trans-unit>
+            <trans-unit id="templates.main" resname="templates.main">
                 <source>Content</source>
             </trans-unit>
-            <trans-unit id="templates.main.content.empty" resname="templates.main.content.empty">
+            <trans-unit id="templates.main.empty" resname="templates.main.empty">
                 <source>This page is currently empty. Content would otherwise be displayed here.</source>
             </trans-unit>
             <trans-unit id="templates.about" resname="templates.about">
-                <source>Further metadata</source>
+                <source>Page data sheet</source>
             </trans-unit>
             <trans-unit id="templates.about.properties" resname="templates.about.properties">
                 <source>Properties</source>
@@ -1212,7 +1209,7 @@
                 <source>Reference</source>
             </trans-unit>
             <trans-unit id="templates.about.serializations" resname="templates.about.serializations">
-                <source>Linked Open Data</source>
+                <source>Linked open data</source>
             </trans-unit>
             <trans-unit id="templates.about.author" resname="templates.about.author">
                 <source>Author</source>
@@ -1226,11 +1223,20 @@
             <trans-unit id="templates.about.publisher" resname="templates.about.publisher">
                 <source>Publisher</source>
             </trans-unit>
+            <trans-unit id="templates.about.rights" resname="templates.about.rights">
+                <source>Rights</source>
+            </trans-unit>
+            <trans-unit id="templates.about.rights.copyright" resname="templates.about.rights.copyright">
+                <source>In copyright</source>
+            </trans-unit>
             <trans-unit id="templates.about.print" resname="templates.about.print">
                 <source>Print</source>
             </trans-unit>
             <trans-unit id="templates.about.online" resname="templates.about.online">
                 <source>Online</source>
+            </trans-unit>
+            <trans-unit id="templates.about.access" resname="templates.about.access">
+                <source>Access</source>
             </trans-unit>
             <trans-unit id="templates.about.digest" resname="templates.about.digest">
                 <source>Digest</source>
@@ -1248,13 +1254,13 @@
                 <source>Citation</source>
             </trans-unit>
             <trans-unit id="templates.about.api.before" resname="templates.about.api.before">
-                <source>The raw data of this web application is available </source>
+                <source>The data of this web application is available </source>
             </trans-unit>
             <trans-unit id="templates.about.api.link" resname="templates.about.api.link">
                 <source>via <![CDATA[<abbr title="Application Programming Interface">]]>API<![CDATA[</abbr>]]>s</source>
             </trans-unit>
             <trans-unit id="templates.about.api.after" resname="templates.about.api.after">
-                <source>. The indicated re-use licenses apply even when you process the data automatically.</source>
+                <source>. The indicated re-use policies apply even when you process the data automatically.</source>
             </trans-unit>
             <trans-unit id="templates.footer" resname="templates.footer">
                 <source>Footer</source>
@@ -1338,7 +1344,7 @@
                 <source>Share by email</source>
             </trans-unit>
             <trans-unit id="templates.share.services" resname="templates.share.services">
-                <source>Social networks</source>
+                <source>In social networks</source>
             </trans-unit>
             <trans-unit id="templates.share.services.mastodon" resname="templates.share.services.mastodon">
                 <source>Mastodon</source>
@@ -1389,13 +1395,13 @@
                 <source>Share on X (formerly Twitter)</source>
             </trans-unit>
             <trans-unit id="templates.share.dissociation" resname="templates.share.dissociation">
-                <source>These services are integrated as links only. Their inclusion is not an endorsement.</source>
+                <source>The largely privacy-friendly links to these services do not express endorsement.</source>
             </trans-unit>
             <trans-unit id="templates.watchlist" resname="templates.watchlist">
                 <source>Watchlist</source>
             </trans-unit>
             <trans-unit id="templates.watchlist.empty" resname="templates.watchlist.empty">
-                <source>The watchlist ist still empty. Add new content by clicking on star symbols across this site.</source>
+                <source>The watchlist ist still empty. Add items by clicking on star symbols across this site.</source>
             </trans-unit>
             <trans-unit id="templates.search" resname="templates.search">
                 <source>Search</source>
@@ -1413,13 +1419,16 @@
                 <source>Search for this example</source>
             </trans-unit>
             <trans-unit id="templates.search.exact" resname="templates.search.exact">
-                <source>Exact</source>
+                <source>Titles only, incl. <![CDATA[<abbr title="Regular Expressions (PCRE2)">]]>RegEx<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.search.results" resname="templates.search.results">
+                <source>Results</source>
+            </trans-unit>
+            <trans-unit id="templates.search.results.empty" resname="templates.search.results.empty">
+                <source>No search results (yet)</source>
             </trans-unit>
             <trans-unit id="templates.search.advanced" resname="templates.search.advanced">
-                <source>Advanced</source>
-            </trans-unit>
-            <trans-unit id="templates.search.note" resname="templates.search.note">
-                <source>An exact search only retrieves letter-for-letter matches in titles or names. Regular expressions (<![CDATA[<abbr title="Perl Compatible Regular Expressions">]]>PCRE<![CDATA[</abbr>]]>2) can be used for specific queries.</source>
+                <source>Further options</source>
             </trans-unit>
             <trans-unit id="templates.settings" resname="templates.settings">
                 <source>Settings</source>

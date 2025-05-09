@@ -1,24 +1,21 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <section class="mdlr-section mdlr-variant-ultrawide">
-        <f:if condition="{contentElements.main.records}">
-            <f:then>
-                <div class="mdlr-pattern mdlr-variant-float">
-                    <f:render partial="Rights/Rights" arguments="{_all}"/>
+    <f:if condition="{contentElements}">
+        <f:then>
+            <section class="mdlr-section mdlr-variant-even mdlr-variant-ultrawide">
+                <div class="mdlr-content">
+                    <f:render partial="Main/ContentElements" arguments="{_all}"/>
                 </div>
-                <article id="main-content" class="mdlr-content">
-                    <f:render partial="Main/ContentElements" arguments="{contentElements: '{contentElements.main.records}'}"/>
-                </article>
-            </f:then>
-            <f:else>
-                <article id="main-content">
-                    <div class="mdlr-empty">
-                        <svg width="160" height="160" viewBox="0 0 160 160" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <use href="#illustration-placeholder"/>
-                        </svg>
-                        <p><f:translate key="templates.main.content.empty" extensionName="chf_base"/></p>
-                    </div>
-                </article>
-            </f:else>
-        </f:if>
-    </section>
+            </section>
+        </f:then>
+        <f:else>
+            <section class="mdlr-section mdlr-variant-even">
+                <div class="mdlr-empty">
+                    <svg width="160" height="160" viewBox="0 0 160 160" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <use href="#illustration-placeholder"/>
+                    </svg>
+                    <p><f:translate key="templates.main.empty" extensionName="chf_base"/></p>
+                </div>
+            </section>
+        </f:else>
+    </f:if>
 </html>
