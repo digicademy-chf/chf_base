@@ -1219,6 +1219,15 @@ p.mdlr-attribution:hover {
     gap: var(--mdlr-spacing-extralarge);
 }
 
+.mdlr-logo h1,
+.mdlr-logo h2,
+.mdlr-logo h3,
+.mdlr-logo h4,
+.mdlr-logo h5,
+.mdlr-logo h6 {
+    transform: none;
+}
+
 @media screen and (max-width: 600px) {
 
     .mdlr-logo.mdlr-variant-back h1:first-child:not(:last-child) {
@@ -2220,7 +2229,7 @@ dialog.mdlr-modal.mdlr-variant-active {
 
 .mdlr-pattern.mdlr-variant-triptych {
     display: grid;
-    grid-template-columns: minmax(0, 175px) minmax(auto, 1fr) minmax(0, 175px);
+    grid-template-columns: minmax(0, 205px) minmax(auto, 1fr) minmax(0, 205px);
     grid-template-areas:
         'a b c';
     gap: var(--mdlr-spacing-margin);
@@ -2377,7 +2386,7 @@ dialog.mdlr-modal.mdlr-variant-active {
         grid-template-areas:
             'a c'
             'b';
-        gap: 0;
+        gap: 0 calc(0.25 * var(--mdlr-spacing-margin));
     }
 
     .mdlr-pattern.mdlr-variant-triangle {
