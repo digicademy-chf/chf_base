@@ -9,8 +9,8 @@ editor:
   config:
     toolbar:
       items:
-        - style
         - heading
+        - alignment
         - '|'
         - bold
         - italic
@@ -18,39 +18,36 @@ editor:
         - strikethrough
         - subscript
         - superscript
+        - '|'
+        - link
         - softhyphen
+        - specialCharacters
         - '|'
         - bulletedList
         - numberedList
-        - blockQuote
-        - alignment
+        - outdent
+        - indent
         - '|'
-        - findAndReplace
-        - link
+        - blockQuote
+        - insertTable
+        - horizontalLine
         - '|'
         - removeFormat
         - clipboard
         - undo
         - redo
         - '|'
-        - insertTable
-        - '|'
-        - specialCharacters
-        - horizontalLine
+        - findAndReplace
         - sourceEditing
 
     heading:
       options:
         - { model: 'paragraph', title: 'Paragraph' }
-        - { model: 'heading2', view: 'h2', title: 'Heading 2' }
         - { model: 'heading3', view: 'h3', title: 'Heading 3' }
+        - { model: 'heading4', view: 'h4', title: 'Heading 4' }
+        - { model: 'heading5', view: 'h5', title: 'Heading 5' }
+        - { model: 'heading6', view: 'h6', title: 'Heading 6' }
         - { model: 'formatted', view: 'pre', title: 'Pre-Formatted Text' }
-
-    style:
-      definitions:
-        - { name: "Lead", element: "p", classes: ['lead'] }
-        - { name: "Small", element: "small", classes: [] }
-        - { name: "Muted", element: "span", classes: ['text-muted'] }
 
     alignment:
       options:

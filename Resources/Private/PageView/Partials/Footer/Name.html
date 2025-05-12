@@ -7,7 +7,10 @@
                     <f:else>{site.configuration.websiteTitle}</f:else>
                 </f:if>
             </span>
-            <img src="{f:uri.image(src: '{settings.chf.templates.logo.main}')}" alt="{f:if(condition: '{language.websiteTitle}', then: '{language.websiteTitle}', else: '{site.configuration.websiteTitle}')}" aria-hidden="true">
+            <picture aria-hidden="true">
+                <source srcset="{f:uri.image(src: '{settings.chf.templates.logo.mainDark}')}" media="(prefers-color-scheme: dark)">
+                <img src="{f:uri.image(src: '{settings.chf.templates.logo.main}')}" alt="{f:if(condition: '{language.websiteTitle}', then: '{language.websiteTitle}', else: '{site.configuration.websiteTitle}')}">
+            </picture>
         </f:link.page>
     </div>
 </html>

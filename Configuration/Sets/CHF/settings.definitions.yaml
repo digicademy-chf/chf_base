@@ -9,11 +9,21 @@ settings:
     description: 'Path to a logo file to use in the footer of a page'
     type: string
     default: 'EXT:chf_base/Resources/Public/Images/logo-chf-main.svg'
+  chf.templates.logo.mainDark:
+    label: 'Dark logo path'
+    description: 'Path to a logo file to use in the footer of a page against a dark background'
+    type: string
+    default: 'EXT:chf_base/Resources/Public/Images/logo-chf-main-dark.svg'
   chf.templates.logo.small:
     label: 'Small logo path'
     description: 'Path to a small logo file to use in the header of a page'
     type: string
     default: 'EXT:chf_base/Resources/Public/Images/logo-chf-small.svg'
+  chf.templates.logo.smallDark:
+    label: 'Small dark logo path'
+    description: 'Path to a small logo file to use in the header of a page against a dark background'
+    type: string
+    default: 'EXT:chf_base/Resources/Public/Images/logo-chf-small-dark.svg'
   chf.templates.favicon.main:
     label: 'Favicon path'
     description: 'Path to an icon file to use as the favicon of a page'
@@ -77,6 +87,11 @@ settings:
   chf.partners.logos:
     label: 'Partner logos'
     description: 'List of paths to partner logo files to show in the footer'
+    type: stringlist
+    default: []
+  chf.partners.logosDark:
+    label: 'Dark partner logos'
+    description: 'List of paths to partner logo files to show in the footer against a dark background'
     type: stringlist
     default: []
   chf.partners.names:

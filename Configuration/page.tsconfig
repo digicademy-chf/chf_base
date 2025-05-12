@@ -12,6 +12,11 @@ mod.linkvalidator {
   }
 }
 
+// Default rich-text preset
+RTE {
+    default.preset = chf_base_regular
+}
+
 // Data handling
 TCEMAIN {
 
