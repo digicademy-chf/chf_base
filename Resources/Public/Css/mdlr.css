@@ -9,37 +9,37 @@ accessible, responsive web apps. It is MIT licenced.
 # Customisation ###############################################################
 */
 
-html {
+:root {
 
     /* Colours */
 
-    --mdlr-color-primary-main: #f3f6f9;
-    --mdlr-color-primary-main-text: #000;
-    --mdlr-color-primary-intense: #fff;
-    --mdlr-color-primary-intense-text: #5d5e5f;
-    --mdlr-color-primary-more: #f8fafc;
-    --mdlr-color-primary-less: #d6e2ed;
-    --mdlr-color-primary-translucent: rgba(255,255,255,0.85);
+    --mdlr-color-primary-main: light-dark(#f3f6f9, #13181d);
+    --mdlr-color-primary-main-text: light-dark(#000, #fff);
+    --mdlr-color-primary-intense: light-dark(#fff, #000);
+    --mdlr-color-primary-intense-text: light-dark(#5d5e5f, #9a9b9c);
+    --mdlr-color-primary-more: light-dark(#f8fafc, #090d12);
+    --mdlr-color-primary-less: light-dark(#d6e2ed, #373d43);
+    --mdlr-color-primary-translucent: light-dark(rgba(255,255,255,0.85), rgba(0,0,0,0.75));
     --mdlr-color-primary-translucent-filter: blur(1rem);
-    --mdlr-color-primary-backdrop: rgba(0,0,0,0.75);
+    --mdlr-color-primary-backdrop: light-dark(rgba(0,0,0,0.75), rgba(0,0,0,0.65));
     --mdlr-color-primary-backdrop-filter: blur(1rem);
     --mdlr-color-primary-backdrop-text: #fff;
 
-    --mdlr-color-highlight-main: #bc1528;
+    --mdlr-color-highlight-main: light-dark(#bc1528, #a11222);
     --mdlr-color-highlight-main-text: #fff;
-    --mdlr-color-highlight-intense: #a11222;
-    --mdlr-color-highlight-light: #f5adb5;
-    --mdlr-color-highlight-light-text: #000;
-    --mdlr-color-highlight-dark: #45090e;
-    --mdlr-color-highlight-dark-text: #fff;
+    --mdlr-color-highlight-intense: light-dark(#a11222, #bc2234);
+    --mdlr-color-highlight-light: light-dark(#f5adb5, #45090e);
+    --mdlr-color-highlight-light-text: light-dark(#000, #fff);
+    --mdlr-color-highlight-dark: light-dark(#45090e, #f5adb5);
+    --mdlr-color-highlight-dark-text: light-dark(#fff, #000);
 
-    --mdlr-color-accent-main: #be9e46;
+    --mdlr-color-accent-main: light-dark(#be9e46, #997e36);
     --mdlr-color-accent-main-text: #000;
-    --mdlr-color-accent-intense: #997e36;
-    --mdlr-color-accent-light: #e0d0a7;
-    --mdlr-color-accent-light-text: #000;
-    --mdlr-color-accent-dark: #403418;
-    --mdlr-color-accent-dark-text: #fff;
+    --mdlr-color-accent-intense: light-dark(#997e36, #be9e46);
+    --mdlr-color-accent-light: light-dark(#e0d0a7, #403418);
+    --mdlr-color-accent-light-text: light-dark(#000, #fff);
+    --mdlr-color-accent-dark: light-dark(#403418, #e0d0a7);
+    --mdlr-color-accent-dark-text: light-dark(#fff, #000);
 
     /* Fonts */
 
@@ -79,12 +79,12 @@ html {
 
     /* Shadows */
 
-    --mdlr-shadow-flat: 0 0 2px rgba(0, 0, 0, 0.1),
-        0 2px 4px rgba(0, 0, 0, 0.05);
-    --mdlr-shadow-regular: 0 0 2px rgba(0, 0, 0, 0.125),
-        0 4px 8px rgba(0, 0, 0, 0.1);
-    --mdlr-shadow-elevated: 0 0 2px rgba(0, 0, 0, 0.15),
-        0 8px 16px rgba(0, 0, 0, 0.15);
+    --mdlr-shadow-flat: 0 0 4px light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.1)),
+        0 2px 4px light-dark(rgba(0,0,0,0.05), rgba(255,255,255,0.05));
+    --mdlr-shadow-regular: 0 0 4px light-dark(rgba(0,0,0,0.125), rgba(255,255,255,0.125)),
+        0 4px 8px light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.1));
+    --mdlr-shadow-elevated: 0 0 4px light-dark(rgba(0,0,0,0.15), rgba(255,255,255,0.15)),
+        0 8px 16px light-dark(rgba(0,0,0,0.15), rgba(255,255,255,0.15));
 
     /* Transitions */
 
@@ -117,53 +117,6 @@ html {
     --mdlr-spacing-column: 6em;
 }
 
-/* Dark mode */
-
-@media screen and (prefers-color-scheme: dark) {
-
-    html {
-
-        /* Colours */
-    
-        --mdlr-color-primary-main: #13181d;
-        --mdlr-color-primary-main-text: #fff;
-        --mdlr-color-primary-intense: #000;
-        --mdlr-color-primary-intense-text: #9a9b9c;
-        --mdlr-color-primary-more: #090d12;
-        --mdlr-color-primary-less: #373d43;
-        --mdlr-color-primary-translucent: rgba(0,0,0,0.75);
-        --mdlr-color-primary-translucent-filter: blur(1rem);
-        --mdlr-color-primary-backdrop: rgba(0,0,0,0.65);
-        --mdlr-color-primary-backdrop-filter: blur(1rem);
-        --mdlr-color-primary-backdrop-text: #fff;
-
-        --mdlr-color-highlight-main: #a11222;
-        --mdlr-color-highlight-main-text: #fff;
-        --mdlr-color-highlight-intense: #bc2234;
-        --mdlr-color-highlight-light: #45090e;
-        --mdlr-color-highlight-light-text: #fff;
-        --mdlr-color-highlight-dark: #f5adb5;
-        --mdlr-color-highlight-dark-text: #000;
-    
-        --mdlr-color-accent-main: #997e36;
-        --mdlr-color-accent-main-text: #000;
-        --mdlr-color-accent-intense: #be9e46;
-        --mdlr-color-accent-light: #403418;
-        --mdlr-color-accent-light-text: #fff;
-        --mdlr-color-accent-dark: #e0d0a7;
-        --mdlr-color-accent-dark-text: #000;
-
-        /* Shadows */
-    
-        --mdlr-shadow-flat: 0 0 2px rgba(255, 255, 255, 0.1),
-            0 2px 4px rgba(255, 255, 255, 0.05);
-        --mdlr-shadow-regular: 0 0 2px rgba(255, 255, 255, 0.125),
-            0 4px 8px rgba(255, 255, 255, 0.1);
-        --mdlr-shadow-elevated: 0 0 2px rgba(255, 255, 255, 0.15),
-            0 8px 16px rgba(255, 255, 255, 0.15);
-    }
-}
-
 /* Font files */
 
 @font-face {
@@ -182,6 +135,29 @@ html {
     font-stretch: normal;
     font-weight: 100 900;
     src: url("../Fonts/inter-variable-italic.woff2") format("woff2");
+}
+
+/* Color scheme */
+
+:root,
+:root.mdlr-theme-light {
+    color-scheme: light;
+}
+
+:root.mdlr-theme-dark {
+    color-scheme: dark;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+
+    :root,
+    :root.mdlr-theme-dark {
+        color-scheme: dark;
+    }
+
+    :root.mdlr-theme-light {
+        color-scheme: light;
+    }
 }
 
 /*
@@ -439,18 +415,6 @@ a.mdlr-variant-inherit.mdlr-variant-active:focus-visible {
     outline-offset: var(--mdlr-spacing-large);
 }
 
-@supports not selector(:focus-visible) { /* Duplicate of the above, which is only supported in Safari since version 15.4 */
-
-    a:focus,
-    a.mdlr-variant-inherit:focus,
-    a.mdlr-variant-active:focus,
-    a.mdlr-variant-inherit.mdlr-variant-active:focus {
-        border-radius: var(--mdlr-spacing-outlineradius);
-        outline: var(--mdlr-color-highlight-main) var(--mdlr-spacing-medium) solid;
-        outline-offset: var(--mdlr-spacing-large);
-    }
-}
-
 a:active,
 a.mdlr-variant-inherit:active,
 a.mdlr-variant-active:active,
@@ -498,14 +462,6 @@ a.mdlr-imagelink.mdlr-variant-unobtrusive:hover {
 a.mdlr-imagelink:focus-visible,
 a.mdlr-imagelink.mdlr-variant-unobtrusive:focus-visible {
     filter: none;
-}
-
-@supports not selector(:focus-visible) { /* Duplicate of the above, which is only supported in Safari since version 15.4 */
-
-    a.mdlr-imagelink:focus,
-    a.mdlr-imagelink.mdlr-variant-unobtrusive:focus {
-        filter: none;
-    }
 }
 
 a.mdlr-imagelink:active,
@@ -805,55 +761,6 @@ a.mdlr-button.mdlr-variant-unobserved:focus-visible {
 button.mdlr-variant-round:enabled:focus-visible,
 a.mdlr-button.mdlr-variant-round:focus-visible {
     border-radius: 50%;
-}
-
-@supports not selector(:focus-visible) { /* Duplicate of the above, which is only supported in Safari since version 15.4 */
-
-    select:enabled:focus,
-    input[type="button"]:enabled:focus,
-    input[type="submit"]:enabled:focus,
-    input[type="reset"]:enabled:focus,
-    button:enabled:focus,
-    a.mdlr-button:focus,
-    select.mdlr-variant-light:enabled:focus,
-    input[type="button"].mdlr-variant-light:enabled:focus,
-    input[type="submit"].mdlr-variant-light:enabled:focus,
-    input[type="reset"].mdlr-variant-light:enabled:focus,
-    button.mdlr-variant-light:enabled:focus,
-    a.mdlr-button.mdlr-variant-light:focus,
-    select.mdlr-variant-overlay:enabled:focus,
-    input[type="button"].mdlr-variant-overlay:enabled:focus,
-    input[type="submit"].mdlr-variant-overlay:enabled:focus,
-    input[type="reset"].mdlr-variant-overlay:enabled:focus,
-    button.mdlr-variant-overlay:enabled:focus,
-    a.mdlr-button.mdlr-variant-overlay:focus,
-    select.mdlr-variant-transparent:enabled:focus,
-    input[type="button"].mdlr-variant-transparent:enabled:focus,
-    input[type="submit"].mdlr-variant-transparent:enabled:focus,
-    input[type="reset"].mdlr-variant-transparent:enabled:focus,
-    button.mdlr-variant-transparent:enabled:focus,
-    a.mdlr-button.mdlr-variant-transparent:focus,
-    select.mdlr-variant-unobtrusive:enabled:focus,
-    input[type="button"].mdlr-variant-unobtrusive:enabled:focus,
-    input[type="submit"].mdlr-variant-unobtrusive:enabled:focus,
-    input[type="reset"].mdlr-variant-unobtrusive:enabled:focus,
-    button.mdlr-variant-unobtrusive:enabled:focus,
-    a.mdlr-button.mdlr-variant-unobtrusive:focus,
-    select.mdlr-variant-unobserved:enabled:focus,
-    input[type="button"].mdlr-variant-unobserved:enabled:focus,
-    input[type="submit"].mdlr-variant-unobserved:enabled:focus,
-    input[type="reset"].mdlr-variant-unobserved:enabled:focus,
-    button.mdlr-variant-unobserved:enabled:focus,
-    a.mdlr-button.mdlr-variant-unobserved:focus {
-        border-radius: var(--mdlr-spacing-outlineradius);
-        outline: var(--mdlr-color-highlight-main) var(--mdlr-spacing-medium) solid;
-        outline-offset: var(--mdlr-spacing-medium);
-    }
-
-    button.mdlr-variant-round:enabled:focus,
-    a.mdlr-button.mdlr-variant-round:focus {
-        border-radius: 50%;
-    }
 }
 
 select:enabled:active,
@@ -1555,15 +1462,6 @@ ol.mdlr-pills > li > a:focus-visible,
 ul.mdlr-pills > li > a:focus-visible {
     outline: var(--mdlr-color-highlight-main) var(--mdlr-spacing-medium) solid;
     outline-offset: var(--mdlr-spacing-medium);
-}
-
-@supports not selector(:focus-visible) { /* Duplicate of the above, which is only supported in Safari since version 15.4 */
-
-    ol.mdlr-pills > li > a:focus,
-    ul.mdlr-pills > li > a:focus {
-        outline: var(--mdlr-color-highlight-main) var(--mdlr-spacing-medium) solid;
-        outline-offset: var(--mdlr-spacing-medium);
-    }
 }
 
 ol.mdlr-pills > li > a:active,

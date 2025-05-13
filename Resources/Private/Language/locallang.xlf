@@ -1448,6 +1448,12 @@
             <trans-unit id="templates.settings.color.dark" resname="templates.settings.color.dark">
                 <source>Dark</source>
             </trans-unit>
+            <trans-unit id="templates.settings.device" resname="templates.settings.device">
+                <source>Device</source>
+            </trans-unit>
+            <trans-unit id="templates.settings.device.storage" resname="templates.settings.device.storage">
+                <source>Remove local data</source>
+            </trans-unit>
             <trans-unit id="templates.settings.powered" resname="templates.settings.powered">
                 <source>Powered by the <![CDATA[<a href="https://github.com/digicademy-chf" target="_blank">]]>Cultural Heritage Framework<![CDATA[</a>]]></source>
             </trans-unit>

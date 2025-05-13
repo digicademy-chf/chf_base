@@ -5,7 +5,141 @@ The atomic interface library is designed to work with semantic HTML for
 accessible, responsive web apps. It is MIT licenced.
 */
 
+// General variables
+const root = document.documentElement;
+
 /*
+# Storage #####################################################################
+*/
+
+// Variables
+const storageButtons = mdlrElements('.mdlr-function-storage');
+
+// Activate theme buttons
+if(storageButtons.length > 0) {
+    storageButtons.forEach(function(storageButton) {
+        storageButton.addEventListener('click', function(e) {
+            mdlrStorageClear();
+            e.preventDefault();
+        });
+        storageButton.addEventListener('keydown', function(e) {
+            if(e.code == 'Enter' || e.code == 'Space') {
+                mdlrStorageClear();
+                e.preventDefault();
+            }
+        });
+    });
+}
+
+// Remove all content of local storage
+function mdlrStorageClear() {
+    localStorage.clear();
+    mdlrStorageEvaluate();
+}
+
+// Evaluate whether there is local storage to delete
+function mdlrStorageEvaluate() {
+    if(localStorage.length > 0) {
+        storageButtons.forEach(function(storageButton) {
+            storageButton.disabled = false;
+        });
+    } else {
+        storageButtons.forEach(function(storageButton) {
+            storageButton.disabled = true;
+        });
+    }
+}
+
+// Automatically evaluate local storage
+mdlrStorageEvaluate();
+
+/*
+# Theme #######################################################################
+*/
+
+// Variables
+const themeButtons = mdlrElements('.mdlr-function-theme');
+
+// Activate theme buttons
+if(themeButtons.length > 0) {
+    themeButtons.forEach(function(themeButton) {
+        themeButton.addEventListener('click', function(e) {
+            mdlrThemeSet(e.currentTarget.dataset.target);
+            e.preventDefault();
+        });
+        themeButton.addEventListener('keydown', function(e) {
+            if(e.code == 'Enter' || e.code == 'Space') {
+                mdlrThemeSet(e.currentTarget.dataset.target);
+                e.preventDefault();
+            }
+        });
+    });
+}
+
+// Highlight the active switch button
+function mdlrThemeSwitch(theme) {
+    const themeActiveClass = 'mdlr-variant-active';
+
+    // Activate only the requested switch buttons
+    themeButtons.forEach(function(themeButton) {
+        if(themeButton.dataset.target == theme) {
+            themeButton.classList.add(themeActiveClass);
+        } else {
+            themeButton.classList.remove(themeActiveClass);
+        }
+    });
+}
+
+// Set requested theme class
+function mdlrThemeSet(theme) {
+
+    // Remove any previous theme classes
+    const themeClasses = [
+        'mdlr-theme-light',
+        'mdlr-theme-dark'
+    ];
+    themeClasses.forEach(function(themeClass) {
+        root.classList.remove(themeClass);
+    });
+
+    // Add requested class and save user preference
+    if(theme != null) {
+        switch(theme) {
+
+            // Light mode
+            case 'light':
+                root.classList.add('mdlr-theme-light');
+                localStorage.setItem('theme', 'light');
+                break;
+
+            // Dark mode
+            case 'dark':
+                root.classList.add('mdlr-theme-dark');
+                localStorage.setItem('theme', 'dark');
+                break;
+
+            // Auto mode
+            default:
+                localStorage.removeItem('theme');
+                break;
+        }
+
+        // Highlight the active switch button
+        mdlrThemeSwitch(theme);
+    }
+
+    // Re-evaluate local-storage indicators
+    mdlrStorageEvaluate();
+}
+
+// Automatically activate theme
+mdlrThemeSet(localStorage.getItem('theme'));
+
+
+
+/*
+TODO Revise install indicator!
+
 // Show a functioning install button if the app is not installed yet
 window.addEventListener( 'beforeinstallprompt', (e) => {
     const deferredPrompt = e;

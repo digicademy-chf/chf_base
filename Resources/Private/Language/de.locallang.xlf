@@ -1922,6 +1922,14 @@
                 <source>Dark</source>
                 <target>Dunkel</target>
             </trans-unit>
+            <trans-unit id="templates.settings.device" resname="templates.settings.device" approved="yes">
+                <source>Device</source>
+                <target>Gerät</target>
+            </trans-unit>
+            <trans-unit id="templates.settings.device.storage" resname="templates.settings.device.storage" approved="yes">
+                <source>Remove local data</source>
+                <target>Lokale Daten löschen</target>
+            </trans-unit>
             <trans-unit id="templates.settings.powered" resname="templates.settings.powered" approved="yes">
                 <source>Powered by the <![CDATA[<a href="https://github.com/digicademy-chf" target="_blank">]]>Cultural Heritage Framework<![CDATA[</a>]]></source>
                 <target>Betrieben mit dem <![CDATA[<a href="https://github.com/digicademy-chf" target="_blank">]]>Cultural Heritage Framework<![CDATA[</a>]]></target>
