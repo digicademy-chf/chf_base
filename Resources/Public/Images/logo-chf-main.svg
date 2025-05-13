@@ -10,16 +10,28 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <style>
+    :root {
+      --chf-a: #a11222;
+      --chf-b: #bc1528;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+      --chf-a: #bc1528;
+      --chf-b: #a11222;
+      }
+    }
+  </style>
   <defs
      id="defs1">
     <linearGradient
        id="linearGradient2">
       <stop
-         style="stop-color:#a11222;stop-opacity:1;"
+         style="stop-color:var(--chf-a);stop-opacity:1;"
          offset="0"
          id="stop2" />
       <stop
-         style="stop-color:#bc1528;stop-opacity:1;"
+         style="stop-color:var(--chf-b);stop-opacity:1;"
          offset="1"
          id="stop3" />
     </linearGradient>
