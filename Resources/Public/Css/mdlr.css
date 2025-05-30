@@ -933,24 +933,6 @@ textarea:enabled:focus-visible {
     transition: var(--mdlr-transition-click);
 }
 
-@supports not selector( :focus-visible ) { /* Duplicate of the above, which is only supported in Safari since version 15.4 */
-
-    input[type="email"]:enabled:focus,
-    input[type="number"]:enabled:focus,
-    input[type="password"]:enabled:focus,
-    input[type="search"]:enabled:focus,
-    input[type="tel"]:enabled:focus,
-    input[type="text"]:enabled:focus,
-    input[type="url"]:enabled:focus,
-    textarea:enabled:focus {
-        box-shadow: var(--mdlr-shadow-elevated);
-        border-color: var(--mdlr-color-accent-main);
-        outline: none;
-        outline-offset: 0;
-        transition: var(--mdlr-transition-click);
-    }
-}
-
 /* Switch */
 
 input[type="checkbox"].mdlr-switch {
@@ -967,14 +949,6 @@ input[type="checkbox"].mdlr-switch {
 input[type="checkbox"].mdlr-switch:focus-visible {
     outline: var(--mdlr-color-highlight-main) var(--mdlr-spacing-medium) solid;
     outline-offset: var(--mdlr-spacing-medium);
-}
-
-@supports not selector( :focus-visible ) { /* Duplicate of the above, which is only supported in Safari since version 15.4 */
-
-    input[type="checkbox"].mdlr-switch:focus {
-        outline: var(--mdlr-color-highlight-main) var(--mdlr-spacing-medium) solid;
-        outline-offset: var(--mdlr-spacing-medium);
-    }
 }
 
 input[type="checkbox"].mdlr-switch::after {
@@ -1299,6 +1273,7 @@ ul.mdlr-imagerow {
 ol.mdlr-viewswitcher,
 ul.mdlr-viewswitcher {
     display: flex;
+    text-align: center;
     align-items: center;
     justify-content: center;
 }
@@ -1367,14 +1342,6 @@ ul.mdlr-viewswitcher > li > a:focus-visible::after {
     border-color: var(--mdlr-color-highlight-dark);
 }
 
-@supports not selector( :focus-visible ) { /* Duplicate of the above, which is only supported in Safari since version 15.4 */
-
-    ol.mdlr-viewswitcher > li > a:focus::after,
-    ul.mdlr-viewswitcher > li > a:focus::after {
-        border-color: var(--mdlr-color-highlight-dark);
-    }
-}
-
 @media screen and (max-width: 900px) {
 
     ol.mdlr-viewswitcher,
@@ -1382,7 +1349,7 @@ ul.mdlr-viewswitcher > li > a:focus-visible::after {
         position: fixed;
         left: 0;
         bottom: 0;
-        width: 100%;
+        width: calc(100% - var(--mdlr-spacing-padding-horizontal));
         background: var(--mdlr-color-primary-translucent);
         -webkit-backdrop-filter: var(--mdlr-color-primary-translucent-filter);
         backdrop-filter: var(--mdlr-color-primary-translucent-filter);
@@ -2592,8 +2559,8 @@ dialog.mdlr-modal.mdlr-variant-active {
     }
 
     .mdlr-section.mdlr-variant-title {
-        padding-top: calc(0.85 * var(--mdlr-spacing-margin));
-        padding-bottom: calc(1.25 * var(--mdlr-spacing-margin));
+        padding-top: var(--mdlr-spacing-margin);
+        padding-bottom: calc(1.5 * var(--mdlr-spacing-margin));
     }
 
     .mdlr-section.mdlr-variant-toolbar + .mdlr-section {
@@ -2614,8 +2581,8 @@ dialog.mdlr-modal.mdlr-variant-active {
     }
 
     .mdlr-section.mdlr-variant-title {
-        padding-top: calc(0.5 * var(--mdlr-spacing-margin));
-        padding-bottom: var(--mdlr-spacing-margin);
+        padding-top: calc(0.75 * var(--mdlr-spacing-margin));
+        padding-bottom: calc(1.25 * var(--mdlr-spacing-margin));
     }
 
     .mdlr-section.mdlr-variant-toolbar + .mdlr-section {
@@ -2632,7 +2599,8 @@ dialog.mdlr-modal.mdlr-variant-active {
 .mdlr-content p,
 .mdlr-content ol,
 .mdlr-content ul,
-.mdlr-content blockquote {
+.mdlr-content blockquote,
+.mdlr-content pre {
     margin: 0 auto;
     -webkit-hyphens: auto;
     hyphens: auto;
@@ -2651,14 +2619,17 @@ dialog.mdlr-modal.mdlr-variant-active {
 .mdlr-content > ol:not(:first-child),
 .mdlr-content > ul:not(:first-child),
 .mdlr-content > blockquote:not(:first-child),
+.mdlr-content > pre:not(:first-child),
 .mdlr-content > div:first-child p:not(:first-child),
 .mdlr-content > div:first-child ol:not(:first-child),
 .mdlr-content > div:first-child ul:not(:first-child),
 .mdlr-content > div:first-child blockquote:not(:first-child),
+.mdlr-content > div:first-child pre:not(:first-child),
 .mdlr-content > div:not(:first-child) p,
 .mdlr-content > div:not(:first-child) ol,
 .mdlr-content > div:not(:first-child) ul,
-.mdlr-content > div:not(:first-child) blockquote {
+.mdlr-content > div:not(:first-child) blockquote,
+.mdlr-content > div:not(:first-child) pre {
     margin-top: 0.85em;
 }
 
@@ -2666,12 +2637,23 @@ dialog.mdlr-modal.mdlr-variant-active {
 .mdlr-content > div:first-child header:first-child + p,
 .mdlr-content > div:first-child header:first-child + ol,
 .mdlr-content > div:first-child header:first-child + ul,
-.mdlr-content > div:first-child header:first-child + blockquote {
+.mdlr-content > div:first-child header:first-child + blockquote,
+.mdlr-content > div:first-child header:first-child + pre {
     margin-top: 0;
 }
 
-.mdlr-content p {
+.mdlr-content p,
+.mdlr-content p.text-start,
+.mdlr-content p.text-justify {
     text-align: justify;
+}
+
+.mdlr-content p.text-center {
+    text-align: center;
+}
+
+.mdlr-content p.text-end {
+    text-align: right;
 }
 
 .mdlr-content > p:first-of-type::first-letter,
@@ -2735,6 +2717,34 @@ dialog.mdlr-modal.mdlr-variant-active {
     padding-left: calc(1.75em - var(--mdlr-spacing-extralarge));
     max-width: calc(var(--mdlr-width-text) - 1.75em);
     border-left: var(--mdlr-spacing-extralarge) solid var(--mdlr-color-highlight-light);
+}
+
+.mdlr-content pre {
+    font-family: monospace;
+    font-size: var(--mdlr-font-main);
+    line-height: var(--mdlr-font-main-height);
+    padding: var(--mdlr-spacing-padding-vertical) var(--mdlr-spacing-padding-horizontal);
+    width: fit-content;
+    min-width: calc(var(--mdlr-width-text) - 2 * var(--mdlr-spacing-padding-horizontal));
+    background: var(--mdlr-color-primary-main);
+    border-radius: var(--mdlr-spacing-radius);
+    overflow-x: scroll;
+}
+
+.mdlr-content pre:hover {
+    background: var(--mdlr-color-primary-more);
+}
+
+.mdlr-content p code {
+    font-family: monospace;
+    font-size: var(--mdlr-font-main);
+    padding: calc(0.5 * var(--mdlr-spacing-padding-vertical)) calc(0.5 * var(--mdlr-spacing-padding-horizontal));
+    background: var(--mdlr-color-primary-main);
+    border-radius: var(--mdlr-spacing-radius);
+}
+
+.mdlr-content p code:hover {
+    background: var(--mdlr-color-primary-more);
 }
 
 /* Content: headings */

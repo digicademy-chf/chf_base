@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:variable name="listContents">0</f:variable>
     <f:for each="{contentElements}" as="contentElement">
-        <f:if condition="{contentElement.header}">
+        <f:if condition="{contentElement.header} && {contentElement.sectionIndex}">
             <f:variable name="listContents">1</f:variable>
         </f:if>
     </f:for>
@@ -15,7 +15,7 @@
             </button>
             <ul class="mdlr-dropdown mdlr-variant-simplehierarchy" id="toolbar-toc-content" role="listbox" aria-labelledby="toolbar-toc-handle" tabindex="-1">
                 <f:for each="{contentElements}" as="contentElement" iteration="index">
-                    <f:if condition="{contentElement.header}">
+                    <f:if condition="{contentElement.header} && {contentElement.sectionIndex}">
                         <li>
                             <f:switch expression="{contentElement.header_layout}">
                                 <f:case value="100"/>

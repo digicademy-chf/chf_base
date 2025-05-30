@@ -18,6 +18,7 @@ editor:
         - strikethrough
         - subscript
         - superscript
+        - code
         - '|'
         - link
         - softhyphen
@@ -28,9 +29,10 @@ editor:
         - outdent
         - indent
         - '|'
-        - blockQuote
-        - insertTable
         - horizontalLine
+        - blockQuote
+        - codeBlock
+        - insertTable
         - '|'
         - removeFormat
         - clipboard
@@ -47,7 +49,6 @@ editor:
         - { model: 'heading4', view: 'h4', title: 'Heading 4' }
         - { model: 'heading5', view: 'h5', title: 'Heading 5' }
         - { model: 'heading6', view: 'h6', title: 'Heading 6' }
-        - { model: 'formatted', view: 'pre', title: 'Pre-Formatted Text' }
 
     alignment:
       options:
@@ -65,3 +66,7 @@ editor:
         - tableProperties
         - tableCellProperties
         - toggleTableCaption
+
+    importModules:
+      - { module: '@ckeditor/ckeditor5-word-count', exports: ['WordCount'] }
+      - { module: '@ckeditor/ckeditor5-code-block', exports: ['CodeBlock'] }

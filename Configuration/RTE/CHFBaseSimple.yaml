@@ -15,15 +15,15 @@ editor:
         - strikethrough
         - subscript
         - superscript
-        - softhyphen
         - '|'
-        - findAndReplace
         - link
+        - softhyphen
+        - specialCharacters
         - '|'
         - removeFormat
         - clipboard
         - undo
         - redo
         - '|'
-        - specialCharacters
+        - findAndReplace
         - sourceEditing

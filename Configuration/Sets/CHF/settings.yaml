@@ -4,8 +4,8 @@ styles:
     textmedia:
       linkWrap:
         lightboxEnabled: true
-      #maxW: 600
-      #maxWInText: 300
+      maxW: 640
+      maxWInText: 320
       #columnSpacing: 10
       #rowSpacing: 10
       #textMargin: 10

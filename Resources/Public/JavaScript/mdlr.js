@@ -64,7 +64,7 @@ if(fullscreenButtons.length > 0) {
     fullscreenButtons.forEach(function(fullscreenButton) {
         fullscreenButton.addEventListener('click', function(e) {
             mdlrFullscreen(e.currentTarget);
-            e.preventDefault();
+            //e.preventDefault();
         });
         fullscreenButton.addEventListener('keydown', function(e) {
             if(e.code == 'Enter' || e.code == 'Space') {
@@ -122,7 +122,7 @@ if(timelineRegions.length > 0) {
     timelineRegions.forEach(function(timelineRegion) {
         timelineRegion.addEventListener('mouseover', function(e) {
             mdlrTimelineHighlight(e.currentTarget);
-            e.preventDefault();
+            //e.preventDefault();
         });
     });
 }
@@ -156,7 +156,7 @@ if(infoButtons.length > 0) {
     infoButtons.forEach(function(infoButton) {
         infoButton.addEventListener('click', function(e) {
             mdlrInfoOpen(e.currentTarget);
-            e.preventDefault();
+            //e.preventDefault();
         });
         infoButton.addEventListener('keydown', function(e) {
             if(e.code == 'Enter' || e.code == 'Space') {
@@ -263,7 +263,7 @@ if(referenceLinks.length > 0) {
     referenceLinks.forEach(function(referenceLink) {
         referenceLink.addEventListener('click', function(e) {
             mdlrReferenceOpen(e.currentTarget);
-            e.preventDefault();
+            //e.preventDefault();
         });
         referenceLink.addEventListener('keydown', function(e) {
             if(e.code == 'Enter' || e.code == 'Space') {
@@ -411,7 +411,7 @@ if(storageButtons.length > 0) {
     storageButtons.forEach(function(storageButton) {
         storageButton.addEventListener('click', function(e) {
             mdlrStorageClear();
-            e.preventDefault();
+            //e.preventDefault();
         });
         storageButton.addEventListener('keydown', function(e) {
             if(e.code == 'Enter' || e.code == 'Space') {
@@ -461,7 +461,7 @@ if(themeButtons.length > 0) {
     themeButtons.forEach(function(themeButton) {
         themeButton.addEventListener('click', function(e) {
             mdlrThemeSet(e.currentTarget.dataset.target);
-            e.preventDefault();
+            //e.preventDefault();
         });
         themeButton.addEventListener('keydown', function(e) {
             if(e.code == 'Enter' || e.code == 'Space') {
@@ -545,7 +545,7 @@ if(backButtons.length > 0) {
     backButtons.forEach(function(backButton) {
         backButton.addEventListener('click', function(e) {
             history.back();
-            e.preventDefault();
+            //e.preventDefault();
         });
         backButton.addEventListener('keydown', function(e) {
             if(e.code == 'Enter' || e.code == 'Space') {
@@ -561,7 +561,7 @@ if(upButtons.length > 0) {
     upButtons.forEach(function(upButton) {
         upButton.addEventListener('click', function(e) {
             window.scrollTo(0, 0);
-            e.preventDefault();
+            //e.preventDefault();
         });
         upButton.addEventListener('keydown', function(e) {
             if(e.code == 'Enter' || e.code == 'Space') {
@@ -577,7 +577,7 @@ if(pdfButtons.length > 0) {
     pdfButtons.forEach(function(pdfButton) {
         pdfButton.addEventListener('click', function(e) {
             window.print();
-            e.preventDefault();
+            //e.preventDefault();
         });
         pdfButton.addEventListener('keydown', function(e) {
             if(e.code == 'Enter' || e.code == 'Space') {
@@ -649,7 +649,7 @@ if(dropdowns.length > 0) {
         // On click
         dropdown.addEventListener('click', function(e) {
             mdlrDropdown(e.currentTarget);
-            e.preventDefault();
+            //e.preventDefault();
         });
 
         // On enter or space keypresses
@@ -734,7 +734,7 @@ function mdlrDropdownCloseConditions(e) {
     else {
         if(! e.target.closest('.mdlr-dropdown')) {
             mdlrDropdownClose();
-            e.preventDefault();
+            //e.preventDefault();
         }
     }
 }
@@ -751,7 +751,7 @@ if(hierarchies.length > 0) {
     hierarchies.forEach(function(hierarchy) {
         hierarchy.addEventListener('click', function(e) {
             mdlrHierarchy(e.currentTarget);
-            e.preventDefault();
+            //e.preventDefault();
         });
         hierarchy.addEventListener('keydown', function(e) {
             if(e.code == 'Enter' || e.code == 'Space') {
@@ -808,7 +808,7 @@ if(modalOpeners.length > 0) {
     modalOpeners.forEach(function(modalOpener) {
         modalOpener.addEventListener('click', function(e) {
             mdlrModalOpen(e.currentTarget);
-            e.preventDefault();
+            //e.preventDefault();
         });
         modalOpener.addEventListener('keydown', function(e) {
             if(e.code == 'Enter' || e.code == 'Space') {
@@ -824,7 +824,7 @@ if(modalClosers.length > 0) {
     modalClosers.forEach(function(modalCloser) {
         modalCloser.addEventListener('click', function(e) {
             mdlrModalClose();
-            e.preventDefault();
+            //e.preventDefault();
         });
         modalCloser.addEventListener('keydown', function(e) {
             if(e.code == 'Enter' || e.code == 'Space') {
@@ -847,7 +847,6 @@ function mdlrModalOpen(clickedElement) {
 
     // Show dialog
     modal.showModal();
-    modal.setAttribute('aria-hidden', 'false');
     modal.classList.add('mdlr-variant-active');
 
     // Focus close button for keyboard users
@@ -878,7 +877,6 @@ function mdlrModalClose() {
     // Hide modal
     modals.forEach(function(modal) {
         modal.classList.remove('mdlr-variant-active');
-        modal.setAttribute('aria-hidden', 'true');
 
         // Close modal after transition
         setTimeout(function() {
@@ -910,14 +908,29 @@ function mdlrModalCloseConditions(e) {
         }
     }
 
-    // Check if click/swipe is outside focus element
+    // Check if click/swipe is outside dialog
     else {
         const openModal = document.querySelector('.mdlr-modal[open]');
         const openModalRect = openModal.getBoundingClientRect();
-        const inOpenModal = (openModalRect.top <= e.clientY && e.clientY <= openModalRect.top + openModalRect.height && openModalRect.left <= e.clientX && e.clientX <= openModalRect.left + openModalRect.width);
+        let clientY = 0;
+        let clientX = 0;
+
+        // Click
+        if(e.clientY && e.clientX) {
+            clientY = e.clientY;
+            clientX = e.clientX;
+
+        // Swipe
+        } else if(e.touches[0].clientY && e.touches[0].clientX) {
+            clientY = e.touches[0].clientY;
+            clientX = e.touches[0].clientX;
+        }
+
+        // Check dialog rect
+        const inOpenModal = (openModalRect.top <= clientY && clientY <= openModalRect.top + openModalRect.height && openModalRect.left <= clientX && clientX <= openModalRect.left + openModalRect.width);
         if (! inOpenModal) {
             mdlrModalClose();
-            e.preventDefault();
+            //e.preventDefault();
         }
     }
 }
@@ -941,7 +954,7 @@ if(toastClosers.length > 0) {
     toastClosers.forEach(function(toastCloser) {
         toastCloser.addEventListener('click', function(e) {
             mdlrToastClose();
-            e.preventDefault();
+            //e.preventDefault();
         });
         toastCloser.addEventListener('keydown', function(e) {
             if(e.code == 'Enter' || e.code == 'Space') {
@@ -1013,7 +1026,7 @@ if(copyButtons.length > 0) {
     copyButtons.forEach(function(copyButton) {
         copyButton.addEventListener('click', function(e) {
             mdlrCopy(e.currentTarget);
-            e.preventDefault();
+            //e.preventDefault();
         });
         copyButton.addEventListener('keydown', function(e) {
             if(e.code == 'Enter' || e.code == 'Space') {
@@ -1068,7 +1081,7 @@ if(shareButtons.length > 0) {
     shareButtons.forEach(function(shareButton) {
         shareButton.addEventListener('click', function(e) {
             mdlrShare(e.currentTarget);
-            e.preventDefault();
+            //e.preventDefault();
         });
         shareButton.addEventListener('keydown', function(e) {
             if(e.code == 'Enter' || e.code == 'Space') {
@@ -1134,7 +1147,7 @@ if(mastodonButtons.length > 0) {
     mastodonButtons.forEach(function(mastodonButton) {
         mastodonButton.addEventListener('click', function(e) {
             mdlrMastodon(e.currentTarget);
-            e.preventDefault();
+            //e.preventDefault();
         });
         mastodonButton.addEventListener('keydown', function(e) {
             if(e.code == 'Enter' || e.code == 'Space') {
