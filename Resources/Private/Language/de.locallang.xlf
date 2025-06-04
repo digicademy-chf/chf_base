@@ -1562,37 +1562,25 @@
                 <source>Meta</source>
                 <target>Meta</target>
             </trans-unit>
-            <trans-unit id="templates.toolbar.remember" resname="templates.toolbar.remember" approved="yes">
-                <source>Remember</source>
-                <target>Merken</target>
-            </trans-unit>
-            <trans-unit id="templates.toolbar.share" resname="templates.toolbar.share" approved="yes">
-                <source>Share</source>
-                <target>Teilen</target>
-            </trans-unit>
-            <trans-unit id="templates.toolbar.toc" resname="templates.toolbar.toc" approved="yes">
-                <source>Contents</source>
-                <target>Inhalt</target>
-            </trans-unit>
-            <trans-unit id="templates.toolbar.formats" resname="templates.toolbar.formats" approved="yes">
-                <source>Data formats</source>
-                <target>Datenformate</target>
-            </trans-unit>
-            <trans-unit id="templates.toolbar.formats.pdf" resname="templates.toolbar.formats.pdf" approved="yes">
-                <source><![CDATA[<abbr title="Portable Document Format">]]>PDF<![CDATA[</abbr>]]> or print</source>
-                <target><![CDATA[<abbr title="Portable Document Format">]]>PDF<![CDATA[</abbr>]]> oder drucken</target>
-            </trans-unit>
             <trans-unit id="templates.main" resname="templates.main" approved="yes">
                 <source>Content</source>
                 <target>Inhalt</target>
+            </trans-unit>
+            <trans-unit id="templates.main.quickAccess" resname="templates.main.quickAccess" approved="yes">
+                <source>Quick access</source>
+                <target>Schnellzugriff</target>
+            </trans-unit>
+            <trans-unit id="templates.main.toc" resname="templates.main.toc" approved="yes">
+                <source>Table of contents</source>
+                <target>Inhaltsverzeichnis</target>
             </trans-unit>
             <trans-unit id="templates.main.empty" resname="templates.main.empty" approved="yes">
                 <source>This page is currently empty. Content would otherwise be displayed here.</source>
                 <target>Diese Seite ist momentan noch leer. An dieser Stelle würden sonst Inhalte angezeigt.</target>
             </trans-unit>
             <trans-unit id="templates.about" resname="templates.about" approved="yes">
-                <source>Page data sheet</source>
-                <target>Datenblatt dieser Seite</target>
+                <source>About this page</source>
+                <target>Über diese Seite</target>
             </trans-unit>
             <trans-unit id="templates.about.properties" resname="templates.about.properties" approved="yes">
                 <source>Properties</source>
@@ -1603,8 +1591,8 @@
                 <target>Referenz</target>
             </trans-unit>
             <trans-unit id="templates.about.serializations" resname="templates.about.serializations" approved="yes">
-                <source>Linked open data</source>
-                <target>Linked Open Data</target>
+                <source>Data formats and <![CDATA[<abbr title="Linked Open Data">]]>LOD<![CDATA[</abbr>]]></source>
+                <target>Datenformate und <![CDATA[<abbr title="Linked Open Data">]]>LOD<![CDATA[</abbr>]]></target>
             </trans-unit>
             <trans-unit id="templates.about.author" resname="templates.about.author" approved="yes">
                 <source>Author</source>
@@ -1781,6 +1769,14 @@
             <trans-unit id="templates.share.device.email.hint" resname="templates.share.device.email.hint" approved="yes">
                 <source>Share by email</source>
                 <target>Per E-Mail teilen</target>
+            </trans-unit>
+            <trans-unit id="templates.share.device.pdf" resname="templates.share.device.pdf" approved="yes">
+                <source><![CDATA[<abbr title="Portable Document Format">]]>PDF<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Portable Document Format">]]>PDF<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.share.device.pdf.hint" resname="templates.share.device.pdf.hint" approved="yes">
+                <source>Create PDF or print</source>
+                <target>PDF erstellen oder drucken</target>
             </trans-unit>
             <trans-unit id="templates.share.services" resname="templates.share.services" approved="yes">
                 <source>In social networks</source>

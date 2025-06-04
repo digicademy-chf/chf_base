@@ -1208,6 +1208,19 @@ p.mdlr-title-superheading {
     margin-bottom: calc(0.4 * var(--mdlr-spacing-margin));
 }
 
+.mdlr-title + nav {
+    margin-top: var(--mdlr-spacing-margin);
+    margin-bottom: calc(-0.5 * var(--mdlr-spacing-margin));
+}
+
+@media screen and (max-width: 900px) {
+
+    .mdlr-title + nav {
+        margin-top: calc(0.75 * var(--mdlr-spacing-margin));
+        margin-bottom: 0;
+    }
+}
+
 /* Link rows */
 
 ol.mdlr-linkrow,
@@ -1767,7 +1780,7 @@ ul.mdlr-dropdown.mdlr-variant-up.mdlr-variant-active {
     margin-bottom: calc(0.5 * var(--mdlr-spacing-padding-vertical));
 }
 
-ul.mdlr-pattern-align-right ul.mdlr-dropdown {
+ul.mdlr-dropdown.mdlr-variant-right {
     right: 0;
 }
 
@@ -1835,41 +1848,34 @@ ul.mdlr-dropdown.mdlr-variant-select li button:not(.mdlr-variant-active) {
     color: transparent;
 }
 
-ul.mdlr-dropdown.mdlr-variant-simplehierarchy li button.mdlr-variant-indent-1:first-child span,
-ul.mdlr-dropdown.mdlr-variant-simplehierarchy li a.mdlr-button.mdlr-variant-indent-1:first-child span {
+ul.mdlr-dropdown.mdlr-variant-toc li button.mdlr-variant-indent-1:first-child span,
+ul.mdlr-dropdown.mdlr-variant-toc li a.mdlr-button.mdlr-variant-indent-1:first-child span {
     padding-left: calc(0.75 * var(--mdlr-spacing-padding-horizontal));
 }
 
-ul.mdlr-dropdown.mdlr-variant-simplehierarchy li button.mdlr-variant-indent-2:first-child span,
-ul.mdlr-dropdown.mdlr-variant-simplehierarchy li a.mdlr-button.mdlr-variant-indent-2:first-child span {
+ul.mdlr-dropdown.mdlr-variant-toc li button.mdlr-variant-indent-2:first-child span,
+ul.mdlr-dropdown.mdlr-variant-toc li a.mdlr-button.mdlr-variant-indent-2:first-child span {
     padding-left: calc(1.5 * var(--mdlr-spacing-padding-horizontal));
-}
-
-@media screen and (min-width: 901px) {
-
-    .mdlr-pattern-align-right-above-900 ul.mdlr-dropdown {
-        right: 0;
-    }
-}
-
-@media screen and (max-width: 900px) {
-
-    .mdlr-pattern-align-right-below-900 ul.mdlr-dropdown {
-        right: 0;
-    }
-}
-
-@media screen and (min-width: 601px) {
-
-    .mdlr-pattern-align-right-above-600 ul.mdlr-dropdown {
-        right: 0;
-    }
 }
 
 @media screen and (max-width: 600px) {
 
-    .mdlr-pattern-align-right-below-600 ul.mdlr-dropdown {
-        right: 0;
+    .mdlr-dropdown-wrapper {
+        position: static;
+    }
+
+    ul.mdlr-dropdown,
+    ul.mdlr-dropdown.mdlr-variant-up,
+    ul.mdlr-dropdown.mdlr-variant-right {
+        left: calc(0.75 * var(--mdlr-spacing-margin));
+        right: unset;
+        top: unset;
+        width: calc(100% - 1.5 * var(--mdlr-spacing-margin));
+        max-width: unset;
+    }
+
+    ul.mdlr-dropdown.mdlr-variant-up {
+        bottom: calc(3.5 * var(--mdlr-spacing-padding-vertical) + var(--mdlr-font-main-height));
     }
 }
 
@@ -2497,19 +2503,7 @@ dialog.mdlr-modal.mdlr-variant-active {
 
 .mdlr-section.mdlr-variant-title {
     padding-top: calc(1.75 * var(--mdlr-spacing-margin));
-    padding-bottom: calc(2 * var(--mdlr-spacing-margin));
-}
-
-.mdlr-section.mdlr-variant-toolbar {
-    position: relative;
-    bottom: calc(-0.75 * var(--mdlr-spacing-padding-vertical) - 0.5 * var(--mdlr-font-main-height));
-    margin-top: calc(-0.75 * var(--mdlr-spacing-padding-vertical) - 0.5 * var(--mdlr-font-main-height));
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-.mdlr-section.mdlr-variant-toolbar + .mdlr-section {
-    padding-top: calc((1.5 * var(--mdlr-spacing-margin)) + (0.75 * var(--mdlr-spacing-padding-vertical)) + (0.5 * var(--mdlr-font-main-height)));
+    padding-bottom: calc(2.25 * var(--mdlr-spacing-margin));
 }
 
 .mdlr-section.mdlr-variant-even {
@@ -2562,10 +2556,6 @@ dialog.mdlr-modal.mdlr-variant-active {
         padding-top: var(--mdlr-spacing-margin);
         padding-bottom: calc(1.5 * var(--mdlr-spacing-margin));
     }
-
-    .mdlr-section.mdlr-variant-toolbar + .mdlr-section {
-        padding-top: calc((1.25 * var(--mdlr-spacing-margin)) + (0.75 * var(--mdlr-spacing-padding-vertical)) + (0.5 * var(--mdlr-font-main-height)));
-    }
 }
 
 @media screen and (max-width: 600px) {
@@ -2583,10 +2573,6 @@ dialog.mdlr-modal.mdlr-variant-active {
     .mdlr-section.mdlr-variant-title {
         padding-top: calc(0.75 * var(--mdlr-spacing-margin));
         padding-bottom: calc(1.25 * var(--mdlr-spacing-margin));
-    }
-
-    .mdlr-section.mdlr-variant-toolbar + .mdlr-section {
-        padding-top: calc(var(--mdlr-spacing-margin) + (0.75 * var(--mdlr-spacing-padding-vertical)) + (0.5 * var(--mdlr-font-main-height)));
     }
 }
 

@@ -4,10 +4,8 @@
         <main id="main">
             <article>
 
-                <f:render partial="Main/Title" arguments="{supertitle: 0, title: page.pageRecord.title, subtitle: page.pageRecord.subtitle}"/>
+                <f:render partial="Main/Title" arguments="{supertitle: 0, title: page.pageRecord.title, subtitle: page.pageRecord.subtitle, subMenu: '{subMenu}', contentElements: '{contentElements.main.records}'}"/>
 
-                <f:render partial="Toolbar/Default" arguments="{contentElements: '{contentElements.main.records}'}"/>
-    
                 <f:render partial="Main/Content" arguments="{contentElements: '{contentElements.main.records}'}"/>
 
             </article>

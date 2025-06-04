@@ -44,6 +44,7 @@ page {
             30 = menu
             30 {
                 as = rootlineMenu
+                titleField = nav_title // title
                 special = rootline
                 special {
                     range = 0|-1
@@ -53,6 +54,12 @@ page {
             }
             40 = menu
             40 {
+                as = subMenu
+                titleField = nav_title // title
+                special = directory
+            }
+            50 = menu
+            50 {
                 as = languageMenu
                 special = language
                 special {
@@ -60,12 +67,12 @@ page {
                     normalWhenNoLanguage = 1
                 }
             }
-            50 = page-content
-            50 {
+            60 = page-content
+            60 {
                 as = contentElements
             }
-            60 = files
-            60 {
+            70 = files
+            70 {
                 as = images
                 references {
                     table = pages

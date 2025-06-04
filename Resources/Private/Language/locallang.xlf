@@ -1178,29 +1178,20 @@
             <trans-unit id="templates.header.meta" resname="templates.header.meta">
                 <source>Meta</source>
             </trans-unit>
-            <trans-unit id="templates.toolbar.remember" resname="templates.toolbar.remember">
-                <source>Remember</source>
-            </trans-unit>
-            <trans-unit id="templates.toolbar.share" resname="templates.toolbar.share">
-                <source>Share</source>
-            </trans-unit>
-            <trans-unit id="templates.toolbar.toc" resname="templates.toolbar.toc">
-                <source>Contents</source>
-            </trans-unit>
-            <trans-unit id="templates.toolbar.formats" resname="templates.toolbar.formats">
-                <source>Data formats</source>
-            </trans-unit>
-            <trans-unit id="templates.toolbar.formats.pdf" resname="templates.toolbar.formats.pdf">
-                <source><![CDATA[<abbr title="Portable Document Format">]]>PDF<![CDATA[</abbr>]]> or print</source>
-            </trans-unit>
             <trans-unit id="templates.main" resname="templates.main">
                 <source>Content</source>
+            </trans-unit>
+            <trans-unit id="templates.main.quickAccess" resname="templates.main.quickAccess">
+                <source>Quick access</source>
+            </trans-unit>
+            <trans-unit id="templates.main.toc" resname="templates.main.toc">
+                <source>Table of contents</source>
             </trans-unit>
             <trans-unit id="templates.main.empty" resname="templates.main.empty">
                 <source>This page is currently empty. Content would otherwise be displayed here.</source>
             </trans-unit>
             <trans-unit id="templates.about" resname="templates.about">
-                <source>Page data sheet</source>
+                <source>About this page</source>
             </trans-unit>
             <trans-unit id="templates.about.properties" resname="templates.about.properties">
                 <source>Properties</source>
@@ -1208,8 +1199,8 @@
             <trans-unit id="templates.about.reference" resname="templates.about.reference">
                 <source>Reference</source>
             </trans-unit>
-            <trans-unit id="templates.about.serializations" resname="templates.about.serializations">
-                <source>Linked open data</source>
+            <trans-unit id="templates.about.serializations" resname="templates.about.serializations" approved="yes">
+                <source>Data formats and <![CDATA[<abbr title="Linked Open Data">]]>LOD<![CDATA[</abbr>]]></source>
             </trans-unit>
             <trans-unit id="templates.about.author" resname="templates.about.author">
                 <source>Author</source>
@@ -1342,6 +1333,12 @@
             </trans-unit>
             <trans-unit id="templates.share.device.email.hint" resname="templates.share.device.email.hint">
                 <source>Share by email</source>
+            </trans-unit>
+            <trans-unit id="templates.share.device.pdf" resname="templates.share.device.pdf">
+                <source><![CDATA[<abbr title="Portable Document Format">]]>PDF<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.share.device.pdf.hint" resname="templates.share.device.pdf.hint">
+                <source>Create PDF or print</source>
             </trans-unit>
             <trans-unit id="templates.share.services" resname="templates.share.services">
                 <source>In social networks</source>

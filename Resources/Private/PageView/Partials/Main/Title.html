@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <section id="main-title" class="mdlr-section mdlr-variant-title mdlr-variant-odd mdlr-variant-ultrawide mdlr-function-scroll">
-        <div class="mdlr-title mdlr-pattern-slot-b mdlr-pattern-align-center mdlr-pattern-align-middle">
+        <div class="mdlr-title">
             <h2 class="mdlr-title-heading">{title}</h2>
             <f:if condition="{subtitle}">
                 <p class="mdlr-title-subheading">{subtitle}</p>
@@ -9,5 +9,6 @@
                 <p class="mdlr-title-superheading">{supertitle}</p>
             </f:if>
         </div>
+        <f:render partial="Main/QuickAccess" arguments="{subMenu: '{subMenu}', contentElements: '{contentElements}'}"/>
     </section>
 </html>

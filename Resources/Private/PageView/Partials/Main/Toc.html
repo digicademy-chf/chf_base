@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:if condition="{listContents}">
+        <li class="mdlr-dropdown-wrapper">
+            <button type="button" id="main-toc-handle" class="{f:if(condition: '{listSubMenu}', then: 'mdlr-variant-icon', else: 'mdlr-variant-texticon')} mdlr-variant-round mdlr-variant-light mdlr-function-dropdown" aria-controls="main-toc-content" aria-haspopup="true" aria-expanded="false" title="{f:if(condition: '{listSubMenu}', then: '{f:translate(key: \'templates.main.toc\', extensionName: \'chf_base\')}')}">
+                <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <use href="#icon-toc"/>
+                </svg>
+                <span><f:translate key="templates.main.toc" extensionName="chf_base"/></span>
+            </button>
+            <ul class="mdlr-dropdown {f:if(condition: '{listSubMenu}', then: 'mdlr-variant-right')} mdlr-variant-toc" id="main-toc-content" role="listbox" aria-labelledby="main-toc-handle" tabindex="-1">
+                <f:for each="{contentElements}" as="contentElement" iteration="index">
+                    <f:if condition="{contentElement.header} && {contentElement.sectionIndex} && {contentElement.header_layout} != 100">
+                        <li>
+                            <a href="#c{contentElement.uid}" class="mdlr-button mdlr-variant-mini mdlr-variant-unobtrusive {f:if(condition: '{contentElement.header_layout} == 4', then: 'mdlr-variant-indent-1')} {f:if(condition: '{contentElement.header_layout} == 5', then: ' mdlr-variant-indent-2')}">
+                                <span>{contentElement.header}</span>
+                            </a>
+                        </li>
+                    </f:if>
+                </f:for>
+            </ul>
+        </li>
+    </f:if>
+</html>
