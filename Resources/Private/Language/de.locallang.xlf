@@ -1506,6 +1506,14 @@
                 <source>Something went wrong</source>
                 <target>Das hat leider nicht geklappt</target>
             </trans-unit>
+            <trans-unit id="templates.generic.fullscreen" resname="templates.generic.fullscreen" approved="yes">
+                <source>Fullscreen</source>
+                <target>Vollbild</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.fullscreen.failure" resname="templates.generic.fullscreen.failure" approved="yes">
+                <source>Something went wrong</source>
+                <target>Das hat leider nicht geklappt</target>
+            </trans-unit>
             <trans-unit id="templates.generic.email" resname="templates.generic.email" approved="yes">
                 <source>Compose email</source>
                 <target>E-Mail verfassen</target>

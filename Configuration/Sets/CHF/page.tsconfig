@@ -1,6 +1,7 @@
-#@import 'EXT:chf_base/Configuration/TsConfig/Page/PageLayout/*.tsconfig'
-
+// Set layouts
 mod.web_layout.BackendLayouts {
+
+  // Default
   default {
     title = LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:layout.default
     icon = EXT:chf_base/Resources/Public/Images/LayoutDefault.svg
@@ -23,6 +24,8 @@ mod.web_layout.BackendLayouts {
       }
     }
   }
+
+  // Hub
   hub {
     title = LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:layout.hub
     icon = EXT:chf_base/Resources/Public/Images/LayoutHub.svg
@@ -45,4 +48,9 @@ mod.web_layout.BackendLayouts {
       }
     }
   }
+}
+
+// Set fullscreen buttons to appear by default
+TCAdefaults {
+    tt_content.image_zoom = 1
 }

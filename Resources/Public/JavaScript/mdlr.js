@@ -53,64 +53,6 @@ window.addEventListener( 'beforeinstallprompt', (e) => {
 
 
 /*
-# Fullscreen ##################################################################
-*/
-
-// Variable
-const fullscreenButtons = mdlrElements('.mdlr-function-fullscreen');
-
-// Activate fullscreen buttons
-if(fullscreenButtons.length > 0) {
-    fullscreenButtons.forEach(function(fullscreenButton) {
-        fullscreenButton.addEventListener('click', function(e) {
-            mdlrFullscreen(e.currentTarget);
-            //e.preventDefault();
-        });
-        fullscreenButton.addEventListener('keydown', function(e) {
-            if(e.code == 'Enter' || e.code == 'Space') {
-                mdlrFullscreen(e.currentTarget);
-                e.preventDefault();
-            }
-        });
-    });
-}
-
-// Open a specific element in fullscreen
-function mdlrFullscreen(clickedElement) {
-
-    // Find element to open
-    const elementId = clickedElement.dataset.target;
-    const elementToOpen = document.getElementById(elementId);
-    const failureMessage = clickedElement.dataset.failure;
-
-    // Open element with a fallback for Safari versions pre-16.4
-    if(elementToOpen.requestFullscreen) {
-        elementToOpen.requestFullscreen();
-    }
-    else if(elementToOpen.webkitRequestFullscreen) {
-        elementToOpen.webkitRequestFullscreen();
-    }
-    else {
-        mdlrToastOpen(failureMessage);
-    }
-}
-
-/*var exitFullscreen = function () {
-	if (document.exitFullscreen) {
-		document.exitFullscreen();
-	} else if (document.webkitExitFullscreen) {
-		document.webkitExitFullscreen();
-	} else if (document.mozCancelFullScreen) {
-		document.mozCancelFullScreen();
-	} else if (document.msExitFullscreen) {
-		document.msExitFullscreen();
-	} else {
-		console.log('Fullscreen API is not supported.');
-	}
-};*/
-
-
-/*
 # Timeline ####################################################################
 */
 
@@ -586,6 +528,65 @@ if(pdfButtons.length > 0) {
             }
         });
     });
+}
+
+/*
+# Fullscreen ##################################################################
+*/
+
+// Variable
+const fullscreenButtons = mdlrElements('.mdlr-function-fullscreen');
+
+// Activate fullscreen buttons
+if(fullscreenButtons.length > 0) {
+    fullscreenButtons.forEach(function(fullscreenButton) {
+        fullscreenButton.addEventListener('click', function(e) {
+            mdlrFullscreenToggle(e.currentTarget);
+            //e.preventDefault();
+        });
+        fullscreenButton.addEventListener('keydown', function(e) {
+            if(e.code == 'Enter' || e.code == 'Space') {
+                mdlrFullscreenToggle(e.currentTarget);
+                e.preventDefault();
+            }
+        });
+    });
+}
+
+// Open a specific element in fullscreen
+function mdlrFullscreenToggle(clickedElement) {
+
+    // Find element to open
+    const elementId = clickedElement.dataset.target;
+    const element = document.getElementById(elementId);
+    const failureMessage = clickedElement.dataset.failure;
+
+    // Check if element is available
+    if(! element) {
+        mdlrToastOpen(failureMessage);
+    } else {
+
+        // Open element
+        if(! document.fullscreenElement) {
+            if(element.requestFullscreen) {
+                element.requestFullscreen();
+            } else if(element.webkitRequestFullscreen) { // Fallback for Safari versions pre-16.4
+                element.webkitRequestFullscreen();
+            } else {
+                mdlrToastOpen(failureMessage);
+            }
+
+        // Close element
+        } else {
+            if(document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if(document.webkitExitFullscreen) { // Fallback for Safari versions pre-16.4
+                document.webkitExitFullscreen();
+            } else {
+                mdlrToastOpen(failureMessage);
+            }
+        }
+    }
 }
 
 /*

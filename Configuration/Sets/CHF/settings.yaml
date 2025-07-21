@@ -1,19 +1,16 @@
 styles:
   content:
     defaultHeaderType: 3
+    image:
+      lazyLoading: lazy
     textmedia:
-      linkWrap:
-        lightboxEnabled: true
-      maxW: 640
-      maxWInText: 320
-      #columnSpacing: 10
-      #rowSpacing: 10
-      #textMargin: 10
-      #borderColor: '#000000'
-      #borderWidth: 2
-      #borderPadding: 0
-      #linkWrap.width: '800m'
-      #linkWrap.height: '600m'
+      maxW: 1600
+      maxWInText: 640
+      columnSpacing: 15
+      rowSpacing: 15
+      borderColor: '#000000'
+      borderWidth: 2
+      borderPadding: 0
   templates:
     templateRootPath: EXT:chf_base/Resources/Private/FluidStyledContent/Templates/
     partialRootPath: EXT:chf_base/Resources/Private/FluidStyledContent/Partials/

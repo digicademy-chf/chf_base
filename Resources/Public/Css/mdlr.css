@@ -760,7 +760,7 @@ a.mdlr-button.mdlr-variant-unobserved:focus-visible {
 
 button.mdlr-variant-round:enabled:focus-visible,
 a.mdlr-button.mdlr-variant-round:focus-visible {
-    border-radius: 50%;
+    border-radius: 5em;
 }
 
 select:enabled:active,
@@ -2576,11 +2576,17 @@ dialog.mdlr-modal.mdlr-variant-active {
     }
 }
 
-/* Content: paragraphs and lists */
+/* Content */
 
 .mdlr-content {
     overflow-wrap: break-word;
 }
+
+.mdlr-content > .frame {
+    clear: both;
+}
+
+/* Content: paragraphs and lists */
 
 .mdlr-content p,
 .mdlr-content ol,
@@ -2599,6 +2605,35 @@ dialog.mdlr-modal.mdlr-variant-active {
 .mdlr-content ul,
 .mdlr-content blockquote {
     max-width: var(--mdlr-width-text);
+}
+
+.mdlr-content .frame-indent p:not(.ce-headline-right):not(.ce-headline-left),
+.mdlr-content .frame-indent ol,
+.mdlr-content .frame-indent ul,
+.mdlr-content .frame-indent blockquote,
+.mdlr-content .frame-indent-left p:not(.ce-headline-right):not(.ce-headline-left),
+.mdlr-content .frame-indent-left ol,
+.mdlr-content .frame-indent-left ul,
+.mdlr-content .frame-indent-left blockquote,
+.mdlr-content .frame-indent-right p:not(.ce-headline-right):not(.ce-headline-left),
+.mdlr-content .frame-indent-right ol,
+.mdlr-content .frame-indent-right ul,
+.mdlr-content .frame-indent-right blockquote {
+    max-width: calc(var(--mdlr-width-text) - 3.5em);
+}
+
+.mdlr-content .frame-indent-left p:not(.ce-headline-right):not(.ce-headline-left),
+.mdlr-content .frame-indent-left ol,
+.mdlr-content .frame-indent-left ul,
+.mdlr-content .frame-indent-left blockquote {
+    padding-left: 3.5em;
+}
+
+.mdlr-content .frame-indent-right p:not(.ce-headline-right):not(.ce-headline-left),
+.mdlr-content .frame-indent-right ol,
+.mdlr-content .frame-indent-right ul,
+.mdlr-content .frame-indent-right blockquote {
+    padding-right: 3.5em;
 }
 
 .mdlr-content > p:not(:first-child),
@@ -2643,7 +2678,8 @@ dialog.mdlr-modal.mdlr-variant-active {
 }
 
 .mdlr-content > p:first-of-type::first-letter,
-.mdlr-content > div:first-child > p:first-of-type::first-letter {
+.mdlr-content > div:first-child > p:first-of-type::first-letter,
+.mdlr-content > div:first-child > *:not(blockquote) p:first-of-type::first-letter {
     -webkit-initial-letter: 2 2;
     initial-letter: 2 2;
     line-height: 1em;
@@ -2655,7 +2691,8 @@ dialog.mdlr-modal.mdlr-variant-active {
 @supports (not (-webkit-initial-letter: 2 2)) and (not (initial-letter: 2 2)) {
 
     .mdlr-content > p:first-of-type::first-letter,
-    .mdlr-content > div:first-child > p:first-of-type::first-letter {
+    .mdlr-content > div:first-child > p:first-of-type::first-letter,
+    .mdlr-content > div:first-child > *:not(blockquote) p:first-of-type::first-letter {
         font-size: 2lh;
         float: left;
         margin: 0.185lh 0.125lh 0 -0.04lh;
@@ -2905,6 +2942,14 @@ dialog.mdlr-modal.mdlr-variant-active {
         width: calc((100% - var(--mdlr-width-text)) / 2 - var(--mdlr-spacing-margin));
         margin-bottom: unset;
         float: left;
+        position: sticky;
+        top: calc(2.25 * var(--mdlr-spacing-margin));
+        text-shadow: 0 0 var(--mdlr-spacing-thin) var(--mdlr-color-primary-intense),
+            0 0 var(--mdlr-spacing-medium) var(--mdlr-color-primary-intense),
+            0 0 var(--mdlr-spacing-large) var(--mdlr-color-primary-intense),
+            0 0 var(--mdlr-spacing-extralarge) var(--mdlr-color-primary-intense),
+            0 0 var(--mdlr-spacing-margin) var(--mdlr-color-primary-intense),
+            0 0 var(--mdlr-spacing-margin) var(--mdlr-color-primary-intense);
     }
 
     .mdlr-content header h1,
@@ -2931,7 +2976,9 @@ dialog.mdlr-modal.mdlr-variant-active {
 
 /* Content: lines */
 
-.mdlr-content hr {
+.mdlr-content hr,
+.frame-ruler-before::before,
+.frame-ruler-after::after {
     border: calc(0.5 * var(--mdlr-spacing-large)) solid var(--mdlr-color-highlight-main);
     border-radius: calc(0.5 * var(--mdlr-spacing-large));
     margin: calc(1.5 * var(--mdlr-spacing-margin)) 0;
@@ -2939,7 +2986,9 @@ dialog.mdlr-modal.mdlr-variant-active {
 
 @media screen and (max-width: 900px) {
 
-    .mdlr-content hr {
+    .mdlr-content hr,
+    .frame-ruler-before::before,
+    .frame-ruler-after::after {
         margin-top: calc(1.25 * var(--mdlr-spacing-margin));
         margin-bottom: calc(1.25 * var(--mdlr-spacing-margin));
     }
@@ -2947,13 +2996,24 @@ dialog.mdlr-modal.mdlr-variant-active {
 
 @media screen and (max-width: 600px) {
 
-    .mdlr-content hr {
+    .mdlr-content hr,
+    .frame-ruler-before::before,
+    .frame-ruler-after::after {
         margin-top: var(--mdlr-spacing-margin);
         margin-bottom: var(--mdlr-spacing-margin);
     }
 }
 
 /* Content: tables */
+
+.mdlr-content figure.table {
+    overflow-x: auto;
+    margin: 1.65em auto;
+}
+
+.mdlr-content > div:first-child figure.table:first-child {
+    margin-top: 0.65em;
+}
 
 .mdlr-content table {
     border-collapse: separate;
@@ -3016,39 +3076,138 @@ dialog.mdlr-modal.mdlr-variant-active {
     margin-top: 0 !important;
 }
 
-/* Content: figures and images */
+/* Content: galleries */
 
-
-
-
-
-
-.mdlr-content figure,
-.mdlr-content .ce-gallery {
+.mdlr-content .mdlr-gallery {
     overflow-x: auto;
     margin: 1.65em auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--mdlr-spacing-padding-horizontal);
+    overflow: visible;
 }
 
-.mdlr-content .ce-gallery {
-    margin-top: 0.5em;
+.mdlr-content > div:first-child .mdlr-gallery:first-child {
+    margin-top: 0.65em;
 }
 
-.mdlr-content .ce-gallery figure {
-    margin-top: 0;
-    margin-bottom: 0;
+.mdlr-content .mdlr-gallery-row { /* Possibly replace with CSS grid masonry when supported */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    gap: var(--mdlr-spacing-padding-horizontal);
 }
 
-.mdlr-content figure img {
-    vertical-align: middle;
+.mdlr-content .mdlr-gallery.mdlr-variant-text {
+    max-width: var(--mdlr-width-text);
+}
+
+.mdlr-content .mdlr-gallery.mdlr-variant-left {
+    justify-content: left;
+}
+
+.mdlr-content .mdlr-gallery.mdlr-variant-right {
+    justify-content: right;
+}
+
+.mdlr-content .mdlr-gallery figure {
+    flex: 1 1; /* Flex-grow given as aspect ratio inline */
+    min-width: 75px;
+}
+
+.mdlr-content .mdlr-gallery[data-columns = '1'] figure {
+    flex-grow: 1 !important;
+}
+
+.mdlr-content .mdlr-gallery figure:fullscreen {
+    overflow: scroll;
+}
+
+.mdlr-content .mdlr-gallery img,
+.mdlr-content .mdlr-gallery video,
+.mdlr-content .mdlr-gallery audio {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
     border-radius: var(--mdlr-spacing-radius);
 }
 
-.mdlr-content figure figcaption {
+.mdlr-content .mdlr-gallery.mdlr-variant-border img,
+.mdlr-content .mdlr-gallery.mdlr-variant-border video,
+.mdlr-content .mdlr-gallery.mdlr-variant-border audio {
+    width: calc(100% - 2 * var(--mdlr-spacing-medium)) !important;
+    border: var(--mdlr-color-primary-main-text) solid var(--mdlr-spacing-medium);
+}
+
+.mdlr-content .mdlr-gallery figure:fullscreen img,
+.mdlr-content .mdlr-gallery figure:fullscreen video,
+.mdlr-content .mdlr-gallery figure:fullscreen audio,
+.mdlr-content .mdlr-gallery.mdlr-variant-border figure:fullscreen img,
+.mdlr-content .mdlr-gallery.mdlr-variant-border figure:fullscreen video,
+.mdlr-content .mdlr-gallery.mdlr-variant-border figure:fullscreen audio {
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+    object-fit: contain;
+    margin: auto;
+}
+
+.mdlr-content .mdlr-gallery a:focus-visible {
+    border-radius: var(--mdlr-spacing-outlineradius);
+}
+
+.mdlr-content .mdlr-gallery a:hover img,
+.mdlr-content .mdlr-gallery a:active img {
+    box-shadow: var(--mdlr-shadow-elevated);
+}
+
+.mdlr-content .mdlr-gallery-tools {
+    display: flex;
+    justify-content: end;
+    margin-top: calc(-1.5rem - var(--mdlr-spacing-padding-vertical));
+    padding: calc(0.5 * var(--mdlr-spacing-padding-vertical));
+    padding-top: 0;
+}
+
+.mdlr-content .mdlr-gallery figcaption {
     font-size: var(--mdlr-font-main-smaller);
     line-height: var(--mdlr-font-main-height);
-    text-align: center;
     color: var(--mdlr-color-primary-intense-text);
-    margin: calc(0.75 * var(--mdlr-spacing-padding-vertical)) auto 0 auto;
+    margin: var(--mdlr-spacing-padding-vertical) auto 0 auto;
+    max-width: var(--mdlr-width-text);
+    text-align: center;
+    text-wrap: balance;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.mdlr-content .mdlr-gallery.mdlr-variant-left[data-columns = '1']:not(.mdlr-variant-text) figcaption {
+    text-align: left;
+}
+
+.mdlr-content .mdlr-gallery.mdlr-variant-right[data-columns = '1'] figcaption {
+    text-align: right;
+}
+
+.mdlr-content .mdlr-gallery figure:fullscreen figcaption {
+    display: none;
+}
+
+@media screen and (min-width: 1201px) {
+
+    .mdlr-content .mdlr-gallery.mdlr-variant-aside,
+    .mdlr-content > div:first-child .mdlr-gallery.mdlr-variant-aside:first-child {
+        width: calc((100% - var(--mdlr-width-text)) / 2 - var(--mdlr-spacing-margin));
+        margin-top: 0.5em;
+        margin-bottom: 0;
+        float: right;
+    }
+
+    .mdlr-content .mdlr-gallery.mdlr-variant-aside.mdlr-variant-left,
+    .mdlr-content > div:first-child .mdlr-gallery.mdlr-variant-aside.mdlr-variant-left:first-child {
+        float: left;
+    }
 }
 
 /*

@@ -1,0 +1,29 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+    <figure id="c{data.uid}-gallery-{row}-{column}" class="image" style="flex-grow: calc({dimensions.width} / {dimensions.height});">
+        <f:if condition="{file.link}">
+            <f:then>
+                <f:link.typolink parameter="{file.link}" title="{file.title}">
+                    <f:render partial="Media/Rendering/Image" arguments="{file: file, dimensions: dimensions, settings: settings}" />
+                </f:link.typolink>
+            </f:then>
+            <f:else>
+                <f:render partial="Media/Rendering/Image" arguments="{file: file, dimensions: dimensions, settings: settings}" />
+            </f:else>
+        </f:if>
+        <f:if condition="{data.image_zoom}">
+            <div class="mdlr-gallery-tools">
+                <button class="mdlr-variant-tinyicon mdlr-variant-round mdlr-variant-overlay mdlr-function-fullscreen" data-target="c{data.uid}-gallery-{row}-{column}" data-failure="{f:translate(key: 'templates.generic.fullscreen.failure', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.generic.fullscreen', extensionName: 'chf_base')}">
+                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <use href="#icon-fullscreen"/>
+                    </svg>
+                    <span><f:translate key="templates.generic.fullscreen" extensionName="chf_base"/></span>
+                </button>
+            </div>
+        </f:if>
+        <f:if condition="{file.description}">
+            <figcaption>
+                {file.description -> f:format.nl2br()}
+            </figcaption>
+        </f:if>
+    </figure>
+</html>

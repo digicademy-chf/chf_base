@@ -1136,6 +1136,12 @@
             <trans-unit id="templates.generic.copy.citation.failure" resname="templates.generic.copy.citation.failure">
                 <source>Something went wrong</source>
             </trans-unit>
+            <trans-unit id="templates.generic.fullscreen" resname="templates.generic.fullscreen">
+                <source>Fullscreen</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.fullscreen.failure" resname="templates.generic.fullscreen.failure">
+                <source>Something went wrong</source>
+            </trans-unit>
             <trans-unit id="templates.generic.email" resname="templates.generic.email">
                 <source>Compose email</source>
             </trans-unit>
