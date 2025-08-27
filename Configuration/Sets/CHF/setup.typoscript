@@ -39,7 +39,7 @@ page {
                 includeSpacer = 0
                 expandAll = 1
                 special = directory
-                special.value = {$chf.templates.serviceFolder}
+                special.value = {$chf.service.page}
             }
             30 = menu
             30 {
@@ -81,14 +81,7 @@ page {
             }
         }
     }
-    includeCSS {
-        mdlr = EXT:chf_base/Resources/Public/Css/mdlr.css
-    }
-    includeJS {
-        mdlr = EXT:chf_base/Resources/Public/JavaScript/mdlr.js
-        mdlr.defer = 1
-    }
-    shortcutIcon = {$chf.templates.favicon.main}
+    shortcutIcon = {$chf.favicon.main}
 }
 
 # JSON-LD templates

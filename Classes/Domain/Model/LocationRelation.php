@@ -9,22 +9,11 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
+use Digicademy\CHFBase\Domain\Model\Traits\RecordTrait;
+use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\Validate;
-use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
-use Digicademy\CHFBib\Domain\Model\BibliographicResource;
-use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
-use Digicademy\CHFLex\Domain\Model\Example;
-use Digicademy\CHFLex\Domain\Model\Frequency;
-use Digicademy\CHFLex\Domain\Model\LexicographicResource;
-use Digicademy\CHFMap\Domain\Model\MapResource;
-use Digicademy\CHFMedia\Domain\Model\FileGroup;
-use Digicademy\CHFObject\Domain\Model\SingleObject;
-use Digicademy\CHFObject\Domain\Model\ObjectGroup;
-use Digicademy\CHFObject\Domain\Model\ObjectResource;
-use Digicademy\CHFPub\Domain\Model\PublicationResource;
 
 defined('TYPO3') or die();
 
@@ -33,13 +22,7 @@ defined('TYPO3') or die();
  */
 class LocationRelation extends AbstractRelation
 {
-    /**
-     * Record to connect a relation to
-     * 
-     * @var Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup|LazyLoadingProxy|null
-     */
-    #[Lazy()]
-    protected Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup|null $record = null;
+    use RecordTrait;
 
     /**
      * Locations to relate to the record
@@ -72,14 +55,13 @@ class LocationRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup $record
+     * @param AbstractBase $record
      * @param Location $location
-     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @return LocationRelation
      */
-    public function __construct(Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup $record, Location $location, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource)
+    public function __construct(AbstractBase $record, Location $location)
     {
-        parent::__construct($parentResource);
+        parent::__construct();
         $this->initializeObject();
 
         $this->setType('locationRelation');
@@ -93,29 +75,6 @@ class LocationRelation extends AbstractRelation
     public function initializeObject(): void
     {
         $this->location ??= new ObjectStorage();
-    }
-
-    /**
-     * Get record
-     * 
-     * @return Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup
-     */
-    public function getRecord(): Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup
-    {
-        if ($this->record instanceof LazyLoadingProxy) {
-            $this->record->_loadRealInstance();
-        }
-        return $this->record;
-    }
-
-    /**
-     * Set record
-     * 
-     * @param Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup
-     */
-    public function setRecord(Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup $record): void
-    {
-        $this->record = $record;
     }
 
     /**

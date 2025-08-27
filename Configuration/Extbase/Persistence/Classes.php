@@ -23,6 +23,13 @@ return [
     Digicademy\CHFBase\Domain\Model\AbstractResource::class => [
         'tableName' => 'tx_chfbase_domain_model_resource',
         'recordType' => '0',
+        'subclasses' => [
+            'genericResource' => Digicademy\CHFBase\Domain\Model\GenericResource::class,
+        ],
+    ],
+    Digicademy\CHFBase\Domain\Model\GenericResource::class => [
+        'tableName' => 'tx_chfbase_domain_model_resource',
+        'recordType' => 'genericResource',
     ],
     Digicademy\CHFBase\Domain\Model\AbstractTag::class => [
         'tableName' => 'tx_chfbase_domain_model_tag',

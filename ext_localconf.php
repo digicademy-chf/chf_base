@@ -84,7 +84,7 @@ ExtensionUtility::configurePlugin(
     'CHFBase',
     'Structure',
     [
-        StructureController::class => 'index, showTag, showKeyword',
+        StructureController::class => 'index, show, showKeyword',
     ],
     [], // None of the actions are non-cacheable
     ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
@@ -95,7 +95,7 @@ ExtensionUtility::configurePlugin(
     'CHFBase',
     'Connections',
     [
-        ConnectionsController::class => 'index, show',
+        ConnectionsController::class => 'index',
     ],
     [], // None of the actions are non-cacheable
     ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT

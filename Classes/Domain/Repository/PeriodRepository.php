@@ -26,16 +26,16 @@ class PeriodRepository extends Repository
     use StoragePageAgnosticTrait;
 
     protected $defaultOrderings = [
-        'sorting'         => QueryInterface::ORDER_ASCENDING,
-        'isHighlight'     => QueryInterface::ORDER_ASCENDING,
-        'when'            => QueryInterface::ORDER_ASCENDING,
-        'from'            => QueryInterface::ORDER_ASCENDING,
-        'to'              => QueryInterface::ORDER_ASCENDING,
-        'notBefore'       => QueryInterface::ORDER_ASCENDING,
-        'notAfter'        => QueryInterface::ORDER_ASCENDING,
-        'text'            => QueryInterface::ORDER_ASCENDING,
-        'alternativeText' => QueryInterface::ORDER_ASCENDING,
-        'displayDate'     => QueryInterface::ORDER_ASCENDING,
-        'type'            => QueryInterface::ORDER_ASCENDING,
+        'sorting'          => QueryInterface::ORDER_ASCENDING,
+        'isHighlight'      => QueryInterface::ORDER_ASCENDING,
+        'when'             => QueryInterface::ORDER_ASCENDING,
+        'from'             => QueryInterface::ORDER_ASCENDING,
+        'to'               => QueryInterface::ORDER_ASCENDING,
+        'notBefore'        => QueryInterface::ORDER_ASCENDING,
+        'notAfter'         => QueryInterface::ORDER_ASCENDING,
+        'title'            => QueryInterface::ORDER_ASCENDING,
+        'alternativeTitle' => QueryInterface::ORDER_ASCENDING,
+        'displayDate'      => QueryInterface::ORDER_ASCENDING,
+        'type'             => QueryInterface::ORDER_ASCENDING,
     ];
 }

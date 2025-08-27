@@ -9,18 +9,14 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
+use Digicademy\CHFBase\Domain\Model\Traits\AgentRelationTrait;
+use Digicademy\CHFBase\Domain\Model\Traits\LocationRelationTrait;
+use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
-use Digicademy\CHFBib\Domain\Model\BibliographicResource;
-use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
-use Digicademy\CHFLex\Domain\Model\LexicographicResource;
-use Digicademy\CHFMap\Domain\Model\MapResource;
-use Digicademy\CHFObject\Domain\Model\ObjectResource;
-use Digicademy\CHFPub\Domain\Model\PublicationResource;
 
 defined('TYPO3') or die();
 
@@ -29,6 +25,9 @@ defined('TYPO3') or die();
  */
 class Period extends AbstractHeritage
 {
+    use AgentRelationTrait;
+    use LocationRelationTrait;
+
     /**
      * Type of period
      * 
@@ -74,7 +73,7 @@ class Period extends AbstractHeritage
             'maximum' => 255,
         ],
     ])]
-    protected string $text = '';
+    protected string $title = '';
 
     /**
      * Common alternative name used, i.e., as a search term
@@ -87,7 +86,7 @@ class Period extends AbstractHeritage
             'maximum' => 255,
         ],
     ])]
-    protected string $alternativeText = '';
+    protected string $alternativeTitle = '';
 
     /**
      * Exact date of an event
@@ -149,28 +148,6 @@ class Period extends AbstractHeritage
     protected ?ObjectStorage $event = null;
 
     /**
-     * Agent related to this record
-     * 
-     * @var ?ObjectStorage<AgentRelation>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $agentRelation = null;
-
-    /**
-     * Location related to this record
-     * 
-     * @var ?ObjectStorage<LocationRelation>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $locationRelation = null;
-
-    /**
      * Longer period that this period is part of
      * 
      * @var Period|LazyLoadingProxy|null
@@ -182,15 +159,15 @@ class Period extends AbstractHeritage
      * Construct object
      *
      * @param string $type
-     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @return Period
      */
-    public function __construct(string $type, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource)
+    public function __construct(string $type)
     {
-        parent::__construct($parentResource);
+        parent::__construct();
         $this->initializeObject();
 
         $this->setType($type);
+        $this->setIri('p');
     }
 
     /**
@@ -244,43 +221,43 @@ class Period extends AbstractHeritage
     }
 
     /**
-     * Get text
+     * Get title
      *
      * @return string
      */
-    public function getText(): string
+    public function getTitle(): string
     {
-        return $this->text;
+        return $this->title;
     }
 
     /**
-     * Set text
+     * Set title
      *
-     * @param string $text
+     * @param string $title
      */
-    public function setText(string $text): void
+    public function setTitle(string $title): void
     {
-        $this->text = $text;
+        $this->title = $title;
     }
 
     /**
-     * Get alternative text
+     * Get alternative title
      *
      * @return string
      */
-    public function getAlternativeText(): string
+    public function getAlternativeTitle(): string
     {
-        return $this->alternativeText;
+        return $this->alternativeTitle;
     }
 
     /**
-     * Set alternative text
+     * Set alternative title
      *
-     * @param string $alternativeText
+     * @param string $alternativeTitle
      */
-    public function setAlternativeText(string $alternativeText): void
+    public function setAlternativeTitle(string $alternativeTitle): void
     {
-        $this->alternativeText = $alternativeText;
+        $this->alternativeTitle = $alternativeTitle;
     }
 
     /**
@@ -450,104 +427,6 @@ class Period extends AbstractHeritage
     {
         $event = clone $this->event;
         $this->event->removeAll($event);
-    }
-
-    /**
-     * Get agent relation
-     *
-     * @return ObjectStorage<AgentRelation>
-     */
-    public function getAgentRelation(): ?ObjectStorage
-    {
-        return $this->agentRelation;
-    }
-
-    /**
-     * Set agent relation
-     *
-     * @param ObjectStorage<AgentRelation> $agentRelation
-     */
-    public function setAgentRelation(ObjectStorage $agentRelation): void
-    {
-        $this->agentRelation = $agentRelation;
-    }
-
-    /**
-     * Add agent relation
-     *
-     * @param AgentRelation $agentRelation
-     */
-    public function addAgentRelation(AgentRelation $agentRelation): void
-    {
-        $this->agentRelation?->attach($agentRelation);
-    }
-
-    /**
-     * Remove agent relation
-     *
-     * @param AgentRelation $agentRelation
-     */
-    public function removeAgentRelation(AgentRelation $agentRelation): void
-    {
-        $this->agentRelation?->detach($agentRelation);
-    }
-
-    /**
-     * Remove all agent relations
-     */
-    public function removeAllAgentRelation(): void
-    {
-        $agentRelation = clone $this->agentRelation;
-        $this->agentRelation->removeAll($agentRelation);
-    }
-
-    /**
-     * Get location relation
-     *
-     * @return ObjectStorage<LocationRelation>
-     */
-    public function getLocationRelation(): ?ObjectStorage
-    {
-        return $this->locationRelation;
-    }
-
-    /**
-     * Set location relation
-     *
-     * @param ObjectStorage<LocationRelation> $locationRelation
-     */
-    public function setLocationRelation(ObjectStorage $locationRelation): void
-    {
-        $this->locationRelation = $locationRelation;
-    }
-
-    /**
-     * Add location relation
-     *
-     * @param LocationRelation $locationRelation
-     */
-    public function addLocationRelation(LocationRelation $locationRelation): void
-    {
-        $this->locationRelation?->attach($locationRelation);
-    }
-
-    /**
-     * Remove location relation
-     *
-     * @param LocationRelation $locationRelation
-     */
-    public function removeLocationRelation(LocationRelation $locationRelation): void
-    {
-        $this->locationRelation?->detach($locationRelation);
-    }
-
-    /**
-     * Remove all location relations
-     */
-    public function removeAllLocationRelation(): void
-    {
-        $locationRelation = clone $this->locationRelation;
-        $this->locationRelation->removeAll($locationRelation);
     }
 
     /**

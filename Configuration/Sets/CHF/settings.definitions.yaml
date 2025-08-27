@@ -4,42 +4,52 @@ settings:
     description: 'Path to a page-view template structure for overrides of CHF templates'
     type: string
     default: ''
-  chf.templates.logo.main:
+  chf.data.page:
+    label: 'General data folder'
+    description: 'Page ID of a folder that contains data relevant to all other PIDs'
+    type: int
+    default: 0
+  chf.data.falPage:
+    label: 'File-related data folder'
+    description: 'Page ID of a folder that contains data relevant to files'
+    type: int
+    default: 0
+  chf.logo.main:
     label: 'Logo path'
     description: 'Path to a logo file to use in the footer of a page'
     type: string
     default: 'EXT:chf_base/Resources/Public/Images/logo-chf-main.svg'
-  chf.templates.logo.small:
+  chf.logo.small:
     label: 'Small logo path'
     description: 'Path to a small logo file to use in the header of a page'
     type: string
     default: 'EXT:chf_base/Resources/Public/Images/logo-chf-small.svg'
-  chf.templates.favicon.main:
+  chf.favicon.main:
     label: 'Favicon path'
     description: 'Path to an icon file to use as the favicon of a page'
     type: string
     default: 'EXT:chf_base/Resources/Public/Images/favicon-main.svg'
-  chf.templates.favicon.mask:
+  chf.favicon.mask:
     label: 'Masked favicon path'
     description: 'Path to an icon file to use as the masked favicon of a page'
     type: string
     default: 'EXT:chf_base/Resources/Public/Images/favicon-mask.svg'
-  chf.templates.favicon.app:
+  chf.favicon.app:
     label: 'App favicon path'
     description: 'Path to an icon file to use as the app favicon of a page'
     type: string
     default: 'EXT:chf_base/Resources/Public/Images/favicon-app.png'
-  chf.templates.color.highlight:
+  chf.color.highlight:
     label: 'Highlight color'
     description: 'Hex code of the highlight color'
     type: color
     default: '#b21527'
-  chf.templates.serviceFolder:
+  chf.service.page:
     label: 'Service folder'
     description: 'Page ID of a folder that contains service content like a privacy page'
     type: int
     default: 0
-  chf.templates.apiPage:
+  chf.apis.page:
     label: 'API page'
     description: 'Page ID that contains information about available APIs like REST and SPARQL'
     type: int

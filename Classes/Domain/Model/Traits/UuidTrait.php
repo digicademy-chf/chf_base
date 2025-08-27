@@ -30,7 +30,7 @@ trait UuidTrait
             'errorMessage' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:validator.regularExpression.noUuid',
         ],
     ])]
-    protected string $uuid; # IRI is usually set automatically by the DataHandler
+    protected string $uuid; # Actual UUID set by the DataHandler
 
     /**
      * Get UUID

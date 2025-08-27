@@ -9,21 +9,11 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
+use Digicademy\CHFBase\Domain\Model\Traits\RecordTrait;
+use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\Validate;
-use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
-use Digicademy\CHFBib\Domain\Model\BibliographicResource;
-use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
-use Digicademy\CHFLex\Domain\Model\Example;
-use Digicademy\CHFLex\Domain\Model\LexicographicResource;
-use Digicademy\CHFMap\Domain\Model\MapResource;
-use Digicademy\CHFMedia\Domain\Model\FileGroup;
-use Digicademy\CHFObject\Domain\Model\ObjectGroup;
-use Digicademy\CHFObject\Domain\Model\ObjectResource;
-use Digicademy\CHFObject\Domain\Model\SingleObject;
-use Digicademy\CHFPub\Domain\Model\PublicationResource;
 
 defined('TYPO3') or die();
 
@@ -32,13 +22,7 @@ defined('TYPO3') or die();
  */
 class AgentRelation extends AbstractRelation
 {
-    /**
-     * Record to connect a relation to
-     * 
-     * @var Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup|LazyLoadingProxy|null
-     */
-    #[Lazy()]
-    protected Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup|null $record = null;
+    use RecordTrait;
 
     /**
      * Agents to relate to the record
@@ -77,14 +61,13 @@ class AgentRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup $record
+     * @param AbstractBase $record
      * @param Agent $agent
-     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @return AgentRelation
      */
-    public function __construct(Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup $record, Agent $agent, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource)
+    public function __construct(AbstractBase $record, Agent $agent)
     {
-        parent::__construct($parentResource);
+        parent::__construct();
         $this->initializeObject();
 
         $this->setType('agentRelation');
@@ -98,29 +81,6 @@ class AgentRelation extends AbstractRelation
     public function initializeObject(): void
     {
         $this->agent ??= new ObjectStorage();
-    }
-
-    /**
-     * Get record
-     * 
-     * @return Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup
-     */
-    public function getRecord(): Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup
-    {
-        if ($this->record instanceof LazyLoadingProxy) {
-            $this->record->_loadRealInstance();
-        }
-        return $this->record;
-    }
-
-    /**
-     * Set record
-     * 
-     * @param Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup
-     */
-    public function setRecord(Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup $record): void
-    {
-        $this->record = $record;
     }
 
     /**

@@ -1,5 +1,6 @@
 {
     "name": "digicademy/chf_base",
+    "version": "2.0.0",
     "type": "typo3-cms-extension",
     "description": "Common classes as well as a UI library and other base services for the CHF",
     "authors": [
@@ -34,8 +35,20 @@
     ],
     "require": {
         "typo3/cms-core": "^13",
+        "typo3/cms-extbase": "^13",
+        "typo3/cms-fluid": "^13",
         "typo3/cms-fluid-styled-content": "^13",
-        "typo3/cms-rte-ckeditor": "^13"
+        "typo3/cms-rte-ckeditor": "^13",
+        "digicademy/dsh": "^2",
+        "digicademy/endpt": "^2",
+        "digicademy/mdlr": "^2",
+        "digicademy/vis": "^2"
+    },
+    "suggest": {
+        "digicademy/chf_bib": "Adds source relations",
+        "digicademy/chf_map": "Contains geodata and maps",
+        "digicademy/chf_object": "Adds objects to locations",
+        "digicademy/chf_pub": "Provides publication relations"
     },
     "autoload": {
         "psr-4": {

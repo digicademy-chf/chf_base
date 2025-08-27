@@ -29,8 +29,8 @@ TCEMAIN {
     everybody = copyFromParent
   }
 
-  // Avoid issues with int labels when copying records
-  table.tt_content.disablePrependAtCopy = 1
+  // Do not add translation instruction on translating a record
+  translateToMessage =
 }
 
 // Clear relevant page caches when editing records in folders

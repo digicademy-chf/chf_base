@@ -9,10 +9,13 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
+use Digicademy\CHFBase\Domain\Model\Traits\AuthorshipRelationTrait;
+use Digicademy\CHFBase\Domain\Model\Traits\HiddenTrait;
+use Digicademy\CHFBase\Domain\Model\Traits\ImportOriginTrait;
 use Digicademy\CHFBase\Domain\Model\Traits\IriTrait;
+use Digicademy\CHFBase\Domain\Model\Traits\LicenceRelationTrait;
+use Digicademy\CHFBase\Domain\Model\Traits\SameAsTrait;
 use Digicademy\CHFBase\Domain\Model\Traits\UuidTrait;
-use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
-use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -24,29 +27,13 @@ defined('TYPO3') or die();
  */
 class AbstractBase extends AbstractEntity
 {
+    use AuthorshipRelationTrait;
+    use HiddenTrait;
+    use ImportOriginTrait;
     use IriTrait;
+    use LicenceRelationTrait;
+    use SameAsTrait;
     use UuidTrait;
-
-    /**
-     * Record visible or not
-     * 
-     * @var bool
-     */
-    #[Validate([
-        'validator' => 'Boolean',
-    ])]
-    protected bool $hidden = true;
-
-    /**
-     * Authoritative web address to identify an entity across the web
-     * 
-     * @var ?ObjectStorage<SameAs>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $sameAs = null;
 
     /**
      * Date of first publication
@@ -89,41 +76,6 @@ class AbstractBase extends AbstractEntity
     protected string $editorialNote = '';
 
     /**
-     * Authorship of this record
-     * 
-     * @var ?ObjectStorage<AuthorshipRelation>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $authorshipRelation = null;
-
-    /**
-     * Licence of this record (individual override)
-     * 
-     * @var ?ObjectStorage<LicenceRelation>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $licenceRelation = null;
-
-    /**
-     * URI or other identifier of the imported original
-     * 
-     * @var string
-     */
-    #[Validate([
-        'validator' => 'StringLength',
-        'options'   => [
-            'maximum' => 255,
-        ],
-    ])]
-    protected string $importOrigin = '';
-
-    /**
      * Construct object
      *
      * @return AbstractBase
@@ -141,75 +93,6 @@ class AbstractBase extends AbstractEntity
         $this->sameAs ??= new ObjectStorage();
         $this->authorshipRelation ??= new ObjectStorage();
         $this->licenceRelation ??= new ObjectStorage();
-    }
-
-    /**
-     * Get hidden
-     *
-     * @return bool
-     */
-    public function getHidden(): bool
-    {
-        return $this->hidden;
-    }
-
-    /**
-     * Set hidden
-     *
-     * @param bool $hidden
-     */
-    public function setHidden(bool $hidden): void
-    {
-        $this->hidden = $hidden;
-    }
-
-    /**
-     * Get same as
-     *
-     * @return ObjectStorage<SameAs>
-     */
-    public function getSameAs(): ?ObjectStorage
-    {
-        return $this->sameAs;
-    }
-
-    /**
-     * Set same as
-     *
-     * @param ObjectStorage<SameAs> $sameAs
-     */
-    public function setSameAs(ObjectStorage $sameAs): void
-    {
-        $this->sameAs = $sameAs;
-    }
-
-    /**
-     * Add same as
-     *
-     * @param SameAs $sameAs
-     */
-    public function addSameAs(SameAs $sameAs): void
-    {
-        $this->sameAs?->attach($sameAs);
-    }
-
-    /**
-     * Remove same as
-     *
-     * @param SameAs $sameAs
-     */
-    public function removeSameAs(SameAs $sameAs): void
-    {
-        $this->sameAs?->detach($sameAs);
-    }
-
-    /**
-     * Remove all same as
-     */
-    public function removeAllSameAs(): void
-    {
-        $sameAs = clone $this->sameAs;
-        $this->sameAs->removeAll($sameAs);
     }
 
     /**
@@ -290,123 +173,5 @@ class AbstractBase extends AbstractEntity
     public function setEditorialNote(string $editorialNote): void
     {
         $this->editorialNote = $editorialNote;
-    }
-
-    /**
-     * Get authorship relation
-     *
-     * @return ObjectStorage<AuthorshipRelation>
-     */
-    public function getAuthorshipRelation(): ?ObjectStorage
-    {
-        return $this->authorshipRelation;
-    }
-
-    /**
-     * Set authorship relation
-     *
-     * @param ObjectStorage<AuthorshipRelation> $authorshipRelation
-     */
-    public function setAuthorshipRelation(ObjectStorage $authorshipRelation): void
-    {
-        $this->authorshipRelation = $authorshipRelation;
-    }
-
-    /**
-     * Add authorship relation
-     *
-     * @param AuthorshipRelation $authorshipRelation
-     */
-    public function addAuthorshipRelation(AuthorshipRelation $authorshipRelation): void
-    {
-        $this->authorshipRelation?->attach($authorshipRelation);
-    }
-
-    /**
-     * Remove authorship relation
-     *
-     * @param AuthorshipRelation $authorshipRelation
-     */
-    public function removeAuthorshipRelation(AuthorshipRelation $authorshipRelation): void
-    {
-        $this->authorshipRelation?->detach($authorshipRelation);
-    }
-
-    /**
-     * Remove all authorship relations
-     */
-    public function removeAllAuthorshipRelation(): void
-    {
-        $authorshipRelation = clone $this->authorshipRelation;
-        $this->authorshipRelation->removeAll($authorshipRelation);
-    }
-
-    /**
-     * Get licence relation
-     *
-     * @return ObjectStorage<LicenceRelation>
-     */
-    public function getLicenceRelation(): ?ObjectStorage
-    {
-        return $this->licenceRelation;
-    }
-
-    /**
-     * Set licence relation
-     *
-     * @param ObjectStorage<LicenceRelation> $licenceRelation
-     */
-    public function setLicenceRelation(ObjectStorage $licenceRelation): void
-    {
-        $this->licenceRelation = $licenceRelation;
-    }
-
-    /**
-     * Add licence relation
-     *
-     * @param LicenceRelation $licenceRelation
-     */
-    public function addLicenceRelation(LicenceRelation $licenceRelation): void
-    {
-        $this->licenceRelation?->attach($licenceRelation);
-    }
-
-    /**
-     * Remove licence relation
-     *
-     * @param LicenceRelation $licenceRelation
-     */
-    public function removeLicenceRelation(LicenceRelation $licenceRelation): void
-    {
-        $this->licenceRelation?->detach($licenceRelation);
-    }
-
-    /**
-     * Remove all licence relations
-     */
-    public function removeAllLicenceRelation(): void
-    {
-        $licenceRelation = clone $this->licenceRelation;
-        $this->licenceRelation->removeAll($licenceRelation);
-    }
-
-    /**
-     * Get import origin
-     *
-     * @return string
-     */
-    public function getImportOrigin(): string
-    {
-        return $this->importOrigin;
-    }
-
-    /**
-     * Set import origin
-     *
-     * @param string $importOrigin
-     */
-    public function setImportOrigin(string $importOrigin): void
-    {
-        $this->importOrigin = $importOrigin;
     }
 }

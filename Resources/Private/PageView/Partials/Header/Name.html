@@ -8,7 +8,7 @@
                         <f:else>{site.configuration.websiteTitle}</f:else>
                     </f:if>
                 </span>
-                <img src="{f:uri.image(src: '{settings.chf.templates.logo.small}')}" alt="{f:if(condition: '{language.websiteTitle}', then: '{language.websiteTitle}', else: '{site.configuration.websiteTitle}')}">
+                <img src="{f:uri.image(src: '{settings.chf.logo.small}')}" alt="{f:if(condition: '{language.websiteTitle}', then: '{language.websiteTitle}', else: '{site.configuration.websiteTitle}')}">
             </f:link.page>
         </h1>
         <f:for each="{rootlineMenu}" as="menuItem" iteration="index">

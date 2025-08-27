@@ -9,34 +9,34 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
+use Digicademy\CHFBase\Domain\Model\Traits\ImportTrait;
+use Digicademy\CHFBase\Domain\Model\Traits\IsHighlightTrait;
+use Digicademy\CHFBase\Domain\Model\Traits\IsTeaserTrait;
+use Digicademy\CHFBase\Domain\Model\Traits\LabelTrait;
+use Digicademy\CHFBase\Domain\Model\Traits\LinkRelationTrait;
+use Digicademy\CHFBase\Domain\Model\Traits\ParentResourceTrait;
+use Digicademy\CHFBib\Domain\Model\Traits\SourceRelationTrait;
+use Digicademy\CHFPub\Domain\Model\Traits\PublicationRelationTrait;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-use Digicademy\CHFBib\Domain\Model\BibliographicResource;
-use Digicademy\CHFBib\Domain\Model\SourceRelation;
-use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
-use Digicademy\CHFLex\Domain\Model\LexicographicResource;
-use Digicademy\CHFMap\Domain\Model\MapResource;
-use Digicademy\CHFObject\Domain\Model\ObjectResource;
-use Digicademy\CHFPub\Domain\Model\PublicationRelation;
-use Digicademy\CHFPub\Domain\Model\PublicationResource;
 
 defined('TYPO3') or die();
 
 /**
- * Model for AbstractHeritage
+ * Model for StubAbstractHeritage
  */
-class AbstractHeritage extends AbstractBase
+class AbstractAbstractHeritage extends AbstractBase
 {
-    /**
-     * Label to group the database record into
-     * 
-     * @var ?ObjectStorage<LabelTag>
-     */
-    #[Lazy()]
-    protected ?ObjectStorage $label = null;
+    use ImportTrait;
+    use IsHighlightTrait;
+    use IsTeaserTrait;
+    use LabelTrait;
+    use LinkRelationTrait;
+    use ParentResourceTrait;
 
     /**
      * Room for page content without a fixed structure
@@ -83,67 +83,6 @@ class AbstractHeritage extends AbstractBase
     protected ?ObjectStorage $file;
 
     /**
-     * Sources of this database record
-     * 
-     * @var ?ObjectStorage<SourceRelation>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $sourceRelation = null;
-
-    /**
-     * Links relevant to this database record
-     * 
-     * @var ?ObjectStorage<LinkRelation>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $linkRelation = null;
-
-    /**
-     * Relevant text publications in the database
-     * 
-     * @var ?ObjectStorage<PublicationRelation>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $publicationRelation = null;
-
-    /**
-     * Lists this record without its content
-     * 
-     * @var bool
-     */
-    #[Validate([
-        'validator' => 'Boolean',
-    ])]
-    protected bool $isTeaser = false;
-
-    /**
-     * Makes this record available at the top of lists
-     * 
-     * @var bool
-     */
-    #[Validate([
-        'validator' => 'Boolean',
-    ])]
-    protected bool $isHighlight = false;
-
-    /**
-     * Resource that this database record is part of
-     * 
-     * @var ?ObjectStorage<BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource>
-     */
-    #[Lazy()]
-    protected ?ObjectStorage $parentResource = null;
-
-    /**
      * Check list for editing this record
      * 
      * @var string
@@ -164,30 +103,14 @@ class AbstractHeritage extends AbstractBase
     protected string $publicationSteps = '';
 
     /**
-     * Full import code that this record is based on
-     * 
-     * @var string
-     */
-    #[Validate([
-        'validator' => 'StringLength',
-        'options'   => [
-            'maximum' => 100000,
-        ],
-    ])]
-    protected string $import = '';
-
-    /**
      * Construct object
      *
-     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @return AbstractHeritage
      */
-    public function __construct(BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource)
+    public function __construct()
     {
         parent::__construct();
         $this->initializeObject();
-
-        $this->addParentResource($parentResource);
     }
 
     /**
@@ -200,59 +123,8 @@ class AbstractHeritage extends AbstractBase
         $this->footnote ??= new ObjectStorage();
         $this->media ??= new ObjectStorage();
         $this->file ??= new ObjectStorage();
-        $this->sourceRelation ??= new ObjectStorage();
         $this->linkRelation ??= new ObjectStorage();
-        $this->publicationRelation ??= new ObjectStorage();
         $this->parentResource ??= new ObjectStorage();
-    }
-
-    /**
-     * Get label
-     *
-     * @return ObjectStorage<LabelTag>
-     */
-    public function getLabel(): ?ObjectStorage
-    {
-        return $this->label;
-    }
-
-    /**
-     * Set label
-     *
-     * @param ObjectStorage<LabelTag> $label
-     */
-    public function setLabel(ObjectStorage $label): void
-    {
-        $this->label = $label;
-    }
-
-    /**
-     * Add label
-     *
-     * @param LabelTag $label
-     */
-    public function addLabel(LabelTag $label): void
-    {
-        $this->label?->attach($label);
-    }
-
-    /**
-     * Remove label
-     *
-     * @param LabelTag $label
-     */
-    public function removeLabel(LabelTag $label): void
-    {
-        $this->label?->detach($label);
-    }
-
-    /**
-     * Remove all labels
-     */
-    public function removeAllLabel(): void
-    {
-        $label = clone $this->label;
-        $this->label->removeAll($label);
     }
 
     /**
@@ -452,242 +324,6 @@ class AbstractHeritage extends AbstractBase
     }
 
     /**
-     * Get source relation
-     *
-     * @return ObjectStorage<SourceRelation>
-     */
-    public function getSourceRelation(): ?ObjectStorage
-    {
-        return $this->sourceRelation;
-    }
-
-    /**
-     * Set source relation
-     *
-     * @param ObjectStorage<SourceRelation> $sourceRelation
-     */
-    public function setSourceRelation(ObjectStorage $sourceRelation): void
-    {
-        $this->sourceRelation = $sourceRelation;
-    }
-
-    /**
-     * Add source relation
-     *
-     * @param SourceRelation $sourceRelation
-     */
-    public function addSourceRelation(SourceRelation $sourceRelation): void
-    {
-        $this->sourceRelation?->attach($sourceRelation);
-    }
-
-    /**
-     * Remove source relation
-     *
-     * @param SourceRelation $sourceRelation
-     */
-    public function removeSourceRelation(SourceRelation $sourceRelation): void
-    {
-        $this->sourceRelation?->detach($sourceRelation);
-    }
-
-    /**
-     * Remove all source relations
-     */
-    public function removeAllSourceRelation(): void
-    {
-        $sourceRelation = clone $this->sourceRelation;
-        $this->sourceRelation->removeAll($sourceRelation);
-    }
-
-    /**
-     * Get link relation
-     *
-     * @return ObjectStorage<LinkRelation>
-     */
-    public function getLinkRelation(): ?ObjectStorage
-    {
-        return $this->linkRelation;
-    }
-
-    /**
-     * Set link relation
-     *
-     * @param ObjectStorage<LinkRelation> $linkRelation
-     */
-    public function setLinkRelation(ObjectStorage $linkRelation): void
-    {
-        $this->linkRelation = $linkRelation;
-    }
-
-    /**
-     * Add link relation
-     *
-     * @param LinkRelation $linkRelation
-     */
-    public function addLinkRelation(LinkRelation $linkRelation): void
-    {
-        $this->linkRelation?->attach($linkRelation);
-    }
-
-    /**
-     * Remove link relation
-     *
-     * @param LinkRelation $linkRelation
-     */
-    public function removeLinkRelation(LinkRelation $linkRelation): void
-    {
-        $this->linkRelation?->detach($linkRelation);
-    }
-
-    /**
-     * Remove all link relations
-     */
-    public function removeAllLinkRelation(): void
-    {
-        $linkRelation = clone $this->linkRelation;
-        $this->linkRelation->removeAll($linkRelation);
-    }
-
-    /**
-     * Get publication relation
-     *
-     * @return ObjectStorage<PublicationRelation>
-     */
-    public function getPublicationRelation(): ?ObjectStorage
-    {
-        return $this->publicationRelation;
-    }
-
-    /**
-     * Set publication relation
-     *
-     * @param ObjectStorage<PublicationRelation> $publicationRelation
-     */
-    public function setPublicationRelation(ObjectStorage $publicationRelation): void
-    {
-        $this->publicationRelation = $publicationRelation;
-    }
-
-    /**
-     * Add publication relation
-     *
-     * @param PublicationRelation $publicationRelation
-     */
-    public function addPublicationRelation(PublicationRelation $publicationRelation): void
-    {
-        $this->publicationRelation?->attach($publicationRelation);
-    }
-
-    /**
-     * Remove publication relation
-     *
-     * @param PublicationRelation $publicationRelation
-     */
-    public function removePublicationRelation(PublicationRelation $publicationRelation): void
-    {
-        $this->publicationRelation?->detach($publicationRelation);
-    }
-
-    /**
-     * Remove all publication relations
-     */
-    public function removeAllPublicationRelation(): void
-    {
-        $publicationRelation = clone $this->publicationRelation;
-        $this->publicationRelation->removeAll($publicationRelation);
-    }
-
-    /**
-     * Get is teaser
-     *
-     * @return bool
-     */
-    public function getIsTeaser(): bool
-    {
-        return $this->isTeaser;
-    }
-
-    /**
-     * Set is teaser
-     *
-     * @param bool $isTeaser
-     */
-    public function setIsTeaser(bool $isTeaser): void
-    {
-        $this->isTeaser = $isTeaser;
-    }
-
-    /**
-     * Get is highlight
-     *
-     * @return bool
-     */
-    public function getIsHighlight(): bool
-    {
-        return $this->isHighlight;
-    }
-
-    /**
-     * Set is highlight
-     *
-     * @param bool $isHighlight
-     */
-    public function setIsHighlight(bool $isHighlight): void
-    {
-        $this->isHighlight = $isHighlight;
-    }
-
-    /**
-     * Get parent resource
-     *
-     * @return ObjectStorage<BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource>
-     */
-    public function getParentResource(): ?ObjectStorage
-    {
-        return $this->parentResource;
-    }
-
-    /**
-     * Set parent resource
-     *
-     * @param ObjectStorage<BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource> $parentResource
-     */
-    public function setParentResource(ObjectStorage $parentResource): void
-    {
-        $this->parentResource = $parentResource;
-    }
-
-    /**
-     * Add parent resource
-     *
-     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
-     */
-    public function addParentResource(BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource): void
-    {
-        $this->parentResource?->attach($parentResource);
-    }
-
-    /**
-     * Remove parent resource
-     *
-     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
-     */
-    public function removeParentResource(BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource): void
-    {
-        $this->parentResource?->detach($parentResource);
-    }
-
-    /**
-     * Remove all parent resources
-     */
-    public function removeAllParentResource(): void
-    {
-        $parentResource = clone $this->parentResource;
-        $this->parentResource->removeAll($parentResource);
-    }
-
-    /**
      * Get editorial steps
      *
      * @return string
@@ -726,24 +362,91 @@ class AbstractHeritage extends AbstractBase
     {
         $this->publicationSteps = $publicationSteps;
     }
+}
+
+# If CHF Bib and CHF Pub are available
+if (ExtensionManagementUtility::isLoaded('chf_bib') && ExtensionManagementUtility::isLoaded('chf_pub')) {
 
     /**
-     * Get import
-     *
-     * @return string
+     * Model for AbstractHeritage (with source-relation and publication-relation properties)
      */
-    public function getImport(): string
+    class AbstractHeritage extends AbstractAbstractHeritage
     {
-        return $this->import;
+        use PublicationRelationTrait;
+        use SourceRelationTrait;
+
+        /**
+         * Initialize object
+         */
+        public function initializeObject(): void
+        {
+            $this->label ??= new ObjectStorage();
+            $this->contentElement ??= new ObjectStorage();
+            $this->footnote ??= new ObjectStorage();
+            $this->media ??= new ObjectStorage();
+            $this->file ??= new ObjectStorage();
+            $this->sourceRelation ??= new ObjectStorage();
+            $this->linkRelation ??= new ObjectStorage();
+            $this->publicationRelation ??= new ObjectStorage();
+        }
     }
 
+# If only CHF Bib is available
+} elseif (ExtensionManagementUtility::isLoaded('chf_bib')) {
+
     /**
-     * Set import
-     *
-     * @param string $import
+     * Model for AbstractHeritage (with source-relation property)
      */
-    public function setImport(string $import): void
+    class AbstractHeritage extends AbstractAbstractHeritage
     {
-        $this->import = $import;
+        use SourceRelationTrait;
+
+        /**
+         * Initialize object
+         */
+        public function initializeObject(): void
+        {
+            $this->label ??= new ObjectStorage();
+            $this->contentElement ??= new ObjectStorage();
+            $this->footnote ??= new ObjectStorage();
+            $this->media ??= new ObjectStorage();
+            $this->file ??= new ObjectStorage();
+            $this->sourceRelation ??= new ObjectStorage();
+            $this->linkRelation ??= new ObjectStorage();
+        }
     }
+
+# If only CHF Pub is available
+} elseif (ExtensionManagementUtility::isLoaded('chf_pub')) {
+
+    /**
+     * Model for AbstractHeritage (with publication-relation property)
+     */
+    class AbstractHeritage extends AbstractAbstractHeritage
+    {
+        use PublicationRelationTrait;
+
+        /**
+         * Initialize object
+         */
+        public function initializeObject(): void
+        {
+            $this->label ??= new ObjectStorage();
+            $this->contentElement ??= new ObjectStorage();
+            $this->footnote ??= new ObjectStorage();
+            $this->media ??= new ObjectStorage();
+            $this->file ??= new ObjectStorage();
+            $this->linkRelation ??= new ObjectStorage();
+            $this->publicationRelation ??= new ObjectStorage();
+        }
+    }
+
+# If no relevant extensions are available
+} else {
+
+    /**
+     * Model for AbstractHeritage
+     */
+    class AbstractHeritage extends AbstractAbstractHeritage
+    {}
 }

@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
+use Digicademy\CHFBase\Domain\Model\Traits\HiddenTrait;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
@@ -19,18 +20,10 @@ defined('TYPO3') or die();
  */
 class Extent extends AbstractEntity
 {
-    /**
-     * Record visible or not
-     * 
-     * @var bool
-     */
-    #[Validate([
-        'validator' => 'Boolean',
-    ])]
-    protected bool $hidden = true;
+    use HiddenTrait;
 
     /**
-     * Specific extent
+     * Specific identifier/dimension
      * 
      * @var string
      */
@@ -43,7 +36,7 @@ class Extent extends AbstractEntity
     protected string $text = '';
 
     /**
-     * Type of extent
+     * Type of identifier/dimension
      * 
      * @var string
      */
@@ -66,26 +59,6 @@ class Extent extends AbstractEntity
     {
         $this->setText($text);
         $this->setType($type);
-    }
-
-    /**
-     * Get hidden
-     *
-     * @return bool
-     */
-    public function getHidden(): bool
-    {
-        return $this->hidden;
-    }
-
-    /**
-     * Set hidden
-     *
-     * @param bool $hidden
-     */
-    public function setHidden(bool $hidden): void
-    {
-        $this->hidden = $hidden;
     }
 
     /**

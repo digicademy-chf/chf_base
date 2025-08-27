@@ -42,7 +42,8 @@ class StructureController extends ActionController
         $this->view->assign('resource', $this->abstractResourceRepository->findByIdentifier($resourceIdentifier));
 
         // Set cache tag
-        $this->request->getAttribute('frontend.cache.collector')->addCacheTags(
+        $cacheDataCollector = $this->request->getAttribute('frontend.cache.collector');
+        $cacheDataCollector->addCacheTags(
             new CacheTag('chf')
         );
 
@@ -56,13 +57,14 @@ class StructureController extends ActionController
      * @param AbstractTag $abstractTag
      * @return ResponseInterface
      */
-    public function showTagAction(AbstractTag $abstractTag): ResponseInterface
+    public function showAction(AbstractTag $abstractTag): ResponseInterface
     {
         // Get tag
         $this->view->assign('tag', $abstractTag);
 
         // Set cache tag
-        $this->request->getAttribute('frontend.cache.collector')->addCacheTags(
+        $cacheDataCollector = $this->request->getAttribute('frontend.cache.collector');
+        $cacheDataCollector->addCacheTags(
             new CacheTag('chf')
         );
 
@@ -82,7 +84,8 @@ class StructureController extends ActionController
         $this->view->assign('keyword', $keyword);
 
         // Set cache tag
-        $this->request->getAttribute('frontend.cache.collector')->addCacheTags(
+        $cacheDataCollector = $this->request->getAttribute('frontend.cache.collector');
+        $cacheDataCollector->addCacheTags(
             new CacheTag('chf')
         );
 

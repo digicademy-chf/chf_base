@@ -9,15 +9,6 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
-use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-use Digicademy\CHFBib\Domain\Model\BibliographicResource;
-use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
-use Digicademy\CHFLex\Domain\Model\LexicographicResource;
-use Digicademy\CHFMap\Domain\Model\MapResource;
-use Digicademy\CHFObject\Domain\Model\ObjectResource;
-use Digicademy\CHFPub\Domain\Model\PublicationResource;
-
 defined('TYPO3') or die();
 
 /**
@@ -26,82 +17,15 @@ defined('TYPO3') or die();
 class LabelTypeTag extends AbstractTag
 {
     /**
-     * List of labels that use this label type
-     * 
-     * @var ?ObjectStorage<LabelTag>
-     */
-    #[Lazy()]
-    protected ?ObjectStorage $asLabelTypeOfLabelTag;
-
-    /**
      * Construct object
      *
      * @param string $text
-     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @return LabelTypeTag
      */
-    public function __construct(string $text, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource)
+    public function __construct(string $text)
     {
-        parent::__construct($text, $parentResource);
-        $this->initializeObject();
+        parent::__construct($text);
 
         $this->setType('labelTypeTag');
-    }
-
-    /**
-     * Initialize object
-     */
-    public function initializeObject(): void
-    {
-        $this->asLabelTypeOfLabelTag ??= new ObjectStorage();
-    }
-
-    /**
-     * Get as label type of label tag
-     *
-     * @return ObjectStorage<LabelTag>
-     */
-    public function getAsLabelTypeOfLabelTag(): ?ObjectStorage
-    {
-        return $this->asLabelTypeOfLabelTag;
-    }
-
-    /**
-     * Set as label type of label tag
-     *
-     * @param ObjectStorage<LabelTag> $asLabelTypeOfLabelTag
-     */
-    public function setAsLabelTypeOfLabelTag(ObjectStorage $asLabelTypeOfLabelTag): void
-    {
-        $this->asLabelTypeOfLabelTag = $asLabelTypeOfLabelTag;
-    }
-
-    /**
-     * Add as label type of label tag
-     *
-     * @param LabelTag $asLabelTypeOfLabelTag
-     */
-    public function addAsLabelTypeOfLabelTag(LabelTag $asLabelTypeOfLabelTag): void
-    {
-        $this->asLabelTypeOfLabelTag?->attach($asLabelTypeOfLabelTag);
-    }
-
-    /**
-     * Remove as label type of label tag
-     *
-     * @param LabelTag $asLabelTypeOfLabelTag
-     */
-    public function removeAsLabelTypeOfLabelTag(LabelTag $asLabelTypeOfLabelTag): void
-    {
-        $this->asLabelTypeOfLabelTag?->detach($asLabelTypeOfLabelTag);
-    }
-
-    /**
-     * Remove all as label type of label tags
-     */
-    public function removeAllAsLabelTypeOfLabelTag(): void
-    {
-        $asLabelTypeOfLabelTag = clone $this->asLabelTypeOfLabelTag;
-        $this->asLabelTypeOfLabelTag->removeAll($asLabelTypeOfLabelTag);
     }
 }

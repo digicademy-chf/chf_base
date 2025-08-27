@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:mdlr="http://typo3.org/ns/Digicademy/MDLR/Components/MdlrComponents" data-namespace-typo3-fluid="true">
     <dialog id="share" class="mdlr-modal">
         <f:render partial="Dialogs/Title" arguments="{title: '{f:translate(key: \'templates.share\', extensionName: \'chf_base\')}'}"/>
         <h3 class="mdlr-variant-tacit"><f:translate key="templates.share.preview" extensionName="chf_base"/></h3>
@@ -54,20 +54,14 @@
                 </button>
             </li>
             <li>
-                <a href="mailto:?&subject={site -> f:format.urlencode()}&body={title -> f:format.urlencode()}%0d%0a%0d%0a{f:uri.page(absolute: 'true')}" class="mdlr-button mdlr-variant-texticon" role="button" target="_blank" title="{f:translate(key: 'templates.share.device.email.hint', extensionName: 'chf_base')}">
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-email"/>
-                    </svg>
-                    <span><f:translate key="templates.share.device.email" extensionName="chf_base"/></span>
-                </a>
+                <mdlr:atom.button variant="texticon" href="mailto:?&subject={site -> f:format.urlencode()}&body={title -> f:format.urlencode()}%0d%0a%0d%0a{f:uri.page(absolute: 'true')}" title="{f:translate(key: 'templates.share.device.email.hint', extensionName: 'chf_base')}" icon="email">
+                    <f:translate key="templates.share.device.email" extensionName="chf_base"/>
+                </mdlr:atom.button>
             </li>
             <li>
-                <button class="mdlr-variant-texticon mdlr-function-pdf" title="{f:translate(key: 'templates.share.device.pdf.hint', extensionName: 'chf_base')}">
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-pdf"/>
-                    </svg>
-                    <span><f:format.raw><f:translate key="templates.share.device.pdf" extensionName="chf_base"/></f:format.raw></span>
-                </a>
+                <mdlr:atom.button variant="texticon" title="{f:translate(key: 'templates.share.device.pdf.hint', extensionName: 'chf_base')}" icon="pdf" function="pdf">
+                    <f:format.raw><f:translate key="templates.share.device.pdf" extensionName="chf_base"/></f:format.raw>
+                </mdlr:atom.button>
             </li>
         </ul>
         <h3><f:translate key="templates.share.services" extensionName="chf_base"/></h3>

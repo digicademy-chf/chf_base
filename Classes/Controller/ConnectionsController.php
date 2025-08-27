@@ -9,7 +9,6 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Controller;
 
-use Digicademy\CHFBase\Domain\Model\AbstractRelation;
 use Digicademy\CHFBase\Domain\Repository\AbstractResourceRepository;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Cache\CacheTag;
@@ -41,27 +40,8 @@ class ConnectionsController extends ActionController
         $this->view->assign('resource', $this->abstractResourceRepository->findByIdentifier($resourceIdentifier));
 
         // Set cache tag
-        $this->request->getAttribute('frontend.cache.collector')->addCacheTags(
-            new CacheTag('chf')
-        );
-
-        // Create response
-        return $this->htmlResponse();
-    }
-
-    /**
-     * Show single relation
-     *
-     * @param AbstractRelation $abstractRelation
-     * @return ResponseInterface
-     */
-    public function showAction(AbstractRelation $abstractRelation): ResponseInterface
-    {
-        // Get relation
-        $this->view->assign('relation', $abstractRelation);
-
-        // Set cache tag
-        $this->request->getAttribute('frontend.cache.collector')->addCacheTags(
+        $cacheDataCollector = $this->request->getAttribute('frontend.cache.collector');
+        $cacheDataCollector->addCacheTags(
             new CacheTag('chf')
         );
 

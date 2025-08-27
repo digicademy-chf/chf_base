@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
-use Digicademy\CHFBase\Domain\Model\Traits\IriTrait;
+use Digicademy\CHFBase\Domain\Model\Traits\HiddenTrait;
 use Digicademy\CHFBase\Domain\Model\Traits\UuidTrait;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
@@ -21,18 +21,8 @@ defined('TYPO3') or die();
  */
 class Footnote extends AbstractEntity
 {
-    use IriTrait;
+    use HiddenTrait;
     use UuidTrait;
-
-    /**
-     * Record visible or not
-     * 
-     * @var bool
-     */
-    #[Validate([
-        'validator' => 'Boolean',
-    ])]
-    protected bool $hidden = true;
 
     /**
      * Footnote content
@@ -53,26 +43,6 @@ class Footnote extends AbstractEntity
     public function __construct(string $text)
     {
         $this->setText($text);
-    }
-
-    /**
-     * Get hidden
-     *
-     * @return bool
-     */
-    public function getHidden(): bool
-    {
-        return $this->hidden;
-    }
-
-    /**
-     * Set hidden
-     *
-     * @param bool $hidden
-     */
-    public function setHidden(bool $hidden): void
-    {
-        $this->hidden = $hidden;
     }
 
     /**

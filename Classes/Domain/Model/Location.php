@@ -9,31 +9,29 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
+use Digicademy\CHFBase\Domain\Model\Traits\AgentRelationTrait;
+use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
+use Digicademy\CHFMap\Domain\Model\Traits\CoordinatesTrait;
+use Digicademy\CHFMap\Domain\Model\Traits\GeodataTrait;
+use Digicademy\CHFObject\Domain\Model\Traits\ObjectGroupTrait;
+use Digicademy\CHFObject\Domain\Model\Traits\ObjectTrait;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
-use Digicademy\CHFBib\Domain\Model\BibliographicResource;
-use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
-use Digicademy\CHFLex\Domain\Model\LexicographicResource;
-use Digicademy\CHFMap\Domain\Model\Coordinates;
-use Digicademy\CHFMap\Domain\Model\Feature;
-use Digicademy\CHFMap\Domain\Model\MapResource;
-use Digicademy\CHFObject\Domain\Model\SingleObject;
-use Digicademy\CHFObject\Domain\Model\ObjectGroup;
-use Digicademy\CHFObject\Domain\Model\ObjectResource;
-use Digicademy\CHFPub\Domain\Model\PublicationResource;
 
 defined('TYPO3') or die();
 
 /**
- * Model for Location
+ * Model for AbstractLocation
  */
-class Location extends AbstractHeritage
+class AbstractLocation extends AbstractHeritage
 {
+    use AgentRelationTrait;
+
     /**
      * Type of location
      * 
@@ -134,25 +132,6 @@ class Location extends AbstractHeritage
     protected string $addressCity = '';
 
     /**
-     * Geolocation of this location
-     * 
-     * @var ?ObjectStorage<Coordinates>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $coordinates = null;
-
-    /**
-     * Feature to use as geodata of this location
-     * 
-     * @var Feature|LazyLoadingProxy|null
-     */
-    #[Lazy()]
-    protected Feature|LazyLoadingProxy|null $geodata = null;
-
-    /**
      * Map depicting this location
      * 
      * @var FileReference|LazyLoadingProxy|null
@@ -175,28 +154,6 @@ class Location extends AbstractHeritage
     protected ?ObjectStorage $location = null;
 
     /**
-     * Room to list single objects as part of this location
-     * 
-     * @var ?ObjectStorage<SingleObject>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $object = null;
-
-    /**
-     * Room to list object groups as part of this location
-     * 
-     * @var ?ObjectStorage<ObjectGroup>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $objectGroup = null;
-
-    /**
      * Room to list historical events
      * 
      * @var ?ObjectStorage<Period>
@@ -206,17 +163,6 @@ class Location extends AbstractHeritage
         'value' => 'remove',
     ])]
     protected ?ObjectStorage $event = null;
-
-    /**
-     * Agent related to this record
-     * 
-     * @var ?ObjectStorage<AgentRelation>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $agentRelation = null;
 
     /**
      * Marks this location as historical
@@ -247,28 +193,20 @@ class Location extends AbstractHeritage
     protected Location|LazyLoadingProxy|null $parentLocation = null;
 
     /**
-     * List of location relations that use this location
-     * 
-     * @var ?ObjectStorage<LocationRelation>
-     */
-    #[Lazy()]
-    protected ?ObjectStorage $asLocationOfLocationRelation = null;
-
-    /**
      * Construct object
      *
      * @param string $type
      * @param string $name
-     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @return Location
      */
-    public function __construct(string $type, string $name, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource)
+    public function __construct(string $type, string $name)
     {
-        parent::__construct($parentResource);
+        parent::__construct();
         $this->initializeObject();
 
         $this->setType($type);
         $this->setName($name);
+        $this->setIri('l');
     }
 
     /**
@@ -276,13 +214,9 @@ class Location extends AbstractHeritage
      */
     public function initializeObject(): void
     {
-        $this->coordinates ??= new ObjectStorage();
         $this->location ??= new ObjectStorage();
-        $this->object ??= new ObjectStorage();
-        $this->objectGroup ??= new ObjectStorage();
         $this->event ??= new ObjectStorage();
         $this->agentRelation ??= new ObjectStorage();
-        $this->asLocationOfLocationRelation ??= new ObjectStorage();
     }
 
     /**
@@ -426,78 +360,6 @@ class Location extends AbstractHeritage
     }
 
     /**
-     * Get coordinates
-     *
-     * @return ObjectStorage<Coordinates>
-     */
-    public function getCoordinates(): ?ObjectStorage
-    {
-        return $this->coordinates;
-    }
-
-    /**
-     * Set coordinates
-     *
-     * @param ObjectStorage<Coordinates> $coordinates
-     */
-    public function setCoordinates(ObjectStorage $coordinates): void
-    {
-        $this->coordinates = $coordinates;
-    }
-
-    /**
-     * Add coordinates
-     *
-     * @param Coordinates $coordinates
-     */
-    public function addCoordinates(Coordinates $coordinates): void
-    {
-        $this->coordinates?->attach($coordinates);
-    }
-
-    /**
-     * Remove coordinates
-     *
-     * @param Coordinates $coordinates
-     */
-    public function removeCoordinates(Coordinates $coordinates): void
-    {
-        $this->coordinates?->detach($coordinates);
-    }
-
-    /**
-     * Remove all coordinates
-     */
-    public function removeAllCoordinates(): void
-    {
-        $coordinates = clone $this->coordinates;
-        $this->coordinates->removeAll($coordinates);
-    }
-
-    /**
-     * Get geodata
-     * 
-     * @return Feature
-     */
-    public function getGeodata(): Feature
-    {
-        if ($this->geodata instanceof LazyLoadingProxy) {
-            $this->geodata->_loadRealInstance();
-        }
-        return $this->geodata;
-    }
-
-    /**
-     * Set geodata
-     * 
-     * @param Feature
-     */
-    public function setGeodata(Feature $geodata): void
-    {
-        $this->geodata = $geodata;
-    }
-
-    /**
      * Get floor plan
      * 
      * @return FileReference
@@ -570,104 +432,6 @@ class Location extends AbstractHeritage
     }
 
     /**
-     * Get object
-     *
-     * @return ObjectStorage<SingleObject>
-     */
-    public function getObject(): ?ObjectStorage
-    {
-        return $this->object;
-    }
-
-    /**
-     * Set object
-     *
-     * @param ObjectStorage<SingleObject> $object
-     */
-    public function setObject(ObjectStorage $object): void
-    {
-        $this->object = $object;
-    }
-
-    /**
-     * Add object
-     *
-     * @param SingleObject $object
-     */
-    public function addObject(SingleObject $object): void
-    {
-        $this->object?->attach($object);
-    }
-
-    /**
-     * Remove object
-     *
-     * @param SingleObject $object
-     */
-    public function removeObject(SingleObject $object): void
-    {
-        $this->object?->detach($object);
-    }
-
-    /**
-     * Remove all objects
-     */
-    public function removeAllObject(): void
-    {
-        $object = clone $this->object;
-        $this->object->removeAll($object);
-    }
-
-    /**
-     * Get object group
-     *
-     * @return ObjectStorage<ObjectGroup>
-     */
-    public function getObjectGroup(): ?ObjectStorage
-    {
-        return $this->objectGroup;
-    }
-
-    /**
-     * Set object group
-     *
-     * @param ObjectStorage<ObjectGroup> $objectGroup
-     */
-    public function setObjectGroup(ObjectStorage $objectGroup): void
-    {
-        $this->objectGroup = $objectGroup;
-    }
-
-    /**
-     * Add object group
-     *
-     * @param ObjectGroup $objectGroup
-     */
-    public function addObjectGroup(ObjectGroup $objectGroup): void
-    {
-        $this->objectGroup?->attach($objectGroup);
-    }
-
-    /**
-     * Remove object group
-     *
-     * @param ObjectGroup $objectGroup
-     */
-    public function removeObjectGroup(ObjectGroup $objectGroup): void
-    {
-        $this->objectGroup?->detach($objectGroup);
-    }
-
-    /**
-     * Remove all object groups
-     */
-    public function removeAllObjectGroup(): void
-    {
-        $objectGroup = clone $this->objectGroup;
-        $this->objectGroup->removeAll($objectGroup);
-    }
-
-    /**
      * Get event
      *
      * @return ObjectStorage<Period>
@@ -714,55 +478,6 @@ class Location extends AbstractHeritage
     {
         $event = clone $this->event;
         $this->event->removeAll($event);
-    }
-
-    /**
-     * Get agent relation
-     *
-     * @return ObjectStorage<AgentRelation>
-     */
-    public function getAgentRelation(): ?ObjectStorage
-    {
-        return $this->agentRelation;
-    }
-
-    /**
-     * Set agent relation
-     *
-     * @param ObjectStorage<AgentRelation> $agentRelation
-     */
-    public function setAgentRelation(ObjectStorage $agentRelation): void
-    {
-        $this->agentRelation = $agentRelation;
-    }
-
-    /**
-     * Add agent relation
-     *
-     * @param AgentRelation $agentRelation
-     */
-    public function addAgentRelation(AgentRelation $agentRelation): void
-    {
-        $this->agentRelation?->attach($agentRelation);
-    }
-
-    /**
-     * Remove agent relation
-     *
-     * @param AgentRelation $agentRelation
-     */
-    public function removeAgentRelation(AgentRelation $agentRelation): void
-    {
-        $this->agentRelation?->detach($agentRelation);
-    }
-
-    /**
-     * Remove all agent relations
-     */
-    public function removeAllAgentRelation(): void
-    {
-        $agentRelation = clone $this->agentRelation;
-        $this->agentRelation->removeAll($agentRelation);
     }
 
     /**
@@ -827,53 +542,88 @@ class Location extends AbstractHeritage
     {
         $this->parentLocation = $parentLocation;
     }
+}
+
+# If CHF Map and CHF Object are available
+if (ExtensionManagementUtility::isLoaded('chf_map') && ExtensionManagementUtility::isLoaded('chf_object')) {
 
     /**
-     * Get as location of location relation
-     *
-     * @return ObjectStorage<LocationRelation>
+     * Model for Location (with coordinates, geodata, object, and object-group properties)
      */
-    public function getAsLocationOfLocationRelation(): ?ObjectStorage
+    class Location extends AbstractLocation
     {
-        return $this->asLocationOfLocationRelation;
+        use CoordinatesTrait;
+        use GeodataTrait;
+        use ObjectGroupTrait;
+        use ObjectTrait;
+
+        /**
+         * Initialize object
+         */
+        public function initializeObject(): void
+        {
+            $this->coordinates ??= new ObjectStorage();
+            $this->location ??= new ObjectStorage();
+            $this->object ??= new ObjectStorage();
+            $this->objectGroup ??= new ObjectStorage();
+            $this->event ??= new ObjectStorage();
+            $this->agentRelation ??= new ObjectStorage();
+        }
     }
 
-    /**
-     * Set as location of location relation
-     *
-     * @param ObjectStorage<LocationRelation> $asLocationOfLocationRelation
-     */
-    public function setAsLocationOfLocationRelation(ObjectStorage $asLocationOfLocationRelation): void
-    {
-        $this->asLocationOfLocationRelation = $asLocationOfLocationRelation;
-    }
+# If only CHF Map is available
+} elseif (ExtensionManagementUtility::isLoaded('chf_map')) {
 
     /**
-     * Add as location of location relation
-     *
-     * @param LocationRelation $asLocationOfLocationRelation
+     * Model for Location (with coordinates and geodata properties)
      */
-    public function addAsLocationOfLocationRelation(LocationRelation $asLocationOfLocationRelation): void
+    class Location extends AbstractLocation
     {
-        $this->asLocationOfLocationRelation?->attach($asLocationOfLocationRelation);
+        use CoordinatesTrait;
+        use GeodataTrait;
+
+        /**
+         * Initialize object
+         */
+        public function initializeObject(): void
+        {
+            $this->coordinates ??= new ObjectStorage();
+            $this->location ??= new ObjectStorage();
+            $this->event ??= new ObjectStorage();
+            $this->agentRelation ??= new ObjectStorage();
+        }
     }
 
-    /**
-     * Remove as location of location relation
-     *
-     * @param LocationRelation $asLocationOfLocationRelation
-     */
-    public function removeAsLocationOfLocationRelation(LocationRelation $asLocationOfLocationRelation): void
-    {
-        $this->asLocationOfLocationRelation?->detach($asLocationOfLocationRelation);
-    }
+# If only CHF Object is available
+} elseif (ExtensionManagementUtility::isLoaded('chf_object')) {
 
     /**
-     * Remove all as location of location relations
+     * Model for Location (with object and object-group properties)
      */
-    public function removeAllAsLocationOfLocationRelation(): void
+    class Location extends AbstractLocation
     {
-        $asLocationOfLocationRelation = clone $this->asLocationOfLocationRelation;
-        $this->asLocationOfLocationRelation->removeAll($asLocationOfLocationRelation);
+        use ObjectGroupTrait;
+        use ObjectTrait;
+
+        /**
+         * Initialize object
+         */
+        public function initializeObject(): void
+        {
+            $this->location ??= new ObjectStorage();
+            $this->object ??= new ObjectStorage();
+            $this->objectGroup ??= new ObjectStorage();
+            $this->event ??= new ObjectStorage();
+            $this->agentRelation ??= new ObjectStorage();
+        }
     }
+
+# If no relevant extensions are available
+} else {
+
+    /**
+     * Model for Location
+     */
+    class Location extends AbstractLocation
+    {}
 }

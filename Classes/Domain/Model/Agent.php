@@ -9,18 +9,14 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
+use Digicademy\CHFBase\Domain\Model\Traits\AgentRelationTrait;
+use Digicademy\CHFBase\Domain\Model\Traits\LocationRelationTrait;
+use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
-use Digicademy\CHFBib\Domain\Model\BibliographicResource;
-use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
-use Digicademy\CHFLex\Domain\Model\LexicographicResource;
-use Digicademy\CHFMap\Domain\Model\MapResource;
-use Digicademy\CHFObject\Domain\Model\ObjectResource;
-use Digicademy\CHFPub\Domain\Model\PublicationResource;
 
 defined('TYPO3') or die();
 
@@ -29,6 +25,9 @@ defined('TYPO3') or die();
  */
 class Agent extends AbstractHeritage
 {
+    use AgentRelationTrait;
+    use LocationRelationTrait;
+
     /**
      * Specific type of agent
      * 
@@ -160,38 +159,6 @@ class Agent extends AbstractHeritage
     protected ?ObjectStorage $event = null;
 
     /**
-     * Agent related to this record
-     * 
-     * @var ?ObjectStorage<AgentRelation>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $agentRelation = null;
-
-    /**
-     * Location related to this record
-     * 
-     * @var ?ObjectStorage<LocationRelation>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $locationRelation = null;
-
-    /**
-     * Makes this agent selectable as an author
-     * 
-     * @var bool
-     */
-    #[Validate([
-        'validator' => 'Boolean',
-    ])]
-    protected bool $isContributor = false;
-
-    /**
      * Larger agent that this agent is part of
      * 
      * @var Agent|LazyLoadingProxy|null
@@ -200,34 +167,18 @@ class Agent extends AbstractHeritage
     protected Agent|LazyLoadingProxy|null $parentAgent = null;
 
     /**
-     * List of agent relations that use this agent
-     * 
-     * @var ?ObjectStorage<AgentRelation>
-     */
-    #[Lazy()]
-    protected ?ObjectStorage $asAgentOfAgentRelation = null;
-
-    /**
-     * List of authorship relations that use this agent
-     * 
-     * @var ?ObjectStorage<AuthorshipRelation>
-     */
-    #[Lazy()]
-    protected ?ObjectStorage $asContributorOfAuthorshipRelation = null;
-
-    /**
      * Construct object
      *
      * @param string $type
-     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @return Agent
      */
-    public function __construct(string $type, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource)
+    public function __construct(string $type)
     {
-        parent::__construct($parentResource);
+        parent::__construct();
         $this->initializeObject();
 
         $this->setType($type);
+        $this->setIri('a');
     }
 
     /**
@@ -239,8 +190,6 @@ class Agent extends AbstractHeritage
         $this->event ??= new ObjectStorage();
         $this->agentRelation ??= new ObjectStorage();
         $this->locationRelation ??= new ObjectStorage();
-        $this->asAgentOfAgentRelation ??= new ObjectStorage();
-        $this->asContributorOfAuthorshipRelation ??= new ObjectStorage();
     }
 
     /**
@@ -502,124 +451,6 @@ class Agent extends AbstractHeritage
     }
 
     /**
-     * Get agent relation
-     *
-     * @return ObjectStorage<AgentRelation>
-     */
-    public function getAgentRelation(): ?ObjectStorage
-    {
-        return $this->agentRelation;
-    }
-
-    /**
-     * Set agent relation
-     *
-     * @param ObjectStorage<AgentRelation> $agentRelation
-     */
-    public function setAgentRelation(ObjectStorage $agentRelation): void
-    {
-        $this->agentRelation = $agentRelation;
-    }
-
-    /**
-     * Add agent relation
-     *
-     * @param AgentRelation $agentRelation
-     */
-    public function addAgentRelation(AgentRelation $agentRelation): void
-    {
-        $this->agentRelation?->attach($agentRelation);
-    }
-
-    /**
-     * Remove agent relation
-     *
-     * @param AgentRelation $agentRelation
-     */
-    public function removeAgentRelation(AgentRelation $agentRelation): void
-    {
-        $this->agentRelation?->detach($agentRelation);
-    }
-
-    /**
-     * Remove all agent relations
-     */
-    public function removeAllAgentRelation(): void
-    {
-        $agentRelation = clone $this->agentRelation;
-        $this->agentRelation->removeAll($agentRelation);
-    }
-
-    /**
-     * Get location relation
-     *
-     * @return ObjectStorage<LocationRelation>
-     */
-    public function getLocationRelation(): ?ObjectStorage
-    {
-        return $this->locationRelation;
-    }
-
-    /**
-     * Set location relation
-     *
-     * @param ObjectStorage<LocationRelation> $locationRelation
-     */
-    public function setLocationRelation(ObjectStorage $locationRelation): void
-    {
-        $this->locationRelation = $locationRelation;
-    }
-
-    /**
-     * Add location relation
-     *
-     * @param LocationRelation $locationRelation
-     */
-    public function addLocationRelation(LocationRelation $locationRelation): void
-    {
-        $this->locationRelation?->attach($locationRelation);
-    }
-
-    /**
-     * Remove location relation
-     *
-     * @param LocationRelation $locationRelation
-     */
-    public function removeLocationRelation(LocationRelation $locationRelation): void
-    {
-        $this->locationRelation?->detach($locationRelation);
-    }
-
-    /**
-     * Remove all location relations
-     */
-    public function removeAllLocationRelation(): void
-    {
-        $locationRelation = clone $this->locationRelation;
-        $this->locationRelation->removeAll($locationRelation);
-    }
-
-    /**
-     * Get is contributor
-     *
-     * @return bool
-     */
-    public function getIsContributor(): bool
-    {
-        return $this->isContributor;
-    }
-
-    /**
-     * Set is contributor
-     *
-     * @param bool $isContributor
-     */
-    public function setIsContributor(bool $isContributor): void
-    {
-        $this->isContributor = $isContributor;
-    }
-
-    /**
      * Get parent agent
      * 
      * @return Agent
@@ -640,103 +471,5 @@ class Agent extends AbstractHeritage
     public function setParentAgent(Agent $parentAgent): void
     {
         $this->parentAgent = $parentAgent;
-    }
-
-    /**
-     * Get as agent of agent relation
-     *
-     * @return ObjectStorage<AgentRelation>
-     */
-    public function getAsAgentOfAgentRelation(): ?ObjectStorage
-    {
-        return $this->asAgentOfAgentRelation;
-    }
-
-    /**
-     * Set as agent of agent relation
-     *
-     * @param ObjectStorage<AgentRelation> $asAgentOfAgentRelation
-     */
-    public function setAsAgentOfAgentRelation(ObjectStorage $asAgentOfAgentRelation): void
-    {
-        $this->asAgentOfAgentRelation = $asAgentOfAgentRelation;
-    }
-
-    /**
-     * Add as agent of agent relation
-     *
-     * @param AgentRelation $asAgentOfAgentRelation
-     */
-    public function addAsAgentOfAgentRelation(AgentRelation $asAgentOfAgentRelation): void
-    {
-        $this->asAgentOfAgentRelation?->attach($asAgentOfAgentRelation);
-    }
-
-    /**
-     * Remove as agent of agent relation
-     *
-     * @param AgentRelation $asAgentOfAgentRelation
-     */
-    public function removeAsAgentOfAgentRelation(AgentRelation $asAgentOfAgentRelation): void
-    {
-        $this->asAgentOfAgentRelation?->detach($asAgentOfAgentRelation);
-    }
-
-    /**
-     * Remove all as agent of agent relations
-     */
-    public function removeAllAsAgentOfAgentRelation(): void
-    {
-        $asAgentOfAgentRelation = clone $this->asAgentOfAgentRelation;
-        $this->asAgentOfAgentRelation->removeAll($asAgentOfAgentRelation);
-    }
-
-    /**
-     * Get as contributor of authorship relation
-     *
-     * @return ObjectStorage<AuthorshipRelation>
-     */
-    public function getAsContributorOfAuthorshipRelation(): ?ObjectStorage
-    {
-        return $this->asContributorOfAuthorshipRelation;
-    }
-
-    /**
-     * Set as contributor of authorship relation
-     *
-     * @param ObjectStorage<AuthorshipRelation> $asContributorOfAuthorshipRelation
-     */
-    public function setAsContributorOfAuthorshipRelation(ObjectStorage $asContributorOfAuthorshipRelation): void
-    {
-        $this->asContributorOfAuthorshipRelation = $asContributorOfAuthorshipRelation;
-    }
-
-    /**
-     * Add as contributor of authorship relation
-     *
-     * @param AuthorshipRelation $asContributorOfAuthorshipRelation
-     */
-    public function addAsContributorOfAuthorshipRelation(AuthorshipRelation $asContributorOfAuthorshipRelation): void
-    {
-        $this->asContributorOfAuthorshipRelation?->attach($asContributorOfAuthorshipRelation);
-    }
-
-    /**
-     * Remove as contributor of authorship relation
-     *
-     * @param AuthorshipRelation $asContributorOfAuthorshipRelation
-     */
-    public function removeAsContributorOfAuthorshipRelation(AuthorshipRelation $asContributorOfAuthorshipRelation): void
-    {
-        $this->asContributorOfAuthorshipRelation?->detach($asContributorOfAuthorshipRelation);
-    }
-
-    /**
-     * Remove all as contributor of authorship relations
-     */
-    public function removeAllAsContributorOfAuthorshipRelation(): void
-    {
-        $asContributorOfAuthorshipRelation = clone $this->asContributorOfAuthorshipRelation;
-        $this->asContributorOfAuthorshipRelation->removeAll($asContributorOfAuthorshipRelation);
     }
 }

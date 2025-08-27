@@ -9,19 +9,15 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
+use Digicademy\CHFBase\Domain\Model\Traits\HiddenTrait;
 use Digicademy\CHFBase\Domain\Model\Traits\IriTrait;
+use Digicademy\CHFBase\Domain\Model\Traits\ParentResourceTrait;
+use Digicademy\CHFBase\Domain\Model\Traits\SameAsTrait;
 use Digicademy\CHFBase\Domain\Model\Traits\UuidTrait;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
-use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-use Digicademy\CHFBib\Domain\Model\BibliographicResource;
-use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
-use Digicademy\CHFLex\Domain\Model\LexicographicResource;
-use Digicademy\CHFMap\Domain\Model\MapResource;
-use Digicademy\CHFObject\Domain\Model\ObjectResource;
-use Digicademy\CHFPub\Domain\Model\PublicationResource;
 
 defined('TYPO3') or die();
 
@@ -30,18 +26,11 @@ defined('TYPO3') or die();
  */
 class AbstractTag extends AbstractEntity
 {
+    use HiddenTrait;
     use IriTrait;
+    use ParentResourceTrait;
+    use SameAsTrait;
     use UuidTrait;
-
-    /**
-     * Record visible or not
-     * 
-     * @var bool
-     */
-    #[Validate([
-        'validator' => 'Boolean',
-    ])]
-    protected bool $hidden = true;
 
     /**
      * Type of tag
@@ -96,38 +85,26 @@ class AbstractTag extends AbstractEntity
     protected string $description = '';
 
     /**
-     * Resource that this database record is part of
+     * Database records connected to this tag
      * 
-     * @var ?ObjectStorage<BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource>
+     * @var ?ObjectStorage<mixed>
      */
     #[Lazy()]
-    protected ?ObjectStorage $parentResource = null;
-
-    /**
-     * Authoritative web address to identify an entity across the web
-     * 
-     * @var ?ObjectStorage<SameAs>
-     */
-    #[Lazy()]
-    #[Cascade([
-        'value' => 'remove',
-    ])]
-    protected ?ObjectStorage $sameAs = null;
+    protected ?ObjectStorage $items = null;
 
     /**
      * Construct object
      *
      * @param string $text
-     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @return AbstractTag
      */
-    public function __construct(string $text, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource)
+    public function __construct(string $text)
     {
         $this->initializeObject();
 
         $this->setType('0');
         $this->setText($text);
-        $this->addParentResource($parentResource);
+        $this->setIri('t');
     }
 
     /**
@@ -135,28 +112,9 @@ class AbstractTag extends AbstractEntity
      */
     public function initializeObject(): void
     {
+        $this->items ??= new ObjectStorage();
         $this->parentResource ??= new ObjectStorage();
         $this->sameAs ??= new ObjectStorage();
-    }
-
-    /**
-     * Get hidden
-     *
-     * @return bool
-     */
-    public function getHidden(): bool
-    {
-        return $this->hidden;
-    }
-
-    /**
-     * Set hidden
-     *
-     * @param bool $hidden
-     */
-    public function setHidden(bool $hidden): void
-    {
-        $this->hidden = $hidden;
     }
 
     /**
@@ -240,100 +198,51 @@ class AbstractTag extends AbstractEntity
     }
 
     /**
-     * Get parent resource
+     * Get items
      *
-     * @return ObjectStorage<BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource>
+     * @return ObjectStorage<mixed>
      */
-    public function getParentResource(): ?ObjectStorage
+    public function getItems(): ?ObjectStorage
     {
-        return $this->parentResource;
+        return $this->items;
     }
 
     /**
-     * Set parent resource
+     * Set items
      *
-     * @param ObjectStorage<BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource> $parentResource
+     * @param ObjectStorage<mixed> $items
      */
-    public function setParentResource(ObjectStorage $parentResource): void
+    public function setItems(ObjectStorage $items): void
     {
-        $this->parentResource = $parentResource;
+        $this->items = $items;
     }
 
     /**
-     * Add parent resource
+     * Add items
      *
-     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
+     * @param mixed $items
      */
-    public function addParentResource(BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource): void
+    public function addItems(mixed $items): void
     {
-        $this->parentResource?->attach($parentResource);
+        $this->items?->attach($items);
     }
 
     /**
-     * Remove parent resource
+     * Remove items
      *
-     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
+     * @param mixed $items
      */
-    public function removeParentResource(BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource): void
+    public function removeItems(mixed $items): void
     {
-        $this->parentResource?->detach($parentResource);
+        $this->items?->detach($items);
     }
 
     /**
-     * Remove all parent resources
+     * Remove all items
      */
-    public function removeAllParentResource(): void
+    public function removeAllItems(): void
     {
-        $parentResource = clone $this->parentResource;
-        $this->parentResource->removeAll($parentResource);
-    }
-
-    /**
-     * Get same as
-     *
-     * @return ObjectStorage<SameAs>
-     */
-    public function getSameAs(): ?ObjectStorage
-    {
-        return $this->sameAs;
-    }
-
-    /**
-     * Set same as
-     *
-     * @param ObjectStorage<SameAs> $sameAs
-     */
-    public function setSameAs(ObjectStorage $sameAs): void
-    {
-        $this->sameAs = $sameAs;
-    }
-
-    /**
-     * Add same as
-     *
-     * @param SameAs $sameAs
-     */
-    public function addSameAs(SameAs $sameAs): void
-    {
-        $this->sameAs?->attach($sameAs);
-    }
-
-    /**
-     * Remove same as
-     *
-     * @param SameAs $sameAs
-     */
-    public function removeSameAs(SameAs $sameAs): void
-    {
-        $this->sameAs?->detach($sameAs);
-    }
-
-    /**
-     * Remove all same as
-     */
-    public function removeAllSameAs(): void
-    {
-        $sameAs = clone $this->sameAs;
-        $this->sameAs->removeAll($sameAs);
+        $items = clone $this->items;
+        $this->items->removeAll($items);
     }
 }

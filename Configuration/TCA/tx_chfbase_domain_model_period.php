@@ -20,14 +20,14 @@ defined('TYPO3') or die();
 return [
     'ctrl' => [
         'title'                    => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.period',
-        'label'                    => 'text',
-        'label_alt'                => 'alternative_text,display_date',
+        'label'                    => 'title',
+        'label_alt'                => 'alternative_title,display_date',
         'descriptionColumn'        => 'editorial_note',
         'tstamp'                   => 'tstamp',
         'crdate'                   => 'crdate',
         'delete'                   => 'deleted',
         'sortby'                   => 'sorting',
-        'default_sortby'           => 'is_highlight ASC,when ASC,from ASC,to ASC,not_before ASC,not_after ASC,text ASC,alternative_text ASC,display_date ASC,type ASC',
+        'default_sortby'           => 'is_highlight ASC,when ASC,from ASC,to ASC,not_before ASC,not_after ASC,title ASC,alternative_title ASC,display_date ASC,type ASC',
         'versioningWS'             => true,
         'iconfile'                 => 'EXT:chf_base/Resources/Public/Icons/TablePeriod.svg',
         'origUid'                  => 't3_origuid',
@@ -36,7 +36,7 @@ return [
         'transOrigPointerField'    => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'translationSource'        => 'l10n_source',
-        'searchFields'             => 'type,text,alternative_text,when,display_date,from,to,not_before,not_after,iri,uuid,publication_date,revision_date,revision_number,editorial_note,import_origin,import',
+        'searchFields'             => 'type,title,alternative_title,when,display_date,from,to,not_before,not_after,iri,uuid,publication_date,revision_date,revision_number,editorial_note,import_origin,import',
         'enablecolumns'            => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
@@ -45,113 +45,6 @@ return [
         ],
     ],
     'columns' => [
-        'fe_group' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.fe_group',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectMultipleSideBySide',
-                'size' => 5,
-                'maxitems' => 20,
-                'items' => [
-                    [
-                        'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hide_at_login',
-                        'value' => -1,
-                    ],
-                    [
-                        'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.any_login',
-                        'value' => -2,
-                    ],
-                    [
-                        'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.usergroups',
-                        'value' => '--div--',
-                    ],
-                ],
-                'exclusiveKeys' => '-1,-2',
-                'foreign_table' => 'fe_groups',
-                'foreign_table_where' => 'ORDER BY fe_groups.title',
-            ],
-        ],
-        'sys_language_uid' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
-            'config' => [
-                'type' => 'language',
-            ],
-        ],
-        'l10n_parent' => [
-            'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l10n_parent',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'items' => [
-                    [
-                        'label' => '',
-                        'value' => 0,
-                    ],
-                ],
-                'foreign_table' => 'tx_chfbase_domain_model_period',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_period}.{#pid}=###CURRENT_PID###'
-                    . ' AND {#tx_chfbase_domain_model_period}.{#sys_language_uid} IN (-1,0)',
-                'default' => 0,
-            ],
-        ],
-        'l10n_source' => [
-            'config' => [
-                'type' => 'passthrough',
-            ],
-        ],
-        'l10n_diffsource' => [
-            'config' => [
-                'type' => 'passthrough',
-                'default' => '',
-            ],
-        ],
-        'hidden' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.hidden.description',
-            'config' => [
-                'type' => 'check',
-                'renderType' => 'checkboxToggle',
-                'items' => [
-                    [
-                        'label' => '',
-                        'invertStateDisplay' => true,
-                    ]
-                ],
-            ]
-        ],
-        'starttime' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.starttime.description',
-            'config' => [
-                'type' => 'datetime',
-                'format' => 'datetime',
-                'eval' => 'int',
-                'default' => 0,
-            ],
-        ],
-        'endtime' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.endtime.description',
-            'config' => [
-                'type' => 'datetime',
-                'format' => 'datetime',
-                'eval' => 'int',
-                'default' => 0,
-                'range' => [
-                    'upper' => mktime(0, 0, 0, 1, 1, 2106),
-                ],
-            ],
-        ],
         'type' => [
             'exclude' => true,
             'l10n_mode' => 'exclude',
@@ -207,10 +100,10 @@ return [
                 'required' => true,
             ],
         ],
-        'text' => [
+        'title' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.period.text',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.period.text.description',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.period.title',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.period.title.description',
             'config' => [
                 'type' => 'input',
                 'size' => 40,
@@ -221,10 +114,10 @@ return [
                 ],
             ],
         ],
-        'alternative_text' => [
+        'alternative_title' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.period.alternativeText',
-            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.period.alternativeText.description',
+            'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.period.alternativeTitle',
+            'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.period.alternativeTitle.description',
             'config' => [
                 'type' => 'input',
                 'size' => 40,
@@ -313,9 +206,15 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectTree',
                 'foreign_table' => 'tx_chfbase_domain_model_tag',
-                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
-                'MM' => 'tx_chfbase_domain_model_period_tag_label_mm',
-                'multiple' => 1,
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_tag}.{#sys_language_uid} IN (-1, 0)'
+                    . ' AND {#tx_chfbase_domain_model_tag}.{#pid} IN (###CURRENT_PID###, ###SITE:settings.chf.data.page###)'
+                    . ' AND {#tx_chfbase_domain_model_tag}.{#type}=\'labelTag\'',
+                'MM' => 'tx_chfbase_domain_model_tag_record_mm',
+                'MM_match_fields' => [
+                    'fieldname' => 'label',
+                    'tablenames' => 'tx_chfbase_domain_model_period',
+                ],
+                'MM_opposite_field' => 'items',
                 'treeConfig' => [
                     'parentField' => 'parent_label_tag',
                     'appearance' => [
@@ -355,13 +254,10 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
-                'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
-                'MM_match_fields' => [
-                    'tablenames' => 'tx_chfbase_domain_model_period',
-                    'fieldname' => 'agent_relation',
+                'foreign_field' => 'record',
+                'foreign_match_fields' => [
+                    'type' => 'agentRelation'
                 ],
-                'MM_opposite_field' => 'record',
-                'multiple' => 1,
                 'appearance' => [
                     'collapseAll' => true,
                     'expandSingle' => true,
@@ -376,7 +272,6 @@ return [
                     'columns' => [
                         'type' => [
                             'config' => [
-                                'default' => 'agentRelation',
                                 'readOnly' => true,
                             ],
                         ],
@@ -397,13 +292,10 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
-                'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
-                'MM_match_fields' => [
-                    'tablenames' => 'tx_chfbase_domain_model_period',
-                    'fieldname' => 'location_relation',
+                'foreign_field' => 'record',
+                'foreign_match_fields' => [
+                    'type' => 'locationRelation'
                 ],
-                'MM_opposite_field' => 'record',
-                'multiple' => 1,
                 'appearance' => [
                     'collapseAll' => true,
                     'expandSingle' => true,
@@ -418,7 +310,6 @@ return [
                     'columns' => [
                         'type' => [
                             'config' => [
-                                'default' => 'locationRelation',
                                 'readOnly' => true,
                             ],
                         ],
@@ -502,13 +393,10 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
-                'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
-                'MM_match_fields' => [
-                    'tablenames' => 'tx_chfbase_domain_model_period',
-                    'fieldname' => 'link_relation',
+                'foreign_field' => 'record',
+                'foreign_match_fields' => [
+                    'type' => 'linkRelation'
                 ],
-                'MM_opposite_field' => 'record',
-                'multiple' => 1,
                 'appearance' => [
                     'collapseAll' => true,
                     'expandSingle' => true,
@@ -523,7 +411,6 @@ return [
                     'columns' => [
                         'type' => [
                             'config' => [
-                                'default' => 'linkRelation',
                                 'readOnly' => true,
                             ],
                         ],
@@ -580,6 +467,8 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectTree',
                 'foreign_table' => 'tx_chfbase_domain_model_period',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_period}.{#sys_language_uid} IN (-1, 0)'
+                    . ' AND {#tx_chfbase_domain_model_period}.{#pid} IN (###CURRENT_PID###, ###SITE:settings.chf.data.page###)',
                 'treeConfig' => [
                     'parentField' => 'parent_period',
                     'appearance' => [
@@ -596,14 +485,21 @@ return [
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource.description',
+            'onChange' => 'reload',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingleBox',
                 'foreign_table' => 'tx_chfbase_domain_model_resource',
+                'foreign_table_where' => 'AND {#tx_chfbase_domain_model_resource}.{#sys_language_uid} IN (-1, 0)',
+                'MM' => 'tx_chfbase_domain_model_resource_record_mm',
+                'MM_match_fields' => [
+                    'fieldname' => 'parent_resource',
+                    'tablenames' => 'tx_chfbase_domain_model_period',
+                ],
+                'MM_opposite_field' => 'items',
                 'sortItems' => [
                     'label' => 'asc',
                 ],
-                'required' => true,
             ],
         ],
         'iri' => [
@@ -619,17 +515,15 @@ return [
                 ],
                 'prependSlash' => false,
                 'generatorOptions' => [
-                    'fields' => [
-                        'uid',
-                    ],
-                    'fieldSeparator' => '/',
                     'prefixParentPageSlug' => false,
                     'replacements' => [
                         '/' => '',
                     ],
                 ],
+                'default' => 'p',
                 'eval' => 'uniqueInSite',
                 'fallbackCharacter' => '',
+                'required' => true,
             ],
         ],
         'uuid' => [
@@ -725,13 +619,10 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
-                'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
-                'MM_match_fields' => [
-                    'tablenames' => 'tx_chfbase_domain_model_period',
-                    'fieldname' => 'authorship_relation',
+                'foreign_field' => 'record',
+                'foreign_match_fields' => [
+                    'type' => 'authorshipRelation'
                 ],
-                'MM_opposite_field' => 'record',
-                'multiple' => 1,
                 'appearance' => [
                     'collapseAll' => true,
                     'expandSingle' => true,
@@ -746,7 +637,6 @@ return [
                     'columns' => [
                         'type' => [
                             'config' => [
-                                'default' => 'authorshipRelation',
                                 'readOnly' => true,
                             ],
                         ],
@@ -767,13 +657,10 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_chfbase_domain_model_relation',
-                'MM' => 'tx_chfbase_domain_model_relation_any_record_mm',
-                'MM_match_fields' => [
-                    'tablenames' => 'tx_chfbase_domain_model_period',
-                    'fieldname' => 'licence_relation',
+                'foreign_field' => 'record',
+                'foreign_match_fields' => [
+                    'type' => 'licenceRelation'
                 ],
-                'MM_opposite_field' => 'record',
-                'multiple' => 1,
                 'appearance' => [
                     'collapseAll' => true,
                     'expandSingle' => true,
@@ -788,7 +675,6 @@ return [
                     'columns' => [
                         'type' => [
                             'config' => [
-                                'default' => 'licenceRelation',
                                 'readOnly' => true,
                             ],
                         ],
@@ -903,8 +789,8 @@ return [
         'typeCalendar' => [
             'showitem' => 'type,calendar,',
         ],
-        'textAlternativeText' => [
-            'showitem' => 'text,alternative_text,',
+        'titleAlternativeTitle' => [
+            'showitem' => 'title,alternative_title,',
         ],
         'whenDisplayDateFromToNotBeforeNotAfter' => [
             'showitem' => 'when,display_date,--linebreak--,from,to,--linebreak--,not_before,not_after',
@@ -927,11 +813,11 @@ return [
     ],
     'types' => [
         '0' => [
-            'showitem' => '--palette--;;typeCalendar,--palette--;;textAlternativeText,--palette--;;whenDisplayDateFromToNotBeforeNotAfter,label,
+            'showitem' => '--palette--;;typeCalendar,--palette--;;titleAlternativeTitle,--palette--;;whenDisplayDateFromToNotBeforeNotAfter,label,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.structured,event,agent_relation,location_relation,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.unstructured,content_element,footnote,media,file,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.bibliography,source_relation,link_relation,publication_relation,
-            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.placement,--palette--;;isTeaserIsHighlight,--palette--;;parentPeriodParentResource,--palette--;;iriUuid,same_as,
+            --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.management,--palette--;;isTeaserIsHighlight,--palette--;;parentPeriodParentResource,--palette--;;iriUuid,same_as,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.editorial,--palette--;;publicationDateRevisionDateRevisionNumber,editorial_note,authorship_relation,licence_relation,--palette--;;editorialStepsPublicationSteps,
             --div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.import,import_origin,import,',
         ],

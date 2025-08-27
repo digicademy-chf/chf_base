@@ -9,15 +9,6 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
-use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-use Digicademy\CHFBib\Domain\Model\BibliographicResource;
-use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
-use Digicademy\CHFLex\Domain\Model\LexicographicResource;
-use Digicademy\CHFMap\Domain\Model\MapResource;
-use Digicademy\CHFObject\Domain\Model\ObjectResource;
-use Digicademy\CHFPub\Domain\Model\PublicationResource;
-
 defined('TYPO3') or die();
 
 /**
@@ -26,82 +17,16 @@ defined('TYPO3') or die();
 class LicenceTag extends AbstractTag
 {
     /**
-     * List of licence relations that use this licence
-     * 
-     * @var ?ObjectStorage<LicenceRelation>
-     */
-    #[Lazy()]
-    protected ?ObjectStorage $asLicenceOfLicenceRelation;
-
-    /**
      * Construct object
      *
      * @param string $text
-     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @return LicenceTag
      */
-    public function __construct(string $text, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource)
+    public function __construct(string $text)
     {
-        parent::__construct($text, $parentResource);
+        parent::__construct($text);
         $this->initializeObject();
 
         $this->setType('licenceTag');
-    }
-
-    /**
-     * Initialize object
-     */
-    public function initializeObject(): void
-    {
-        $this->asLicenceOfLicenceRelation ??= new ObjectStorage();
-    }
-
-    /**
-     * Get as licence of licence relation
-     *
-     * @return ObjectStorage<LicenceRelation>
-     */
-    public function getAsLicenceOfLicenceRelation(): ?ObjectStorage
-    {
-        return $this->asLicenceOfLicenceRelation;
-    }
-
-    /**
-     * Set as licence of licence relation
-     *
-     * @param ObjectStorage<LicenceRelation> $asLicenceOfLicenceRelation
-     */
-    public function setAsLicenceOfLicenceRelation(ObjectStorage $asLicenceOfLicenceRelation): void
-    {
-        $this->asLicenceOfLicenceRelation = $asLicenceOfLicenceRelation;
-    }
-
-    /**
-     * Add as licence of licence relation
-     *
-     * @param LicenceRelation $asLicenceOfLicenceRelation
-     */
-    public function addAsLicenceOfLicenceRelation(LicenceRelation $asLicenceOfLicenceRelation): void
-    {
-        $this->asLicenceOfLicenceRelation?->attach($asLicenceOfLicenceRelation);
-    }
-
-    /**
-     * Remove as licence of licence relation
-     *
-     * @param LicenceRelation $asLicenceOfLicenceRelation
-     */
-    public function removeAsLicenceOfLicenceRelation(LicenceRelation $asLicenceOfLicenceRelation): void
-    {
-        $this->asLicenceOfLicenceRelation?->detach($asLicenceOfLicenceRelation);
-    }
-
-    /**
-     * Remove all as licence of licence relations
-     */
-    public function removeAllAsLicenceOfLicenceRelation(): void
-    {
-        $asLicenceOfLicenceRelation = clone $this->asLicenceOfLicenceRelation;
-        $this->asLicenceOfLicenceRelation->removeAll($asLicenceOfLicenceRelation);
     }
 }

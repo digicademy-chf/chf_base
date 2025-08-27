@@ -28,17 +28,14 @@
             <trans-unit id="object.generic.chfPub" resname="object.generic.chfPub">
                 <source>Text publication</source>
             </trans-unit>
-            <trans-unit id="object.generic.usage" resname="object.generic.usage">
-                <source>Usage</source>
-            </trans-unit>
             <trans-unit id="object.generic.editorial" resname="object.generic.editorial">
                 <source>Editorial</source>
             </trans-unit>
-            <trans-unit id="object.generic.placement" resname="object.generic.placement">
-                <source>Placement</source>
+            <trans-unit id="object.generic.management" resname="object.generic.management">
+                <source>Management</source>
             </trans-unit>
             <trans-unit id="object.generic.structured" resname="object.generic.structured">
-                <source>Associations</source>
+                <source>Structured content</source>
             </trans-unit>
             <trans-unit id="object.generic.unstructured" resname="object.generic.unstructured">
                 <source>Text and media</source>
@@ -51,12 +48,6 @@
             </trans-unit>
             <trans-unit id="object.generic.hidden.description" resname="object.generic.hidden.description">
                 <source>Record visible or not</source>
-            </trans-unit>
-            <trans-unit id="object.generic.starttime.description" resname="object.generic.starttime.description">
-                <source>When to start showing the record</source>
-            </trans-unit>
-            <trans-unit id="object.generic.endtime.description" resname="object.generic.endtime.description">
-                <source>When to stop showing the record</source>
             </trans-unit>
             <trans-unit id="object.generic.parentResource" resname="object.generic.parentResource">
                 <source>Parent resource</source>
@@ -89,10 +80,10 @@
                 <source>Authoritative web address to identify an entity across the web</source>
             </trans-unit>
             <trans-unit id="object.generic.extent" resname="object.generic.extent">
-                <source>Extent</source>
+                <source>Identifier/dimension</source>
             </trans-unit>
             <trans-unit id="object.generic.extent.description" resname="object.generic.extent.description">
-                <source>List of extents relevant to this entry</source>
+                <source>List of identifiers/dimensions relevant to this entry</source>
             </trans-unit>
             <trans-unit id="object.generic.importOrigin" resname="object.generic.importOrigin">
                 <source>Import origin</source>
@@ -274,6 +265,9 @@
             <trans-unit id="object.agent.type.description" resname="object.agent.type.description">
                 <source>Specific type of agent</source>
             </trans-unit>
+            <trans-unit id="object.agent.type.contributor" resname="object.agent.type.contributor">
+                <source>Contributor</source>
+            </trans-unit>
             <trans-unit id="object.agent.type.person" resname="object.agent.type.person">
                 <source>Person</source>
             </trans-unit>
@@ -334,12 +328,6 @@
             <trans-unit id="object.agent.gender.nonBinary" resname="object.agent.gender.nonBinary">
                 <source>non-binary</source>
             </trans-unit>
-            <trans-unit id="object.agent.isContributor" resname="object.agent.isContributor">
-                <source>Mark as contributor</source>
-            </trans-unit>
-            <trans-unit id="object.agent.isContributor.description" resname="object.agent.isContributor.description">
-                <source>Makes this agent selectable as an author</source>
-            </trans-unit>
             <trans-unit id="object.agent.agent" resname="object.agent.agent">
                 <source>Agent</source>
             </trans-unit>
@@ -351,18 +339,6 @@
             </trans-unit>
             <trans-unit id="object.agent.event.description" resname="object.agent.event.description">
                 <source>Room to list biographical events</source>
-            </trans-unit>
-            <trans-unit id="object.agent.asAgentOfAgentRelation" resname="object.agent.asAgentOfAgentRelation">
-                <source>Usage as agent of an agent relation</source>
-            </trans-unit>
-            <trans-unit id="object.agent.asAgentOfAgentRelation.description" resname="object.agent.asAgentOfAgentRelation.description">
-                <source>List of agent relations that use this agent</source>
-            </trans-unit>
-            <trans-unit id="object.agent.asContributorOfAuthorshipRelation" resname="object.agent.asContributorOfAuthorshipRelation">
-                <source>Usage as contributor of an authorship relation</source>
-            </trans-unit>
-            <trans-unit id="object.agent.asContributorOfAuthorshipRelation.description" resname="object.agent.asContributorOfAuthorshipRelation.description">
-                <source>List of authorship relations that use this agent</source>
             </trans-unit>
             <!-- Object: Location -->
             <trans-unit id="object.location" resname="object.location">
@@ -461,12 +437,6 @@
             <trans-unit id="object.location.addressCity.description" resname="object.location.addressCity.description">
                 <source>City as part of the location's address</source>
             </trans-unit>
-            <trans-unit id="object.location.asLocationOfLocationRelation" resname="object.location.asLocationOfLocationRelation">
-                <source>Usage as location of a location relation</source>
-            </trans-unit>
-            <trans-unit id="object.location.asLocationOfLocationRelation.description" resname="object.location.asLocationOfLocationRelation.description">
-                <source>List of location relations that use this location</source>
-            </trans-unit>
             <!-- Object: Period -->
             <trans-unit id="object.period" resname="object.period">
                 <source>Period</source>
@@ -498,16 +468,16 @@
             <trans-unit id="object.period.type.era" resname="object.period.type.era">
                 <source>Era</source>
             </trans-unit>
-            <trans-unit id="object.period.text" resname="object.period.text">
-                <source>Text</source>
+            <trans-unit id="object.period.title" resname="object.period.title">
+                <source>Title</source>
             </trans-unit>
-            <trans-unit id="object.period.text.description" resname="object.period.text.description">
+            <trans-unit id="object.period.title.description" resname="object.period.title.description">
                 <source>Name of the period or event</source>
             </trans-unit>
-            <trans-unit id="object.period.alternativeText" resname="object.period.alternativeText">
-                <source>Alternative text</source>
+            <trans-unit id="object.period.alternativeTitle" resname="object.period.alternativeTitle">
+                <source>Alternative title</source>
             </trans-unit>
-            <trans-unit id="object.period.alternativeText.description" resname="object.period.alternativeText.description">
+            <trans-unit id="object.period.alternativeTitle.description" resname="object.period.alternativeTitle.description">
                 <source>Common alternative name used, i.e., as a search term</source>
             </trans-unit>
             <trans-unit id="object.period.from" resname="object.period.from">
@@ -607,6 +577,9 @@
             <trans-unit id="object.abstractRelation.role.author" resname="object.abstractRelation.role.author">
                 <source>Author</source>
             </trans-unit>
+            <trans-unit id="object.abstractRelation.role.photographer" resname="object.abstractRelation.role.photographer">
+                <source>Photographer</source>
+            </trans-unit>
             <trans-unit id="object.abstractRelation.role.editor" resname="object.abstractRelation.role.editor">
                 <source>Editor</source>
             </trans-unit>
@@ -618,6 +591,9 @@
             </trans-unit>
             <trans-unit id="object.abstractRelation.role.publisher" resname="object.abstractRelation.role.publisher">
                 <source>Publisher</source>
+            </trans-unit>
+            <trans-unit id="object.abstractRelation.role.rightsOwner" resname="object.abstractRelation.role.rightsOwner">
+                <source>Rights owner</source>
             </trans-unit>
             <trans-unit id="object.abstractRelation.role.genericLocation" resname="object.abstractRelation.role.genericLocation">
                 <source>Generic location</source>
@@ -638,7 +614,7 @@
                 <source>Place of death</source>
             </trans-unit>
             <trans-unit id="object.abstractRelation.role.agency" resname="object.abstractRelation.role.agency">
-                <source>Agency</source>
+                <source>Generic agency</source>
             </trans-unit>
             <trans-unit id="object.abstractRelation.role.relationship" resname="object.abstractRelation.role.relationship">
                 <source>Relationship</source>
@@ -760,41 +736,15 @@
             <trans-unit id="object.abstractResource.description.description" resname="object.abstractResource.description.description">
                 <source>Brief statement about this resource</source>
             </trans-unit>
-            <trans-unit id="object.abstractResource.allAgents" resname="object.abstractResource.allAgents">
-                <source>All agents</source>
+            <trans-unit id="object.abstractResource.items" resname="object.abstractResource.items">
+                <source>Items</source>
             </trans-unit>
-            <trans-unit id="object.abstractResource.allAgents.description" resname="object.abstractResource.allAgents.description">
-                <source>List of all agents compiled in this resource</source>
+            <trans-unit id="object.abstractResource.items.description" resname="object.abstractResource.items.description">
+                <source>Database records connected to this resource</source>
             </trans-unit>
-            <trans-unit id="object.abstractResource.allLocations" resname="object.abstractResource.allLocations">
-                <source>All locations</source>
-            </trans-unit>
-            <trans-unit id="object.abstractResource.allLocations.description" resname="object.abstractResource.allLocations.description">
-                <source>List of all locations compiled in this resource</source>
-            </trans-unit>
-            <trans-unit id="object.abstractResource.allPeriods" resname="object.abstractResource.allPeriods">
-                <source>All periods</source>
-            </trans-unit>
-            <trans-unit id="object.abstractResource.allPeriods.description" resname="object.abstractResource.allPeriods.description">
-                <source>List of all periods compiled in this resource</source>
-            </trans-unit>
-            <trans-unit id="object.abstractResource.allRelations" resname="object.abstractResource.allRelations">
-                <source>All relations</source>
-            </trans-unit>
-            <trans-unit id="object.abstractResource.allRelations.description" resname="object.abstractResource.allRelations.description">
-                <source>List of all relations compiled in this resource</source>
-            </trans-unit>
-            <trans-unit id="object.abstractResource.allTags" resname="object.abstractResource.allTags">
-                <source>All tags</source>
-            </trans-unit>
-            <trans-unit id="object.abstractResource.allTags.description" resname="object.abstractResource.allTags.description">
-                <source>List of all tags compiled in this resource</source>
-            </trans-unit>
-            <trans-unit id="object.abstractResource.allKeywords" resname="object.abstractResource.allKeywords">
-                <source>All keywords</source>
-            </trans-unit>
-            <trans-unit id="object.abstractResource.allKeywords.description" resname="object.abstractResource.allKeywords.description">
-                <source>List of all keywords compiled in this resource</source>
+            <!-- Object: GenericResource -->
+            <trans-unit id="object.genericResource.type.genericResource" resname="object.genericResource.type.genericResource">
+                <source>Generic resource</source>
             </trans-unit>
             <!-- Object: AbstractTag -->
             <trans-unit id="object.abstractTag" resname="object.abstractTag">
@@ -833,6 +783,12 @@
             <trans-unit id="object.abstractTag.description.description" resname="object.abstractTag.description.description">
                 <source>Brief information about the tag</source>
             </trans-unit>
+            <trans-unit id="object.abstractTag.items" resname="object.abstractTag.items">
+                <source>Items</source>
+            </trans-unit>
+            <trans-unit id="object.abstractTag.items.description" resname="object.abstractTag.items.description">
+                <source>Database records connected to this tag</source>
+            </trans-unit>
             <!-- Object: LabelTag -->
             <trans-unit id="object.labelTag.parentLabelTag" resname="object.labelTag.parentLabelTag">
                 <source>Parent label</source>
@@ -851,38 +807,6 @@
             </trans-unit>
             <trans-unit id="object.labelTag.keyword.description" resname="object.labelTag.keyword.description">
                 <source>List of keywords describing this label</source>
-            </trans-unit>
-            <trans-unit id="object.labelTag.asLabelOfAgent" resname="object.labelTag.asLabelOfAgent">
-                <source>Usage as label of an agent</source>
-            </trans-unit>
-            <trans-unit id="object.labelTag.asLabelOfAgent.description" resname="object.labelTag.asLabelOfAgent.description">
-                <source>List of agents that use this label</source>
-            </trans-unit>
-            <trans-unit id="object.labelTag.asLabelOfLocation" resname="object.labelTag.asLabelOfLocation">
-                <source>Usage as label of a location</source>
-            </trans-unit>
-            <trans-unit id="object.labelTag.asLabelOfLocation.description" resname="object.labelTag.asLabelOfLocation.description">
-                <source>List of locations that use this label</source>
-            </trans-unit>
-            <trans-unit id="object.labelTag.asLabelOfPeriod" resname="object.labelTag.asLabelOfPeriod">
-                <source>Usage as label of a period</source>
-            </trans-unit>
-            <trans-unit id="object.labelTag.asLabelOfPeriod.description" resname="object.labelTag.asLabelOfPeriod.description">
-                <source>List of periods that use this label</source>
-            </trans-unit>
-            <!-- Object: LabelTypeTag -->
-            <trans-unit id="object.labelTypeTag.asLabelTypeOfLabelTag" resname="object.labelTypeTag.asLabelTypeOfLabelTag">
-                <source>Usage as label type of a label</source>
-            </trans-unit>
-            <trans-unit id="object.labelTypeTag.asLabelTypeOfLabelTag.description" resname="object.labelTypeTag.asLabelTypeOfLabelTag.description">
-                <source>List of labels that use this label type</source>
-            </trans-unit>
-            <!-- Object: LicenceTag -->
-            <trans-unit id="object.licenceTag.asLicenceOfLicenceRelation" resname="object.licenceTag.asLicenceOfLicenceRelation">
-                <source>Usage as licence of a licence relation</source>
-            </trans-unit>
-            <trans-unit id="object.licenceTag.asLicenceOfLicenceRelation.description" resname="object.licenceTag.asLicenceOfLicenceRelation.description">
-                <source>List of licence relations that use this licence</source>
             </trans-unit>
             <!-- Object: SameAs -->
             <trans-unit id="object.sameAs" resname="object.sameAs">
@@ -904,12 +828,6 @@
             <trans-unit id="object.keyword.text.description" resname="object.keyword.text.description">
                 <source>Title of this keyword</source>
             </trans-unit>
-            <trans-unit id="object.keyword.asKeywordOfLabelTag" resname="object.keyword.asKeywordOfLabelTag">
-                <source>Usage as keyword of a label</source>
-            </trans-unit>
-            <trans-unit id="object.keyword.asKeywordOfLabelTag.description" resname="object.keyword.asKeywordOfLabelTag.description">
-                <source>List of labels that use this keyword</source>
-            </trans-unit>
             <!-- Object: Footnote -->
             <trans-unit id="object.footnote" resname="object.footnote">
                 <source>Footnote</source>
@@ -922,13 +840,13 @@
             </trans-unit>
             <!-- Object: Extent -->
             <trans-unit id="object.extent" resname="object.extent">
-                <source>Extent</source>
+                <source>Identifier/dimension</source>
             </trans-unit>
             <trans-unit id="object.extent.type" resname="object.extent.type">
                 <source>Type</source>
             </trans-unit>
             <trans-unit id="object.extent.type.description" resname="object.extent.type.description">
-                <source>Type of extent</source>
+                <source>Type of identifier/dimension</source>
             </trans-unit>
             <trans-unit id="object.extent.type.url" resname="object.extent.type.url">
                 <source>URL (web address)</source>
@@ -957,14 +875,11 @@
             <trans-unit id="object.extent.type.isbn" resname="object.extent.type.isbn">
                 <source>ISBN</source>
             </trans-unit>
-            <trans-unit id="object.extent.type.callNumber" resname="object.extent.type.callNumber">
-                <source>Call number</source>
-            </trans-unit>
             <trans-unit id="object.extent.text" resname="object.extent.text">
                 <source>Text</source>
             </trans-unit>
             <trans-unit id="object.extent.text.description" resname="object.extent.text.description">
-                <source>Specific extent</source>
+                <source>Specific identifier/dimension</source>
             </trans-unit>
             <!-- Validator: StringOptionsValidator -->
             <trans-unit id="validator.stringOptions.allowedStringInvalid" resname="validator.stringOptions.allowedStringInvalid">
@@ -1043,7 +958,7 @@
                 <source>Connections</source>
             </trans-unit>
             <trans-unit id="plugin.connections.description" resname="plugin.connections.description">
-                <source>List and show relations</source>
+                <source>Visualise relations</source>
             </trans-unit>
             <!-- Layout: generic -->
             <trans-unit id="layout.generic.main" resname="layout.generic.main">

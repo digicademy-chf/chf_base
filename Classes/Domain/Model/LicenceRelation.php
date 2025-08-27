@@ -9,26 +9,11 @@ declare(strict_types=1);
 
 namespace Digicademy\CHFBase\Domain\Model;
 
+use Digicademy\CHFBase\Domain\Model\Traits\RecordTrait;
+use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\Validate;
-use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
-use Digicademy\CHFBib\Domain\Model\BibliographicEntry;
-use Digicademy\CHFBib\Domain\Model\BibliographicResource;
-use Digicademy\CHFGloss\Domain\Model\GlossaryResource;
-use Digicademy\CHFLex\Domain\Model\DictionaryEntry;
-use Digicademy\CHFLex\Domain\Model\EncyclopediaEntry;
-use Digicademy\CHFLex\Domain\Model\LexicographicResource;
-use Digicademy\CHFMap\Domain\Model\Feature;
-use Digicademy\CHFMap\Domain\Model\MapResource;
-use Digicademy\CHFMedia\Domain\Model\FileGroup;
-use Digicademy\CHFObject\Domain\Model\ObjectGroup;
-use Digicademy\CHFObject\Domain\Model\ObjectResource;
-use Digicademy\CHFObject\Domain\Model\SingleObject;
-use Digicademy\CHFPub\Domain\Model\Essay;
-use Digicademy\CHFPub\Domain\Model\PublicationResource;
-use Digicademy\CHFPub\Domain\Model\Volume;
 
 defined('TYPO3') or die();
 
@@ -37,13 +22,7 @@ defined('TYPO3') or die();
  */
 class LicenceRelation extends AbstractRelation
 {
-    /**
-     * Record to connect a relation to
-     * 
-     * @var Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume|LazyLoadingProxy|null
-     */
-    #[Lazy()]
-    protected Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume|null $record = null;
+    use RecordTrait;
 
     /**
      * Licences to relate to the record
@@ -74,14 +53,13 @@ class LicenceRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume $record
+     * @param AbstractBase $record
      * @param LicenceTag $licence
-     * @param BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource
      * @return LicenceRelation
      */
-    public function __construct(Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume $record, LicenceTag $licence, BibliographicResource|GlossaryResource|LexicographicResource|MapResource|ObjectResource|PublicationResource $parentResource)
+    public function __construct(AbstractBase $record, LicenceTag $licence)
     {
-        parent::__construct($parentResource);
+        parent::__construct();
         $this->initializeObject();
 
         $this->setType('licenceRelation');
@@ -95,29 +73,6 @@ class LicenceRelation extends AbstractRelation
     public function initializeObject(): void
     {
         $this->licence ??= new ObjectStorage();
-    }
-
-    /**
-     * Get record
-     * 
-     * @return Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume
-     */
-    public function getRecord(): Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume
-    {
-        if ($this->record instanceof LazyLoadingProxy) {
-            $this->record->_loadRealInstance();
-        }
-        return $this->record;
-    }
-
-    /**
-     * Set record
-     * 
-     * @param Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume
-     */
-    public function setRecord(Agent|Location|Period|BibliographicResource|BibliographicEntry|GlossaryResource|LexicographicResource|DictionaryEntry|EncyclopediaEntry|MapResource|Feature|FileGroup|ObjectResource|SingleObject|ObjectGroup|PublicationResource|Essay|Volume $record): void
-    {
-        $this->record = $record;
     }
 
     /**

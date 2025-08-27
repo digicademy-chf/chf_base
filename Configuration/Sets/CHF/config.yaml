@@ -1,5 +1,5 @@
 name: digicademy/chf
 label: Cultural Heritage Framework
 dependencies:
-  - typo3/fluid-styled-content
+  - digicademy/mdlr
   - typo3/seo-sitemap
