@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:mdlr="http://typo3.org/ns/Digicademy/MDLR/Components/MdlrComponents" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <dialog id="share" class="mdlr-modal">
         <f:render partial="Dialogs/Title" arguments="{title: '{f:translate(key: \'templates.share\', extensionName: \'chf_base\')}'}"/>
         <h3 class="mdlr-variant-tacit"><f:translate key="templates.share.preview" extensionName="chf_base"/></h3>
@@ -22,105 +22,43 @@
         <h3><f:translate key="templates.share.device" extensionName="chf_base"/></h3>
         <ul class="mdlr-buttonrow">
             <!--<li>
-                <f:link.page class="mdlr-button mdlr-variant-texticon mdlr-function-copy" data-target="{f:uri.page(absolute: 'true')}" data-success="{f:translate(key: 'templates.generic.copy.urn.success', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.generic.copy.urn.failure', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.generic.copy.urn.hint', extensionName: 'chf_base')}" rel="canonical">
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-copy"/>
-                    </svg>
-                    <span><f:format.raw><f:translate key="templates.generic.copy.urn" extensionName="chf_base"/></f:format.raw></span>
-                </f:link.page>
+                <mdlr:atom.button.current variants="{0: 'texticon'}" function="copy" text="{f:translate(key: 'templates.generic.copy.urn', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.urn.hint', extensionName: 'chf_base')}" icon="copy" data="{target: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.generic.copy.urn.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.urn.failure\', extensionName: \'chf_base\')}'}" rel="canonical" />
             </li>
             <li>
-                <f:link.page class="mdlr-button mdlr-variant-texticon mdlr-function-copy" data-target="{f:uri.page(absolute: 'true')}" data-success="{f:translate(key: 'templates.generic.copy.permalink.success', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.generic.copy.permalink.failure', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.generic.copy.permalink.hint', extensionName: 'chf_base')}" rel="canonical">
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-copy"/>
-                    </svg>
-                    <span><f:translate key="templates.generic.copy.permalink" extensionName="chf_base"/></span>
-                </f:link.page>
+                <mdlr:atom.button.current variants="{0: 'texticon'}" function="copy" text="{f:translate(key: 'templates.generic.copy.permalink', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.generic.copy.permalink.hint', extensionName: 'chf_base')}" icon="copy" data="{target: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.generic.copy.permalink.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.permalink.failure\', extensionName: \'chf_base\')}'}" rel="canonical" />
             </li>-->
             <li>
-                <f:link.page class="mdlr-button mdlr-variant-texticon mdlr-function-copy" data-target="{f:uri.page(absolute: 'true')}" data-success="{f:translate(key: 'templates.generic.copy.url.success', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.generic.copy.url.failure', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.generic.copy.url.hint', extensionName: 'chf_base')}" rel="canonical">
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-copy"/>
-                    </svg>
-                    <span><f:format.raw><f:translate key="templates.generic.copy.url" extensionName="chf_base"/></f:format.raw></span>
-                </f:link.page>
+                <mdlr:atom.button.current variants="{0: 'texticon'}" function="copy" text="{f:translate(key: 'templates.generic.copy.url', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.url.hint', extensionName: 'chf_base')}" icon="copy" data="{target: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.generic.copy.url.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.url.failure\', extensionName: \'chf_base\')}'}" rel="canonical" />
             </li>
             <li hidden>
-                <button class="mdlr-variant-texticon mdlr-function-share" data-title="{title}" data-text="{description}" data-url="{f:uri.page(absolute: 'true')}" data-success="{f:translate(key: 'templates.share.device.apps.success', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.share.device.apps.failure', extensionName: 'chf_base')}" data-error="{f:translate(key: 'templates.share.device.apps.error', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.share.device.apps.hint', extensionName: 'chf_base')}">
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-apps"/>
-                    </svg>
-                    <span><f:translate key="templates.share.device.apps" extensionName="chf_base"/></span>
-                </button>
+                <mdlr:atom.button.function variants="{0: 'texticon'}" function="share" text="{f:translate(key: 'templates.share.device.apps', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.device.apps.hint', extensionName: 'chf_base')}" icon="apps" data="{title: '{title}', text: '{description}', url: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.share.device.apps.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.share.device.apps.failure\', extensionName: \'chf_base\')}', error: '{f:translate(key: \'templates.share.device.apps.error\', extensionName: \'chf_base\')}'}" />
             </li>
             <li>
-                <mdlr:atom.button variant="texticon" href="mailto:?&subject={site -> f:format.urlencode()}&body={title -> f:format.urlencode()}%0d%0a%0d%0a{f:uri.page(absolute: 'true')}" title="{f:translate(key: 'templates.share.device.email.hint', extensionName: 'chf_base')}" icon="email">
-                    <f:translate key="templates.share.device.email" extensionName="chf_base"/>
-                </mdlr:atom.button>
+                <mdlr:atom.button.email variants="{0: 'texticon'}" email="" subject="{site -> f:format.urlencode()}" body="{title -> f:format.urlencode()}%0d%0a%0d%0a{f:uri.page(absolute: 'true')}" text="{f:translate(key: 'templates.share.device.email', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.device.email.hint', extensionName: 'chf_base')}" icon="email" />
             </li>
             <li>
-                <mdlr:atom.button variant="texticon" title="{f:translate(key: 'templates.share.device.pdf.hint', extensionName: 'chf_base')}" icon="pdf" function="pdf">
-                    <f:format.raw><f:translate key="templates.share.device.pdf" extensionName="chf_base"/></f:format.raw>
-                </mdlr:atom.button>
+                <mdlr:atom.button.function variants="{0: 'texticon'}" function="pdf" text="{f:translate(key: 'templates.share.device.pdf', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.share.device.pdf.hint', extensionName: 'chf_base')}" icon="pdf" />
             </li>
         </ul>
         <h3><f:translate key="templates.share.services" extensionName="chf_base"/></h3>
         <ul class="mdlr-buttonrow mdlr-variant-separate">
             <li>
-                <button class="mdlr-variant-icon mdlr-variant-round mdlr-variant-transparent mdlr-function-mastodon" data-target="{title -> f:format.urlencode()}%0d%0a%0d%0a{f:uri.page(absolute: 'true')}" data-prompt="{f:translate(key: 'templates.share.services.mastodon.prompt', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.share.services.mastodon.failure', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.share.services.mastodon.hint', extensionName: 'chf_base')}" target="_blank">
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-mastodon"/>
-                    </svg>
-                    <span><f:translate key="templates.share.services.mastodon" extensionName="chf_base"/></span>
-                </button>
+                <mdlr:atom.button.function variants="{0: 'icon', 1: 'round', 2: 'transparent'}" function="mastodon" text="{f:translate(key: 'templates.share.services.mastodon', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.mastodon.hint', extensionName: 'chf_base')}" icon="mastodon" data="{target: '{title -> f:format.urlencode()}%0d%0a%0d%0a{f:uri.page(absolute: \'true\')}', prompt: '{f:translate(key: \'templates.share.services.mastodon.prompt\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.share.services.mastodon.failure\', extensionName: \'chf_base\')}'}" />
             </li>
             <li>
-                <a href="{f:render(partial: 'Social/Pocket', arguments: '{_all}')}" class="mdlr-button mdlr-variant-icon mdlr-variant-round mdlr-variant-transparent" role="button" title="{f:translate(key: 'templates.share.services.pocket.hint', extensionName: 'chf_base')}" target="_blank">
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-pocket"/>
-                    </svg>
-                    <span><f:translate key="templates.share.services.pocket" extensionName="chf_base"/></span>
-                </a>
+                <mdlr:atom.button.external variants="{0: 'icon', 1: 'round', 2: 'transparent'}" uri="{f:render(partial: 'Social/Linkedin', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.linkedin', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.linkedin.hint', extensionName: 'chf_base')}" icon="linkedin" />
             </li>
             <li>
-                <a href="{f:render(partial: 'Social/Linkedin', arguments: '{_all}')}" class="mdlr-button mdlr-variant-icon mdlr-variant-round mdlr-variant-transparent" role="button" title="{f:translate(key: 'templates.share.services.linkedin.hint', extensionName: 'chf_base')}" target="_blank">
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-linkedin"/>
-                    </svg>
-                    <span><f:translate key="templates.share.services.linkedin" extensionName="chf_base"/></span>
-                </a>
+                <mdlr:atom.button.external variants="{0: 'icon', 1: 'round', 2: 'transparent'}" uri="{f:render(partial: 'Social/Tumblr', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.tumblr', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.tumblr.hint', extensionName: 'chf_base')}" icon="tumblr" />
             </li>
             <li>
-                <a href="{f:render(partial: 'Social/Tumblr', arguments: '{_all}')}" class="mdlr-button mdlr-variant-icon mdlr-variant-round mdlr-variant-transparent" role="button" title="{f:translate(key: 'templates.share.services.tumblr.hint', extensionName: 'chf_base')}" target="_blank">
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-tumblr"/>
-                    </svg>
-                    <span><f:translate key="templates.share.services.tumblr" extensionName="chf_base"/></span>
-                </a>
+                <mdlr:atom.button.external variants="{0: 'icon', 1: 'round', 2: 'transparent'}" uri="{f:render(partial: 'Social/Reddit', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.reddit', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.reddit.hint', extensionName: 'chf_base')}" icon="reddit" />
             </li>
             <li>
-                <a href="{f:render(partial: 'Social/Reddit', arguments: '{_all}')}" class="mdlr-button mdlr-variant-icon mdlr-variant-round mdlr-variant-transparent" role="button" title="{f:translate(key: 'templates.share.services.reddit.hint', extensionName: 'chf_base')}" target="_blank">
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-reddit"/>
-                    </svg>
-                    <span><f:translate key="templates.share.services.reddit" extensionName="chf_base"/></span>
-                </a>
+                <mdlr:atom.button.external variants="{0: 'icon', 1: 'round', 2: 'transparent'}" uri="{f:render(partial: 'Social/Facebook', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.facebook', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.facebook.hint', extensionName: 'chf_base')}" icon="facebook" />
             </li>
             <li>
-                <a href="{f:render(partial: 'Social/Facebook', arguments: '{_all}')}" class="mdlr-button mdlr-variant-icon mdlr-variant-round mdlr-variant-transparent" role="button" title="{f:translate(key: 'templates.share.services.facebook.hint', extensionName: 'chf_base')}" target="_blank">
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-facebook"/>
-                    </svg>
-                    <span><f:translate key="templates.share.services.facebook" extensionName="chf_base"/></span>
-                </a>
-            </li>
-            <li>
-                <a href="{f:render(partial: 'Social/Xitter', arguments: '{_all}')}" class="mdlr-button mdlr-variant-icon mdlr-variant-round mdlr-variant-transparent" role="button" title="{f:translate(key: 'templates.share.services.xitter.hint', extensionName: 'chf_base')}" target="_blank">
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-xitter"/>
-                    </svg>
-                    <span><f:translate key="templates.share.services.xitter" extensionName="chf_base"/></span>
-                </a>
+                <mdlr:atom.button.external variants="{0: 'icon', 1: 'round', 2: 'transparent'}" uri="{f:render(partial: 'Social/Xitter', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.xitter', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.xitter.hint', extensionName: 'chf_base')}" icon="xitter" />
             </li>
         </ul>
         <p class="mdlr-note"><f:translate key="templates.share.dissociation" extensionName="chf_base"/></p>

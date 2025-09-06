@@ -1211,10 +1211,10 @@
                 <source>X profile (formerly Twitter)</source>
             </trans-unit>
             <trans-unit id="templates.footer.social.gitlab" resname="templates.footer.social.gitlab">
-                <source>GitLab repository</source>
+                <source>Code on GitLab</source>
             </trans-unit>
             <trans-unit id="templates.footer.social.github" resname="templates.footer.social.github">
-                <source>GitHub repository</source>
+                <source>Code on GitHub</source>
             </trans-unit>
             <trans-unit id="templates.share" resname="templates.share">
                 <source>Share</source>
@@ -1275,12 +1275,6 @@
             </trans-unit>
             <trans-unit id="templates.share.services.mastodon.hint" resname="templates.share.services.mastodon.hint">
                 <source>Share on Mastodon</source>
-            </trans-unit>
-            <trans-unit id="templates.share.services.pocket" resname="templates.share.services.pocket">
-                <source>Pocket</source>
-            </trans-unit>
-            <trans-unit id="templates.share.services.pocket.hint" resname="templates.share.services.pocket.hint">
-                <source>Share on Pocket</source>
             </trans-unit>
             <trans-unit id="templates.share.services.linkedin" resname="templates.share.services.linkedin">
                 <source>LinkedIn</source>

@@ -3,36 +3,16 @@
         <h2 class="mdlr-variant-tacit"><f:translate key="templates.header.meta" extensionName="chf_base"/></h2>
         <ul class="mdlr-buttonrow mdlr-variant-separate mdlr-variant-nowrap">
             <li>
-                <button id="header-meta-share" class="mdlr-variant-icon mdlr-variant-unobtrusive mdlr-function-modal" aria-controls="share" title="{f:translate(key: 'templates.share', extensionName: 'chf_base')}">
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-share"/>
-                    </svg>
-                    <span><f:translate key="templates.share" extensionName="chf_base"/></span>
-                </button>
+                <mdlr:atom.button.function id="header-meta-share" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.share', extensionName: 'chf_base')}" aria="{controls: 'share'}" icon="share" />
             </li>
             <li>
-                <button id="header-meta-search" class="mdlr-variant-icon mdlr-variant-unobtrusive mdlr-function-modal" aria-controls="search" data-focus="search-query" title="{f:translate(key: 'templates.search', extensionName: 'chf_base')}" >
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-search"/>
-                    </svg>
-                    <span><f:translate key="templates.search" extensionName="chf_base"/></span>
-                </button>
+                <mdlr:atom.button.function id="header-meta-search" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.search', extensionName: 'chf_base')}" aria="{controls: 'search'}" icon="search" />
             </li>
             <li>
-                <button id="header-meta-watchlist" class="mdlr-variant-icon mdlr-variant-unobtrusive mdlr-function-modal" aria-controls="watchlist" title="{f:translate(key: 'templates.watchlist', extensionName: 'chf_base')}">
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-watchlist"/>
-                    </svg>
-                    <span><f:translate key="templates.watchlist" extensionName="chf_base"/></span>
-                </button>
+                <mdlr:atom.button.function id="header-meta-watchlist" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.watchlist', extensionName: 'chf_base')}" aria="{controls: 'watchlist'}" icon="watchlist" />
             </li>
             <li>
-                <button id="header-meta-settings" class="mdlr-variant-icon mdlr-variant-unobtrusive mdlr-function-modal" aria-controls="settings" title="{f:translate(key: 'templates.settings', extensionName: 'chf_base')}" >
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-settings"/>
-                    </svg>
-                    <span><f:translate key="templates.settings" extensionName="chf_base"/></span>
-                </button>
+                <mdlr:atom.button.function id="header-meta-settings" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.settings', extensionName: 'chf_base')}" aria="{controls: 'settings'}" icon="settings" />
             </li>
         </ul>
     </nav>

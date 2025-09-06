@@ -7,12 +7,7 @@
                     <dt><f:translate key="templates.about.author" extensionName="chf_base"/></dt>
                     <dd>
                         <f:if condition="{page.pageRecord.author_email}">
-                            <f:link.email email="{page.pageRecord.author_email}" rel="author" class="mdlr-button mdlr-variant-tinyicon mdlr-variant-round mdlr-variant-unobserved mdlr-variant-sidelined" title="{f:translate(key: 'templates.generic.email', extensionName: 'chf_base')}">
-                                <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <use href="#icon-email"/>
-                                </svg>
-                                <span>{page.pageRecord.author}</span>
-                            </f:link.email>
+                            <mdlr:atom.button.email email="{page.pageRecord.author_email}" variants="{0: 'tinyicon', 1: 'round', 2: 'unobserved', 3: 'sidelined'}" text="{f:translate(key: 'templates.generic.email', extensionName: 'chf_base')}" icon="email" rel="author" />
                         </f:if>
                         {page.pageRecord.author}
                     </dd>
@@ -33,12 +28,7 @@
             <div>
                 <dt><f:translate key="templates.about.rights" extensionName="chf_base"/></dt>
                 <dd>
-                    <button class="mdlr-variant-tinyicon mdlr-variant-round mdlr-variant-unobserved mdlr-variant-sidelined mdlr-function-copy" data-target="{settings.chf.rights.uri}" data-success="{f:translate(key: 'templates.generic.copy.uri.success', extensionName: 'chf_base')}" data-failure="{f:translate(key: 'templates.generic.copy.uri.failure', extensionName: 'chf_base')}" title="{f:translate(key: 'templates.generic.copy.uri.hint', extensionName: 'chf_base')}">
-                        <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <use href="#icon-copy"/>
-                        </svg>
-                        <span><f:format.raw><f:translate key="templates.generic.copy.uri" extensionName="chf_base"/></f:format.raw></span>
-                    </button>
+                    <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'round', 2: 'unobserved', 3: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.uri', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.uri.hint', extensionName: 'chf_base')}" data="{target: '{settings.chf.rights.uri}', success: '{f:translate(key: \'templates.generic.copy.uri.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.uri.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
                     <f:link.external uri="{settings.chf.rights.uri}" target="_blank" rel="license">
                         <f:if condition="{settings.chf.rights.uri} == 'http://rightsstatements.org/vocab/InC/1.0/'">
                             <f:then>

@@ -1606,12 +1606,12 @@
                 <target>X-Profil (früher Twitter)</target>
             </trans-unit>
             <trans-unit id="templates.footer.social.gitlab" resname="templates.footer.social.gitlab" approved="yes">
-                <source>GitLab repository</source>
-                <target>GitLab-Repositorium</target>
+                <source>Code on GitLab</source>
+                <target>Code auf GitLab</target>
             </trans-unit>
             <trans-unit id="templates.footer.social.github" resname="templates.footer.social.github" approved="yes">
-                <source>GitHub repository</source>
-                <target>GitHub-Repositorium</target>
+                <source>Code on GitHub</source>
+                <target>Code auf GitHub</target>
             </trans-unit>
             <trans-unit id="templates.share" resname="templates.share" approved="yes">
                 <source>Share</source>
@@ -1692,14 +1692,6 @@
             <trans-unit id="templates.share.services.mastodon.hint" resname="templates.share.services.mastodon.hint" approved="yes">
                 <source>Share on Mastodon</source>
                 <target>Auf Mastodon teilen</target>
-            </trans-unit>
-            <trans-unit id="templates.share.services.pocket" resname="templates.share.services.pocket" approved="yes">
-                <source>Pocket</source>
-                <target>Pocket</target>
-            </trans-unit>
-            <trans-unit id="templates.share.services.pocket.hint" resname="templates.share.services.pocket.hint" approved="yes">
-                <source>Share on Pocket</source>
-                <target>Auf Pocket teilen</target>
             </trans-unit>
             <trans-unit id="templates.share.services.linkedin" resname="templates.share.services.linkedin" approved="yes">
                 <source>LinkedIn</source>

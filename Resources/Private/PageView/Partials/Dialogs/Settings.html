@@ -8,9 +8,7 @@
                     <ul class="mdlr-buttonrow">
                         <f:for each="{languageMenu}" as="menuItem">
                             <li>
-                                <a href="{menuItem.link}" class="mdlr-button mdlr-variant-mini mdlr-variant-light {f:if(condition: menuItem.active, then: 'mdlr-variant-active')}" hreflang="{site.languages.{menuItem.languageUid}.hreflang}" rel="alternate">
-                                    <span>{site.languages.{menuItem.languageUid}.navigationTitle}</span>
-                                </a>
+                                <mdlr:atom.button.current variants="{f:if(condition: menuItem.active, then: '{0: \'mini\', 1: \'light\', 2: \'active\'}', else: '{0: \'mini\', 1: \'light\'}')}" text="{site.languages.{menuItem.languageUid}.navigationTitle}" language="{menuItem.languageUid}" rel="alternate" />
                             </li>
                         </f:for>
                     </ul>
@@ -21,19 +19,13 @@
                 <dd>
                     <ul class="mdlr-buttonrow">
                         <li>
-                            <button class="mdlr-variant-mini mdlr-variant-light mdlr-variant-active mdlr-function-theme" data-target="auto">
-                                <span><f:translate key="templates.settings.color.auto" extensionName="chf_base"/></span>
-                            </button>
+                            <mdlr:atom.button.function function="theme" variants="{0: 'mini', 1: 'light', 2: 'active'}" text="{f:translate(key: 'templates.settings.color.auto', extensionName: 'chf_base')}" data="{target: 'auto'}" />
                         </li>
                         <li>
-                            <button class="mdlr-variant-mini mdlr-variant-light mdlr-function-theme" data-target="light">
-                                <span><f:translate key="templates.settings.color.light" extensionName="chf_base"/></span>
-                            </button>
+                            <mdlr:atom.button.function function="theme" variants="{0: 'mini', 1: 'light', 2: 'active'}" text="{f:translate(key: 'templates.settings.color.light', extensionName: 'chf_base')}" data="{target: 'light'}" />
                         </li>
                         <li>
-                            <button class="mdlr-variant-mini mdlr-variant-light mdlr-function-theme" data-target="dark">
-                                <span><f:translate key="templates.settings.color.dark" extensionName="chf_base"/></span>
-                            </button>
+                            <mdlr:atom.button.function function="theme" variants="{0: 'mini', 1: 'light', 2: 'active'}" text="{f:translate(key: 'templates.settings.color.dark', extensionName: 'chf_base')}" data="{target: 'dark'}" />
                         </li>
                     </ul>
                 </dd>
@@ -43,9 +35,7 @@
                 <dd>
                     <ul class="mdlr-buttonrow">
                         <li>
-                            <button class="mdlr-variant-mini mdlr-function-storage">
-                                <span><f:translate key="templates.settings.device.storage" extensionName="chf_base"/></span>
-                            </button>
+                            <mdlr:atom.button.function function="storage" variants="{0: 'mini'}" text="{f:translate(key: 'templates.settings.device.storage', extensionName: 'chf_base')}" />
                         </li>
                     </ul>
                 </dd>

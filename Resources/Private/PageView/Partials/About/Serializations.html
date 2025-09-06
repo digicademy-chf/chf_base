@@ -3,36 +3,20 @@
         <h4><f:format.raw><f:translate key="templates.about.serializations" extensionName="chf_base"/></f:format.raw></h4>
         <ul class="mdlr-buttonrow">
             <li>
-                <button disabled title="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.jsonld.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}">
-                    <span><f:format.raw><f:translate key="templates.generic.retrieve.jsonld" extensionName="chf_base"/></f:format.raw></span>
-                </button>
-                <!--<f:link.page pageType="6024975381" class="mdlr-button" title="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.jsonld.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" type="application/ld+json">
-                    <span><f:format.raw><f:translate key="templates.generic.retrieve.jsonld" extensionName="chf_base"/></f:format.raw></span>
-                </f:link.page>-->
+                <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.jsonld', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.jsonld.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" />
+                <!--<mdlr:atom.button.current pageType="6024975381" contentType="application/ld+json" text="{f:translate(key: 'templates.generic.retrieve.jsonld', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.teixml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" />-->
             </li>
             <li>
-                <button disabled title="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.turtle.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}">
-                    <span><f:format.raw><f:translate key="templates.generic.retrieve.turtle" extensionName="chf_base"/></f:format.raw></span>
-                </button>
-                <!--<f:link.page pageType="2867941442" class="mdlr-button" title="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.turtle.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" type="text/turtle">
-                    <span><f:format.raw><f:translate key="templates.generic.retrieve.turtle" extensionName="chf_base"/></f:format.raw></span>
-                </f:link.page>-->
+                <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.turtle', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.turtle.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" />
+                <!--<mdlr:atom.button.current pageType="2867941442" contentType="text/turtle" text="{f:translate(key: 'templates.generic.retrieve.turtle', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.teixml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" />-->
             </li>
             <li>
-                <button disabled title="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.rdfxml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}">
-                    <span><f:format.raw><f:translate key="templates.generic.retrieve.rdfxml" extensionName="chf_base"/></f:format.raw></span>
-                </button>
-                <!--<f:link.page pageType="1295536366" class="mdlr-button" title="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.rdfxml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" type="application/rdf+xml">
-                    <span><f:format.raw><f:translate key="templates.generic.retrieve.rdfxml" extensionName="chf_base"/></f:format.raw></span>
-                </f:link.page>-->
+                <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.rdfxml', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.rdfxml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" />
+                <!--<mdlr:atom.button.current pageType="1295536366" contentType="application/rdf+xml" text="{f:translate(key: 'templates.generic.retrieve.rdfxml', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.teixml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" />-->
             </li>
             <li>
-                <button disabled title="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.teixml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}">
-                    <span><f:format.raw><f:translate key="templates.generic.retrieve.teixml" extensionName="chf_base"/></f:format.raw></span>
-                </button>
-                <!--<f:link.page pageType="9631552583" class="mdlr-button" title="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.teixml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" type="application/tei+xml">
-                    <span><f:format.raw><f:translate key="templates.generic.retrieve.teixml" extensionName="chf_base"/></f:format.raw></span>
-                </f:link.page>-->
+                <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.teixml', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.teixml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" />
+                <!--<mdlr:atom.button.current pageType="9631552583" contentType="application/tei+xml" text="{f:translate(key: 'templates.generic.retrieve.teixml', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.teixml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" />-->
             </li>
         </ul>
         <f:if condition="{settings.chf.apis.page}">

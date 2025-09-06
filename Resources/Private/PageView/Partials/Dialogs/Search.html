@@ -5,12 +5,7 @@
             <div class="mdlr-form-search">
                 <label for="search-query" class="mdlr-variant-tacit"><f:translate key="templates.search.query" extensionName="chf_base"/></label>
                 <input type="search" id="search-query" name="q" placeholder="{f:translate(key: 'templates.search.query.placeholder', extensionName: 'chf_base')}">
-                <button id="search-submit" class="mdlr-variant-icon" title="{f:translate(key: 'templates.search.go', extensionName: 'chf_base')}">
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-go"/>
-                    </svg>
-                    <span><f:translate key="templates.search.go" extensionName="chf_base"/></span>
-                </button>
+                <mdlr:atom.button.function id="search-submit" function="" variants="{0: 'icon'}" text="{f:translate(key: 'templates.search.go', extensionName: 'chf_base')}" icon="go" />
             </div>
             <div class="mdlr-form-addition">
                 <div class="mdlr-form-entry">
@@ -39,16 +34,11 @@
             <f:if condition="{settings.chf.search.pages}">
                 <div class="mdlr-buttonrow">
                     <div class="mdlr-dropdown-wrapper">
-                        <button type="button" id="search-advanced-handle" class="mdlr-variant-texticon mdlr-function-dropdown" aria-controls="search-advanced-content" aria-haspopup="true" aria-expanded="false">
-                            <span><f:translate key="templates.search.advanced" extensionName="chf_base"/></span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <use href="#icon-down"/>
-                            </svg>
-                        </button>
+                        <mdlr:atom.button.function id="search-advanced-handle" function="dropdown" variants="{0: 'texticon'}" text="{f:translate(key: 'templates.search.advanced', extensionName: 'chf_base')}" aria="{controls: 'search-advanced-content', haspopup: 'true', expanded: 'false'}" iconAfter="down" />
                         <ul class="mdlr-dropdown mdlr-variant-up" id="search-advanced-content" role="listbox" aria-labelledby="search-advanced-handle" tabindex="-1">
                             <f:for each="{settings.chf.search.pages}" as="page">
                                 <li>
-                                    <f:link.typolink parameter="{page}" class="mdlr-button mdlr-variant-mini mdlr-variant-unobtrusive"/>
+                                    <mdlr:atom.button.pageAuto pageUid="{page}" variants="{0: 'mini', 1: 'unobtrusive'}" />
                                 </li>
                             </f:for>
                         </ul>

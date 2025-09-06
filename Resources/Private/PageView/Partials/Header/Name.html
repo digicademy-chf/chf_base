@@ -22,12 +22,7 @@
                             <f:then>
                                 <ul class="mdlr-buttonrow mdlr-variant-separate mdlr-variant-nowrap">
                                     <li>
-                                        <f:link.page pageUid="{menuItem.data.uid}" class="mdlr-button mdlr-variant-icon mdlr-variant-unobtrusive" title="{f:translate(key: 'templates.header.back', extensionName: 'chf_base')}">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                                <use href="#icon-back"/>
-                                            </svg>
-                                            <span><f:translate key="templates.header.back" extensionName="chf_base"/></span>
-                                        </f:link.page>
+                                        <mdlr:atom.button.page variants="{0: 'icon', 1: 'unobtrusive'}" pageUid="{menuItem.data.uid}" text="{f:translate(key: 'templates.header.back', extensionName: 'chf_base')}" icon="back" />
                                     </li>
                                 </ul>
                             </f:then>

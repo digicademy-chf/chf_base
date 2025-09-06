@@ -4,99 +4,49 @@
         <ul class="mdlr-buttonrow mdlr-variant-separate">
             <f:if condition="{settings.chf.socials.mastodon}">
                 <li>
-                    <a href="{settings.chf.socials.mastodon}" rel="me" target="_blank" class="mdlr-button mdlr-variant-icon mdlr-variant-round mdlr-variant-transparent" title="{f:translate(key: 'templates.footer.social.mastodon', extensionName: 'chf_base')}">
-                        <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <use href="#icon-mastodon"/>
-                        </svg>
-                        <span><f:translate key="templates.footer.social.mastodon" extensionName="chf_base"/></span>
-                    </a>
+                    <mdlr:atom.button.external uri="{settings.chf.socials.mastodon}" variants="{0: 'icon', 1: 'round', 2: 'transparent'}" text="{f:translate(key: 'templates.footer.social.mastodon', extensionName: 'chf_base')}" icon="mastodon" rel="me" />
                 </li>
             </f:if>
             <f:if condition="{settings.chf.socials.linkedin}">
                 <li>
-                    <a href="{settings.chf.socials.linkedin}" rel="me" target="_blank" class="mdlr-button mdlr-variant-icon mdlr-variant-round mdlr-variant-transparent" title="{f:translate(key: 'templates.footer.social.linkedin', extensionName: 'chf_base')}">
-                        <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <use href="#icon-linkedin"/>
-                        </svg>
-                        <span><f:translate key="templates.footer.social.linkedin" extensionName="chf_base"/></span>
-                    </a>
+                    <mdlr:atom.button.external uri="{settings.chf.socials.linkedin}" variants="{0: 'icon', 1: 'round', 2: 'transparent'}" text="{f:translate(key: 'templates.footer.social.linkedin', extensionName: 'chf_base')}" icon="linkedin" rel="me" />
                 </li>
             </f:if>
             <f:if condition="{settings.chf.socials.instagram}">
                 <li>
-                    <a href="{settings.chf.socials.instagram}" rel="me" target="_blank" class="mdlr-button mdlr-variant-icon mdlr-variant-round mdlr-variant-transparent" title="{f:translate(key: 'templates.footer.social.instagram', extensionName: 'chf_base')}">
-                        <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <use href="#icon-instagram"/>
-                        </svg>
-                        <span><f:translate key="templates.footer.social.instagram" extensionName="chf_base"/></span>
-                    </a>
+                    <mdlr:atom.button.external uri="{settings.chf.socials.instagram}" variants="{0: 'icon', 1: 'round', 2: 'transparent'}" text="{f:translate(key: 'templates.footer.social.instagram', extensionName: 'chf_base')}" icon="instagram" rel="me" />
                 </li>
             </f:if>
             <f:if condition="{settings.chf.socials.facebook}">
                 <li>
-                    <a href="{settings.chf.socials.facebook}" rel="me" target="_blank" class="mdlr-button mdlr-variant-icon mdlr-variant-round mdlr-variant-transparent" title="{f:translate(key: 'templates.footer.social.facebook', extensionName: 'chf_base')}">
-                        <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <use href="#icon-facebook"/>
-                        </svg>
-                        <span><f:translate key="templates.footer.social.facebook" extensionName="chf_base"/></span>
-                    </a>
+                    <mdlr:atom.button.external uri="{settings.chf.socials.facebook}" variants="{0: 'icon', 1: 'round', 2: 'transparent'}" text="{f:translate(key: 'templates.footer.social.facebook', extensionName: 'chf_base')}" icon="facebook" rel="me" />
                 </li>
             </f:if>
             <f:if condition="{settings.chf.socials.bluesky}">
                 <li>
-                    <a href="{settings.chf.socials.bluesky}" rel="me" target="_blank" class="mdlr-button mdlr-variant-icon mdlr-variant-round mdlr-variant-transparent" title="{f:translate(key: 'templates.footer.social.bluesky', extensionName: 'chf_base')}">
-                        <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <use href="#icon-bluesky"/>
-                        </svg>
-                        <span><f:translate key="templates.footer.social.bluesky" extensionName="chf_base"/></span>
-                    </a>
+                    <mdlr:atom.button.external uri="{settings.chf.socials.bluesky}" variants="{0: 'icon', 1: 'round', 2: 'transparent'}" text="{f:translate(key: 'templates.footer.social.bluesky', extensionName: 'chf_base')}" icon="bluesky" rel="me" />
                 </li>
             </f:if>
             <f:if condition="{settings.chf.socials.xitter}">
                 <li>
-                    <a href="{settings.chf.socials.xitter}" rel="me" target="_blank" class="mdlr-button mdlr-variant-icon mdlr-variant-round mdlr-variant-transparent" title="{f:translate(key: 'templates.footer.social.xitter', extensionName: 'chf_base')}">
-                        <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <use href="#icon-xitter"/>
-                        </svg>
-                        <span><f:translate key="templates.footer.social.xitter" extensionName="chf_base"/></span>
-                    </a>
+                    <mdlr:atom.button.external uri="{settings.chf.socials.xitter}" variants="{0: 'icon', 1: 'round', 2: 'transparent'}" text="{f:translate(key: 'templates.footer.social.xitter', extensionName: 'chf_base')}" icon="xitter" rel="me" />
                 </li>
             </f:if>
             <f:if condition="{settings.chf.socials.gitlab}">
                 <li>
-                    <a href="{settings.chf.socials.gitlab}" rel="me" target="_blank" class="mdlr-button mdlr-variant-icon mdlr-variant-round mdlr-variant-transparent" title="{f:translate(key: 'templates.footer.social.gitlab', extensionName: 'chf_base')}">
-                        <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <use href="#icon-gitlab"/>
-                        </svg>
-                        <span><f:translate key="templates.footer.social.gitlab" extensionName="chf_base"/></span>
-                    </a>
+                    <mdlr:atom.button.external uri="{settings.chf.socials.gitlab}" variants="{0: 'icon', 1: 'round', 2: 'transparent'}" text="{f:translate(key: 'templates.footer.social.gitlab', extensionName: 'chf_base')}" icon="gitlab" rel="me" />
                 </li>
             </f:if>
             <f:if condition="{settings.chf.socials.github}">
                 <li>
-                    <a href="{settings.chf.socials.github}" rel="me" target="_blank" class="mdlr-button mdlr-variant-icon mdlr-variant-round mdlr-variant-transparent" title="{f:translate(key: 'templates.footer.social.github', extensionName: 'chf_base')}">
-                        <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <use href="#icon-github"/>
-                        </svg>
-                        <span><f:translate key="templates.footer.social.github" extensionName="chf_base"/></span>
-                    </a>
+                    <mdlr:atom.button.external uri="{settings.chf.socials.github}" variants="{0: 'icon', 1: 'round', 2: 'transparent'}" text="{f:translate(key: 'templates.footer.social.github', extensionName: 'chf_base')}" icon="github" rel="me" />
                 </li>
             </f:if>
             <!--<li>
-                <a href="#" target="_blank" class="mdlr-button mdlr-variant-icon mdlr-variant-round mdlr-variant-transparent" title="{f:translate(key: 'templates.footer.social.rss', extensionName: 'chf_base')}">
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-feed"/>
-                    </svg>
-                    <span><f:translate key="templates.footer.social.rss" extensionName="chf_base"/></span>
-                </a>
+                <mdlr:atom.button.external uri="#" variants="{0: 'icon', 1: 'round', 2: 'transparent'}" text="{f:translate(key: 'templates.footer.social.rss', extensionName: 'chf_base')}" icon="feed" />
             </li>-->
             <li>
-                <a href="#" class="mdlr-button mdlr-variant-icon mdlr-variant-round mdlr-variant-transparent mdlr-function-up" title="{f:translate(key: 'templates.footer.social.up', extensionName: 'chf_base')}">
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#icon-up"/>
-                    </svg>
-                    <span><f:translate key="templates.footer.social.up" extensionName="chf_base"/></span>
-                </a>
+                <mdlr:atom.button.section section="main" variants="{0: 'icon', 1: 'round', 2: 'transparent'}" function="up" text="{f:translate(key: 'templates.footer.social.up', extensionName: 'chf_base')}" icon="up" />
             </li>
         </ul>
     </nav>
