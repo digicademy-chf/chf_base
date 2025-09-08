@@ -10,14 +10,14 @@ declare(strict_types=1);
 namespace Digicademy\CHFBase\ViewHelpers;
 
 use TYPO3\CMS\Core\Page\PageRenderer;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 class HeadDataViewHelper extends AbstractViewHelper
 {
-    public function render()
+    public function __construct(private readonly PageRenderer $pageRenderer) {}
+
+    public function render(): void
     {
-        $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
-        $pageRenderer->addHeaderData($this->renderChildren());
+        $this->pageRenderer->addHeaderData($this->renderChildren());
     }
 }
