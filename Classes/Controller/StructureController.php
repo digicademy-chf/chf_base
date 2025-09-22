@@ -13,7 +13,6 @@ use Digicademy\CHFBase\Domain\Model\AbstractTag;
 use Digicademy\CHFBase\Domain\Model\Keyword;
 use Digicademy\CHFBase\Domain\Repository\AbstractResourceRepository;
 use Psr\Http\Message\ResponseInterface;
-use TYPO3\CMS\Core\Cache\CacheTag;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 defined('TYPO3') or die();
@@ -23,12 +22,12 @@ defined('TYPO3') or die();
  */
 class StructureController extends ActionController
 {
-    private AbstractResourceRepository $abstractResourceRepository;
-
-    public function injectAbstractResourceRepository(AbstractResourceRepository $abstractResourceRepository): void
-    {
-        $this->abstractResourceRepository = $abstractResourceRepository;
-    }
+    /**
+     * Constructor takes care of dependency injection
+     */
+    public function __construct(
+        protected readonly AbstractResourceRepository $abstractResourceRepository,
+    ) {}
 
     /**
      * Show tag and keyword list
@@ -40,12 +39,6 @@ class StructureController extends ActionController
         // Get resource
         $resourceIdentifier = $this->settings['resource'];
         $this->view->assign('resource', $this->abstractResourceRepository->findByIdentifier($resourceIdentifier));
-
-        // Set cache tag
-        $cacheDataCollector = $this->request->getAttribute('frontend.cache.collector');
-        $cacheDataCollector->addCacheTags(
-            new CacheTag('chf')
-        );
 
         // Create response
         return $this->htmlResponse();
@@ -62,12 +55,6 @@ class StructureController extends ActionController
         // Get tag
         $this->view->assign('tag', $abstractTag);
 
-        // Set cache tag
-        $cacheDataCollector = $this->request->getAttribute('frontend.cache.collector');
-        $cacheDataCollector->addCacheTags(
-            new CacheTag('chf')
-        );
-
         // Create response
         return $this->htmlResponse();
     }
@@ -82,12 +69,6 @@ class StructureController extends ActionController
     {
         // Get keyword
         $this->view->assign('keyword', $keyword);
-
-        // Set cache tag
-        $cacheDataCollector = $this->request->getAttribute('frontend.cache.collector');
-        $cacheDataCollector->addCacheTags(
-            new CacheTag('chf')
-        );
 
         // Create response
         return $this->htmlResponse();

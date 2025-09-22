@@ -11,7 +11,6 @@ namespace Digicademy\CHFBase\Controller;
 
 use Digicademy\CHFBase\Domain\Repository\AbstractResourceRepository;
 use Psr\Http\Message\ResponseInterface;
-use TYPO3\CMS\Core\Cache\CacheTag;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 defined('TYPO3') or die();
@@ -21,12 +20,12 @@ defined('TYPO3') or die();
  */
 class ConnectionsController extends ActionController
 {
-    private AbstractResourceRepository $abstractResourceRepository;
-
-    public function injectAbstractResourceRepository(AbstractResourceRepository $abstractResourceRepository): void
-    {
-        $this->abstractResourceRepository = $abstractResourceRepository;
-    }
+    /**
+     * Constructor takes care of dependency injection
+     */
+    public function __construct(
+        protected readonly AbstractResourceRepository $abstractResourceRepository,
+    ) {}
 
     /**
      * Show relation list
@@ -38,12 +37,6 @@ class ConnectionsController extends ActionController
         // Get resource
         $resourceIdentifier = $this->settings['resource'];
         $this->view->assign('resource', $this->abstractResourceRepository->findByIdentifier($resourceIdentifier));
-
-        // Set cache tag
-        $cacheDataCollector = $this->request->getAttribute('frontend.cache.collector');
-        $cacheDataCollector->addCacheTags(
-            new CacheTag('chf')
-        );
 
         // Create response
         return $this->htmlResponse();

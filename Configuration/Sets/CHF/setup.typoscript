@@ -48,7 +48,6 @@ page {
                 special = rootline
                 special {
                     range = 0|-1
-                    #range = 0|-2
                     reverseOrder = 1
                 }
             }

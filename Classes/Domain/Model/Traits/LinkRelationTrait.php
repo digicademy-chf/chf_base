@@ -24,20 +24,20 @@ trait LinkRelationTrait
     /**
      * Links relevant to this database record
      * 
-     * @var ?ObjectStorage<LinkRelation>
+     * @var ObjectStorage<LinkRelation>
      */
     #[Lazy()]
     #[Cascade([
         'value' => 'remove',
     ])]
-    protected ?ObjectStorage $linkRelation = null;
+    protected ObjectStorage $linkRelation;
 
     /**
      * Get link relation
      *
      * @return ObjectStorage<LinkRelation>
      */
-    public function getLinkRelation(): ?ObjectStorage
+    public function getLinkRelation(): ObjectStorage
     {
         return $this->linkRelation;
     }
@@ -59,7 +59,7 @@ trait LinkRelationTrait
      */
     public function addLinkRelation(LinkRelation $linkRelation): void
     {
-        $this->linkRelation?->attach($linkRelation);
+        $this->linkRelation->attach($linkRelation);
     }
 
     /**
@@ -69,7 +69,7 @@ trait LinkRelationTrait
      */
     public function removeLinkRelation(LinkRelation $linkRelation): void
     {
-        $this->linkRelation?->detach($linkRelation);
+        $this->linkRelation->detach($linkRelation);
     }
 
     /**

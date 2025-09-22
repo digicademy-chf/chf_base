@@ -139,24 +139,24 @@ class Agent extends AbstractHeritage
     /**
      * Room to list employees or organisational units
      * 
-     * @var ?ObjectStorage<Agent>
+     * @var ObjectStorage<Agent>
      */
     #[Lazy()]
     #[Cascade([
         'value' => 'remove',
     ])]
-    protected ?ObjectStorage $agent = null;
+    protected ObjectStorage $agent;
 
     /**
      * Room to list biographical events
      * 
-     * @var ?ObjectStorage<Period>
+     * @var ObjectStorage<Period>
      */
     #[Lazy()]
     #[Cascade([
         'value' => 'remove',
     ])]
-    protected ?ObjectStorage $event = null;
+    protected ObjectStorage $event;
 
     /**
      * Larger agent that this agent is part of
@@ -186,10 +186,10 @@ class Agent extends AbstractHeritage
      */
     public function initializeObject(): void
     {
-        $this->agent ??= new ObjectStorage();
-        $this->event ??= new ObjectStorage();
-        $this->agentRelation ??= new ObjectStorage();
-        $this->locationRelation ??= new ObjectStorage();
+        $this->agent = new ObjectStorage();
+        $this->event = new ObjectStorage();
+        $this->agentRelation = new ObjectStorage();
+        $this->locationRelation = new ObjectStorage();
     }
 
     /**
@@ -357,7 +357,7 @@ class Agent extends AbstractHeritage
      *
      * @return ObjectStorage<Agent>
      */
-    public function getAgent(): ?ObjectStorage
+    public function getAgent(): ObjectStorage
     {
         return $this->agent;
     }
@@ -379,7 +379,7 @@ class Agent extends AbstractHeritage
      */
     public function addAgent(Agent $agent): void
     {
-        $this->agent?->attach($agent);
+        $this->agent->attach($agent);
     }
 
     /**
@@ -389,7 +389,7 @@ class Agent extends AbstractHeritage
      */
     public function removeAgent(Agent $agent): void
     {
-        $this->agent?->detach($agent);
+        $this->agent->detach($agent);
     }
 
     /**
@@ -406,7 +406,7 @@ class Agent extends AbstractHeritage
      *
      * @return ObjectStorage<Period>
      */
-    public function getEvent(): ?ObjectStorage
+    public function getEvent(): ObjectStorage
     {
         return $this->event;
     }
@@ -428,7 +428,7 @@ class Agent extends AbstractHeritage
      */
     public function addEvent(Period $event): void
     {
-        $this->event?->attach($event);
+        $this->event->attach($event);
     }
 
     /**
@@ -438,7 +438,7 @@ class Agent extends AbstractHeritage
      */
     public function removeEvent(Period $event): void
     {
-        $this->event?->detach($event);
+        $this->event->detach($event);
     }
 
     /**

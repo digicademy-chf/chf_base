@@ -24,6 +24,11 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets'] += [
     'chf_base_regular' => 'EXT:chf_base/Configuration/RTE/CHFBaseRegular.yaml',
 ];
 
+// Activate optional features
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['extbase.consistentDateTimeHandling'] = true;
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['frontend.cache.autoTagging'] = true;
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['security.backend.htmlSanitizeRte'] = true;
+
 // Register 'Rest' content element
 ExtensionUtility::configurePlugin(
     'CHFBase',

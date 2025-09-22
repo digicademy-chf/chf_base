@@ -32,10 +32,3 @@ TCEMAIN {
   // Do not add translation instruction on translating a record
   translateToMessage =
 }
-
-// Clear relevant page caches when editing records in folders
-[traverse(page, "doktype") == 254]
-TCEMAIN {
-    clearCacheCmd = cacheTag:chf
-}
-[END]

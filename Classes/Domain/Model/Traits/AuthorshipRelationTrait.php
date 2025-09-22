@@ -24,20 +24,20 @@ trait AuthorshipRelationTrait
     /**
      * Authorship of this record
      * 
-     * @var ?ObjectStorage<AuthorshipRelation>
+     * @var ObjectStorage<AuthorshipRelation>
      */
     #[Lazy()]
     #[Cascade([
         'value' => 'remove',
     ])]
-    protected ?ObjectStorage $authorshipRelation = null;
+    protected ObjectStorage $authorshipRelation;
 
     /**
      * Get authorship relation
      *
      * @return ObjectStorage<AuthorshipRelation>
      */
-    public function getAuthorshipRelation(): ?ObjectStorage
+    public function getAuthorshipRelation(): ObjectStorage
     {
         return $this->authorshipRelation;
     }
@@ -59,7 +59,7 @@ trait AuthorshipRelationTrait
      */
     public function addAuthorshipRelation(AuthorshipRelation $authorshipRelation): void
     {
-        $this->authorshipRelation?->attach($authorshipRelation);
+        $this->authorshipRelation->attach($authorshipRelation);
     }
 
     /**
@@ -69,7 +69,7 @@ trait AuthorshipRelationTrait
      */
     public function removeAuthorshipRelation(AuthorshipRelation $authorshipRelation): void
     {
-        $this->authorshipRelation?->detach($authorshipRelation);
+        $this->authorshipRelation->detach($authorshipRelation);
     }
 
     /**

@@ -1734,20 +1734,20 @@
                 <target>Auf X (früher Twitter) teilen</target>
             </trans-unit>
             <trans-unit id="templates.share.dissociation" resname="templates.share.dissociation" approved="yes">
-                <source>The largely privacy-friendly links to these services do not express endorsement.</source>
-                <target>Die möglichst datensparsamen Links zu diesen Diensten sind kein Ausdruck der Befürwortung.</target>
+                <source>The largely privacy-friendly links to these services do not express endorsement</source>
+                <target>Die möglichst datensparsamen Links zu diesen Diensten sind kein Ausdruck der Befürwortung</target>
             </trans-unit>
-            <trans-unit id="templates.watchlist" resname="templates.watchlist" approved="yes">
-                <source>Watchlist</source>
-                <target>Merkliste</target>
+            <trans-unit id="templates.watch" resname="templates.watch" approved="yes">
+                <source>Watch</source>
+                <target>Merken</target>
             </trans-unit>
-            <trans-unit id="templates.watchlist.empty" resname="templates.watchlist.empty" approved="yes">
-                <source>The watchlist ist still empty. Add items by clicking on star symbols across this site.</source>
-                <target>Die Merkliste ist noch leer. Neue Inhalte werden durch Klick auf Stern-Symbole hinzugefügt.</target>
+            <trans-unit id="templates.watch.empty" resname="templates.watch.empty" approved="yes">
+                <source>The watchlist ist currently empty</source>
+                <target>Die Merkliste ist noch leer</target>
             </trans-unit>
             <trans-unit id="templates.search" resname="templates.search" approved="yes">
                 <source>Search</source>
-                <target>Suche</target>
+                <target>Suchen</target>
             </trans-unit>
             <trans-unit id="templates.search.query" resname="templates.search.query" approved="yes">
                 <source>Search term</source>
@@ -1781,39 +1781,39 @@
                 <source>Further options</source>
                 <target>Mehr Optionen</target>
             </trans-unit>
-            <trans-unit id="templates.settings" resname="templates.settings" approved="yes">
-                <source>Settings</source>
-                <target>Einstellungen</target>
+            <trans-unit id="templates.adjust" resname="templates.adjust" approved="yes">
+                <source>Adjust</source>
+                <target>Einstellen</target>
             </trans-unit>
-            <trans-unit id="templates.settings.language" resname="templates.settings.language" approved="yes">
+            <trans-unit id="templates.adjust.language" resname="templates.adjust.language" approved="yes">
                 <source>Language</source>
                 <target>Sprache</target>
             </trans-unit>
-            <trans-unit id="templates.settings.color" resname="templates.settings.color" approved="yes">
+            <trans-unit id="templates.adjust.color" resname="templates.adjust.color" approved="yes">
                 <source>Colour</source>
                 <target>Farbe</target>
             </trans-unit>
-            <trans-unit id="templates.settings.color.auto" resname="templates.settings.color.auto" approved="yes">
+            <trans-unit id="templates.adjust.color.auto" resname="templates.adjust.color.auto" approved="yes">
                 <source>Auto</source>
                 <target>Auto</target>
             </trans-unit>
-            <trans-unit id="templates.settings.color.light" resname="templates.settings.color.light" approved="yes">
+            <trans-unit id="templates.adjust.color.light" resname="templates.adjust.color.light" approved="yes">
                 <source>Light</source>
                 <target>Hell</target>
             </trans-unit>
-            <trans-unit id="templates.settings.color.dark" resname="templates.settings.color.dark" approved="yes">
+            <trans-unit id="templates.adjust.color.dark" resname="templates.adjust.color.dark" approved="yes">
                 <source>Dark</source>
                 <target>Dunkel</target>
             </trans-unit>
-            <trans-unit id="templates.settings.device" resname="templates.settings.device" approved="yes">
+            <trans-unit id="templates.adjust.device" resname="templates.adjust.device" approved="yes">
                 <source>Device</source>
                 <target>Gerät</target>
             </trans-unit>
-            <trans-unit id="templates.settings.device.storage" resname="templates.settings.device.storage" approved="yes">
+            <trans-unit id="templates.adjust.device.storage" resname="templates.adjust.device.storage" approved="yes">
                 <source>Remove local data</source>
                 <target>Lokale Daten löschen</target>
             </trans-unit>
-            <trans-unit id="templates.settings.powered" resname="templates.settings.powered" approved="yes">
+            <trans-unit id="templates.adjust.powered" resname="templates.adjust.powered" approved="yes">
                 <source>Powered by the <![CDATA[<a href="https://github.com/digicademy-chf" target="_blank">]]>Cultural Heritage Framework<![CDATA[</a>]]></source>
                 <target>Betrieben mit dem <![CDATA[<a href="https://github.com/digicademy-chf" target="_blank">]]>Cultural Heritage Framework<![CDATA[</a>]]></target>
             </trans-unit>

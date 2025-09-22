@@ -1,18 +1,18 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <nav id="header-meta" class="mdlr-pattern-slot-c mdlr-pattern-align-right mdlr-pattern-align-middle">
         <h2 class="mdlr-variant-tacit"><f:translate key="templates.header.meta" extensionName="chf_base"/></h2>
-        <ul class="mdlr-buttonrow mdlr-variant-separate mdlr-variant-nowrap">
-            <li>
-                <mdlr:atom.button.function id="header-meta-share" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.share', extensionName: 'chf_base')}" aria="{controls: 'share'}" icon="share" />
-            </li>
+        <ul class="mdlr-buttonrow mdlr-variant-nowrap">
             <li>
                 <mdlr:atom.button.function id="header-meta-search" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.search', extensionName: 'chf_base')}" aria="{controls: 'search'}" icon="search" />
             </li>
             <li>
-                <mdlr:atom.button.function id="header-meta-watchlist" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.watchlist', extensionName: 'chf_base')}" aria="{controls: 'watchlist'}" icon="watchlist" />
+                <mdlr:atom.button.function id="header-meta-share" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.share', extensionName: 'chf_base')}" aria="{controls: 'share'}" icon="share" />
             </li>
             <li>
-                <mdlr:atom.button.function id="header-meta-settings" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.settings', extensionName: 'chf_base')}" aria="{controls: 'settings'}" icon="settings" />
+                <mdlr:atom.button.function id="header-meta-watch" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.watch', extensionName: 'chf_base')}" aria="{controls: 'watch'}" icon="watch" />
+            </li>
+            <li>
+                <mdlr:atom.button.function id="header-meta-adjust" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.adjust', extensionName: 'chf_base')}" aria="{controls: 'adjust'}" icon="adjust" />
             </li>
         </ul>
     </nav>

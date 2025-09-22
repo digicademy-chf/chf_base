@@ -139,13 +139,13 @@ class Period extends AbstractHeritage
     /**
      * Room to list more specific historical events
      * 
-     * @var ?ObjectStorage<Period>
+     * @var ObjectStorage<Period>
      */
     #[Lazy()]
     #[Cascade([
         'value' => 'remove',
     ])]
-    protected ?ObjectStorage $event = null;
+    protected ObjectStorage $event;
 
     /**
      * Longer period that this period is part of
@@ -175,9 +175,9 @@ class Period extends AbstractHeritage
      */
     public function initializeObject(): void
     {
-        $this->event ??= new ObjectStorage();
-        $this->agentRelation ??= new ObjectStorage();
-        $this->locationRelation ??= new ObjectStorage();
+        $this->event = new ObjectStorage();
+        $this->agentRelation = new ObjectStorage();
+        $this->locationRelation = new ObjectStorage();
     }
 
     /**
@@ -385,7 +385,7 @@ class Period extends AbstractHeritage
      *
      * @return ObjectStorage<Period>
      */
-    public function getEvent(): ?ObjectStorage
+    public function getEvent(): ObjectStorage
     {
         return $this->event;
     }
@@ -407,7 +407,7 @@ class Period extends AbstractHeritage
      */
     public function addEvent(Period $event): void
     {
-        $this->event?->attach($event);
+        $this->event->attach($event);
     }
 
     /**
@@ -417,7 +417,7 @@ class Period extends AbstractHeritage
      */
     public function removeEvent(Period $event): void
     {
-        $this->event?->detach($event);
+        $this->event->detach($event);
     }
 
     /**

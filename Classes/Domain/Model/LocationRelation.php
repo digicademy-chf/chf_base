@@ -27,10 +27,10 @@ class LocationRelation extends AbstractRelation
     /**
      * Locations to relate to the record
      * 
-     * @var ?ObjectStorage<Location>
+     * @var ObjectStorage<Location>
      */
     #[Lazy()]
-    protected ?ObjectStorage $location;
+    protected ObjectStorage $location;
 
     /**
      * Qualification of this relation
@@ -74,7 +74,7 @@ class LocationRelation extends AbstractRelation
      */
     public function initializeObject(): void
     {
-        $this->location ??= new ObjectStorage();
+        $this->location = new ObjectStorage();
     }
 
     /**
@@ -82,7 +82,7 @@ class LocationRelation extends AbstractRelation
      *
      * @return ObjectStorage<Location>
      */
-    public function getLocation(): ?ObjectStorage
+    public function getLocation(): ObjectStorage
     {
         return $this->location;
     }
@@ -104,7 +104,7 @@ class LocationRelation extends AbstractRelation
      */
     public function addLocation(Location $location): void
     {
-        $this->location?->attach($location);
+        $this->location->attach($location);
     }
 
     /**
@@ -114,7 +114,7 @@ class LocationRelation extends AbstractRelation
      */
     public function removeLocation(Location $location): void
     {
-        $this->location?->detach($location);
+        $this->location->detach($location);
     }
 
     /**

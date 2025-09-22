@@ -31,10 +31,10 @@ class LabelTag extends AbstractTag
     /**
      * List of keywords describing this label
      * 
-     * @var ?ObjectStorage<Keyword>
+     * @var ObjectStorage<Keyword>
      */
     #[Lazy()]
-    protected ?ObjectStorage $keyword;
+    protected ObjectStorage $keyword;
 
     /**
      * Label that this label is part of
@@ -63,7 +63,7 @@ class LabelTag extends AbstractTag
      */
     public function initializeObject(): void
     {
-        $this->keyword ??= new ObjectStorage();
+        $this->keyword = new ObjectStorage();
     }
 
     /**
@@ -94,7 +94,7 @@ class LabelTag extends AbstractTag
      *
      * @return ObjectStorage<Keyword>
      */
-    public function getKeyword(): ?ObjectStorage
+    public function getKeyword(): ObjectStorage
     {
         return $this->keyword;
     }
@@ -116,7 +116,7 @@ class LabelTag extends AbstractTag
      */
     public function addKeyword(Keyword $keyword): void
     {
-        $this->keyword?->attach($keyword);
+        $this->keyword->attach($keyword);
     }
 
     /**
@@ -126,7 +126,7 @@ class LabelTag extends AbstractTag
      */
     public function removeKeyword(Keyword $keyword): void
     {
-        $this->keyword?->detach($keyword);
+        $this->keyword->detach($keyword);
     }
 
     /**

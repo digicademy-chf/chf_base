@@ -23,17 +23,17 @@ trait LabelTrait
     /**
      * Label to group the database record into
      * 
-     * @var ?ObjectStorage<LabelTag>
+     * @var ObjectStorage<LabelTag>
      */
     #[Lazy()]
-    protected ?ObjectStorage $label = null;
+    protected ObjectStorage $label;
 
     /**
      * Get label
      *
      * @return ObjectStorage<LabelTag>
      */
-    public function getLabel(): ?ObjectStorage
+    public function getLabel(): ObjectStorage
     {
         return $this->label;
     }
@@ -55,7 +55,7 @@ trait LabelTrait
      */
     public function addLabel(LabelTag $label): void
     {
-        $this->label?->attach($label);
+        $this->label->attach($label);
     }
 
     /**
@@ -65,7 +65,7 @@ trait LabelTrait
      */
     public function removeLabel(LabelTag $label): void
     {
-        $this->label?->detach($label);
+        $this->label->detach($label);
     }
 
     /**

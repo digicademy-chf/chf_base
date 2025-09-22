@@ -115,7 +115,7 @@ return [
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractResource.items.description',
             'config' => [
                 'type' => 'group',
-                'allowed' => '*',
+                'allowed' => 'tx_chfbase_domain_model_agent,tx_chfbase_domain_model_keyword,tx_chfbase_domain_model_location,tx_chfbase_domain_model_period,tx_chfbase_domain_model_relation,tx_chfbase_domain_model_tag',
                 'MM' => 'tx_chfbase_domain_model_resource_record_mm',
                 'MM_oppositeUsage' => [
                     'tx_chfbase_domain_model_agent' => ['parent_resource'],

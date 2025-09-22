@@ -24,20 +24,20 @@ trait AgentRelationTrait
     /**
      * Agent related to this record
      * 
-     * @var ?ObjectStorage<AgentRelation>
+     * @var ObjectStorage<AgentRelation>
      */
     #[Lazy()]
     #[Cascade([
         'value' => 'remove',
     ])]
-    protected ?ObjectStorage $agentRelation = null;
+    protected ObjectStorage $agentRelation;
 
     /**
      * Get agent relation
      *
      * @return ObjectStorage<AgentRelation>
      */
-    public function getAgentRelation(): ?ObjectStorage
+    public function getAgentRelation(): ObjectStorage
     {
         return $this->agentRelation;
     }
@@ -59,7 +59,7 @@ trait AgentRelationTrait
      */
     public function addAgentRelation(AgentRelation $agentRelation): void
     {
-        $this->agentRelation?->attach($agentRelation);
+        $this->agentRelation->attach($agentRelation);
     }
 
     /**
@@ -69,7 +69,7 @@ trait AgentRelationTrait
      */
     public function removeAgentRelation(AgentRelation $agentRelation): void
     {
-        $this->agentRelation?->detach($agentRelation);
+        $this->agentRelation->detach($agentRelation);
     }
 
     /**

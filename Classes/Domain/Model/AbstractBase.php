@@ -90,9 +90,9 @@ class AbstractBase extends AbstractEntity
      */
     public function initializeObject(): void
     {
-        $this->sameAs ??= new ObjectStorage();
-        $this->authorshipRelation ??= new ObjectStorage();
-        $this->licenceRelation ??= new ObjectStorage();
+        $this->sameAs = new ObjectStorage();
+        $this->authorshipRelation = new ObjectStorage();
+        $this->licenceRelation = new ObjectStorage();
     }
 
     /**

@@ -27,10 +27,10 @@ class AgentRelation extends AbstractRelation
     /**
      * Agents to relate to the record
      * 
-     * @var ?ObjectStorage<Agent>
+     * @var ObjectStorage<Agent>
      */
     #[Lazy()]
-    protected ?ObjectStorage $agent;
+    protected ObjectStorage $agent;
 
     /**
      * Qualification of this relation
@@ -80,7 +80,7 @@ class AgentRelation extends AbstractRelation
      */
     public function initializeObject(): void
     {
-        $this->agent ??= new ObjectStorage();
+        $this->agent = new ObjectStorage();
     }
 
     /**
@@ -88,7 +88,7 @@ class AgentRelation extends AbstractRelation
      *
      * @return ObjectStorage<Agent>
      */
-    public function getAgent(): ?ObjectStorage
+    public function getAgent(): ObjectStorage
     {
         return $this->agent;
     }
@@ -110,7 +110,7 @@ class AgentRelation extends AbstractRelation
      */
     public function addAgent(Agent $agent): void
     {
-        $this->agent?->attach($agent);
+        $this->agent->attach($agent);
     }
 
     /**
@@ -120,7 +120,7 @@ class AgentRelation extends AbstractRelation
      */
     public function removeAgent(Agent $agent): void
     {
-        $this->agent?->detach($agent);
+        $this->agent->detach($agent);
     }
 
     /**

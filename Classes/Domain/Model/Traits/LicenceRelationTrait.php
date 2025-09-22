@@ -25,20 +25,20 @@ trait LicenceRelationTrait
     /**
      * Licence of this record (individual override)
      * 
-     * @var ?ObjectStorage<LicenceRelation>
+     * @var ObjectStorage<LicenceRelation>
      */
     #[Lazy()]
     #[Cascade([
         'value' => 'remove',
     ])]
-    protected ?ObjectStorage $licenceRelation = null;
+    protected ObjectStorage $licenceRelation;
 
     /**
      * Get licence relation
      *
      * @return ObjectStorage<LicenceRelation>
      */
-    public function getLicenceRelation(): ?ObjectStorage
+    public function getLicenceRelation(): ObjectStorage
     {
         return $this->licenceRelation;
     }
@@ -60,7 +60,7 @@ trait LicenceRelationTrait
      */
     public function addLicenceRelation(LicenceRelation $licenceRelation): void
     {
-        $this->licenceRelation?->attach($licenceRelation);
+        $this->licenceRelation->attach($licenceRelation);
     }
 
     /**
@@ -70,7 +70,7 @@ trait LicenceRelationTrait
      */
     public function removeLicenceRelation(LicenceRelation $licenceRelation): void
     {
-        $this->licenceRelation?->detach($licenceRelation);
+        $this->licenceRelation->detach($licenceRelation);
     }
 
     /**

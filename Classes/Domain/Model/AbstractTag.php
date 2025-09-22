@@ -87,10 +87,10 @@ class AbstractTag extends AbstractEntity
     /**
      * Database records connected to this tag
      * 
-     * @var ?ObjectStorage<mixed>
+     * @var ObjectStorage<mixed>
      */
     #[Lazy()]
-    protected ?ObjectStorage $items = null;
+    protected ObjectStorage $items;
 
     /**
      * Construct object
@@ -112,9 +112,9 @@ class AbstractTag extends AbstractEntity
      */
     public function initializeObject(): void
     {
-        $this->items ??= new ObjectStorage();
-        $this->parentResource ??= new ObjectStorage();
-        $this->sameAs ??= new ObjectStorage();
+        $this->items = new ObjectStorage();
+        $this->parentResource = new ObjectStorage();
+        $this->sameAs = new ObjectStorage();
     }
 
     /**
@@ -202,7 +202,7 @@ class AbstractTag extends AbstractEntity
      *
      * @return ObjectStorage<mixed>
      */
-    public function getItems(): ?ObjectStorage
+    public function getItems(): ObjectStorage
     {
         return $this->items;
     }
@@ -224,7 +224,7 @@ class AbstractTag extends AbstractEntity
      */
     public function addItems(mixed $items): void
     {
-        $this->items?->attach($items);
+        $this->items->attach($items);
     }
 
     /**
@@ -234,7 +234,7 @@ class AbstractTag extends AbstractEntity
      */
     public function removeItems(mixed $items): void
     {
-        $this->items?->detach($items);
+        $this->items->detach($items);
     }
 
     /**

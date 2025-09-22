@@ -145,24 +145,24 @@ class AbstractLocation extends AbstractHeritage
     /**
      * Room to list more specific locations
      * 
-     * @var ?ObjectStorage<Location>
+     * @var ObjectStorage<Location>
      */
     #[Lazy()]
     #[Cascade([
         'value' => 'remove',
     ])]
-    protected ?ObjectStorage $location = null;
+    protected ObjectStorage $location;
 
     /**
      * Room to list historical events
      * 
-     * @var ?ObjectStorage<Period>
+     * @var ObjectStorage<Period>
      */
     #[Lazy()]
     #[Cascade([
         'value' => 'remove',
     ])]
-    protected ?ObjectStorage $event = null;
+    protected ObjectStorage $event;
 
     /**
      * Marks this location as historical
@@ -214,9 +214,9 @@ class AbstractLocation extends AbstractHeritage
      */
     public function initializeObject(): void
     {
-        $this->location ??= new ObjectStorage();
-        $this->event ??= new ObjectStorage();
-        $this->agentRelation ??= new ObjectStorage();
+        $this->location = new ObjectStorage();
+        $this->event = new ObjectStorage();
+        $this->agentRelation = new ObjectStorage();
     }
 
     /**
@@ -387,7 +387,7 @@ class AbstractLocation extends AbstractHeritage
      *
      * @return ObjectStorage<Location>
      */
-    public function getLocation(): ?ObjectStorage
+    public function getLocation(): ObjectStorage
     {
         return $this->location;
     }
@@ -409,7 +409,7 @@ class AbstractLocation extends AbstractHeritage
      */
     public function addLocation(Location $location): void
     {
-        $this->location?->attach($location);
+        $this->location->attach($location);
     }
 
     /**
@@ -419,7 +419,7 @@ class AbstractLocation extends AbstractHeritage
      */
     public function removeLocation(Location $location): void
     {
-        $this->location?->detach($location);
+        $this->location->detach($location);
     }
 
     /**
@@ -436,7 +436,7 @@ class AbstractLocation extends AbstractHeritage
      *
      * @return ObjectStorage<Period>
      */
-    public function getEvent(): ?ObjectStorage
+    public function getEvent(): ObjectStorage
     {
         return $this->event;
     }
@@ -458,7 +458,7 @@ class AbstractLocation extends AbstractHeritage
      */
     public function addEvent(Period $event): void
     {
-        $this->event?->attach($event);
+        $this->event->attach($event);
     }
 
     /**
@@ -468,7 +468,7 @@ class AbstractLocation extends AbstractHeritage
      */
     public function removeEvent(Period $event): void
     {
-        $this->event?->detach($event);
+        $this->event->detach($event);
     }
 
     /**
@@ -562,12 +562,12 @@ if (ExtensionManagementUtility::isLoaded('chf_map') && ExtensionManagementUtilit
          */
         public function initializeObject(): void
         {
-            $this->coordinates ??= new ObjectStorage();
-            $this->location ??= new ObjectStorage();
-            $this->object ??= new ObjectStorage();
-            $this->objectGroup ??= new ObjectStorage();
-            $this->event ??= new ObjectStorage();
-            $this->agentRelation ??= new ObjectStorage();
+            $this->coordinates = new ObjectStorage();
+            $this->location = new ObjectStorage();
+            $this->object = new ObjectStorage();
+            $this->objectGroup = new ObjectStorage();
+            $this->event = new ObjectStorage();
+            $this->agentRelation = new ObjectStorage();
         }
     }
 
@@ -587,10 +587,10 @@ if (ExtensionManagementUtility::isLoaded('chf_map') && ExtensionManagementUtilit
          */
         public function initializeObject(): void
         {
-            $this->coordinates ??= new ObjectStorage();
-            $this->location ??= new ObjectStorage();
-            $this->event ??= new ObjectStorage();
-            $this->agentRelation ??= new ObjectStorage();
+            $this->coordinates = new ObjectStorage();
+            $this->location = new ObjectStorage();
+            $this->event = new ObjectStorage();
+            $this->agentRelation = new ObjectStorage();
         }
     }
 
@@ -610,11 +610,11 @@ if (ExtensionManagementUtility::isLoaded('chf_map') && ExtensionManagementUtilit
          */
         public function initializeObject(): void
         {
-            $this->location ??= new ObjectStorage();
-            $this->object ??= new ObjectStorage();
-            $this->objectGroup ??= new ObjectStorage();
-            $this->event ??= new ObjectStorage();
-            $this->agentRelation ??= new ObjectStorage();
+            $this->location = new ObjectStorage();
+            $this->object = new ObjectStorage();
+            $this->objectGroup = new ObjectStorage();
+            $this->event = new ObjectStorage();
+            $this->agentRelation = new ObjectStorage();
         }
     }
 

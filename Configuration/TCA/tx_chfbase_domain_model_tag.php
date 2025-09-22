@@ -181,7 +181,7 @@ return [
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractTag.items.description',
             'config' => [
                 'type' => 'group',
-                'allowed' => '*',
+                'allowed' => 'tx_chfbase_domain_model_agent,tx_chfbase_domain_model_location,tx_chfbase_domain_model_period,tx_chfbase_domain_model_relation,tx_chfbase_domain_model_tag',
                 'MM' => 'tx_chfbase_domain_model_tag_record_mm',
                 'MM_oppositeUsage' => [
                     'tx_chfbase_domain_model_agent' => ['label'],
@@ -225,7 +225,6 @@ return [
             'l10n_mode' => 'exclude',
             'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource',
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.generic.parentResource.description',
-            'onChange' => 'reload',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingleBox',

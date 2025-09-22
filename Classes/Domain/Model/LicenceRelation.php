@@ -27,10 +27,10 @@ class LicenceRelation extends AbstractRelation
     /**
      * Licences to relate to the record
      * 
-     * @var ?ObjectStorage<LicenceTag>
+     * @var ObjectStorage<LicenceTag>
      */
     #[Lazy()]
-    protected ?ObjectStorage $licence;
+    protected ObjectStorage $licence;
 
     /**
      * Qualification of this relation
@@ -72,7 +72,7 @@ class LicenceRelation extends AbstractRelation
      */
     public function initializeObject(): void
     {
-        $this->licence ??= new ObjectStorage();
+        $this->licence = new ObjectStorage();
     }
 
     /**
@@ -80,7 +80,7 @@ class LicenceRelation extends AbstractRelation
      *
      * @return ObjectStorage<LicenceTag>
      */
-    public function getLicence(): ?ObjectStorage
+    public function getLicence(): ObjectStorage
     {
         return $this->licence;
     }
@@ -102,7 +102,7 @@ class LicenceRelation extends AbstractRelation
      */
     public function addLicence(LicenceTag $licence): void
     {
-        $this->licence?->attach($licence);
+        $this->licence->attach($licence);
     }
 
     /**
@@ -112,7 +112,7 @@ class LicenceRelation extends AbstractRelation
      */
     public function removeLicence(LicenceTag $licence): void
     {
-        $this->licence?->detach($licence);
+        $this->licence->detach($licence);
     }
 
     /**

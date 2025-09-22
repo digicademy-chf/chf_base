@@ -5,7 +5,7 @@
             <!--<div>
                 <dt><f:format.raw><f:translate key="templates.about.urn" extensionName="chf_base"/></f:format.raw></dt>
                 <dd>
-                    <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'round', 2: 'unobserved', 3: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.urn', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.urn.hint', extensionName: 'chf_base')}" data="{target: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.generic.copy.urn.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.urn.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
+                    <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.urn', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.urn.hint', extensionName: 'chf_base')}" data="{target: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.generic.copy.urn.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.urn.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
                     <f:link.page rel="canonical">
                         <f:uri.page absolute="true"/>
                     </f:link.page>
@@ -14,7 +14,7 @@
             <div>
                 <dt><f:translate key="templates.about.permalink" extensionName="chf_base"/></dt>
                 <dd>
-                    <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'round', 2: 'unobserved', 3: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.permalink', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.permalink.hint', extensionName: 'chf_base')}" data="{target: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.generic.copy.permalink.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.permalink.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
+                    <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.permalink', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.permalink.hint', extensionName: 'chf_base')}" data="{target: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.generic.copy.permalink.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.permalink.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
                     <f:link.page rel="canonical">
                         <f:uri.page absolute="true"/>
                     </f:link.page>
@@ -23,7 +23,7 @@
             <div>
                 <dt><f:format.raw><f:translate key="templates.about.url" extensionName="chf_base"/></f:format.raw></dt>
                 <dd>
-                    <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'round', 2: 'unobserved', 3: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.url', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.url.hint', extensionName: 'chf_base')}" data="{target: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.generic.copy.url.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.url.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
+                    <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.url', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.url.hint', extensionName: 'chf_base')}" data="{target: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.generic.copy.url.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.url.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
                     <f:link.page rel="canonical">
                         <f:uri.page absolute="true"/>
                     </f:link.page>
@@ -42,7 +42,7 @@
                         citationYear: '{f:if(condition: \'{page.pageRecord.lastUpdated}\', then: \'{page.pageRecord.lastUpdated -> f:format.date(pattern: \\\'yyyy\\\')}\')}',
                         citationDate: '{f:if(condition: \'{page.pageRecord.lastUpdated}\', then: \'{page.pageRecord.lastUpdated -> f:format.date(pattern: \\\'LONGDATE\\\')}\')}',
                         citationUrl: '{f:uri.page(absolute: 1)}'}">
-                        <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'round', 2: 'unobserved', 3: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.citation', extensionName: 'chf_base')}" data="{target: '{f:render(partial: \'About/Citation\', arguments: \'{style: \\\'{citationStyle}\\\', author: \\\'{citationAuthor}\\\', title: \\\'{citationTitle}\\\', subtitle: \\\'{citationSubtitle}\\\', publication: \\\'{citationPublication}\\\', publisher: \\\'{citationPublisher}\\\', year: \\\'{citationYear}\\\', date: \\\'{citationDate}\\\', url: \\\'{citationUrl}\\\', italics: 0}\')}', success: '{f:translate(key: \'templates.generic.copy.citation.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.citation.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
+                        <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.citation', extensionName: 'chf_base')}" data="{target: '{f:render(partial: \'About/Citation\', arguments: \'{style: \\\'{citationStyle}\\\', author: \\\'{citationAuthor}\\\', title: \\\'{citationTitle}\\\', subtitle: \\\'{citationSubtitle}\\\', publication: \\\'{citationPublication}\\\', publisher: \\\'{citationPublisher}\\\', year: \\\'{citationYear}\\\', date: \\\'{citationDate}\\\', url: \\\'{citationUrl}\\\', italics: 0}\')}', success: '{f:translate(key: \'templates.generic.copy.citation.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.citation.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
                         <f:render partial="About/Citation" arguments="{style: '{citationStyle}', author: '{citationAuthor}', title: '{citationTitle}', subtitle: '{citationSubtitle}', publication: '{citationPublication}', publisher: '{citationPublisher}', year: '{citationYear}', date: '{citationDate}', url: '{citationUrl}', italics: 1}"/>
                     </f:alias>
                 </dd>

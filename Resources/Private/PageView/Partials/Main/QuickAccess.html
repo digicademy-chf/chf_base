@@ -13,7 +13,7 @@
                 <f:for each="{subMenu}" as="menuItem">
                     <f:variable name="listSubMenu">1</f:variable>
                     <li>
-                        <mdlr:atom.button.page variants="{0: 'texticon', 1: 'round', 2: 'light'}" pageUid="{menuItem.data.uid}" text="{menuItem.title}" iconAfter="right" />
+                        <mdlr:atom.button.page variants="{0: 'texticon', 1: 'light'}" pageUid="{menuItem.data.uid}" text="{menuItem.title}" iconAfter="right" />
                     </li>
                 </f:for>
                 <f:render partial="Main/Toc" arguments="{listContents: '{listContents}', listSubMenu: '{listSubMenu}', contentElements: '{contentElements}'}"/>

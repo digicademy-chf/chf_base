@@ -1307,13 +1307,13 @@
                 <source>Share on X (formerly Twitter)</source>
             </trans-unit>
             <trans-unit id="templates.share.dissociation" resname="templates.share.dissociation">
-                <source>The largely privacy-friendly links to these services do not express endorsement.</source>
+                <source>The largely privacy-friendly links to these services do not express endorsement</source>
             </trans-unit>
-            <trans-unit id="templates.watchlist" resname="templates.watchlist">
-                <source>Watchlist</source>
+            <trans-unit id="templates.watch" resname="templates.watch">
+                <source>Watch</source>
             </trans-unit>
-            <trans-unit id="templates.watchlist.empty" resname="templates.watchlist.empty">
-                <source>The watchlist ist still empty. Add items by clicking on star symbols across this site.</source>
+            <trans-unit id="templates.watch.empty" resname="templates.watch.empty">
+                <source>The watchlist ist currently empty</source>
             </trans-unit>
             <trans-unit id="templates.search" resname="templates.search">
                 <source>Search</source>
@@ -1342,31 +1342,31 @@
             <trans-unit id="templates.search.advanced" resname="templates.search.advanced">
                 <source>Further options</source>
             </trans-unit>
-            <trans-unit id="templates.settings" resname="templates.settings">
-                <source>Settings</source>
+            <trans-unit id="templates.adjust" resname="templates.adjust">
+                <source>Adjust</source>
             </trans-unit>
-            <trans-unit id="templates.settings.language" resname="templates.settings.language">
+            <trans-unit id="templates.adjust.language" resname="templates.adjust.language">
                 <source>Language</source>
             </trans-unit>
-            <trans-unit id="templates.settings.color" resname="templates.settings.color">
+            <trans-unit id="templates.adjust.color" resname="templates.adjust.color">
                 <source>Colour</source>
             </trans-unit>
-            <trans-unit id="templates.settings.color.auto" resname="templates.settings.color.auto">
+            <trans-unit id="templates.adjust.color.auto" resname="templates.adjust.color.auto">
                 <source>Auto</source>
             </trans-unit>
-            <trans-unit id="templates.settings.color.light" resname="templates.settings.color.light">
+            <trans-unit id="templates.adjust.color.light" resname="templates.adjust.color.light">
                 <source>Light</source>
             </trans-unit>
-            <trans-unit id="templates.settings.color.dark" resname="templates.settings.color.dark">
+            <trans-unit id="templates.adjust.color.dark" resname="templates.adjust.color.dark">
                 <source>Dark</source>
             </trans-unit>
-            <trans-unit id="templates.settings.device" resname="templates.settings.device">
+            <trans-unit id="templates.adjust.device" resname="templates.adjust.device">
                 <source>Device</source>
             </trans-unit>
-            <trans-unit id="templates.settings.device.storage" resname="templates.settings.device.storage">
+            <trans-unit id="templates.adjust.device.storage" resname="templates.adjust.device.storage">
                 <source>Remove local data</source>
             </trans-unit>
-            <trans-unit id="templates.settings.powered" resname="templates.settings.powered">
+            <trans-unit id="templates.adjust.powered" resname="templates.adjust.powered">
                 <source>Powered by the <![CDATA[<a href="https://github.com/digicademy-chf" target="_blank">]]>Cultural Heritage Framework<![CDATA[</a>]]></source>
             </trans-unit>
         </body>

@@ -11,7 +11,6 @@ namespace Digicademy\CHFBase\Domain\Model;
 
 use Digicademy\CHFBase\Domain\Model\Traits\ImportStateTrait;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
-use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
@@ -79,10 +78,10 @@ class AbstractResource extends AbstractBase
     /**
      * Database records connected to this resource
      * 
-     * @var ?ObjectStorage<mixed>
+     * @var ObjectStorage<mixed>
      */
     #[Lazy()]
-    protected ?ObjectStorage $items = null;
+    protected ObjectStorage $items;
 
     /**
      * Construct object
@@ -105,7 +104,7 @@ class AbstractResource extends AbstractBase
      */
     public function initializeObject(): void
     {
-        $this->items ??= new ObjectStorage();
+        $this->items = new ObjectStorage();
     }
 
     /**
@@ -193,7 +192,7 @@ class AbstractResource extends AbstractBase
      *
      * @return ObjectStorage<mixed>
      */
-    public function getItems(): ?ObjectStorage
+    public function getItems(): ObjectStorage
     {
         return $this->items;
     }
@@ -215,7 +214,7 @@ class AbstractResource extends AbstractBase
      */
     public function addItems(mixed $items): void
     {
-        $this->items?->attach($items);
+        $this->items->attach($items);
     }
 
     /**
@@ -225,7 +224,7 @@ class AbstractResource extends AbstractBase
      */
     public function removeItems(mixed $items): void
     {
-        $this->items?->detach($items);
+        $this->items->detach($items);
     }
 
     /**

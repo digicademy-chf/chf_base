@@ -41,46 +41,46 @@ class AbstractAbstractHeritage extends AbstractBase
     /**
      * Room for page content without a fixed structure
      * 
-     * @var ?ObjectStorage<ContentElement>
+     * @var ObjectStorage<ContentElement>
      */
     #[Lazy()]
     #[Cascade([
         'value' => 'remove',
     ])]
-    protected ?ObjectStorage $contentElement;
+    protected ObjectStorage $contentElement;
 
     /**
      * Footnotes on content elements
      * 
-     * @var ?ObjectStorage<Footnote>
+     * @var ObjectStorage<Footnote>
      */
     #[Lazy()]
     #[Cascade([
         'value' => 'remove',
     ])]
-    protected ?ObjectStorage $footnote;
+    protected ObjectStorage $footnote;
 
     /**
      * Images and other media attached to this record
      * 
-     * @var ?ObjectStorage<FileReference>
+     * @var ObjectStorage<FileReference>
      */
     #[Lazy()]
     #[Cascade([
         'value' => 'remove',
     ])]
-    protected ?ObjectStorage $media;
+    protected ObjectStorage $media;
 
     /**
      * Additional files attached to this record
      * 
-     * @var ?ObjectStorage<FileReference>
+     * @var ObjectStorage<FileReference>
      */
     #[Lazy()]
     #[Cascade([
         'value' => 'remove',
     ])]
-    protected ?ObjectStorage $file;
+    protected ObjectStorage $file;
 
     /**
      * Check list for editing this record
@@ -118,13 +118,13 @@ class AbstractAbstractHeritage extends AbstractBase
      */
     public function initializeObject(): void
     {
-        $this->label ??= new ObjectStorage();
-        $this->contentElement ??= new ObjectStorage();
-        $this->footnote ??= new ObjectStorage();
-        $this->media ??= new ObjectStorage();
-        $this->file ??= new ObjectStorage();
-        $this->linkRelation ??= new ObjectStorage();
-        $this->parentResource ??= new ObjectStorage();
+        $this->label = new ObjectStorage();
+        $this->contentElement = new ObjectStorage();
+        $this->footnote = new ObjectStorage();
+        $this->media = new ObjectStorage();
+        $this->file = new ObjectStorage();
+        $this->linkRelation = new ObjectStorage();
+        $this->parentResource = new ObjectStorage();
     }
 
     /**
@@ -132,7 +132,7 @@ class AbstractAbstractHeritage extends AbstractBase
      *
      * @return ObjectStorage<ContentElement>
      */
-    public function getContentElement(): ?ObjectStorage
+    public function getContentElement(): ObjectStorage
     {
         return $this->contentElement;
     }
@@ -154,7 +154,7 @@ class AbstractAbstractHeritage extends AbstractBase
      */
     public function addContentElement(ContentElement $contentElement): void
     {
-        $this->contentElement?->attach($contentElement);
+        $this->contentElement->attach($contentElement);
     }
 
     /**
@@ -164,7 +164,7 @@ class AbstractAbstractHeritage extends AbstractBase
      */
     public function removeContentElement(ContentElement $contentElement): void
     {
-        $this->contentElement?->detach($contentElement);
+        $this->contentElement->detach($contentElement);
     }
 
     /**
@@ -181,7 +181,7 @@ class AbstractAbstractHeritage extends AbstractBase
      *
      * @return ObjectStorage<Footnote>
      */
-    public function getFootnote(): ?ObjectStorage
+    public function getFootnote(): ObjectStorage
     {
         return $this->footnote;
     }
@@ -203,7 +203,7 @@ class AbstractAbstractHeritage extends AbstractBase
      */
     public function addFootnote(Footnote $footnote): void
     {
-        $this->footnote?->attach($footnote);
+        $this->footnote->attach($footnote);
     }
 
     /**
@@ -213,7 +213,7 @@ class AbstractAbstractHeritage extends AbstractBase
      */
     public function removeFootnote(Footnote $footnote): void
     {
-        $this->footnote?->detach($footnote);
+        $this->footnote->detach($footnote);
     }
 
     /**
@@ -230,7 +230,7 @@ class AbstractAbstractHeritage extends AbstractBase
      *
      * @return ObjectStorage<FileReference>
      */
-    public function getMedia(): ?ObjectStorage
+    public function getMedia(): ObjectStorage
     {
         return $this->media;
     }
@@ -252,7 +252,7 @@ class AbstractAbstractHeritage extends AbstractBase
      */
     public function addMedia(FileReference $media): void
     {
-        $this->media?->attach($media);
+        $this->media->attach($media);
     }
 
     /**
@@ -262,7 +262,7 @@ class AbstractAbstractHeritage extends AbstractBase
      */
     public function removeMedia(FileReference $media): void
     {
-        $this->media?->detach($media);
+        $this->media->detach($media);
     }
 
     /**
@@ -279,7 +279,7 @@ class AbstractAbstractHeritage extends AbstractBase
      *
      * @return ObjectStorage<FileReference>
      */
-    public function getFile(): ?ObjectStorage
+    public function getFile(): ObjectStorage
     {
         return $this->file;
     }
@@ -301,7 +301,7 @@ class AbstractAbstractHeritage extends AbstractBase
      */
     public function addFile(FileReference $file): void
     {
-        $this->file?->attach($file);
+        $this->file->attach($file);
     }
 
     /**
@@ -311,7 +311,7 @@ class AbstractAbstractHeritage extends AbstractBase
      */
     public function removeFile(FileReference $file): void
     {
-        $this->file?->detach($file);
+        $this->file->detach($file);
     }
 
     /**
@@ -380,14 +380,14 @@ if (ExtensionManagementUtility::isLoaded('chf_bib') && ExtensionManagementUtilit
          */
         public function initializeObject(): void
         {
-            $this->label ??= new ObjectStorage();
-            $this->contentElement ??= new ObjectStorage();
-            $this->footnote ??= new ObjectStorage();
-            $this->media ??= new ObjectStorage();
-            $this->file ??= new ObjectStorage();
-            $this->sourceRelation ??= new ObjectStorage();
-            $this->linkRelation ??= new ObjectStorage();
-            $this->publicationRelation ??= new ObjectStorage();
+            $this->label = new ObjectStorage();
+            $this->contentElement = new ObjectStorage();
+            $this->footnote = new ObjectStorage();
+            $this->media = new ObjectStorage();
+            $this->file = new ObjectStorage();
+            $this->sourceRelation = new ObjectStorage();
+            $this->linkRelation = new ObjectStorage();
+            $this->publicationRelation = new ObjectStorage();
         }
     }
 
@@ -406,13 +406,13 @@ if (ExtensionManagementUtility::isLoaded('chf_bib') && ExtensionManagementUtilit
          */
         public function initializeObject(): void
         {
-            $this->label ??= new ObjectStorage();
-            $this->contentElement ??= new ObjectStorage();
-            $this->footnote ??= new ObjectStorage();
-            $this->media ??= new ObjectStorage();
-            $this->file ??= new ObjectStorage();
-            $this->sourceRelation ??= new ObjectStorage();
-            $this->linkRelation ??= new ObjectStorage();
+            $this->label = new ObjectStorage();
+            $this->contentElement = new ObjectStorage();
+            $this->footnote = new ObjectStorage();
+            $this->media = new ObjectStorage();
+            $this->file = new ObjectStorage();
+            $this->sourceRelation = new ObjectStorage();
+            $this->linkRelation = new ObjectStorage();
         }
     }
 
@@ -431,13 +431,13 @@ if (ExtensionManagementUtility::isLoaded('chf_bib') && ExtensionManagementUtilit
          */
         public function initializeObject(): void
         {
-            $this->label ??= new ObjectStorage();
-            $this->contentElement ??= new ObjectStorage();
-            $this->footnote ??= new ObjectStorage();
-            $this->media ??= new ObjectStorage();
-            $this->file ??= new ObjectStorage();
-            $this->linkRelation ??= new ObjectStorage();
-            $this->publicationRelation ??= new ObjectStorage();
+            $this->label = new ObjectStorage();
+            $this->contentElement = new ObjectStorage();
+            $this->footnote = new ObjectStorage();
+            $this->media = new ObjectStorage();
+            $this->file = new ObjectStorage();
+            $this->linkRelation = new ObjectStorage();
+            $this->publicationRelation = new ObjectStorage();
         }
     }
 

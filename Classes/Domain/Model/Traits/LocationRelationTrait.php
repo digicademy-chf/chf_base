@@ -24,20 +24,20 @@ trait LocationRelationTrait
     /**
      * Location related to this record
      * 
-     * @var ?ObjectStorage<LocationRelation>
+     * @var ObjectStorage<LocationRelation>
      */
     #[Lazy()]
     #[Cascade([
         'value' => 'remove',
     ])]
-    protected ?ObjectStorage $locationRelation = null;
+    protected ObjectStorage $locationRelation;
 
     /**
      * Get location relation
      *
      * @return ObjectStorage<LocationRelation>
      */
-    public function getLocationRelation(): ?ObjectStorage
+    public function getLocationRelation(): ObjectStorage
     {
         return $this->locationRelation;
     }
@@ -59,7 +59,7 @@ trait LocationRelationTrait
      */
     public function addLocationRelation(LocationRelation $locationRelation): void
     {
-        $this->locationRelation?->attach($locationRelation);
+        $this->locationRelation->attach($locationRelation);
     }
 
     /**
@@ -69,7 +69,7 @@ trait LocationRelationTrait
      */
     public function removeLocationRelation(LocationRelation $locationRelation): void
     {
-        $this->locationRelation?->detach($locationRelation);
+        $this->locationRelation->detach($locationRelation);
     }
 
     /**

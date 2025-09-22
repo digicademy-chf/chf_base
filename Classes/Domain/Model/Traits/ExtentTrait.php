@@ -24,20 +24,20 @@ trait ExtentTrait
     /**
      * List of identifiers/dimensions relevant to this entry
      * 
-     * @var ?ObjectStorage<Extent>
+     * @var ObjectStorage<Extent>
      */
     #[Lazy()]
     #[Cascade([
         'value' => 'remove',
     ])]
-    protected ?ObjectStorage $extent = null;
+    protected ObjectStorage $extent;
 
     /**
      * Get extent
      *
      * @return ObjectStorage<Extent>
      */
-    public function getExtent(): ?ObjectStorage
+    public function getExtent(): ObjectStorage
     {
         return $this->extent;
     }
@@ -59,7 +59,7 @@ trait ExtentTrait
      */
     public function addExtent(Extent $extent): void
     {
-        $this->extent?->attach($extent);
+        $this->extent->attach($extent);
     }
 
     /**
@@ -69,7 +69,7 @@ trait ExtentTrait
      */
     public function removeExtent(Extent $extent): void
     {
-        $this->extent?->detach($extent);
+        $this->extent->detach($extent);
     }
 
     /**

@@ -27,10 +27,10 @@ class AuthorshipRelation extends AbstractRelation
     /**
      * Contributors to relate to the record
      * 
-     * @var ?ObjectStorage<Agent>
+     * @var ObjectStorage<Agent>
      */
     #[Lazy()]
-    protected ?ObjectStorage $contributor;
+    protected ObjectStorage $contributor;
 
     /**
      * Qualification of this relation
@@ -75,7 +75,7 @@ class AuthorshipRelation extends AbstractRelation
      */
     public function initializeObject(): void
     {
-        $this->contributor ??= new ObjectStorage();
+        $this->contributor = new ObjectStorage();
     }
 
     /**
@@ -83,7 +83,7 @@ class AuthorshipRelation extends AbstractRelation
      *
      * @return ObjectStorage<Agent>
      */
-    public function getContributor(): ?ObjectStorage
+    public function getContributor(): ObjectStorage
     {
         return $this->contributor;
     }
@@ -105,7 +105,7 @@ class AuthorshipRelation extends AbstractRelation
      */
     public function addContributor(Agent $contributor): void
     {
-        $this->contributor?->attach($contributor);
+        $this->contributor->attach($contributor);
     }
 
     /**
@@ -115,7 +115,7 @@ class AuthorshipRelation extends AbstractRelation
      */
     public function removeContributor(Agent $contributor): void
     {
-        $this->contributor?->detach($contributor);
+        $this->contributor->detach($contributor);
     }
 
     /**

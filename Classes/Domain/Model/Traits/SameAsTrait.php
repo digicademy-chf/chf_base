@@ -24,20 +24,20 @@ trait SameAsTrait
     /**
      * Authoritative web address to identify an entity across the web
      * 
-     * @var ?ObjectStorage<SameAs>
+     * @var ObjectStorage<SameAs>
      */
     #[Lazy()]
     #[Cascade([
         'value' => 'remove',
     ])]
-    protected ?ObjectStorage $sameAs = null;
+    protected ObjectStorage $sameAs;
 
     /**
      * Get same as
      *
      * @return ObjectStorage<SameAs>
      */
-    public function getSameAs(): ?ObjectStorage
+    public function getSameAs(): ObjectStorage
     {
         return $this->sameAs;
     }
@@ -59,7 +59,7 @@ trait SameAsTrait
      */
     public function addSameAs(SameAs $sameAs): void
     {
-        $this->sameAs?->attach($sameAs);
+        $this->sameAs->attach($sameAs);
     }
 
     /**
@@ -69,7 +69,7 @@ trait SameAsTrait
      */
     public function removeSameAs(SameAs $sameAs): void
     {
-        $this->sameAs?->detach($sameAs);
+        $this->sameAs->detach($sameAs);
     }
 
     /**

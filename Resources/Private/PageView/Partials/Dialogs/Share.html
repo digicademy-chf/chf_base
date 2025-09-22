@@ -41,24 +41,24 @@
             </li>
         </ul>
         <h3><f:translate key="templates.share.services" extensionName="chf_base"/></h3>
-        <ul class="mdlr-buttonrow mdlr-variant-separate">
+        <ul class="mdlr-buttonrow">
             <li>
-                <mdlr:atom.button.function variants="{0: 'icon', 1: 'round', 2: 'transparent'}" function="mastodon" text="{f:translate(key: 'templates.share.services.mastodon', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.mastodon.hint', extensionName: 'chf_base')}" icon="mastodon" data="{target: '{title -> f:format.urlencode()}%0d%0a%0d%0a{f:uri.page(absolute: \'true\')}', prompt: '{f:translate(key: \'templates.share.services.mastodon.prompt\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.share.services.mastodon.failure\', extensionName: \'chf_base\')}'}" />
+                <mdlr:atom.button.function variants="{0: 'icon', 1: 'transparent'}" function="mastodon" text="{f:translate(key: 'templates.share.services.mastodon', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.mastodon.hint', extensionName: 'chf_base')}" icon="mastodon" data="{target: '{title -> f:format.urlencode()}%0d%0a%0d%0a{f:uri.page(absolute: \'true\')}', prompt: '{f:translate(key: \'templates.share.services.mastodon.prompt\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.share.services.mastodon.failure\', extensionName: \'chf_base\')}'}" />
             </li>
             <li>
-                <mdlr:atom.button.external variants="{0: 'icon', 1: 'round', 2: 'transparent'}" uri="{f:render(partial: 'Social/Linkedin', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.linkedin', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.linkedin.hint', extensionName: 'chf_base')}" icon="linkedin" />
+                <mdlr:atom.button.external variants="{0: 'icon', 1: 'transparent'}" uri="{f:render(partial: 'Social/Linkedin', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.linkedin', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.linkedin.hint', extensionName: 'chf_base')}" icon="linkedin" />
             </li>
             <li>
-                <mdlr:atom.button.external variants="{0: 'icon', 1: 'round', 2: 'transparent'}" uri="{f:render(partial: 'Social/Tumblr', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.tumblr', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.tumblr.hint', extensionName: 'chf_base')}" icon="tumblr" />
+                <mdlr:atom.button.external variants="{0: 'icon', 1: 'transparent'}" uri="{f:render(partial: 'Social/Tumblr', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.tumblr', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.tumblr.hint', extensionName: 'chf_base')}" icon="tumblr" />
             </li>
             <li>
-                <mdlr:atom.button.external variants="{0: 'icon', 1: 'round', 2: 'transparent'}" uri="{f:render(partial: 'Social/Reddit', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.reddit', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.reddit.hint', extensionName: 'chf_base')}" icon="reddit" />
+                <mdlr:atom.button.external variants="{0: 'icon', 1: 'transparent'}" uri="{f:render(partial: 'Social/Reddit', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.reddit', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.reddit.hint', extensionName: 'chf_base')}" icon="reddit" />
             </li>
             <li>
-                <mdlr:atom.button.external variants="{0: 'icon', 1: 'round', 2: 'transparent'}" uri="{f:render(partial: 'Social/Facebook', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.facebook', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.facebook.hint', extensionName: 'chf_base')}" icon="facebook" />
+                <mdlr:atom.button.external variants="{0: 'icon', 1: 'transparent'}" uri="{f:render(partial: 'Social/Facebook', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.facebook', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.facebook.hint', extensionName: 'chf_base')}" icon="facebook" />
             </li>
             <li>
-                <mdlr:atom.button.external variants="{0: 'icon', 1: 'round', 2: 'transparent'}" uri="{f:render(partial: 'Social/Xitter', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.xitter', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.xitter.hint', extensionName: 'chf_base')}" icon="xitter" />
+                <mdlr:atom.button.external variants="{0: 'icon', 1: 'transparent'}" uri="{f:render(partial: 'Social/Xitter', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.xitter', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.xitter.hint', extensionName: 'chf_base')}" icon="xitter" />
             </li>
         </ul>
         <p class="mdlr-note"><f:translate key="templates.share.dissociation" extensionName="chf_base"/></p>

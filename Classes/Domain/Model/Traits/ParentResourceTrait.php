@@ -23,17 +23,17 @@ trait ParentResourceTrait
     /**
      * Resource that this database record is part of
      * 
-     * @var ?ObjectStorage<AbstractResource>
+     * @var ObjectStorage<AbstractResource>
      */
     #[Lazy()]
-    protected ?ObjectStorage $parentResource = null;
+    protected ObjectStorage $parentResource;
 
     /**
      * Get parent resource
      *
      * @return ObjectStorage<AbstractResource>
      */
-    public function getParentResource(): ?ObjectStorage
+    public function getParentResource(): ObjectStorage
     {
         return $this->parentResource;
     }
@@ -55,7 +55,7 @@ trait ParentResourceTrait
      */
     public function addParentResource(AbstractResource $parentResource): void
     {
-        $this->parentResource?->attach($parentResource);
+        $this->parentResource->attach($parentResource);
     }
 
     /**
@@ -65,7 +65,7 @@ trait ParentResourceTrait
      */
     public function removeParentResource(AbstractResource $parentResource): void
     {
-        $this->parentResource?->detach($parentResource);
+        $this->parentResource->detach($parentResource);
     }
 
     /**
