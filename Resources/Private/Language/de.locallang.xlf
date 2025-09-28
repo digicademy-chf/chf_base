@@ -1297,6 +1297,14 @@
                 <source>Close</source>
                 <target>Schließen</target>
             </trans-unit>
+            <trans-unit id="templates.generic.add" resname="templates.generic.add" approved="yes">
+                <source>Add</source>
+                <target>Hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.remove" resname="templates.generic.remove" approved="yes">
+                <source>Remove</source>
+                <target>Entfernen</target>
+            </trans-unit>
             <trans-unit id="templates.generic.unknown" resname="templates.generic.unknown" approved="yes">
                 <source>Unknown</source>
                 <target>Unbekannt</target>
@@ -1405,9 +1413,21 @@
                 <source>Compose email</source>
                 <target>E-Mail verfassen</target>
             </trans-unit>
+            <trans-unit id="templates.generic.type.page" resname="templates.generic.type.page" approved="yes">
+                <source>Page</source>
+                <target>Seite</target>
+            </trans-unit>
             <trans-unit id="templates.generic.retrieve" resname="templates.generic.retrieve" approved="yes">
                 <source>Retrieve %s</source>
                 <target>%s abrufen</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.json" resname="templates.generic.retrieve.json" approved="yes">
+                <source><![CDATA[<abbr title="JavaScript Object Notation">]]>JSON<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="JavaScript Object Notation">]]>JSON<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.json.plain" resname="templates.generic.retrieve.json.plain" approved="yes">
+                <source>JSON</source>
+                <target>JSON</target>
             </trans-unit>
             <trans-unit id="templates.generic.retrieve.jsonld" resname="templates.generic.retrieve.jsonld" approved="yes">
                 <source><![CDATA[<abbr title="JavaScript Object Notation for Linked Data">]]>JSON-LD<![CDATA[</abbr>]]></source>
@@ -1440,6 +1460,14 @@
             <trans-unit id="templates.generic.retrieve.teixml.plain" resname="templates.generic.retrieve.teixml.plain" approved="yes">
                 <source>TEI/XML</source>
                 <target>TEI/XML</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.csv" resname="templates.generic.retrieve.csv" approved="yes">
+                <source><![CDATA[<abbr title="Comma-separated values">]]>CSV<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Durch Kommata getrennte Werte">]]>CSV<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.csv.plain" resname="templates.generic.retrieve.csv.plain" approved="yes">
+                <source>CSV</source>
+                <target>CSV</target>
             </trans-unit>
             <trans-unit id="templates.header.jump" resname="templates.header.jump" approved="yes">
                 <source>On this page</source>
@@ -1741,9 +1769,25 @@
                 <source>Watch</source>
                 <target>Merken</target>
             </trans-unit>
-            <trans-unit id="templates.watch.empty" resname="templates.watch.empty" approved="yes">
+            <trans-unit id="templates.watch.list" resname="templates.watch.list" approved="yes">
+                <source>Watchlist</source>
+                <target>Merkliste</target>
+            </trans-unit>
+            <trans-unit id="templates.watch.list.empty" resname="templates.watch.list.empty" approved="yes">
                 <source>The watchlist ist currently empty</source>
                 <target>Die Merkliste ist noch leer</target>
+            </trans-unit>
+            <trans-unit id="templates.watch.list.failure" resname="templates.watch.list.failure" approved="yes">
+                <source>Something went wrong</source>
+                <target>Das hat leider nicht geklappt</target>
+            </trans-unit>
+            <trans-unit id="templates.watch.serializations" resname="templates.watch.serializations" approved="yes">
+                <source>Data formats</source>
+                <target>Datenformate</target>
+            </trans-unit>
+            <trans-unit id="templates.watch.serializations.clear" resname="templates.watch.serializations.clear" approved="yes">
+                <source>Clear list</source>
+                <target>Liste leeren</target>
             </trans-unit>
             <trans-unit id="templates.search" resname="templates.search" approved="yes">
                 <source>Search</source>

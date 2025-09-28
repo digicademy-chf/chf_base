@@ -979,6 +979,12 @@
             <trans-unit id="templates.generic.close" resname="templates.generic.close">
                 <source>Close</source>
             </trans-unit>
+            <trans-unit id="templates.generic.add" resname="templates.generic.add">
+                <source>Add</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.remove" resname="templates.generic.remove">
+                <source>Remove</source>
+            </trans-unit>
             <trans-unit id="templates.generic.unknown" resname="templates.generic.unknown">
                 <source>Unknown</source>
             </trans-unit>
@@ -1060,8 +1066,17 @@
             <trans-unit id="templates.generic.email" resname="templates.generic.email">
                 <source>Compose email</source>
             </trans-unit>
+            <trans-unit id="templates.generic.type.page" resname="templates.generic.type.page">
+                <source>Page</source>
+            </trans-unit>
             <trans-unit id="templates.generic.retrieve" resname="templates.generic.retrieve">
                 <source>Retrieve %s</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.json" resname="templates.generic.retrieve.json">
+                <source><![CDATA[<abbr title="JavaScript Object Notation">]]>JSON<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.json.plain" resname="templates.generic.retrieve.json.plain">
+                <source>JSON</source>
             </trans-unit>
             <trans-unit id="templates.generic.retrieve.jsonld" resname="templates.generic.retrieve.jsonld">
                 <source><![CDATA[<abbr title="JavaScript Object Notation for Linked Data">]]>JSON-LD<![CDATA[</abbr>]]></source>
@@ -1086,6 +1101,12 @@
             </trans-unit>
             <trans-unit id="templates.generic.retrieve.teixml.plain" resname="templates.generic.retrieve.teixml.plain">
                 <source>TEI/XML</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.csv" resname="templates.generic.retrieve.csv">
+                <source><![CDATA[<abbr title="Comma-separated values">]]>CSV<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.generic.retrieve.csv.plain" resname="templates.generic.retrieve.csv.plain">
+                <source>CSV</source>
             </trans-unit>
             <trans-unit id="templates.header.jump" resname="templates.header.jump">
                 <source>On this page</source>
@@ -1312,8 +1333,20 @@
             <trans-unit id="templates.watch" resname="templates.watch">
                 <source>Watch</source>
             </trans-unit>
-            <trans-unit id="templates.watch.empty" resname="templates.watch.empty">
+            <trans-unit id="templates.watch.list" resname="templates.watch.list">
+                <source>Watchlist</source>
+            </trans-unit>
+            <trans-unit id="templates.watch.list.empty" resname="templates.watch.list.empty">
                 <source>The watchlist ist currently empty</source>
+            </trans-unit>
+            <trans-unit id="templates.watch.list.failure" resname="templates.watch.list.failure">
+                <source>Something went wrong</source>
+            </trans-unit>
+            <trans-unit id="templates.watch.serializations" resname="templates.watch.serializations">
+                <source>Data formats</source>
+            </trans-unit>
+            <trans-unit id="templates.watch.serializations.clear" resname="templates.watch.serializations.clear">
+                <source>Clear list</source>
             </trans-unit>
             <trans-unit id="templates.search" resname="templates.search">
                 <source>Search</source>
