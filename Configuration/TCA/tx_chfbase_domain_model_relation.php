@@ -95,7 +95,7 @@ return [
             'description' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation.record.description',
             'config' => [
                 'type' => 'group',
-                'allowed' => 'tx_chfbase_domain_model_resource,tx_chfbase_domain_model_agent,tx_chfbase_domain_model_location,tx_chfbase_domain_model_period,tx_chfbib_domain_model_bibliographicentry,tx_chflex_domain_model_dictionaryentry,tx_chflex_domain_model_encyclopediaentry,tx_chflex_domain_model_frequency,tx_chflex_domain_model_example,tx_chfmap_domain_model_feature,tx_chfpub_domain_model_volume,tx_chfpub_domain_model_essay,tx_chfobject_domain_model_objectgroup,tx_chfobject_domain_model_singleobject,tx_chfmedia_domain_model_filegroup,sys_file_metadata,',
+                'allowed' => 'tx_chfbase_domain_model_resource,tx_chfbase_domain_model_agent,tx_chfbase_domain_model_location,tx_chfbase_domain_model_period',
                 'maxitems' => 1,
                 'size' => 1,
                 'elementBrowserEntryPoints' => [

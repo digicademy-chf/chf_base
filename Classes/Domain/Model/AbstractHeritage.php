@@ -27,7 +27,7 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 defined('TYPO3') or die();
 
 /**
- * Model for StubAbstractHeritage
+ * Model for AbstractAbstractHeritage
  */
 class AbstractAbstractHeritage extends AbstractBase
 {
