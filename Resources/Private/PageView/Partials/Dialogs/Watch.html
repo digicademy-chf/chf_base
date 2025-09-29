@@ -3,8 +3,8 @@
         <f:render partial="Dialogs/Title" arguments="{title: '{f:translate(key: \'templates.watch\', extensionName: \'chf_base\')}'}"/>
         <ul class="mdlr-boxedlist">
             <li>
-                <mdlr:atom.button.function function="watchlist-add" variants="{0: 'icon', 1: 'transparent', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.add', extensionName: 'chf_base')}" data="{target: '{f:uri.page()}', label: '{label}', type: '{type}', failure: '{f:translate(key: \'templates.watch.list.failure\', extensionName: \'chf_base\')}'}" icon="add" />
-                <a href="{f:uri.page()}" class="mdlr-boxedlist-emphasis">{label}</a>
+                <mdlr:atom.button.function function="watchlist-add" variants="{0: 'icon', 1: 'transparent', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.add', extensionName: 'chf_base')}" data="{target: '{f:uri.page(absolute: \'{true}\')}', label: '{label}', type: '{type}', failure: '{f:translate(key: \'templates.watch.list.failure\', extensionName: \'chf_base\')}'}" icon="add" />
+                <a href="{f:uri.page(absolute: '{true}')}" class="mdlr-boxedlist-emphasis">{label}</a>
                 <p>{type}</p>
             </li>
         </ul>
