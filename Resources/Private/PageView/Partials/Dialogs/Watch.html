@@ -16,7 +16,7 @@
             <p><f:translate key="templates.watch.list.empty" extensionName="chf_base"/></p>
         </div>
         <h3 class="mdlr-variant-hidden mdlr-function-watchlist-serialisations"><f:translate key="templates.watch.serializations" extensionName="chf_base"/></h3>
-        <ul class="mdlr-buttonrow mdlr-variant-hidden mdlr-function-watchlist-serialisations">
+        <menu class="mdlr-buttonrow mdlr-variant-hidden mdlr-function-watchlist-serialisations">
             <li>
                 <mdlr:atom.button.function function="watchlist-csv" text="{f:translate(key: 'templates.generic.retrieve.csv', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.csv.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" />
             </li>
@@ -26,6 +26,6 @@
             <li>
                 <mdlr:atom.button.function function="watchlist-clear" text="{f:translate(key: 'templates.watch.serializations.clear', extensionName: 'chf_base')}" />
             </li>
-        </ul>
+        </menu>
     </dialog>
 </html>

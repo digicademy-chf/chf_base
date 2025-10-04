@@ -20,11 +20,11 @@
                     <f:if condition="{index.cycle} == 2">
                         <f:if condition="{menuItem.current} == 0 && {menuItem.link} != {currentPage}">
                             <f:then>
-                                <ul class="mdlr-buttonrow mdlr-variant-nowrap">
+                                <menu class="mdlr-buttonrow mdlr-variant-nowrap">
                                     <li>
                                         <mdlr:atom.button.page variants="{0: 'icon', 1: 'unobtrusive'}" pageUid="{menuItem.data.uid}" text="{f:translate(key: 'templates.header.back', extensionName: 'chf_base')}" icon="back" />
                                     </li>
-                                </ul>
+                                </menu>
                             </f:then>
                         </f:if>
                     </f:if>

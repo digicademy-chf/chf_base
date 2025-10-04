@@ -43,6 +43,13 @@ page {
             }
             30 = menu
             30 {
+                as = searchMenu
+                titleField = nav_title // title
+                special = list
+                special.value = {$chf.search.pages}
+            }
+            40 = menu
+            40 {
                 as = rootlineMenu
                 titleField = nav_title // title
                 special = rootline
@@ -51,14 +58,14 @@ page {
                     reverseOrder = 1
                 }
             }
-            40 = menu
-            40 {
+            50 = menu
+            50 {
                 as = subMenu
                 titleField = nav_title // title
                 special = directory
             }
-            50 = menu
-            50 {
+            60 = menu
+            60 {
                 as = languageMenu
                 special = language
                 special {
@@ -66,12 +73,12 @@ page {
                     normalWhenNoLanguage = 1
                 }
             }
-            60 = page-content
-            60 {
+            70 = page-content
+            70 {
                 as = contentElements
             }
-            70 = files
-            70 {
+            80 = files
+            80 {
                 as = images
                 references {
                     table = pages

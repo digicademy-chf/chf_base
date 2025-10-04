@@ -1,8 +1,10 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:if condition="{listContents}">
-        <li class="mdlr-dropdown-wrapper">
-            <mdlr:atom.button.function id="main-toc-handle" function="dropdown" variants="{0: '{f:if(condition: \'{listSubMenu}\', then: \'icon\', else: \'texticon\')}', 1: 'light'}" text="{f:translate(key: 'templates.main.toc', extensionName: 'chf_base')}" aria="{controls: 'main-toc-content', haspopup: 'true', expanded: 'false'}" icon="toc" />
-            <ul class="mdlr-dropdown {f:if(condition: '{listSubMenu}', then: 'mdlr-variant-right')} mdlr-variant-toc" id="main-toc-content" role="listbox" aria-labelledby="main-toc-handle" tabindex="-1">
+        <mdlr:molecule.dropdown id="main-toc" variants="{f:if(condition: '{listSubMenu}', then: '{0: \'toc\', 1: \'right\'}', else: '{0: \'toc\'}')}" role="navigation">
+            <f:fragment name="handle">
+                <mdlr:atom.button.function function="dropdown" variants="{0: '{f:if(condition: \'{listSubMenu}\', then: \'icon\', else: \'texticon\')}', 1: 'light'}" text="{f:translate(key: 'templates.main.toc', extensionName: 'chf_base')}" icon="toc" popoverTarget="main-toc" />
+            </f:fragment>
+            <f:fragment name="list">
                 <f:for each="{contentElements}" as="contentElement" iteration="index">
                     <f:if condition="{contentElement.header} && {contentElement.sectionIndex} && {contentElement.header_layout} != 100">
                         <li>
@@ -25,7 +27,7 @@
                         </li>
                     </f:if>
                 </f:for>
-            </ul>
-        </li>
+            </f:fragment>
+        </mdlr:molecule.dropdown>
     </f:if>
 </html>

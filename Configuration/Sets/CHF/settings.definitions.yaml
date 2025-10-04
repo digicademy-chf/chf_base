@@ -56,9 +56,9 @@ settings:
     default: 0
   chf.search.pages:
     label: 'Search page IDs'
-    description: 'List of page IDs that contain faceted search options'
-    type: stringlist
-    default: []
+    description: 'Comma-separated list of page IDs that contain faceted search options'
+    type: string
+    default: ''
   chf.search.examples:
     label: 'Sample searches'
     description: 'List of exemplary search terms to show users as guidance'

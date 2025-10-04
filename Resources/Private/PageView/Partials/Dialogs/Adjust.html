@@ -5,19 +5,19 @@
             <div>
                 <dt><f:translate key="templates.adjust.language" extensionName="chf_base"/></dt>
                 <dd>
-                    <ul class="mdlr-buttonrow">
+                    <menu class="mdlr-buttonrow">
                         <f:for each="{languageMenu}" as="menuItem">
                             <li>
                                 <mdlr:atom.button.current variants="{f:if(condition: menuItem.active, then: '{0: \'mini\', 1: \'light\', 2: \'active\'}', else: '{0: \'mini\', 1: \'light\'}')}" text="{site.languages.{menuItem.languageUid}.navigationTitle}" language="{menuItem.languageUid}" rel="alternate" />
                             </li>
                         </f:for>
-                    </ul>
+                    </menu>
                 </dd>
             </div>
             <div>
                 <dt><f:translate key="templates.adjust.color" extensionName="chf_base"/></dt>
                 <dd>
-                    <ul class="mdlr-buttonrow">
+                    <menu class="mdlr-buttonrow">
                         <li>
                             <mdlr:atom.button.function function="theme" variants="{0: 'mini', 1: 'light', 2: 'active'}" text="{f:translate(key: 'templates.adjust.color.auto', extensionName: 'chf_base')}" data="{target: 'auto'}" />
                         </li>
@@ -27,17 +27,17 @@
                         <li>
                             <mdlr:atom.button.function function="theme" variants="{0: 'mini', 1: 'light'}" text="{f:translate(key: 'templates.adjust.color.dark', extensionName: 'chf_base')}" data="{target: 'dark'}" />
                         </li>
-                    </ul>
+                    </menu>
                 </dd>
             </div>
             <div>
                 <dt><f:translate key="templates.adjust.device" extensionName="chf_base"/></dt>
                 <dd>
-                    <ul class="mdlr-buttonrow">
+                    <menu class="mdlr-buttonrow">
                         <li>
                             <mdlr:atom.button.function function="storage" variants="{0: 'mini'}" text="{f:translate(key: 'templates.adjust.device.storage', extensionName: 'chf_base')}" />
                         </li>
-                    </ul>
+                    </menu>
                 </dd>
             </div>
         </dl>

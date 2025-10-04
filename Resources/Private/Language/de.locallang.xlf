@@ -1417,6 +1417,10 @@
                 <source>Page</source>
                 <target>Seite</target>
             </trans-unit>
+            <trans-unit id="templates.generic.results.empty" resname="templates.generic.results.empty" approved="yes">
+                <source>No results match these criteria</source>
+                <target>Keine Treffer für diese Kriterien</target>
+            </trans-unit>
             <trans-unit id="templates.generic.retrieve" resname="templates.generic.retrieve" approved="yes">
                 <source>Retrieve %s</source>
                 <target>%s abrufen</target>
@@ -1810,20 +1814,12 @@
                 <target>Nach diesem Beispiel suchen</target>
             </trans-unit>
             <trans-unit id="templates.search.exact" resname="templates.search.exact" approved="yes">
-                <source>Titles only, incl. <![CDATA[<abbr title="Regular Expressions (PCRE2)">]]>RegEx<![CDATA[</abbr>]]></source>
-                <target>Nur Titel, inkl. <![CDATA[<abbr title="Regular Expressions (PCRE2)">]]>RegEx<![CDATA[</abbr>]]></target>
+                <source>Titles only, <![CDATA[<abbr title="Regular Expressions (PCRE2)">]]>RegEx<![CDATA[</abbr>]]> possible</source>
+                <target>Nur Titel, <![CDATA[<abbr title="Regular Expressions (PCRE2)">]]>RegEx<![CDATA[</abbr>]]> möglich</target>
             </trans-unit>
-            <trans-unit id="templates.search.results" resname="templates.search.results" approved="yes">
-                <source>Results</source>
-                <target>Ergebnisse</target>
-            </trans-unit>
-            <trans-unit id="templates.search.results.empty" resname="templates.search.results.empty" approved="yes">
-                <source>No search results (yet)</source>
-                <target>(Noch) keine Suchergebnisse</target>
-            </trans-unit>
-            <trans-unit id="templates.search.advanced" resname="templates.search.advanced" approved="yes">
-                <source>Further options</source>
-                <target>Mehr Optionen</target>
+            <trans-unit id="templates.search.resource.hint" resname="templates.search.resource.hint" approved="yes">
+                <source>Data to search</source>
+                <target>Zu durchsuchende Daten</target>
             </trans-unit>
             <trans-unit id="templates.adjust" resname="templates.adjust" approved="yes">
                 <source>Adjust</source>

@@ -14,7 +14,7 @@
 
 <f:render partial="Dialogs/Share" arguments="{site: '{f:if(condition: \'{language.websiteTitle}\', then: \'{language.websiteTitle}\', else: \'{site.configuration.websiteTitle}\')}', title: '{page.pageRecord.title}', description: '{f:if(condition: \'{page.pageRecord.abstract}\', then: \'{page.pageRecord.abstract}\', else: \'{page.pageRecord.description}\')}', images: '{images}'}" />
 
-<f:render partial="Dialogs/Search"/>
+<f:render partial="Dialogs/Search" arguments="{searchMenu: searchMenu}" />
 
 <f:render partial="Dialogs/Watch" arguments="{label: '{page.pageRecord.title}', type: '{f:translate(key: \'templates.generic.type.page\', extensionName: \'chf_base\')}'}" />
 

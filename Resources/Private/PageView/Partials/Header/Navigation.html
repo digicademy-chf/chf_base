@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <nav id="header-navigation" class="mdlr-pattern-slot-b mdlr-pattern-align-center mdlr-pattern-align-middle">
         <h2 class="mdlr-variant-tacit"><f:translate key="templates.header.navigation" extensionName="chf_base"/></h2>
-        <ul class="mdlr-viewswitcher">
+        <menu class="mdlr-viewswitcher">
             <f:for each="{mainMenu}" as="menuItem">
                 <li>
                     <f:link.page pageUid="{menuItem.data.uid}" class="{f:if(condition: menuItem.active, then:'mdlr-variant-active')}">
@@ -9,6 +9,6 @@
                     </f:link.page>
                 </li>
             </f:for>
-        </ul>
+        </menu>
     </nav>
 </html>

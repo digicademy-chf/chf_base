@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <nav id="footer-social" class="mdlr-pattern-slot-d mdlr-pattern-align-right-above-600 mdlr-pattern-align-middle">
         <h3 class="mdlr-variant-tacit"><f:translate key="templates.footer.social" extensionName="chf_base"/></h3>
-        <ul class="mdlr-buttonrow">
+        <menu class="mdlr-buttonrow">
             <f:if condition="{settings.chf.socials.mastodon}">
                 <li>
                     <mdlr:atom.button.external uri="{settings.chf.socials.mastodon}" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.mastodon', extensionName: 'chf_base')}" icon="mastodon" rel="me" />
@@ -48,6 +48,6 @@
             <li>
                 <mdlr:atom.button.section section="main" variants="{0: 'icon', 1: 'transparent'}" function="up" text="{f:translate(key: 'templates.footer.social.up', extensionName: 'chf_base')}" icon="up" />
             </li>
-        </ul>
+        </menu>
     </nav>
 </html>

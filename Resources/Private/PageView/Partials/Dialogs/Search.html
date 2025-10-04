@@ -1,18 +1,38 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <dialog id="search" class="mdlr-modal mdlr-variant-wide">
-        <f:render partial="Dialogs/Title" arguments="{title: '{f:translate(key: \'templates.search\', extensionName: \'chf_base\')}'}"/>
-        <form class="mdlr-form" role="search">
-            <div class="mdlr-form-search">
-                <label for="search-query" class="mdlr-variant-tacit"><f:translate key="templates.search.query" extensionName="chf_base"/></label>
-                <input type="search" id="search-query" name="q" placeholder="{f:translate(key: 'templates.search.query.placeholder', extensionName: 'chf_base')}">
-                <mdlr:atom.button.function id="search-submit" function="" variants="{0: 'icon'}" text="{f:translate(key: 'templates.search.go', extensionName: 'chf_base')}" icon="go" />
-            </div>
-            <div class="mdlr-form-addition">
-                <div class="mdlr-form-entry">
-                    <input type="checkbox" class="mdlr-switch" id="search-exact" name="search-exact">
-                    <label for="search-exact"><f:format.raw><f:translate key="templates.search.exact" extensionName="chf_base"/></f:format.raw></label>
+    <f:if condition="{searchMenu}">
+        <dialog id="search" class="mdlr-modal mdlr-variant-wide">
+            <f:render partial="Dialogs/Title" arguments="{title: '{f:translate(key: \'templates.search\', extensionName: \'chf_base\')}'}"/>
+            <f:for each="{searchMenu}" as="menuItem" iteration="searchIterator">
+                <f:if condition="{searchIterator.isFirst} || {menuItem.active}">
+                    <f:variable name="searchMenuLink">{menuItem.link}</f:variable>
+                    <f:variable name="searchMenuTitle">{menuItem.title}</f:variable>
+                </f:if>
+            </f:for>
+            <form action="{searchMenuLink}" method="get" class="mdlr-form" role="search">
+                <div class="mdlr-form-multi">
+                    <label for="search-query" class="mdlr-variant-tacit"><f:translate key="templates.search.query" extensionName="chf_base"/></label>
+                    <input type="search" id="search-query" name="q" placeholder="{f:translate(key: 'templates.search.query.placeholder', extensionName: 'chf_base')}">
+                    <mdlr:atom.button.function id="search-submit" function="" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.search.go', extensionName: 'chf_base')}" icon="go" />
                 </div>
-                <f:if condition="{settings.chf.search.examples}">
+                <div class="mdlr-form-addition">
+                    <div class="mdlr-form-entry">
+                        <input type="checkbox" class="mdlr-switch" id="search-exact" name="search-exact">
+                        <label for="search-exact"><f:format.raw><f:translate key="templates.search.exact" extensionName="chf_base"/></f:format.raw></label>
+                    </div>
+                    <mdlr:molecule.dropdown id="search-resource" variants="{0: 'right', 1: 'up'}">
+                        <f:fragment name="handle">
+                            <mdlr:atom.button.function function="dropdown" variants="{0: 'texticon', 1: 'light'}" text="{searchMenuTitle}" hint="{f:translate(key: 'templates.search.resource.hint', extensionName: 'chf_base')}" iconAfter="down" popoverTarget="search-resource" />
+                        </f:fragment>
+                        <f:fragment name="list">
+                            <f:for each="{searchMenu}" as="menuItem">
+                                <li role="option" aria-selected="{f:if(condition: '{menuItem.link} == {searchMenuLink}', then: 'true', else: 'false')}">
+                                    <mdlr:atom.button.page function="select-form" pageUid="{menuItem.data.uid}" variants="{0: 'mini', 1: 'unobtrusive'}" text="{menuItem.title}" icon="{f:if(condition: '{menuItem.link} == {searchMenuLink}', then: 'checkmark', else: 'blank')}" />
+                                </li>
+                            </f:for>
+                        </f:fragment>
+                    </mdlr:molecule.dropdown>
+                </div>
+                <!--<f:if condition="{settings.chf.search.examples}">
                     <ul class="mdlr-pills">
                         <f:for each="{settings.chf.search.examples}" as="example">
                             <li>
@@ -22,29 +42,8 @@
                             </li>
                         </f:for>
                     </ul>
-                </f:if>
-            </div>
-            <h3 class="mdlr-variant-tacit"><f:translate key="templates.search.results" extensionName="chf_base"/></h3>
-            <div class="mdlr-empty">
-                <svg width="160" height="160" viewBox="0 0 160 160" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <use href="#illustration-search"/>
-                </svg>
-                <p><f:translate key="templates.search.results.empty" extensionName="chf_base"/></p>
-            </div>
-            <f:if condition="{settings.chf.search.pages}">
-                <div class="mdlr-buttonrow">
-                    <div class="mdlr-dropdown-wrapper">
-                        <mdlr:atom.button.function id="search-advanced-handle" function="dropdown" variants="{0: 'texticon'}" text="{f:translate(key: 'templates.search.advanced', extensionName: 'chf_base')}" aria="{controls: 'search-advanced-content', haspopup: 'true', expanded: 'false'}" iconAfter="down" />
-                        <ul class="mdlr-dropdown mdlr-variant-up" id="search-advanced-content" role="listbox" aria-labelledby="search-advanced-handle" tabindex="-1">
-                            <f:for each="{settings.chf.search.pages}" as="page">
-                                <li>
-                                    <mdlr:atom.button.pageAuto pageUid="{page}" variants="{0: 'mini', 1: 'unobtrusive'}" />
-                                </li>
-                            </f:for>
-                        </ul>
-                    </div>
-                </div>
-            </f:if>
-        </form>
-    </dialog>
+                </f:if>-->
+            </form>
+        </dialog>
+    </f:if>
 </html>

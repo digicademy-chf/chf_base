@@ -1069,6 +1069,9 @@
             <trans-unit id="templates.generic.type.page" resname="templates.generic.type.page">
                 <source>Page</source>
             </trans-unit>
+            <trans-unit id="templates.generic.results.empty" resname="templates.generic.results.empty">
+                <source>No results match these criteria</source>
+            </trans-unit>
             <trans-unit id="templates.generic.retrieve" resname="templates.generic.retrieve">
                 <source>Retrieve %s</source>
             </trans-unit>
@@ -1364,16 +1367,10 @@
                 <source>Search for this example</source>
             </trans-unit>
             <trans-unit id="templates.search.exact" resname="templates.search.exact">
-                <source>Titles only, incl. <![CDATA[<abbr title="Regular Expressions (PCRE2)">]]>RegEx<![CDATA[</abbr>]]></source>
+                <source>Titles only, <![CDATA[<abbr title="Regular Expressions (PCRE2)">]]>RegEx<![CDATA[</abbr>]]> possible</source>
             </trans-unit>
-            <trans-unit id="templates.search.results" resname="templates.search.results">
-                <source>Results</source>
-            </trans-unit>
-            <trans-unit id="templates.search.results.empty" resname="templates.search.results.empty">
-                <source>No search results (yet)</source>
-            </trans-unit>
-            <trans-unit id="templates.search.advanced" resname="templates.search.advanced">
-                <source>Further options</source>
+            <trans-unit id="templates.search.resource.hint" resname="templates.search.resource.hint">
+                <source>Data to search</source>
             </trans-unit>
             <trans-unit id="templates.adjust" resname="templates.adjust">
                 <source>Adjust</source>
