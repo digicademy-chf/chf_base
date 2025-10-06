@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:if condition="{searchMenu}">
-        <dialog id="search" class="mdlr-modal mdlr-variant-wide">
+        <dialog id="search" class="mdlr-modal mdlr-variant-wide" closedby="any">
             <f:render partial="Dialogs/Title" arguments="{title: '{f:translate(key: \'templates.search\', extensionName: \'chf_base\')}'}"/>
             <f:for each="{searchMenu}" as="menuItem" iteration="searchIterator">
                 <f:if condition="{searchIterator.isFirst} || {menuItem.active}">
