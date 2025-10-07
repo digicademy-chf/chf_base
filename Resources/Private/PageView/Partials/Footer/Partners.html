@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:if condition="{settings.chf.partners.urls} && {settings.chf.partners.logos} && {settings.chf.partners.names}">
-        <section id="footer-partners" class="mdlr-pattern-slot-c mdlr-pattern-align-left-above-900 mdlr-pattern-align-middle">
+        <mdlr:template.area semanticType="section" id="footer-partners" areas="{0: 'slot-c', 1: 'align-left-above-900', 2: 'align-middle'}">
             <h3 class="mdlr-variant-tacit"><f:translate key="templates.footer.partners" extensionName="chf_base"/></h3>
             <ul class="mdlr-imagerow">
                 <f:for each="{settings.chf.partners.urls}" as="url" key="index">
@@ -12,6 +12,6 @@
                     </li>
                 </f:for>
             </ul>
-        </section>
+        </mdlr:template.area>
     </f:if>
 </html>

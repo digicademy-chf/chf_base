@@ -1,5 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <section class="mdlr-pattern-slot-a">
+    <mdlr:template.area semanticType="section" areas="{0: 'slot-a'}">
         <h4 class="mdlr-variant-tacit"><f:translate key="templates.about.properties" extensionName="chf_base"/></h4>
         <dl class="mdlr-boxedlist">
             <f:if condition="{page.pageRecord.author}">
@@ -71,7 +71,7 @@
                 </div>
             </f:if>
         </dl>
-    </section>
+    </mdlr:template.area>
 
     <f:comment><f:translate key="templates.main.rights" extensionName="chf_base"/>
     <!--<div>

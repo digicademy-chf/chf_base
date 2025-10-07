@@ -1,5 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <div class="mdlr-logo mdlr-variant-back mdlr-pattern-slot-a mdlr-pattern-align-left">
+    <mdlr:molecule.logo variants="{0: 'back'}" areas="{0: 'slot-a', 1: 'align-left'}">
         <h1 id="header-name">
             <f:link.page pageUid="{site.rootPageId}" title="{f:translate(key: 'templates.generic.home', extensionName: 'chf_base')}" class="mdlr-imagelink">
                 <span>
@@ -31,5 +31,5 @@
                 </f:else>
             </f:if>
         </f:for>
-    </div>
+    </mdlr:molecule.logo>
 </html>

@@ -1,5 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <nav id="header-meta" class="mdlr-pattern-slot-c mdlr-pattern-align-right mdlr-pattern-align-middle">
+    <mdlr:template.area semanticType="nav" id="header-meta" areas="{0: 'slot-c', 1: 'align-right', 2: 'align-middle'}">
         <h2 class="mdlr-variant-tacit"><f:translate key="templates.header.meta" extensionName="chf_base"/></h2>
         <menu class="mdlr-buttonrow mdlr-variant-nowrap">
             <f:if condition="{searchMenu}">
@@ -17,5 +17,5 @@
                 <mdlr:atom.button.function id="header-meta-adjust" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.adjust', extensionName: 'chf_base')}" aria="{controls: 'adjust'}" icon="adjust" />
             </li>
         </menu>
-    </nav>
+    </mdlr:template.area>
 </html>

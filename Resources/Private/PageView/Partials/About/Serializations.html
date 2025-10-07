@@ -1,5 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <section class="mdlr-pattern-slot-c">
+    <mdlr:template.area semanticType="section" areas="{0: 'slot-c'}">
         <h4><f:format.raw><f:translate key="templates.about.serializations" extensionName="chf_base"/></f:format.raw></h4>
         <menu class="mdlr-buttonrow">
             <li>
@@ -22,5 +22,5 @@
         <f:if condition="{settings.chf.apis.page}">
             <p class="mdlr-note"><f:translate key="templates.about.api.before" extensionName="chf_base"/><f:link.page pageUid="{settings.chf.apis.page}"><f:format.raw><f:translate key="templates.about.api.link" extensionName="chf_base"/></f:format.raw></f:link.page><f:translate key="templates.about.api.after" extensionName="chf_base"/></p>
         </f:if>
-    </section>
+    </mdlr:template.area>
 </html>

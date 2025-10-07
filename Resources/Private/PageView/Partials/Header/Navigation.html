@@ -1,5 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <nav id="header-navigation" class="mdlr-pattern-slot-b mdlr-pattern-align-center mdlr-pattern-align-middle">
+    <mdlr:template.area semanticType="nav" id="header-navigation" areas="{0: 'slot-b', 1: 'align-center', 2: 'align-middle'}">
         <h2 class="mdlr-variant-tacit"><f:translate key="templates.header.navigation" extensionName="chf_base"/></h2>
         <menu class="mdlr-viewswitcher">
             <f:for each="{mainMenu}" as="menuItem">
@@ -10,5 +10,5 @@
                 </li>
             </f:for>
         </menu>
-    </nav>
+    </mdlr:template.area>
 </html>

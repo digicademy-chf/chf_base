@@ -1,5 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <nav id="footer-social" class="mdlr-pattern-slot-d mdlr-pattern-align-right-above-600 mdlr-pattern-align-middle">
+    <mdlr:template.area semanticType="nav" id="footer-social" areas="{0: 'slot-d', 1: 'align-right-above-600', 2: 'align-middle'}">
         <h3 class="mdlr-variant-tacit"><f:translate key="templates.footer.social" extensionName="chf_base"/></h3>
         <menu class="mdlr-buttonrow">
             <f:if condition="{settings.chf.socials.mastodon}">
@@ -49,5 +49,5 @@
                 <mdlr:atom.button.section section="main" variants="{0: 'icon', 1: 'transparent'}" function="up" text="{f:translate(key: 'templates.footer.social.up', extensionName: 'chf_base')}" icon="up" />
             </li>
         </menu>
-    </nav>
+    </mdlr:template.area>
 </html>
