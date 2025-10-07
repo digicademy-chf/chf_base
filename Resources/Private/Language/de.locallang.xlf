@@ -1649,10 +1649,6 @@
                 <source>Share</source>
                 <target>Teilen</target>
             </trans-unit>
-            <trans-unit id="templates.share.preview" resname="templates.share.preview" approved="yes">
-                <source>Preview</source>
-                <target>Vorschau</target>
-            </trans-unit>
             <trans-unit id="templates.share.preview.site" resname="templates.share.preview.site" approved="yes">
                 <source>Website</source>
                 <target>Webseite</target>

@@ -1,5 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <footer id="footer" class="mdlr-section mdlr-variant-even mdlr-variant-wide">
+    <mdlr:page.section semanticType="footer" id="footer" variants="{0: 'even', 1: 'wide'}">
         <h2 class="mdlr-variant-tacit"><f:translate key="templates.footer" extensionName="chf_base"/></h2>
         <div class="mdlr-pattern mdlr-variant-clasped {f:if(condition: '!{settings.chf.service.page}', then: 'mdlr-variant-missing-b')} {f:if(condition: '!{settings.chf.partners.urls} || !{settings.chf.partners.logos} || !{settings.chf.partners.names}', then: 'mdlr-variant-missing-c')}">
 
@@ -12,5 +12,5 @@
 <f:render partial="Footer/Partners" arguments="{_all}"/>
 
         </div>
-    </footer>
+    </mdlr:page.section>
 </html>

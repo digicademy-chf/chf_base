@@ -1,7 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:if condition="{searchMenu}">
-        <dialog id="search" class="mdlr-modal mdlr-variant-wide" closedby="any">
-            <f:render partial="Dialogs/Title" arguments="{title: '{f:translate(key: \'templates.search\', extensionName: \'chf_base\')}'}"/>
+        <mdlr:page.modal id="search" title="{f:translate(key: 'templates.search', extensionName: 'chf_base')}" close="{f:translate(key: 'templates.generic.close', extensionName: 'chf_base')}" variants="{0: 'wide'}">
             <f:for each="{searchMenu}" as="menuItem" iteration="searchIterator">
                 <f:if condition="{searchIterator.isFirst} || {menuItem.active}">
                     <f:variable name="searchMenuLink">{menuItem.link}</f:variable>
@@ -44,6 +43,6 @@
                     </ul>
                 </f:if>-->
             </form>
-        </dialog>
+        </mdlr:page.modal>
     </f:if>
 </html>

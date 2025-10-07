@@ -1,6 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <dialog id="watch" class="mdlr-modal" closedby="any">
-        <f:render partial="Dialogs/Title" arguments="{title: '{f:translate(key: \'templates.watch\', extensionName: \'chf_base\')}'}"/>
+    <mdlr:page.modal id="watch" title="{f:translate(key: 'templates.watch', extensionName: 'chf_base')}" close="{f:translate(key: 'templates.generic.close', extensionName: 'chf_base')}">
         <ul class="mdlr-boxedlist">
             <li>
                 <mdlr:atom.button.function function="watchlist-add" variants="{0: 'icon', 1: 'transparent', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.add', extensionName: 'chf_base')}" data="{target: '{f:uri.page(absolute: \'{true}\')}', label: '{label}', type: '{type}', failure: '{f:translate(key: \'templates.watch.list.failure\', extensionName: \'chf_base\')}'}" icon="add" />
@@ -27,5 +26,5 @@
                 <mdlr:atom.button.function function="watchlist-clear" text="{f:translate(key: 'templates.watch.serializations.clear', extensionName: 'chf_base')}" />
             </li>
         </menu>
-    </dialog>
+    </mdlr:page.modal>
 </html>

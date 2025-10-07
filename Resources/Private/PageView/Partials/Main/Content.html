@@ -1,21 +1,21 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:if condition="{contentElements}">
         <f:then>
-            <section class="mdlr-section mdlr-variant-even mdlr-variant-ultrawide">
+            <mdlr:page.section id="main-content" variants="{0: 'even', 1: 'ultrawide'}">
                 <div class="mdlr-content">
                     <f:render partial="Main/ContentElements" arguments="{contentElements: '{contentElements}'}"/>
                 </div>
-            </section>
+            </mdlr:page.section>
         </f:then>
         <f:else>
-            <section class="mdlr-section mdlr-variant-even">
+            <mdlr:page.section id="main-content" variants="{0: 'even'}">
                 <div class="mdlr-empty">
                     <svg width="160" height="160" viewBox="0 0 160 160" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <use href="#illustration-placeholder"/>
                     </svg>
                     <p><f:translate key="templates.main.empty" extensionName="chf_base"/></p>
                 </div>
-            </section>
+            </mdlr:page.section>
         </f:else>
     </f:if>
 </html>
