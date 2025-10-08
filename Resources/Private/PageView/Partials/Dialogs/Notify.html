@@ -1,6 +1,3 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <dialog id="notify" class="mdlr-toast" role="status" popover="auto">
-        <p></p>
-        <mdlr:atom.button.function function="toast-close" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.generic.close', extensionName: 'chf_base')}" icon="close" />
-    </dialog>
+    <mdlr:organism.toast id="notify" close="{f:translate(key: 'templates.generic.close', extensionName: 'chf_base')}" />
 </html>

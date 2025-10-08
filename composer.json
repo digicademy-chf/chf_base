@@ -37,7 +37,6 @@
         "typo3/cms-core": "^13",
         "typo3/cms-extbase": "^13",
         "typo3/cms-fluid": "^13",
-        "typo3/cms-fluid-styled-content": "^13",
         "typo3/cms-rte-ckeditor": "^13",
         "digicademy/dsh": "^2",
         "digicademy/endpt": "^2",

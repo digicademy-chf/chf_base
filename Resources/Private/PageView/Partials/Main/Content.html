@@ -2,9 +2,7 @@
     <f:if condition="{contentElements}">
         <f:then>
             <mdlr:page.section id="main-content" variants="{0: 'even', 1: 'ultrawide'}">
-                <div class="mdlr-content">
-                    <f:render partial="Main/ContentElements" arguments="{contentElements: '{contentElements}'}"/>
-                </div>
+                <mdlr:organism.content contentElements="{contentElements}" />
             </mdlr:page.section>
         </f:then>
         <f:else>

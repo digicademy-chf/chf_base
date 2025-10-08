@@ -1,5 +1,0 @@
-styles:
-  templates:
-    templateRootPath: EXT:chf_base/Resources/Private/FluidStyledContent/Templates/
-    partialRootPath: EXT:chf_base/Resources/Private/FluidStyledContent/Partials/
-    layoutRootPath: EXT:chf_base/Resources/Private/FluidStyledContent/Layouts/
