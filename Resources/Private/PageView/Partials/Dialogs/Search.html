@@ -7,30 +7,23 @@
                     <f:variable name="searchMenuTitle">{menuItem.title}</f:variable>
                 </f:if>
             </f:for>
-            <form action="{searchMenuLink}" method="get" class="mdlr-form" role="search">
-                <div class="mdlr-form-multi">
-                    <label for="search-query" class="mdlr-variant-tacit"><f:translate key="templates.search.query" extensionName="chf_base"/></label>
-                    <input type="search" id="search-query" name="q" placeholder="{f:translate(key: 'templates.search.query.placeholder', extensionName: 'chf_base')}">
-                    <mdlr:atom.button.function id="search-submit" function="" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.search.go', extensionName: 'chf_base')}" icon="go" />
-                </div>
-                <div class="mdlr-form-addition">
-                    <div class="mdlr-form-entry">
-                        <input type="checkbox" class="mdlr-switch" id="search-exact" name="search-exact">
-                        <label for="search-exact"><f:format.raw><f:translate key="templates.search.exact" extensionName="chf_base"/></f:format.raw></label>
-                    </div>
-                    <mdlr:molecule.dropdown id="search-resource" variants="{0: 'right', 1: 'up'}">
+            <mdlr:organism.form.wrap action="{searchMenuLink}" role="search">
+                <mdlr:molecule.search id="search-query" name="q" label="{f:translate(key: 'templates.search.query', extensionName: 'chf_base')}" placeholder="{f:translate(key: 'templates.search.query.placeholder', extensionName: 'chf_base')}" go="{f:translate(key: 'templates.search.go', extensionName: 'chf_base')}" />
+                <mdlr:organism.form.split>
+                    <mdlr:atom.switch id="search-exact" label="{f:translate(key: 'templates.search.exact', extensionName: 'chf_base') -> f:format.raw()}" />
+                    <mdlr:molecule.dropdown.wrap id="search-resource" variants="{0: 'right', 1: 'up'}">
                         <f:fragment name="handle">
                             <mdlr:atom.button.function function="dropdown" variants="{0: 'texticon', 1: 'light'}" text="{searchMenuTitle}" hint="{f:translate(key: 'templates.search.resource.hint', extensionName: 'chf_base')}" iconAfter="down" popoverTarget="search-resource" />
                         </f:fragment>
                         <f:fragment name="list">
                             <f:for each="{searchMenu}" as="menuItem">
-                                <li role="option" aria-selected="{f:if(condition: '{menuItem.link} == {searchMenuLink}', then: 'true', else: 'false')}">
+                                <mdlr:molecule.dropdown.item selected="{f:if(condition: '{menuItem.link} == {searchMenuLink}', then: '{true}', else: '{false}')}">
                                     <mdlr:atom.button.page function="select-form" pageUid="{menuItem.data.uid}" variants="{0: 'mini', 1: 'unobtrusive'}" text="{menuItem.title}" icon="{f:if(condition: '{menuItem.link} == {searchMenuLink}', then: 'checkmark', else: 'blank')}" />
-                                </li>
+                                </mdlr:molecule.dropdown.item>
                             </f:for>
                         </f:fragment>
-                    </mdlr:molecule.dropdown>
-                </div>
+                    </mdlr:molecule.dropdown.wrap>
+                </mdlr:organism.form.split>
                 <!--<f:if condition="{settings.chf.search.examples}">
                     <ul class="mdlr-pills">
                         <f:for each="{settings.chf.search.examples}" as="example">
@@ -42,7 +35,7 @@
                         </f:for>
                     </ul>
                 </f:if>-->
-            </form>
+            </mdlr:organism.form.wrap>
         </mdlr:page.modal>
     </f:if>
 </html>

@@ -1,13 +1,13 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:if condition="{listContents}">
-        <mdlr:molecule.dropdown id="main-toc" variants="{f:if(condition: '{listSubMenu}', then: '{0: \'toc\', 1: \'right\'}', else: '{0: \'toc\'}')}" role="navigation">
+        <mdlr:molecule.dropdown.wrap id="main-toc" variants="{f:if(condition: '{listSubMenu}', then: '{0: \'toc\', 1: \'right\'}', else: '{0: \'toc\'}')}" role="navigation">
             <f:fragment name="handle">
                 <mdlr:atom.button.function function="dropdown" variants="{0: '{f:if(condition: \'{listSubMenu}\', then: \'icon\', else: \'texticon\')}', 1: 'light'}" text="{f:translate(key: 'templates.main.toc', extensionName: 'chf_base')}" icon="toc" popoverTarget="main-toc" />
             </f:fragment>
             <f:fragment name="list">
                 <f:for each="{contentElements}" as="contentElement" iteration="index">
                     <f:if condition="{contentElement.header} && {contentElement.sectionIndex} && {contentElement.header_layout} != 100">
-                        <li>
+                        <mdlr:molecule.dropdown.item role="">
                             <f:if condition="{contentElement.header_layout} == 4">
                                 <f:then>
                                     <f:variable name="indent">indent-1</f:variable>
@@ -24,10 +24,10 @@
                                 </f:else>
                             </f:if>
                             <mdlr:atom.button.section section="c{contentElement.uid}" variants="{f:if(condition: '{indent} == \'\'', then: '{0: \'mini\', 1: \'unobtrusive\'}', else: '{0: \'mini\', 1: \'unobtrusive\', 2: \'{indent}\'}')}" text="{contentElement.header}" />
-                        </li>
+                        </mdlr:molecule.dropdown.item>
                     </f:if>
                 </f:for>
             </f:fragment>
-        </mdlr:molecule.dropdown>
+        </mdlr:molecule.dropdown.wrap>
     </f:if>
 </html>
