@@ -1649,18 +1649,6 @@
                 <source>Share</source>
                 <target>Teilen</target>
             </trans-unit>
-            <trans-unit id="templates.share.preview.site" resname="templates.share.preview.site" approved="yes">
-                <source>Website</source>
-                <target>Webseite</target>
-            </trans-unit>
-            <trans-unit id="templates.share.preview.title" resname="templates.share.preview.title" approved="yes">
-                <source>Title</source>
-                <target>Titel</target>
-            </trans-unit>
-            <trans-unit id="templates.share.preview.description" resname="templates.share.preview.description" approved="yes">
-                <source>Description</source>
-                <target>Beschreibung</target>
-            </trans-unit>
             <trans-unit id="templates.share.device" resname="templates.share.device" approved="yes">
                 <source>On this device</source>
                 <target>Auf diesem Gerät</target>

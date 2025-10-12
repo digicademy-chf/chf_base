@@ -79,7 +79,7 @@ page {
             }
             80 = files
             80 {
-                as = images
+                as = pageImages
                 references {
                     table = pages
                     fieldName = media

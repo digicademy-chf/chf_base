@@ -1243,15 +1243,6 @@
             <trans-unit id="templates.share" resname="templates.share">
                 <source>Share</source>
             </trans-unit>
-            <trans-unit id="templates.share.preview.site" resname="templates.share.preview.site">
-                <source>Website</source>
-            </trans-unit>
-            <trans-unit id="templates.share.preview.title" resname="templates.share.preview.title">
-                <source>Title</source>
-            </trans-unit>
-            <trans-unit id="templates.share.preview.description" resname="templates.share.preview.description">
-                <source>Description</source>
-            </trans-unit>
             <trans-unit id="templates.share.device" resname="templates.share.device">
                 <source>On this device</source>
             </trans-unit>

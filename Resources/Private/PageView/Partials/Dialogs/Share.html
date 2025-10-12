@@ -1,22 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <mdlr:page.modal id="share" title="{f:translate(key: 'templates.share', extensionName: 'chf_base')}" close="{f:translate(key: 'templates.generic.close', extensionName: 'chf_base')}">
-        <div class="mdlr-boxedpreview" aria-hidden="true">
-            <f:for each="{images}" as="image" iteration="index">
-                <f:if condition="{index.isFirst}">
-                    <f:image image="{image}" width="160m" height="160m" fileExtension="jpg"/>
-                </f:if>
-            </f:for>
-            <dl>
-                <dt><f:translate key="templates.share.preview.site" extensionName="chf_base"/></dt>
-                <dd class="mdlr-variant-site">{site}</dd>
-                <dt><f:translate key="templates.share.preview.title" extensionName="chf_base"/></dt>
-                <dd class="mdlr-variant-title">{title}</dd>
-                <f:if condition="{description}">
-                    <dt><f:translate key="templates.share.preview.description" extensionName="chf_base"/></dt>
-                    <dd class="mdlr-variant-description">{description}</dd>
-                </f:if>
-            </dl>
-        </div>
+        <mdlr:molecule.boxed.record image="{image}" context="{context}" title="{title}" description="{description}" />
         <h3><f:translate key="templates.share.device" extensionName="chf_base"/></h3>
         <menu class="mdlr-buttonrow">
             <!--<li>
@@ -32,7 +16,7 @@
                 <mdlr:atom.button.function variants="{0: 'texticon'}" function="share" text="{f:translate(key: 'templates.share.device.apps', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.device.apps.hint', extensionName: 'chf_base')}" icon="apps" data="{title: '{title}', text: '{description}', url: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.share.device.apps.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.share.device.apps.failure\', extensionName: \'chf_base\')}', error: '{f:translate(key: \'templates.share.device.apps.error\', extensionName: \'chf_base\')}'}" />
             </li>
             <li>
-                <mdlr:atom.button.email variants="{0: 'texticon'}" email="" subject="{site -> f:format.urlencode()}" body="{title -> f:format.urlencode()}%0d%0a%0d%0a{f:uri.page(absolute: 'true')}" text="{f:translate(key: 'templates.share.device.email', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.device.email.hint', extensionName: 'chf_base')}" icon="email" />
+                <mdlr:atom.button.email variants="{0: 'texticon'}" email="" subject="{context -> f:format.urlencode()}" body="{title -> f:format.urlencode()}%0d%0a%0d%0a{f:uri.page(absolute: 'true')}" text="{f:translate(key: 'templates.share.device.email', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.device.email.hint', extensionName: 'chf_base')}" icon="email" />
             </li>
             <li>
                 <mdlr:atom.button.function variants="{0: 'texticon'}" function="pdf" text="{f:translate(key: 'templates.share.device.pdf', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.share.device.pdf.hint', extensionName: 'chf_base')}" icon="pdf" />
