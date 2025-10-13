@@ -1,45 +1,36 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <mdlr:page.modal id="adjust" title="{f:translate(key: 'templates.adjust', extensionName: 'chf_base')}" close="{f:translate(key: 'templates.generic.close', extensionName: 'chf_base')}">
-        <dl class="mdlr-boxedlist mdlr-variant-space">
-            <div>
-                <dt><f:translate key="templates.adjust.language" extensionName="chf_base"/></dt>
-                <dd>
-                    <menu class="mdlr-buttonrow">
-                        <f:for each="{languageMenu}" as="menuItem">
-                            <li>
-                                <mdlr:atom.button.current variants="{f:if(condition: menuItem.active, then: '{0: \'mini\', 1: \'light\', 2: \'active\'}', else: '{0: \'mini\', 1: \'light\'}')}" text="{site.languages.{menuItem.languageUid}.navigationTitle}" language="{menuItem.languageUid}" rel="alternate" />
-                            </li>
-                        </f:for>
-                    </menu>
-                </dd>
-            </div>
-            <div>
-                <dt><f:translate key="templates.adjust.color" extensionName="chf_base"/></dt>
-                <dd>
-                    <menu class="mdlr-buttonrow">
+        <mdlr:molecule.boxedData.wrap variants="{0: 'space'}">
+            <mdlr:molecule.boxedData.item label="{f:translate(key: 'templates.adjust.language', extensionName: 'chf_base')}">
+                <menu class="mdlr-buttonrow">
+                    <f:for each="{languageMenu}" as="menuItem">
                         <li>
-                            <mdlr:atom.button.function function="theme" variants="{0: 'mini', 1: 'light', 2: 'active'}" text="{f:translate(key: 'templates.adjust.color.auto', extensionName: 'chf_base')}" data="{target: 'auto'}" />
+                            <mdlr:atom.button.current variants="{f:if(condition: menuItem.active, then: '{0: \'mini\', 1: \'light\', 2: \'active\'}', else: '{0: \'mini\', 1: \'light\'}')}" text="{site.languages.{menuItem.languageUid}.navigationTitle}" language="{menuItem.languageUid}" rel="alternate" />
                         </li>
-                        <li>
-                            <mdlr:atom.button.function function="theme" variants="{0: 'mini', 1: 'light'}" text="{f:translate(key: 'templates.adjust.color.light', extensionName: 'chf_base')}" data="{target: 'light'}" />
-                        </li>
-                        <li>
-                            <mdlr:atom.button.function function="theme" variants="{0: 'mini', 1: 'light'}" text="{f:translate(key: 'templates.adjust.color.dark', extensionName: 'chf_base')}" data="{target: 'dark'}" />
-                        </li>
-                    </menu>
-                </dd>
-            </div>
-            <div>
-                <dt><f:translate key="templates.adjust.device" extensionName="chf_base"/></dt>
-                <dd>
-                    <menu class="mdlr-buttonrow">
-                        <li>
-                            <mdlr:atom.button.function function="storage" variants="{0: 'mini'}" text="{f:translate(key: 'templates.adjust.device.storage', extensionName: 'chf_base')}" />
-                        </li>
-                    </menu>
-                </dd>
-            </div>
-        </dl>
+                    </f:for>
+                </menu>
+            </mdlr:molecule.boxedData.item>
+            <mdlr:molecule.boxedData.item label="{f:translate(key: 'templates.adjust.color', extensionName: 'chf_base')}">
+                <menu class="mdlr-buttonrow">
+                    <li>
+                        <mdlr:atom.button.function function="theme" variants="{0: 'mini', 1: 'light', 2: 'active'}" text="{f:translate(key: 'templates.adjust.color.auto', extensionName: 'chf_base')}" data="{target: 'auto'}" />
+                    </li>
+                    <li>
+                        <mdlr:atom.button.function function="theme" variants="{0: 'mini', 1: 'light'}" text="{f:translate(key: 'templates.adjust.color.light', extensionName: 'chf_base')}" data="{target: 'light'}" />
+                    </li>
+                    <li>
+                        <mdlr:atom.button.function function="theme" variants="{0: 'mini', 1: 'light'}" text="{f:translate(key: 'templates.adjust.color.dark', extensionName: 'chf_base')}" data="{target: 'dark'}" />
+                    </li>
+                </menu>
+            </mdlr:molecule.boxedData.item>
+            <mdlr:molecule.boxedData.item label="{f:translate(key: 'templates.adjust.device', extensionName: 'chf_base')}">
+                <menu class="mdlr-buttonrow">
+                    <li>
+                        <mdlr:atom.button.function function="storage" variants="{0: 'mini'}" text="{f:translate(key: 'templates.adjust.device.storage', extensionName: 'chf_base')}" />
+                    </li>
+                </menu>
+            </mdlr:molecule.boxedData.item>
+        </mdlr:molecule.boxedData.wrap>
         <p class="mdlr-note"><f:format.raw><f:translate key="templates.adjust.powered" extensionName="chf_base"/></f:format.raw></p>
     </mdlr:page.modal>
 </html>
