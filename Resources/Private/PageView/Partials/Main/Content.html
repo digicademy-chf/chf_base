@@ -7,12 +7,7 @@
         </f:then>
         <f:else>
             <mdlr:page.section id="main-content" variants="{0: 'even'}">
-                <div class="mdlr-empty">
-                    <svg width="160" height="160" viewBox="0 0 160 160" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <use href="#illustration-placeholder"/>
-                    </svg>
-                    <p><f:translate key="templates.main.empty" extensionName="chf_base"/></p>
-                </div>
+                <mdlr:molecule.empty illustration="placeholder" message="{f:translate(key: 'templates.main.empty', extensionName: 'chf_base')}" />
             </mdlr:page.section>
         </f:else>
     </f:if>

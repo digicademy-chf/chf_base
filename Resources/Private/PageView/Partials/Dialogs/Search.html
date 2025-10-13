@@ -25,15 +25,11 @@
                     </mdlr:molecule.dropdown.wrap>
                 </mdlr:organism.form.split>
                 <!--<f:if condition="{settings.chf.search.examples}">
-                    <ul class="mdlr-pills">
+                    <mdlr:molecule.pills.wrap>
                         <f:for each="{settings.chf.search.examples}" as="example">
-                            <li>
-                                <a href="#{example -> f:format.urlencode()}" title="{f:translate(key: 'templates.search.example', extensionName: 'chf_base')}">
-                                    <span>{example}</span>
-                                </a>
-                            </li>
+                            <mdlr:molecule.pills.item url="#{example -> f:format.urlencode()}" text="{example}" hint="{f:translate(key: 'templates.search.example', extensionName: 'chf_base')}" />
                         </f:for>
-                    </ul>
+                    </mdlr:molecule.pills.wrap>
                 </f:if>-->
             </mdlr:organism.form.wrap>
         </mdlr:page.modal>
