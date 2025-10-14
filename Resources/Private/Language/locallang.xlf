@@ -1120,6 +1120,9 @@
             <trans-unit id="templates.header.navigation" resname="templates.header.navigation">
                 <source>Navigation</source>
             </trans-unit>
+            <trans-unit id="templates.header.navigation.hint" resname="templates.header.navigation.hint">
+                <source>Switch to this view</source>
+            </trans-unit>
             <trans-unit id="templates.header.meta" resname="templates.header.meta">
                 <source>Meta</source>
             </trans-unit>

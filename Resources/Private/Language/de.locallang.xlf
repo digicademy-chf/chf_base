@@ -1485,6 +1485,10 @@
                 <source>Navigation</source>
                 <target>Navigation</target>
             </trans-unit>
+            <trans-unit id="templates.header.navigation.hint" resname="templates.header.navigation.hint" approved="yes">
+                <source>Switch to this view</source>
+                <target>Zu dieser Ansicht wechseln</target>
+            </trans-unit>
             <trans-unit id="templates.header.meta" resname="templates.header.meta" approved="yes">
                 <source>Meta</source>
                 <target>Meta</target>

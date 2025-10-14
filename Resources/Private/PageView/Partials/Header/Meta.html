@@ -1,21 +1,21 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <mdlr:template.area semanticType="nav" id="header-meta" areas="{0: 'slot-c', 1: 'align-right', 2: 'align-middle'}">
         <h2 class="mdlr-variant-tacit"><f:translate key="templates.header.meta" extensionName="chf_base"/></h2>
-        <menu class="mdlr-buttonrow mdlr-variant-nowrap">
+        <mdlr:molecule.buttonRow.wrap variants="{0: 'nowrap'}">
             <f:if condition="{searchMenu}">
-                <li>
+                <mdlr:molecule.buttonRow.item>
                     <mdlr:atom.button.function id="header-meta-search" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.search', extensionName: 'chf_base')}" aria="{controls: 'search'}" data="{focus: 'search-query'}" icon="search" />
-                </li>
+                </mdlr:molecule.buttonRow.item>
             </f:if>
-            <li>
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.function id="header-meta-share" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.share', extensionName: 'chf_base')}" aria="{controls: 'share'}" icon="share" />
-            </li>
-            <li>
+            </mdlr:molecule.buttonRow.item>
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.function id="header-meta-watch" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.watch', extensionName: 'chf_base')}" aria="{controls: 'watch'}" icon="watch" />
-            </li>
-            <li>
+            </mdlr:molecule.buttonRow.item>
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.function id="header-meta-adjust" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.adjust', extensionName: 'chf_base')}" aria="{controls: 'adjust'}" icon="adjust" />
-            </li>
-        </menu>
+            </mdlr:molecule.buttonRow.item>
+        </mdlr:molecule.buttonRow.wrap>
     </mdlr:template.area>
 </html>

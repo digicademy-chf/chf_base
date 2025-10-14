@@ -1,24 +1,24 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <mdlr:template.area semanticType="section" areas="{0: 'slot-c'}">
         <h4><f:format.raw><f:translate key="templates.about.serializations" extensionName="chf_base"/></f:format.raw></h4>
-        <menu class="mdlr-buttonrow">
-            <li>
+        <mdlr:molecule.buttonRow.wrap>
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.jsonld', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.jsonld.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" />
                 <!--<mdlr:atom.button.current pageType="6024975381" contentType="application/ld+json" text="{f:translate(key: 'templates.generic.retrieve.jsonld', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.teixml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" />-->
-            </li>
-            <li>
+            </mdlr:molecule.buttonRow.item>
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.turtle', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.turtle.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" />
                 <!--<mdlr:atom.button.current pageType="2867941442" contentType="text/turtle" text="{f:translate(key: 'templates.generic.retrieve.turtle', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.teixml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" />-->
-            </li>
-            <li>
+            </mdlr:molecule.buttonRow.item>
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.rdfxml', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.rdfxml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" />
                 <!--<mdlr:atom.button.current pageType="1295536366" contentType="application/rdf+xml" text="{f:translate(key: 'templates.generic.retrieve.rdfxml', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.teixml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" />-->
-            </li>
-            <li>
+            </mdlr:molecule.buttonRow.item>
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.teixml', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.teixml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" />
                 <!--<mdlr:atom.button.current pageType="9631552583" contentType="application/tei+xml" text="{f:translate(key: 'templates.generic.retrieve.teixml', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.teixml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" />-->
-            </li>
-        </menu>
+            </mdlr:molecule.buttonRow.item>
+        </mdlr:molecule.buttonRow.wrap>
         <f:if condition="{settings.chf.apis.page}">
             <p class="mdlr-note"><f:translate key="templates.about.api.before" extensionName="chf_base"/><f:link.page pageUid="{settings.chf.apis.page}"><f:format.raw><f:translate key="templates.about.api.link" extensionName="chf_base"/></f:format.raw></f:link.page><f:translate key="templates.about.api.after" extensionName="chf_base"/></p>
         </f:if>

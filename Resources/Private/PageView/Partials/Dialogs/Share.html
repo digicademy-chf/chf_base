@@ -2,47 +2,47 @@
     <mdlr:page.modal id="share" title="{f:translate(key: 'templates.share', extensionName: 'chf_base')}" close="{f:translate(key: 'templates.generic.close', extensionName: 'chf_base')}">
         <mdlr:molecule.boxedRecord image="{image}" context="{context}" title="{title}" description="{description}" />
         <h3><f:translate key="templates.share.device" extensionName="chf_base"/></h3>
-        <menu class="mdlr-buttonrow">
-            <!--<li>
+        <mdlr:molecule.buttonRow.wrap>
+            <!--<mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.current variants="{0: 'texticon'}" function="copy" text="{f:translate(key: 'templates.generic.copy.urn', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.urn.hint', extensionName: 'chf_base')}" icon="copy" data="{target: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.generic.copy.urn.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.urn.failure\', extensionName: \'chf_base\')}'}" rel="canonical" />
-            </li>
-            <li>
+            </mdlr:molecule.buttonRow.item>
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.current variants="{0: 'texticon'}" function="copy" text="{f:translate(key: 'templates.generic.copy.permalink', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.generic.copy.permalink.hint', extensionName: 'chf_base')}" icon="copy" data="{target: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.generic.copy.permalink.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.permalink.failure\', extensionName: \'chf_base\')}'}" rel="canonical" />
-            </li>-->
-            <li>
+            </mdlr:molecule.buttonRow.item>-->
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.current variants="{0: 'texticon'}" function="copy" text="{f:translate(key: 'templates.generic.copy.url', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.url.hint', extensionName: 'chf_base')}" icon="copy" data="{target: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.generic.copy.url.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.url.failure\', extensionName: \'chf_base\')}'}" rel="canonical" />
-            </li>
-            <li hidden>
+            </mdlr:molecule.buttonRow.item>
+            <mdlr:molecule.buttonRow.item hidden="{true}">
                 <mdlr:atom.button.function variants="{0: 'texticon'}" function="share" text="{f:translate(key: 'templates.share.device.apps', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.device.apps.hint', extensionName: 'chf_base')}" icon="apps" data="{title: '{title}', text: '{description}', url: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.share.device.apps.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.share.device.apps.failure\', extensionName: \'chf_base\')}', error: '{f:translate(key: \'templates.share.device.apps.error\', extensionName: \'chf_base\')}'}" />
-            </li>
-            <li>
+            </mdlr:molecule.buttonRow.item>
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.email variants="{0: 'texticon'}" email="" subject="{context -> f:format.urlencode()}" body="{title -> f:format.urlencode()}%0d%0a%0d%0a{f:uri.page(absolute: 'true')}" text="{f:translate(key: 'templates.share.device.email', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.device.email.hint', extensionName: 'chf_base')}" icon="email" />
-            </li>
-            <li>
+            </mdlr:molecule.buttonRow.item>
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.function variants="{0: 'texticon'}" function="pdf" text="{f:translate(key: 'templates.share.device.pdf', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.share.device.pdf.hint', extensionName: 'chf_base')}" icon="pdf" />
-            </li>
-        </menu>
+            </mdlr:molecule.buttonRow.item>
+        </mdlr:molecule.buttonRow.wrap>
         <h3><f:translate key="templates.share.services" extensionName="chf_base"/></h3>
-        <menu class="mdlr-buttonrow">
-            <li>
+        <mdlr:molecule.buttonRow.wrap>
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.function variants="{0: 'icon', 1: 'transparent'}" function="mastodon" text="{f:translate(key: 'templates.share.services.mastodon', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.mastodon.hint', extensionName: 'chf_base')}" icon="mastodon" data="{target: '{title -> f:format.urlencode()}%0d%0a%0d%0a{f:uri.page(absolute: \'true\')}', prompt: '{f:translate(key: \'templates.share.services.mastodon.prompt\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.share.services.mastodon.failure\', extensionName: \'chf_base\')}'}" />
-            </li>
-            <li>
+            </mdlr:molecule.buttonRow.item>
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.external variants="{0: 'icon', 1: 'transparent'}" uri="{f:render(partial: 'Social/Linkedin', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.linkedin', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.linkedin.hint', extensionName: 'chf_base')}" icon="linkedin" />
-            </li>
-            <li>
+            </mdlr:molecule.buttonRow.item>
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.external variants="{0: 'icon', 1: 'transparent'}" uri="{f:render(partial: 'Social/Tumblr', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.tumblr', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.tumblr.hint', extensionName: 'chf_base')}" icon="tumblr" />
-            </li>
-            <li>
+            </mdlr:molecule.buttonRow.item>
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.external variants="{0: 'icon', 1: 'transparent'}" uri="{f:render(partial: 'Social/Reddit', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.reddit', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.reddit.hint', extensionName: 'chf_base')}" icon="reddit" />
-            </li>
-            <li>
+            </mdlr:molecule.buttonRow.item>
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.external variants="{0: 'icon', 1: 'transparent'}" uri="{f:render(partial: 'Social/Facebook', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.facebook', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.facebook.hint', extensionName: 'chf_base')}" icon="facebook" />
-            </li>
-            <li>
+            </mdlr:molecule.buttonRow.item>
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.external variants="{0: 'icon', 1: 'transparent'}" uri="{f:render(partial: 'Social/Xitter', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.xitter', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.xitter.hint', extensionName: 'chf_base')}" icon="xitter" />
-            </li>
-        </menu>
+            </mdlr:molecule.buttonRow.item>
+        </mdlr:molecule.buttonRow.wrap>
         <p class="mdlr-note"><f:translate key="templates.share.dissociation" extensionName="chf_base"/></p>
     </mdlr:page.modal>
 </html>

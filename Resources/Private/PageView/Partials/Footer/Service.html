@@ -2,15 +2,11 @@
     <f:if condition="{settings.chf.service.page}">
         <mdlr:template.area semanticType="nav" id="footer-service" areas="{0: 'slot-b', 1: 'align-right-above-900', 2: 'align-middle'}">
             <h3 class="mdlr-variant-tacit"><f:translate key="templates.footer.service" extensionName="chf_base"/></h3>
-            <ul class="mdlr-linkrow">
+            <mdlr:molecule.linkRow.wrap>
                 <f:for each="{serviceMenu}" as="menuItem">
-                    <li>
-                        <f:link.page pageUid="{menuItem.data.uid}" class="{f:if(condition: menuItem.active, then:'mdlr-variant-active')}">
-                            <span>{menuItem.title}</span>
-                        </f:link.page>
-                    </li>
+                    <mdlr:molecule.linkRow.item pageUid="{menuItem.data.uid}" text="{menuItem.title}" hint="{f:translate(key: 'templates.header.navigation.hint', extensionName: 'chf_base')}" active="{f:if(condition: menuItem.active, then:'{true}', else: '{false}')}" />
                 </f:for>
-            </ul>
+            </mdlr:molecule.linkRow.wrap>
         </mdlr:template.area>
     </f:if>
 </html>

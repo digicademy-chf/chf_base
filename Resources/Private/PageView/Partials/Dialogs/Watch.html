@@ -7,17 +7,17 @@
         </mdlr:molecule.boxedList.wrap>
         <h3><f:translate key="templates.watch.list" extensionName="chf_base"/></h3>
         <mdlr:molecule.empty illustration="watch" message="{f:translate(key: 'templates.watch.list.empty', extensionName: 'chf_base')}" function="watchlist-empty" data="{remove: '{f:translate(key: \'templates.generic.remove\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.watch.list.failure\', extensionName: \'chf_base\')}'}" />
-        <h3 class="mdlr-variant-hidden mdlr-function-watchlist-serialisations"><f:translate key="templates.watch.serializations" extensionName="chf_base"/></h3>
-        <menu class="mdlr-buttonrow mdlr-variant-hidden mdlr-function-watchlist-serialisations">
-            <li>
+        <h3 class="mdlr-function-watchlist-serialisations" hidden><f:translate key="templates.watch.serializations" extensionName="chf_base"/></h3>
+        <mdlr:molecule.buttonRow.wrap function="watchlist-serialisations" hidden="{true}">
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.function function="watchlist-csv" text="{f:translate(key: 'templates.generic.retrieve.csv', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.csv.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" />
-            </li>
-            <li>
+            </mdlr:molecule.buttonRow.item>
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.function function="watchlist-json" text="{f:translate(key: 'templates.generic.retrieve.json', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.json.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" />
-            </li>
-            <li>
+            </mdlr:molecule.buttonRow.item>
+            <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.function function="watchlist-clear" text="{f:translate(key: 'templates.watch.serializations.clear', extensionName: 'chf_base')}" />
-            </li>
-        </menu>
+            </mdlr:molecule.buttonRow.item>
+        </mdlr:molecule.buttonRow.wrap>
     </mdlr:page.modal>
 </html>
