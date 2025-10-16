@@ -4,7 +4,7 @@
         <mdlr:template.area semanticType="main" id="main">
             <mdlr:template.area semanticType="article" id="main-article">
 
-                <f:render partial="Main/Title" arguments="{supertitle: 0, title: page.pageRecord.title, subtitle: page.pageRecord.subtitle, subMenu: '{subMenu}', contentElements: '{contentElements.main.records}'}"/>
+                <f:render partial="Main/Title" arguments="{context: 0, title: page.pageRecord.title, subtitle: page.pageRecord.subtitle, subMenu: '{subMenu}', contentElements: '{contentElements.main.records}'}"/>
 
                 <f:render partial="Main/Content" arguments="{contentElements: '{contentElements.main.records}'}"/>
 

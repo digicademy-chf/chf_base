@@ -43,6 +43,8 @@
                 <mdlr:atom.button.external variants="{0: 'icon', 1: 'transparent'}" uri="{f:render(partial: 'Social/Xitter', arguments: '{_all}')}" text="{f:translate(key: 'templates.share.services.xitter', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.xitter.hint', extensionName: 'chf_base')}" icon="xitter" />
             </mdlr:molecule.buttonRow.item>
         </mdlr:molecule.buttonRow.wrap>
-        <p class="mdlr-note"><f:translate key="templates.share.dissociation" extensionName="chf_base"/></p>
+        <mdlr:atom.note>
+            <f:translate key="templates.share.dissociation" extensionName="chf_base"/>
+        </mdlr:atom.note>
     </mdlr:page.modal>
 </html>

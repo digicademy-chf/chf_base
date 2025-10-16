@@ -1,14 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <mdlr:page.section id="main-title" variants="{0: 'title', 1: 'odd', 2: 'ultrawide'}" function="scroll">
-        <div class="mdlr-title">
-            <h2 class="mdlr-title-heading">{title}</h2>
-            <f:if condition="{subtitle}">
-                <p class="mdlr-title-subheading">{subtitle}</p>
-            </f:if>
-            <f:if condition="{supertitle}">
-                <p class="mdlr-title-superheading">{supertitle}</p>
-            </f:if>
-        </div>
+        <mdlr:molecule.title title="{title}" subtitle="{subtitle}" context="{context}" />
         <f:render partial="Main/QuickAccess" arguments="{subMenu: '{subMenu}', contentElements: '{contentElements}'}"/>
     </mdlr:page.section>
 </html>
