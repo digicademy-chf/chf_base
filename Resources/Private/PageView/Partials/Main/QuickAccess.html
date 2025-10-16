@@ -8,7 +8,7 @@
     </f:for>
     <f:if condition="{subMenu} || {listContents}">
         <mdlr:template.area semanticType="nav">
-            <h3 class="mdlr-variant-tacit"><f:translate key="templates.main.submenu" extensionName="chf_base"/></h3>
+            <mdlr:atom.heading text="{f:translate(key: 'templates.main.submenu', extensionName: 'chf_base')}" level="3" variants="{0: 'tacit'}" />
             <mdlr:molecule.buttonRow.wrap variants="{0: 'separate'}">
                 <f:for each="{subMenu}" as="menuItem">
                     <f:variable name="listSubMenu">1</f:variable>

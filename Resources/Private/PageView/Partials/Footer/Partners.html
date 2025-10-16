@@ -1,8 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:if condition="{settings.chf.partners.urls} && {settings.chf.partners.logos} && {settings.chf.partners.names}">
         <mdlr:template.area semanticType="section" id="footer-partners" areas="{0: 'slot-c', 1: 'align-left-above-900', 2: 'align-middle'}">
-            <h3 class="mdlr-variant-tacit"><f:translate key="templates.footer.partners" extensionName="chf_base"/></h3>
-            <ul class="mdlr-imagerow">
+            <mdlr:atom.heading text="{f:translate(key: 'templates.footer.partners', extensionName: 'chf_base')}" level="3" variants="{0: 'tacit'}" />
             <mdlr:molecule.imageRow.wrap>
                 <f:for each="{settings.chf.partners.urls}" as="url" key="index">
                     <mdlr:molecule.imageRow.item>

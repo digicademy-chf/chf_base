@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <mdlr:template.area semanticType="section" areas="{0: 'slot-b'}">
-        <h4 class="mdlr-variant-tacit-above-600"><f:translate key="templates.about.reference" extensionName="chf_base"/></h4>
+        <mdlr:atom.heading text="{f:translate(key: 'templates.about.reference', extensionName: 'chf_base')}" level="4" variants="{0: 'tacit-above-600'}" />
         <mdlr:molecule.boxedData.wrap>
             <!--
             <mdlr:molecule.boxedData.item label="{f:translate(key: 'templates.about.urn', extensionName: 'chf_base') -> f:format.raw()}">

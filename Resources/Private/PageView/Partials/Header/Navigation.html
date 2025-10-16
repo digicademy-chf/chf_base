@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <mdlr:template.area semanticType="nav" id="header-navigation" areas="{0: 'slot-b', 1: 'align-center', 2: 'align-middle'}">
-        <h2 class="mdlr-variant-tacit"><f:translate key="templates.header.navigation" extensionName="chf_base"/></h2>
+        <mdlr:atom.heading text="{f:translate(key: 'templates.header.navigation', extensionName: 'chf_base')}" level="2" variants="{0: 'tacit'}" />
         <mdlr:molecule.viewSwitcher.wrap>
             <f:for each="{mainMenu}" as="menuItem">
                 <mdlr:molecule.viewSwitcher.item pageUid="{menuItem.data.uid}" text="{menuItem.title}" hint="{f:translate(key: 'templates.header.navigation.hint', extensionName: 'chf_base')}" active="{f:if(condition: menuItem.active, then:'{true}', else: '{false}')}" />

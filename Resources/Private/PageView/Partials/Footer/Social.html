@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <mdlr:template.area semanticType="nav" id="footer-social" areas="{0: 'slot-d', 1: 'align-right-above-600', 2: 'align-middle'}">
-        <h3 class="mdlr-variant-tacit"><f:translate key="templates.footer.social" extensionName="chf_base"/></h3>
+        <mdlr:atom.heading text="{f:translate(key: 'templates.footer.social', extensionName: 'chf_base')}" level="3" variants="{0: 'tacit'}" />
         <mdlr:molecule.buttonRow.wrap>
             <f:if condition="{settings.chf.socials.mastodon}">
                 <mdlr:molecule.buttonRow.item>

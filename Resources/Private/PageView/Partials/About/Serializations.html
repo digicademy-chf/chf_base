@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <mdlr:template.area semanticType="section" areas="{0: 'slot-c'}">
-        <h4><f:format.raw><f:translate key="templates.about.serializations" extensionName="chf_base"/></f:format.raw></h4>
+        <mdlr:atom.heading text="{f:translate(key: 'templates.about.serializations', extensionName: 'chf_base') -> f:format.raw()}" level="4" />
         <mdlr:molecule.buttonRow.wrap>
             <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.jsonld', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.jsonld.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" />

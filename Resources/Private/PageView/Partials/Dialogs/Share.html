@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <mdlr:page.modal id="share" title="{f:translate(key: 'templates.share', extensionName: 'chf_base')}" close="{f:translate(key: 'templates.generic.close', extensionName: 'chf_base')}">
         <mdlr:molecule.boxedRecord image="{image}" context="{context}" title="{title}" description="{description}" />
-        <h3><f:translate key="templates.share.device" extensionName="chf_base"/></h3>
+        <mdlr:atom.heading text="{f:translate(key: 'templates.share.device', extensionName: 'chf_base')}" level="3" />
         <mdlr:molecule.buttonRow.wrap>
             <!--<mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.current variants="{0: 'texticon'}" function="copy" text="{f:translate(key: 'templates.generic.copy.urn', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.urn.hint', extensionName: 'chf_base')}" icon="copy" data="{target: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.generic.copy.urn.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.urn.failure\', extensionName: \'chf_base\')}'}" rel="canonical" />
@@ -22,7 +22,7 @@
                 <mdlr:atom.button.function variants="{0: 'texticon'}" function="pdf" text="{f:translate(key: 'templates.share.device.pdf', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.share.device.pdf.hint', extensionName: 'chf_base')}" icon="pdf" />
             </mdlr:molecule.buttonRow.item>
         </mdlr:molecule.buttonRow.wrap>
-        <h3><f:translate key="templates.share.services" extensionName="chf_base"/></h3>
+        <mdlr:atom.heading text="{f:translate(key: 'templates.share.services', extensionName: 'chf_base')}" level="3" />
         <mdlr:molecule.buttonRow.wrap>
             <mdlr:molecule.buttonRow.item>
                 <mdlr:atom.button.function variants="{0: 'icon', 1: 'transparent'}" function="mastodon" text="{f:translate(key: 'templates.share.services.mastodon', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.share.services.mastodon.hint', extensionName: 'chf_base')}" icon="mastodon" data="{target: '{title -> f:format.urlencode()}%0d%0a%0d%0a{f:uri.page(absolute: \'true\')}', prompt: '{f:translate(key: \'templates.share.services.mastodon.prompt\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.share.services.mastodon.failure\', extensionName: \'chf_base\')}'}" />
