@@ -3,3 +3,4 @@ label: Cultural Heritage Framework
 dependencies:
   - digicademy/mdlr
   - typo3/seo-sitemap
+  - typo3/redirects
