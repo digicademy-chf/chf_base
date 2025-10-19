@@ -7,7 +7,7 @@
                     <mdlr:molecule.imageRow.item>
                         <f:link.external uri="{url}" title="{settings.chf.partners.names.{index}}" class="mdlr-imagelink mdlr-variant-unobtrusive" target="_blank">
                             <span>{settings.chf.partners.names.{index}}</span>
-                            <img src="{f:uri.image(src: '{settings.chf.partners.logos.{index}}')}" alt="{settings.chf.partners.names.{index}}">
+                            <mdlr:atom.image url="{f:uri.image(src: '{settings.chf.partners.logos.{index}}')}" alternativeText="{settings.chf.partners.names.{index}}" />
                         </f:link.external>
                     </mdlr:molecule.imageRow.item>
                 </f:for>

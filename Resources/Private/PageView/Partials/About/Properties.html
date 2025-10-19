@@ -3,7 +3,7 @@
         <mdlr:atom.heading text="{f:translate(key: 'templates.about.properties', extensionName: 'chf_base')}" level="4" variants="{0: 'tacit'}" />
         <mdlr:molecule.boxedData.wrap>
             <f:if condition="{page.pageRecord.author}">
-                <mdlr:molecule.boxedData.item label="{f:translate(key: 'templates.about.author', extensionName: 'chf_base')}">
+                <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.author', extensionName: 'chf_base')}">
                     <f:if condition="{page.pageRecord.author_email}">
                         <mdlr:atom.button.email email="{page.pageRecord.author_email}" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.email', extensionName: 'chf_base')}" icon="email" rel="author" />
                     </f:if>
@@ -11,11 +11,11 @@
                 </mdlr:molecule.boxedData.item>
             </f:if>
             <!--
-            <mdlr:molecule.boxedData.item label="{f:translate(key: 'templates.about.photographer', extensionName: 'chf_base')}" />
-            <mdlr:molecule.boxedData.item label="{f:translate(key: 'templates.about.editor', extensionName: 'chf_base')}" />
-            <mdlr:molecule.boxedData.item label="{f:translate(key: 'templates.about.publisher', extensionName: 'chf_base')}" />
+            <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.photographer', extensionName: 'chf_base')}" />
+            <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.editor', extensionName: 'chf_base')}" />
+            <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.publisher', extensionName: 'chf_base')}" />
             -->
-            <mdlr:molecule.boxedData.item label="{f:translate(key: 'templates.about.rights', extensionName: 'chf_base')}">
+            <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.rights', extensionName: 'chf_base')}">
                 <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.uri', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.uri.hint', extensionName: 'chf_base')}" data="{target: '{settings.chf.rights.uri}', success: '{f:translate(key: \'templates.generic.copy.uri.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.uri.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
                 <f:link.external uri="{settings.chf.rights.uri}" target="_blank" rel="license">
                     <f:if condition="{settings.chf.rights.uri} == 'http://rightsstatements.org/vocab/InC/1.0/'">
@@ -29,24 +29,24 @@
                 </f:link.external>
             </mdlr:molecule.boxedData.item>
             <!--
-            <mdlr:molecule.boxedData.item label="{f:translate(key: 'templates.about.print', extensionName: 'chf_base')}">
+            <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.print', extensionName: 'chf_base')}">
                 2003 (Band XVII, Abb. 10)
             </mdlr:molecule.boxedData.item>
             -->
             <f:if condition="{page.pageRecord.lastUpdated}">
                 <f:then>
-                    <mdlr:molecule.boxedData.item label="{f:translate(key: 'templates.about.online', extensionName: 'chf_base')}">
+                    <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.online', extensionName: 'chf_base')}">
                         <time datetime="{page.pageRecord.lastUpdated -> f:format.date(format: '%Y-%m-%d')}"><f:format.date pattern="LONGDATE">{page.pageRecord.lastUpdated}</f:format.date></time>
                     </mdlr:molecule.boxedData.item>
                 </f:then>
                 <f:else>
-                    <mdlr:molecule.boxedData.item label="{f:translate(key: 'templates.about.access', extensionName: 'chf_base')}">
+                    <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.access', extensionName: 'chf_base')}">
                         <time datetime="{f:format.date(date: 'today', format: '%Y-%m-%d')}"><f:format.date pattern="LONGDATE">today</f:format.date></time>
                     </mdlr:molecule.boxedData.item>
                 </f:else>
             </f:if>
             <f:if condition="{page.pageRecord.abstract} || {page.pageRecord.description}">
-                <mdlr:molecule.boxedData.item label="{f:translate(key: 'templates.about.digest', extensionName: 'chf_base')}">
+                <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.digest', extensionName: 'chf_base')}">
                     <f:if condition="{page.pageRecord.abstract}">
                         <f:then>{page.pageRecord.abstract}</f:then>
                         <f:else>{page.pageRecord.description}</f:else>
@@ -59,16 +59,16 @@
     <f:comment><!--
     <mdlr:atom.heading text="{f:translate(key: 'templates.main.rights', extensionName: 'chf_base')}" level="4" variants="{0: 'tacit'}" />
     <mdlr:molecule.boxedData.wrap>
-        <mdlr:molecule.boxedData.item label="{f:translate(key: 'templates.main.rights.credit', extensionName: 'chf_base')}">
+        <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.main.rights.credit', extensionName: 'chf_base')}">
             Credit string (role.allContent)
         </mdlr:molecule.boxedData.item>
-        <mdlr:molecule.boxedData.item label="{f:translate(key: 'object.abstractRelation.role.metadata', extensionName: 'chf_base')}">
+        <mdlr:molecule.boxedData.item text="{f:translate(key: 'object.abstractRelation.role.metadata', extensionName: 'chf_base')}">
             Author, link to licence
         </mdlr:molecule.boxedData.item>
-        <mdlr:molecule.boxedData.item label="{f:translate(key: 'object.abstractRelation.role.text', extensionName: 'chf_base')}">
+        <mdlr:molecule.boxedData.item text="{f:translate(key: 'object.abstractRelation.role.text', extensionName: 'chf_base')}">
             Author, link to licence
         </mdlr:molecule.boxedData.item>
-        <mdlr:molecule.boxedData.item label="{f:translate(key: 'object.abstractRelation.role.media', extensionName: 'chf_base')}">
+        <mdlr:molecule.boxedData.item text="{f:translate(key: 'object.abstractRelation.role.media', extensionName: 'chf_base')}">
             Author, link to licence
         </mdlr:molecule.boxedData.item>
     </mdlr:molecule.boxedData.wrap>

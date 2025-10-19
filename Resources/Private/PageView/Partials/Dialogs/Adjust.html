@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <mdlr:page.modal id="adjust" title="{f:translate(key: 'templates.adjust', extensionName: 'chf_base')}" close="{f:translate(key: 'templates.generic.close', extensionName: 'chf_base')}">
         <mdlr:molecule.boxedData.wrap variants="{0: 'space'}">
-            <mdlr:molecule.boxedData.item label="{f:translate(key: 'templates.adjust.language', extensionName: 'chf_base')}">
+            <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.adjust.language', extensionName: 'chf_base')}">
                 <mdlr:molecule.buttonRow.wrap>
                     <f:for each="{languageMenu}" as="menuItem">
                         <mdlr:molecule.buttonRow.item>
@@ -10,7 +10,7 @@
                     </f:for>
                 </mdlr:molecule.buttonRow.wrap>
             </mdlr:molecule.boxedData.item>
-            <mdlr:molecule.boxedData.item label="{f:translate(key: 'templates.adjust.color', extensionName: 'chf_base')}">
+            <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.adjust.color', extensionName: 'chf_base')}">
                 <mdlr:molecule.buttonRow.wrap>
                     <mdlr:molecule.buttonRow.item>
                         <mdlr:atom.button.function function="theme" variants="{0: 'mini', 1: 'light', 2: 'active'}" text="{f:translate(key: 'templates.adjust.color.auto', extensionName: 'chf_base')}" data="{target: 'auto'}" />
@@ -23,7 +23,7 @@
                     </mdlr:molecule.buttonRow.item>
                 </mdlr:molecule.buttonRow.wrap>
             </mdlr:molecule.boxedData.item>
-            <mdlr:molecule.boxedData.item label="{f:translate(key: 'templates.adjust.device', extensionName: 'chf_base')}">
+            <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.adjust.device', extensionName: 'chf_base')}">
                 <mdlr:molecule.buttonRow.wrap>
                     <mdlr:molecule.buttonRow.item>
                         <mdlr:atom.button.function function="storage" variants="{0: 'mini'}" text="{f:translate(key: 'templates.adjust.device.storage', extensionName: 'chf_base')}" />

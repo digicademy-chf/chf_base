@@ -7,7 +7,7 @@
                     <f:else>{site.configuration.websiteTitle}</f:else>
                 </f:if>
             </span>
-            <img src="{f:uri.image(src: '{settings.chf.logo.main}')}" alt="{f:if(condition: '{language.websiteTitle}', then: '{language.websiteTitle}', else: '{site.configuration.websiteTitle}')}">
+            <mdlr:atom.image url="{f:uri.image(src: '{settings.chf.logo.main}')}" alternativeText="{f:if(condition: '{language.websiteTitle}', then: '{language.websiteTitle}', else: '{site.configuration.websiteTitle}')}" />
         </f:link.page>
     </mdlr:molecule.logo>
 </html>
