@@ -1789,7 +1789,7 @@
                 <source>Search term</source>
                 <target>Suchbegriff</target>
             </trans-unit>
-            <trans-unit id="templates.search.query.placeholder" resname="templates.search.query.placeholder" approved="yes">
+            <trans-unit id="templates.search.query.example" resname="templates.search.query.example" approved="yes">
                 <source>Type to search…</source>
                 <target>Suchbegriff eingeben…</target>
             </trans-unit>

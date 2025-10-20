@@ -1348,7 +1348,7 @@
             <trans-unit id="templates.search.query" resname="templates.search.query">
                 <source>Search term</source>
             </trans-unit>
-            <trans-unit id="templates.search.query.placeholder" resname="templates.search.query.placeholder">
+            <trans-unit id="templates.search.query.example" resname="templates.search.query.example">
                 <source>Type to search…</source>
             </trans-unit>
             <trans-unit id="templates.search.go" resname="templates.search.go">

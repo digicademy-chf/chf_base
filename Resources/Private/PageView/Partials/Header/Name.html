@@ -1,16 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <mdlr:atom.heading text="{f:if(condition: '{language.websiteTitle}', then: '{language.websiteTitle}', else: '{site.configuration.websiteTitle}')}" level="1" variants="{0: 'tacit'}" />
     <mdlr:molecule.logo variants="{0: 'back'}" areas="{0: 'slot-a', 1: 'align-left'}">
-        <h1 id="header-name">
-            <f:link.page pageUid="{site.rootPageId}" title="{f:translate(key: 'templates.generic.home', extensionName: 'chf_base')}" class="mdlr-imagelink">
-                <span>
-                    <f:if condition="{language.websiteTitle}">
-                        <f:then>{language.websiteTitle}</f:then>
-                        <f:else>{site.configuration.websiteTitle}</f:else>
-                    </f:if>
-                </span>
-                <mdlr:atom.image url="{f:uri.image(src: '{settings.chf.logo.small}')}" alternativeText="{f:if(condition: '{language.websiteTitle}', then: '{language.websiteTitle}', else: '{site.configuration.websiteTitle}')}" />
-            </f:link.page>
-        </h1>
+        <mdlr:atom.imageLink.page pageUid="{site.rootPageId}" image="{f:uri.image(src: '{settings.chf.logo.small}')}" alternativeText="{f:if(condition: '{language.websiteTitle}', then: '{language.websiteTitle}', else: '{site.configuration.websiteTitle}')}" hint="{f:translate(key: 'templates.generic.home', extensionName: 'chf_base')}" />
         <f:for each="{rootlineMenu}" as="menuItem" iteration="index">
             <f:if condition="{index.cycle} == 1">
                 <f:then>

@@ -8,7 +8,7 @@
                 </f:if>
             </f:for>
             <mdlr:organism.form.wrap action="{searchMenuLink}" role="search">
-                <mdlr:molecule.search id="search-query" name="q" text="{f:translate(key: 'templates.search.query', extensionName: 'chf_base')}" placeholder="{f:translate(key: 'templates.search.query.placeholder', extensionName: 'chf_base')}" go="{f:translate(key: 'templates.search.go', extensionName: 'chf_base')}" />
+                <mdlr:molecule.search id="search-query" name="q" text="{f:translate(key: 'templates.search.query', extensionName: 'chf_base')}" example="{f:translate(key: 'templates.search.query.example', extensionName: 'chf_base')}" go="{f:translate(key: 'templates.search.go', extensionName: 'chf_base')}" />
                 <mdlr:organism.form.split>
                     <mdlr:atom.control id="search-exact" text="{f:translate(key: 'templates.search.exact', extensionName: 'chf_base') -> f:format.raw()}" type="switch" />
                     <mdlr:molecule.dropdown.wrap id="search-resource" variants="{0: 'right', 1: 'up'}">
