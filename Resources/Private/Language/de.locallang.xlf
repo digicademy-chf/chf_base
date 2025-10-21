@@ -1842,8 +1842,8 @@
                 <target>Lokale Daten löschen</target>
             </trans-unit>
             <trans-unit id="templates.adjust.powered" resname="templates.adjust.powered" approved="yes">
-                <source>Powered by the <![CDATA[<a href="https://github.com/digicademy-chf" target="_blank">]]>Cultural Heritage Framework<![CDATA[</a>]]></source>
-                <target>Betrieben mit dem <![CDATA[<a href="https://github.com/digicademy-chf" target="_blank">]]>Cultural Heritage Framework<![CDATA[</a>]]></target>
+                <source>Built using the <![CDATA[<a href="https://github.com/digicademy-chf" target="_blank">]]>Cultural Heritage Framework<![CDATA[</a>]]>, based on <![CDATA[<a href="https://typo3.org" target="_blank">]]>TYPO3<![CDATA[</a>]]> and further open-source projects</source>
+                <target>Betrieben mit dem <![CDATA[<a href="https://github.com/digicademy-chf" target="_blank">]]>Cultural Heritage Framework<![CDATA[</a>]]> auf Basis von <![CDATA[<a href="https://typo3.org" target="_blank">]]>TYPO3<![CDATA[</a>]]> und weiteren Open-Source-Projekten</target>
             </trans-unit>
         </body>
     </file>

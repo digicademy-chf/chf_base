@@ -1388,7 +1388,7 @@
                 <source>Remove local data</source>
             </trans-unit>
             <trans-unit id="templates.adjust.powered" resname="templates.adjust.powered">
-                <source>Powered by the <![CDATA[<a href="https://github.com/digicademy-chf" target="_blank">]]>Cultural Heritage Framework<![CDATA[</a>]]></source>
+                <source>Built using the <![CDATA[<a href="https://github.com/digicademy-chf" target="_blank">]]>Cultural Heritage Framework<![CDATA[</a>]]>, based on <![CDATA[<a href="https://typo3.org" target="_blank">]]>TYPO3<![CDATA[</a>]]> and further open-source projects</source>
             </trans-unit>
         </body>
     </file>

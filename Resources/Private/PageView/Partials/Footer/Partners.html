@@ -5,7 +5,7 @@
             <mdlr:molecule.imageRow.wrap>
                 <f:for each="{settings.chf.partners.urls}" as="url" key="index">
                     <mdlr:molecule.imageRow.item>
-                        <mdlr:atom.imageLink.external url="{url}" image="{f:uri.image(src: '{settings.chf.partners.logos.{index}}')}" alternativeText="{settings.chf.partners.names.{index}}" variants="{0: 'unobtrusive'}" />
+                        <mdlr:atom.imageLink.external uri="{url}" image="{f:uri.image(src: '{settings.chf.partners.logos.{index}}')}" alternativeText="{settings.chf.partners.names.{index}}" variants="{0: 'unobtrusive'}" />
                     </mdlr:molecule.imageRow.item>
                 </f:for>
             </mdlr:molecule.imageRow.wrap>

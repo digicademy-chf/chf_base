@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <mdlr:page.modal id="watch" title="{f:translate(key: 'templates.watch', extensionName: 'chf_base')}" close="{f:translate(key: 'templates.generic.close', extensionName: 'chf_base')}">
         <mdlr:molecule.boxedList.wrap variants="{0: 'compact'}">
-            <mdlr:molecule.boxedList.item url="{f:uri.page(absolute: '{true}')}" text="{label}" context="{type}">
+            <mdlr:molecule.boxedList.item uri="{f:uri.page(absolute: '{true}')}" text="{label}" context="{type}">
                 <mdlr:atom.button.function function="watchlist-add" variants="{0: 'icon', 1: 'transparent', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.add', extensionName: 'chf_base')}" data="{target: '{f:uri.page(absolute: \'{true}\')}', label: '{label}', type: '{type}', failure: '{f:translate(key: \'templates.watch.list.failure\', extensionName: \'chf_base\')}'}" icon="add" />
             </mdlr:molecule.boxedList.item>
         </mdlr:molecule.boxedList.wrap>
