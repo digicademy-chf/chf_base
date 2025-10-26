@@ -6,6 +6,9 @@ config {
     pageTitleFirst = 1
     pageTitleSeparator = –
     pageTitleSeparator.noTrimWrap = | | |
+
+    # OpenGraph support
+    htmlTag.attributes.prefix = og: https://ogp.me/ns#
 }
 
 # Page-view templates
@@ -19,8 +22,59 @@ page {
             200 = {$chf.templates.path}PageView/
         }
         variables {
-            parentPageTitle = TEXT
-            parentPageTitle.data = levelfield:-1:title
+            metadataTitle = TEXT
+            metadataTitle.data = field:title
+            metadataSubtitle = TEXT
+            metadataSubtitle.data = field:subtitle
+            metadataTitleSubtitle = COA
+            metadataTitleSubtitle {
+                10 = TEXT
+                10.data = field:title
+                20 = TEXT
+                20.data = LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:templates.generic.titleSubtitle
+                20.if.isTrue.field = subtitle
+                30 = TEXT
+                30.data = field:subtitle
+                30.if.isTrue.field = subtitle
+            }
+            metadataType = TEXT
+            metadataType.data = LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:templates.generic.type.page
+            metadataDescription = TEXT
+            metadataDescription.data = field:abstract // field:description
+            metadataKeywords = TEXT
+            metadataKeywords.data = field:keywords
+            metadataAuthor = TEXT
+            metadataAuthor.data = field:author
+            metadataAuthorEmail = TEXT
+            metadataAuthorEmail.data = field:author_email
+            metadataRightsUri = TEXT
+            metadataRightsUri.data = siteSettings:chf.rights.uri
+            metadataRightsLabel = TEXT
+            metadataRightsLabel.data = LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:templates.about.usage.copyright
+            metadataRightsLabel.if.equals = http://rightsstatements.org/vocab/InC/1.0/
+            metadataRightsLabel.if.value.data = siteSettings:chf.rights.uri
+            metadataWebApp = TEXT
+            metadataWebApp.data = siteLanguage:websiteTitle // site:websiteTitle
+            metadataPublisher = TEXT
+            metadataPublisher.data = siteSettings:chf.citation.publisher
+            metadataYear = TEXT
+            metadataYear.data = field:lastUpdated
+            metadataYear.if.isTrue.field = lastUpdated
+            metadataYear.date = Y
+            metadataDate = TEXT
+            metadataDate.data = field:lastUpdated
+            metadataDate.if.isTrue.field = lastUpdated
+            metadataDate.formattedDate = LONGDATE
+            metadataDateIso = TEXT
+            metadataDateIso.data = field:lastUpdated
+            metadataDateIso.if.isTrue.field = lastUpdated
+            metadataDateIso.date = Y-m-d
+            metadataAccess = TEXT
+            metadataAccess.formattedDate = LONGDATE
+            metadataAccessIso = TEXT
+            metadataAccessIso.date = Y-m-d
+            metadataCitationStyle = TEXT
+            metadataCitationStyle.data = siteSettings:chf.citation.style
         }
         dataProcessing {
             10 = menu

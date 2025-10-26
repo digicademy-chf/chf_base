@@ -59,11 +59,6 @@ settings:
     description: 'Comma-separated list of page IDs that contain faceted search options'
     type: string
     default: ''
-  chf.search.examples:
-    label: 'Sample searches'
-    description: 'List of exemplary search terms to show users as guidance'
-    type: stringlist
-    default: []
   chf.rights.uri:
     label: 'Rights statement'
     description: 'Default rights statement or license URI for regular page content'

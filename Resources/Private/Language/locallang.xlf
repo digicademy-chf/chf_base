@@ -989,7 +989,10 @@
                 <source>Unknown</source>
             </trans-unit>
             <trans-unit id="templates.generic.quote" resname="templates.generic.quote">
-                <source>“%s”</source>
+                <source>“%1$s%2$s”</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.titleSubtitle" resname="templates.generic.titleSubtitle">
+                <source>: </source>
             </trans-unit>
             <trans-unit id="templates.generic.accessed" resname="templates.generic.accessed">
                 <source>Accessed %s</source>
@@ -1162,10 +1165,10 @@
             <trans-unit id="templates.about.publisher" resname="templates.about.publisher">
                 <source>Publisher</source>
             </trans-unit>
-            <trans-unit id="templates.about.rights" resname="templates.about.rights">
-                <source>Rights</source>
+            <trans-unit id="templates.about.usage" resname="templates.about.usage">
+                <source>Nutzung</source>
             </trans-unit>
-            <trans-unit id="templates.about.rights.copyright" resname="templates.about.rights.copyright">
+            <trans-unit id="templates.about.usage.copyright" resname="templates.about.usage.copyright">
                 <source>In copyright</source>
             </trans-unit>
             <trans-unit id="templates.about.print" resname="templates.about.print">
@@ -1177,8 +1180,8 @@
             <trans-unit id="templates.about.access" resname="templates.about.access">
                 <source>Access</source>
             </trans-unit>
-            <trans-unit id="templates.about.digest" resname="templates.about.digest">
-                <source>Digest</source>
+            <trans-unit id="templates.about.description" resname="templates.about.description">
+                <source>Description</source>
             </trans-unit>
             <trans-unit id="templates.about.urn" resname="templates.about.urn">
                 <source><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]></source>
@@ -1322,7 +1325,7 @@
                 <source>Share on X (formerly Twitter)</source>
             </trans-unit>
             <trans-unit id="templates.share.dissociation" resname="templates.share.dissociation">
-                <source>The largely privacy-friendly links to these services do not express endorsement</source>
+                <source>These largely privacy-friendly links to third-party services do not express endorsement</source>
             </trans-unit>
             <trans-unit id="templates.watch" resname="templates.watch">
                 <source>Watch</source>

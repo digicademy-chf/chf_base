@@ -1,4 +1,9 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:comment>Prominent sub-menu of the current page to be displayed below the title.</f:comment>
+
+    <f:argument name="subMenu" type="array" optional="{false}" description="List of child navigation entries" />
+    <f:argument name="contentElements" type="array" optional="{false}" description="List of content records to provide a table of contents for" />
+
     <f:variable name="listContents">0</f:variable>
     <f:variable name="listSubMenu">0</f:variable>
     <f:for each="{contentElements}" as="contentElement">
@@ -6,20 +11,27 @@
             <f:variable name="listContents">1</f:variable>
         </f:if>
     </f:for>
+
     <f:if condition="{subMenu} || {listContents}">
         <mdlr:template.area semanticType="nav">
+
             <mdlr:atom.heading text="{f:translate(key: 'templates.main.submenu', extensionName: 'chf_base')}" level="3" variants="{0: 'tacit'}" />
+
             <mdlr:molecule.buttonRow.wrap variants="{0: 'separate'}">
+
                 <f:for each="{subMenu}" as="menuItem">
                     <f:variable name="listSubMenu">1</f:variable>
                     <mdlr:molecule.buttonRow.item>
                         <mdlr:atom.button.page variants="{0: 'texticon', 1: 'light'}" pageUid="{menuItem.data.uid}" text="{menuItem.title}" hint="{f:translate(key: 'templates.header.navigation.hint', extensionName: 'chf_base')}" iconAfter="right" />
                     </mdlr:molecule.buttonRow.item>
                 </f:for>
+
                 <mdlr:molecule.buttonRow.item>
-                    <f:render partial="Main/Toc" arguments="{listContents: '{listContents}', listSubMenu: '{listSubMenu}', contentElements: '{contentElements}'}"/>
+                    <f:render partial="Main/Toc" arguments="{listContents: listContents, listSubMenu: listSubMenu, contentElements: contentElements}"/>
                 </mdlr:molecule.buttonRow.item>
+
             </mdlr:molecule.buttonRow.wrap>
+
         </mdlr:template.area>
     </f:if>
 </html>

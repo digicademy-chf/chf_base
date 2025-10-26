@@ -1310,8 +1310,12 @@
                 <target>Unbekannt</target>
             </trans-unit>
             <trans-unit id="templates.generic.quote" resname="templates.generic.quote" approved="yes">
-                <source>“%s”</source>
-                <target>„%s“</target>
+                <source>“%1$s%2$s”</source>
+                <target>„%1$s“%2$s</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.titleSubtitle" resname="templates.generic.titleSubtitle" approved="yes">
+                <source>: </source>
+                <target>: </target>
             </trans-unit>
             <trans-unit id="templates.generic.accessed" resname="templates.generic.accessed" approved="yes">
                 <source>Accessed %s</source>
@@ -1541,11 +1545,11 @@
                 <source>Publisher</source>
                 <target>Verlag</target>
             </trans-unit>
-            <trans-unit id="templates.about.rights" resname="templates.about.rights" approved="yes">
-                <source>Rights</source>
-                <target>Rechte</target>
+            <trans-unit id="templates.about.usage" resname="templates.about.usage" approved="yes">
+                <source>Usage</source>
+                <target>Nutzung</target>
             </trans-unit>
-            <trans-unit id="templates.about.rights.copyright" resname="templates.about.rights.copyright" approved="yes">
+            <trans-unit id="templates.about.usage.copyright" resname="templates.about.usage.copyright" approved="yes">
                 <source>In copyright</source>
                 <target>Urheberrechtsschutz</target>
             </trans-unit>
@@ -1561,9 +1565,9 @@
                 <source>Access</source>
                 <target>Abruf</target>
             </trans-unit>
-            <trans-unit id="templates.about.digest" resname="templates.about.digest" approved="yes">
-                <source>Digest</source>
-                <target>Auszug</target>
+            <trans-unit id="templates.about.description" resname="templates.about.description" approved="yes">
+                <source>Description</source>
+                <target>Anreißer</target>
             </trans-unit>
             <trans-unit id="templates.about.urn" resname="templates.about.urn" approved="yes">
                 <source><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]></source>
@@ -1754,8 +1758,8 @@
                 <target>Auf X (früher Twitter) teilen</target>
             </trans-unit>
             <trans-unit id="templates.share.dissociation" resname="templates.share.dissociation" approved="yes">
-                <source>The largely privacy-friendly links to these services do not express endorsement</source>
-                <target>Die möglichst datensparsamen Links zu diesen Diensten sind kein Ausdruck der Befürwortung</target>
+                <source>These largely privacy-friendly links to third-party services do not express endorsement</source>
+                <target>Diese möglichst datensparsamen Links zu Diensten Dritter sind kein Ausdruck der Befürwortung</target>
             </trans-unit>
             <trans-unit id="templates.watch" resname="templates.watch" approved="yes">
                 <source>Watch</source>

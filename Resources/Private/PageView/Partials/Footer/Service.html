@@ -1,12 +1,19 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <f:if condition="{settings.chf.service.page}">
+    <f:comment>Lists links to service pages.</f:comment>
+
+    <f:argument name="serviceMenu" type="array" optional="{false}" description="List of service links to display" />
+
+    <f:if condition="{serviceMenu}">
         <mdlr:template.area semanticType="nav" id="footer-service" areas="{0: 'slot-b', 1: 'align-right-above-900', 2: 'align-middle'}">
+
             <mdlr:atom.heading text="{f:translate(key: 'templates.footer.service', extensionName: 'chf_base')}" level="3" variants="{0: 'tacit'}" />
+
             <mdlr:molecule.linkRow.wrap>
                 <f:for each="{serviceMenu}" as="menuItem">
-                    <mdlr:molecule.linkRow.item pageUid="{menuItem.data.uid}" text="{menuItem.title}" hint="{f:translate(key: 'templates.header.navigation.hint', extensionName: 'chf_base')}" active="{f:if(condition: menuItem.active, then:'{true}', else: '{false}')}" />
+                    <mdlr:molecule.linkRow.item pageUid="{menuItem.data.uid}" text="{menuItem.title}" hint="{f:translate(key: 'templates.header.navigation.hint', extensionName: 'chf_base')}" active="{f:if(condition: menuItem.active, then: 1, else: 0)}" />
                 </f:for>
             </mdlr:molecule.linkRow.wrap>
+
         </mdlr:template.area>
     </f:if>
 </html>

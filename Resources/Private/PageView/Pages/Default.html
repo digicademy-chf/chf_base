@@ -1,17 +1,14 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <f:layout name="Default"/>
+    <f:comment>Page template used for regular content pages.</f:comment>
+
+    <f:layout name="Default" />
+
     <f:section name="Main">
-        <mdlr:template.area semanticType="main" id="main">
-            <mdlr:template.area semanticType="article" id="main-article">
-
-                <f:render partial="Main/Title" arguments="{context: 0, title: page.pageRecord.title, subtitle: page.pageRecord.subtitle, subMenu: '{subMenu}', contentElements: '{contentElements.main.records}'}"/>
-
-                <f:render partial="Main/Content" arguments="{contentElements: '{contentElements.main.records}'}"/>
-
-            </mdlr:template.area>
-
-            <f:render partial="About/About" arguments="{_all}"/>
-
-        </mdlr:template.area>
+        <f:render partial="Main/Main" arguments="{title: metadataTitle, subtitle: metadataSubtitle, subMenu: subMenu, contentElements: contentElements.main.records}"/>
     </f:section>
+
+    <f:section name="About">
+        <f:render partial="About/About" arguments="{titleSubtitle: metadataTitleSubtitle, description: metadataDescription, author: metadataAuthor, authorEmail: metadataAuthorEmail, rightsUri: metadataRightsUri, rightsLabel: metadataRightsLabel, webApp: metadataWebApp, publisher: metadataPublisher, year: metadataYear, date: metadataDate, dateIso: metadataDateIso, access: metadataAccess, accessIso: metadataAccessIso, citationStyle: metadataCitationStyle, apiPageUid: settings.chf.apis.page}"/>
+    </f:section>
+
 </html>

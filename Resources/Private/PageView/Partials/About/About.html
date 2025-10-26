@@ -1,14 +1,31 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:comment>Overview of properties, references, and serialisations of the current page or record.</f:comment>
+
+    <f:argument name="titleSubtitle" type="string" optional="{false}" description="Combined title and subtitle of the page or record" />
+    <f:argument name="description" type="string" optional="{true}" default="" description="Brief description of the page or record" />
+    <f:argument name="author" type="string" optional="{true}" default="" description="Author of the page or record" />
+    <f:argument name="authorEmail" type="string" optional="{true}" default="" description="Email of the author of the page or record" />
+    <f:argument name="rightsUri" type="string" optional="{true}" default="" description="URI of the rights situation of this page or record" />
+    <f:argument name="rightsLabel" type="string" optional="{true}" default="" description="Label of the rights situation of this page or record" />
+    <f:argument name="webApp" type="string" optional="{false}" description="Name of the resource this page or record is part of" />
+    <f:argument name="publisher" type="string" optional="{false}" description="Publisher of this web application" />
+    <f:argument name="year" type="string" optional="{false}" description="Year this page or record was published in" />
+    <f:argument name="date" type="string" optional="{false}" description="Date this page or record was published on" />
+    <f:argument name="dateIso" type="string" optional="{true}" default="" description="ISO-formatted date this page or record was published on" />
+    <f:argument name="access" type="string" optional="{false}" description="Date this page or record was accessed on" />
+    <f:argument name="accessIso" type="string" optional="{true}" default="" description="ISO-formatted date this page or record was accessed on" />
+    <f:argument name="citationStyle" type="string" optional="{false}" description="Citation style to use in this web app" />
+    <f:argument name="apiPageUid" type="int" optional="{true}" default="0" description="Whether to show a note with a link to a general API page" />
+
     <mdlr:page.section id="about" variants="{0: 'odd', 2: 'wide'}">
+
         <mdlr:atom.heading text="{f:translate(key: 'templates.about', extensionName: 'chf_base')}" level="3" />
+
         <mdlr:template.pattern variants="{0: 'triangle'}">
-
-<f:render partial="About/Properties" arguments="{_all}"/>
-
-<f:render partial="About/Reference" arguments="{_all}"/>
-
-<f:render partial="About/Serializations"/>
-
+            <f:render partial="About/Properties" arguments="{description: description, author: author, authorEmail: authorEmail, rightsUri: rightsUri, rightsLabel: rightsLabel, date: date, dateIso: dateIso, access: access, accessIso: accessIso}" />
+            <f:render partial="About/Reference" arguments="{titleSubtitle: titleSubtitle, author: author, publication: webApp, publisher: publisher, year: year, date: date, access: access, citationStyle: citationStyle}" />
+            <f:render partial="About/Serializations" arguments="{apiPageUid: apiPageUid}" />
         </mdlr:template.pattern>
+
     </mdlr:page.section>
 </html>

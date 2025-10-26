@@ -1,0 +1,8 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:comment>Tumblr share URL, only tracks users when they click the link.</f:comment>
+
+    <f:argument name="titleSubtitle" type="string" optional="{false}" description="Combined title and subtitle that represents the current record" />
+
+    https://www.tumblr.com/widgets/share/tool?canonicalUrl={f:uri.page(absolute: 'true')}&title={titleSubtitle -> f:format.urlencode()}
+
+</html>

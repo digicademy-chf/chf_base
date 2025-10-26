@@ -1,59 +1,65 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:comment>List of properties, such as author or publication date, of the current page or record.</f:comment>
+
+    <f:argument name="description" type="string" optional="{true}" default="" description="Brief description of the page or record" />
+    <f:argument name="author" type="string" optional="{true}" default="" description="Author of the page or record" />
+    <f:argument name="authorEmail" type="string" optional="{true}" default="" description="Email of the author of the page or record" />
+    <f:argument name="rightsUri" type="string" optional="{true}" default="" description="URI of the rights situation of this page or record" />
+    <f:argument name="rightsLabel" type="string" optional="{true}" default="" description="Label of the rights situation of this page or record" />
+    <f:argument name="date" type="string" optional="{true}" default="" description="Date this page or record was published on" />
+    <f:argument name="dateIso" type="string" optional="{true}" default="" description="ISO-formatted Date this page or record was published on" />
+    <f:argument name="access" type="string" optional="{true}" default="" description="Date this page or record was accessed on" />
+    <f:argument name="accessIso" type="string" optional="{true}" default="" description="ISO-formatted Date this page or record was accessed on" />
+
     <mdlr:template.area semanticType="section" areas="{0: 'slot-a'}">
+
         <mdlr:atom.heading text="{f:translate(key: 'templates.about.properties', extensionName: 'chf_base')}" level="4" variants="{0: 'tacit'}" />
+
         <mdlr:molecule.boxedData.wrap>
-            <f:if condition="{page.pageRecord.author}">
+            <f:if condition="{author}">
                 <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.author', extensionName: 'chf_base')}">
-                    <f:if condition="{page.pageRecord.author_email}">
-                        <mdlr:atom.button.email email="{page.pageRecord.author_email}" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.email', extensionName: 'chf_base')}" icon="email" rel="author" />
+                    <f:if condition="{authorEmail}">
+                        <mdlr:atom.button.email email="{authorEmail}" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.email', extensionName: 'chf_base')}" icon="email" rel="author" />
                     </f:if>
-                    {page.pageRecord.author}
+                    {author}
                 </mdlr:molecule.boxedData.item>
             </f:if>
-            <!--
-            <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.photographer', extensionName: 'chf_base')}" />
+            <!--<mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.photographer', extensionName: 'chf_base')}" />
             <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.editor', extensionName: 'chf_base')}" />
-            <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.publisher', extensionName: 'chf_base')}" />
-            -->
-            <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.rights', extensionName: 'chf_base')}">
-                <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.uri', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.uri.hint', extensionName: 'chf_base')}" data="{target: '{settings.chf.rights.uri}', success: '{f:translate(key: \'templates.generic.copy.uri.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.uri.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
-                <f:link.external uri="{settings.chf.rights.uri}" target="_blank" rel="license">
-                    <f:if condition="{settings.chf.rights.uri} == 'http://rightsstatements.org/vocab/InC/1.0/'">
-                        <f:then>
-                            <f:translate key="templates.about.rights.copyright" extensionName="chf_base"/>
-                        </f:then>
-                        <f:else>
-                            <f:uri.external uri="{settings.chf.rights.uri}"/>
-                        </f:else>
-                    </f:if>
-                </f:link.external>
-            </mdlr:molecule.boxedData.item>
-            <!--
-            <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.print', extensionName: 'chf_base')}">
-                2003 (Band XVII, Abb. 10)
-            </mdlr:molecule.boxedData.item>
-            -->
-            <f:if condition="{page.pageRecord.lastUpdated}">
+            <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.publisher', extensionName: 'chf_base')}" />-->
+            <f:if condition="{rightsUri}">
+                <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.usage', extensionName: 'chf_base')}">
+                    <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.uri', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.uri.hint', extensionName: 'chf_base')}" data="{target: rightsUri, success: '{f:translate(key: \'templates.generic.copy.uri.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.uri.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
+                    <f:link.external uri="{rightsUri}" target="_blank" rel="license">
+                        <f:if condition="{rightsLabel}">
+                            <f:then>{rightsLabel}</f:then>
+                            <f:else>{rightsUri}</f:else>
+                        </f:if>
+                    </f:link.external>
+                </mdlr:molecule.boxedData.item>
+            </f:if>
+            <f:if condition="{date} && {dateIso}">
                 <f:then>
                     <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.online', extensionName: 'chf_base')}">
-                        <time datetime="{page.pageRecord.lastUpdated -> f:format.date(format: '%Y-%m-%d')}"><f:format.date pattern="LONGDATE">{page.pageRecord.lastUpdated}</f:format.date></time>
+                        <time datetime="{dateIso}">{date}</time>
                     </mdlr:molecule.boxedData.item>
                 </f:then>
                 <f:else>
                     <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.access', extensionName: 'chf_base')}">
-                        <time datetime="{f:format.date(date: 'today', format: '%Y-%m-%d')}"><f:format.date pattern="LONGDATE">today</f:format.date></time>
+                        <time datetime="{accessIso}">{access}</time>
                     </mdlr:molecule.boxedData.item>
                 </f:else>
             </f:if>
-            <f:if condition="{page.pageRecord.abstract} || {page.pageRecord.description}">
-                <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.digest', extensionName: 'chf_base')}">
-                    <f:if condition="{page.pageRecord.abstract}">
-                        <f:then>{page.pageRecord.abstract}</f:then>
-                        <f:else>{page.pageRecord.description}</f:else>
-                    </f:if>
+            <!--<mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.print', extensionName: 'chf_base')}">
+                2003 (Band XVII, Abb. 10)
+            </mdlr:molecule.boxedData.item>-->
+            <f:if condition="{description}">
+                <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.description', extensionName: 'chf_base')}">
+                    {description}
                 </mdlr:molecule.boxedData.item>
             </f:if>
         </mdlr:molecule.boxedData.wrap>
+
     </mdlr:template.area>
 
     <f:comment><!--

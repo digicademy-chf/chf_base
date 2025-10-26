@@ -1,8 +1,14 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:comment>Meta buttons to open modal dialogs.</f:comment>
+
+    <f:argument name="searchButton" type="bool" optional="{true}" default="{false}" description="Whether to show a search button" />
+
     <mdlr:template.area semanticType="nav" id="header-meta" areas="{0: 'slot-c', 1: 'align-right', 2: 'align-middle'}">
+
         <mdlr:atom.heading text="{f:translate(key: 'templates.header.meta', extensionName: 'chf_base')}" level="2" variants="{0: 'tacit'}" />
+
         <mdlr:molecule.buttonRow.wrap variants="{0: 'nowrap'}">
-            <f:if condition="{searchMenu}">
+            <f:if condition="{searchButton}">
                 <mdlr:molecule.buttonRow.item>
                     <mdlr:atom.button.function id="header-meta-search" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.search', extensionName: 'chf_base')}" aria="{controls: 'search'}" data="{focus: 'search-query'}" icon="search" />
                 </mdlr:molecule.buttonRow.item>
@@ -17,5 +23,6 @@
                 <mdlr:atom.button.function id="header-meta-adjust" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.adjust', extensionName: 'chf_base')}" aria="{controls: 'adjust'}" icon="adjust" />
             </mdlr:molecule.buttonRow.item>
         </mdlr:molecule.buttonRow.wrap>
+
     </mdlr:template.area>
 </html>

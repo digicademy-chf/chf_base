@@ -1,14 +1,22 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:comment>Provides the main content area or an empty state if there are no content elements.</f:comment>
+
+    <f:argument name="contentElements" type="array" optional="{false}" description="List of content records to display in this area" />
+
     <f:if condition="{contentElements}">
         <f:then>
+
             <mdlr:page.section id="main-content" variants="{0: 'even', 1: 'ultrawide'}">
                 <mdlr:organism.content contentElements="{contentElements}" />
             </mdlr:page.section>
+
         </f:then>
         <f:else>
+
             <mdlr:page.section id="main-content" variants="{0: 'even'}">
                 <mdlr:molecule.empty illustration="placeholder" message="{f:translate(key: 'templates.main.empty', extensionName: 'chf_base')}" />
             </mdlr:page.section>
+
         </f:else>
     </f:if>
 </html>

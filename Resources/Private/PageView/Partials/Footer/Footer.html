@@ -1,9 +1,22 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:comment>Displays a medium-sized footer with general but not urgent information.</f:comment>
+
+    <f:argument name="webApp" type="string" optional="{false}" description="Website title to use as alternative text" />
+    <f:argument name="webAppPageUid" type="int" optional="{false}" description="UID of the page to link the logo to" />
+    <f:argument name="webAppLogo" type="string" optional="{false}" description="Path to the logo" />
+    <f:argument name="serviceMenu" type="array" optional="{false}" description="List of service links to display" />
+    <f:argument name="socialLinks" type="array" optional="{false}" description="List of social links to display" />
+    <f:argument name="partnerUrls" type="array" optional="{false}" description="List of partner URLs" />
+    <f:argument name="partnerLogos" type="array" optional="{false}" description="List of partner logos" />
+    <f:argument name="partnerNames" type="array" optional="{false}" description="List of partner names" />
+
     <mdlr:page.section semanticType="footer" id="footer" variants="{0: 'even', 1: 'wide'}">
+
         <mdlr:atom.heading text="{f:translate(key: 'templates.footer', extensionName: 'chf_base')}" level="2" variants="{0: 'tacit'}" />
+
         <f:if condition="!{settings.chf.service.page}">
             <f:then>
-                <f:if condition="!{settings.chf.partners.urls} || !{settings.chf.partners.logos} || !{settings.chf.partners.names}">
+                <f:if condition="!{partnerUrls} || !{partnerLogos} || !{partnerNames}">
                     <f:then>
                         <f:variable name="variants" value="{0: 'clasped', 1: 'clasped-missing-b', 2: 'clasped-missing-c'}" />
                     </f:then>
@@ -13,7 +26,7 @@
                 </f:if>
             </f:then>
             <f:else>
-                <f:if condition="!{settings.chf.partners.urls} || !{settings.chf.partners.logos} || !{settings.chf.partners.names}">
+                <f:if condition="!{partnerUrls} || !{partnerLogos} || !{partnerNames}">
                     <f:then>
                         <f:variable name="variants" value="{0: 'clasped', 1: 'clasped-missing-c'}" />
                     </f:then>
@@ -23,16 +36,13 @@
                 </f:if>
             </f:else>
         </f:if>
+
         <mdlr:template.pattern variants="{variants}">
-
-<f:render partial="Footer/Name" arguments="{_all}"/>
-
-<f:render partial="Footer/Service" arguments="{_all}"/>
-
-<f:render partial="Footer/Social" arguments="{_all}"/>
-
-<f:render partial="Footer/Partners" arguments="{_all}"/>
-
+            <f:render partial="Footer/WebApp" arguments="{webApp: webApp, pageUid: webAppPageUid, logo: webAppLogo}" />
+            <f:render partial="Footer/Service" arguments="{serviceMenu: serviceMenu}" />
+            <f:render partial="Footer/Social" arguments="{socialLinks: socialLinks}" />
+            <f:render partial="Footer/Partners" arguments="{urls: partnerUrls, logos: partnerLogos, names: partnerNames}" />
         </mdlr:template.pattern>
+
     </mdlr:page.section>
 </html>

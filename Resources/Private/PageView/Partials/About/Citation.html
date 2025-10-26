@@ -1,24 +1,70 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true"><f:if condition="{author}">
-        <f:then>{author -> f:format.htmlspecialchars()}</f:then>
-        <f:else><f:if condition="{publication}">
-            <f:then>{publication -> f:format.htmlspecialchars()}</f:then>
-            <f:else><f:translate key="templates.generic.unknown" extensionName="chf_base"/></f:else>
-        </f:if></f:else>
-    </f:if><f:if condition="{style} == 'mla-author-date'">
-        <f:then> (<f:if condition="{year}">
-            <f:then>{year}</f:then>
-            <f:else><f:format.date pattern="yyyy">today</f:format.date></f:else>
-        </f:if>)</f:then>
-    </f:if>. <f:if condition="{title}">
-    <f:then><f:translate key="templates.generic.quote" extensionName="chf_base" arguments="{0: '{title -> f:format.htmlspecialchars()}{f:if(condition: \'{subtitle}\', then: \': {subtitle -> f:format.htmlspecialchars()}\')}.'}"/> </f:then>
-</f:if><f:if condition="{publication}">
-    <f:then><f:if condition="{italics}"><em></f:if>{publication -> f:format.htmlspecialchars()}<f:if condition="{italics}"></em></f:if>, </f:then>
-</f:if><f:if condition="{publisher}">
-    <f:then>{publisher -> f:format.htmlspecialchars()}, </f:then>
-</f:if><f:if condition="{date}">
-    <f:then>{date}, </f:then>
-</f:if><f:if condition="{url}">
-    <f:then>URL: {url}</f:then>
-</f:if>.<f:if condition="!{date}">
-    <f:then> <f:translate key="templates.generic.accessed" extensionName="chf_base" arguments="{0: '{f:format.date(date: \'today\', pattern: \'LONGDATE\')}'}"/>.</f:then>
-</f:if></html>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:comment>Citation template (mls-author-date or mla-author-year).</f:comment>
+
+    <f:argument name="titleSubtitle" type="string" optional="{false}" description="Combined title and subtitle of the page or record" />
+    <f:argument name="author" type="string" optional="{true}" default="" description="Author of the page or record" />
+    <f:argument name="publication" type="string" optional="{true}" default="" description="Name of the resource this page or record is part of" />
+    <f:argument name="publisher" type="string" optional="{true}" default="" description="Publisher of this web application" />
+    <f:argument name="year" type="string" optional="{true}" default="" description="Year this page or record was published in" />
+    <f:argument name="date" type="string" optional="{true}" default="" description="Date this page or record was published on" />
+    <f:argument name="access" type="string" optional="{true}" default="" description="Date this page or record was accessed on" />
+    <f:argument name="citationStyle" type="string" optional="{true}" default="mla-author-title" description="Citation style to use in this web app" />
+    <f:argument name="italics" type="bool" optional="{true}" default="{true}" description="Whether to italicise titles where appropriate" />
+
+    <f:if condition="{author}">
+        <f:then>
+            <f:variable name="citation"><f:format.htmlspecialchars>{author}</f:format.htmlspecialchars></f:variable>
+        </f:then>
+        <f:else>
+            <f:if condition="{publication}">
+                <f:then>
+                    <f:variable name="citation"><f:format.htmlspecialchars>{publication}</f:format.htmlspecialchars></f:variable>
+                </f:then>
+                <f:else>
+                    <f:variable name="citation"><f:translate key="templates.generic.unknown" extensionName="chf_base" /></f:variable>
+                </f:else>
+            </f:if>
+        </f:else>
+    </f:if>
+
+    <f:if condition="{citationStyle} == 'mla-author-date'">
+        <f:if condition="{year}">
+            <f:then>
+                <f:variable name="yearToAdd">{year}</f:variable>
+            </f:then>
+            <f:else>
+                <f:variable name="yearToAdd"><f:format.date pattern="yyyy">today</f:format.date></f:variable>
+            </f:else>
+        </f:if>
+        <f:variable name="citation">{citation} ({yearToAdd})</f:variable>
+    </f:if>
+
+    <f:variable name="citation">{citation}. <f:translate key="templates.generic.quote" extensionName="chf_base" arguments="{1: '{titleSubtitle -> f:format.htmlspecialchars()}', 2: '.'}"/></f:variable>
+
+    <f:if condition="{publication}">
+        <f:if condition="{italics}">
+            <f:then>
+                <f:variable name="citation">{citation} <em><f:format.htmlspecialchars>{publication}</f:format.htmlspecialchars></em>,</f:variable>
+            </f:then>
+            <f:else>
+                <f:variable name="citation">{citation} <f:format.htmlspecialchars>{publication}</f:format.htmlspecialchars>,</f:variable>
+            </f:else>
+        </f:if>
+    </f:if>
+
+    <f:if condition="{publisher}">
+        <f:variable name="citation">{citation} <f:format.htmlspecialchars>{publisher}</f:format.htmlspecialchars>,</f:variable>
+    </f:if>
+
+    <f:if condition="{date}">
+        <f:variable name="citation">{citation} {date},</f:variable>
+    </f:if>
+
+    <f:variable name="citation">{citation} URL: {f:uri.page(absolute: 1)}.</f:variable>
+
+    <f:if condition="!{date}">
+        <f:variable name="citation">{citation} <f:translate key="templates.generic.accessed" extensionName="chf_base" arguments="{0: access}"/>.</f:variable>
+    </f:if>
+
+    <f:format.raw>{citation}</f:format.raw>
+</html>

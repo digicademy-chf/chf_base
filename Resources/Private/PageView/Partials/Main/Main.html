@@ -1,0 +1,14 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:comment>Puts together all content of a regular page between header and footer.</f:comment>
+
+    <f:argument name="title" type="string" optional="{false}" description="Title of the page or record" />
+    <f:argument name="subtitle" type="string" optional="{false}" description="Subtitle of the page or record" />
+    <f:argument name="context" type="string" optional="{true}" default="" description="Context string above the title" />
+    <f:argument name="subMenu" type="array" optional="{false}" description="List of child navigation entries" />
+    <f:argument name="contentElements" type="array" optional="{false}" description="List of content records to display and provide a table of contents for" />
+
+    <mdlr:template.area semanticType="article" id="main-article">
+        <f:render partial="Main/Title" arguments="{title: title, subtitle: subtitle, context: context, subMenu: subMenu, contentElements: contentElements}" />
+        <f:render partial="Main/Content" arguments="{contentElements: contentElements}" />
+    </mdlr:template.area>
+</html>

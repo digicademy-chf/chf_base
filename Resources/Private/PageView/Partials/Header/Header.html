@@ -1,14 +1,20 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:comment>Produces a headerbar including the main navigation and immediately important contextual info.</f:comment>
+
+    <f:argument name="webApp" type="string" optional="{false}" description="Website title to use as heading and alternative text" />
+    <f:argument name="webAppPageUid" type="int" optional="{false}" description="UID of the page to link the logo to" />
+    <f:argument name="webAppLogo" type="string" optional="{false}" description="Path to the logo" />
+    <f:argument name="rootlineMenu" type="array" optional="{false}" description="List of rootline navigation items" />
+    <f:argument name="mainMenu" type="array" optional="{false}" description="List of menu items to display" />
+    <f:argument name="searchButton" type="bool" optional="{true}" default="{false}" description="Whether to show a search button" />
+
     <mdlr:page.section semanticType="header" id="header" variants="{0: 'headerbar', 1: 'ultrawide'}">
         <mdlr:template.pattern id="header-headerbar" variants="{0: 'triptych'}">
 
-<f:render partial="Header/Name" arguments="{_all}" />
-
-<f:render partial="Header/Jump" />
-
-<f:render partial="Header/Navigation" arguments="{mainMenu: mainMenu}" />
-
-<f:render partial="Header/Meta" arguments="{searchMenu: searchMenu}" />
+            <f:render partial="Header/WebApp" arguments="{webApp: webApp, pageUid: webAppPageUid, logo: webAppLogo, rootlineMenu: rootlineMenu}" />
+            <f:render partial="Header/Jump" />
+            <f:render partial="Header/Navigation" arguments="{mainMenu: mainMenu}" />
+            <f:render partial="Header/Meta" arguments="{searchButton: searchButton}" />
 
         </mdlr:template.pattern>
     </mdlr:page.section>

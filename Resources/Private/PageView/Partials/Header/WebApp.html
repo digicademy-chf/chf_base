@@ -1,7 +1,17 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <mdlr:atom.heading text="{f:if(condition: '{language.websiteTitle}', then: '{language.websiteTitle}', else: '{site.configuration.websiteTitle}')}" level="1" variants="{0: 'tacit'}" />
+    <f:comment>Displays a small web app logo and, if appropriate, a back button.</f:comment>
+
+    <f:argument name="webApp" type="string" optional="{false}" description="Website title to use as heading and alternative text" />
+    <f:argument name="pageUid" type="int" optional="{false}" description="UID of the page to link the logo to" />
+    <f:argument name="logo" type="string" optional="{false}" description="Path to the logo" />
+    <f:argument name="rootlineMenu" type="array" optional="{false}" description="List of rootline navigation items" />
+
+    <mdlr:atom.heading text="{webApp}" level="1" variants="{0: 'tacit'}" />
+
     <mdlr:molecule.logo variants="{0: 'back'}" areas="{0: 'slot-a', 1: 'align-left'}">
-        <mdlr:atom.imageLink.page pageUid="{site.rootPageId}" image="{f:uri.image(src: '{settings.chf.logo.small}')}" alternativeText="{f:if(condition: '{language.websiteTitle}', then: '{language.websiteTitle}', else: '{site.configuration.websiteTitle}')}" hint="{f:translate(key: 'templates.generic.home', extensionName: 'chf_base')}" />
+
+        <mdlr:atom.imageLink.page pageUid="{pageUid}" image="{f:uri.image(src: logo)}" alternativeText="{webApp}" hint="{f:translate(key: 'templates.generic.home', extensionName: 'chf_base')}" />
+
         <f:for each="{rootlineMenu}" as="menuItem" iteration="index">
             <f:if condition="{index.cycle} == 1">
                 <f:then>
@@ -22,5 +32,6 @@
                 </f:else>
             </f:if>
         </f:for>
+
     </mdlr:molecule.logo>
 </html>

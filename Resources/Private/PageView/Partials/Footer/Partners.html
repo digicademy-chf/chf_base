@@ -1,14 +1,23 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <f:if condition="{settings.chf.partners.urls} && {settings.chf.partners.logos} && {settings.chf.partners.names}">
+    <f:comment>Lists institutional partners contributing to this web app.</f:comment>
+
+    <f:argument name="urls" type="array" optional="{false}" description="List of partner URLs" />
+    <f:argument name="logos" type="array" optional="{false}" description="List of partner logos" />
+    <f:argument name="names" type="array" optional="{false}" description="List of partner names" />
+
+    <f:if condition="{urls} && {logos} && {names}">
         <mdlr:template.area semanticType="section" id="footer-partners" areas="{0: 'slot-c', 1: 'align-left-above-900', 2: 'align-middle'}">
+
             <mdlr:atom.heading text="{f:translate(key: 'templates.footer.partners', extensionName: 'chf_base')}" level="3" variants="{0: 'tacit'}" />
+
             <mdlr:molecule.imageRow.wrap>
-                <f:for each="{settings.chf.partners.urls}" as="url" key="index">
+                <f:for each="{urls}" as="url" key="index">
                     <mdlr:molecule.imageRow.item>
-                        <mdlr:atom.imageLink.external uri="{url}" image="{f:uri.image(src: '{settings.chf.partners.logos.{index}}')}" alternativeText="{settings.chf.partners.names.{index}}" variants="{0: 'unobtrusive'}" />
+                        <mdlr:atom.imageLink.external uri="{url}" image="{f:uri.image(src: '{logos.{index}}')}" alternativeText="{names.{index}}" variants="{0: 'unobtrusive'}" />
                     </mdlr:molecule.imageRow.item>
                 </f:for>
             </mdlr:molecule.imageRow.wrap>
+
         </mdlr:template.area>
     </f:if>
 </html>

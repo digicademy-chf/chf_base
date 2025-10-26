@@ -1,42 +1,43 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:comment>Permalink variants and citation suggestion for the current page or record.</f:comment>
+
+    <f:argument name="titleSubtitle" type="string" optional="{false}" description="Combined title and subtitle of the page or record" />
+    <f:argument name="author" type="string" optional="{false}" description="Author of the page or record" />
+    <f:argument name="publication" type="string" optional="{false}" description="Name of the resource this page or record is part of" />
+    <f:argument name="publisher" type="string" optional="{false}" description="Publisher of this web application" />
+    <f:argument name="year" type="string" optional="{false}" description="Year this page or record was published in" />
+    <f:argument name="date" type="string" optional="{false}" description="Date this page or record was published on" />
+    <f:argument name="access" type="string" optional="{false}" description="Date this page or record was accessed on" />
+    <f:argument name="citationStyle" type="string" optional="{false}" description="Citation style to use in this web app" />
+
     <mdlr:template.area semanticType="section" areas="{0: 'slot-b'}">
+
         <mdlr:atom.heading text="{f:translate(key: 'templates.about.reference', extensionName: 'chf_base')}" level="4" variants="{0: 'tacit-above-600'}" />
+
         <mdlr:molecule.boxedData.wrap>
-            <!--
-            <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.urn', extensionName: 'chf_base') -> f:format.raw()}">
-                <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.urn', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.urn.hint', extensionName: 'chf_base')}" data="{target: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.generic.copy.urn.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.urn.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
+            <!--<mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.urn', extensionName: 'chf_base') -> f:format.raw()}">
+                <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.urn', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.urn.hint', extensionName: 'chf_base')}" data="{target: '{f:uri.page(absolute: 1)}', success: '{f:translate(key: \'templates.generic.copy.urn.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.urn.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
                 <f:link.page rel="canonical">
-                    <f:uri.page absolute="true"/>
+                    <f:uri.page absolute="true" />
                 </f:link.page>
             </mdlr:molecule.boxedData.item>
             <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.permalink', extensionName: 'chf_base')}">
-                <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.permalink', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.permalink.hint', extensionName: 'chf_base')}" data="{target: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.generic.copy.permalink.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.permalink.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
+                <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.permalink', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.permalink.hint', extensionName: 'chf_base')}" data="{target: '{f:uri.page(absolute: 1)}', success: '{f:translate(key: \'templates.generic.copy.permalink.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.permalink.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
                 <f:link.page rel="canonical">
-                    <f:uri.page absolute="true"/>
+                    <f:uri.page absolute="true" />
+                </f:link.page>
+            </mdlr:molecule.boxedData.item>-->
+            <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.url', extensionName: 'chf_base') -> f:format.raw()}">
+                <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.url', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.url.hint', extensionName: 'chf_base')}" data="{target: '{f:uri.page(absolute: 1)}', success: '{f:translate(key: \'templates.generic.copy.url.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.url.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
+                <f:link.page rel="canonical">
+                    <f:uri.page absolute="true" />
                 </f:link.page>
             </mdlr:molecule.boxedData.item>
-            -->
-            <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.url', extensionName: 'chf_base') -> f:format.raw()}">
-                <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.url', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.url.hint', extensionName: 'chf_base')}" data="{target: '{f:uri.page(absolute: \'true\')}', success: '{f:translate(key: \'templates.generic.copy.url.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.url.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
-                <f:link.page rel="canonical">
-                    <f:uri.page absolute="true"/>
-                </f:link.page>    
-            </mdlr:molecule.boxedData.item>
             <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.citation', extensionName: 'chf_base')}">
-                <f:alias map="{
-                    citationStyle: '{settings.chf.citation.style}',
-                    citationAuthor: '{page.pageRecord.author}',
-                    citationTitle: '{page.pageRecord.title}',
-                    citationSubtitle: '{page.pageRecord.subtitle}',
-                    citationPublication: '{f:if(condition: \'{language.websiteTitle}\', then: \'{language.websiteTitle}\', else: \'{site.configuration.websiteTitle}\')}',
-                    citationPublisher: '{settings.chf.citation.publisher}',
-                    citationYear: '{f:if(condition: \'{page.pageRecord.lastUpdated}\', then: \'{page.pageRecord.lastUpdated -> f:format.date(pattern: \\\'yyyy\\\')}\')}',
-                    citationDate: '{f:if(condition: \'{page.pageRecord.lastUpdated}\', then: \'{page.pageRecord.lastUpdated -> f:format.date(pattern: \\\'LONGDATE\\\')}\')}',
-                    citationUrl: '{f:uri.page(absolute: 1)}'}">
-                    <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.citation', extensionName: 'chf_base')}" data="{target: '{f:render(partial: \'About/Citation\', arguments: \'{style: \\\'{citationStyle}\\\', author: \\\'{citationAuthor}\\\', title: \\\'{citationTitle}\\\', subtitle: \\\'{citationSubtitle}\\\', publication: \\\'{citationPublication}\\\', publisher: \\\'{citationPublisher}\\\', year: \\\'{citationYear}\\\', date: \\\'{citationDate}\\\', url: \\\'{citationUrl}\\\', italics: 0}\')}', success: '{f:translate(key: \'templates.generic.copy.citation.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.citation.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
-                    <f:render partial="About/Citation" arguments="{style: '{citationStyle}', author: '{citationAuthor}', title: '{citationTitle}', subtitle: '{citationSubtitle}', publication: '{citationPublication}', publisher: '{citationPublisher}', year: '{citationYear}', date: '{citationDate}', url: '{citationUrl}', italics: 1}"/>
-                </f:alias>   
+                <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.citation', extensionName: 'chf_base')}" data="{target: '{f:render(partial: \'About/Citation\', arguments: \'{titleSubtitle: titleSubtitle, author: author, publication: publication, publisher: publisher, year: year, date: date, access: access, citationStyle: citationStyle, italics: 0}\') -> f:format.trim()}', success: '{f:translate(key: \'templates.generic.copy.citation.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.citation.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
+                <f:format.raw><f:format.trim><f:render partial="About/Citation" arguments="{titleSubtitle: titleSubtitle, author: author, publication: publication, publisher: publisher, year: year, date: date, access: access, citationStyle: citationStyle, italics: 1}"/></f:format.trim></f:format.raw>
             </mdlr:molecule.boxedData.item>
         </mdlr:molecule.boxedData.wrap>
+
     </mdlr:template.area>
 </html>

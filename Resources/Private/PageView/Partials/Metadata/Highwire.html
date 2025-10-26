@@ -1,0 +1,57 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:m="http://typo3.org/ns/Digicademy/MDLR/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:comment>Highwire metadata in the HTML head element.</f:comment>
+
+    <f:argument name="webApp" type="string" optional="{false}" description="Name of the resource this page or record is part of" />
+    <f:argument name="titleSubtitle" type="string" optional="{false}" description="Combined title and subtitle of the page or record" />
+    <f:argument name="image" type="object" optional="{true}" default="{}" description="Image object that is respresentative of the record" />
+    <f:argument name="description" type="string" optional="{true}" default="" description="Brief description of the page or record" />
+    <f:argument name="keywords" type="string" optional="{true}" default="" description="Keywords of the page or record" />
+    <f:argument name="author" type="string" optional="{true}" default="" description="Author of the page or record" />
+    <f:argument name="dateIso" type="string" optional="{true}" default="" description="ISO-formatted date this page or record was published on" />
+    <f:argument name="publisher" type="string" optional="{false}" description="Publisher of this web application" />
+    <f:argument name="siteLanguages" type="array" optional="{true}" default="{}" description="The configured site languages" />
+    <f:argument name="languageMenu" type="array" optional="{true}" default="{}" description="A site-wide language menu" />
+
+    <m:headData>
+
+        <!--Highwire-->
+        <meta name="citation_title" content="{titleSubtitle}">
+        <f:if condition="{description}">
+            <meta name="citation_abstract" content="{description}">
+        </f:if>
+        <f:if condition="{keywords}">
+            <meta name="citation_keywords" content="{keywords}">
+        </f:if>
+        <f:comment><meta name="citation_editor" content=""></f:comment>
+        <f:if condition="{author}">
+            <meta name="citation_author" content="{author}">
+        </f:if>
+        <f:if condition="{dateIso}">
+            <meta name="citation_date" content="{dateIso}">
+        </f:if>
+        <f:comment><meta name="citation_volume" content="">
+        <meta name="citation_issue" content="">
+        <meta name="citation_series_title" content=""></f:comment>
+        <f:comment><meta name="citation_doi" content="">
+        <meta name="citation_isbn" content="">
+        <meta name="citation_issn" content="">
+        <meta name="citation_pmid" content=""></f:comment>
+        <meta name="citation_public_url" content="{f:uri.page(absolute: 1)}">
+        <f:comment><meta name="citation_conference_title" content="">
+        <meta name="citation_dissertation_institution" content="">
+        <meta name="citation_technical_report_institution" content="">
+        <meta name="citation_technical_report_number" content=""></f:comment>
+        <f:comment><meta name="citation_journal_title" content="">
+        <meta name="citation_book_title" content=""></f:comment>
+        <meta name="citation_inbook_title" content="{webApp}">
+        <f:if condition="{publisher}">
+            <meta name="citation_publisher" content="{publisher}">
+        </f:if>
+        <f:for each="{languageMenu}" as="menuItem">
+            <f:if condition="{menuItem.active}">
+                <meta name="citation_language" content="{siteLanguages.{menuItem.languageUid}.hreflang}">
+            </f:if>
+        </f:for>
+
+    </m:headData>
+</html>
