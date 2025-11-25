@@ -732,23 +732,23 @@
             </trans-unit>
             <trans-unit id="object.abstractRelation.type.authorshipRelation" resname="object.abstractRelation.type.authorshipRelation" approved="yes">
                 <source>Authorship relation</source>
-                <target>Autor:innenrelation</target>
+                <target>Autor:innenangabe</target>
             </trans-unit>
             <trans-unit id="object.abstractRelation.type.locationRelation" resname="object.abstractRelation.type.locationRelation" approved="yes">
                 <source>Location relation</source>
-                <target>Ortsrelation</target>
+                <target>Ortsangabe</target>
             </trans-unit>
             <trans-unit id="object.abstractRelation.type.agentRelation" resname="object.abstractRelation.type.agentRelation" approved="yes">
                 <source>Agent relation</source>
-                <target>Akteur:innenrelation</target>
+                <target>Akteur:innenangabe</target>
             </trans-unit>
             <trans-unit id="object.abstractRelation.type.licenceRelation" resname="object.abstractRelation.type.licenceRelation" approved="yes">
                 <source>Licence relation</source>
-                <target>Lizenzrelation</target>
+                <target>Lizenzangabe</target>
             </trans-unit>
             <trans-unit id="object.abstractRelation.type.linkRelation" resname="object.abstractRelation.type.linkRelation" approved="yes">
                 <source>Link relation</source>
-                <target>Linkrelation</target>
+                <target>Linkangabe</target>
             </trans-unit>
             <trans-unit id="object.abstractRelation.record" resname="object.abstractRelation.record" approved="yes">
                 <source>Database record</source>
@@ -772,7 +772,7 @@
             </trans-unit>
             <trans-unit id="object.abstractRelation.role.photographer" resname="object.abstractRelation.role.photographer" approved="yes">
                 <source>Photographer</source>
-                <target>Fotograf:in</target>
+                <target>Fotografie</target>
             </trans-unit>
             <trans-unit id="object.abstractRelation.role.editor" resname="object.abstractRelation.role.editor" approved="yes">
                 <source>Editor</source>
@@ -784,7 +784,7 @@
             </trans-unit>
             <trans-unit id="object.abstractRelation.role.contributor" resname="object.abstractRelation.role.contributor" approved="yes">
                 <source>Contributor</source>
-                <target>Beitragende:r</target>
+                <target>Mitwirkung</target>
             </trans-unit>
             <trans-unit id="object.abstractRelation.role.publisher" resname="object.abstractRelation.role.publisher" approved="yes">
                 <source>Publisher</source>
@@ -1139,22 +1139,6 @@
                 <source>Further URN/PID (incl. Handle)</source>
                 <target>Andere URN/PID (inkl. Handle)</target>
             </trans-unit>
-            <trans-unit id="object.extent.type.edition" resname="object.extent.type.edition" approved="yes">
-                <source>Edition</source>
-                <target>Ausgabe</target>
-            </trans-unit>
-            <trans-unit id="object.extent.type.version" resname="object.extent.type.version" approved="yes">
-                <source>Version</source>
-                <target>Version</target>
-            </trans-unit>
-            <trans-unit id="object.extent.type.volume" resname="object.extent.type.volume" approved="yes">
-                <source>Volume</source>
-                <target>Band</target>
-            </trans-unit>
-            <trans-unit id="object.extent.type.issue" resname="object.extent.type.issue" approved="yes">
-                <source>Issue</source>
-                <target>Heftnummer</target>
-            </trans-unit>
             <trans-unit id="object.extent.type.issn" resname="object.extent.type.issn" approved="yes">
                 <source>ISSN</source>
                 <target>ISSN</target>
@@ -1162,6 +1146,38 @@
             <trans-unit id="object.extent.type.isbn" resname="object.extent.type.isbn" approved="yes">
                 <source>ISBN</source>
                 <target>ISBN</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type.edition" resname="object.extent.type.edition" approved="yes">
+                <source>Edition (ed.)</source>
+                <target>Auflage (Aufl.)</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type.version" resname="object.extent.type.version" approved="yes">
+                <source>Version (ver.)</source>
+                <target>Version (Ver.)</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type.volume" resname="object.extent.type.volume" approved="yes">
+                <source>Volume (vol.)</source>
+                <target>Band (Bd.)</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type.issue" resname="object.extent.type.issue" approved="yes">
+                <source>Issue (no.)</source>
+                <target>Heftnummer (Nr.)</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type.pageNumbers" resname="object.extent.type.pageNumbers" approved="yes">
+                <source>Page numbers (p.)</source>
+                <target>Seitenzahlen (S.)</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type.paragraphNumbers" resname="object.extent.type.paragraphNumbers" approved="yes">
+                <source>Paragraph numbers (par.)</source>
+                <target>Absatznummern (Abs.)</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type.columnNumbers" resname="object.extent.type.columnNumbers" approved="yes">
+                <source>Column numbers (col.)</source>
+                <target>Spaltenzahlen (Sp.)</target>
+            </trans-unit>
+            <trans-unit id="object.extent.type.chapterNumbers" resname="object.extent.type.chapterNumbers" approved="yes">
+                <source>Chapter numbers (ch.)</source>
+                <target>Kapitelnummern (Kap.)</target>
             </trans-unit>
             <trans-unit id="object.extent.text" resname="object.extent.text" approved="yes">
                 <source>Text</source>
@@ -1273,20 +1289,46 @@
                 <source>Visualise relations</source>
                 <target>Relationen visualisieren</target>
             </trans-unit>
-            <!-- Layout: generic -->
-            <trans-unit id="layout.generic.main" resname="layout.generic.main" approved="yes">
-                <source>Main area</source>
-                <target>Hauptbereich</target>
-            </trans-unit>
-            <!-- Layout: Default -->
+            <!-- Layout -->
             <trans-unit id="layout.default" resname="layout.default" approved="yes">
                 <source>Default</source>
                 <target>Standard</target>
             </trans-unit>
-            <!-- Layout: Hub -->
-            <trans-unit id="layout.hub" resname="layout.hub" approved="yes">
-                <source>Hub</source>
-                <target>Drehkreuz</target>
+            <trans-unit id="layout.overview" resname="layout.overview" approved="yes">
+                <source>Overview</source>
+                <target>Überblick</target>
+            </trans-unit>
+            <trans-unit id="layout.plugin" resname="layout.plugin" approved="yes">
+                <source>Plugin</source>
+                <target>Plugin</target>
+            </trans-unit>
+            <trans-unit id="layout.generic.hero" resname="layout.generic.hero" approved="yes">
+                <source>Hero content</source>
+                <target>Aufmerksamkeit</target>
+            </trans-unit>
+            <trans-unit id="layout.generic.highlightA" resname="layout.generic.highlightA" approved="yes">
+                <source>Highlight left</source>
+                <target>Hervorhebung links</target>
+            </trans-unit>
+            <trans-unit id="layout.generic.highlightB" resname="layout.generic.highlightB" approved="yes">
+                <source>Highlight right</source>
+                <target>Hervorhebung rechts</target>
+            </trans-unit>
+            <trans-unit id="layout.generic.main" resname="layout.generic.main" approved="yes">
+                <source>Main area</source>
+                <target>Hauptbereich</target>
+            </trans-unit>
+            <trans-unit id="layout.generic.secondaryA" resname="layout.generic.secondaryA" approved="yes">
+                <source>Secondary content left</source>
+                <target>Nebensache links</target>
+            </trans-unit>
+            <trans-unit id="layout.generic.secondaryB" resname="layout.generic.secondaryB" approved="yes">
+                <source>Secondary content right</source>
+                <target>Nebensache rechts</target>
+            </trans-unit>
+            <trans-unit id="layout.generic.marginal" resname="layout.generic.marginal" approved="yes">
+                <source>Marginal note</source>
+                <target>Marginalie</target>
             </trans-unit>
             <!-- Templates -->
             <trans-unit id="templates.generic.home" resname="templates.generic.home" approved="yes">
@@ -1317,9 +1359,17 @@
                 <source>: </source>
                 <target>: </target>
             </trans-unit>
+            <trans-unit id="templates.generic.and" resname="templates.generic.and" approved="yes">
+                <source> and</source>
+                <target> und</target>
+            </trans-unit>
             <trans-unit id="templates.generic.accessed" resname="templates.generic.accessed" approved="yes">
                 <source>Accessed %s</source>
                 <target>Letzter Abruf %s</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.new" resname="templates.generic.new" approved="yes">
+                <source>Recently added</source>
+                <target>Neu hinzugefügt</target>
             </trans-unit>
             <trans-unit id="templates.generic.hierarchy.toggle" resname="templates.generic.hierarchy.toggle" approved="yes">
                 <source>Expand or collapse</source>
@@ -1329,17 +1379,33 @@
                 <source>Item</source>
                 <target>Eintrag</target>
             </trans-unit>
+            <trans-unit id="templates.generic.copy.authorityUri" resname="templates.generic.copy.authorityUri" approved="yes">
+                <source>Authority <![CDATA[<abbr title="Uniform Resource Identifier">]]>URI<![CDATA[</abbr>]]></source>
+                <target>Normdaten-<![CDATA[<abbr title="Uniform Resource Identifier">]]>URI<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.authorityUri.hint" resname="templates.generic.copy.authorityUri.hint" approved="yes">
+                <source>Copy authority URI</source>
+                <target>Normdaten-URI kopieren</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.authorityUri.success" resname="templates.generic.copy.authorityUri.success" approved="yes">
+                <source>Authority URI copied successfully</source>
+                <target>Normdaten-URI erfolgreich kopiert</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.authorityUri.failure" resname="templates.generic.copy.authorityUri.failure" approved="yes">
+                <source>Something went wrong</source>
+                <target>Das hat leider nicht geklappt</target>
+            </trans-unit>
             <trans-unit id="templates.generic.copy.urn" resname="templates.generic.copy.urn" approved="yes">
-                <source><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]></source>
-                <target><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]></target>
+                <source><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]>/<![CDATA[<abbr title="Persistent Identifier">]]>PID<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]>/<![CDATA[<abbr title="Persistent Identifier">]]>PID<![CDATA[</abbr>]]></target>
             </trans-unit>
             <trans-unit id="templates.generic.copy.urn.hint" resname="templates.generic.copy.urn.hint" approved="yes">
-                <source>Copy URN</source>
-                <target>URN kopieren</target>
+                <source>Copy URN/PID</source>
+                <target>URN/PID kopieren</target>
             </trans-unit>
             <trans-unit id="templates.generic.copy.urn.success" resname="templates.generic.copy.urn.success" approved="yes">
-                <source>URN copied successfully</source>
-                <target>URN erfolgreich kopiert</target>
+                <source>URN/PID copied successfully</source>
+                <target>URN/PID erfolgreich kopiert</target>
             </trans-unit>
             <trans-unit id="templates.generic.copy.urn.failure" resname="templates.generic.copy.urn.failure" approved="yes">
                 <source>Something went wrong</source>
@@ -1390,6 +1456,54 @@
                 <target>URL erfolgreich kopiert</target>
             </trans-unit>
             <trans-unit id="templates.generic.copy.url.failure" resname="templates.generic.copy.url.failure" approved="yes">
+                <source>Something went wrong</source>
+                <target>Das hat leider nicht geklappt</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.doi" resname="templates.generic.copy.doi" approved="yes">
+                <source><![CDATA[<abbr title="Digital Object Identifier">]]>DOI<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Digital Object Identifier">]]>DOI<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.doi.hint" resname="templates.generic.copy.doi.hint" approved="yes">
+                <source>Copy DOI</source>
+                <target>DOI kopieren</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.doi.success" resname="templates.generic.copy.doi.success" approved="yes">
+                <source>DOI copied successfully</source>
+                <target>DOI erfolgreich kopiert</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.doi.failure" resname="templates.generic.copy.doi.failure" approved="yes">
+                <source>Something went wrong</source>
+                <target>Das hat leider nicht geklappt</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.issn" resname="templates.generic.copy.issn" approved="yes">
+                <source><![CDATA[<abbr title="International Standard Serial Number">]]>ISSN<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="International Standard Serial Number">]]>ISSN<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.issn.hint" resname="templates.generic.copy.issn.hint" approved="yes">
+                <source>Copy ISSN</source>
+                <target>ISSN kopieren</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.issn.success" resname="templates.generic.copy.issn.success" approved="yes">
+                <source>ISSN copied successfully</source>
+                <target>ISSN erfolgreich kopiert</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.issn.failure" resname="templates.generic.copy.issn.failure" approved="yes">
+                <source>Something went wrong</source>
+                <target>Das hat leider nicht geklappt</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.isbn" resname="templates.generic.copy.isbn" approved="yes">
+                <source><![CDATA[<abbr title="International Standard Book Number">]]>ISBN<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="International Standard Book Number">]]>ISBN<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.isbn.hint" resname="templates.generic.copy.isbn.hint" approved="yes">
+                <source>Copy ISBN</source>
+                <target>ISBN kopieren</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.isbn.success" resname="templates.generic.copy.isbn.success" approved="yes">
+                <source>ISBN copied successfully</source>
+                <target>ISBN erfolgreich kopiert</target>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.isbn.failure" resname="templates.generic.copy.isbn.failure" approved="yes">
                 <source>Something went wrong</source>
                 <target>Das hat leider nicht geklappt</target>
             </trans-unit>
@@ -1477,6 +1591,10 @@
                 <source>CSV</source>
                 <target>CSV</target>
             </trans-unit>
+            <trans-unit id="templates.generic.retrieve.markdown" resname="templates.generic.retrieve.markdown" approved="yes">
+                <source>Markdown</source>
+                <target>Markdown</target>
+            </trans-unit>
             <trans-unit id="templates.header.jump" resname="templates.header.jump" approved="yes">
                 <source>On this page</source>
                 <target>Auf dieser Seite</target>
@@ -1496,6 +1614,102 @@
             <trans-unit id="templates.header.meta" resname="templates.header.meta" approved="yes">
                 <source>Meta</source>
                 <target>Meta</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar" resname="templates.toolbar" approved="yes">
+                <source>Tools</source>
+                <target>Werkzeuge</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.filter.hint" resname="templates.toolbar.filter.hint" approved="yes">
+                <source>Show filters</source>
+                <target>Filter anzeigen</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.filter.hierarchy" resname="templates.toolbar.filter.hierarchy" approved="yes">
+                <source>Show subordinate filters</source>
+                <target>Untergeordnete Filter anzeigen</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.filter.add" resname="templates.toolbar.filter.add" approved="yes">
+                <source>Apply filter</source>
+                <target>Filter hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.filter.exclude" resname="templates.toolbar.filter.exclude" approved="yes">
+                <source>Apply exclusion filter</source>
+                <target>Ausschlussfilter hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.filter.search" resname="templates.toolbar.filter.search" approved="yes">
+                <source>Search</source>
+                <target>Suche</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.filter.taxonomy" resname="templates.toolbar.filter.taxonomy" approved="yes">
+                <source>Taxonomy</source>
+                <target>Systematik</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.filter.authorship" resname="templates.toolbar.filter.authorship" approved="yes">
+                <source>Authorship</source>
+                <target>Urheber</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.filter.online" resname="templates.toolbar.filter.online" approved="yes">
+                <source>Online</source>
+                <target>Online</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.filter.reuse" resname="templates.toolbar.filter.reuse" approved="yes">
+                <source>Reuse</source>
+                <target>Nutzung</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.sort" resname="templates.toolbar.sort" approved="yes">
+                <source>Sort</source>
+                <target>Sortierung</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.sort.hint" resname="templates.toolbar.sort.hint" approved="yes">
+                <source>Select sort order</source>
+                <target>Sortierung auswählen</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.sort.titleAZ" resname="templates.toolbar.sort.titleAZ" approved="yes">
+                <source>Title A–Z</source>
+                <target>Titel A–Z</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.sort.titleZA" resname="templates.toolbar.sort.titleZA" approved="yes">
+                <source>Title Z–A</source>
+                <target>Titel Z–A</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.sort.onlineNewOld" resname="templates.toolbar.sort.onlineNewOld" approved="yes">
+                <source>Online new–old</source>
+                <target>Online neu–alt</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.sort.onlineOldNew" resname="templates.toolbar.sort.onlineOldNew" approved="yes">
+                <source>Online old–new</source>
+                <target>Online alt–neu</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.view" resname="templates.toolbar.view" approved="yes">
+                <source>View</source>
+                <target>Anzeige</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.view.hint" resname="templates.toolbar.view.hint" approved="yes">
+                <source>Select view</source>
+                <target>Anzeige auswählen</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.view.list" resname="templates.toolbar.view.list" approved="yes">
+                <source>List</source>
+                <target>Liste</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.view.tiles" resname="templates.toolbar.view.tiles" approved="yes">
+                <source>Tiles</source>
+                <target>Kacheln</target>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.view.table" resname="templates.toolbar.view.table" approved="yes">
+                <source>Table</source>
+                <target>Tabelle</target>
+            </trans-unit>
+            <trans-unit id="templates.filterbar" resname="templates.filterbar" approved="yes">
+                <source>Active filters</source>
+                <target>Aktive Filter</target>
+            </trans-unit>
+            <trans-unit id="templates.filterbar.remove" resname="templates.filterbar.remove" approved="yes">
+                <source>Remove filter</source>
+                <target>Filter entfernen</target>
+            </trans-unit>
+            <trans-unit id="templates.filterbar.removeAll" resname="templates.filterbar.removeAll" approved="yes">
+                <source>Remove all filters</source>
+                <target>Alle Filter entfernen</target>
             </trans-unit>
             <trans-unit id="templates.main" resname="templates.main" approved="yes">
                 <source>Content</source>
@@ -1529,61 +1743,265 @@
                 <source>Data formats and <![CDATA[<abbr title="Linked Open Data">]]>LOD<![CDATA[</abbr>]]></source>
                 <target>Datenformate und <![CDATA[<abbr title="Linked Open Data">]]>LOD<![CDATA[</abbr>]]></target>
             </trans-unit>
-            <trans-unit id="templates.about.author" resname="templates.about.author" approved="yes">
+            <trans-unit id="templates.about.authorship" resname="templates.about.authorship" approved="yes">
+                <source>Authorship</source>
+                <target>Urheber</target>
+            </trans-unit>
+            <trans-unit id="templates.about.authorship.author" resname="templates.about.authorship.author" approved="yes">
                 <source>Author</source>
                 <target>Autor:in</target>
             </trans-unit>
-            <trans-unit id="templates.about.photographer" resname="templates.about.photographer" approved="yes">
+            <trans-unit id="templates.about.authorship.photographer" resname="templates.about.authorship.photographer" approved="yes">
                 <source>Photographer</source>
-                <target>Fotograf:in</target>
+                <target>Fotografie</target>
             </trans-unit>
-            <trans-unit id="templates.about.editor" resname="templates.about.editor" approved="yes">
+            <trans-unit id="templates.about.authorship.editor" resname="templates.about.authorship.editor" approved="yes">
                 <source>Editor</source>
                 <target>Redaktion</target>
             </trans-unit>
-            <trans-unit id="templates.about.publisher" resname="templates.about.publisher" approved="yes">
+            <trans-unit id="templates.about.authorship.translator" resname="templates.about.authorship.translator" approved="yes">
+                <source>Translator</source>
+                <target>Übersetzung</target>
+            </trans-unit>
+            <trans-unit id="templates.about.authorship.contributor" resname="templates.about.authorship.contributor" approved="yes">
+                <source>Contributor</source>
+                <target>Mitwirkung</target>
+            </trans-unit>
+            <trans-unit id="templates.about.authorship.publisher" resname="templates.about.authorship.publisher" approved="yes">
                 <source>Publisher</source>
                 <target>Verlag</target>
             </trans-unit>
-            <trans-unit id="templates.about.usage" resname="templates.about.usage" approved="yes">
-                <source>Usage</source>
+            <trans-unit id="templates.about.authorship.rightsOwner" resname="templates.about.authorship.rightsOwner" approved="yes">
+                <source>Rights owner</source>
+                <target>Rechteinhaber:in</target>
+            </trans-unit>
+            <trans-unit id="templates.about.reuse" resname="templates.about.reuse" approved="yes">
+                <source>Re-use</source>
                 <target>Nutzung</target>
             </trans-unit>
-            <trans-unit id="templates.about.usage.copyright" resname="templates.about.usage.copyright" approved="yes">
-                <source>In copyright</source>
-                <target>Urheberrechtsschutz</target>
+            <trans-unit id="templates.about.reuse.inC" resname="templates.about.reuse.inC" approved="yes">
+                <source>InC, In copyright</source>
+                <target>InC, Urheberrechtsschutz</target>
             </trans-unit>
-            <trans-unit id="templates.about.print" resname="templates.about.print" approved="yes">
-                <source>Print</source>
-                <target>Gedruckt</target>
+            <trans-unit id="templates.about.reuse.allContent" resname="templates.about.reuse.allContent" approved="yes">
+                <source>all Content</source>
+                <target>alle Inhalte</target>
+            </trans-unit>
+            <trans-unit id="templates.about.reuse.metadata" resname="templates.about.reuse.metadata" approved="yes">
+                <source>Metadata</source>
+                <target>Metadaten</target>
+            </trans-unit>
+            <trans-unit id="templates.about.reuse.text" resname="templates.about.reuse.text" approved="yes">
+                <source>Text</source>
+                <target>Text</target>
+            </trans-unit>
+            <trans-unit id="templates.about.reuse.media" resname="templates.about.reuse.media" approved="yes">
+                <source>Media</source>
+                <target>Medien</target>
+            </trans-unit>
+            <trans-unit id="templates.about.release" resname="templates.about.release" approved="yes">
+                <source>Release</source>
+                <target>Ausgabe</target>
+            </trans-unit>
+            <trans-unit id="templates.about.release.volume" resname="templates.about.release.volume" approved="yes">
+                <source><![CDATA[<abbr title="volume">]]>vol.<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Band">]]>Bd.<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.release.volumeInitial" resname="templates.about.release.volumeInitial" approved="yes">
+                <source><![CDATA[<abbr title="Volume">]]>Vol.<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Band">]]>Bd.<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.release.issue" resname="templates.about.release.issue" approved="yes">
+                <source><![CDATA[<abbr title="number">]]>no.<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Nummer">]]>Nr.<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.release.issueInitial" resname="templates.about.release.issueInitial" approved="yes">
+                <source><![CDATA[<abbr title="Number">]]>No.<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Nummer">]]>Nr.<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.release.edition" resname="templates.about.release.edition" approved="yes">
+                <source><![CDATA[<abbr title="edition">]]>ed.<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Auflage">]]>Aufl.<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.release.editionInitial" resname="templates.about.release.editionInitial" approved="yes">
+                <source><![CDATA[<abbr title="Edition">]]>Ed.<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Auflage">]]>Aufl.<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.release.version" resname="templates.about.release.version" approved="yes">
+                <source><![CDATA[<abbr title="version">]]>ver.<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Version">]]>Ver.<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.release.versionInitial" resname="templates.about.release.versionInitial" approved="yes">
+                <source><![CDATA[<abbr title="Version">]]>Ver.<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Version">]]>Ver.<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.part" resname="templates.about.part" approved="yes">
+                <source>Part</source>
+                <target>Abschnitt</target>
+            </trans-unit>
+            <trans-unit id="templates.about.part.chapterNumbers" resname="templates.about.part.chapterNumbers" approved="yes">
+                <source><![CDATA[<abbr title="chapter">]]>ch.<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Kapitel">]]>Kap.<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.part.chapterNumbersInitial" resname="templates.about.part.chapterNumbersInitial" approved="yes">
+                <source><![CDATA[<abbr title="Chapter">]]>Ch.<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Kapitel">]]>Kap.<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.part.pageNumbers" resname="templates.about.part.pageNumbers" approved="yes">
+                <source><![CDATA[<abbr title="page">]]>p.<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Seite">]]>S.<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.part.pageNumbersInitial" resname="templates.about.part.pageNumbersInitial" approved="yes">
+                <source><![CDATA[<abbr title="Page">]]>P.<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Seite">]]>S.<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.part.columnNumbers" resname="templates.about.part.columnNumbers" approved="yes">
+                <source><![CDATA[<abbr title="column">]]>col.<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Spalte">]]>Sp.<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.part.columnNumbersInitial" resname="templates.about.part.columnNumbersInitial" approved="yes">
+                <source><![CDATA[<abbr title="Column">]]>Col.<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Spalte">]]>Sp.<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.part.paragraphNumbers" resname="templates.about.part.paragraphNumbers" approved="yes">
+                <source><![CDATA[<abbr title="paragraph">]]>par.<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Absatz">]]>Abs.<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.part.paragraphNumbersInitial" resname="templates.about.part.paragraphNumbersInitial" approved="yes">
+                <source><![CDATA[<abbr title="Paragraph">]]>Par.<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Absatz">]]>Abs.<![CDATA[</abbr>]]></target>
             </trans-unit>
             <trans-unit id="templates.about.online" resname="templates.about.online" approved="yes">
                 <source>Online</source>
                 <target>Online</target>
             </trans-unit>
+            <trans-unit id="templates.about.online.revision" resname="templates.about.online.revision" approved="yes">
+                <source>Revision %s</source>
+                <target>Revision %s</target>
+            </trans-unit>
             <trans-unit id="templates.about.access" resname="templates.about.access" approved="yes">
                 <source>Access</source>
                 <target>Abruf</target>
+            </trans-unit>
+            <trans-unit id="templates.about.revision" resname="templates.about.revision" approved="yes">
+                <source>Revision</source>
+                <target>Revision</target>
             </trans-unit>
             <trans-unit id="templates.about.description" resname="templates.about.description" approved="yes">
                 <source>Description</source>
                 <target>Anreißer</target>
             </trans-unit>
-            <trans-unit id="templates.about.urn" resname="templates.about.urn" approved="yes">
-                <source><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]></source>
-                <target><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]></target>
+            <trans-unit id="templates.about.authorityUri" resname="templates.about.authorityUri" approved="yes">
+                <source>Authority</source>
+                <target>Normdaten</target>
             </trans-unit>
             <trans-unit id="templates.about.permalink" resname="templates.about.permalink" approved="yes">
                 <source>Permalink</source>
                 <target>Permalink</target>
             </trans-unit>
+            <trans-unit id="templates.about.doi" resname="templates.about.doi" approved="yes">
+                <source><![CDATA[<abbr title="Digital Object Identifier">]]>DOI<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Digital Object Identifier">]]>DOI<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.urn" resname="templates.about.urn" approved="yes">
+                <source><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]>/<![CDATA[<abbr title="Persistent Identifier">]]>PID<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]>/<![CDATA[<abbr title="Persistent Identifier">]]>PID<![CDATA[</abbr>]]></target>
+            </trans-unit>
             <trans-unit id="templates.about.url" resname="templates.about.url" approved="yes">
                 <source><![CDATA[<abbr title="Uniform Resource Locator">]]>URL<![CDATA[</abbr>]]></source>
                 <target><![CDATA[<abbr title="Uniform Resource Locator">]]>URL<![CDATA[</abbr>]]></target>
             </trans-unit>
+            <trans-unit id="templates.about.issn" resname="templates.about.issn" approved="yes">
+                <source><![CDATA[<abbr title="International Standard Serial Number">]]>ISSN<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="International Standard Serial Number">]]>ISSN<![CDATA[</abbr>]]></target>
+            </trans-unit>
+            <trans-unit id="templates.about.isbn" resname="templates.about.isbn" approved="yes">
+                <source><![CDATA[<abbr title="International Standard Book Number">]]>ISBN<![CDATA[</abbr>]]></source>
+                <target><![CDATA[<abbr title="International Standard Book Number">]]>ISBN<![CDATA[</abbr>]]></target>
+            </trans-unit>
             <trans-unit id="templates.about.citation" resname="templates.about.citation" approved="yes">
                 <source>Citation</source>
                 <target>Zitation</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.editorSingular" resname="templates.about.citation.editorSingular" approved="yes">
+                <source>ed.</source>
+                <target>Hrsg.</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.editorPlural" resname="templates.about.citation.editorPlural" approved="yes">
+                <source>eds.</source>
+                <target>Hrsg.</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.editedBy" resname="templates.about.citation.editedBy" approved="yes">
+                <source>edited by</source>
+                <target>herausgegeben von</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.translatedBy" resname="templates.about.citation.translatedBy" approved="yes">
+                <source>translated by</source>
+                <target>übersetzt von</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.withContributionsOf" resname="templates.about.citation.withContributionsOf" approved="yes">
+                <source>with contributions of</source>
+                <target>unter Mitarbeit von</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.rightsOwnedBy" resname="templates.about.citation.rightsOwnedBy" approved="yes">
+                <source>rights owned by</source>
+                <target>Rechte im Besitz von</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.volume" resname="templates.about.citation.volume" approved="yes">
+                <source>vol.</source>
+                <target>Bd.</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.issue" resname="templates.about.citation.issue" approved="yes">
+                <source>no.</source>
+                <target>Nr.</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.edition" resname="templates.about.citation.edition" approved="yes">
+                <source>ed.</source>
+                <target>Aufl.</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.version" resname="templates.about.citation.version" approved="yes">
+                <source>ver.</source>
+                <target>Ver.</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.chapterNumbers" resname="templates.about.citation.chapterNumbers" approved="yes">
+                <source>ch.</source>
+                <target>Kap.</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.pageNumbers" resname="templates.about.citation.pageNumbers" approved="yes">
+                <source>p.</source>
+                <target>S.</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.columnNumbers" resname="templates.about.citation.columnNumbers" approved="yes">
+                <source>col.</source>
+                <target>Sp.</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.paragraphNumbers" resname="templates.about.citation.paragraphNumbers" approved="yes">
+                <source>par.</source>
+                <target>Abs.</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.isbn" resname="templates.about.citation.isbn" approved="yes">
+                <source>ISBN:</source>
+                <target>ISBN:</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.issn" resname="templates.about.citation.issn" approved="yes">
+                <source>ISSN:</source>
+                <target>ISSN:</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.url" resname="templates.about.citation.url" approved="yes">
+                <source>URL:</source>
+                <target>URL:</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.urn" resname="templates.about.citation.urn" approved="yes">
+                <source>URN/PID:</source>
+                <target>URN/PID:</target>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.doi" resname="templates.about.citation.doi" approved="yes">
+                <source>DOI:</source>
+                <target>DOI:</target>
+            </trans-unit>
+            <trans-unit id="templates.about.language" resname="templates.about.language" approved="yes">
+                <source>Language</source>
+                <target>Sprache</target>
             </trans-unit>
             <trans-unit id="templates.about.api.before" resname="templates.about.api.before" approved="yes">
                 <source>The data of this web application is available </source>
@@ -1794,16 +2212,16 @@
                 <target>Suchbegriff</target>
             </trans-unit>
             <trans-unit id="templates.search.query.example" resname="templates.search.query.example" approved="yes">
-                <source>Type to search…</source>
-                <target>Suchbegriff eingeben…</target>
+                <source>Search term…</source>
+                <target>Suchbegriff…</target>
             </trans-unit>
             <trans-unit id="templates.search.go" resname="templates.search.go" approved="yes">
                 <source>Search</source>
                 <target>Suchen</target>
             </trans-unit>
-            <trans-unit id="templates.search.example" resname="templates.search.example" approved="yes">
-                <source>Search for this example</source>
-                <target>Nach diesem Beispiel suchen</target>
+            <trans-unit id="templates.search.regexGo" resname="templates.search.regexGo" approved="yes">
+                <source>Search for titles only, RegEx possible</source>
+                <target>Nur in Titeln suchen, RegEx möglich</target>
             </trans-unit>
             <trans-unit id="templates.search.exact" resname="templates.search.exact" approved="yes">
                 <source>Titles only, <![CDATA[<abbr title="Regular Expressions (PCRE2)">]]>RegEx<![CDATA[</abbr>]]> possible</source>

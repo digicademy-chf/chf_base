@@ -30,7 +30,7 @@
                         <f:fragment name="list">
                             <f:for each="{searchMenu}" as="menuItem">
                                 <mdlr:molecule.dropdown.item selected="{f:if(condition: '{menuItem.link} == {searchMenuLink}', then: 1, else: 0)}">
-                                    <mdlr:atom.button.page function="select-form" pageUid="{menuItem.data.uid}" variants="{0: 'mini', 1: 'unobtrusive'}" text="{menuItem.title}" icon="{f:if(condition: '{menuItem.link} == {searchMenuLink}', then: 'checkmark', else: 'blank')}" />
+                                    <mdlr:atom.button.page function="select-form" pageUid="{menuItem.data.uid}" variants="{0: 'texticon', 1: 'mini', 2: 'unobtrusive'}" text="{menuItem.title}" icon="{f:if(condition: '{menuItem.link} == {searchMenuLink}', then: 'checkmark', else: 'blank')}" />
                                 </mdlr:molecule.dropdown.item>
                             </f:for>
                         </f:fragment>

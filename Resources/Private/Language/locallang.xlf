@@ -857,23 +857,35 @@
             <trans-unit id="object.extent.type.urn" resname="object.extent.type.urn">
                 <source>Further URN/PID (incl. Handle)</source>
             </trans-unit>
-            <trans-unit id="object.extent.type.edition" resname="object.extent.type.edition">
-                <source>Edition</source>
-            </trans-unit>
-            <trans-unit id="object.extent.type.version" resname="object.extent.type.version">
-                <source>Version</source>
-            </trans-unit>
-            <trans-unit id="object.extent.type.volume" resname="object.extent.type.volume">
-                <source>Volume</source>
-            </trans-unit>
-            <trans-unit id="object.extent.type.issue" resname="object.extent.type.issue">
-                <source>Issue</source>
-            </trans-unit>
             <trans-unit id="object.extent.type.issn" resname="object.extent.type.issn">
                 <source>ISSN</source>
             </trans-unit>
             <trans-unit id="object.extent.type.isbn" resname="object.extent.type.isbn">
                 <source>ISBN</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.edition" resname="object.extent.type.edition">
+                <source>Edition (ed.)</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.version" resname="object.extent.type.version">
+                <source>Version (ver.)</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.volume" resname="object.extent.type.volume">
+                <source>Volume (vol.)</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.issue" resname="object.extent.type.issue">
+                <source>Issue (no.)</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.pageNumbers" resname="object.extent.type.pageNumbers">
+                <source>Page numbers (p.)</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.paragraphNumbers" resname="object.extent.type.paragraphNumbers">
+                <source>Paragraph numbers (par.)</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.columnNumbers" resname="object.extent.type.columnNumbers">
+                <source>Column numbers (col.)</source>
+            </trans-unit>
+            <trans-unit id="object.extent.type.chapterNumbers" resname="object.extent.type.chapterNumbers">
+                <source>Chapter numbers (ch.)</source>
             </trans-unit>
             <trans-unit id="object.extent.text" resname="object.extent.text">
                 <source>Text</source>
@@ -960,17 +972,36 @@
             <trans-unit id="plugin.connections.description" resname="plugin.connections.description">
                 <source>Visualise relations</source>
             </trans-unit>
-            <!-- Layout: generic -->
-            <trans-unit id="layout.generic.main" resname="layout.generic.main">
-                <source>Main area</source>
-            </trans-unit>
-            <!-- Layout: Default -->
+            <!-- Layout -->
             <trans-unit id="layout.default" resname="layout.default">
                 <source>Default</source>
             </trans-unit>
-            <!-- Layout: Hub -->
-            <trans-unit id="layout.hub" resname="layout.hub">
-                <source>Hub</source>
+            <trans-unit id="layout.overview" resname="layout.overview">
+                <source>Overview</source>
+            </trans-unit>
+            <trans-unit id="layout.plugin" resname="layout.plugin">
+                <source>Plugin</source>
+            </trans-unit>
+            <trans-unit id="layout.generic.hero" resname="layout.generic.hero">
+                <source>Hero content</source>
+            </trans-unit>
+            <trans-unit id="layout.generic.highlightA" resname="layout.generic.highlightA">
+                <source>Highlight left</source>
+            </trans-unit>
+            <trans-unit id="layout.generic.highlightB" resname="layout.generic.highlightB">
+                <source>Highlight right</source>
+            </trans-unit>
+            <trans-unit id="layout.generic.main" resname="layout.generic.main">
+                <source>Main area</source>
+            </trans-unit>
+            <trans-unit id="layout.generic.secondaryA" resname="layout.generic.secondaryA">
+                <source>Secondary content left</source>
+            </trans-unit>
+            <trans-unit id="layout.generic.secondaryB" resname="layout.generic.secondaryB">
+                <source>Secondary content right</source>
+            </trans-unit>
+            <trans-unit id="layout.generic.marginal" resname="layout.generic.marginal">
+                <source>Marginal note</source>
             </trans-unit>
             <!-- Templates -->
             <trans-unit id="templates.generic.home" resname="templates.generic.home">
@@ -994,8 +1025,14 @@
             <trans-unit id="templates.generic.titleSubtitle" resname="templates.generic.titleSubtitle">
                 <source>: </source>
             </trans-unit>
+            <trans-unit id="templates.generic.and" resname="templates.generic.and">
+                <source> and</source>
+            </trans-unit>
             <trans-unit id="templates.generic.accessed" resname="templates.generic.accessed">
                 <source>Accessed %s</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.new" resname="templates.generic.new">
+                <source>Recently added</source>
             </trans-unit>
             <trans-unit id="templates.generic.hierarchy.toggle" resname="templates.generic.hierarchy.toggle">
                 <source>Expand or collapse</source>
@@ -1003,14 +1040,26 @@
             <trans-unit id="templates.generic.hierarchy.item" resname="templates.generic.hierarchy.item">
                 <source>Item</source>
             </trans-unit>
+            <trans-unit id="templates.generic.copy.authorityUri" resname="templates.generic.copy.authorityUri">
+                <source>Authority <![CDATA[<abbr title="Uniform Resource Identifier">]]>URI<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.authorityUri.hint" resname="templates.generic.copy.authorityUri.hint">
+                <source>Copy authority URI</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.authorityUri.success" resname="templates.generic.copy.authorityUri.success">
+                <source>Authority URI copied successfully</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.authorityUri.failure" resname="templates.generic.copy.authorityUri.failure">
+                <source>Something went wrong</source>
+            </trans-unit>
             <trans-unit id="templates.generic.copy.urn" resname="templates.generic.copy.urn">
-                <source><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]></source>
+                <source><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]>/<![CDATA[<abbr title="Persisent Identifier">]]>PID<![CDATA[</abbr>]]></source>
             </trans-unit>
             <trans-unit id="templates.generic.copy.urn.hint" resname="templates.generic.copy.urn.hint">
-                <source>Copy URN</source>
+                <source>Copy URN/PID</source>
             </trans-unit>
             <trans-unit id="templates.generic.copy.urn.success" resname="templates.generic.copy.urn.success">
-                <source>URN copied successfully</source>
+                <source>URN/PID copied successfully</source>
             </trans-unit>
             <trans-unit id="templates.generic.copy.urn.failure" resname="templates.generic.copy.urn.failure">
                 <source>Something went wrong</source>
@@ -1049,6 +1098,42 @@
                 <source>URL copied successfully</source>
             </trans-unit>
             <trans-unit id="templates.generic.copy.url.failure" resname="templates.generic.copy.url.failure">
+                <source>Something went wrong</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.doi" resname="templates.generic.copy.doi">
+                <source><![CDATA[<abbr title="Digital Object Identifier">]]>DOI<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.doi.hint" resname="templates.generic.copy.doi.hint">
+                <source>Copy DOI</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.doi.success" resname="templates.generic.copy.doi.success">
+                <source>DOI copied successfully</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.doi.failure" resname="templates.generic.copy.doi.failure">
+                <source>Something went wrong</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.issn" resname="templates.generic.copy.issn">
+                <source><![CDATA[<abbr title="International Standard Serial Number">]]>ISSN<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.issn.hint" resname="templates.generic.copy.issn.hint">
+                <source>Copy ISSN</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.issn.success" resname="templates.generic.copy.issn.success">
+                <source>ISSN copied successfully</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.issn.failure" resname="templates.generic.copy.issn.failure">
+                <source>Something went wrong</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.isbn" resname="templates.generic.copy.isbn">
+                <source><![CDATA[<abbr title="International Standard Book Number">]]>ISBN<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.isbn.hint" resname="templates.generic.copy.isbn.hint">
+                <source>Copy ISBN</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.isbn.success" resname="templates.generic.copy.isbn.success">
+                <source>ISBN copied successfully</source>
+            </trans-unit>
+            <trans-unit id="templates.generic.copy.isbn.failure" resname="templates.generic.copy.isbn.failure">
                 <source>Something went wrong</source>
             </trans-unit>
             <trans-unit id="templates.generic.copy.citation" resname="templates.generic.copy.citation">
@@ -1129,6 +1214,78 @@
             <trans-unit id="templates.header.meta" resname="templates.header.meta">
                 <source>Meta</source>
             </trans-unit>
+            <trans-unit id="templates.toolbar" resname="templates.toolbar">
+                <source>Tools</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.filter.hint" resname="templates.toolbar.filter.hint">
+                <source>Show filters</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.filter.hierarchy" resname="templates.toolbar.filter.hierarchy">
+                <source>Show subordinate filters</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.filter.add" resname="templates.toolbar.filter.add">
+                <source>Apply filter</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.filter.exclude" resname="templates.toolbar.filter.exclude">
+                <source>Apply exclusion filter</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.filter.search" resname="templates.toolbar.filter.search">
+                <source>Search</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.filter.taxonomy" resname="templates.toolbar.filter.taxonomy">
+                <source>Taxonomy</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.filter.authorship" resname="templates.toolbar.filter.authorship">
+                <source>Authorship</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.filter.online" resname="templates.toolbar.filter.online">
+                <source>Online</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.filter.reuse" resname="templates.toolbar.filter.reuse">
+                <source>Reuse</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.sort" resname="templates.toolbar.sort">
+                <source>Sort</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.sort.hint" resname="templates.toolbar.sort.hint">
+                <source>Select sort order</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.sort.titleAZ" resname="templates.toolbar.sort.titleAZ">
+                <source>Title A–Z</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.sort.titleZA" resname="templates.toolbar.sort.titleZA">
+                <source>Title Z–A</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.sort.onlineNewOld" resname="templates.toolbar.sort.onlineNewOld">
+                <source>Online new–old</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.sort.onlineOldNew" resname="templates.toolbar.sort.onlineOldNew">
+                <source>Online old–new</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.view" resname="templates.toolbar.view">
+                <source>View</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.view.hint" resname="templates.toolbar.view.hint">
+                <source>Select view</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.view.list" resname="templates.toolbar.view.list">
+                <source>List</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.view.tiles" resname="templates.toolbar.view.tiles">
+                <source>Tiles</source>
+            </trans-unit>
+            <trans-unit id="templates.toolbar.view.table" resname="templates.toolbar.view.table">
+                <source>Table</source>
+            </trans-unit>
+            <trans-unit id="templates.filterbar" resname="templates.filterbar">
+                <source>Active filters</source>
+            </trans-unit>
+            <trans-unit id="templates.filterbar.remove" resname="templates.filterbar.remove">
+                <source>Remove filter</source>
+            </trans-unit>
+            <trans-unit id="templates.filterbar.removeAll" resname="templates.filterbar.removeAll">
+                <source>Remove all filters</source>
+            </trans-unit>
             <trans-unit id="templates.main" resname="templates.main">
                 <source>Content</source>
             </trans-unit>
@@ -1150,50 +1307,203 @@
             <trans-unit id="templates.about.reference" resname="templates.about.reference">
                 <source>Reference</source>
             </trans-unit>
-            <trans-unit id="templates.about.serializations" resname="templates.about.serializations" approved="yes">
+            <trans-unit id="templates.about.serializations" resname="templates.about.serializations">
                 <source>Data formats and <![CDATA[<abbr title="Linked Open Data">]]>LOD<![CDATA[</abbr>]]></source>
             </trans-unit>
-            <trans-unit id="templates.about.author" resname="templates.about.author">
+            <trans-unit id="templates.about.authorship" resname="templates.about.authorship">
+                <source>Authorship</source>
+            </trans-unit>
+            <trans-unit id="templates.about.authorship.author" resname="templates.about.authorship.author">
                 <source>Author</source>
             </trans-unit>
-            <trans-unit id="templates.about.photographer" resname="templates.about.photographer">
+            <trans-unit id="templates.about.authorship.photographer" resname="templates.about.authorship.photographer">
                 <source>Photographer</source>
             </trans-unit>
-            <trans-unit id="templates.about.editor" resname="templates.about.editor">
+            <trans-unit id="templates.about.authorship.editor" resname="templates.about.authorship.editor">
                 <source>Editor</source>
             </trans-unit>
-            <trans-unit id="templates.about.publisher" resname="templates.about.publisher">
+            <trans-unit id="templates.about.authorship.translator" resname="templates.about.authorship.translator">
+                <source>Translator</source>
+            </trans-unit>
+            <trans-unit id="templates.about.authorship.contributor" resname="templates.about.authorship.contributor">
+                <source>Contributor</source>
+            </trans-unit>
+            <trans-unit id="templates.about.authorship.publisher" resname="templates.about.authorship.publisher">
                 <source>Publisher</source>
             </trans-unit>
-            <trans-unit id="templates.about.usage" resname="templates.about.usage">
-                <source>Nutzung</source>
+            <trans-unit id="templates.about.authorship.rightsOwner" resname="templates.about.authorship.rightsOwner">
+                <source>Rights owner</source>
             </trans-unit>
-            <trans-unit id="templates.about.usage.copyright" resname="templates.about.usage.copyright">
-                <source>In copyright</source>
+            <trans-unit id="templates.about.reuse" resname="templates.about.reuse">
+                <source>Re-use</source>
             </trans-unit>
-            <trans-unit id="templates.about.print" resname="templates.about.print">
-                <source>Print</source>
+            <trans-unit id="templates.about.reuse.inC" resname="templates.about.reuse.inC">
+                <source>InC, In copyright</source>
+            </trans-unit>
+            <trans-unit id="templates.about.reuse.allContent" resname="templates.about.reuse.allContent">
+                <source>all Content</source>
+            </trans-unit>
+            <trans-unit id="templates.about.reuse.metadata" resname="templates.about.reuse.metadata">
+                <source>Metadata</source>
+            </trans-unit>
+            <trans-unit id="templates.about.reuse.text" resname="templates.about.reuse.text">
+                <source>Text</source>
+            </trans-unit>
+            <trans-unit id="templates.about.reuse.media" resname="templates.about.reuse.media">
+                <source>Media</source>
+            </trans-unit>
+            <trans-unit id="templates.about.release" resname="templates.about.release">
+                <source>Release</source>
+            </trans-unit>
+            <trans-unit id="templates.about.release.volume" resname="templates.about.release.volume">
+                <source><![CDATA[<abbr title="volume">]]>vol.<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.release.volumeInitial" resname="templates.about.release.volumeInitial">
+                <source><![CDATA[<abbr title="Volume">]]>Vol.<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.release.issue" resname="templates.about.release.issue">
+                <source><![CDATA[<abbr title="number">]]>no.<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.release.issueInitial" resname="templates.about.release.issueInitial">
+                <source><![CDATA[<abbr title="Number">]]>No.<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.release.edition" resname="templates.about.release.edition">
+                <source><![CDATA[<abbr title="edition">]]>ed.<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.release.editionInitial" resname="templates.about.release.editionInitial">
+                <source><![CDATA[<abbr title="Edition">]]>Ed.<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.release.version" resname="templates.about.release.version">
+                <source><![CDATA[<abbr title="version">]]>ver.<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.release.versionInitial" resname="templates.about.release.versionInitial">
+                <source><![CDATA[<abbr title="Version">]]>Ver.<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.part" resname="templates.about.part">
+                <source>Part</source>
+            </trans-unit>
+            <trans-unit id="templates.about.part.chapterNumbers" resname="templates.about.part.chapterNumbers">
+                <source><![CDATA[<abbr title="chapter">]]>ch.<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.part.chapterNumbersInitial" resname="templates.about.part.chapterNumbersInitial">
+                <source><![CDATA[<abbr title="Chapter">]]>Ch.<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.part.pageNumbers" resname="templates.about.part.pageNumbers">
+                <source><![CDATA[<abbr title="page">]]>p.<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.part.pageNumbersInitial" resname="templates.about.part.pageNumbersInitial">
+                <source><![CDATA[<abbr title="Page">]]>P.<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.part.columnNumbers" resname="templates.about.part.columnNumbers">
+                <source><![CDATA[<abbr title="column">]]>col.<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.part.columnNumbersInitial" resname="templates.about.part.columnNumbersInitial">
+                <source><![CDATA[<abbr title="Column">]]>Col.<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.part.paragraphNumbers" resname="templates.about.part.paragraphNumbers">
+                <source><![CDATA[<abbr title="paragraph">]]>par.<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.part.paragraphNumbersInitial" resname="templates.about.part.paragraphNumbersInitial">
+                <source><![CDATA[<abbr title="Paragraph">]]>Par.<![CDATA[</abbr>]]></source>
             </trans-unit>
             <trans-unit id="templates.about.online" resname="templates.about.online">
                 <source>Online</source>
             </trans-unit>
+            <trans-unit id="templates.about.online.revision" resname="templates.about.online.revision">
+                <source>Revision %s</source>
+            </trans-unit>
             <trans-unit id="templates.about.access" resname="templates.about.access">
                 <source>Access</source>
+            </trans-unit>
+            <trans-unit id="templates.about.revision" resname="templates.about.revision">
+                <source>Revision</source>
             </trans-unit>
             <trans-unit id="templates.about.description" resname="templates.about.description">
                 <source>Description</source>
             </trans-unit>
-            <trans-unit id="templates.about.urn" resname="templates.about.urn">
-                <source><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]></source>
+            <trans-unit id="templates.about.authorityUri" resname="templates.about.authorityUri">
+                <source>Authority</source>
             </trans-unit>
             <trans-unit id="templates.about.permalink" resname="templates.about.permalink">
                 <source>Permalink</source>
             </trans-unit>
+            <trans-unit id="templates.about.doi" resname="templates.about.doi">
+                <source><![CDATA[<abbr title="Digital Object Identifier">]]>DOI<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.urn" resname="templates.about.urn">
+                <source><![CDATA[<abbr title="Uniform Resource Name">]]>URN<![CDATA[</abbr>]]>/<![CDATA[<abbr title="Persisent Identifier">]]>PID<![CDATA[</abbr>]]></source>
+            </trans-unit>
             <trans-unit id="templates.about.url" resname="templates.about.url">
                 <source><![CDATA[<abbr title="Uniform Resource Locator">]]>URL<![CDATA[</abbr>]]></source>
             </trans-unit>
+            <trans-unit id="templates.about.issn" resname="templates.about.issn">
+                <source><![CDATA[<abbr title="International Standard Serial Number">]]>ISSN<![CDATA[</abbr>]]></source>
+            </trans-unit>
+            <trans-unit id="templates.about.isbn" resname="templates.about.isbn">
+                <source><![CDATA[<abbr title="International Standard Book Number">]]>ISBN<![CDATA[</abbr>]]></source>
+            </trans-unit>
             <trans-unit id="templates.about.citation" resname="templates.about.citation">
                 <source>Citation</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.editorSingular" resname="templates.about.citation.editorSingular">
+                <source>ed.</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.editorPlural" resname="templates.about.citation.editorPlural">
+                <source>eds.</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.editedBy" resname="templates.about.citation.editedBy">
+                <source>edited by</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.translatedBy" resname="templates.about.citation.translatedBy">
+                <source>translated by</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.withContributionsOf" resname="templates.about.citation.withContributionsOf">
+                <source>with contributions of</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.rightsOwnedBy" resname="templates.about.citation.rightsOwnedBy">
+                <source>rights owned by</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.volume" resname="templates.about.citation.volume">
+                <source>vol.</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.issue" resname="templates.about.citation.issue">
+                <source>no.</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.edition" resname="templates.about.citation.edition">
+                <source>ed.</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.version" resname="templates.about.citation.version">
+                <source>ver.</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.chapterNumbers" resname="templates.about.citation.chapterNumbers">
+                <source>ch.</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.pageNumbers" resname="templates.about.citation.pageNumbers">
+                <source>p.</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.columnNumbers" resname="templates.about.citation.columnNumbers">
+                <source>col.</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.paragraphNumbers" resname="templates.about.citation.paragraphNumbers">
+                <source>par.</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.isbn" resname="templates.about.citation.isbn">
+                <source>ISBN:</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.issn" resname="templates.about.citation.issn">
+                <source>ISSN:</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.url" resname="templates.about.citation.url">
+                <source>URL:</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.urn" resname="templates.about.citation.urn">
+                <source>URN/PID:</source>
+            </trans-unit>
+            <trans-unit id="templates.about.citation.doi" resname="templates.about.citation.doi">
+                <source>DOI:</source>
+            </trans-unit>
+            <trans-unit id="templates.about.language" resname="templates.about.language">
+                <source>Language</source>
             </trans-unit>
             <trans-unit id="templates.about.api.before" resname="templates.about.api.before">
                 <source>The data of this web application is available </source>
@@ -1352,13 +1662,13 @@
                 <source>Search term</source>
             </trans-unit>
             <trans-unit id="templates.search.query.example" resname="templates.search.query.example">
-                <source>Type to search…</source>
+                <source>Search term…</source>
             </trans-unit>
             <trans-unit id="templates.search.go" resname="templates.search.go">
                 <source>Search</source>
             </trans-unit>
-            <trans-unit id="templates.search.example" resname="templates.search.example">
-                <source>Search for this example</source>
+            <trans-unit id="templates.search.regexGo" resname="templates.search.regexGo">
+                <source>Search for titles only, RegEx possible</source>
             </trans-unit>
             <trans-unit id="templates.search.exact" resname="templates.search.exact">
                 <source>Titles only, <![CDATA[<abbr title="Regular Expressions (PCRE2)">]]>RegEx<![CDATA[</abbr>]]> possible</source>

@@ -1,8 +1,8 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:comment>Prominent sub-menu of the current page to be displayed below the title.</f:comment>
 
-    <f:argument name="subMenu" type="array" optional="{false}" description="List of child navigation entries" />
-    <f:argument name="contentElements" type="array" optional="{false}" description="List of content records to provide a table of contents for" />
+    <f:argument name="subMenu" type="array" optional="{true}" default="{}" description="List of child navigation entries" />
+    <f:argument name="contentElements" type="array" optional="{true}" default="{}" description="List of content records to provide a table of contents for" />
 
     <f:variable name="listContents">0</f:variable>
     <f:variable name="listSubMenu">0</f:variable>
@@ -27,7 +27,7 @@
                 </f:for>
 
                 <mdlr:molecule.buttonRow.item>
-                    <f:render partial="Main/Toc" arguments="{listContents: listContents, listSubMenu: listSubMenu, contentElements: contentElements}"/>
+                    <f:render partial="Main/Toc" arguments="{listContents: listContents, listSubMenu: listSubMenu, contentElements: contentElements}" />
                 </mdlr:molecule.buttonRow.item>
 
             </mdlr:molecule.buttonRow.wrap>

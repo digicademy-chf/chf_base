@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:comment>Provides the main content area or an empty state if there are no content elements.</f:comment>
 
-    <f:argument name="contentElements" type="array" optional="{false}" description="List of content records to display in this area" />
+    <f:argument name="contentElements" type="array" optional="{true}" default="{}" description="List of content records to display in this area" />
 
     <f:if condition="{contentElements}">
         <f:then>

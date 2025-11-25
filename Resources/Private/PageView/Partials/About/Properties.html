@@ -4,44 +4,179 @@
     <f:argument name="description" type="string" optional="{true}" default="" description="Brief description of the page or record" />
     <f:argument name="author" type="string" optional="{true}" default="" description="Author of the page or record" />
     <f:argument name="authorEmail" type="string" optional="{true}" default="" description="Email of the author of the page or record" />
-    <f:argument name="rightsUri" type="string" optional="{true}" default="" description="URI of the rights situation of this page or record" />
-    <f:argument name="rightsLabel" type="string" optional="{true}" default="" description="Label of the rights situation of this page or record" />
+    <f:argument name="authorshipRelation" type="array" optional="{true}" default="{}" description="Authorship of the page or record" />
     <f:argument name="date" type="string" optional="{true}" default="" description="Date this page or record was published on" />
-    <f:argument name="dateIso" type="string" optional="{true}" default="" description="ISO-formatted Date this page or record was published on" />
+    <f:argument name="dateIso" type="string" optional="{true}" default="" description="ISO-formatted date this page or record was published on" />
     <f:argument name="access" type="string" optional="{true}" default="" description="Date this page or record was accessed on" />
     <f:argument name="accessIso" type="string" optional="{true}" default="" description="ISO-formatted Date this page or record was accessed on" />
+    <f:argument name="revisionNumber" type="int" optional="{true}" default="0" description="Number of the current page or record revision" />
+    <f:argument name="revisionDate" type="string" optional="{true}" default="" description="Date this page or record was last revised on" />
+    <f:argument name="revisionDateIso" type="string" optional="{true}" default="" description="ISO-formatted date this page or record was last revised on" />
+    <f:argument name="extent" type="array" optional="{true}" default="{}" description="Identifier or dimension of the page or record" />
+    <f:argument name="sameAs" type="array" optional="{true}" default="{}" description="Authority file URIs identifying the page or record" />
+    <f:argument name="apiPageUid" type="int" optional="{true}" default="0" description="Whether to provide permalinks to records" />
 
     <mdlr:template.area semanticType="section" areas="{0: 'slot-a'}">
 
         <mdlr:atom.heading text="{f:translate(key: 'templates.about.properties', extensionName: 'chf_base')}" level="4" variants="{0: 'tacit'}" />
 
         <mdlr:molecule.boxedData.wrap>
+
             <f:if condition="{author}">
-                <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.author', extensionName: 'chf_base')}">
+                <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.authorship.author', extensionName: 'chf_base')}">
                     <f:if condition="{authorEmail}">
                         <mdlr:atom.button.email email="{authorEmail}" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.email', extensionName: 'chf_base')}" icon="email" rel="author" />
                     </f:if>
                     {author}
                 </mdlr:molecule.boxedData.item>
             </f:if>
-            <f:comment><!--<mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.photographer', extensionName: 'chf_base')}" />
-            <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.editor', extensionName: 'chf_base')}" />
-            <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.publisher', extensionName: 'chf_base')}" />--></f:comment>
-            <f:if condition="{rightsUri}">
-                <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.usage', extensionName: 'chf_base')}">
-                    <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.uri', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.uri.hint', extensionName: 'chf_base')}" data="{target: rightsUri, success: '{f:translate(key: \'templates.generic.copy.uri.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.uri.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
-                    <f:link.external uri="{rightsUri}" target="_blank" rel="license">
-                        <f:if condition="{rightsLabel}">
-                            <f:then>{rightsLabel}</f:then>
-                            <f:else>{rightsUri}</f:else>
-                        </f:if>
-                    </f:link.external>
+
+            <f:if condition="{authorshipRelation}">
+                <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.authorship', extensionName: 'chf_base')}">
+                    <mdlr:atom.list.wrap>
+                        <f:for each="{authorshipRelation}" as="authorship">
+                            <mdlr:atom.list.item>
+                                <f:link.external uri="{f:uri.page(pageUid: apiPageUid, absolute: 1)}/{authorship.iri}">{f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}</f:link.external>
+                                <f:switch expression="{authorship.role}">
+                                    <f:case value="author">(<f:translate key="templates.about.authorship.author" extensionName="chf_base" />)</f:case>
+                                    <f:case value="photographer">(<f:translate key="templates.about.authorship.photographer" extensionName="chf_base" />)</f:case>
+                                    <f:case value="editor">(<f:translate key="templates.about.authorship.editor" extensionName="chf_base" />)</f:case>
+                                    <f:case value="translator">(<f:translate key="templates.about.authorship.translator" extensionName="chf_base" />)</f:case>
+                                    <f:case value="contributor">(<f:translate key="templates.about.authorship.contributor" extensionName="chf_base" />)</f:case>
+                                    <f:case value="publisher">(<f:translate key="templates.about.authorship.publisher" extensionName="chf_base" />)</f:case>
+                                    <f:case value="rightsOwner">(<f:translate key="templates.about.authorship.rightsOwner" extensionName="chf_base" />)</f:case>
+                                </f:switch>
+                            </mdlr:atom.list.item>
+                        </f:for>
+                    </mdlr:atom.list.wrap>
                 </mdlr:molecule.boxedData.item>
             </f:if>
+
+            <f:for each="{extent}" as="ext">
+                <f:switch expression="{ext.type}">
+                    <f:case value="volume">
+                        <f:if condition="{release}">
+                            <f:then>
+                                <f:variable name="release">{release}, <f:format.raw><f:translate key="templates.about.release.volume" extensionName="chf_base" /></f:format.raw> {ext.text}</f:variable>
+                            </f:then>
+                            <f:else>
+                                <f:variable name="release"><f:format.raw><f:translate key="templates.about.release.volumeInitial" extensionName="chf_base" /></f:format.raw> {ext.text}</f:variable>
+                            </f:else>
+                        </f:if>
+                    </f:case>
+                    <f:case value="issue">
+                        <f:if condition="{release}">
+                            <f:then>
+                                <f:variable name="release">{release}, <f:format.raw><f:translate key="templates.about.release.issue" extensionName="chf_base" /></f:format.raw> {ext.text}</f:variable>
+                            </f:then>
+                            <f:else>
+                                <f:variable name="release"><f:format.raw><f:translate key="templates.about.release.issueInitial" extensionName="chf_base" /></f:format.raw> {ext.text}</f:variable>
+                            </f:else>
+                        </f:if>
+                    </f:case>
+                    <f:case value="edition">
+                        <f:if condition="{release}">
+                            <f:then>
+                                <f:variable name="release">{release}, <f:format.raw><f:translate key="templates.about.release.edition" extensionName="chf_base" /></f:format.raw> {ext.text}</f:variable>
+                            </f:then>
+                            <f:else>
+                                <f:variable name="release"><f:format.raw><f:translate key="templates.about.release.editionInitial" extensionName="chf_base" /></f:format.raw> {ext.text}</f:variable>
+                            </f:else>
+                        </f:if>
+                    </f:case>
+                    <f:case value="version">
+                        <f:if condition="{release}">
+                            <f:then>
+                                <f:variable name="release">{release}, <f:format.raw><f:translate key="templates.about.release.version" extensionName="chf_base" /></f:format.raw> {ext.text}</f:variable>
+                            </f:then>
+                            <f:else>
+                                <f:variable name="release"><f:format.raw><f:translate key="templates.about.release.versionInitial" extensionName="chf_base" /></f:format.raw> {ext.text}</f:variable>
+                            </f:else>
+                        </f:if>
+                    </f:case>
+                </f:switch>
+            </f:for>
+            <f:if condition="{release}">
+                <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.release', extensionName: 'chf_base')}">
+                    <f:format.raw>{release}</f:format.raw>
+                </mdlr:molecule.boxedData.item>
+            </f:if>
+
+            <f:for each="{extent}" as="ext">
+                <f:switch expression="{ext.type}">
+                    <f:case value="chapterNumbers">
+                        <f:if condition="{part}">
+                            <f:then>
+                                <f:variable name="part">{part}, <f:format.raw><f:translate key="templates.about.part.chapterNumbers" extensionName="chf_base" /></f:format.raw> {ext.text}</f:variable>
+                            </f:then>
+                            <f:else>
+                                <f:variable name="part"><f:format.raw><f:translate key="templates.about.part.chapterNumbersInitial" extensionName="chf_base" /></f:format.raw> {ext.text}</f:variable>
+                            </f:else>
+                        </f:if>
+                    </f:case>
+                    <f:case value="pageNumbers">
+                        <f:if condition="{part}">
+                            <f:then>
+                                <f:variable name="part">{part}, <f:format.raw><f:translate key="templates.about.part.pageNumbers" extensionName="chf_base" /></f:format.raw> {ext.text}</f:variable>
+                            </f:then>
+                            <f:else>
+                                <f:variable name="part"><f:format.raw><f:translate key="templates.about.part.pageNumbersInitial" extensionName="chf_base" /></f:format.raw> {ext.text}</f:variable>
+                            </f:else>
+                        </f:if>
+                    </f:case>
+                    <f:case value="columnNumbers">
+                        <f:if condition="{part}">
+                            <f:then>
+                                <f:variable name="part">{part}, <f:format.raw><f:translate key="templates.about.part.columnNumbers" extensionName="chf_base" /></f:format.raw> {ext.text}</f:variable>
+                            </f:then>
+                            <f:else>
+                                <f:variable name="part"><f:format.raw><f:translate key="templates.about.part.columnNumbersInitial" extensionName="chf_base" /></f:format.raw> {ext.text}</f:variable>
+                            </f:else>
+                        </f:if>
+                    </f:case>
+                    <f:case value="paragraphNumbers">
+                        <f:if condition="{part}">
+                            <f:then>
+                                <f:variable name="part">{part}, <f:format.raw><f:translate key="templates.about.part.paragraphNumbers" extensionName="chf_base" /></f:format.raw> {ext.text}</f:variable>
+                            </f:then>
+                            <f:else>
+                                <f:variable name="part"><f:format.raw><f:translate key="templates.about.part.paragraphNumbersInitial" extensionName="chf_base" /></f:format.raw> {ext.text}</f:variable>
+                            </f:else>
+                        </f:if>
+                    </f:case>
+                </f:switch>
+            </f:for>
+            <f:if condition="{part}">
+                <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.part', extensionName: 'chf_base')}">
+                    <f:format.raw>{part}</f:format.raw>
+                </mdlr:molecule.boxedData.item>
+            </f:if>
+
             <f:if condition="{date} && {dateIso}">
                 <f:then>
                     <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.online', extensionName: 'chf_base')}">
-                        <time datetime="{dateIso}">{date}</time>
+                        <f:if condition="{revisionNumber} && {revisionDate} && {revisionDateIso}">
+                            <f:then>
+                                <f:if condition="{revisionNumber} > 1 && {revisionDateIso} != {dateIso}">
+                                    <f:then>
+                                        <mdlr:atom.list.wrap>
+                                            <mdlr:atom.list.item>
+                                                <time datetime="{dateIso}">{date}</time> (<f:translate key="templates.about.online.revision" extensionName="chf_base" arguments="{0: '1'}" />)
+                                            </mdlr:atom.list.item>
+                                            <mdlr:atom.list.item>
+                                                <time datetime="{revisionDateIso}">{revisionDate}</time> (<f:translate key="templates.about.online.revision" extensionName="chf_base" arguments="{0: revisionNumber}" />)
+                                            </mdlr:atom.list.item>
+                                        </mdlr:atom.list.wrap>
+                                    </f:then>
+                                    <f:else>
+                                        <time datetime="{dateIso}">{date}</time> (<f:translate key="templates.about.online.revision" extensionName="chf_base" arguments="{0: '1'}" />)
+                                    </f:else>
+                                </f:if>
+                            </f:then>
+                            <f:else>
+                                <time datetime="{dateIso}">{date}</time>
+                            </f:else>
+                        </f:if>
                     </mdlr:molecule.boxedData.item>
                 </f:then>
                 <f:else>
@@ -50,34 +185,28 @@
                     </mdlr:molecule.boxedData.item>
                 </f:else>
             </f:if>
-            <f:comment><!--<mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.print', extensionName: 'chf_base')}">
-                2003 (Band XVII, Abb. 10)
-            </mdlr:molecule.boxedData.item>--></f:comment>
+
             <f:if condition="{description}">
                 <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.description', extensionName: 'chf_base')}">
                     {description}
                 </mdlr:molecule.boxedData.item>
             </f:if>
+
+            <f:if condition="{sameAs}">
+                <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.about.authorityUri', extensionName: 'chf_base')}">
+                    <mdlr:atom.list.wrap>
+                        <f:for each="{sameAs}" as="same">
+                            <mdlr:atom.list.item>
+                                <mdlr:atom.button.function function="copy" variants="{0: 'tinyicon', 1: 'unobserved', 2: 'sidelined'}" text="{f:translate(key: 'templates.generic.copy.authorityUri', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.copy.authorityUri.hint', extensionName: 'chf_base')}" data="{target: '{same.uri}', success: '{f:translate(key: \'templates.generic.copy.authorityUri.success\', extensionName: \'chf_base\')}', failure: '{f:translate(key: \'templates.generic.copy.authorityUri.failure\', extensionName: \'chf_base\')}'}" icon="copy" />
+                                <f:link.external uri="{same.uri}">{same.uri}</f:link.external>
+                            </mdlr:atom.list.item>
+                        </f:for>
+                    </mdlr:atom.list.wrap>
+                </mdlr:molecule.boxedData.item>
+            </f:if>
+
         </mdlr:molecule.boxedData.wrap>
 
     </mdlr:template.area>
-
-    <f:comment><!--
-    <mdlr:atom.heading text="{f:translate(key: 'templates.main.rights', extensionName: 'chf_base')}" level="4" variants="{0: 'tacit'}" />
-    <mdlr:molecule.boxedData.wrap>
-        <mdlr:molecule.boxedData.item text="{f:translate(key: 'templates.main.rights.credit', extensionName: 'chf_base')}">
-            Credit string (role.allContent)
-        </mdlr:molecule.boxedData.item>
-        <mdlr:molecule.boxedData.item text="{f:translate(key: 'object.abstractRelation.role.metadata', extensionName: 'chf_base')}">
-            Author, link to licence
-        </mdlr:molecule.boxedData.item>
-        <mdlr:molecule.boxedData.item text="{f:translate(key: 'object.abstractRelation.role.text', extensionName: 'chf_base')}">
-            Author, link to licence
-        </mdlr:molecule.boxedData.item>
-        <mdlr:molecule.boxedData.item text="{f:translate(key: 'object.abstractRelation.role.media', extensionName: 'chf_base')}">
-            Author, link to licence
-        </mdlr:molecule.boxedData.item>
-    </mdlr:molecule.boxedData.wrap>
-    --></f:comment>
 
 </html>
