@@ -11,6 +11,10 @@ namespace Digicademy\CHFBase\Domain\Model;
 
 use Digicademy\CHFBase\Domain\Model\Traits\RecordTrait;
 use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
+use Digicademy\CHFLex\Domain\Model\Example;
+use Digicademy\CHFMedia\Domain\Model\FileGroup;
+use Digicademy\CHFObject\Domain\Model\SingleObject;
+use Digicademy\CHFObject\Domain\Model\ObjectGroup;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -61,11 +65,11 @@ class AgentRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param AbstractBase $record
+     * @param Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup $record
      * @param Agent $agent
      * @return AgentRelation
      */
-    public function __construct(AbstractBase $record, Agent $agent)
+    public function __construct(Agent|Location|Period|Example|FileGroup|SingleObject|ObjectGroup $record, Agent $agent)
     {
         parent::__construct();
         $this->initializeObject();

@@ -10,6 +10,16 @@ declare(strict_types=1);
 namespace Digicademy\CHFBase\Domain\Model;
 
 use Digicademy\CHFBase\Domain\Model\Traits\RecordTrait;
+use Digicademy\CHFBib\Domain\Model\BibliographicEntry;
+use Digicademy\CHFGloss\Domain\Model\GlossaryEntry;
+use Digicademy\CHFLex\Domain\Model\DictionaryEntry;
+use Digicademy\CHFLex\Domain\Model\EncyclopediaEntry;
+use Digicademy\CHFMap\Domain\Model\Feature;
+use Digicademy\CHFMedia\Domain\Model\FileGroup;
+use Digicademy\CHFObject\Domain\Model\SingleObject;
+use Digicademy\CHFObject\Domain\Model\ObjectGroup;
+use Digicademy\CHFPub\Domain\Model\Essay;
+use Digicademy\CHFPub\Domain\Model\Volume;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 
 defined('TYPO3') or die();
@@ -54,11 +64,11 @@ class LinkRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param AbstractBase $record
+     * @param Agent|Location|Period|BibliographicEntry|GlossaryEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record
      * @param string $url
      * @return LinkRelation
      */
-    public function __construct(AbstractBase $record, string $url)
+    public function __construct(Agent|Location|Period|BibliographicEntry|GlossaryEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record, string $url)
     {
         parent::__construct();
 

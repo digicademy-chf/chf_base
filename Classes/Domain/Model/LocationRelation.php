@@ -11,6 +11,11 @@ namespace Digicademy\CHFBase\Domain\Model;
 
 use Digicademy\CHFBase\Domain\Model\Traits\RecordTrait;
 use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
+use Digicademy\CHFLex\Domain\Model\Example;
+use Digicademy\CHFLex\Domain\Model\Frequency;
+use Digicademy\CHFMedia\Domain\Model\FileGroup;
+use Digicademy\CHFObject\Domain\Model\SingleObject;
+use Digicademy\CHFObject\Domain\Model\ObjectGroup;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -55,11 +60,11 @@ class LocationRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param AbstractBase $record
+     * @param Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup $record
      * @param Location $location
      * @return LocationRelation
      */
-    public function __construct(AbstractBase $record, Location $location)
+    public function __construct(Agent|Period|Example|Frequency|FileGroup|SingleObject|ObjectGroup $record, Location $location)
     {
         parent::__construct();
         $this->initializeObject();

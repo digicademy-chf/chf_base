@@ -11,6 +11,16 @@ namespace Digicademy\CHFBase\Domain\Model;
 
 use Digicademy\CHFBase\Domain\Model\Traits\RecordTrait;
 use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
+use Digicademy\CHFBib\Domain\Model\BibliographicEntry;
+use Digicademy\CHFGloss\Domain\Model\GlossaryEntry;
+use Digicademy\CHFLex\Domain\Model\DictionaryEntry;
+use Digicademy\CHFLex\Domain\Model\EncyclopediaEntry;
+use Digicademy\CHFMap\Domain\Model\Feature;
+use Digicademy\CHFMedia\Domain\Model\FileGroup;
+use Digicademy\CHFObject\Domain\Model\SingleObject;
+use Digicademy\CHFObject\Domain\Model\ObjectGroup;
+use Digicademy\CHFPub\Domain\Model\Essay;
+use Digicademy\CHFPub\Domain\Model\Volume;
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation\Validate;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -56,11 +66,11 @@ class AuthorshipRelation extends AbstractRelation
     /**
      * Construct object
      *
-     * @param AbstractBase $record
+     * @param AbstractResource|Agent|Location|Period|BibliographicEntry|GlossaryEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record
      * @param Agent $contributor
      * @return AuthorshipRelation
      */
-    public function __construct(AbstractBase $record, Agent $contributor)
+    public function __construct(AbstractResource|Agent|Location|Period|BibliographicEntry|GlossaryEntry|DictionaryEntry|EncyclopediaEntry|Feature|FileGroup|SingleObject|ObjectGroup|Essay|Volume $record, Agent $contributor)
     {
         parent::__construct();
         $this->initializeObject();

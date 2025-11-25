@@ -27,7 +27,7 @@ class AbstractRelationRepository extends Repository
 
     protected $defaultOrderings = [
         'sorting' => QueryInterface::ORDER_ASCENDING,
-        'uuid'    => QueryInterface::ORDER_ASCENDING,
         'type'    => QueryInterface::ORDER_ASCENDING,
+        'uuid'    => QueryInterface::ORDER_ASCENDING,
     ];
 }

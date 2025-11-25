@@ -132,7 +132,7 @@ class AbstractResource extends AbstractBase
      *
      * @return string
      */
-    public function getCode(): string
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -142,7 +142,7 @@ class AbstractResource extends AbstractBase
      *
      * @param string $title
      */
-    public function setCode(string $title): void
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
