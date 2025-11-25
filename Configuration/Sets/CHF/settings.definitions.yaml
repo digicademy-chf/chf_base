@@ -49,7 +49,12 @@ settings:
     description: 'Page ID of a folder that contains service content like a privacy page'
     type: int
     default: 0
-  chf.apis.page:
+  chf.api.page:
+    label: 'API page'
+    description: 'Page ID of the REST API'
+    type: int
+    default: 0
+  chf.api.info:
     label: 'API page'
     description: 'Page ID that contains information about available APIs like REST and SPARQL'
     type: int

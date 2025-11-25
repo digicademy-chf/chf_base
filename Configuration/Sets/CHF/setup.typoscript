@@ -50,13 +50,16 @@ page {
             metadataRightsUri = TEXT
             metadataRightsUri.data = siteSettings:chf.rights.uri
             metadataRightsLabel = TEXT
-            metadataRightsLabel.data = LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:templates.about.usage.copyright
+            metadataRightsLabel.data = LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:templates.about.reuse.inC
             metadataRightsLabel.if.equals = http://rightsstatements.org/vocab/InC/1.0/
             metadataRightsLabel.if.value.data = siteSettings:chf.rights.uri
             metadataWebApp = TEXT
             metadataWebApp.data = siteLanguage:websiteTitle // site:websiteTitle
             metadataPublisher = TEXT
             metadataPublisher.data = siteSettings:chf.citation.publisher
+            metadataNew = TEXT
+            metadataNew.value = 1
+            metadataNew.if.isPositive.dataWrap = {field:newUntil}-{date:U}
             metadataYear = TEXT
             metadataYear.data = field:lastUpdated
             metadataYear.if.isTrue.field = lastUpdated
@@ -144,36 +147,70 @@ page {
     shortcutIcon = {$chf.favicon.main}
 }
 
-# JSON-LD templates
-jsonld = PAGE
-jsonld {
-    typeNum = 6024975381
+# Markdown templates
+csv = PAGE
+csv {
+    typeNum = 2905372363
     config {
         disableAllHeaderCode = 1
-        additionalHeaders.10.header = Content-Type: application/ld+json
+        additionalHeaders.10.header = Content-Type: text/csv
     }
     10 = PAGEVIEW
     10 {
         paths {
-            100 = EXT:chf_base/Resources/Private/JsonLd/
-            200 = {$chf.templates.path}JsonLd/
+            100 = EXT:chf_base/Resources/Private/Csv/
+            200 = {$chf.templates.path}Csv/
         }
     }
 }
 
-# TTL templates
-ttl = PAGE
-ttl {
-    typeNum = 2867941442
+# Markdown templates
+json = PAGE
+json {
+    typeNum = 5146337671
     config {
         disableAllHeaderCode = 1
-        additionalHeaders.10.header = Content-Type: text/turtle
+        additionalHeaders.10.header = Content-Type: application/json
     }
     10 = PAGEVIEW
     10 {
         paths {
-            100 = EXT:chf_base/Resources/Private/Ttl/
-            200 = {$chf.templates.path}Ttl/
+            100 = EXT:chf_base/Resources/Private/Json/
+            200 = {$chf.templates.path}Json/
+        }
+    }
+}
+
+# Markdown templates
+markdown = PAGE
+markdown {
+    typeNum = 7796094845
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders.10.header = Content-Type: text/markdown
+    }
+    10 = PAGEVIEW
+    10 {
+        paths {
+            100 = EXT:chf_base/Resources/Private/Markdown/
+            200 = {$chf.templates.path}Markdown/
+        }
+    }
+}
+
+# TEI/XML templates
+teixml = PAGE
+teixml {
+    typeNum = 9631552583
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders.10.header = Content-Type: application/tei+xml
+    }
+    10 = PAGEVIEW
+    10 {
+        paths {
+            100 = EXT:chf_base/Resources/Private/TeiXml/
+            200 = {$chf.templates.path}TeiXml/
         }
     }
 }
@@ -195,19 +232,36 @@ rdfxml {
     }
 }
 
-# TEI/XML templates
-teixml = PAGE
-teixml {
-    typeNum = 9631552583
+# Turtle templates
+turtle = PAGE
+turtle {
+    typeNum = 2867941442
     config {
         disableAllHeaderCode = 1
-        additionalHeaders.10.header = Content-Type: application/tei+xml
+        additionalHeaders.10.header = Content-Type: text/turtle
     }
     10 = PAGEVIEW
     10 {
         paths {
-            100 = EXT:chf_base/Resources/Private/TeiXml/
-            200 = {$chf.templates.path}TeiXml/
+            100 = EXT:chf_base/Resources/Private/Turtle/
+            200 = {$chf.templates.path}Turtle/
+        }
+    }
+}
+
+# JSON-LD templates
+jsonld = PAGE
+jsonld {
+    typeNum = 6024975381
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders.10.header = Content-Type: application/ld+json
+    }
+    10 = PAGEVIEW
+    10 {
+        paths {
+            100 = EXT:chf_base/Resources/Private/JsonLd/
+            200 = {$chf.templates.path}JsonLd/
         }
     }
 }
