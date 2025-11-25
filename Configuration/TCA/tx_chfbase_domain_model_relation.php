@@ -20,14 +20,14 @@ defined('TYPO3') or die();
 return [
     'ctrl' => [
         'title'                    => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.abstractRelation',
-        'label'                    => 'uuid',
-        'label_alt'                => 'type',
+        'label'                    => 'type',
+        'label_alt'                => 'uuid',
         'label_alt_force'          => true,
         'tstamp'                   => 'tstamp',
         'crdate'                   => 'crdate',
         'delete'                   => 'deleted',
         'sortby'                   => 'sorting',
-        'default_sortby'           => 'uuid ASC,type ASC',
+        'default_sortby'           => 'type ASC,uuid ASC',
         'versioningWS'             => true,
         'iconfile'                 => 'EXT:chf_base/Resources/Public/Icons/TableRelation.svg',
         'origUid'                  => 't3_origuid',

@@ -85,6 +85,16 @@ return [
                         'group' => 'chfBase',
                     ],
                     [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.issn',
+                        'value' => 'issn',
+                        'group' => 'chfBase',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.isbn',
+                        'value' => 'isbn',
+                        'group' => 'chfBase',
+                    ],
+                    [
                         'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.edition',
                         'value' => 'edition',
                         'group' => 'chfBase',
@@ -105,13 +115,23 @@ return [
                         'group' => 'chfBase',
                     ],
                     [
-                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.issn',
-                        'value' => 'issn',
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.pageNumbers',
+                        'value' => 'pageNumbers',
                         'group' => 'chfBase',
                     ],
                     [
-                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.isbn',
-                        'value' => 'isbn',
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.paragraphNumbers',
+                        'value' => 'paragraphNumbers',
+                        'group' => 'chfBase',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.columnNumbers',
+                        'value' => 'columnNumbers',
+                        'group' => 'chfBase',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:object.extent.type.chapterNumbers',
+                        'value' => 'chapterNumbers',
                         'group' => 'chfBase',
                     ],
                 ],
