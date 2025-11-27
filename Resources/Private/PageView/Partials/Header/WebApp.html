@@ -10,7 +10,7 @@
 
     <mdlr:molecule.logo variants="{0: 'back'}" areas="{0: 'slot-a', 1: 'align-left'}">
 
-        <mdlr:atom.imageLink.page pageUid="{pageUid}" image="{f:uri.image(src: logo)}" alternativeText="{webApp}" hint="{f:translate(key: 'templates.generic.home', extensionName: 'chf_base')}" />
+        <mdlr:atom.imageLink.page pageUid="{pageUid}" image="{f:uri.image(src: logo)}" alternativeText="{webApp}" hint="{f:translate(key: 'templates.generic.home', domain: 'chf_base')}" />
 
         <f:for each="{rootlineMenu}" as="menuItem" iteration="index">
             <f:if condition="{index.cycle} == 1">
@@ -23,7 +23,7 @@
                             <f:then>
                                 <mdlr:molecule.buttonRow.wrap variants="{0: 'nowrap'}">
                                     <mdlr:molecule.buttonRow.item>
-                                        <mdlr:atom.button.page variants="{0: 'icon', 1: 'unobtrusive'}" pageUid="{menuItem.data.uid}" text="{f:translate(key: 'templates.header.back', extensionName: 'chf_base')}" icon="back" />
+                                        <mdlr:atom.button.page variants="{0: 'icon', 1: 'unobtrusive'}" pageUid="{menuItem.data.uid}" text="{f:translate(key: 'templates.header.back', domain: 'chf_base')}" icon="back" />
                                     </mdlr:molecule.buttonRow.item>
                                 </mdlr:molecule.buttonRow.wrap>
                             </f:then>

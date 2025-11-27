@@ -5,54 +5,54 @@
 
     <mdlr:template.area semanticType="nav" id="footer-social" areas="{0: 'slot-d', 1: 'align-right-above-600', 2: 'align-middle'}">
 
-        <mdlr:atom.heading text="{f:translate(key: 'templates.footer.social', extensionName: 'chf_base')}" level="3" variants="{0: 'tacit'}" />
+        <mdlr:atom.heading text="{f:translate(key: 'templates.footer.social', domain: 'chf_base')}" level="3" variants="{0: 'tacit'}" />
 
         <mdlr:molecule.buttonRow.wrap>
             <f:if condition="{socialLinks.mastodon}">
                 <mdlr:molecule.buttonRow.item>
-                    <mdlr:atom.button.external uri="{socialLinks.mastodon}" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.mastodon', extensionName: 'chf_base')}" icon="mastodon" rel="me" />
+                    <mdlr:atom.button.external uri="{socialLinks.mastodon}" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.mastodon', domain: 'chf_base')}" icon="mastodon" rel="me" />
                 </mdlr:molecule.buttonRow.item>
             </f:if>
             <f:if condition="{socialLinks.linkedin}">
                 <mdlr:molecule.buttonRow.item>
-                    <mdlr:atom.button.external uri="{socialLinks.linkedin}" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.linkedin', extensionName: 'chf_base')}" icon="linkedin" rel="me" />
+                    <mdlr:atom.button.external uri="{socialLinks.linkedin}" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.linkedin', domain: 'chf_base')}" icon="linkedin" rel="me" />
                 </mdlr:molecule.buttonRow.item>
             </f:if>
             <f:if condition="{socialLinks.instagram}">
                 <mdlr:molecule.buttonRow.item>
-                    <mdlr:atom.button.external uri="{socialLinks.instagram}" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.instagram', extensionName: 'chf_base')}" icon="instagram" rel="me" />
+                    <mdlr:atom.button.external uri="{socialLinks.instagram}" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.instagram', domain: 'chf_base')}" icon="instagram" rel="me" />
                 </mdlr:molecule.buttonRow.item>
             </f:if>
             <f:if condition="{socialLinks.facebook}">
                 <mdlr:molecule.buttonRow.item>
-                    <mdlr:atom.button.external uri="{socialLinks.facebook}" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.facebook', extensionName: 'chf_base')}" icon="facebook" rel="me" />
+                    <mdlr:atom.button.external uri="{socialLinks.facebook}" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.facebook', domain: 'chf_base')}" icon="facebook" rel="me" />
                 </mdlr:molecule.buttonRow.item>
             </f:if>
             <f:if condition="{socialLinks.bluesky}">
                 <mdlr:molecule.buttonRow.item>
-                    <mdlr:atom.button.external uri="{socialLinks.bluesky}" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.bluesky', extensionName: 'chf_base')}" icon="bluesky" rel="me" />
+                    <mdlr:atom.button.external uri="{socialLinks.bluesky}" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.bluesky', domain: 'chf_base')}" icon="bluesky" rel="me" />
                 </mdlr:molecule.buttonRow.item>
             </f:if>
             <f:if condition="{socialLinks.xitter}">
                 <mdlr:molecule.buttonRow.item>
-                    <mdlr:atom.button.external uri="{socialLinks.xitter}" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.xitter', extensionName: 'chf_base')}" icon="xitter" rel="me" />
+                    <mdlr:atom.button.external uri="{socialLinks.xitter}" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.xitter', domain: 'chf_base')}" icon="xitter" rel="me" />
                 </mdlr:molecule.buttonRow.item>
             </f:if>
             <f:if condition="{socialLinks.gitlab}">
                 <mdlr:molecule.buttonRow.item>
-                    <mdlr:atom.button.external uri="{socialLinks.gitlab}" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.gitlab', extensionName: 'chf_base')}" icon="gitlab" rel="me" />
+                    <mdlr:atom.button.external uri="{socialLinks.gitlab}" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.gitlab', domain: 'chf_base')}" icon="gitlab" rel="me" />
                 </mdlr:molecule.buttonRow.item>
             </f:if>
             <f:if condition="{socialLinks.github}">
                 <mdlr:molecule.buttonRow.item>
-                    <mdlr:atom.button.external uri="{socialLinks.github}" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.github', extensionName: 'chf_base')}" icon="github" rel="me" />
+                    <mdlr:atom.button.external uri="{socialLinks.github}" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.github', domain: 'chf_base')}" icon="github" rel="me" />
                 </mdlr:molecule.buttonRow.item>
             </f:if>
             <f:comment><!--<mdlr:molecule.buttonRow.item>
-                <mdlr:atom.button.external uri="#" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.rss', extensionName: 'chf_base')}" icon="feed" />
+                <mdlr:atom.button.external uri="#" variants="{0: 'icon', 1: 'transparent'}" text="{f:translate(key: 'templates.footer.social.rss', domain: 'chf_base')}" icon="feed" />
             </mdlr:molecule.buttonRow.item>--></f:comment>
             <mdlr:molecule.buttonRow.item>
-                <mdlr:atom.button.section section="main" variants="{0: 'icon', 1: 'transparent'}" function="up" text="{f:translate(key: 'templates.footer.social.up', extensionName: 'chf_base')}" icon="up" />
+                <mdlr:atom.button.section section="main" variants="{0: 'icon', 1: 'transparent'}" function="up" text="{f:translate(key: 'templates.footer.social.up', domain: 'chf_base')}" icon="up" />
             </mdlr:molecule.buttonRow.item>
         </mdlr:molecule.buttonRow.wrap>
 

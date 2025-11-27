@@ -5,22 +5,22 @@
 
     <mdlr:template.area semanticType="nav" id="header-meta" areas="{0: 'slot-c', 1: 'align-right', 2: 'align-middle'}">
 
-        <mdlr:atom.heading text="{f:translate(key: 'templates.header.meta', extensionName: 'chf_base')}" level="2" variants="{0: 'tacit'}" />
+        <mdlr:atom.heading text="{f:translate(key: 'templates.header.meta', domain: 'chf_base')}" level="2" variants="{0: 'tacit'}" />
 
         <mdlr:molecule.buttonRow.wrap variants="{0: 'nowrap'}">
             <f:if condition="{searchButton}">
                 <mdlr:molecule.buttonRow.item>
-                    <mdlr:atom.button.function id="header-meta-search" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.search', extensionName: 'chf_base')}" aria="{controls: 'search'}" data="{focus: 'search-query'}" icon="search" />
+                    <mdlr:atom.button.function id="header-meta-search" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.search', domain: 'chf_base')}" aria="{controls: 'search'}" data="{focus: 'search-query'}" icon="search" />
                 </mdlr:molecule.buttonRow.item>
             </f:if>
             <mdlr:molecule.buttonRow.item>
-                <mdlr:atom.button.function id="header-meta-share" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.share', extensionName: 'chf_base')}" aria="{controls: 'share'}" icon="share" />
+                <mdlr:atom.button.function id="header-meta-share" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.share', domain: 'chf_base')}" aria="{controls: 'share'}" icon="share" />
             </mdlr:molecule.buttonRow.item>
             <mdlr:molecule.buttonRow.item>
-                <mdlr:atom.button.function id="header-meta-watch" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.watch', extensionName: 'chf_base')}" aria="{controls: 'watch'}" icon="watch" />
+                <mdlr:atom.button.function id="header-meta-watch" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.watch', domain: 'chf_base')}" aria="{controls: 'watch'}" icon="watch" />
             </mdlr:molecule.buttonRow.item>
             <mdlr:molecule.buttonRow.item>
-                <mdlr:atom.button.function id="header-meta-adjust" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.adjust', extensionName: 'chf_base')}" aria="{controls: 'adjust'}" icon="adjust" />
+                <mdlr:atom.button.function id="header-meta-adjust" function="modal" variants="{0: 'icon', 1: 'unobtrusive'}" text="{f:translate(key: 'templates.adjust', domain: 'chf_base')}" aria="{controls: 'adjust'}" icon="adjust" />
             </mdlr:molecule.buttonRow.item>
         </mdlr:molecule.buttonRow.wrap>
 

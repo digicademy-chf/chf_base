@@ -4,7 +4,7 @@
     <f:argument name="searchMenu" type="array" optional="{true}" default="{}" description="A site-wide search menu" />
 
     <f:if condition="{searchMenu}">
-        <mdlr:page.modal id="search" title="{f:translate(key: 'templates.search', extensionName: 'chf_base')}" close="{f:translate(key: 'templates.generic.close', extensionName: 'chf_base')}" variants="{0: 'wide'}">
+        <mdlr:page.modal id="search" title="{f:translate(key: 'templates.search', domain: 'chf_base')}" close="{f:translate(key: 'templates.generic.close', domain: 'chf_base')}" variants="{0: 'wide'}">
 
             <f:for each="{searchMenu}" as="menuItem" iteration="searchIterator">
                 <f:if condition="{searchIterator.isFirst} || {menuItem.active}">
@@ -15,16 +15,16 @@
 
             <mdlr:organism.form.wrap action="{searchMenuLink}" role="search">
 
-                <mdlr:molecule.search id="search-query" name="q" text="{f:translate(key: 'templates.search.query', extensionName: 'chf_base')}" example="{f:translate(key: 'templates.search.query.example', extensionName: 'chf_base')}" go="{f:translate(key: 'templates.search.go', extensionName: 'chf_base')}" />
+                <mdlr:molecule.search id="search-query" name="q" text="{f:translate(key: 'templates.search.query', domain: 'chf_base')}" example="{f:translate(key: 'templates.search.query.example', domain: 'chf_base')}" go="{f:translate(key: 'templates.search.go', domain: 'chf_base')}" />
 
                 <mdlr:organism.form.split>
 
-                    <mdlr:atom.control id="search-exact" text="{f:translate(key: 'templates.search.exact', extensionName: 'chf_base') -> f:format.raw()}" type="switch" />
+                    <mdlr:atom.control id="search-exact" text="{f:translate(key: 'templates.search.exact', domain: 'chf_base') -> f:format.raw()}" type="switch" />
 
                     <mdlr:molecule.dropdown.wrap id="search-resource" variants="{0: 'right', 1: 'up'}">
 
                         <f:fragment name="handle">
-                            <mdlr:atom.button.function function="dropdown" variants="{0: 'texticon', 1: 'light'}" text="{searchMenuTitle}" hint="{f:translate(key: 'templates.search.resource.hint', extensionName: 'chf_base')}" iconAfter="down" popoverTarget="search-resource" />
+                            <mdlr:atom.button.function function="dropdown" variants="{0: 'texticon', 1: 'light'}" text="{searchMenuTitle}" hint="{f:translate(key: 'templates.search.resource.hint', domain: 'chf_base')}" iconAfter="down" popoverTarget="search-resource" />
                         </f:fragment>
 
                         <f:fragment name="list">

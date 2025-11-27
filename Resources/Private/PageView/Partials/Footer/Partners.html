@@ -8,7 +8,7 @@
     <f:if condition="{urls} && {logos} && {names}">
         <mdlr:template.area semanticType="section" id="footer-partners" areas="{0: 'slot-c', 1: 'align-left-above-900', 2: 'align-middle'}">
 
-            <mdlr:atom.heading text="{f:translate(key: 'templates.footer.partners', extensionName: 'chf_base')}" level="3" variants="{0: 'tacit'}" />
+            <mdlr:atom.heading text="{f:translate(key: 'templates.footer.partners', domain: 'chf_base')}" level="3" variants="{0: 'tacit'}" />
 
             <mdlr:molecule.imageRow.wrap>
                 <f:for each="{urls}" as="url" key="index">

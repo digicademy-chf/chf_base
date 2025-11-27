@@ -48,7 +48,7 @@
                 <f:then>
                     <f:if condition="{author}">
                         <f:then>
-                            <f:variable name="author">{author}{f:if(condition: '{authorshipIterator.index} == {penultimateAuthorNumber + 1}', then: '{f:translate(key: \'templates.generic.and\', extensionName: \'chf_base\')}', else: ',')} {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}</f:variable>   
+                            <f:variable name="author">{author}{f:if(condition: '{authorshipIterator.index} == {penultimateAuthorNumber + 1}', then: '{f:translate(key: \'templates.generic.and\', domain: \'chf_base\')}', else: ',')} {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}</f:variable>   
                         </f:then>
                         <f:else>
                             <f:variable name="author">{f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.surname}, {authorship.forename}')}</f:variable>   
@@ -59,7 +59,7 @@
                     <f:if condition="{authorship.role} == 'photographer'">
                         <f:if condition="{author}">
                             <f:then>
-                                <f:variable name="author">{author}{f:if(condition: '{authorshipIterator.index} == {penultimatePhotographerNumber + 1}', then: '{f:translate(key: \'templates.generic.and\', extensionName: \'chf_base\')}', else: ',')} {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}</f:variable>   
+                                <f:variable name="author">{author}{f:if(condition: '{authorshipIterator.index} == {penultimatePhotographerNumber + 1}', then: '{f:translate(key: \'templates.generic.and\', domain: \'chf_base\')}', else: ',')} {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}</f:variable>   
                             </f:then>
                             <f:else>
                                 <f:variable name="author">{f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.surname}, {authorship.forename}')}</f:variable>   
@@ -78,7 +78,7 @@
                 <f:if condition="{author}">
                     <f:then>
                         <f:variable name="multipleEditors">1</f:variable>
-                        <f:variable name="author">{author}{f:if(condition: '{authorshipIterator.index} == {penultimateEditorNumber + 1}', then: '{f:translate(key: \'templates.generic.and\', extensionName: \'chf_base\')}', else: ',')} {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}</f:variable>
+                        <f:variable name="author">{author}{f:if(condition: '{authorshipIterator.index} == {penultimateEditorNumber + 1}', then: '{f:translate(key: \'templates.generic.and\', domain: \'chf_base\')}', else: ',')} {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}</f:variable>
                     </f:then>
                     <f:else>
                         <f:variable name="author">{f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.surname}, {authorship.forename}')}</f:variable>
@@ -89,10 +89,10 @@
         <f:if condition="{author}">
             <f:if condition="{multipleEditors}">
                 <f:then>
-                    <f:variable name="author">{author} (<f:translate key="templates.about.citation.editorSingular" extensionName="chf_base" />)</f:variable>
+                    <f:variable name="author">{author} (<f:translate key="templates.about.citation.editorSingular" domain="chf_base" />)</f:variable>
                 </f:then>
                 <f:else>
-                    <f:variable name="author">{author} (<f:translate key="templates.about.citation.editorPlural" extensionName="chf_base" />)</f:variable>
+                    <f:variable name="author">{author} (<f:translate key="templates.about.citation.editorPlural" domain="chf_base" />)</f:variable>
                 </f:else>
             </f:if>
         </f:if>
@@ -108,7 +108,7 @@
                     <f:variable name="citation">{publication}</f:variable>
                 </f:then>
                 <f:else>
-                    <f:variable name="citation"><f:translate key="templates.generic.unknown" extensionName="chf_base" /></f:variable>
+                    <f:variable name="citation"><f:translate key="templates.generic.unknown" domain="chf_base" /></f:variable>
                 </f:else>
             </f:if>
         </f:else>
@@ -128,7 +128,7 @@
 
     <f:if condition="{titleSubtitle}">
         <f:then>
-            <f:variable name="citation">{citation}. <f:translate key="templates.generic.quote" extensionName="chf_base" arguments="{1: '{titleSubtitle}', 2: '.'}" /></f:variable>
+            <f:variable name="citation">{citation}. <f:translate key="templates.generic.quote" domain="chf_base" arguments="{1: '{titleSubtitle}', 2: '.'}" /></f:variable>
         </f:then>
         <f:else>
             <f:variable name="citation">{citation}.</f:variable>
@@ -138,10 +138,10 @@
     <f:if condition="{publication}">
         <f:if condition="{italics}">
             <f:then>
-                <f:variable name="citation">{citation} <em>{publication}{f:if(condition: resource, then: '{f:translate(key: \'templates.generic.titleSubtitle\', extensionName: \'chf_base\')}{resource}')}</em>,</f:variable>
+                <f:variable name="citation">{citation} <em>{publication}{f:if(condition: resource, then: '{f:translate(key: \'templates.generic.titleSubtitle\', domain: \'chf_base\')}{resource}')}</em>,</f:variable>
             </f:then>
             <f:else>
-                <f:variable name="citation">{citation} {publication}{f:if(condition: resource, then: '{f:translate(key: \'templates.generic.titleSubtitle\', extensionName: \'chf_base\')}{resource}')},</f:variable>
+                <f:variable name="citation">{citation} {publication}{f:if(condition: resource, then: '{f:translate(key: \'templates.generic.titleSubtitle\', domain: \'chf_base\')}{resource}')},</f:variable>
             </f:else>
         </f:if>
     </f:if>
@@ -152,10 +152,10 @@
                 <f:if condition="!{editorsAsAuthors}">
                     <f:if condition="{firstEditorListed}">
                         <f:then>
-                            <f:variable name="citation">{citation} {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}{f:if(condition: '{authorshipIterator.index} == {penultimateEditorNumber}', then: '{f:translate(key: \'templates.generic.and\', extensionName: \'chf_base\')}', else: ',')}</f:variable>
+                            <f:variable name="citation">{citation} {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}{f:if(condition: '{authorshipIterator.index} == {penultimateEditorNumber}', then: '{f:translate(key: \'templates.generic.and\', domain: \'chf_base\')}', else: ',')}</f:variable>
                         </f:then>
                         <f:else>
-                            <f:variable name="citation">{citation} <f:translate key="templates.about.citation.editedBy" extensionName="chf_base" /> {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}{f:if(condition: '{authorshipIterator.index} == {penultimateEditorNumber}', then: '{f:translate(key: \'templates.generic.and\', extensionName: \'chf_base\')}', else: ',')}</f:variable>
+                            <f:variable name="citation">{citation} <f:translate key="templates.about.citation.editedBy" domain="chf_base" /> {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}{f:if(condition: '{authorshipIterator.index} == {penultimateEditorNumber}', then: '{f:translate(key: \'templates.generic.and\', domain: \'chf_base\')}', else: ',')}</f:variable>
                             <f:variable name="firstEditorListed">1</f:variable>
                         </f:else>
                     </f:if>
@@ -164,10 +164,10 @@
             <f:case value="translator">
                 <f:if condition="{firstTranslatorListed}">
                     <f:then>
-                        <f:variable name="citation">{citation} {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}{f:if(condition: '{authorshipIterator.index} == {penultimateTranslatorNumber}', then: '{f:translate(key: \'templates.generic.and\', extensionName: \'chf_base\')}', else: ',')}</f:variable>
+                        <f:variable name="citation">{citation} {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}{f:if(condition: '{authorshipIterator.index} == {penultimateTranslatorNumber}', then: '{f:translate(key: \'templates.generic.and\', domain: \'chf_base\')}', else: ',')}</f:variable>
                     </f:then>
                     <f:else>
-                        <f:variable name="citation">{citation} <f:translate key="templates.about.citation.translatedBy" extensionName="chf_base" /> {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}{f:if(condition: '{authorshipIterator.index} == {penultimateTranslatorNumber}', then: '{f:translate(key: \'templates.generic.and\', extensionName: \'chf_base\')}', else: ',')}</f:variable>
+                        <f:variable name="citation">{citation} <f:translate key="templates.about.citation.translatedBy" domain="chf_base" /> {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}{f:if(condition: '{authorshipIterator.index} == {penultimateTranslatorNumber}', then: '{f:translate(key: \'templates.generic.and\', domain: \'chf_base\')}', else: ',')}</f:variable>
                         <f:variable name="firstTranslatorListed">1</f:variable>
                     </f:else>
                 </f:if>
@@ -175,10 +175,10 @@
             <f:case value="contributor">
                 <f:if condition="{firstContributorListed}">
                     <f:then>
-                        <f:variable name="citation">{citation} {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}{f:if(condition: '{authorshipIterator.index} == {penultimateContributorNumber}', then: '{f:translate(key: \'templates.generic.and\', extensionName: \'chf_base\')}', else: ',')}</f:variable>
+                        <f:variable name="citation">{citation} {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}{f:if(condition: '{authorshipIterator.index} == {penultimateContributorNumber}', then: '{f:translate(key: \'templates.generic.and\', domain: \'chf_base\')}', else: ',')}</f:variable>
                     </f:then>
                     <f:else>
-                        <f:variable name="citation">{citation} <f:translate key="templates.about.citation.withContributionsOf" extensionName="chf_base" /> {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}{f:if(condition: '{authorshipIterator.index} == {penultimateContributorNumber}', then: '{f:translate(key: \'templates.generic.and\', extensionName: \'chf_base\')}', else: ',')}</f:variable>
+                        <f:variable name="citation">{citation} <f:translate key="templates.about.citation.withContributionsOf" domain="chf_base" /> {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}{f:if(condition: '{authorshipIterator.index} == {penultimateContributorNumber}', then: '{f:translate(key: \'templates.generic.and\', domain: \'chf_base\')}', else: ',')}</f:variable>
                         <f:variable name="firstContributorListed">1</f:variable>
                     </f:else>
                 </f:if>
@@ -186,10 +186,10 @@
             <f:case value="rightsOwner">
                 <f:if condition="{firstRightsOwnerListed}">
                     <f:then>
-                        <f:variable name="citation">{citation} {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}{f:if(condition: '{authorshipIterator.index} == {penultimateRightsOwnerNumber}', then: '{f:translate(key: \'templates.generic.and\', extensionName: \'chf_base\')}', else: ',')}</f:variable>
+                        <f:variable name="citation">{citation} {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}{f:if(condition: '{authorshipIterator.index} == {penultimateRightsOwnerNumber}', then: '{f:translate(key: \'templates.generic.and\', domain: \'chf_base\')}', else: ',')}</f:variable>
                     </f:then>
                     <f:else>
-                        <f:variable name="citation">{citation} <f:translate key="templates.about.citation.rightsOwnedBy" extensionName="chf_base" /> {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}{f:if(condition: '{authorshipIterator.index} == {penultimateRightsOwnerNumber}', then: '{f:translate(key: \'templates.generic.and\', extensionName: \'chf_base\')}', else: ',')}</f:variable>
+                        <f:variable name="citation">{citation} <f:translate key="templates.about.citation.rightsOwnedBy" domain="chf_base" /> {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}{f:if(condition: '{authorshipIterator.index} == {penultimateRightsOwnerNumber}', then: '{f:translate(key: \'templates.generic.and\', domain: \'chf_base\')}', else: ',')}</f:variable>
                         <f:variable name="firstRightsOwnerListed">1</f:variable>
                     </f:else>
                 </f:if>
@@ -198,22 +198,22 @@
     </f:for>
 
     <f:if condition="{revisionNumber}">
-        <f:variable name="citation">{citation} <f:translate key="templates.about.online.revision" extensionName="chf_base" arguments="{0: revisionNumber}" />,</f:variable>
+        <f:variable name="citation">{citation} <f:translate key="templates.about.online.revision" domain="chf_base" arguments="{0: revisionNumber}" />,</f:variable>
     </f:if>
 
     <f:for each="{extent}" as="ext">
         <f:switch expression="{ext.type}">
             <f:case value="volume">
-                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.volume" extensionName="chf_base" /> {ext.text},</f:variable>
+                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.volume" domain="chf_base" /> {ext.text},</f:variable>
             </f:case>
             <f:case value="issue">
-                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.issue" extensionName="chf_base" /> {ext.text},</f:variable>
+                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.issue" domain="chf_base" /> {ext.text},</f:variable>
             </f:case>
             <f:case value="edition">
-                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.edition" extensionName="chf_base" /> {ext.text},</f:variable>
+                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.edition" domain="chf_base" /> {ext.text},</f:variable>
             </f:case>
             <f:case value="version">
-                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.version" extensionName="chf_base" /> {ext.text},</f:variable>
+                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.version" domain="chf_base" /> {ext.text},</f:variable>
             </f:case>
         </f:switch>
     </f:for>
@@ -223,7 +223,7 @@
             <f:if condition="{authorship.role} == 'publisher'">
                 <f:if condition="{publisher}">
                     <f:then>
-                        <f:variable name="publisher">{publisher}{f:if(condition: '{authorshipIterator.index} == {penultimatePublisherNumber + 1}', then: '{f:translate(key: \'templates.generic.and\', extensionName: \'chf_base\')}', else: ',')} {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}</f:variable>   
+                        <f:variable name="publisher">{publisher}{f:if(condition: '{authorshipIterator.index} == {penultimatePublisherNumber + 1}', then: '{f:translate(key: \'templates.generic.and\', domain: \'chf_base\')}', else: ',')} {f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}</f:variable>   
                     </f:then>
                     <f:else>
                         <f:variable name="publisher">{f:if(condition: authorship.corporateName, then: authorship.corporateName, else: '{authorship.forename} {authorship.surname}')}</f:variable>   
@@ -251,16 +251,16 @@
     <f:for each="{extent}" as="ext">
         <f:switch expression="{ext.type}">
             <f:case value="chapterNumbers">
-                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.chapterNumbers" extensionName="chf_base" /> {ext.text},</f:variable>
+                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.chapterNumbers" domain="chf_base" /> {ext.text},</f:variable>
             </f:case>
             <f:case value="pageNumbers">
-                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.pageNumbers" extensionName="chf_base" /> {ext.text},</f:variable>
+                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.pageNumbers" domain="chf_base" /> {ext.text},</f:variable>
             </f:case>
             <f:case value="columnNumbers">
-                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.columnNumbers" extensionName="chf_base" /> {ext.text},</f:variable>
+                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.columnNumbers" domain="chf_base" /> {ext.text},</f:variable>
             </f:case>
             <f:case value="paragraphNumbers">
-                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.paragraphNumbers" extensionName="chf_base" /> {ext.text},</f:variable>
+                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.paragraphNumbers" domain="chf_base" /> {ext.text},</f:variable>
             </f:case>
         </f:switch>
     </f:for>
@@ -268,19 +268,19 @@
     <f:for each="{extent}" as="ext">
         <f:switch expression="{ext.type}">
             <f:case value="isbn">
-                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.isbn" extensionName="chf_base" /> {ext.text},</f:variable>
+                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.isbn" domain="chf_base" /> {ext.text},</f:variable>
             </f:case>
             <f:case value="issn">
-                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.issn" extensionName="chf_base" /> {ext.text},</f:variable>
+                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.issn" domain="chf_base" /> {ext.text},</f:variable>
             </f:case>
             <f:case value="url">
-                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.url" extensionName="chf_base" /> {ext.text},</f:variable>
+                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.url" domain="chf_base" /> {ext.text},</f:variable>
             </f:case>
             <f:case value="urn">
-                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.urn" extensionName="chf_base" /> {ext.text},</f:variable>
+                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.urn" domain="chf_base" /> {ext.text},</f:variable>
             </f:case>
             <f:case value="doi">
-                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.doi" extensionName="chf_base" /> {ext.text},</f:variable>
+                <f:variable name="citation">{citation} <f:translate key="templates.about.citation.doi" domain="chf_base" /> {ext.text},</f:variable>
             </f:case>
         </f:switch>
     </f:for>
@@ -295,7 +295,7 @@
     </f:if>
 
     <f:if condition="!{date}">
-        <f:variable name="citation">{citation} <f:translate key="templates.generic.accessed" extensionName="chf_base" arguments="{0: access}" />.</f:variable>
+        <f:variable name="citation">{citation} <f:translate key="templates.generic.accessed" domain="chf_base" arguments="{0: access}" />.</f:variable>
     </f:if>
 
     <f:format.raw>{citation}</f:format.raw>

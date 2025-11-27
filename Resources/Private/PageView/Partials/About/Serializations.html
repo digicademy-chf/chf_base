@@ -7,7 +7,7 @@
     <f:if condition="{serialisations}">
         <mdlr:template.area semanticType="section" areas="{0: 'slot-c'}">
 
-            <mdlr:atom.heading text="{f:translate(key: 'templates.about.serializations', extensionName: 'chf_base') -> f:format.raw()}" level="4" />
+            <mdlr:atom.heading text="{f:translate(key: 'templates.about.serializations', domain: 'chf_base') -> f:format.raw()}" level="4" />
 
             <mdlr:molecule.buttonRow.wrap>
                 <f:for each="{serialisations}" as="serialisation">
@@ -15,50 +15,50 @@
 
                         <f:case value="csv">
                             <mdlr:molecule.buttonRow.item>
-                                <f:comment><mdlr:atom.button.current pageType="2905372363" contentType="text/csv" text="{f:translate(key: 'templates.generic.retrieve.csv', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.csv.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" /></f:comment>
-                                <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.csv', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.csv.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" />
+                                <f:comment><mdlr:atom.button.current pageType="2905372363" contentType="text/csv" text="{f:translate(key: 'templates.generic.retrieve.csv', domain: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', domain: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.csv.plain\\\', domain: \\\'chf_base\\\')}\'}')}" rel="alternate" /></f:comment>
+                                <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.csv', domain: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', domain: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.csv.plain\\\', domain: \\\'chf_base\\\')}\'}')}" />
                             </mdlr:molecule.buttonRow.item>
                         </f:case>
 
                         <f:case value="json">
                             <mdlr:molecule.buttonRow.item>
-                                <f:comment><mdlr:atom.button.current pageType="5146337671" contentType="application/json" text="{f:translate(key: 'templates.generic.retrieve.json', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.json.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" /></f:comment>
-                                <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.json', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.json.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" />
+                                <f:comment><mdlr:atom.button.current pageType="5146337671" contentType="application/json" text="{f:translate(key: 'templates.generic.retrieve.json', domain: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', domain: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.json.plain\\\', domain: \\\'chf_base\\\')}\'}')}" rel="alternate" /></f:comment>
+                                <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.json', domain: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', domain: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.json.plain\\\', domain: \\\'chf_base\\\')}\'}')}" />
                             </mdlr:molecule.buttonRow.item>
                         </f:case>
 
                         <f:case value="markdown">
                             <mdlr:molecule.buttonRow.item>
-                                <f:comment><mdlr:atom.button.current pageType="7796094845" contentType="text/markdown" text="{f:translate(key: 'templates.generic.retrieve.markdown', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.markdown\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" /></f:comment>
-                                <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.markdown', extensionName: 'chf_base')}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.markdown\\\', extensionName: \\\'chf_base\\\')}\'}')}" />
+                                <f:comment><mdlr:atom.button.current pageType="7796094845" contentType="text/markdown" text="{f:translate(key: 'templates.generic.retrieve.markdown', domain: 'chf_base')}" hint="{f:translate(key: 'templates.generic.retrieve', domain: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.markdown\\\', domain: \\\'chf_base\\\')}\'}')}" rel="alternate" /></f:comment>
+                                <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.markdown', domain: 'chf_base')}" hint="{f:translate(key: 'templates.generic.retrieve', domain: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.markdown\\\', domain: \\\'chf_base\\\')}\'}')}" />
                             </mdlr:molecule.buttonRow.item>
                         </f:case>
 
                         <f:case value="teixml">
                             <mdlr:molecule.buttonRow.item>
-                                <f:comment><mdlr:atom.button.current pageType="9631552583" contentType="application/tei+xml" text="{f:translate(key: 'templates.generic.retrieve.teixml', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.teixml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" /></f:comment>
-                                <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.teixml', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.teixml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" />
+                                <f:comment><mdlr:atom.button.current pageType="9631552583" contentType="application/tei+xml" text="{f:translate(key: 'templates.generic.retrieve.teixml', domain: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', domain: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.teixml.plain\\\', domain: \\\'chf_base\\\')}\'}')}" rel="alternate" /></f:comment>
+                                <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.teixml', domain: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', domain: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.teixml.plain\\\', domain: \\\'chf_base\\\')}\'}')}" />
                             </mdlr:molecule.buttonRow.item>
                         </f:case>
 
                         <f:case value="rdfxml">
                             <mdlr:molecule.buttonRow.item>
-                                <f:comment><mdlr:atom.button.current pageType="1295536366" contentType="application/rdf+xml" text="{f:translate(key: 'templates.generic.retrieve.rdfxml', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.rdfxml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" /></f:comment>
-                                <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.rdfxml', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.rdfxml.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" />
+                                <f:comment><mdlr:atom.button.current pageType="1295536366" contentType="application/rdf+xml" text="{f:translate(key: 'templates.generic.retrieve.rdfxml', domain: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', domain: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.rdfxml.plain\\\', domain: \\\'chf_base\\\')}\'}')}" rel="alternate" /></f:comment>
+                                <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.rdfxml', domain: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', domain: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.rdfxml.plain\\\', domain: \\\'chf_base\\\')}\'}')}" />
                             </mdlr:molecule.buttonRow.item>
                         </f:case>
 
                         <f:case value="turtle">
                             <mdlr:molecule.buttonRow.item>
-                                <f:comment><mdlr:atom.button.current pageType="2867941442" contentType="text/turtle" text="{f:translate(key: 'templates.generic.retrieve.turtle', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.turtle.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" /></f:comment>
-                                <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.turtle', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.turtle.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" />
+                                <f:comment><mdlr:atom.button.current pageType="2867941442" contentType="text/turtle" text="{f:translate(key: 'templates.generic.retrieve.turtle', domain: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', domain: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.turtle.plain\\\', domain: \\\'chf_base\\\')}\'}')}" rel="alternate" /></f:comment>
+                                <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.turtle', domain: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', domain: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.turtle.plain\\\', domain: \\\'chf_base\\\')}\'}')}" />
                             </mdlr:molecule.buttonRow.item>
                         </f:case>
 
                         <f:case value="jsonld">
                             <mdlr:molecule.buttonRow.item>
-                                <f:comment><mdlr:atom.button.current pageType="6024975381" contentType="application/ld+json" text="{f:translate(key: 'templates.generic.retrieve.jsonld', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.jsonld.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" rel="alternate" /></f:comment>
-                                <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.jsonld', extensionName: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', extensionName: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.jsonld.plain\\\', extensionName: \\\'chf_base\\\')}\'}')}" />
+                                <f:comment><mdlr:atom.button.current pageType="6024975381" contentType="application/ld+json" text="{f:translate(key: 'templates.generic.retrieve.jsonld', domain: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', domain: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.jsonld.plain\\\', domain: \\\'chf_base\\\')}\'}')}" rel="alternate" /></f:comment>
+                                <mdlr:atom.button.disabled text="{f:translate(key: 'templates.generic.retrieve.jsonld', domain: 'chf_base') -> f:format.raw()}" hint="{f:translate(key: 'templates.generic.retrieve', domain: 'chf_base', arguments: '{0: \'{f:translate(key: \\\'templates.generic.retrieve.jsonld.plain\\\', domain: \\\'chf_base\\\')}\'}')}" />
                             </mdlr:molecule.buttonRow.item>
                         </f:case>
 
@@ -68,7 +68,7 @@
 
             <f:if condition="{apiInfoPageUid}">
                 <mdlr:atom.note>
-                    <f:translate key="templates.about.api.before" extensionName="chf_base" /><f:link.page pageUid="{apiInfoPageUid}"><f:format.raw><f:translate key="templates.about.api.link" extensionName="chf_base" /></f:format.raw></f:link.page><f:translate key="templates.about.api.after" extensionName="chf_base" />
+                    <f:translate key="templates.about.api.before" domain="chf_base" /><f:link.page pageUid="{apiInfoPageUid}"><f:format.raw><f:translate key="templates.about.api.link" domain="chf_base" /></f:format.raw></f:link.page><f:translate key="templates.about.api.after" domain="chf_base" />
                 </mdlr:atom.note>
             </f:if>
 

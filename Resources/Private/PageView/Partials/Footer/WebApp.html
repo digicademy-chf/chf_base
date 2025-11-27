@@ -6,6 +6,6 @@
     <f:argument name="logo" type="string" optional="{false}" description="Path to the logo" />
 
     <mdlr:molecule.logo areas="{0: 'slot-a', 1: 'align-left-above-600', 2: 'align-middle'}">
-        <mdlr:atom.imageLink.page pageUid="{pageUid}" image="{f:uri.image(src: logo)}" alternativeText="{webApp}" hint="{f:translate(key: 'templates.generic.home', extensionName: 'chf_base')}" />
+        <mdlr:atom.imageLink.page pageUid="{pageUid}" image="{f:uri.image(src: logo)}" alternativeText="{webApp}" hint="{f:translate(key: 'templates.generic.home', domain: 'chf_base')}" />
     </mdlr:molecule.logo>
 </html>

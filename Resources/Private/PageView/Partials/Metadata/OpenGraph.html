@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:m="http://typo3.org/ns/Digicademy/MDLR/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:comment>OpenGraph metadata in the HTML head element.</f:comment>
 
     <f:argument name="webApp" type="string" optional="{false}" description="Name of the resource this page or record is part of" />
@@ -8,31 +8,30 @@
     <f:argument name="siteLanguages" type="array" optional="{true}" default="{}" description="The configured site languages" />
     <f:argument name="languageMenu" type="array" optional="{true}" default="{}" description="A site-wide language menu" />
 
-    <m:headData>
+    <f:page.meta property="og:type" replace="true">website</f:page.meta>
+    <f:page.meta property="og:determiner" replace="true"></f:page.meta>
+    <f:page.meta property="og:title" replace="true">{titleSubtitle}</f:page.meta>
+    <f:if condition="{description}">
+        <f:page.meta property="og:description" replace="true">{description}</f:page.meta>
+    </f:if>
 
-        <meta property="og:type" content="website">
-        <meta property="og:determiner" content="">
-        <meta property="og:title" content="{titleSubtitle}">
-        <f:comment><meta property="og:audio" content="">
-        <meta property="og:video" content=""></f:comment>
-        <f:if condition="{image}">
-            <meta property="og:image" content="{f:uri.image(image: image, width: '1200c', height: '630c', fileExtension: 'jpg')}">
-        </f:if>
-        <f:if condition="{description}">
-            <meta property="og:description" content="{description}">
-        </f:if>
-        <meta property="og:url" content="{f:uri.page(absolute: 1)}">
-        <meta property="og:site_name" content="{webApp}">
-        <f:for each="{languageMenu}" as="menuItem">
-            <f:if condition="{menuItem.active}">
-                <f:then>
-                    <meta property="og:locale" content="{siteLanguages.{menuItem.languageUid}.hreflang}">
-                </f:then>
-                <f:else>
-                    <meta property="og:locale:alternate" content="{siteLanguages.{menuItem.languageUid}.hreflang}">
-                </f:else>
-            </f:if>
-        </f:for>
+    <f:comment><f:page.meta property="og:audio" replace="true"></f:page.meta>
+    <f:page.meta property="og:video" replace="true"></f:page.meta></f:comment>
+    <f:if condition="{image}">
+        <f:page.meta property="og:image" replace="true">{f:uri.image(image: image, width: '1200c', height: '630c')}</f:page.meta>
+    </f:if>
 
-    </m:headData>
+    <f:page.meta property="og:url" replace="true">{f:uri.page(absolute: 1)}</f:page.meta>
+    <f:page.meta property="og:site_name" replace="true">{webApp}</f:page.meta>
+
+    <f:for each="{languageMenu}" as="menuItem">
+        <f:if condition="{menuItem.active}">
+            <f:then>
+                <f:page.meta property="og:locale" replace="true">{siteLanguages.{menuItem.languageUid}.hreflang}</f:page.meta>
+            </f:then>
+            <f:else>
+                <f:comment>The two colons seem to cause trouble in the MetaTagManager<f:page.meta property="og:locale:alternate" replace="true">{siteLanguages.{menuItem.languageUid}.hreflang}</f:page.meta></f:comment>
+            </f:else>
+        </f:if>
+    </f:for>
 </html>

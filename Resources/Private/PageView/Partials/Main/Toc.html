@@ -9,7 +9,7 @@
         <mdlr:molecule.dropdown.wrap id="main-toc" variants="{f:if(condition: listSubMenu, then: '{0: \'toc\', 1: \'right\'}', else: '{0: \'toc\'}')}" role="navigation">
 
             <f:fragment name="handle">
-                <mdlr:atom.button.function function="dropdown" variants="{0: '{f:if(condition: listSubMenu, then: \'icon\', else: \'texticon\')}', 1: 'light'}" text="{f:translate(key: 'templates.main.toc', extensionName: 'chf_base')}" icon="toc" popoverTarget="main-toc" />
+                <mdlr:atom.button.function function="dropdown" variants="{0: '{f:if(condition: listSubMenu, then: \'icon\', else: \'texticon\')}', 1: 'light'}" text="{f:translate(key: 'templates.main.toc', domain: 'chf_base')}" icon="toc" popoverTarget="main-toc" />
             </f:fragment>
 
             <f:fragment name="list">

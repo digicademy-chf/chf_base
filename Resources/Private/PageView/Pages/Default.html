@@ -8,7 +8,7 @@
             <f:render partial="Main/Title" arguments="{title: metadataTitle, subtitle: metadataSubtitle, new: metadataNew, subMenu: subMenu, contentElements: contentElements.main.records}" />
             <f:render partial="Main/Content" arguments="{contentElements: contentElements.main.records}" />
         </mdlr:template.area>
-        <f:render partial="About/About" arguments="{heading: '{f:translate(key: \'templates.about\', extensionName: \'chf_base\')}', titleSubtitle: metadataTitleSubtitle, description: metadataDescription, author: metadataAuthor, authorEmail: metadataAuthorEmail, rightsUri: metadataRightsUri, rightsLabel: metadataRightsLabel, publication: metadataWebApp, publisher: metadataPublisher, year: metadataYear, date: metadataDate, dateIso: metadataDateIso, access: metadataAccess, accessIso: metadataAccessIso, citationStyle: metadataCitationStyle, serialisations: '{0: \'markdown\', 1: \'teixml\', 2: \'rdfxml\', 3: \'turtle\', 4: \'jsonld\'}', apiInfoPageUid: settings.chf.api.info}" />
+        <f:render partial="About/About" arguments="{heading: '{f:translate(key: \'templates.about\', domain: \'chf_base\')}', titleSubtitle: metadataTitleSubtitle, description: metadataDescription, author: metadataAuthor, authorEmail: metadataAuthorEmail, rightsUri: metadataRightsUri, rightsLabel: metadataRightsLabel, publication: metadataWebApp, publisher: metadataPublisher, year: metadataYear, date: metadataDate, dateIso: metadataDateIso, access: metadataAccess, accessIso: metadataAccessIso, citationStyle: metadataCitationStyle, serialisations: '{0: \'markdown\', 1: \'teixml\', 2: \'rdfxml\', 3: \'turtle\', 4: \'jsonld\'}', apiInfoPageUid: settings.chf.api.info}" />
     </f:section>
 
 </html>

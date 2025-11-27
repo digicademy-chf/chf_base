@@ -10,7 +10,7 @@
 
     <mdlr:page.section id="main-title" variants="{0: 'title', 1: 'odd', 2: 'ultrawide'}" function="scroll">
 
-        <mdlr:molecule.title title="{title}" subtitle="{subtitle}" context="{f:if(condition: new, then: '{f:translate(key: \'templates.generic.new\', extensionName: \'chf_base\')}', else: context)}" />
+        <mdlr:molecule.title title="{title}" subtitle="{subtitle}" context="{f:if(condition: new, then: '{f:translate(key: \'templates.generic.new\', domain: \'chf_base\')}', else: context)}" />
 
         <f:render partial="Main/QuickAccess" arguments="{subMenu: subMenu, contentElements: contentElements}" />
 
