@@ -34,7 +34,6 @@ return [
         'transOrigPointerField'    => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'translationSource'        => 'l10n_source',
-        'searchFields'             => 'uri',
         'enablecolumns'            => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
@@ -64,10 +63,16 @@ return [
                 'allowedOptions' => [],
                 'mode' => 'prepend',
                 'valuePicker' => [
-                   'items' => [
-                      ['HTTPS', 'https://'],
-                      ['HTTP', 'http://'],
-                   ],
+                    'items' => [
+                        [
+                            'label' => 'HTTPS',
+                            'value' => 'https://',
+                        ],
+                        [
+                            'label' => 'HTTP',
+                            'value' => 'http://',
+                        ],
+                    ],
                 ],
                 'appearance' => [
                     'enableBrowser' => false,

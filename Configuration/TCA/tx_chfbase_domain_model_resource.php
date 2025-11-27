@@ -37,7 +37,6 @@ return [
         'transOrigPointerField'    => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'translationSource'        => 'l10n_source',
-        'searchFields'             => 'type,title,lang_code,iri,uuid,description,publication_date,revision_date,revision_number,editorial_note,import_origin,import_state',
         'type'                     => 'type',
         'enablecolumns'            => [
             'disabled' => 'hidden',

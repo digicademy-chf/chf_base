@@ -33,6 +33,7 @@ ExtensionUtility::registerPlugin(
     'tx-chfbase-plugin-rest',
     'heritage',
     'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.rest.description',
+    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
 );
 
 // Add plugin 'Contributors'
@@ -43,6 +44,7 @@ ExtensionUtility::registerPlugin(
     'tx-chfbase-plugin-contributors',
     'heritage',
     'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.contributors.description',
+    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
 );
 
 // Add plugin 'Agents'
@@ -53,6 +55,7 @@ ExtensionUtility::registerPlugin(
     'tx-chfbase-plugin-agents',
     'heritage',
     'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.agents.description',
+    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
 );
 
 // Add plugin 'Timeline'
@@ -63,6 +66,7 @@ ExtensionUtility::registerPlugin(
     'tx-chfbase-plugin-timeline',
     'heritage',
     'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.timeline.description',
+    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
 );
 
 // Add plugin 'Places'
@@ -73,6 +77,7 @@ ExtensionUtility::registerPlugin(
     'tx-chfbase-plugin-places',
     'heritage',
     'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.places.description',
+    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
 );
 
 // Add plugin 'Structure'
@@ -83,6 +88,7 @@ ExtensionUtility::registerPlugin(
     'tx-chfbase-plugin-structure',
     'heritage',
     'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.structure.description',
+    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
 );
 
 // Add plugin 'Connections'
@@ -93,6 +99,7 @@ ExtensionUtility::registerPlugin(
     'tx-chfbase-plugin-connections',
     'heritage',
     'LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.connections.description',
+    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
 );
 
 // Add data tab to plugin form
@@ -101,53 +108,4 @@ ExtensionManagementUtility::addToAllTCAtypes(
     '--div--;LLL:EXT:chf_base/Resources/Private/Language/locallang.xlf:plugin.generic.data,pi_flexform',
     'chfbase_rest,chfbase_contributors,chfbase_agents,chfbase_timeline,chfbase_places,chfbase_structure,chfbase_connections',
     'after:subheader',
-);
-
-// Add form for plugin 'Rest'
-ExtensionManagementUtility::addPiFlexFormValue(
-    '*',
-    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
-    'chfbase_rest',
-);
-
-// Add form for plugin 'Contributors'
-ExtensionManagementUtility::addPiFlexFormValue(
-    '*',
-    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
-    'chfbase_contributors',
-);
-
-// Add form for plugin 'Agents'
-ExtensionManagementUtility::addPiFlexFormValue(
-    '*',
-    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
-    'chfbase_agents',
-);
-
-// Add form for plugin 'Timeline'
-ExtensionManagementUtility::addPiFlexFormValue(
-    '*',
-    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
-    'chfbase_timeline',
-);
-
-// Add form for plugin 'Places'
-ExtensionManagementUtility::addPiFlexFormValue(
-    '*',
-    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
-    'chfbase_places',
-);
-
-// Add form for plugin 'Structure'
-ExtensionManagementUtility::addPiFlexFormValue(
-    '*',
-    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
-    'chfbase_structure',
-);
-
-// Add form for plugin 'Connections'
-ExtensionManagementUtility::addPiFlexFormValue(
-    '*',
-    'FILE:EXT:chf_base/Configuration/FlexForms/PluginData.xml',
-    'chfbase_connections',
 );

@@ -2,7 +2,7 @@
     "name": "digicademy/chf_base",
     "version": "2.0.0",
     "type": "typo3-cms-extension",
-    "description": "Common classes as well as a UI library and other base services for the CHF",
+    "description": "CHF Base - Common classes as well as a UI library and other base services for the CHF",
     "authors": [
         {
             "name": "Jonatan Jalle Steller",
@@ -34,10 +34,10 @@
         "Social"
     ],
     "require": {
-        "typo3/cms-core": "^13",
-        "typo3/cms-extbase": "^13",
-        "typo3/cms-fluid": "^13",
-        "typo3/cms-rte-ckeditor": "^13",
+        "typo3/cms-core": "^14",
+        "typo3/cms-extbase": "^14",
+        "typo3/cms-fluid": "^14",
+        "typo3/cms-rte-ckeditor": "^14",
         "digicademy/dsh": "^2",
         "digicademy/endpt": "^2",
         "digicademy/mdlr": "^2",

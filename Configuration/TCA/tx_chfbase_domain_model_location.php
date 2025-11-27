@@ -36,7 +36,6 @@ return [
         'transOrigPointerField'    => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'translationSource'        => 'l10n_source',
-        'searchFields'             => 'type,name,alternative_name,address_street,address_number,address_zip,address_city,publication_date,revision_date,revision_number,editorial_note,iri,uuid,import_origin,import',
         'enablecolumns'            => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
