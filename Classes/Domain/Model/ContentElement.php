@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace Digicademy\CHFBase\Domain\Model;
 
 use Digicademy\CHFBase\Domain\Model\Traits\HiddenTrait;
-use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Attribute\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 defined('TYPO3') or die();

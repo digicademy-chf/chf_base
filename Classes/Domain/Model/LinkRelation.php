@@ -20,7 +20,7 @@ use Digicademy\CHFObject\Domain\Model\SingleObject;
 use Digicademy\CHFObject\Domain\Model\ObjectGroup;
 use Digicademy\CHFPub\Domain\Model\Essay;
 use Digicademy\CHFPub\Domain\Model\Volume;
-use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Attribute\Validate;
 
 defined('TYPO3') or die();
 

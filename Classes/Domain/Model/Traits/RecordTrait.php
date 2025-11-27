@@ -25,7 +25,7 @@ use Digicademy\CHFObject\Domain\Model\SingleObject;
 use Digicademy\CHFObject\Domain\Model\ObjectGroup;
 use Digicademy\CHFPub\Domain\Model\Essay;
 use Digicademy\CHFPub\Domain\Model\Volume;
-use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
+use TYPO3\CMS\Extbase\Attribute\ORM\Lazy;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 
 defined('TYPO3') or die();

@@ -12,9 +12,9 @@ namespace Digicademy\CHFBase\Domain\Model;
 use Digicademy\CHFBase\Domain\Model\Traits\AgentRelationTrait;
 use Digicademy\CHFBase\Domain\Model\Traits\LocationRelationTrait;
 use Digicademy\CHFBase\Domain\Validator\StringOptionsValidator;
-use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
-use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
-use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Attribute\ORM\Lazy;
+use TYPO3\CMS\Extbase\Attribute\ORM\Cascade;
+use TYPO3\CMS\Extbase\Attribute\Validate;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 

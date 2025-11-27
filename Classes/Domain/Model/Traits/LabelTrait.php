@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace Digicademy\CHFBase\Domain\Model\Traits;
 
 use Digicademy\CHFBase\Domain\Model\LabelTag;
-use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
+use TYPO3\CMS\Extbase\Attribute\ORM\Lazy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 defined('TYPO3') or die();

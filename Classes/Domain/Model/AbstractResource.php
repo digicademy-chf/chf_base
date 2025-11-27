@@ -10,8 +10,8 @@ declare(strict_types=1);
 namespace Digicademy\CHFBase\Domain\Model;
 
 use Digicademy\CHFBase\Domain\Model\Traits\ImportStateTrait;
-use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
-use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Attribute\ORM\Lazy;
+use TYPO3\CMS\Extbase\Attribute\Validate;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 defined('TYPO3') or die();

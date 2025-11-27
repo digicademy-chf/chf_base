@@ -14,8 +14,8 @@ use Digicademy\CHFBase\Domain\Model\Traits\IriTrait;
 use Digicademy\CHFBase\Domain\Model\Traits\ParentResourceTrait;
 use Digicademy\CHFBase\Domain\Model\Traits\SameAsTrait;
 use Digicademy\CHFBase\Domain\Model\Traits\UuidTrait;
-use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
-use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Attribute\ORM\Lazy;
+use TYPO3\CMS\Extbase\Attribute\Validate;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 

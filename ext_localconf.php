@@ -37,6 +37,7 @@ ExtensionUtility::configurePlugin(
         RestController::class => 'index',
     ],
     [], // None of the actions are non-cacheable
+    null,
 );
 
 // Register 'Contributors' content element
@@ -47,6 +48,7 @@ ExtensionUtility::configurePlugin(
         ContributorsController::class => 'index, show',
     ],
     [], // None of the actions are non-cacheable
+    null,
 );
 
 // Register 'Agents' content element
@@ -57,6 +59,7 @@ ExtensionUtility::configurePlugin(
         AgentsController::class => 'index, show',
     ],
     [], // None of the actions are non-cacheable
+    null,
 );
 
 // Register 'Timeline' content element
@@ -67,6 +70,7 @@ ExtensionUtility::configurePlugin(
         TimelineController::class => 'index, show',
     ],
     [], // None of the actions are non-cacheable
+    null,
 );
 
 // Register 'Places' content element
@@ -77,6 +81,7 @@ ExtensionUtility::configurePlugin(
         PlacesController::class => 'index, show',
     ],
     [], // None of the actions are non-cacheable
+    null,
 );
 
 // Register 'Structure' content element
@@ -87,6 +92,7 @@ ExtensionUtility::configurePlugin(
         StructureController::class => 'index, show, showKeyword',
     ],
     [], // None of the actions are non-cacheable
+    null,
 );
 
 // Register 'Connections' content element
@@ -97,4 +103,5 @@ ExtensionUtility::configurePlugin(
         ConnectionsController::class => 'index',
     ],
     [], // None of the actions are non-cacheable
+    null,
 );
