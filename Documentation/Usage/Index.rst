@@ -6,12 +6,28 @@
 Usage
 =====
 
-Specific usage instructions are provided **in each component's documentation**
-where necessary. There are a few central concept in the CHF and the TYPO3
-world that may come in handy:
+..  rst-class:: bignums
 
-- **Basic instructions** for your own project and sitepackage are provided in
-  the documentation for CHF Project.
+1.  Add CHF data
+
+    In a blank folder in your page tree, add records based on the CHF data
+    models via the :guilabel:`Records` module.
+
+2.  Add CHF frontend plugins
+
+    Add the frontend plugins as content blocks to a page of your choice to
+    display the data records.
+
+Specific usage instructions are provided **in each component's documentation**
+where necessary.
+
+..  _general:
+
+=============
+General notes
+=============
+
+There are a few central concept in TYPO3 and the CHF that may come in handy:
 
 - TYPO3 differentiates between **frontend and backend**, and editing is
   usually done in the latter.

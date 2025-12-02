@@ -10,13 +10,11 @@ The CHF consists of a **set of interoperable extensions** for the enterprise
 content management system TYPO3, which provides management of content, users,
 and files, a toolset to publish pages and content blocks, a thriving
 community, and an extension API. On top of these features, and using the same
-open-source licence, the CHF provides a set of modular components that you
-can orchestrate by adding your own so-called ‘sitepackage’: a small extension
-specific to your individual project that you may simply copy and adapt from a
-boilerplate included in the CHF. This process may be as simple as listing the
-components you need and using everything else out of the box, or you could
-radically overwrite layout and data templates, add database tables and rows,
-or integrate other extensions available in the TYPO3 extension repository.
+open-source licence, the CHF provides a set of modular components that work out
+of the box. If you need to radically overwrite layout and data templates, add
+database tables and rows, or integrate further extensions available in the
+TYPO3 extension repository, you may want your own so-called ‘sitepackage’: a
+small extension specific to your individual project.
 
 The original idea for a CHF was presented in 2017 by Torsten Schrade, with a
 number of ideas implemented across several projects of the Digital Academy

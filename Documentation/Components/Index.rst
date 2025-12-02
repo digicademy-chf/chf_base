@@ -56,28 +56,26 @@ this category are available:
 
 - *Not in development yet:* CHF Letter (correspondences)
 
-In addition to these data models, **three optional helpers are available**.
+In addition to these data models, **four optional helpers are available**.
 They provide single-purpose additions to TYPO3's functionality that are useful
 in a Digital Humanities-focused web app. Using these helpers may require a bit
 of configuration in accordance with their individual documentation. They may
 also be used without any of the CHF data models listed above:
 
-- *Not in development yet:* `ENDPT <https://github.com/digicademy/endpt>`__
-  (SPARQL, OAI-PMH, and SRU endpoints)
-
 - `DSH <https://github.com/digicademy/dsh>`__ (quality assurance for data,
   dashboards)
 
+- `ENDPT <https://github.com/digicademy/endpt>`__ (API endpoint functionality)
+
+- `MDLR <https://github.com/digicademy/mdlr>`__ (accessible fontend components)
+
 - `VIS <https://github.com/digicademy/vis>`__ (a set of visualisations)
 
-Last but not least, **each project needs its own sitepackage**. In theory,
+Last but not least, **projects may want their own sitepackage**. In theory,
 every aspect of the other extensions may be overwritten in this extension.
-In practice, it is typically used to include and configure the extensions
-you need and to adapt a few minor template elements. The CHF includes a
-boilerplate that you can simply copy and adapt to your needs.
-
-- `CHF Project <https://github.com/digicademy-chf/chf_project>`__ (sitepackage
-  boilerplate)
+In practice, it is typically used to adapt colours and commit settings to code
+for simpler packaging. A project can, however, simply use a preconfigured
+container environment to get started:
 
 - `CHF Container <https://github.com/digicademy-chf/chf_container>`__ (sample
   Podman or Docker container configuration)

@@ -105,3 +105,13 @@ ExtensionUtility::configurePlugin(
     [], // None of the actions are non-cacheable
     null,
 );
+
+// Backend customisation
+$GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend'] = [
+    'backendFavicon'       => 'EXT:chf_base/Resources/Public/Images/favicon-main.svg',
+    'backendLogo'          => 'EXT:chf_base/Resources/Public/Icons/Backend.svg',
+    'loginLogo'            => 'EXT:chf_base/Resources/Public/Icons/Login.svg',
+    'loginLogoAlt'         => 'Cultural Heritage Framework',
+    'loginHighlightColor'  => '#9b1526',
+    'loginBackgroundImage' => 'EXT:chf_base/Resources/Public/Icons/Background.svg'
+];
