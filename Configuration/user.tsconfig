@@ -1,9 +1,0 @@
-# Enable parts of the admin panel for non-admin users
-admPanel.enable {
-  preview = 1
-  cache = 1
-  edit = 1
-}
-
-# Show nav titles instead of full ones in the page tree
-options.pageTree.showNavTitle = 1

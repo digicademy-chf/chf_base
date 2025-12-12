@@ -1,5 +1,0 @@
-page {
-    template {
-        path = EXT:chf_base/Resources/Private/PageView/
-    }
-}
